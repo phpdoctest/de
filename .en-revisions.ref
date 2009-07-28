@@ -147,6 +147,7 @@ reference/array/functions/array-intersect-uassoc.xml: 30dd3cc2f8
 reference/array/functions/array-intersect-ukey.xml: 30dd3cc2f8
 reference/array/functions/array-key-exists.xml: 30dd3cc2f8
 reference/array/functions/array-keys.xml: 30dd3cc2f8
+reference/array/functions/array-map.xml: 30dd3cc2f8
 reference/array/functions/array-merge-recursive.xml: 30dd3cc2f8
 reference/array/functions/array-multisort.xml: 30dd3cc2f8
 reference/array/functions/array-pop.xml: 30dd3cc2f8
