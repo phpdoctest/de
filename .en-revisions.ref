@@ -19,7 +19,7 @@ faq/using.xml: 3cbd39cfa8
 features/cookies.xml: e1c9ff9b33
 features/persistent-connections.xml: e1c9ff9b33
 features/remote-files.xml: e1c9ff9b33
-install/ini.xml: db3490d06c
+install/ini.xml: 6830ddb125
 install/intro.xml: db3490d06c
 install/macos/index.xml: db3490d06c
 install/macos/packages.xml: db3490d06c
@@ -149,7 +149,7 @@ reference/array/functions/array-key-exists.xml: 30dd3cc2f8
 reference/array/functions/array-keys.xml: 30dd3cc2f8
 reference/array/functions/array-map.xml: 30dd3cc2f8
 reference/array/functions/array-merge-recursive.xml: 30dd3cc2f8
-reference/array/functions/array-multisort.xml: 30dd3cc2f8
+reference/array/functions/array-multisort.xml: 8b4f7b5144
 reference/array/functions/array-pop.xml: 30dd3cc2f8
 reference/array/functions/array-product.xml: 30dd3cc2f8
 reference/array/functions/array-rand.xml: 30dd3cc2f8
