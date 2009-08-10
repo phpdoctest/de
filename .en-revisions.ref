@@ -1461,7 +1461,7 @@ reference/sockets/reference.xml: 48d0011a12
 reference/sockets/setup.xml: 48d0011a12
 reference/sqlite/book.xml: 610d66bc32
 reference/sqlite/constants.xml: 610d66bc32
-reference/sqlite/functions/sqlite-array-query.xml: 610d66bc32
+reference/sqlite/functions/sqlite-array-query.xml: e06ce65ab0
 reference/sqlite/functions/sqlite-busy-timeout.xml: 610d66bc32
 reference/sqlite/functions/sqlite-changes.xml: 610d66bc32
 reference/sqlite/functions/sqlite-close.xml: 610d66bc32
@@ -1471,7 +1471,7 @@ reference/sqlite/functions/sqlite-create-function.xml: 610d66bc32
 reference/sqlite/functions/sqlite-current.xml: 610d66bc32
 reference/sqlite/functions/sqlite-error-string.xml: 610d66bc32
 reference/sqlite/functions/sqlite-escape-string.xml: 610d66bc32
-reference/sqlite/functions/sqlite-exec.xml: 610d66bc32
+reference/sqlite/functions/sqlite-exec.xml: e06ce65ab0
 reference/sqlite/functions/sqlite-factory.xml: 610d66bc32
 reference/sqlite/functions/sqlite-fetch-all.xml: 610d66bc32
 reference/sqlite/functions/sqlite-fetch-array.xml: 610d66bc32
@@ -1493,12 +1493,13 @@ reference/sqlite/functions/sqlite-num-rows.xml: 610d66bc32
 reference/sqlite/functions/sqlite-open.xml: 610d66bc32
 reference/sqlite/functions/sqlite-popen.xml: 610d66bc32
 reference/sqlite/functions/sqlite-prev.xml: 610d66bc32
-reference/sqlite/functions/sqlite-query.xml: 610d66bc32
+reference/sqlite/functions/sqlite-query.xml: e06ce65ab0
 reference/sqlite/functions/sqlite-rewind.xml: 610d66bc32
 reference/sqlite/functions/sqlite-seek.xml: 610d66bc32
 reference/sqlite/functions/sqlite-single-query.xml: 610d66bc32
 reference/sqlite/functions/sqlite-udf-decode-binary.xml: 610d66bc32
 reference/sqlite/functions/sqlite-udf-encode-binary.xml: 610d66bc32
+reference/sqlite/functions/sqlite-unbuffered-query.xml: e06ce65ab0
 reference/sqlite/functions/sqlite-valid.xml: 610d66bc32
 reference/sqlite/reference.xml: 610d66bc32
 reference/sqlite/setup.xml: 610d66bc32
