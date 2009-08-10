@@ -1499,7 +1499,6 @@ reference/sqlite/functions/sqlite-seek.xml: 610d66bc32
 reference/sqlite/functions/sqlite-single-query.xml: 610d66bc32
 reference/sqlite/functions/sqlite-udf-decode-binary.xml: 610d66bc32
 reference/sqlite/functions/sqlite-udf-encode-binary.xml: 610d66bc32
-reference/sqlite/functions/sqlite-unbuffered-query.xml: 610d66bc32
 reference/sqlite/functions/sqlite-valid.xml: 610d66bc32
 reference/sqlite/reference.xml: 610d66bc32
 reference/sqlite/setup.xml: 610d66bc32
