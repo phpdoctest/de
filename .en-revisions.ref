@@ -1505,7 +1505,7 @@ reference/sqlite/reference.xml: 610d66bc32
 reference/sqlite/setup.xml: 610d66bc32
 reference/sqlite3/book.xml: 610d66bc32
 reference/sqlite3/configure.xml: 610d66bc32
-reference/sqlite3/constants.xml: 610d66bc32
+reference/sqlite3/constants.xml: 944badf4ca
 reference/strings/book.xml: bf54ce4c56
 reference/strings/charsets.xml: bf54ce4c56
 reference/strings/constants.xml: bf54ce4c56
