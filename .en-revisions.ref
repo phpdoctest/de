@@ -12,14 +12,14 @@ bookinfo.xml: 9efb88789a
 faq/general.xml: 3cbd39cfa8
 faq/html.xml: 3cbd39cfa8
 faq/installation.xml: 3cbd39cfa8
-faq/mailinglist.xml: 3cbd39cfa8
+faq/mailinglist.xml: 2c6c6046d6
 faq/misc.xml: 3cbd39cfa8
 faq/obtaining.xml: 3cbd39cfa8
 faq/using.xml: 3cbd39cfa8
 features/cookies.xml: e1c9ff9b33
 features/persistent-connections.xml: e1c9ff9b33
 features/remote-files.xml: e1c9ff9b33
-install/ini.xml: 6830ddb125
+install/ini.xml: 2c6c6046d6
 install/intro.xml: db3490d06c
 install/macos/index.xml: db3490d06c
 install/macos/packages.xml: db3490d06c
@@ -47,7 +47,7 @@ language/exceptions.xml: 3f0437f93b
 language/expressions.xml: 3f0437f93b
 language/oop5.xml: 3f0437f93b
 language/oop5/abstract.xml: 3f0437f93b
-language/oop5/basic.xml: 3f0437f93b
+language/oop5/basic.xml: 008a61c55f
 language/oop5/constants.xml: 3f0437f93b
 language/oop5/decon.xml: 3f0437f93b
 language/oop5/final.xml: 3f0437f93b
@@ -163,7 +163,7 @@ reference/array/functions/arsort.xml: 30dd3cc2f8
 reference/array/functions/asort.xml: 30dd3cc2f8
 reference/array/functions/each.xml: 30dd3cc2f8
 reference/array/functions/end.xml: 30dd3cc2f8
-reference/array/functions/extract.xml: 30dd3cc2f8
+reference/array/functions/extract.xml: 9249ee34e0
 reference/array/functions/in-array.xml: 30dd3cc2f8
 reference/array/functions/krsort.xml: 30dd3cc2f8
 reference/array/functions/ksort.xml: 30dd3cc2f8
