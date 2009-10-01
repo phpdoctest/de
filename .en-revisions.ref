@@ -969,7 +969,7 @@ reference/oci8/functions/oci-fetch-array.xml: 807c846e04
 reference/oci8/functions/oci-fetch-assoc.xml: 807c846e04
 reference/oci8/functions/oci-fetch-object.xml: 807c846e04
 reference/oci8/functions/oci-fetch-row.xml: 807c846e04
-reference/oci8/functions/oci-fetch.xml: 9519bb53b2
+reference/oci8/functions/oci-fetch.xml: 807c846e04
 reference/oci8/functions/oci-free-statement.xml: 807c846e04
 reference/oci8/functions/ocibindbyname.xml: 807c846e04
 reference/oci8/functions/ocicancel.xml: 807c846e04
