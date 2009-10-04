@@ -9,6 +9,7 @@ appendices/resources.xml: 807c846e04
 appendices/transports.xml: 807c846e04
 appendices/userlandnaming.xml: 807c846e04
 bookinfo.xml: 807c846e04
+faq/databases.xml: 807c846e04
 faq/general.xml: 807c846e04
 faq/html.xml: 807c846e04
 faq/installation.xml: 807c846e04
@@ -16,6 +17,7 @@ faq/mailinglist.xml: 807c846e04
 faq/misc.xml: 807c846e04
 faq/obtaining.xml: 3cbd39cfa8
 faq/using.xml: 807c846e04
+features/connection-handling.xml: 807c846e04
 features/cookies.xml: 807c846e04
 features/persistent-connections.xml: 807c846e04
 features/remote-files.xml: 807c846e04
@@ -443,6 +445,7 @@ reference/dotnet/reference.xml: 807c846e04
 reference/dotnet/setup.xml: 807c846e04
 reference/errorfunc/book.xml: 807c846e04
 reference/errorfunc/constants.xml: 807c846e04
+reference/errorfunc/functions/debug-backtrace.xml: 807c846e04
 reference/errorfunc/functions/debug-print-backtrace.xml: 807c846e04
 reference/errorfunc/functions/error-get-last.xml: 807c846e04
 reference/errorfunc/functions/error-log.xml: 807c846e04
@@ -596,7 +599,9 @@ reference/gmp/constants.xml: 807c846e04
 reference/gmp/examples.xml: 807c846e04
 reference/gmp/reference.xml: 807c846e04
 reference/gmp/setup.xml: 807c846e04
+reference/iconv/functions/iconv-get-encoding.xml: 725f67f7b8
 reference/iconv/functions/iconv-set-encoding.xml: 807c846e04
+reference/iconv/functions/iconv.xml: 807c846e04
 reference/iconv/functions/ob-iconv-handler.xml: 807c846e04
 reference/id3/book.xml: 807c846e04
 reference/id3/constants.xml: 807c846e04
@@ -1636,9 +1641,11 @@ reference/url/setup.xml: 807c846e04
 reference/var/book.xml: 807c846e04
 reference/var/constants.xml: 807c846e04
 reference/var/functions/doubleval.xml: 807c846e04
+reference/var/functions/empty.xml: 807c846e04
 reference/var/functions/floatval.xml: 807c846e04
 reference/var/functions/get-defined-vars.xml: 807c846e04
 reference/var/functions/gettype.xml: 807c846e04
+reference/var/functions/intval.xml: 807c846e04
 reference/var/functions/is-array.xml: 807c846e04
 reference/var/functions/is-binary.xml: 807c846e04
 reference/var/functions/is-bool.xml: 807c846e04
@@ -1656,6 +1663,7 @@ reference/var/functions/is-resource.xml: 807c846e04
 reference/var/functions/is-scalar.xml: 807c846e04
 reference/var/functions/is-string.xml: 807c846e04
 reference/var/functions/is-unicode.xml: 807c846e04
+reference/var/functions/isset.xml: 807c846e04
 reference/var/functions/print-r.xml: 807c846e04
 reference/var/functions/serialize.xml: 3d1e8faad9
 reference/var/functions/settype.xml: 807c846e04
