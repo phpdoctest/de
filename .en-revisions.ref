@@ -16,7 +16,7 @@ faq/installation.xml: 807c846e04
 faq/mailinglist.xml: 807c846e04
 faq/misc.xml: 807c846e04
 faq/obtaining.xml: 3cbd39cfa8
-faq/using.xml: 807c846e04
+faq/using.xml: 2bcc17b7ec
 features/connection-handling.xml: 807c846e04
 features/cookies.xml: 807c846e04
 features/persistent-connections.xml: 807c846e04
@@ -49,7 +49,7 @@ language/exceptions.xml: 3f0437f93b
 language/expressions.xml: 807c846e04
 language/oop5.xml: 3f0437f93b
 language/oop5/abstract.xml: 807c846e04
-language/oop5/basic.xml: 008a61c55f
+language/oop5/basic.xml: 5acab58ca4
 language/oop5/constants.xml: 3f0437f93b
 language/oop5/decon.xml: 807c846e04
 language/oop5/final.xml: 807c846e04
