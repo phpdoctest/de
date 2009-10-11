@@ -16,7 +16,7 @@ faq/installation.xml: 807c846e04
 faq/mailinglist.xml: 807c846e04
 faq/misc.xml: 807c846e04
 faq/obtaining.xml: 3cbd39cfa8
-faq/using.xml: 2bcc17b7ec
+faq/using.xml: d4307141e2
 features/connection-handling.xml: 807c846e04
 features/cookies.xml: 807c846e04
 features/persistent-connections.xml: 807c846e04
