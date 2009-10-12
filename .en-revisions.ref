@@ -1674,6 +1674,8 @@ reference/var/functions/var-dump.xml: 807c846e04
 reference/var/ini.xml: 807c846e04
 reference/var/reference.xml: 807c846e04
 reference/var/setup.xml: 807c846e04
+reference/xml/functions/utf8-decode.xml: 4359499d26
+reference/xml/functions/utf8-encode.xml: 807c846e04
 reference/xmlreader/book.xml: 807c846e04
 reference/xmlreader/setup.xml: 807c846e04
 reference/xmlwriter/book.xml: 807c846e04
