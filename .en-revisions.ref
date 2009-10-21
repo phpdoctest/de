@@ -40,7 +40,7 @@ language/control-structures.xml: 807c846e04
 language/control-structures/alternative-syntax.xml: 807c846e04
 language/control-structures/break.xml: 807c846e04
 language/control-structures/continue.xml: 807c846e04
-language/control-structures/do-while.xml: 807c846e04
+language/control-structures/do-while.xml: f316ed0ba7
 language/control-structures/else.xml: 807c846e04
 language/control-structures/if.xml: 807c846e04
 language/control-structures/require-once.xml: 807c846e04
