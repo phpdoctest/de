@@ -63,10 +63,10 @@ language/oop5/static.xml: 3f0437f93b
 language/oop5/typehinting.xml: 807c846e04
 language/oop5/visibility.xml: 3f0437f93b
 language/predefined/arrayaccess.xml: 807c846e04
-language/predefined/arrayaccess/offsetexists.xml: 807c846e04
-language/predefined/arrayaccess/offsetget.xml: 807c846e04
-language/predefined/arrayaccess/offsetset.xml: 807c846e04
-language/predefined/arrayaccess/offsetunset.xml: 807c846e04
+language/predefined/arrayaccess/offsetexists.xml: f262d5e396
+language/predefined/arrayaccess/offsetget.xml: f262d5e396
+language/predefined/arrayaccess/offsetset.xml: f262d5e396
+language/predefined/arrayaccess/offsetunset.xml: f262d5e396
 language/predefined/errorexception.xml: 807c846e04
 language/predefined/errorexception/construct.xml: 807c846e04
 language/predefined/errorexception/getseverity.xml: 807c846e04
