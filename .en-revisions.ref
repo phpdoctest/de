@@ -328,7 +328,7 @@ reference/datetime/functions/gmmktime.xml: 807c846e04
 reference/datetime/functions/gmstrftime.xml: 807c846e04
 reference/datetime/functions/localtime.xml: 807c846e04
 reference/datetime/functions/microtime.xml: 807c846e04
-reference/datetime/functions/mktime.xml: d764aedcc8
+reference/datetime/functions/mktime.xml: 807c846e04
 reference/datetime/functions/strtotime.xml: d764aedcc8
 reference/datetime/functions/time.xml: 807c846e04
 reference/datetime/functions/timezone-abbreviations-list.xml: 807c846e04
@@ -588,7 +588,7 @@ reference/gettext/functions/dcgettext.xml: 807c846e04
 reference/gettext/functions/dcngettext.xml: 807c846e04
 reference/gettext/functions/dgettext.xml: 807c846e04
 reference/gettext/functions/dngettext.xml: 807c846e04
-reference/gettext/functions/gettext.xml: 807c846e04
+reference/gettext/functions/gettext.xml: 4df1611f6c
 reference/gettext/functions/ngettext.xml: 807c846e04
 reference/gettext/functions/textdomain.xml: 807c846e04
 reference/gettext/reference.xml: 807c846e04
@@ -719,7 +719,7 @@ reference/java/reference.xml: 807c846e04
 reference/java/setup.xml: 807c846e04
 reference/json/book.xml: 807c846e04
 reference/json/constants.xml: 807c846e04
-reference/json/functions/json-decode.xml: 4cd3fef7cb
+reference/json/functions/json-decode.xml: 807c846e04
 reference/json/functions/json-encode.xml: 807c846e04
 reference/json/functions/json-last-error.xml: 807c846e04
 reference/json/reference.xml: 807c846e04
@@ -918,7 +918,7 @@ reference/network/book.xml: 807c846e04
 reference/network/constants.xml: 807c846e04
 reference/network/functions/checkdnsrr.xml: 807c846e04
 reference/network/functions/closelog.xml: 807c846e04
-reference/network/functions/define-syslog-variables.xml: 9bfb615ae2
+reference/network/functions/define-syslog-variables.xml: 807c846e04
 reference/network/functions/dns-check-record.xml: 807c846e04
 reference/network/functions/dns-get-mx.xml: 807c846e04
 reference/network/functions/fsockopen.xml: 807c846e04
@@ -930,7 +930,7 @@ reference/network/functions/getprotobyname.xml: 807c846e04
 reference/network/functions/getprotobynumber.xml: 807c846e04
 reference/network/functions/getservbyname.xml: 807c846e04
 reference/network/functions/getservbyport.xml: 807c846e04
-reference/network/functions/header.xml: 9bfb615ae2
+reference/network/functions/header.xml: 807c846e04
 reference/network/functions/headers-list.xml: 807c846e04
 reference/network/functions/headers-sent.xml: 807c846e04
 reference/network/functions/inet-ntop.xml: 807c846e04
@@ -939,13 +939,13 @@ reference/network/functions/ip2long.xml: 807c846e04
 reference/network/functions/long2ip.xml: 807c846e04
 reference/network/functions/openlog.xml: 807c846e04
 reference/network/functions/pfsockopen.xml: 807c846e04
-reference/network/functions/setcookie.xml: 9bfb615ae2
+reference/network/functions/setcookie.xml: 807c846e04
 reference/network/functions/setrawcookie.xml: 807c846e04
 reference/network/functions/socket-get-status.xml: 807c846e04
 reference/network/functions/socket-set-blocking.xml: 807c846e04
 reference/network/functions/socket-set-timeout.xml: 807c846e04
 reference/network/functions/syslog.xml: 807c846e04
-reference/network/ini.xml: 9bfb615ae2
+reference/network/ini.xml: 807c846e04
 reference/network/reference.xml: 807c846e04
 reference/network/setup.xml: 807c846e04
 reference/nis/book.xml: 807c846e04
@@ -1392,7 +1392,7 @@ reference/shmop/setup.xml: 807c846e04
 reference/simplexml/book.xml: 807c846e04
 reference/simplexml/configure.xml: 807c846e04
 reference/simplexml/constants.xml: 807c846e04
-reference/simplexml/examples.xml: 48d0011a12
+reference/simplexml/examples.xml: 807c846e04
 reference/simplexml/functions/simplexml-element-addAttribute.xml: 48d0011a12
 reference/simplexml/functions/simplexml-element-addChild.xml: 48d0011a12
 reference/simplexml/functions/simplexml-element-asXML.xml: 48d0011a12
@@ -1421,10 +1421,10 @@ reference/soap/functions/use-soap-error-handler.xml: 807c846e04
 reference/soap/ini.xml: 807c846e04
 reference/soap/reference.xml: 807c846e04
 reference/soap/setup.xml: 807c846e04
-reference/soap/soapclient/call.xml: 48d0011a12
+reference/soap/soapclient/call.xml: 807c846e04
 reference/soap/soapclient/construct.xml: 807c846e04
 reference/soap/soapclient/dorequest.xml: 807c846e04
-reference/soap/soapclient/getfunctions.xml: 48d0011a12
+reference/soap/soapclient/getfunctions.xml: 807c846e04
 reference/soap/soapclient/getlastrequest.xml: 807c846e04
 reference/soap/soapclient/getlastrequestheaders.xml: 807c846e04
 reference/soap/soapclient/getlastresponse.xml: 807c846e04
@@ -1434,7 +1434,7 @@ reference/soap/soapclient/setcookie.xml: 807c846e04
 reference/soap/soapclient/setlocation.xml: 807c846e04
 reference/soap/soapclient/setsoapheaders.xml: 807c846e04
 reference/soap/soapclient/soapcall.xml: 807c846e04
-reference/soap/soapclient/soapclient.xml: 807c846e04
+reference/soap/soapclient/soapclient.xml: 887b9a15a5
 reference/soap/soapvar/construct.xml: 807c846e04
 reference/soap/soapvar/soapvar.xml: 807c846e04
 reference/sockets/book.xml: 807c846e04
@@ -1525,7 +1525,7 @@ reference/strings/functions/convert-uudecode.xml: 807c846e04
 reference/strings/functions/convert-uuencode.xml: 807c846e04
 reference/strings/functions/count-chars.xml: 807c846e04
 reference/strings/functions/crc32.xml: 807c846e04
-reference/strings/functions/crypt.xml: 807c846e04
+reference/strings/functions/crypt.xml: 1b8952540b
 reference/strings/functions/echo.xml: 807c846e04
 reference/strings/functions/explode.xml: 807c846e04
 reference/strings/functions/fprintf.xml: 807c846e04
@@ -1601,7 +1601,7 @@ reference/strings/functions/strtr.xml: 807c846e04
 reference/strings/functions/substr-compare.xml: 807c846e04
 reference/strings/functions/substr-count.xml: 807c846e04
 reference/strings/functions/substr-replace.xml: 807c846e04
-reference/strings/functions/substr.xml: 807c846e04
+reference/strings/functions/substr.xml: b291a75b0e
 reference/strings/functions/trim.xml: 807c846e04
 reference/strings/functions/ucfirst.xml: 807c846e04
 reference/strings/functions/ucwords.xml: 807c846e04
@@ -1665,10 +1665,10 @@ reference/var/functions/is-string.xml: 807c846e04
 reference/var/functions/is-unicode.xml: 807c846e04
 reference/var/functions/isset.xml: 807c846e04
 reference/var/functions/print-r.xml: 807c846e04
-reference/var/functions/serialize.xml: 3d1e8faad9
+reference/var/functions/serialize.xml: 807c846e04
 reference/var/functions/settype.xml: 807c846e04
-reference/var/functions/strval.xml: 807c846e04
-reference/var/functions/unserialize.xml: 3d1e8faad9
+reference/var/functions/strval.xml: 51525b2fe2
+reference/var/functions/unserialize.xml: 807c846e04
 reference/var/functions/unset.xml: 807c846e04
 reference/var/functions/var-dump.xml: 807c846e04
 reference/var/ini.xml: 807c846e04
@@ -1773,7 +1773,7 @@ reference/zlib/functions/gzuncompress.xml: 807c846e04
 reference/zlib/functions/gzwrite.xml: 807c846e04
 reference/zlib/functions/readgzfile.xml: 807c846e04
 reference/zlib/functions/zlib-get-coding-type.xml: 807c846e04
-reference/zlib/ini.xml: 8de8aa77c2
+reference/zlib/ini.xml: 807c846e04
 reference/zlib/reference.xml: 807c846e04
 reference/zlib/setup.xml: 807c846e04
 security/apache.xml: 807c846e04
