@@ -1749,7 +1749,7 @@ reference/zip/ziparchive/setarchivecomment.xml: 807c846e04
 reference/zip/ziparchive/setcommentindex.xml: 807c846e04
 reference/zip/ziparchive/setcommentname.xml: 807c846e04
 reference/zip/ziparchive/statindex.xml: 248824e909
-reference/zip/ziparchive/statname.xml: 807c846e04
+reference/zip/ziparchive/statname.xml: 53c75c586e
 reference/zip/ziparchive/unchangeall.xml: 807c846e04
 reference/zip/ziparchive/unchangearchive.xml: 807c846e04
 reference/zip/ziparchive/unchangeindex.xml: 807c846e04
