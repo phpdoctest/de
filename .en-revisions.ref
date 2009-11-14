@@ -1626,12 +1626,12 @@ reference/uodbc/reference.xml: 807c846e04
 reference/uodbc/setup.xml: 807c846e04
 reference/url/book.xml: 807c846e04
 reference/url/constants.xml: 807c846e04
-reference/url/functions/base64-decode.xml: 807c846e04
+reference/url/functions/base64-decode.xml: 248824e909
 reference/url/functions/base64-encode.xml: 807c846e04
 reference/url/functions/get-headers.xml: 807c846e04
 reference/url/functions/get-meta-tags.xml: 807c846e04
 reference/url/functions/http-build-query.xml: 807c846e04
-reference/url/functions/parse-url.xml: 807c846e04
+reference/url/functions/parse-url.xml: 29c538bf29
 reference/url/functions/rawurldecode.xml: 807c846e04
 reference/url/functions/rawurlencode.xml: 807c846e04
 reference/url/functions/urldecode.xml: 807c846e04
