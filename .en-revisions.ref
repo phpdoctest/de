@@ -121,13 +121,13 @@ reference/apache/book.xml: 807c846e04
 reference/apache/constants.xml: 807c846e04
 reference/apache/functions/apache-child-terminate.xml: 807c846e04
 reference/apache/functions/apache-get-modules.xml: 807c846e04
-reference/apache/functions/apache-get-version.xml: 807c846e04
+reference/apache/functions/apache-get-version.xml: 248824e909
 reference/apache/functions/apache-getenv.xml: 807c846e04
 reference/apache/functions/apache-lookup-uri.xml: 807c846e04
 reference/apache/functions/apache-note.xml: 807c846e04
 reference/apache/functions/apache-request-headers.xml: 807c846e04
 reference/apache/functions/apache-reset-timeout.xml: 807c846e04
-reference/apache/functions/apache-response-headers.xml: 807c846e04
+reference/apache/functions/apache-response-headers.xml: 248824e909
 reference/apache/functions/apache-setenv.xml: 807c846e04
 reference/apache/functions/ascii2ebcdic.xml: 807c846e04
 reference/apache/functions/ebcdic2ascii.xml: 807c846e04
