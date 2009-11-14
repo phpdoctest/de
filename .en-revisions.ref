@@ -1404,7 +1404,7 @@ reference/simplexml/functions/simplexml-element-getName.xml: 48d0011a12
 reference/simplexml/functions/simplexml-element-getNamespaces.xml: 48d0011a12
 reference/simplexml/functions/simplexml-element-registerXPathNamespace.xml: 48d0011a12
 reference/simplexml/functions/simplexml-element-xpath.xml: 48d0011a12
-reference/simplexml/functions/simplexml-import-dom.xml: 807c846e04
+reference/simplexml/functions/simplexml-import-dom.xml: 248824e909
 reference/simplexml/functions/simplexml-load-file.xml: 807c846e04
 reference/simplexml/functions/simplexml-load-string.xml: 807c846e04
 reference/simplexml/reference.xml: 807c846e04
