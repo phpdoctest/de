@@ -12,13 +12,14 @@ bookinfo.xml: 807c846e04
 faq/databases.xml: 807c846e04
 faq/general.xml: 807c846e04
 faq/html.xml: 807c846e04
-faq/installation.xml: 807c846e04
+faq/installation.xml: e0c08051a0
 faq/mailinglist.xml: 807c846e04
 faq/misc.xml: 807c846e04
 faq/obtaining.xml: 3cbd39cfa8
 faq/using.xml: d4307141e2
 features/connection-handling.xml: 807c846e04
 features/cookies.xml: 807c846e04
+features/http-auth.xml: 807c846e04
 features/persistent-connections.xml: 807c846e04
 features/remote-files.xml: 807c846e04
 install/ini.xml: 807c846e04
@@ -26,7 +27,7 @@ install/intro.xml: 807c846e04
 install/macos/index.xml: 807c846e04
 install/macos/packages.xml: 807c846e04
 install/macos/server.xml: 807c846e04
-install/unix/apache1.xml: 807c846e04
+install/unix/apache1.xml: e0c08051a0
 install/unix/apache2.xml: 807c846e04
 install/unix/index.xml: 807c846e04
 language/constants.xml: 807c846e04
