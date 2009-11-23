@@ -1082,6 +1082,7 @@ reference/pcre/book.xml: 807c846e04
 reference/pcre/configure.xml: 807c846e04
 reference/pcre/constants.xml: 807c846e04
 reference/pcre/examples.xml: 807c846e04
+reference/pcre/functions/preg-filter.xml: 70d52edee7
 reference/pcre/functions/preg-grep.xml: 807c846e04
 reference/pcre/functions/preg-last-error.xml: 807c846e04
 reference/pcre/functions/preg-match-all.xml: 731d1b752d
