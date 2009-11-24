@@ -1314,6 +1314,8 @@ reference/pspell/functions/pspell-config-repl.xml: 807c846e04
 reference/pspell/functions/pspell-config-runtogether.xml: 807c846e04
 reference/pspell/functions/pspell-config-save-repl.xml: 807c846e04
 reference/pspell/functions/pspell-new-config.xml: 807c846e04
+reference/pspell/functions/pspell-new-personal.xml: 807c846e04
+reference/pspell/functions/pspell-new.xml: 248824e909
 reference/pspell/functions/pspell-save-wordlist.xml: 807c846e04
 reference/pspell/functions/pspell-store-replacement.xml: 807c846e04
 reference/pspell/functions/pspell-suggest.xml: 807c846e04
