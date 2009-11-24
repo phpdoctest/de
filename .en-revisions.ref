@@ -1347,8 +1347,17 @@ reference/recode/functions/recode-string.xml: 807c846e04
 reference/recode/functions/recode.xml: 807c846e04
 reference/recode/reference.xml: 807c846e04
 reference/recode/setup.xml: 807c846e04
+reference/regex/book.xml: 807c846e04
+reference/regex/configure.xml: 807c846e04
 reference/regex/constants.xml: 807c846e04
 reference/regex/examples.xml: 807c846e04
+reference/regex/functions/ereg-replace.xml: 807c846e04
+reference/regex/functions/ereg.xml: 807c846e04
+reference/regex/functions/eregi-replace.xml: 807c846e04
+reference/regex/functions/eregi.xml: 807c846e04
+reference/regex/functions/split.xml: 807c846e04
+reference/regex/functions/spliti.xml: 807c846e04
+reference/regex/functions/sql-regcase.xml: 807c846e04
 reference/regex/reference.xml: 807c846e04
 reference/regex/setup.xml: 807c846e04
 reference/sem/book.xml: 807c846e04
