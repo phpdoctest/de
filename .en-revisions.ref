@@ -1546,7 +1546,7 @@ reference/strings/functions/addslashes.xml: 807c846e04
 reference/strings/functions/bin2hex.xml: 807c846e04
 reference/strings/functions/chop.xml: 807c846e04
 reference/strings/functions/chr.xml: 807c846e04
-reference/strings/functions/chunk-split.xml: 807c846e04
+reference/strings/functions/chunk-split.xml: 76ce54cf7a
 reference/strings/functions/convert-cyr-string.xml: 807c846e04
 reference/strings/functions/convert-uudecode.xml: 807c846e04
 reference/strings/functions/convert-uuencode.xml: 807c846e04
