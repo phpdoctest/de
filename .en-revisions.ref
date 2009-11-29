@@ -385,7 +385,7 @@ reference/dbx/book.xml: 807c846e04
 reference/dbx/configure.xml: 807c846e04
 reference/dbx/constants.xml: 807c846e04
 reference/dbx/functions/dbx-close.xml: 807c846e04
-reference/dbx/functions/dbx-compare.xml: 807c846e04
+reference/dbx/functions/dbx-compare.xml: 396a1d6e3c
 reference/dbx/functions/dbx-connect.xml: 807c846e04
 reference/dbx/functions/dbx-error.xml: 807c846e04
 reference/dbx/functions/dbx-escape-string.xml: 807c846e04
