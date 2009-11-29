@@ -66,7 +66,7 @@ language/oop5/visibility.xml: 3f0437f93b
 language/predefined/arrayaccess.xml: 807c846e04
 language/predefined/arrayaccess/offsetexists.xml: f262d5e396
 language/predefined/arrayaccess/offsetget.xml: f262d5e396
-language/predefined/arrayaccess/offsetset.xml: f262d5e396
+language/predefined/arrayaccess/offsetset.xml: fa4c2a3b97
 language/predefined/arrayaccess/offsetunset.xml: f262d5e396
 language/predefined/errorexception.xml: 807c846e04
 language/predefined/errorexception/construct.xml: 807c846e04
@@ -108,7 +108,7 @@ language/predefined/variables/httpresponseheader.xml: 807c846e04
 language/predefined/variables/phperrormsg.xml: 807c846e04
 language/predefined/variables/post.xml: 807c846e04
 language/predefined/variables/request.xml: 807c846e04
-language/predefined/variables/server.xml: 807c846e04
+language/predefined/variables/server.xml: 81dfac46f1
 language/predefined/variables/session.xml: 807c846e04
 language/predefined/variables/superglobals.xml: 807c846e04
 language/types.xml: 807c846e04
