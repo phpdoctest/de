@@ -38,7 +38,7 @@ language/context/parameters.xml: 807c846e04
 language/context/socket.xml: 807c846e04
 language/context/ssl.xml: 807c846e04
 language/control-structures.xml: 807c846e04
-language/control-structures/alternative-syntax.xml: 807c846e04
+language/control-structures/alternative-syntax.xml: 15e7bf7ada
 language/control-structures/break.xml: 807c846e04
 language/control-structures/continue.xml: 807c846e04
 language/control-structures/do-while.xml: f316ed0ba7
