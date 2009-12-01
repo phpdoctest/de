@@ -335,10 +335,10 @@ reference/datetime/functions/time.xml: 807c846e04
 reference/datetime/functions/timezone-abbreviations-list.xml: 807c846e04
 reference/datetime/functions/timezone-identifiers-list.xml: 807c846e04
 reference/datetime/functions/timezone-location-get.xml: 807c846e04
-reference/datetime/functions/timezone-name-from-abbr.xml: 807c846e04
+reference/datetime/functions/timezone-name-from-abbr.xml: 248824e909
 reference/datetime/functions/timezone-name-get.xml: 807c846e04
 reference/datetime/functions/timezone-offset-get.xml: 807c846e04
-reference/datetime/functions/timezone-open.xml: 807c846e04
+reference/datetime/functions/timezone-open.xml: 53c75c586e
 reference/datetime/functions/timezone-transitions-get.xml: 807c846e04
 reference/datetime/ini.xml: 807c846e04
 reference/datetime/reference.xml: 807c846e04
