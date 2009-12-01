@@ -414,7 +414,7 @@ reference/dir/functions/class.dir.xml: 807c846e04
 reference/dir/functions/closedir.xml: 807c846e04
 reference/dir/functions/getcwd.xml: 807c846e04
 reference/dir/functions/opendir.xml: 807c846e04
-reference/dir/functions/readdir.xml: 807c846e04
+reference/dir/functions/readdir.xml: 248824e909
 reference/dir/functions/rewinddir.xml: 807c846e04
 reference/dir/functions/scandir.xml: 807c846e04
 reference/dir/reference.xml: 807c846e04
