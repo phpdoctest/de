@@ -792,7 +792,7 @@ reference/misc/functions/connection-aborted.xml: 807c846e04
 reference/misc/functions/connection-status.xml: 807c846e04
 reference/misc/functions/connection-timeout.xml: 807c846e04
 reference/misc/functions/constant.xml: 807c846e04
-reference/misc/functions/define.xml: 807c846e04
+reference/misc/functions/define.xml: 8d6c1d25b8
 reference/misc/functions/defined.xml: 807c846e04
 reference/misc/functions/die.xml: 807c846e04
 reference/misc/functions/eval.xml: 807c846e04
