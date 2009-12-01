@@ -720,8 +720,8 @@ reference/java/reference.xml: 807c846e04
 reference/java/setup.xml: 807c846e04
 reference/json/book.xml: 807c846e04
 reference/json/constants.xml: 807c846e04
-reference/json/functions/json-decode.xml: 807c846e04
-reference/json/functions/json-encode.xml: 807c846e04
+reference/json/functions/json-decode.xml: cd621e669b
+reference/json/functions/json-encode.xml: 76ce54cf7a
 reference/json/functions/json-last-error.xml: 807c846e04
 reference/json/reference.xml: 807c846e04
 reference/json/setup.xml: 807c846e04
