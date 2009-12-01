@@ -917,7 +917,7 @@ reference/mysqli/configure.xml: 807c846e04
 reference/mysqli/ini.xml: 807c846e04
 reference/network/book.xml: 807c846e04
 reference/network/constants.xml: 807c846e04
-reference/network/functions/checkdnsrr.xml: 807c846e04
+reference/network/functions/checkdnsrr.xml: dec2813b2a
 reference/network/functions/closelog.xml: 807c846e04
 reference/network/functions/define-syslog-variables.xml: 807c846e04
 reference/network/functions/dns-check-record.xml: 807c846e04
@@ -934,13 +934,13 @@ reference/network/functions/getservbyport.xml: 807c846e04
 reference/network/functions/header.xml: 807c846e04
 reference/network/functions/headers-list.xml: 807c846e04
 reference/network/functions/headers-sent.xml: 807c846e04
-reference/network/functions/inet-ntop.xml: 807c846e04
+reference/network/functions/inet-ntop.xml: 248824e909
 reference/network/functions/inet-pton.xml: 807c846e04
 reference/network/functions/ip2long.xml: 807c846e04
 reference/network/functions/long2ip.xml: 807c846e04
 reference/network/functions/openlog.xml: 807c846e04
 reference/network/functions/pfsockopen.xml: 807c846e04
-reference/network/functions/setcookie.xml: 807c846e04
+reference/network/functions/setcookie.xml: dec2813b2a
 reference/network/functions/setrawcookie.xml: 807c846e04
 reference/network/functions/socket-get-status.xml: 807c846e04
 reference/network/functions/socket-set-blocking.xml: 807c846e04
@@ -948,7 +948,7 @@ reference/network/functions/socket-set-timeout.xml: 807c846e04
 reference/network/functions/syslog.xml: 807c846e04
 reference/network/ini.xml: 807c846e04
 reference/network/reference.xml: 807c846e04
-reference/network/setup.xml: 807c846e04
+reference/network/setup.xml: 15110920fa
 reference/nis/book.xml: 807c846e04
 reference/nis/configure.xml: 807c846e04
 reference/nis/constants.xml: dc3c1a6f7c
