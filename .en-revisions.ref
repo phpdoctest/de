@@ -15,7 +15,7 @@ faq/html.xml: 807c846e04
 faq/installation.xml: e0c08051a0
 faq/mailinglist.xml: 807c846e04
 faq/misc.xml: 807c846e04
-faq/obtaining.xml: 3cbd39cfa8
+faq/obtaining.xml: dfd305d149
 faq/using.xml: d4307141e2
 features/connection-handling.xml: 807c846e04
 features/cookies.xml: 807c846e04
