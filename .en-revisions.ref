@@ -352,7 +352,7 @@ reference/dba/functions/dba-delete.xml: 807c846e04
 reference/dba/functions/dba-exists.xml: 807c846e04
 reference/dba/functions/dba-fetch.xml: 807c846e04
 reference/dba/functions/dba-firstkey.xml: 248824e909
-reference/dba/functions/dba-handlers.xml: 807c846e04
+reference/dba/functions/dba-handlers.xml: dec2813b2a
 reference/dba/functions/dba-insert.xml: 807c846e04
 reference/dba/functions/dba-key-split.xml: 807c846e04
 reference/dba/functions/dba-list.xml: 807c846e04
@@ -1256,7 +1256,7 @@ reference/pgsql/setup.xml: 807c846e04
 reference/posix/book.xml: 807c846e04
 reference/posix/configure.xml: 807c846e04
 reference/posix/constants.xml: 807c846e04
-reference/posix/functions/posix-access.xml: 807c846e04
+reference/posix/functions/posix-access.xml: 76ce54cf7a
 reference/posix/functions/posix-ctermid.xml: 807c846e04
 reference/posix/functions/posix-get-last-error.xml: 807c846e04
 reference/posix/functions/posix-getcwd.xml: 807c846e04
@@ -1280,7 +1280,7 @@ reference/posix/functions/posix-initgroups.xml: 807c846e04
 reference/posix/functions/posix-isatty.xml: 807c846e04
 reference/posix/functions/posix-kill.xml: 807c846e04
 reference/posix/functions/posix-mkfifo.xml: 807c846e04
-reference/posix/functions/posix-mknod.xml: 807c846e04
+reference/posix/functions/posix-mknod.xml: 76ce54cf7a
 reference/posix/functions/posix-setegid.xml: 807c846e04
 reference/posix/functions/posix-seteuid.xml: 807c846e04
 reference/posix/functions/posix-setgid.xml: 807c846e04
