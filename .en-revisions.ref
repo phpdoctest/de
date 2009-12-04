@@ -1381,7 +1381,7 @@ reference/sem/functions/shm-remove.xml: 807c846e04
 reference/sem/ini.xml: 807c846e04
 reference/sem/reference.xml: 807c846e04
 reference/sem/setup.xml: 807c846e04
-reference/session/book.xml: 807c846e04
+reference/session/book.xml: e19e595f75
 reference/session/configure.xml: 807c846e04
 reference/session/constants.xml: 807c846e04
 reference/session/examples.xml: 807c846e04
@@ -1395,7 +1395,7 @@ reference/session/functions/session-id.xml: 807c846e04
 reference/session/functions/session-is-registered.xml: 807c846e04
 reference/session/functions/session-module-name.xml: 807c846e04
 reference/session/functions/session-name.xml: 807c846e04
-reference/session/functions/session-regenerate-id.xml: 807c846e04
+reference/session/functions/session-regenerate-id.xml: 76ce54cf7a
 reference/session/functions/session-register.xml: 807c846e04
 reference/session/functions/session-save-path.xml: 807c846e04
 reference/session/functions/session-set-cookie-params.xml: 807c846e04
@@ -1403,6 +1403,7 @@ reference/session/functions/session-set-save-handler.xml: 807c846e04
 reference/session/functions/session-unregister.xml: 807c846e04
 reference/session/functions/session-unset.xml: 807c846e04
 reference/session/functions/session-write-close.xml: 807c846e04
+reference/session/ini.xml: c1421358b1
 reference/session/reference.xml: 807c846e04
 reference/session/security.xml: 807c846e04
 reference/session/setup.xml: 807c846e04
