@@ -22,7 +22,7 @@ features/cookies.xml: 807c846e04
 features/http-auth.xml: 807c846e04
 features/persistent-connections.xml: 807c846e04
 features/remote-files.xml: 807c846e04
-install/ini.xml: 807c846e04
+install/ini.xml: 4d4623f372
 install/intro.xml: 807c846e04
 install/macos/index.xml: 807c846e04
 install/macos/packages.xml: 807c846e04
@@ -145,7 +145,7 @@ reference/array/book.xml: 807c846e04
 reference/array/constants.xml: 807c846e04
 reference/array/functions/array-change-key-case.xml: 807c846e04
 reference/array/functions/array-chunk.xml: 807c846e04
-reference/array/functions/array-fill.xml: 807c846e04
+reference/array/functions/array-fill.xml: ba7b7dff21
 reference/array/functions/array-intersect-uassoc.xml: 807c846e04
 reference/array/functions/array-intersect-ukey.xml: 807c846e04
 reference/array/functions/array-key-exists.xml: 807c846e04
@@ -155,9 +155,9 @@ reference/array/functions/array-merge-recursive.xml: 807c846e04
 reference/array/functions/array-multisort.xml: 807c846e04
 reference/array/functions/array-pop.xml: 807c846e04
 reference/array/functions/array-product.xml: 807c846e04
-reference/array/functions/array-rand.xml: 807c846e04
+reference/array/functions/array-rand.xml: 76ce54cf7a
 reference/array/functions/array-reverse.xml: 807c846e04
-reference/array/functions/array-slice.xml: 807c846e04
+reference/array/functions/array-slice.xml: 0a55709d92
 reference/array/functions/array-splice.xml: 807c846e04
 reference/array/functions/array-sum.xml: 807c846e04
 reference/array/functions/array-unique.xml: 807c846e04
@@ -569,7 +569,7 @@ reference/ftp/functions/ftp-rmdir.xml: 807c846e04
 reference/ftp/functions/ftp-set-option.xml: 807c846e04
 reference/ftp/functions/ftp-site.xml: 807c846e04
 reference/ftp/functions/ftp-size.xml: 807c846e04
-reference/ftp/functions/ftp-ssl-connect.xml: 807c846e04
+reference/ftp/functions/ftp-ssl-connect.xml: 8f77d5bd03
 reference/ftp/functions/ftp-systype.xml: 807c846e04
 reference/ftp/reference.xml: 807c846e04
 reference/ftp/setup.xml: 807c846e04
@@ -678,7 +678,7 @@ reference/info/functions/getmypid.xml: 807c846e04
 reference/info/functions/getmyuid.xml: 807c846e04
 reference/info/functions/php-logo-guid.xml: 807c846e04
 reference/info/functions/php-sapi-name.xml: 807c846e04
-reference/info/functions/phpinfo.xml: 807c846e04
+reference/info/functions/phpinfo.xml: 943fdd1ef4
 reference/info/functions/zend-logo-guid.xml: 807c846e04
 reference/info/functions/zend-thread-id.xml: 807c846e04
 reference/info/functions/zend-version.xml: 807c846e04
