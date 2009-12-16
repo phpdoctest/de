@@ -1267,7 +1267,7 @@ reference/posix/functions/posix-getgrgid.xml: 807c846e04
 reference/posix/functions/posix-getgrnam.xml: 807c846e04
 reference/posix/functions/posix-getgroups.xml: 807c846e04
 reference/posix/functions/posix-getlogin.xml: 807c846e04
-reference/posix/functions/posix-getpgid.xml: 807c846e04
+reference/posix/functions/posix-getpgid.xml: 9fccae80b3
 reference/posix/functions/posix-getpgrp.xml: 807c846e04
 reference/posix/functions/posix-getpid.xml: 807c846e04
 reference/posix/functions/posix-getppid.xml: 807c846e04
