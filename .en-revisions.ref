@@ -1087,11 +1087,11 @@ reference/pcre/examples.xml: 807c846e04
 reference/pcre/functions/preg-filter.xml: 70d52edee7
 reference/pcre/functions/preg-grep.xml: 807c846e04
 reference/pcre/functions/preg-last-error.xml: 807c846e04
-reference/pcre/functions/preg-match-all.xml: 731d1b752d
-reference/pcre/functions/preg-match.xml: 731d1b752d
+reference/pcre/functions/preg-match-all.xml: 40a24c9d01
+reference/pcre/functions/preg-match.xml: 40a24c9d01
 reference/pcre/functions/preg-quote.xml: 807c846e04
 reference/pcre/functions/preg-replace-callback.xml: 1a17599efd
-reference/pcre/functions/preg-replace.xml: 807c846e04
+reference/pcre/functions/preg-replace.xml: 3607be14cb
 reference/pcre/functions/preg-split.xml: 807c846e04
 reference/pcre/ini.xml: 807c846e04
 reference/pcre/pattern.modifiers.xml: 807c846e04
