@@ -1573,6 +1573,9 @@ reference/sqlite/setup.xml: 807c846e04
 reference/sqlite3/book.xml: 807c846e04
 reference/sqlite3/configure.xml: 807c846e04
 reference/sqlite3/constants.xml: 807c846e04
+reference/sqlite3/ini.xml: 610d66bc32
+reference/sqlite3/setup.xml: 807c846e04
+reference/sqlite3/sqlite3.xml: 961c2937af
 reference/strings/book.xml: 807c846e04
 reference/strings/charsets.xml: 807c846e04
 reference/strings/constants.xml: 807c846e04
