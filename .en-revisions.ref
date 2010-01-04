@@ -517,7 +517,17 @@ reference/filesystem/functions/fclose.xml: 807c846e04
 reference/filesystem/functions/fflush.xml: 807c846e04
 reference/filesystem/functions/fgetss.xml: 55a33aa906
 reference/filesystem/functions/filegroup.xml: 807c846e04
+reference/filesystem/functions/fstat.xml: 807c846e04
 reference/filesystem/functions/glob.xml: 807c846e04
+reference/filesystem/functions/lstat.xml: 807c846e04
+reference/filesystem/functions/mkdir.xml: 807c846e04
+reference/filesystem/functions/stat.xml: 7e3b35d586
+reference/filesystem/functions/symlink.xml: 7e3b35d586
+reference/filesystem/functions/tempnam.xml: d71cf0d5e4
+reference/filesystem/functions/tmpfile.xml: 248824e909
+reference/filesystem/functions/touch.xml: f096588c3b
+reference/filesystem/functions/umask.xml: 807c846e04
+reference/filesystem/functions/unlink.xml: 807c846e04
 reference/filesystem/ini.xml: 807c846e04
 reference/filesystem/reference.xml: 807c846e04
 reference/filesystem/setup.xml: 807c846e04
