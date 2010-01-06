@@ -519,6 +519,16 @@ reference/filesystem/functions/fgetss.xml: 55a33aa906
 reference/filesystem/functions/filegroup.xml: 807c846e04
 reference/filesystem/functions/fstat.xml: 807c846e04
 reference/filesystem/functions/glob.xml: 807c846e04
+reference/filesystem/functions/is-dir.xml: 807c846e04
+reference/filesystem/functions/is-executable.xml: 807c846e04
+reference/filesystem/functions/is-file.xml: 807c846e04
+reference/filesystem/functions/is-link.xml: 35dd5c3e8e
+reference/filesystem/functions/is-readable.xml: a81f604928
+reference/filesystem/functions/is-uploaded-file.xml: 807c846e04
+reference/filesystem/functions/is-writable.xml: 807c846e04
+reference/filesystem/functions/is-writeable.xml: 807c846e04
+reference/filesystem/functions/link.xml: 59ad77088e
+reference/filesystem/functions/linkinfo.xml: 807c846e04
 reference/filesystem/functions/lstat.xml: 807c846e04
 reference/filesystem/functions/mkdir.xml: 807c846e04
 reference/filesystem/functions/stat.xml: 7e3b35d586
