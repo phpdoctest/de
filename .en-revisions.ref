@@ -1759,10 +1759,10 @@ reference/var/functions/is-string.xml: 807c846e04
 reference/var/functions/is-unicode.xml: 807c846e04
 reference/var/functions/isset.xml: 807c846e04
 reference/var/functions/print-r.xml: 807c846e04
-reference/var/functions/serialize.xml: 807c846e04
+reference/var/functions/serialize.xml: 81f5b39e67
 reference/var/functions/settype.xml: 807c846e04
 reference/var/functions/strval.xml: 51525b2fe2
-reference/var/functions/unserialize.xml: 807c846e04
+reference/var/functions/unserialize.xml: 81f5b39e67
 reference/var/functions/unset.xml: 807c846e04
 reference/var/functions/var-dump.xml: 807c846e04
 reference/var/ini.xml: 807c846e04
