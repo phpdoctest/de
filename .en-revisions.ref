@@ -1514,9 +1514,9 @@ reference/soap/soapclient/getlastresponseheaders.xml: 807c846e04
 reference/soap/soapclient/gettypes.xml: 807c846e04
 reference/soap/soapclient/setcookie.xml: 807c846e04
 reference/soap/soapclient/setlocation.xml: 807c846e04
-reference/soap/soapclient/setsoapheaders.xml: 807c846e04
+reference/soap/soapclient/setsoapheaders.xml: 3e70d8b3f8
 reference/soap/soapclient/soapcall.xml: 807c846e04
-reference/soap/soapclient/soapclient.xml: 887b9a15a5
+reference/soap/soapclient/soapclient.xml: 04826ad04c
 reference/soap/soapvar/construct.xml: 807c846e04
 reference/soap/soapvar/soapvar.xml: 807c846e04
 reference/sockets/book.xml: 807c846e04
