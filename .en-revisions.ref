@@ -8,7 +8,7 @@ appendices/reserved.constants.standard.xml: 807c846e04
 appendices/resources.xml: 807c846e04
 appendices/transports.xml: 807c846e04
 appendices/userlandnaming.xml: 807c846e04
-bookinfo.xml: 8851c0ee09
+bookinfo.xml: 650e4f45fb
 chmonly/aboutchm.xml: bdfe0e3b8b
 chmonly/credits.xml: 807c846e04
 faq/build.xml: 439390642a
