@@ -1634,13 +1634,13 @@ reference/strings/functions/crypt.xml: 1b8952540b
 reference/strings/functions/echo.xml: d492ddc812
 reference/strings/functions/explode.xml: 807c846e04
 reference/strings/functions/fprintf.xml: 807c846e04
-reference/strings/functions/get-html-translation-table.xml: 807c846e04
+reference/strings/functions/get-html-translation-table.xml: 69b02e3ee5
 reference/strings/functions/hebrev.xml: 807c846e04
 reference/strings/functions/hebrevc.xml: 807c846e04
 reference/strings/functions/html-entity-decode.xml: 807c846e04
 reference/strings/functions/htmlentities.xml: 807c846e04
 reference/strings/functions/htmlspecialchars-decode.xml: 807c846e04
-reference/strings/functions/htmlspecialchars.xml: 807c846e04
+reference/strings/functions/htmlspecialchars.xml: 5ba560d0b7
 reference/strings/functions/implode.xml: 807c846e04
 reference/strings/functions/join.xml: 807c846e04
 reference/strings/functions/lcfirst.xml: 807c846e04
@@ -1658,7 +1658,7 @@ reference/strings/functions/parse-str.xml: 807c846e04
 reference/strings/functions/print.xml: d492ddc812
 reference/strings/functions/printf.xml: 807c846e04
 reference/strings/functions/quoted-printable-decode.xml: 807c846e04
-reference/strings/functions/quotemeta.xml: 807c846e04
+reference/strings/functions/quotemeta.xml: 7c1cbe1a9e
 reference/strings/functions/rtrim.xml: 807c846e04
 reference/strings/functions/setlocale.xml: bf54ce4c56
 reference/strings/functions/sha1-file.xml: 76ce54cf7a
