@@ -1667,9 +1667,9 @@ reference/strings/functions/similar-text.xml: 807c846e04
 reference/strings/functions/soundex.xml: 807c846e04
 reference/strings/functions/sprintf.xml: 807c846e04
 reference/strings/functions/sscanf.xml: 807c846e04
-reference/strings/functions/str-getcsv.xml: 807c846e04
+reference/strings/functions/str-getcsv.xml: 76ce54cf7a
 reference/strings/functions/str-ireplace.xml: 807c846e04
-reference/strings/functions/str-pad.xml: 807c846e04
+reference/strings/functions/str-pad.xml: 50cea444fb
 reference/strings/functions/str-repeat.xml: 807c846e04
 reference/strings/functions/str-replace.xml: 807c846e04
 reference/strings/functions/str-rot13.xml: 807c846e04
@@ -1681,7 +1681,7 @@ reference/strings/functions/strchr.xml: 807c846e04
 reference/strings/functions/strcmp.xml: 807c846e04
 reference/strings/functions/strcoll.xml: 807c846e04
 reference/strings/functions/strcspn.xml: 807c846e04
-reference/strings/functions/strip-tags.xml: 807c846e04
+reference/strings/functions/strip-tags.xml: 52b6874628
 reference/strings/functions/stripcslashes.xml: 807c846e04
 reference/strings/functions/stripos.xml: 807c846e04
 reference/strings/functions/stripslashes.xml: 807c846e04
@@ -1692,7 +1692,7 @@ reference/strings/functions/strnatcmp.xml: 807c846e04
 reference/strings/functions/strncasecmp.xml: 807c846e04
 reference/strings/functions/strncmp.xml: 807c846e04
 reference/strings/functions/strpbrk.xml: 807c846e04
-reference/strings/functions/strpos.xml: 807c846e04
+reference/strings/functions/strpos.xml: fea9eaa8b8
 reference/strings/functions/strrchr.xml: 807c846e04
 reference/strings/functions/strrev.xml: 807c846e04
 reference/strings/functions/strripos.xml: 807c846e04
@@ -1702,11 +1702,11 @@ reference/strings/functions/strstr.xml: dec2813b2a
 reference/strings/functions/strtok.xml: 807c846e04
 reference/strings/functions/strtolower.xml: 807c846e04
 reference/strings/functions/strtoupper.xml: 807c846e04
-reference/strings/functions/strtr.xml: 807c846e04
-reference/strings/functions/substr-compare.xml: 807c846e04
+reference/strings/functions/strtr.xml: 650e4f45fb
+reference/strings/functions/substr-compare.xml: 6c74cc066c
 reference/strings/functions/substr-count.xml: 807c846e04
 reference/strings/functions/substr-replace.xml: 807c846e04
-reference/strings/functions/substr.xml: b291a75b0e
+reference/strings/functions/substr.xml: 23e88a615e
 reference/strings/functions/trim.xml: 807c846e04
 reference/strings/functions/ucfirst.xml: 807c846e04
 reference/strings/functions/ucwords.xml: 807c846e04
