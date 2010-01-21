@@ -619,7 +619,7 @@ reference/gettext/functions/dcgettext.xml: 807c846e04
 reference/gettext/functions/dcngettext.xml: 807c846e04
 reference/gettext/functions/dgettext.xml: 807c846e04
 reference/gettext/functions/dngettext.xml: 807c846e04
-reference/gettext/functions/gettext.xml: 4df1611f6c
+reference/gettext/functions/gettext.xml: 21fed01499
 reference/gettext/functions/ngettext.xml: 807c846e04
 reference/gettext/functions/textdomain.xml: 807c846e04
 reference/gettext/reference.xml: 807c846e04
