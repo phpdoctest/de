@@ -328,7 +328,7 @@ reference/datetime/functions/date-timestamp-get.xml: 807c846e04
 reference/datetime/functions/date-timestamp-set.xml: 807c846e04
 reference/datetime/functions/date-timezone-get.xml: 807c846e04
 reference/datetime/functions/date-timezone-set.xml: 807c846e04
-reference/datetime/functions/getdate.xml: 807c846e04
+reference/datetime/functions/getdate.xml: 6209b0809f
 reference/datetime/functions/gettimeofday.xml: 807c846e04
 reference/datetime/functions/gmdate.xml: 807c846e04
 reference/datetime/functions/gmmktime.xml: 807c846e04
