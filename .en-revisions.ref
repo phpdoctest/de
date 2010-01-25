@@ -336,7 +336,7 @@ reference/datetime/functions/gmstrftime.xml: 807c846e04
 reference/datetime/functions/localtime.xml: 807c846e04
 reference/datetime/functions/microtime.xml: 807c846e04
 reference/datetime/functions/mktime.xml: 807c846e04
-reference/datetime/functions/strtotime.xml: d764aedcc8
+reference/datetime/functions/strtotime.xml: e1fe8f6aec
 reference/datetime/functions/time.xml: 807c846e04
 reference/datetime/functions/timezone-abbreviations-list.xml: 807c846e04
 reference/datetime/functions/timezone-identifiers-list.xml: 807c846e04
