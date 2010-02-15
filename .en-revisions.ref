@@ -56,7 +56,7 @@ language/exceptions.xml: 3f0437f93b
 language/expressions.xml: 807c846e04
 language/oop5.xml: 3f0437f93b
 language/oop5/abstract.xml: 807c846e04
-language/oop5/basic.xml: 5acab58ca4
+language/oop5/basic.xml: e126003451
 language/oop5/constants.xml: 3f0437f93b
 language/oop5/decon.xml: 807c846e04
 language/oop5/final.xml: 807c846e04
@@ -526,7 +526,7 @@ reference/filesystem/functions/fgetss.xml: 55a33aa906
 reference/filesystem/functions/filegroup.xml: 807c846e04
 reference/filesystem/functions/fstat.xml: 807c846e04
 reference/filesystem/functions/glob.xml: 807c846e04
-reference/filesystem/functions/is-dir.xml: 807c846e04
+reference/filesystem/functions/is-dir.xml: 3475faa9e7
 reference/filesystem/functions/is-executable.xml: 807c846e04
 reference/filesystem/functions/is-file.xml: 807c846e04
 reference/filesystem/functions/is-link.xml: 35dd5c3e8e
