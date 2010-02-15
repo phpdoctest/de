@@ -538,6 +538,7 @@ reference/filesystem/functions/link.xml: 59ad77088e
 reference/filesystem/functions/linkinfo.xml: 807c846e04
 reference/filesystem/functions/lstat.xml: 807c846e04
 reference/filesystem/functions/mkdir.xml: 807c846e04
+reference/filesystem/functions/pathinfo.xml: 807c846e04
 reference/filesystem/functions/stat.xml: 2922bed57c
 reference/filesystem/functions/symlink.xml: 7e3b35d586
 reference/filesystem/functions/tempnam.xml: d71cf0d5e4
