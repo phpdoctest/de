@@ -15,7 +15,7 @@ faq/build.xml: 439390642a
 faq/databases.xml: 807c846e04
 faq/general.xml: dfd305d149
 faq/html.xml: 807c846e04
-faq/installation.xml: e0c08051a0
+faq/installation.xml: 853bde81a1
 faq/mailinglist.xml: 807c846e04
 faq/misc.xml: 807c846e04
 faq/obtaining.xml: dfd305d149
@@ -349,7 +349,7 @@ reference/datetime/functions/timezone-transitions-get.xml: 807c846e04
 reference/datetime/ini.xml: 807c846e04
 reference/datetime/reference.xml: 807c846e04
 reference/datetime/setup.xml: 807c846e04
-reference/dba/book.xml: 807c846e04
+reference/dba/book.xml: 5fd246cce4
 reference/dba/configure.xml: 807c846e04
 reference/dba/constants.xml: 807c846e04
 reference/dba/examples.xml: 807c846e04
@@ -1154,7 +1154,7 @@ reference/pcre/functions/preg-match.xml: 40a24c9d01
 reference/pcre/functions/preg-quote.xml: 807c846e04
 reference/pcre/functions/preg-replace-callback.xml: 1a17599efd
 reference/pcre/functions/preg-replace.xml: 3607be14cb
-reference/pcre/functions/preg-split.xml: 807c846e04
+reference/pcre/functions/preg-split.xml: 52b6874628
 reference/pcre/ini.xml: 807c846e04
 reference/pcre/pattern.modifiers.xml: 807c846e04
 reference/pcre/pattern.xml: 807c846e04
@@ -1457,17 +1457,17 @@ reference/session/functions/session-get-cookie-params.xml: 807c846e04
 reference/session/functions/session-id.xml: 807c846e04
 reference/session/functions/session-is-registered.xml: 807c846e04
 reference/session/functions/session-module-name.xml: 807c846e04
-reference/session/functions/session-name.xml: 807c846e04
+reference/session/functions/session-name.xml: afd7aa5ef9
 reference/session/functions/session-regenerate-id.xml: 76ce54cf7a
 reference/session/functions/session-register.xml: 807c846e04
 reference/session/functions/session-save-path.xml: 807c846e04
 reference/session/functions/session-set-cookie-params.xml: 807c846e04
 reference/session/functions/session-set-save-handler.xml: 807c846e04
-reference/session/functions/session-start.xml: 807c846e04
+reference/session/functions/session-start.xml: a7ed642fe1
 reference/session/functions/session-unregister.xml: 807c846e04
 reference/session/functions/session-unset.xml: 807c846e04
 reference/session/functions/session-write-close.xml: 807c846e04
-reference/session/ini.xml: c1421358b1
+reference/session/ini.xml: b02cf9c835
 reference/session/reference.xml: 807c846e04
 reference/session/security.xml: 807c846e04
 reference/session/setup.xml: 807c846e04
