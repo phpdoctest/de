@@ -1770,7 +1770,7 @@ reference/var/functions/is-scalar.xml: 807c846e04
 reference/var/functions/is-string.xml: 807c846e04
 reference/var/functions/is-unicode.xml: 807c846e04
 reference/var/functions/isset.xml: 807c846e04
-reference/var/functions/print-r.xml: 807c846e04
+reference/var/functions/print-r.xml: f69cab48e0
 reference/var/functions/serialize.xml: 81f5b39e67
 reference/var/functions/settype.xml: 807c846e04
 reference/var/functions/strval.xml: fac04f0228
