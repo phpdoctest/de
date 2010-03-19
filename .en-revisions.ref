@@ -1754,7 +1754,7 @@ reference/var/functions/gettype.xml: 807c846e04
 reference/var/functions/intval.xml: 807c846e04
 reference/var/functions/is-array.xml: 807c846e04
 reference/var/functions/is-binary.xml: 807c846e04
-reference/var/functions/is-bool.xml: 807c846e04
+reference/var/functions/is-bool.xml: f63049f550
 reference/var/functions/is-buffer.xml: 807c846e04
 reference/var/functions/is-double.xml: 807c846e04
 reference/var/functions/is-float.xml: 807c846e04
@@ -1762,8 +1762,8 @@ reference/var/functions/is-int.xml: 807c846e04
 reference/var/functions/is-integer.xml: 807c846e04
 reference/var/functions/is-long.xml: 807c846e04
 reference/var/functions/is-null.xml: 807c846e04
-reference/var/functions/is-numeric.xml: 807c846e04
-reference/var/functions/is-object.xml: 807c846e04
+reference/var/functions/is-numeric.xml: 2c9b216a1f
+reference/var/functions/is-object.xml: fac04f0228
 reference/var/functions/is-real.xml: 807c846e04
 reference/var/functions/is-resource.xml: 807c846e04
 reference/var/functions/is-scalar.xml: 807c846e04
@@ -1773,9 +1773,9 @@ reference/var/functions/isset.xml: 807c846e04
 reference/var/functions/print-r.xml: 807c846e04
 reference/var/functions/serialize.xml: 81f5b39e67
 reference/var/functions/settype.xml: 807c846e04
-reference/var/functions/strval.xml: 51525b2fe2
+reference/var/functions/strval.xml: fac04f0228
 reference/var/functions/unserialize.xml: 81f5b39e67
-reference/var/functions/unset.xml: 807c846e04
+reference/var/functions/unset.xml: 52b6874628
 reference/var/functions/var-dump.xml: 807c846e04
 reference/var/ini.xml: 807c846e04
 reference/var/reference.xml: 807c846e04
