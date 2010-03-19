@@ -1740,7 +1740,7 @@ reference/url/functions/http-build-query.xml: 807c846e04
 reference/url/functions/parse-url.xml: 29c538bf29
 reference/url/functions/rawurldecode.xml: 807c846e04
 reference/url/functions/rawurlencode.xml: 807c846e04
-reference/url/functions/urldecode.xml: 807c846e04
+reference/url/functions/urldecode.xml: 87366a2fcb
 reference/url/functions/urlencode.xml: 807c846e04
 reference/url/reference.xml: 807c846e04
 reference/url/setup.xml: 807c846e04
