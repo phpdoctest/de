@@ -15,7 +15,7 @@ faq/build.xml: 439390642a
 faq/databases.xml: 807c846e04
 faq/general.xml: dfd305d149
 faq/html.xml: 807c846e04
-faq/installation.xml: 853bde81a1
+faq/installation.xml: 485b144437
 faq/mailinglist.xml: 807c846e04
 faq/misc.xml: 807c846e04
 faq/obtaining.xml: dfd305d149
