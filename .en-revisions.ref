@@ -1621,7 +1621,7 @@ reference/strings/book.xml: 807c846e04
 reference/strings/charsets.xml: 807c846e04
 reference/strings/constants.xml: 807c846e04
 reference/strings/functions/addcslashes.xml: 807c846e04
-reference/strings/functions/addslashes.xml: 807c846e04
+reference/strings/functions/addslashes.xml: ba03f46d83
 reference/strings/functions/bin2hex.xml: 807c846e04
 reference/strings/functions/chop.xml: 807c846e04
 reference/strings/functions/chr.xml: 807c846e04
@@ -1631,7 +1631,7 @@ reference/strings/functions/convert-uudecode.xml: 807c846e04
 reference/strings/functions/convert-uuencode.xml: 807c846e04
 reference/strings/functions/count-chars.xml: 76ce54cf7a
 reference/strings/functions/crc32.xml: 807c846e04
-reference/strings/functions/crypt.xml: 1b8952540b
+reference/strings/functions/crypt.xml: 2fefe1fcca
 reference/strings/functions/echo.xml: d492ddc812
 reference/strings/functions/explode.xml: 807c846e04
 reference/strings/functions/fprintf.xml: 807c846e04
@@ -1649,7 +1649,7 @@ reference/strings/functions/levenshtein.xml: 807c846e04
 reference/strings/functions/localeconv.xml: 807c846e04
 reference/strings/functions/ltrim.xml: 807c846e04
 reference/strings/functions/md5-file.xml: 76ce54cf7a
-reference/strings/functions/md5.xml: 76ce54cf7a
+reference/strings/functions/md5.xml: 5cf8b4562f
 reference/strings/functions/metaphone.xml: 807c846e04
 reference/strings/functions/nl-langinfo.xml: 807c846e04
 reference/strings/functions/nl2br.xml: 76ce54cf7a
