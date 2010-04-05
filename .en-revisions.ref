@@ -1763,7 +1763,7 @@ reference/var/functions/is-integer.xml: efdbd50709
 reference/var/functions/is-long.xml: efdbd50709
 reference/var/functions/is-null.xml: efdbd50709
 reference/var/functions/is-numeric.xml: efdbd50709
-reference/var/functions/is-object.xml: efdbd50709
+reference/var/functions/is-object.xml: cb8775d117
 reference/var/functions/is-real.xml: efdbd50709
 reference/var/functions/is-resource.xml: efdbd50709
 reference/var/functions/is-scalar.xml: efdbd50709
