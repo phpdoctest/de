@@ -1157,7 +1157,7 @@ reference/pcre/functions/preg-replace.xml: efdbd50709
 reference/pcre/functions/preg-split.xml: efdbd50709
 reference/pcre/ini.xml: efdbd50709
 reference/pcre/pattern.modifiers.xml: efdbd50709
-reference/pcre/pattern.xml: 807c846e04
+reference/pcre/pattern.xml: efdbd50709
 reference/pcre/reference.xml: efdbd50709
 reference/pcre/setup.xml: efdbd50709
 reference/pdf/book.xml: 807c846e04
