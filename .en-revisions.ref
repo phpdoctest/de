@@ -523,6 +523,8 @@ reference/filesystem/functions/delete.xml: 55a33aa906
 reference/filesystem/functions/fclose.xml: efdbd50709
 reference/filesystem/functions/fflush.xml: efdbd50709
 reference/filesystem/functions/fgetss.xml: 55a33aa906
+reference/filesystem/functions/file-get-contents.xml: efdbd50709
+reference/filesystem/functions/file.xml: efdbd50709
 reference/filesystem/functions/filegroup.xml: efdbd50709
 reference/filesystem/functions/fstat.xml: efdbd50709
 reference/filesystem/functions/glob.xml: efdbd50709
