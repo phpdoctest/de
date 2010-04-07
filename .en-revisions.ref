@@ -19,7 +19,7 @@ faq/installation.xml: efdbd50709
 faq/mailinglist.xml: efdbd50709
 faq/misc.xml: efdbd50709
 faq/obtaining.xml: efdbd50709
-faq/using.xml: efdbd50709
+faq/using.xml: 26e5c6e48d
 features/connection-handling.xml: efdbd50709
 features/cookies.xml: efdbd50709
 features/http-auth.xml: efdbd50709
@@ -166,7 +166,7 @@ reference/array/functions/array-reverse.xml: efdbd50709
 reference/array/functions/array-slice.xml: efdbd50709
 reference/array/functions/array-splice.xml: 16b8702ceb
 reference/array/functions/array-sum.xml: efdbd50709
-reference/array/functions/array-unique.xml: efdbd50709
+reference/array/functions/array-unique.xml: 26e5c6e48d
 reference/array/functions/array-walk.xml: efdbd50709
 reference/array/functions/arsort.xml: efdbd50709
 reference/array/functions/asort.xml: efdbd50709
@@ -517,14 +517,14 @@ reference/filepro/functions/filepro.xml: efdbd50709
 reference/filepro/reference.xml: efdbd50709
 reference/filepro/setup.xml: 807c846e04
 reference/filesystem/book.xml: 807c846e04
-reference/filesystem/constants.xml: 2316a80c8a
+reference/filesystem/constants.xml: 26e5c6e48d
 reference/filesystem/functions/chown.xml: 807c846e04
 reference/filesystem/functions/delete.xml: 55a33aa906
 reference/filesystem/functions/fclose.xml: efdbd50709
 reference/filesystem/functions/fflush.xml: efdbd50709
 reference/filesystem/functions/fgetss.xml: 55a33aa906
-reference/filesystem/functions/file-get-contents.xml: efdbd50709
-reference/filesystem/functions/file.xml: efdbd50709
+reference/filesystem/functions/file-get-contents.xml: 26e5c6e48d
+reference/filesystem/functions/file.xml: dc3610dfa3
 reference/filesystem/functions/filegroup.xml: efdbd50709
 reference/filesystem/functions/fstat.xml: efdbd50709
 reference/filesystem/functions/glob.xml: efdbd50709
