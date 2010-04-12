@@ -1,4 +1,5 @@
 appendices/aliases.xml: efdbd50709
+appendices/comparisons.xml: efdbd50709
 appendices/configure/index.xml: efdbd50709
 appendices/configure/misc.xml: efdbd50709
 appendices/configure/php.xml: efdbd50709
@@ -54,6 +55,7 @@ language/control-structures/require-once.xml: 807c846e04
 language/control-structures/require.xml: 807c846e04
 language/exceptions.xml: 3f0437f93b
 language/expressions.xml: efdbd50709
+language/namespaces.xml: 807c846e04
 language/oop5.xml: 3f0437f93b
 language/oop5/abstract.xml: efdbd50709
 language/oop5/basic.xml: efdbd50709
