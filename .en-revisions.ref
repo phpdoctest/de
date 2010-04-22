@@ -292,7 +292,7 @@ reference/ctype/reference.xml: efdbd50709
 reference/ctype/setup.xml: efdbd50709
 reference/curl/book.xml: 807c846e04
 reference/curl/configure.xml: efdbd50709
-reference/curl/constants.xml: 807c846e04
+reference/curl/constants.xml: efdbd50709
 reference/curl/examples.xml: 807c846e04
 reference/curl/functions/curl-close.xml: efdbd50709
 reference/curl/functions/curl-copy-handle.xml: 2316a80c8a
