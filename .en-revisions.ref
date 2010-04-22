@@ -296,7 +296,7 @@ reference/curl/constants.xml: efdbd50709
 reference/curl/examples.xml: 807c846e04
 reference/curl/functions/curl-close.xml: efdbd50709
 reference/curl/functions/curl-copy-handle.xml: 2316a80c8a
-reference/curl/functions/curl-errno.xml: 807c846e04
+reference/curl/functions/curl-errno.xml: efdbd50709
 reference/curl/functions/curl-error.xml: 807c846e04
 reference/curl/functions/curl-exec.xml: efdbd50709
 reference/curl/functions/curl-init.xml: efdbd50709
