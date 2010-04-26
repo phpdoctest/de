@@ -58,7 +58,7 @@ language/expressions.xml: efdbd50709
 language/namespaces.xml: 807c846e04
 language/oop5.xml: 3f0437f93b
 language/oop5/abstract.xml: efdbd50709
-language/oop5/basic.xml: efdbd50709
+language/oop5/basic.xml: 1185e1aaa3
 language/oop5/constants.xml: 3f0437f93b
 language/oop5/decon.xml: 807c846e04
 language/oop5/final.xml: efdbd50709
@@ -553,7 +553,7 @@ reference/filesystem/functions/tempnam.xml: efdbd50709
 reference/filesystem/functions/tmpfile.xml: efdbd50709
 reference/filesystem/functions/touch.xml: efdbd50709
 reference/filesystem/functions/umask.xml: efdbd50709
-reference/filesystem/functions/unlink.xml: efdbd50709
+reference/filesystem/functions/unlink.xml: baa3688115
 reference/filesystem/ini.xml: efdbd50709
 reference/filesystem/reference.xml: efdbd50709
 reference/filesystem/setup.xml: 807c846e04
@@ -720,7 +720,7 @@ reference/info/functions/getmypid.xml: efdbd50709
 reference/info/functions/getmyuid.xml: efdbd50709
 reference/info/functions/php-logo-guid.xml: efdbd50709
 reference/info/functions/php-sapi-name.xml: efdbd50709
-reference/info/functions/phpinfo.xml: efdbd50709
+reference/info/functions/phpinfo.xml: adf85cb0ea
 reference/info/functions/zend-logo-guid.xml: efdbd50709
 reference/info/functions/zend-thread-id.xml: efdbd50709
 reference/info/functions/zend-version.xml: efdbd50709
