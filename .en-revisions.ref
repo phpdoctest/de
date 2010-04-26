@@ -153,6 +153,7 @@ reference/array/book.xml: efdbd50709
 reference/array/constants.xml: efdbd50709
 reference/array/functions/array-change-key-case.xml: efdbd50709
 reference/array/functions/array-chunk.xml: efdbd50709
+reference/array/functions/array-fill-keys.xml: efdbd50709
 reference/array/functions/array-fill.xml: efdbd50709
 reference/array/functions/array-intersect-uassoc.xml: efdbd50709
 reference/array/functions/array-intersect-ukey.xml: efdbd50709
