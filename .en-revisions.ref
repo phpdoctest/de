@@ -1742,6 +1742,7 @@ reference/tokenizer/functions/token-name.xml: efdbd50709
 reference/tokenizer/setup.xml: efdbd50709
 reference/uodbc/book.xml: 807c846e04
 reference/uodbc/constants.xml: efdbd50709
+reference/uodbc/functions/odbc-fetch-into.xml: efdbd50709
 reference/uodbc/reference.xml: efdbd50709
 reference/uodbc/setup.xml: 807c846e04
 reference/url/book.xml: efdbd50709
