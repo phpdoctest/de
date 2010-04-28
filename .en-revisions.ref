@@ -26,6 +26,8 @@ features/cookies.xml: efdbd50709
 features/http-auth.xml: efdbd50709
 features/persistent-connections.xml: efdbd50709
 features/remote-files.xml: efdbd50709
+features/sessions.xml: efdbd50709
+features/xforms.xml: efdbd50709
 install/ini.xml: efdbd50709
 install/intro.xml: efdbd50709
 install/macos/bundled.xml: efdbd50709
