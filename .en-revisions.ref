@@ -1545,6 +1545,8 @@ reference/soap/soapclient/setlocation.xml: 807c846e04
 reference/soap/soapclient/setsoapheaders.xml: 3e70d8b3f8
 reference/soap/soapclient/soapcall.xml: 807c846e04
 reference/soap/soapclient/soapclient.xml: 04826ad04c
+reference/soap/soapfault/construct.xml: 807c846e04
+reference/soap/soapserver/fault.xml: 807c846e04
 reference/soap/soapvar/construct.xml: 807c846e04
 reference/soap/soapvar/soapvar.xml: 807c846e04
 reference/sockets/book.xml: 807c846e04
