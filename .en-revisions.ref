@@ -155,6 +155,9 @@ reference/array/book.xml: efdbd50709
 reference/array/constants.xml: efdbd50709
 reference/array/functions/array-change-key-case.xml: efdbd50709
 reference/array/functions/array-chunk.xml: efdbd50709
+reference/array/functions/array-combine.xml: efdbd50709
+reference/array/functions/array-count-values.xml: efdbd50709
+reference/array/functions/array-diff-assoc.xml: efdbd50709
 reference/array/functions/array-fill-keys.xml: efdbd50709
 reference/array/functions/array-fill.xml: efdbd50709
 reference/array/functions/array-intersect-key.xml: efdbd50709
