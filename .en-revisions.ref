@@ -1911,7 +1911,7 @@ reference/zlib/functions/zlib-get-coding-type.xml: efdbd50709
 reference/zlib/ini.xml: efdbd50709
 reference/zlib/reference.xml: efdbd50709
 reference/zlib/setup.xml: 807c846e04
-security/apache.xml: efdbd50709
+security/apache.xml: 9a060a5958
 security/cgi-bin.xml: efdbd50709
 security/current.xml: efdbd50709
 security/database.xml: efdbd50709
@@ -1919,6 +1919,6 @@ security/errors.xml: efdbd50709
 security/filesystem.xml: efdbd50709
 security/general.xml: efdbd50709
 security/globals.xml: efdbd50709
-security/hiding.xml: efdbd50709
+security/hiding.xml: 9a060a5958
 security/intro.xml: efdbd50709
 security/variables.xml: efdbd50709
