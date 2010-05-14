@@ -1411,7 +1411,7 @@ reference/pspell/functions/pspell-suggest.xml: efdbd50709
 reference/pspell/reference.xml: efdbd50709
 reference/pspell/setup.xml: 807c846e04
 reference/readline/book.xml: 807c846e04
-reference/readline/configure.xml: efdbd50709
+reference/readline/configure.xml: e216729a48
 reference/readline/constants.xml: 807c846e04
 reference/readline/functions/readline-add-history.xml: efdbd50709
 reference/readline/functions/readline-callback-handler-install.xml: efdbd50709
