@@ -181,6 +181,7 @@ reference/array/functions/array-splice.xml: 16b8702ceb
 reference/array/functions/array-sum.xml: efdbd50709
 reference/array/functions/array-unique.xml: 26e5c6e48d
 reference/array/functions/array-walk.xml: efdbd50709
+reference/array/functions/array.xml: efdbd50709
 reference/array/functions/arsort.xml: efdbd50709
 reference/array/functions/asort.xml: efdbd50709
 reference/array/functions/each.xml: efdbd50709
