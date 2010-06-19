@@ -64,7 +64,7 @@ language/namespaces.xml: 807c846e04
 language/oop5.xml: 3f0437f93b
 language/oop5/abstract.xml: efdbd50709
 language/oop5/basic.xml: 1185e1aaa3
-language/oop5/changelog.xml: d3db24b295
+language/oop5/changelog.xml: e0ced6f8f0
 language/oop5/constants.xml: 3f0437f93b
 language/oop5/decon.xml: 807c846e04
 language/oop5/final.xml: efdbd50709
