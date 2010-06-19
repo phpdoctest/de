@@ -73,6 +73,7 @@ language/oop5/interfaces.xml: 3f0437f93b
 language/oop5/late-static-bindings.xml: 807c846e04
 language/oop5/magic.xml: 807c846e04
 language/oop5/object-comparison.xml: efdbd50709
+language/oop5/overloading.xml: 0df8926161
 language/oop5/paamayim-nekudotayim.xml: 3f0437f93b
 language/oop5/patterns.xml: efdbd50709
 language/oop5/properties.xml: efdbd50709
