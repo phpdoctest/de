@@ -1021,6 +1021,7 @@ reference/mysql/book.xml: 807c846e04
 reference/mysql/examples.xml: efdbd50709
 reference/mysql/functions/mysql-change-user.xml: 807c846e04
 reference/mysql/functions/mysql-fetch-field.xml: efdbd50709
+reference/mysql/functions/mysql-fetch-object.xml: efdbd50709
 reference/mysql/functions/mysql-ping.xml: efdbd50709
 reference/mysql/functions/mysql-real-escape-string.xml: efdbd50709
 reference/mysql/functions/mysql-select-db.xml: efdbd50709
