@@ -75,12 +75,12 @@ language/oop5/magic.xml: 807c846e04
 language/oop5/object-comparison.xml: efdbd50709
 language/oop5/overloading.xml: 0df8926161
 language/oop5/paamayim-nekudotayim.xml: 3f0437f93b
-language/oop5/patterns.xml: efdbd50709
+language/oop5/patterns.xml: 05365a0581
 language/oop5/properties.xml: efdbd50709
 language/oop5/serialization.xml: 26e5c6e48d
 language/oop5/static.xml: 3f0437f93b
 language/oop5/typehinting.xml: efdbd50709
-language/oop5/visibility.xml: efdbd50709
+language/oop5/visibility.xml: 59b9183f68
 language/predefined/arrayaccess.xml: 961c2937af
 language/predefined/arrayaccess/offsetexists.xml: f262d5e396
 language/predefined/arrayaccess/offsetget.xml: f262d5e396
@@ -579,7 +579,7 @@ reference/filesystem/functions/tempnam.xml: efdbd50709
 reference/filesystem/functions/tmpfile.xml: efdbd50709
 reference/filesystem/functions/touch.xml: efdbd50709
 reference/filesystem/functions/umask.xml: efdbd50709
-reference/filesystem/functions/unlink.xml: baa3688115
+reference/filesystem/functions/unlink.xml: 079bda6961
 reference/filesystem/ini.xml: efdbd50709
 reference/filesystem/reference.xml: efdbd50709
 reference/filesystem/setup.xml: 807c846e04
