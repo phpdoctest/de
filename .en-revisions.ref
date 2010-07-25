@@ -89,9 +89,9 @@ language/predefined/arrayaccess/offsetunset.xml: f262d5e396
 language/predefined/errorexception.xml: 961c2937af
 language/predefined/errorexception/construct.xml: 807c846e04
 language/predefined/errorexception/getseverity.xml: 807c846e04
-language/predefined/exception.xml: 961c2937af
+language/predefined/exception.xml: a570fdecc3
 language/predefined/exception/clone.xml: 807c846e04
-language/predefined/exception/construct.xml: 807c846e04
+language/predefined/exception/construct.xml: edd2392da9
 language/predefined/exception/getcode.xml: 807c846e04
 language/predefined/exception/getfile.xml: 807c846e04
 language/predefined/exception/getline.xml: 807c846e04
@@ -103,7 +103,7 @@ language/predefined/exceptions.xml: 807c846e04
 language/predefined/interfaces.xml: 807c846e04
 language/predefined/iterator.xml: 961c2937af
 language/predefined/iterator/current.xml: 807c846e04
-language/predefined/iterator/key.xml: 807c846e04
+language/predefined/iterator/key.xml: 3d6ce03d23
 language/predefined/iterator/next.xml: 807c846e04
 language/predefined/iterator/rewind.xml: 807c846e04
 language/predefined/iterator/valid.xml: 807c846e04
@@ -119,7 +119,7 @@ language/predefined/variables/argv.xml: 807c846e04
 language/predefined/variables/cookie.xml: 807c846e04
 language/predefined/variables/env.xml: 807c846e04
 language/predefined/variables/files.xml: 807c846e04
-language/predefined/variables/get.xml: 807c846e04
+language/predefined/variables/get.xml: 87366a2fcb
 language/predefined/variables/globals.xml: 807c846e04
 language/predefined/variables/httprawpostdata.xml: 807c846e04
 language/predefined/variables/httpresponseheader.xml: 807c846e04
@@ -367,7 +367,7 @@ reference/datetime/functions/gmstrftime.xml: efdbd50709
 reference/datetime/functions/localtime.xml: efdbd50709
 reference/datetime/functions/microtime.xml: efdbd50709
 reference/datetime/functions/mktime.xml: efdbd50709
-reference/datetime/functions/strtotime.xml: e1fe8f6aec
+reference/datetime/functions/strtotime.xml: 2ad483cd83
 reference/datetime/functions/time.xml: efdbd50709
 reference/datetime/functions/timezone-abbreviations-list.xml: efdbd50709
 reference/datetime/functions/timezone-identifiers-list.xml: efdbd50709
@@ -375,7 +375,7 @@ reference/datetime/functions/timezone-location-get.xml: 807c846e04
 reference/datetime/functions/timezone-name-from-abbr.xml: efdbd50709
 reference/datetime/functions/timezone-name-get.xml: efdbd50709
 reference/datetime/functions/timezone-offset-get.xml: efdbd50709
-reference/datetime/functions/timezone-open.xml: efdbd50709
+reference/datetime/functions/timezone-open.xml: a64304c60e
 reference/datetime/functions/timezone-transitions-get.xml: efdbd50709
 reference/datetime/ini.xml: efdbd50709
 reference/datetime/reference.xml: efdbd50709
