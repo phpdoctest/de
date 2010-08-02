@@ -1845,6 +1845,13 @@ reference/xmlreader/book.xml: 807c846e04
 reference/xmlreader/setup.xml: 807c846e04
 reference/xmlwriter/book.xml: 807c846e04
 reference/xmlwriter/constants.xml: 807c846e04
+reference/xmlwriter/functions/xmlwriter-end-attribute.xml: efdbd50709
+reference/xmlwriter/functions/xmlwriter-end-cdata.xml: efdbd50709
+reference/xmlwriter/functions/xmlwriter-end-comment.xml: efdbd50709
+reference/xmlwriter/functions/xmlwriter-end-document.xml: efdbd50709
+reference/xmlwriter/functions/xmlwriter-end-dtd-attlist.xml: efdbd50709
+reference/xmlwriter/functions/xmlwriter-end-dtd-element.xml: efdbd50709
+reference/xmlwriter/functions/xmlwriter-end-dtd-entity.xml: efdbd50709
 reference/xmlwriter/functions/xmlwriter-open-memory.xml: efdbd50709
 reference/xmlwriter/reference.xml: efdbd50709
 reference/xmlwriter/setup.xml: dbd2dd039b
