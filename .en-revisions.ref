@@ -1845,6 +1845,7 @@ reference/xmlreader/setup.xml: 807c846e04
 reference/xmlwriter/book.xml: 807c846e04
 reference/xmlwriter/constants.xml: 807c846e04
 reference/xmlwriter/functions/xmlwriter-open-memory.xml: efdbd50709
+reference/xmlwriter/reference.xml: efdbd50709
 reference/xsl/book.xml: 807c846e04
 reference/xsl/configure.xml: efdbd50709
 reference/xsl/constants.xml: efdbd50709
