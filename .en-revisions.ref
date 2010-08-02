@@ -1854,7 +1854,7 @@ reference/xsl/xsltprocessor.xml: 961c2937af
 reference/xsl/xsltprocessor/construct.xml: efdbd50709
 reference/xsl/xsltprocessor/getparameter.xml: efdbd50709
 reference/xsl/xsltprocessor/hasexsltsupport.xml: efdbd50709
-reference/xsl/xsltprocessor/importstylesheet.xml: 807c846e04
+reference/xsl/xsltprocessor/importstylesheet.xml: efdbd50709
 reference/xsl/xsltprocessor/registerphpfunctions.xml: efdbd50709
 reference/xsl/xsltprocessor/removeparameter.xml: efdbd50709
 reference/xsl/xsltprocessor/setparameter.xml: efdbd50709
