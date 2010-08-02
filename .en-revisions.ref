@@ -1026,6 +1026,7 @@ reference/mysql/functions/mysql-ping.xml: efdbd50709
 reference/mysql/functions/mysql-real-escape-string.xml: efdbd50709
 reference/mysql/functions/mysql-select-db.xml: efdbd50709
 reference/mysql/functions/mysql-set-charset.xml: efdbd50709
+reference/mysql/functions/mysql-tablename.xml: 50bec0597f
 reference/mysql/reference.xml: efdbd50709
 reference/mysql/setup.xml: 807c846e04
 reference/mysqli/configure.xml: efdbd50709
