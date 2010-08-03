@@ -1927,7 +1927,7 @@ reference/zip/ziparchive/setcommentname.xml: efdbd50709
 reference/zip/ziparchive/statindex.xml: efdbd50709
 reference/zip/ziparchive/statname.xml: efdbd50709
 reference/zip/ziparchive/unchangeall.xml: 6ec7d5b87f
-reference/zip/ziparchive/unchangearchive.xml: efdbd50709
+reference/zip/ziparchive/unchangearchive.xml: b39c51d5b6
 reference/zip/ziparchive/unchangeindex.xml: dfcafa4cc2
 reference/zip/ziparchive/unchangename.xml: efdbd50709
 reference/zlib/book.xml: 807c846e04
