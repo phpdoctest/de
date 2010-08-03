@@ -1062,7 +1062,7 @@ reference/network/functions/socket-get-status.xml: efdbd50709
 reference/network/functions/socket-set-blocking.xml: efdbd50709
 reference/network/functions/socket-set-timeout.xml: efdbd50709
 reference/network/functions/syslog.xml: efdbd50709
-reference/network/ini.xml: efdbd50709
+reference/network/ini.xml: 26e5c6e48d
 reference/network/reference.xml: 807c846e04
 reference/network/setup.xml: 15110920fa
 reference/nis/book.xml: 807c846e04
