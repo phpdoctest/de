@@ -1886,7 +1886,7 @@ reference/xslt/functions/xslt-set-base.xml: efdbd50709
 reference/xslt/functions/xslt-set-encoding.xml: efdbd50709
 reference/xslt/functions/xslt-set-error-handler.xml: efdbd50709
 reference/xslt/functions/xslt-set-log.xml: efdbd50709
-reference/xslt/functions/xslt-set-sax-handler.xml: efdbd50709
+reference/xslt/functions/xslt-set-sax-handler.xml: 66117ac77f
 reference/xslt/setup.xml: 807c846e04
 reference/zip/book.xml: 807c846e04
 reference/zip/configure.xml: efdbd50709
