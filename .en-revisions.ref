@@ -183,7 +183,7 @@ reference/array/functions/array-merge-recursive.xml: efdbd50709
 reference/array/functions/array-multisort.xml: efdbd50709
 reference/array/functions/array-pop.xml: efdbd50709
 reference/array/functions/array-product.xml: efdbd50709
-reference/array/functions/array-rand.xml: 99a8bcb149
+reference/array/functions/array-rand.xml: 8e5aeb3871
 reference/array/functions/array-reduce.xml: 0855ef1b63
 reference/array/functions/array-reverse.xml: efdbd50709
 reference/array/functions/array-search.xml: f397003110
