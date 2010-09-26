@@ -1628,7 +1628,7 @@ reference/sqlite/functions/sqlite-current.xml: efdbd50709
 reference/sqlite/functions/sqlite-error-string.xml: efdbd50709
 reference/sqlite/functions/sqlite-escape-string.xml: efdbd50709
 reference/sqlite/functions/sqlite-exec.xml: efdbd50709
-reference/sqlite/functions/sqlite-factory.xml: efdbd50709
+reference/sqlite/functions/sqlite-factory.xml: 05365a0581
 reference/sqlite/functions/sqlite-fetch-all.xml: efdbd50709
 reference/sqlite/functions/sqlite-fetch-array.xml: efdbd50709
 reference/sqlite/functions/sqlite-fetch-column-types.xml: 2316a80c8a
