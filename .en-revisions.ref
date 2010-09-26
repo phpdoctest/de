@@ -1646,7 +1646,7 @@ reference/sqlite/functions/sqlite-libversion.xml: efdbd50709
 reference/sqlite/functions/sqlite-next.xml: efdbd50709
 reference/sqlite/functions/sqlite-num-fields.xml: efdbd50709
 reference/sqlite/functions/sqlite-num-rows.xml: efdbd50709
-reference/sqlite/functions/sqlite-open.xml: efdbd50709
+reference/sqlite/functions/sqlite-open.xml: 05365a0581
 reference/sqlite/functions/sqlite-popen.xml: efdbd50709
 reference/sqlite/functions/sqlite-prev.xml: efdbd50709
 reference/sqlite/functions/sqlite-query.xml: efdbd50709
