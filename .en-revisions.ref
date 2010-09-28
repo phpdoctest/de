@@ -327,7 +327,7 @@ reference/curl/functions/curl-exec.xml: efdbd50709
 reference/curl/functions/curl-getinfo.xml: efdbd50709
 reference/curl/functions/curl-init.xml: edd2392da9
 reference/curl/functions/curl-multi-add-handle.xml: efdbd50709
-reference/curl/functions/curl-multi-close.xml: efdbd50709
+reference/curl/functions/curl-multi-close.xml: 711809a439
 reference/curl/functions/curl-multi-exec.xml: efdbd50709
 reference/curl/functions/curl-multi-getcontent.xml: efdbd50709
 reference/curl/functions/curl-multi-info-read.xml: ce24b8704d
