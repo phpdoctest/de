@@ -330,12 +330,13 @@ reference/curl/functions/curl-multi-add-handle.xml: efdbd50709
 reference/curl/functions/curl-multi-close.xml: 711809a439
 reference/curl/functions/curl-multi-exec.xml: efdbd50709
 reference/curl/functions/curl-multi-getcontent.xml: efdbd50709
-reference/curl/functions/curl-multi-info-read.xml: ce24b8704d
+reference/curl/functions/curl-multi-info-read.xml: edd2392da9
 reference/curl/functions/curl-multi-init.xml: efdbd50709
 reference/curl/functions/curl-multi-remove-handle.xml: efdbd50709
 reference/curl/functions/curl-multi-select.xml: efdbd50709
-reference/curl/functions/curl-setopt-array.xml: efdbd50709
-reference/curl/functions/curl-setopt.xml: efdbd50709
+reference/curl/functions/curl-setopt-array.xml: 0699279cd3
+reference/curl/functions/curl-setopt.xml: e00ae760cf
+reference/curl/functions/curl-version.xml: efdbd50709
 reference/curl/reference.xml: efdbd50709
 reference/curl/setup.xml: 807c846e04
 reference/datetime/book.xml: 807c846e04
