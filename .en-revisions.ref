@@ -694,6 +694,7 @@ reference/ifx/reference.xml: efdbd50709
 reference/ifx/setup.xml: 807c846e04
 reference/image/book.xml: 807c846e04
 reference/image/examples.xml: 63320c4330
+reference/image/functions/getimagesize.xml: 807c846e04
 reference/image/functions/imagearc.xml: 20e2ed00ec
 reference/image/functions/imagechar.xml: efdbd50709
 reference/image/functions/imagegif.xml: efdbd50709
