@@ -1681,6 +1681,7 @@ reference/sqlite3/sqlite3/exec.xml: 807c846e04
 reference/sqlite3/sqlite3/lasterrorcode.xml: 807c846e04
 reference/sqlite3/sqlite3/lasterrormsg.xml: 807c846e04
 reference/sqlite3/sqlite3/lastinsertrowid.xml: 807c846e04
+reference/sqlite3/sqlite3/loadextension.xml: 807c846e04
 reference/sqlite3/sqlite3result.xml: 961c2937af
 reference/sqlite3/sqlite3stmt.xml: 961c2937af
 reference/strings/book.xml: efdbd50709
