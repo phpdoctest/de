@@ -16,14 +16,14 @@ faq/build.xml: efdbd50709
 faq/databases.xml: efdbd50709
 faq/general.xml: efdbd50709
 faq/html.xml: efdbd50709
-faq/installation.xml: efdbd50709
+faq/installation.xml: ff5b22acc2
 faq/mailinglist.xml: efdbd50709
 faq/misc.xml: efdbd50709
 faq/obtaining.xml: efdbd50709
 faq/using.xml: 26e5c6e48d
 features/connection-handling.xml: efdbd50709
 features/cookies.xml: efdbd50709
-features/http-auth.xml: efdbd50709
+features/http-auth.xml: 92a3a0e98a
 features/persistent-connections.xml: efdbd50709
 features/remote-files.xml: efdbd50709
 features/sessions.xml: efdbd50709
@@ -35,7 +35,7 @@ install/macos/client.xml: efdbd50709
 install/macos/index.xml: efdbd50709
 install/macos/packages.xml: efdbd50709
 install/macos/server.xml: efdbd50709
-install/unix/apache1.xml: efdbd50709
+install/unix/apache1.xml: ff5b22acc2
 install/unix/apache2.xml: 807c846e04
 install/unix/debian.xml: 608eeed3cf
 install/unix/index.xml: ff5b22acc2
@@ -382,7 +382,7 @@ reference/datetime/ini.xml: efdbd50709
 reference/datetime/reference.xml: efdbd50709
 reference/datetime/setup.xml: 807c846e04
 reference/dba/book.xml: 5fd246cce4
-reference/dba/configure.xml: efdbd50709
+reference/dba/configure.xml: 5d1aa4f744
 reference/dba/constants.xml: 807c846e04
 reference/dba/examples.xml: 807c846e04
 reference/dba/functions/dba-close.xml: efdbd50709
@@ -401,7 +401,7 @@ reference/dba/functions/dba-popen.xml: efdbd50709
 reference/dba/functions/dba-replace.xml: efdbd50709
 reference/dba/functions/dba-sync.xml: efdbd50709
 reference/dba/reference.xml: efdbd50709
-reference/dba/setup.xml: 807c846e04
+reference/dba/setup.xml: 5d1aa4f744
 reference/dbase/book.xml: 807c846e04
 reference/dbase/configure.xml: efdbd50709
 reference/dbase/constants.xml: 807c846e04
@@ -987,7 +987,7 @@ reference/msql/functions/msql.xml: efdbd50709
 reference/msql/ini.xml: 807c846e04
 reference/msql/reference.xml: efdbd50709
 reference/msql/setup.xml: 807c846e04
-reference/mssql/book.xml: 807c846e04
+reference/mssql/book.xml: 196ff78803
 reference/mssql/configure.xml: efdbd50709
 reference/mssql/constants.xml: efdbd50709
 reference/mssql/functions/mssql-bind.xml: efdbd50709
@@ -1022,7 +1022,7 @@ reference/mssql/functions/mssql-rows-affected.xml: efdbd50709
 reference/mssql/functions/mssql-select-db.xml: efdbd50709
 reference/mssql/ini.xml: efdbd50709
 reference/mssql/reference.xml: efdbd50709
-reference/mssql/setup.xml: 807c846e04
+reference/mssql/setup.xml: 196ff78803
 reference/mysql/book.xml: 807c846e04
 reference/mysql/examples.xml: efdbd50709
 reference/mysql/functions/mysql-change-user.xml: 807c846e04
