@@ -31,6 +31,7 @@ features/xforms.xml: efdbd50709
 install/ini.xml: 7a876a75b7
 install/intro.xml: efdbd50709
 install/macos/bundled.xml: efdbd50709
+install/macos/compile.xml: efdbd50709
 install/macos/index.xml: 6039e8a267
 install/macos/packages.xml: efdbd50709
 install/unix/apache1.xml: ff5b22acc2
