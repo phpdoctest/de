@@ -12,12 +12,12 @@ appendices/userlandnaming.xml: 807c846e04
 bookinfo.xml: 650e4f45fb
 chmonly/aboutchm.xml: efdbd50709
 chmonly/credits.xml: efdbd50709
-faq/build.xml: efdbd50709
+faq/build.xml: 979570ae32
 faq/databases.xml: efdbd50709
 faq/general.xml: efdbd50709
-faq/html.xml: efdbd50709
+faq/html.xml: 35b013b1b6
 faq/installation.xml: b97bccfafd
-faq/mailinglist.xml: efdbd50709
+faq/mailinglist.xml: 4fae493c94
 faq/misc.xml: efdbd50709
 faq/obtaining.xml: efdbd50709
 faq/using.xml: eddfcf184f
@@ -31,7 +31,7 @@ features/xforms.xml: efdbd50709
 install/ini.xml: 7a876a75b7
 install/intro.xml: efdbd50709
 install/macos/bundled.xml: efdbd50709
-install/macos/compile.xml: efdbd50709
+install/macos/compile.xml: 6039e8a267
 install/macos/index.xml: 6039e8a267
 install/macos/packages.xml: efdbd50709
 install/unix/apache1.xml: ff5b22acc2
