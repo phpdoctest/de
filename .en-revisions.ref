@@ -1683,6 +1683,7 @@ reference/sqlite3/sqlite3/lastinsertrowid.xml: 807c846e04
 reference/sqlite3/sqlite3/loadextension.xml: 807c846e04
 reference/sqlite3/sqlite3/open.xml: 1e003817ff
 reference/sqlite3/sqlite3/prepare.xml: 5567574cf4
+reference/sqlite3/sqlite3/query.xml: 807c846e04
 reference/sqlite3/sqlite3result.xml: 961c2937af
 reference/sqlite3/sqlite3stmt.xml: 961c2937af
 reference/strings/book.xml: efdbd50709
