@@ -768,6 +768,7 @@ reference/info/functions/getmyuid.xml: efdbd50709
 reference/info/functions/php-logo-guid.xml: efdbd50709
 reference/info/functions/php-sapi-name.xml: efdbd50709
 reference/info/functions/phpinfo.xml: adf85cb0ea
+reference/info/functions/version-compare.xml: efdbd50709
 reference/info/functions/zend-logo-guid.xml: efdbd50709
 reference/info/functions/zend-thread-id.xml: efdbd50709
 reference/info/functions/zend-version.xml: efdbd50709
