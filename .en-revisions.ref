@@ -1628,7 +1628,7 @@ reference/sqlite/functions/sqlite-busy-timeout.xml: efdbd50709
 reference/sqlite/functions/sqlite-changes.xml: efdbd50709
 reference/sqlite/functions/sqlite-close.xml: efdbd50709
 reference/sqlite/functions/sqlite-column.xml: efdbd50709
-reference/sqlite/functions/sqlite-create-aggregate.xml: efdbd50709
+reference/sqlite/functions/sqlite-create-aggregate.xml: 9fe541d57b
 reference/sqlite/functions/sqlite-create-function.xml: efdbd50709
 reference/sqlite/functions/sqlite-current.xml: efdbd50709
 reference/sqlite/functions/sqlite-error-string.xml: efdbd50709
