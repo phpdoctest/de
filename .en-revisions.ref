@@ -1287,7 +1287,7 @@ reference/pdo/prepared-statements.xml: 0ebd69d260
 reference/pdo/setup.xml: 807c846e04
 reference/pdo_sqlite/functions/PDO-sqliteCreateAggregate.xml: 2316a80c8a
 reference/pdo_sqlite/functions/PDO-sqliteCreateFunction.xml: 2316a80c8a
-reference/pdo_sqlite/reference.xml: 2316a80c8a
+reference/pdo_sqlite/reference.xml: 67a8578bb2
 reference/pgsql/book.xml: 807c846e04
 reference/pgsql/constants.xml: efdbd50709
 reference/pgsql/examples.xml: 807c846e04
