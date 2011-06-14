@@ -1870,7 +1870,7 @@ reference/xmlwriter/setup.xml: dbd2dd039b
 reference/xsl/book.xml: 807c846e04
 reference/xsl/configure.xml: efdbd50709
 reference/xsl/constants.xml: efdbd50709
-reference/xsl/examples.xml: 807c846e04
+reference/xsl/examples.xml: 83fc699d58
 reference/xsl/setup.xml: dbd2dd039b
 reference/xsl/xsltprocessor.xml: 961c2937af
 reference/xsl/xsltprocessor/construct.xml: efdbd50709
