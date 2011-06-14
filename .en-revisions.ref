@@ -61,7 +61,7 @@ language/exceptions.xml: 3f0437f93b
 language/expressions.xml: efdbd50709
 language/namespaces.xml: 0c366c9fc5
 language/oop5.xml: 02c15020ac
-language/oop5/abstract.xml: efdbd50709
+language/oop5/abstract.xml: d12da0aca8
 language/oop5/basic.xml: 4186dde003
 language/oop5/changelog.xml: ace25e8b5c
 language/oop5/constants.xml: 3f0437f93b
@@ -177,7 +177,7 @@ reference/array/functions/array-intersect-uassoc.xml: efdbd50709
 reference/array/functions/array-intersect-ukey.xml: efdbd50709
 reference/array/functions/array-key-exists.xml: 003c9ebfb9
 reference/array/functions/array-keys.xml: e29e1f794b
-reference/array/functions/array-map.xml: 6477f6162c
+reference/array/functions/array-map.xml: 2c5972d002
 reference/array/functions/array-merge-recursive.xml: efdbd50709
 reference/array/functions/array-multisort.xml: efdbd50709
 reference/array/functions/array-pop.xml: efdbd50709
