@@ -679,9 +679,9 @@ reference/hash/functions/hash-update.xml: efdbd50709
 reference/hash/functions/hash.xml: efdbd50709
 reference/hash/reference.xml: efdbd50709
 reference/hash/setup.xml: 807c846e04
-reference/iconv/functions/iconv-get-encoding.xml: 725f67f7b8
+reference/iconv/functions/iconv-get-encoding.xml: efdbd50709
 reference/iconv/functions/iconv-set-encoding.xml: efdbd50709
-reference/iconv/functions/iconv.xml: 807c846e04
+reference/iconv/functions/iconv.xml: 5567574cf4
 reference/iconv/functions/ob-iconv-handler.xml: efdbd50709
 reference/id3/book.xml: 807c846e04
 reference/id3/constants.xml: 2316a80c8a
