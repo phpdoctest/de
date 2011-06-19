@@ -1280,11 +1280,14 @@ reference/pdf/reference.xml: efdbd50709
 reference/pdf/setup.xml: 807c846e04
 reference/pdo/configure.xml: 0ebd69d260
 reference/pdo/connections.xml: 807c846e04
+reference/pdo/drivers.xml: 3fe8efac2f
 reference/pdo/error-handling.xml: 807c846e04
 reference/pdo/lobs.xml: 807c846e04
 reference/pdo/pdo.xml: 807c846e04
-reference/pdo/prepared-statements.xml: 0ebd69d260
+reference/pdo/pdoexception.xml: 961c2937af
+reference/pdo/prepared-statements.xml: 807c846e04
 reference/pdo/setup.xml: 807c846e04
+reference/pdo/transactions.xml: 65547ddd80
 reference/pdo_sqlite/functions/PDO-sqliteCreateAggregate.xml: 2316a80c8a
 reference/pdo_sqlite/functions/PDO-sqliteCreateFunction.xml: 2316a80c8a
 reference/pdo_sqlite/reference.xml: 67a8578bb2
