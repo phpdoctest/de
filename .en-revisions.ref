@@ -129,10 +129,10 @@ language/predefined/variables/server.xml: 17a124fce7
 language/predefined/variables/session.xml: 807c846e04
 language/predefined/variables/superglobals.xml: 807c846e04
 language/types.xml: af2b49a738
-language/types/boolean.xml: 807c846e04
-language/types/float.xml: 807c846e04
+language/types/boolean.xml: 27be162efc
+language/types/float.xml: b8b8dcc348
 language/types/integer.xml: 807c846e04
-language/types/null.xml: 807c846e04
+language/types/null.xml: 1cce082a04
 language/types/resource.xml: 807c846e04
 preface.xml: efdbd50709
 reference/apache/book.xml: 807c846e04
