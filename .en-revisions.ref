@@ -128,7 +128,7 @@ language/predefined/variables/httpresponseheader.xml: 0614a83271
 language/predefined/variables/phperrormsg.xml: 807c846e04
 language/predefined/variables/post.xml: 807c846e04
 language/predefined/variables/request.xml: 807c846e04
-language/predefined/variables/server.xml: 17a124fce7
+language/predefined/variables/server.xml: 6cdeb23834
 language/predefined/variables/session.xml: 807c846e04
 language/predefined/variables/superglobals.xml: 807c846e04
 language/types.xml: af2b49a738
@@ -165,7 +165,7 @@ reference/array/book.xml: efdbd50709
 reference/array/constants.xml: efdbd50709
 reference/array/functions/array-change-key-case.xml: efdbd50709
 reference/array/functions/array-chunk.xml: efdbd50709
-reference/array/functions/array-combine.xml: efdbd50709
+reference/array/functions/array-combine.xml: dc238d115a
 reference/array/functions/array-count-values.xml: efdbd50709
 reference/array/functions/array-diff-assoc.xml: efdbd50709
 reference/array/functions/array-diff-key.xml: efdbd50709
@@ -1212,7 +1212,7 @@ reference/pcre/examples.xml: efdbd50709
 reference/pcre/functions/preg-filter.xml: b5fdc608dc
 reference/pcre/functions/preg-grep.xml: b5fdc608dc
 reference/pcre/functions/preg-last-error.xml: efdbd50709
-reference/pcre/functions/preg-match-all.xml: 041b200061
+reference/pcre/functions/preg-match-all.xml: dc684047e6
 reference/pcre/functions/preg-match.xml: b5fdc608dc
 reference/pcre/functions/preg-quote.xml: edd2392da9
 reference/pcre/functions/preg-replace-callback.xml: b5fdc608dc
