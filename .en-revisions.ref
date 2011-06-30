@@ -48,13 +48,13 @@ language/context/ssl.xml: 807c846e04
 language/control-structures.xml: 807c846e04
 language/control-structures/alternative-syntax.xml: 15e7bf7ada
 language/control-structures/break.xml: 807c846e04
-language/control-structures/continue.xml: 807c846e04
+language/control-structures/continue.xml: e6529f5e43
 language/control-structures/do-while.xml: f316ed0ba7
 language/control-structures/else.xml: 807c846e04
 language/control-structures/elseif.xml: 807c846e04
 language/control-structures/if.xml: 807c846e04
 language/control-structures/include-once.xml: 807c846e04
-language/control-structures/include.xml: 807c846e04
+language/control-structures/include.xml: 074e7d1b19
 language/control-structures/require-once.xml: 807c846e04
 language/control-structures/require.xml: 807c846e04
 language/exceptions.xml: 3f0437f93b
