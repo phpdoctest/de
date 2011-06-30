@@ -108,7 +108,7 @@ language/predefined/iterator/rewind.xml: 807c846e04
 language/predefined/iterator/valid.xml: 807c846e04
 language/predefined/iteratoraggregate.xml: 961c2937af
 language/predefined/iteratoraggregate/getiterator.xml: 807c846e04
-language/predefined/serializable.xml: 961c2937af
+language/predefined/serializable.xml: fe12b64a12
 language/predefined/serializable/serialize.xml: 807c846e04
 language/predefined/serializable/unserialize.xml: 807c846e04
 language/predefined/traversable.xml: 807c846e04
