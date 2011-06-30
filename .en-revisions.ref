@@ -79,7 +79,7 @@ language/oop5/overloading.xml: 325212e199
 language/oop5/paamayim-nekudotayim.xml: 3f0437f93b
 language/oop5/patterns.xml: 05365a0581
 language/oop5/properties.xml: efdbd50709
-language/oop5/serialization.xml: 26e5c6e48d
+language/oop5/serialization.xml: 98f47887a3
 language/oop5/static.xml: 3f0437f93b
 language/oop5/typehinting.xml: efdbd50709
 language/oop5/visibility.xml: 9d9bc4172d
@@ -903,7 +903,7 @@ reference/misc/functions/time-sleep-until.xml: 807c846e04
 reference/misc/functions/uniqid.xml: efdbd50709
 reference/misc/functions/unpack.xml: efdbd50709
 reference/misc/functions/usleep.xml: efdbd50709
-reference/misc/ini.xml: 26e5c6e48d
+reference/misc/ini.xml: 98f47887a3
 reference/misc/reference.xml: efdbd50709
 reference/misc/setup.xml: efdbd50709
 reference/mnogosearch/book.xml: 807c846e04
@@ -1071,7 +1071,7 @@ reference/network/functions/socket-get-status.xml: efdbd50709
 reference/network/functions/socket-set-blocking.xml: efdbd50709
 reference/network/functions/socket-set-timeout.xml: efdbd50709
 reference/network/functions/syslog.xml: efdbd50709
-reference/network/ini.xml: 26e5c6e48d
+reference/network/ini.xml: 98f47887a3
 reference/network/reference.xml: 807c846e04
 reference/network/setup.xml: 15110920fa
 reference/nis/book.xml: 807c846e04
@@ -1533,7 +1533,7 @@ reference/session/functions/session-start.xml: efdbd50709
 reference/session/functions/session-unregister.xml: efdbd50709
 reference/session/functions/session-unset.xml: efdbd50709
 reference/session/functions/session-write-close.xml: efdbd50709
-reference/session/ini.xml: 926a86ec00
+reference/session/ini.xml: 98f47887a3
 reference/session/reference.xml: efdbd50709
 reference/session/security.xml: efdbd50709
 reference/session/setup.xml: efdbd50709
