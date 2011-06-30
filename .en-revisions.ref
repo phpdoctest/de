@@ -1703,7 +1703,7 @@ reference/strings/functions/convert-uudecode.xml: 2316a80c8a
 reference/strings/functions/convert-uuencode.xml: 2316a80c8a
 reference/strings/functions/count-chars.xml: efdbd50709
 reference/strings/functions/crc32.xml: efdbd50709
-reference/strings/functions/crypt.xml: efdbd50709
+reference/strings/functions/crypt.xml: 18e45e9f0f
 reference/strings/functions/echo.xml: efdbd50709
 reference/strings/functions/explode.xml: efdbd50709
 reference/strings/functions/fprintf.xml: efdbd50709
