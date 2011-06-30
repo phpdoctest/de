@@ -669,7 +669,7 @@ reference/gmp/examples.xml: 807c846e04
 reference/gmp/reference.xml: efdbd50709
 reference/gmp/setup.xml: 807c846e04
 reference/hash/constants.xml: 2316a80c8a
-reference/hash/functions/hash-algos.xml: efdbd50709
+reference/hash/functions/hash-algos.xml: 603804b446
 reference/hash/functions/hash-copy.xml: efdbd50709
 reference/hash/functions/hash-file.xml: efdbd50709
 reference/hash/functions/hash-final.xml: efdbd50709
