@@ -52,11 +52,14 @@ language/control-structures/continue.xml: e6529f5e43
 language/control-structures/do-while.xml: f316ed0ba7
 language/control-structures/else.xml: 807c846e04
 language/control-structures/elseif.xml: 807c846e04
+language/control-structures/for.xml: 807c846e04
 language/control-structures/if.xml: 807c846e04
 language/control-structures/include-once.xml: 807c846e04
 language/control-structures/include.xml: 074e7d1b19
 language/control-structures/require-once.xml: 807c846e04
 language/control-structures/require.xml: b5a95d7567
+language/control-structures/return.xml: 807c846e04
+language/control-structures/while.xml: 807c846e04
 language/exceptions.xml: 3f0437f93b
 language/expressions.xml: efdbd50709
 language/namespaces.xml: 0c366c9fc5
