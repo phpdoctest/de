@@ -342,7 +342,7 @@ reference/curl/functions/curl-setopt.xml: e00ae760cf
 reference/curl/functions/curl-version.xml: efdbd50709
 reference/curl/reference.xml: efdbd50709
 reference/curl/setup.xml: 807c846e04
-reference/datetime/book.xml: 807c846e04
+reference/datetime/book.xml: 0305a5989f
 reference/datetime/constants.xml: 2316a80c8a
 reference/datetime/functions/checkdate.xml: efdbd50709
 reference/datetime/functions/date-add.xml: efdbd50709
@@ -460,6 +460,7 @@ reference/dir/functions/rewinddir.xml: efdbd50709
 reference/dir/functions/scandir.xml: efdbd50709
 reference/dir/reference.xml: efdbd50709
 reference/dir/setup.xml: 807c846e04
+reference/domxml/book.xml: 807c846e04
 reference/domxml/configure.xml: efdbd50709
 reference/domxml/constants.xml: efdbd50709
 reference/domxml/functions/DomAttribute-name.xml: efdbd50709
@@ -520,6 +521,7 @@ reference/exif/functions/read-exif-data.xml: efdbd50709
 reference/exif/ini.xml: efdbd50709
 reference/exif/reference.xml: efdbd50709
 reference/exif/setup.xml: 807c846e04
+reference/fbsql/book.xml: 807c846e04
 reference/fbsql/configure.xml: efdbd50709
 reference/fbsql/constants.xml: efdbd50709
 reference/fbsql/ini.xml: efdbd50709
@@ -706,7 +708,7 @@ reference/image/functions/imagejpeg.xml: efdbd50709
 reference/image/functions/imagepng.xml: efdbd50709
 reference/image/reference.xml: efdbd50709
 reference/image/setup.xml: a367df80fc
-reference/imap/book.xml: 807c846e04
+reference/imap/book.xml: 4239e3020a
 reference/imap/functions/imap-8bit.xml: efdbd50709
 reference/imap/functions/imap-append.xml: 807c846e04
 reference/imap/functions/imap-base64.xml: efdbd50709
@@ -813,7 +815,7 @@ reference/java/functions/java-last-exception-get.xml: efdbd50709
 reference/java/ini.xml: efdbd50709
 reference/java/reference.xml: 807c846e04
 reference/java/setup.xml: 807c846e04
-reference/json/book.xml: 807c846e04
+reference/json/book.xml: 60895f8dcf
 reference/json/constants.xml: 807c846e04
 reference/json/functions/json-decode.xml: cd621e669b
 reference/json/functions/json-encode.xml: efdbd50709
@@ -908,7 +910,7 @@ reference/misc/functions/usleep.xml: efdbd50709
 reference/misc/ini.xml: 98f47887a3
 reference/misc/reference.xml: efdbd50709
 reference/misc/setup.xml: efdbd50709
-reference/mnogosearch/book.xml: 807c846e04
+reference/mnogosearch/book.xml: 05365a0581
 reference/mnogosearch/constants.xml: efdbd50709
 reference/mnogosearch/functions/udm-check-charset.xml: efdbd50709
 reference/mnogosearch/functions/udm-check-stored.xml: efdbd50709
@@ -1282,6 +1284,7 @@ reference/pdf/functions/pdf-utf16-to-utf8.xml: efdbd50709
 reference/pdf/functions/pdf-utf32-to-utf16.xml: efdbd50709
 reference/pdf/reference.xml: efdbd50709
 reference/pdf/setup.xml: 807c846e04
+reference/pdo/book.xml: 807c846e04
 reference/pdo/configure.xml: 0ebd69d260
 reference/pdo/connections.xml: 807c846e04
 reference/pdo/drivers.xml: 3fe8efac2f
@@ -1539,7 +1542,7 @@ reference/session/ini.xml: 98f47887a3
 reference/session/reference.xml: efdbd50709
 reference/session/security.xml: efdbd50709
 reference/session/setup.xml: efdbd50709
-reference/shmop/book.xml: 807c846e04
+reference/shmop/book.xml: 8aeeb36773
 reference/shmop/configure.xml: efdbd50709
 reference/shmop/constants.xml: 807c846e04
 reference/shmop/examples.xml: efdbd50709
@@ -1571,7 +1574,7 @@ reference/simplexml/functions/simplexml-load-file.xml: efdbd50709
 reference/simplexml/functions/simplexml-load-string.xml: efdbd50709
 reference/simplexml/reference.xml: efdbd50709
 reference/simplexml/setup.xml: 807c846e04
-reference/snmp/book.xml: 807c846e04
+reference/snmp/book.xml: 9fc8683ab0
 reference/snmp/configure.xml: efdbd50709
 reference/snmp/constants.xml: 2316a80c8a
 reference/snmp/reference.xml: efdbd50709
@@ -1927,6 +1930,7 @@ reference/xsl/xsltprocessor/setprofiling.xml: efdbd50709
 reference/xsl/xsltprocessor/transformtodoc.xml: efdbd50709
 reference/xsl/xsltprocessor/transformtouri.xml: ac172d2637
 reference/xsl/xsltprocessor/transformtoxml.xml: efdbd50709
+reference/xslt/book.xml: 807c846e04
 reference/xslt/constants.xml: efdbd50709
 reference/xslt/functions/xslt-backend-info.xml: 2316a80c8a
 reference/xslt/functions/xslt-backend-name.xml: 2316a80c8a
