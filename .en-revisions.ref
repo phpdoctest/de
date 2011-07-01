@@ -1697,7 +1697,7 @@ reference/strings/charsets.xml: efdbd50709
 reference/strings/constants.xml: 2316a80c8a
 reference/strings/functions/addcslashes.xml: efdbd50709
 reference/strings/functions/addslashes.xml: efdbd50709
-reference/strings/functions/bin2hex.xml: efdbd50709
+reference/strings/functions/bin2hex.xml: b0726827c5
 reference/strings/functions/chop.xml: efdbd50709
 reference/strings/functions/chr.xml: efdbd50709
 reference/strings/functions/chunk-split.xml: efdbd50709
@@ -1713,7 +1713,7 @@ reference/strings/functions/fprintf.xml: efdbd50709
 reference/strings/functions/get-html-translation-table.xml: 69b02e3ee5
 reference/strings/functions/hebrev.xml: efdbd50709
 reference/strings/functions/hebrevc.xml: efdbd50709
-reference/strings/functions/html-entity-decode.xml: efdbd50709
+reference/strings/functions/html-entity-decode.xml: 7c025dd36c
 reference/strings/functions/htmlentities.xml: efdbd50709
 reference/strings/functions/htmlspecialchars-decode.xml: efdbd50709
 reference/strings/functions/htmlspecialchars.xml: 5ba560d0b7
@@ -1728,7 +1728,7 @@ reference/strings/functions/md5.xml: efdbd50709
 reference/strings/functions/metaphone.xml: efdbd50709
 reference/strings/functions/nl-langinfo.xml: efdbd50709
 reference/strings/functions/nl2br.xml: efdbd50709
-reference/strings/functions/number-format.xml: 807c846e04
+reference/strings/functions/number-format.xml: 38a435fd6b
 reference/strings/functions/ord.xml: efdbd50709
 reference/strings/functions/parse-str.xml: efdbd50709
 reference/strings/functions/print.xml: efdbd50709
