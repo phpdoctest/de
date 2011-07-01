@@ -200,9 +200,9 @@ reference/array/functions/array.xml: efdbd50709
 reference/array/functions/arsort.xml: efdbd50709
 reference/array/functions/asort.xml: efdbd50709
 reference/array/functions/each.xml: efdbd50709
-reference/array/functions/end.xml: 30dd3cc2f8
+reference/array/functions/end.xml: efdbd50709
 reference/array/functions/extract.xml: ce3f0ba23e
-reference/array/functions/in-array.xml: efdbd50709
+reference/array/functions/in-array.xml: 71afc8e076
 reference/array/functions/krsort.xml: efdbd50709
 reference/array/functions/ksort.xml: efdbd50709
 reference/array/functions/pos.xml: efdbd50709
