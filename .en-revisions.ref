@@ -1796,11 +1796,13 @@ reference/strings/setup.xml: efdbd50709
 reference/sybase/book.xml: 807c846e04
 reference/sybase/reference.xml: efdbd50709
 reference/sybase/setup.xml: 807c846e04
+reference/tokenizer/book.xml: efdbd50709
 reference/tokenizer/configure.xml: efdbd50709
 reference/tokenizer/constants.xml: efdbd50709
 reference/tokenizer/examples.xml: efdbd50709
 reference/tokenizer/functions/token-get-all.xml: efdbd50709
-reference/tokenizer/functions/token-name.xml: efdbd50709
+reference/tokenizer/functions/token-name.xml: 191171dda6
+reference/tokenizer/reference.xml: efdbd50709
 reference/tokenizer/setup.xml: efdbd50709
 reference/uodbc/book.xml: 807c846e04
 reference/uodbc/constants.xml: efdbd50709
