@@ -1719,7 +1719,7 @@ reference/strings/functions/htmlspecialchars-decode.xml: efdbd50709
 reference/strings/functions/htmlspecialchars.xml: 5ba560d0b7
 reference/strings/functions/implode.xml: efdbd50709
 reference/strings/functions/join.xml: efdbd50709
-reference/strings/functions/lcfirst.xml: efdbd50709
+reference/strings/functions/lcfirst.xml: 77720f6a42
 reference/strings/functions/levenshtein.xml: 807c846e04
 reference/strings/functions/localeconv.xml: 807c846e04
 reference/strings/functions/ltrim.xml: efdbd50709
@@ -1776,7 +1776,7 @@ reference/strings/functions/strrpos.xml: 807c846e04
 reference/strings/functions/strspn.xml: bf54ce4c56
 reference/strings/functions/strstr.xml: efdbd50709
 reference/strings/functions/strtok.xml: 807c846e04
-reference/strings/functions/strtolower.xml: efdbd50709
+reference/strings/functions/strtolower.xml: 77720f6a42
 reference/strings/functions/strtoupper.xml: 807c846e04
 reference/strings/functions/strtr.xml: 650e4f45fb
 reference/strings/functions/substr-compare.xml: 6c74cc066c
@@ -1784,7 +1784,7 @@ reference/strings/functions/substr-count.xml: efdbd50709
 reference/strings/functions/substr-replace.xml: 807c846e04
 reference/strings/functions/substr.xml: 23e88a615e
 reference/strings/functions/trim.xml: efdbd50709
-reference/strings/functions/ucfirst.xml: efdbd50709
+reference/strings/functions/ucfirst.xml: 77720f6a42
 reference/strings/functions/ucwords.xml: efdbd50709
 reference/strings/functions/vfprintf.xml: efdbd50709
 reference/strings/functions/vprintf.xml: efdbd50709
