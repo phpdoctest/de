@@ -157,6 +157,7 @@ reference/apache/functions/virtual.xml: efdbd50709
 reference/apache/ini.xml: efdbd50709
 reference/apache/reference.xml: efdbd50709
 reference/apache/setup.xml: 807c846e04
+reference/apc/book.xml: 4f9fcd25fe
 reference/apc/constants.xml: 4f9fcd25fe
 reference/apc/functions/apc-compile-file.xml: 133120beb3
 reference/apc/reference.xml: efdbd50709
