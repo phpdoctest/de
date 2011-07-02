@@ -1,6 +1,6 @@
 appendices/aliases.xml: efdbd50709
 appendices/comparisons.xml: efdbd50709
-appendices/configure/index.xml: efdbd50709
+appendices/configure/index.xml: ba470c3835
 appendices/configure/misc.xml: efdbd50709
 appendices/configure/php.xml: efdbd50709
 appendices/configure/servers.xml: efdbd50709
@@ -41,8 +41,8 @@ install/unix/index.xml: ff5b22acc2
 language/constants.xml: 807c846e04
 language/context.xml: 807c846e04
 language/context/curl.xml: 807c846e04
-language/context/ftp.xml: 807c846e04
-language/context/parameters.xml: 807c846e04
+language/context/ftp.xml: 5597841814
+language/context/parameters.xml: d51f19c092
 language/context/socket.xml: 807c846e04
 language/context/ssl.xml: 807c846e04
 language/control-structures.xml: 807c846e04
@@ -209,6 +209,7 @@ reference/array/functions/ksort.xml: efdbd50709
 reference/array/functions/pos.xml: efdbd50709
 reference/array/functions/reset.xml: efdbd50709
 reference/array/functions/rsort.xml: efdbd50709
+reference/array/functions/shuffle.xml: efdbd50709
 reference/array/functions/sizeof.xml: efdbd50709
 reference/array/functions/sort.xml: 0d3693c86a
 reference/array/functions/uasort.xml: efdbd50709
@@ -251,9 +252,9 @@ reference/calendar/book.xml: 807c846e04
 reference/calendar/configure.xml: efdbd50709
 reference/calendar/constants.xml: efdbd50709
 reference/calendar/functions/cal-days-in-month.xml: efdbd50709
-reference/calendar/functions/cal-info.xml: efdbd50709
-reference/calendar/functions/easter-date.xml: efdbd50709
-reference/calendar/functions/easter-days.xml: efdbd50709
+reference/calendar/functions/cal-info.xml: 468c5f0d77
+reference/calendar/functions/easter-date.xml: acaa02b602
+reference/calendar/functions/easter-days.xml: acaa02b602
 reference/calendar/functions/gregoriantojd.xml: efdbd50709
 reference/calendar/functions/jddayofweek.xml: efdbd50709
 reference/calendar/functions/jdmonthname.xml: efdbd50709
@@ -309,6 +310,7 @@ reference/ctype/constants.xml: 807c846e04
 reference/ctype/functions/ctype-alnum.xml: 9015b562ba
 reference/ctype/functions/ctype-alpha.xml: 9015b562ba
 reference/ctype/functions/ctype-cntrl.xml: 9015b562ba
+reference/ctype/functions/ctype-digit.xml: f97b60b184
 reference/ctype/functions/ctype-graph.xml: 9015b562ba
 reference/ctype/functions/ctype-lower.xml: 9015b562ba
 reference/ctype/functions/ctype-print.xml: 9015b562ba
@@ -489,14 +491,14 @@ reference/dotnet/setup.xml: 807c846e04
 reference/errorfunc/book.xml: efdbd50709
 reference/errorfunc/constants.xml: 26e5c6e48d
 reference/errorfunc/functions/debug-backtrace.xml: 807c846e04
-reference/errorfunc/functions/debug-print-backtrace.xml: efdbd50709
-reference/errorfunc/functions/error-get-last.xml: efdbd50709
+reference/errorfunc/functions/debug-print-backtrace.xml: 0a3b8a6568
+reference/errorfunc/functions/error-get-last.xml: ef45cef47e
 reference/errorfunc/functions/error-log.xml: efdbd50709
 reference/errorfunc/functions/restore-error-handler.xml: efdbd50709
-reference/errorfunc/functions/restore-exception-handler.xml: 807c846e04
+reference/errorfunc/functions/restore-exception-handler.xml: efdbd50709
 reference/errorfunc/functions/set-error-handler.xml: 807c846e04
-reference/errorfunc/functions/set-exception-handler.xml: efd075c878
-reference/errorfunc/functions/trigger-error.xml: 807c846e04
+reference/errorfunc/functions/set-exception-handler.xml: efdbd50709
+reference/errorfunc/functions/trigger-error.xml: efdbd50709
 reference/errorfunc/functions/user-error.xml: efdbd50709
 reference/errorfunc/reference.xml: efdbd50709
 reference/errorfunc/setup.xml: efdbd50709
@@ -601,7 +603,7 @@ reference/filter/setup.xml: efdbd50709
 reference/fribidi/book.xml: 807c846e04
 reference/fribidi/configure.xml: efdbd50709
 reference/fribidi/constants.xml: efdbd50709
-reference/fribidi/functions/fribidi-log2vis.xml: 807c846e04
+reference/fribidi/functions/fribidi-log2vis.xml: efdbd50709
 reference/fribidi/reference.xml: efdbd50709
 reference/fribidi/setup.xml: 807c846e04
 reference/ftp/book.xml: 5c72fff39f
@@ -903,7 +905,7 @@ reference/misc/functions/pack.xml: 8bf03fc6ad
 reference/misc/functions/show-source.xml: 807c846e04
 reference/misc/functions/sleep.xml: eefc28553c
 reference/misc/functions/sys-getloadavg.xml: efdbd50709
-reference/misc/functions/time-sleep-until.xml: 807c846e04
+reference/misc/functions/time-sleep-until.xml: efdbd50709
 reference/misc/functions/uniqid.xml: efdbd50709
 reference/misc/functions/unpack.xml: efdbd50709
 reference/misc/functions/usleep.xml: efdbd50709
@@ -924,7 +926,7 @@ reference/mnogosearch/functions/udm-open-stored.xml: efdbd50709
 reference/mnogosearch/reference.xml: efdbd50709
 reference/mnogosearch/setup.xml: 807c846e04
 reference/msession/book.xml: efdbd50709
-reference/msession/configure.xml: 807c846e04
+reference/msession/configure.xml: efdbd50709
 reference/msession/constants.xml: efdbd50709
 reference/msession/functions/msession-connect.xml: efdbd50709
 reference/msession/functions/msession-count.xml: efdbd50709
@@ -1031,7 +1033,7 @@ reference/mssql/ini.xml: efdbd50709
 reference/mssql/reference.xml: efdbd50709
 reference/mssql/setup.xml: 196ff78803
 reference/mysql/book.xml: 807c846e04
-reference/mysql/examples.xml: efdbd50709
+reference/mysql/examples.xml: ee00fe1a3d
 reference/mysql/functions/mysql-change-user.xml: 807c846e04
 reference/mysql/functions/mysql-fetch-field.xml: 29375729fa
 reference/mysql/functions/mysql-fetch-object.xml: efdbd50709
@@ -1080,7 +1082,7 @@ reference/network/reference.xml: 807c846e04
 reference/network/setup.xml: 15110920fa
 reference/nis/book.xml: 807c846e04
 reference/nis/configure.xml: efdbd50709
-reference/nis/constants.xml: dc3c1a6f7c
+reference/nis/constants.xml: efdbd50709
 reference/nis/functions/yp-next.xml: efdbd50709
 reference/nis/reference.xml: efdbd50709
 reference/nis/setup.xml: 807c846e04
@@ -1930,7 +1932,7 @@ reference/xsl/xsltprocessor/setprofiling.xml: efdbd50709
 reference/xsl/xsltprocessor/transformtodoc.xml: efdbd50709
 reference/xsl/xsltprocessor/transformtouri.xml: ac172d2637
 reference/xsl/xsltprocessor/transformtoxml.xml: efdbd50709
-reference/xslt/book.xml: 807c846e04
+reference/xslt/book.xml: d290ad37d9
 reference/xslt/constants.xml: efdbd50709
 reference/xslt/functions/xslt-backend-info.xml: 2316a80c8a
 reference/xslt/functions/xslt-backend-name.xml: 2316a80c8a
@@ -1946,7 +1948,7 @@ reference/xslt/functions/xslt-set-encoding.xml: efdbd50709
 reference/xslt/functions/xslt-set-error-handler.xml: efdbd50709
 reference/xslt/functions/xslt-set-log.xml: efdbd50709
 reference/xslt/functions/xslt-set-sax-handler.xml: 66117ac77f
-reference/xslt/setup.xml: 807c846e04
+reference/xslt/setup.xml: dbd2dd039b
 reference/zip/book.xml: 807c846e04
 reference/zip/configure.xml: efdbd50709
 reference/zip/examples.xml: efdbd50709
