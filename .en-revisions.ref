@@ -28,6 +28,7 @@ features/persistent-connections.xml: efdbd50709
 features/remote-files.xml: efdbd50709
 features/sessions.xml: efdbd50709
 features/xforms.xml: efdbd50709
+install/cloud/index.xml: dc53bd9bb4
 install/ini.xml: 7a876a75b7
 install/intro.xml: efdbd50709
 install/macos/bundled.xml: efdbd50709
@@ -43,6 +44,7 @@ language/context.xml: 807c846e04
 language/context/curl.xml: 807c846e04
 language/context/ftp.xml: 5597841814
 language/context/parameters.xml: d51f19c092
+language/context/phar.xml: 39a2637d68
 language/context/socket.xml: 807c846e04
 language/context/ssl.xml: 807c846e04
 language/control-structures.xml: 807c846e04
@@ -137,6 +139,7 @@ language/types/float.xml: b8b8dcc348
 language/types/integer.xml: 807c846e04
 language/types/null.xml: 1cce082a04
 language/types/resource.xml: 807c846e04
+language/wrappers.xml: 07f040bc3f
 preface.xml: efdbd50709
 reference/apache/book.xml: 807c846e04
 reference/apache/constants.xml: 807c846e04
