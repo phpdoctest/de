@@ -100,6 +100,7 @@ language/predefined/exception/getcode.xml: 807c846e04
 language/predefined/exception/getfile.xml: 807c846e04
 language/predefined/exception/getline.xml: 807c846e04
 language/predefined/exception/getmessage.xml: 807c846e04
+language/predefined/exception/getprevious.xml: 807c846e04
 language/predefined/exception/gettrace.xml: 807c846e04
 language/predefined/exception/gettraceasstring.xml: 807c846e04
 language/predefined/exception/tostring.xml: 807c846e04
@@ -279,10 +280,13 @@ reference/classobj/functions/class-exists.xml: 807c846e04
 reference/classobj/functions/get-class-methods.xml: efdbd50709
 reference/classobj/functions/get-class.xml: 807c846e04
 reference/classobj/functions/get-declared-classes.xml: efdbd50709
+reference/classobj/functions/get-declared-interfaces.xml: 2316a80c8a
 reference/classobj/functions/get-object-vars.xml: 807c846e04
 reference/classobj/functions/get-parent-class.xml: efdbd50709
+reference/classobj/functions/interface-exists.xml: efdbd50709
 reference/classobj/functions/is-subclass-of.xml: 807c846e04
 reference/classobj/functions/method-exists.xml: 807c846e04
+reference/classobj/functions/property-exists.xml: 96d65ff359
 reference/classobj/reference.xml: efdbd50709
 reference/classobj/setup.xml: efdbd50709
 reference/com/functions/class.com.xml: efdbd50709
@@ -1724,6 +1728,7 @@ reference/strings/functions/fprintf.xml: efdbd50709
 reference/strings/functions/get-html-translation-table.xml: 69b02e3ee5
 reference/strings/functions/hebrev.xml: efdbd50709
 reference/strings/functions/hebrevc.xml: efdbd50709
+reference/strings/functions/hex2bin.xml: 699ffdab5c
 reference/strings/functions/html-entity-decode.xml: 7c025dd36c
 reference/strings/functions/htmlentities.xml: efdbd50709
 reference/strings/functions/htmlspecialchars-decode.xml: efdbd50709
@@ -1745,6 +1750,7 @@ reference/strings/functions/parse-str.xml: efdbd50709
 reference/strings/functions/print.xml: efdbd50709
 reference/strings/functions/printf.xml: efdbd50709
 reference/strings/functions/quoted-printable-decode.xml: efdbd50709
+reference/strings/functions/quoted-printable-encode.xml: efdbd50709
 reference/strings/functions/quotemeta.xml: efdbd50709
 reference/strings/functions/rtrim.xml: efdbd50709
 reference/strings/functions/setlocale.xml: bf54ce4c56
@@ -1983,6 +1989,7 @@ reference/zip/ziparchive/getcommentname.xml: efdbd50709
 reference/zip/ziparchive/getfromindex.xml: 6ec7d5b87f
 reference/zip/ziparchive/getfromname.xml: 6ec7d5b87f
 reference/zip/ziparchive/getnameindex.xml: efdbd50709
+reference/zip/ziparchive/getstatusstring.xml: c0b02fd710
 reference/zip/ziparchive/getstream.xml: efdbd50709
 reference/zip/ziparchive/locatename.xml: efdbd50709
 reference/zip/ziparchive/open.xml: efdbd50709
