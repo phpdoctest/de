@@ -683,7 +683,7 @@ reference/gmp/reference.xml: efdbd50709
 reference/gmp/setup.xml: 807c846e04
 reference/hash/book.xml: 807c846e04
 reference/hash/constants.xml: 2316a80c8a
-reference/hash/functions/hash-algos.xml: 603804b446
+reference/hash/functions/hash-algos.xml: 2b33562c77
 reference/hash/functions/hash-copy.xml: efdbd50709
 reference/hash/functions/hash-file.xml: efdbd50709
 reference/hash/functions/hash-final.xml: efdbd50709
@@ -1860,7 +1860,7 @@ reference/var/functions/is-int.xml: cb8775d117
 reference/var/functions/is-integer.xml: efdbd50709
 reference/var/functions/is-long.xml: efdbd50709
 reference/var/functions/is-null.xml: efdbd50709
-reference/var/functions/is-numeric.xml: cb8775d117
+reference/var/functions/is-numeric.xml: aa44465107
 reference/var/functions/is-object.xml: cb8775d117
 reference/var/functions/is-real.xml: efdbd50709
 reference/var/functions/is-resource.xml: efdbd50709
