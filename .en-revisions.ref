@@ -61,6 +61,7 @@ language/control-structures/include.xml: 074e7d1b19
 language/control-structures/require-once.xml: 807c846e04
 language/control-structures/require.xml: b5a95d7567
 language/control-structures/return.xml: 807c846e04
+language/control-structures/switch.xml: 807c846e04
 language/control-structures/while.xml: 807c846e04
 language/exceptions.xml: 3f0437f93b
 language/expressions.xml: efdbd50709
@@ -1040,6 +1041,7 @@ reference/mssql/ini.xml: efdbd50709
 reference/mssql/reference.xml: efdbd50709
 reference/mssql/setup.xml: 196ff78803
 reference/mysql/book.xml: 807c846e04
+reference/mysql/configure.xml: ac31c15500
 reference/mysql/examples.xml: ee00fe1a3d
 reference/mysql/functions/mysql-change-user.xml: 807c846e04
 reference/mysql/functions/mysql-fetch-field.xml: 29375729fa
