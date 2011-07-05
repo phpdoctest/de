@@ -1306,6 +1306,7 @@ reference/pdo/drivers.xml: 3fe8efac2f
 reference/pdo/error-handling.xml: 807c846e04
 reference/pdo/lobs.xml: 807c846e04
 reference/pdo/pdo.xml: 807c846e04
+reference/pdo/pdo/exec.xml: efdbd50709
 reference/pdo/pdoexception.xml: 961c2937af
 reference/pdo/prepared-statements.xml: 807c846e04
 reference/pdo/setup.xml: 807c846e04
@@ -1617,7 +1618,12 @@ reference/soap/soapclient/setsoapheaders.xml: 3e70d8b3f8
 reference/soap/soapclient/soapcall.xml: 807c846e04
 reference/soap/soapclient/soapclient.xml: 04826ad04c
 reference/soap/soapfault/construct.xml: 807c846e04
+reference/soap/soapserver/addfunction.xml: 96760d668b
 reference/soap/soapserver/fault.xml: 807c846e04
+reference/soap/soapserver/getfunctions.xml: 807c846e04
+reference/soap/soapserver/handle.xml: 807c846e04
+reference/soap/soapserver/setclass.xml: 807c846e04
+reference/soap/soapserver/setpersistence.xml: a660b159a2
 reference/soap/soapvar/construct.xml: 807c846e04
 reference/soap/soapvar/soapvar.xml: 807c846e04
 reference/sockets/book.xml: 807c846e04
