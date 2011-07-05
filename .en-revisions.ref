@@ -5,6 +5,7 @@ appendices/configure/misc.xml: efdbd50709
 appendices/configure/php.xml: efdbd50709
 appendices/configure/servers.xml: efdbd50709
 appendices/debugger.xml: cbb67614a2
+appendices/ini.xml: 3d443bc87a
 appendices/reserved.constants.standard.xml: efdbd50709
 appendices/resources.xml: efdbd50709
 appendices/transports.xml: 26e5c6e48d
