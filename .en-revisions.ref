@@ -239,6 +239,7 @@ reference/bc/ini.xml: efdbd50709
 reference/bc/reference.xml: efdbd50709
 reference/bc/setup.xml: 807c846e04
 reference/bzip2/book.xml: 807c846e04
+reference/bzip2/configure.xml: efdbd50709
 reference/bzip2/constants.xml: 807c846e04
 reference/bzip2/examples.xml: efdbd50709
 reference/bzip2/functions/bzclose.xml: efdbd50709
@@ -538,7 +539,7 @@ reference/fbsql/ini.xml: efdbd50709
 reference/fbsql/reference.xml: efdbd50709
 reference/fbsql/setup.xml: 807c846e04
 reference/fdf/book.xml: 807c846e04
-reference/fdf/configure.xml: 807c846e04
+reference/fdf/configure.xml: efdbd50709
 reference/fdf/constants.xml: efdbd50709
 reference/fdf/examples.xml: efdbd50709
 reference/fdf/functions/fdf-enum-values.xml: efdbd50709
@@ -720,6 +721,7 @@ reference/image/functions/imagepng.xml: efdbd50709
 reference/image/reference.xml: efdbd50709
 reference/image/setup.xml: a367df80fc
 reference/imap/book.xml: 4239e3020a
+reference/imap/configure.xml: efdbd50709
 reference/imap/functions/imap-8bit.xml: efdbd50709
 reference/imap/functions/imap-append.xml: 807c846e04
 reference/imap/functions/imap-base64.xml: efdbd50709
@@ -794,6 +796,7 @@ reference/info/ini.xml: 5a653d1b43
 reference/info/reference.xml: efdbd50709
 reference/info/setup.xml: efdbd50709
 reference/ingres-ii/book.xml: 807c846e04
+reference/ingres-ii/configure.xml: efdbd50709
 reference/ingres-ii/constants.xml: efdbd50709
 reference/ingres-ii/examples.xml: efdbd50709
 reference/ingres-ii/functions/ingres-autocommit-state.xml: efdbd50709
@@ -818,7 +821,7 @@ reference/ingres-ii/functions/ingres-unbuffered-query.xml: 5a653d1b43
 reference/ingres-ii/reference.xml: efdbd50709
 reference/ingres-ii/setup.xml: 807c846e04
 reference/java/book.xml: 807c846e04
-reference/java/configure.xml: 807c846e04
+reference/java/configure.xml: efdbd50709
 reference/java/constants.xml: 807c846e04
 reference/java/examples.xml: 807c846e04
 reference/java/functions/java-last-exception-clear.xml: efdbd50709
@@ -1171,7 +1174,7 @@ reference/oci8/oldaliases/ocistatementtype.xml: efdbd50709
 reference/oci8/oldaliases/ociwritelobtofile.xml: fac7d6ac59
 reference/oci8/oldaliases/ociwritetemporarylob.xml: fac7d6ac59
 reference/openssl/book.xml: 807c846e04
-reference/openssl/configure.xml: efdbd50709
+reference/openssl/configure.xml: 699c428c56
 reference/openssl/functions/openssl-csr-new.xml: efdbd50709
 reference/openssl/functions/openssl-error-string.xml: efdbd50709
 reference/openssl/functions/openssl-free-key.xml: efdbd50709
@@ -1297,7 +1300,7 @@ reference/pdf/functions/pdf-utf32-to-utf16.xml: efdbd50709
 reference/pdf/reference.xml: efdbd50709
 reference/pdf/setup.xml: 807c846e04
 reference/pdo/book.xml: 807c846e04
-reference/pdo/configure.xml: 0ebd69d260
+reference/pdo/configure.xml: 0afc43eef8
 reference/pdo/connections.xml: 807c846e04
 reference/pdo/drivers.xml: 3fe8efac2f
 reference/pdo/error-handling.xml: 807c846e04
@@ -1311,6 +1314,7 @@ reference/pdo_sqlite/functions/PDO-sqliteCreateAggregate.xml: 2316a80c8a
 reference/pdo_sqlite/functions/PDO-sqliteCreateFunction.xml: 2316a80c8a
 reference/pdo_sqlite/reference.xml: 67a8578bb2
 reference/pgsql/book.xml: 807c846e04
+reference/pgsql/configure.xml: efdbd50709
 reference/pgsql/constants.xml: efdbd50709
 reference/pgsql/examples.xml: 807c846e04
 reference/pgsql/functions/pg-affected-rows.xml: efdbd50709
@@ -1567,7 +1571,7 @@ reference/shmop/functions/shmop-write.xml: efdbd50709
 reference/shmop/reference.xml: efdbd50709
 reference/shmop/setup.xml: 807c846e04
 reference/simplexml/book.xml: 807c846e04
-reference/simplexml/configure.xml: efdbd50709
+reference/simplexml/configure.xml: dbd2dd039b
 reference/simplexml/constants.xml: 807c846e04
 reference/simplexml/examples.xml: 807c846e04
 reference/simplexml/functions/simplexml-element-addAttribute.xml: 48d0011a12
@@ -1587,7 +1591,7 @@ reference/simplexml/functions/simplexml-load-string.xml: efdbd50709
 reference/simplexml/reference.xml: efdbd50709
 reference/simplexml/setup.xml: 807c846e04
 reference/snmp/book.xml: 9fc8683ab0
-reference/snmp/configure.xml: efdbd50709
+reference/snmp/configure.xml: 6a07cd1dd4
 reference/snmp/constants.xml: 2316a80c8a
 reference/snmp/reference.xml: efdbd50709
 reference/snmp/setup.xml: 807c846e04
