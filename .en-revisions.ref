@@ -251,7 +251,7 @@ reference/bzip2/functions/bzerror.xml: efdbd50709
 reference/bzip2/functions/bzerrstr.xml: efdbd50709
 reference/bzip2/functions/bzflush.xml: efdbd50709
 reference/bzip2/functions/bzopen.xml: efdbd50709
-reference/bzip2/functions/bzread.xml: efdbd50709
+reference/bzip2/functions/bzread.xml: 110abdcb54
 reference/bzip2/functions/bzwrite.xml: efdbd50709
 reference/bzip2/reference.xml: efdbd50709
 reference/bzip2/setup.xml: 807c846e04
@@ -307,6 +307,7 @@ reference/com/functions/com-set.xml: efdbd50709
 reference/crack/book.xml: 807c846e04
 reference/crack/configure.xml: efdbd50709
 reference/crack/constants.xml: 807c846e04
+reference/crack/examples.xml: 807c846e04
 reference/crack/functions/crack-check.xml: efdbd50709
 reference/crack/functions/crack-closedict.xml: 807c846e04
 reference/crack/functions/crack-getlastmessage.xml: efdbd50709
