@@ -52,10 +52,12 @@ language/control-structures.xml: 807c846e04
 language/control-structures/alternative-syntax.xml: f40cab318e
 language/control-structures/break.xml: f40cab318e
 language/control-structures/continue.xml: f40cab318e
+language/control-structures/declare.xml: f40cab318e
 language/control-structures/do-while.xml: f40cab318e
 language/control-structures/else.xml: f40cab318e
 language/control-structures/elseif.xml: f40cab318e
 language/control-structures/for.xml: f40cab318e
+language/control-structures/goto.xml: f40cab318e
 language/control-structures/if.xml: f40cab318e
 language/control-structures/include-once.xml: f40cab318e
 language/control-structures/include.xml: f40cab318e
