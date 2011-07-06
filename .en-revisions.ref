@@ -503,7 +503,7 @@ reference/dotnet/reference.xml: efdbd50709
 reference/dotnet/setup.xml: 807c846e04
 reference/errorfunc/book.xml: efdbd50709
 reference/errorfunc/constants.xml: 26e5c6e48d
-reference/errorfunc/functions/debug-backtrace.xml: 807c846e04
+reference/errorfunc/functions/debug-backtrace.xml: 0a3b8a6568
 reference/errorfunc/functions/debug-print-backtrace.xml: 0a3b8a6568
 reference/errorfunc/functions/error-get-last.xml: ef45cef47e
 reference/errorfunc/functions/error-log.xml: efdbd50709
