@@ -30,7 +30,7 @@ features/remote-files.xml: efdbd50709
 features/sessions.xml: efdbd50709
 features/xforms.xml: efdbd50709
 install/cloud/index.xml: dc53bd9bb4
-install/ini.xml: 7a876a75b7
+install/ini.xml: fb68014385
 install/intro.xml: efdbd50709
 install/macos/bundled.xml: efdbd50709
 install/macos/compile.xml: 6039e8a267
@@ -1722,7 +1722,7 @@ reference/sqlite3/sqlite3/lasterrorcode.xml: 807c846e04
 reference/sqlite3/sqlite3/lasterrormsg.xml: 807c846e04
 reference/sqlite3/sqlite3/lastinsertrowid.xml: 807c846e04
 reference/sqlite3/sqlite3/loadextension.xml: 807c846e04
-reference/sqlite3/sqlite3/open.xml: 1e003817ff
+reference/sqlite3/sqlite3/open.xml: 6ea55d440d
 reference/sqlite3/sqlite3/prepare.xml: 5567574cf4
 reference/sqlite3/sqlite3/query.xml: 807c846e04
 reference/sqlite3/sqlite3result.xml: 961c2937af
@@ -2020,7 +2020,7 @@ reference/zip/ziparchive/setcommentindex.xml: efdbd50709
 reference/zip/ziparchive/setcommentname.xml: efdbd50709
 reference/zip/ziparchive/statindex.xml: efdbd50709
 reference/zip/ziparchive/statname.xml: efdbd50709
-reference/zip/ziparchive/unchangeall.xml: 6ec7d5b87f
+reference/zip/ziparchive/unchangeall.xml: 2c208a786c
 reference/zip/ziparchive/unchangearchive.xml: b39c51d5b6
 reference/zip/ziparchive/unchangeindex.xml: dfcafa4cc2
 reference/zip/ziparchive/unchangename.xml: efdbd50709
