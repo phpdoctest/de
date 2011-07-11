@@ -1079,9 +1079,9 @@ reference/network/functions/getprotobyname.xml: efdbd50709
 reference/network/functions/getprotobynumber.xml: efdbd50709
 reference/network/functions/getservbyname.xml: efdbd50709
 reference/network/functions/getservbyport.xml: efdbd50709
-reference/network/functions/header.xml: 6c799954f2
-reference/network/functions/headers-list.xml: 6c799954f2
-reference/network/functions/headers-sent.xml: 6c799954f2
+reference/network/functions/header.xml: 54f6aa3a52
+reference/network/functions/headers-list.xml: 54f6aa3a52
+reference/network/functions/headers-sent.xml: 54f6aa3a52
 reference/network/functions/inet-ntop.xml: efdbd50709
 reference/network/functions/inet-pton.xml: efdbd50709
 reference/network/functions/ip2long.xml: 807c846e04
@@ -1310,7 +1310,7 @@ reference/pdo/book.xml: 807c846e04
 reference/pdo/configure.xml: 0afc43eef8
 reference/pdo/connections.xml: 807c846e04
 reference/pdo/drivers.xml: 3fe8efac2f
-reference/pdo/error-handling.xml: 807c846e04
+reference/pdo/error-handling.xml: a66a99d61f
 reference/pdo/lobs.xml: 807c846e04
 reference/pdo/pdo.xml: 807c846e04
 reference/pdo/pdo/exec.xml: efdbd50709
