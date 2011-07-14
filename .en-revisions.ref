@@ -1,4 +1,4 @@
-appendices/aliases.xml: efdbd50709
+appendices/aliases.xml: 003c9ebfb9
 appendices/comparisons.xml: efdbd50709
 appendices/configure/index.xml: ba470c3835
 appendices/configure/misc.xml: efdbd50709
@@ -377,7 +377,7 @@ reference/datetime/functions/date-timestamp-get.xml: 807c846e04
 reference/datetime/functions/date-timestamp-set.xml: 807c846e04
 reference/datetime/functions/date-timezone-get.xml: efdbd50709
 reference/datetime/functions/date-timezone-set.xml: efdbd50709
-reference/datetime/functions/date.xml: 4dd83c860a
+reference/datetime/functions/date.xml: e4ef37d47e
 reference/datetime/functions/getdate.xml: 0193148f0c
 reference/datetime/functions/gettimeofday.xml: f7f234cfe9
 reference/datetime/functions/gmdate.xml: 617e2934f0
@@ -521,7 +521,7 @@ reference/exec/functions/passthru.xml: efdbd50709
 reference/exec/functions/proc-close.xml: efdbd50709
 reference/exec/functions/proc-get-status.xml: efdbd50709
 reference/exec/functions/proc-nice.xml: efdbd50709
-reference/exec/functions/proc-open.xml: efdbd50709
+reference/exec/functions/proc-open.xml: e90fa26c3b
 reference/exec/functions/proc-terminate.xml: efdbd50709
 reference/exec/functions/shell-exec.xml: efdbd50709
 reference/exec/functions/system.xml: efdbd50709
@@ -1310,8 +1310,8 @@ reference/pdf/setup.xml: 807c846e04
 reference/pdo/book.xml: 807c846e04
 reference/pdo/configure.xml: 0afc43eef8
 reference/pdo/connections.xml: 807c846e04
-reference/pdo/drivers.xml: 3fe8efac2f
-reference/pdo/error-handling.xml: a66a99d61f
+reference/pdo/drivers.xml: 6254ba03ad
+reference/pdo/error-handling.xml: b49d47005e
 reference/pdo/lobs.xml: 807c846e04
 reference/pdo/pdo.xml: 807c846e04
 reference/pdo/pdo/exec.xml: efdbd50709
