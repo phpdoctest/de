@@ -786,7 +786,7 @@ reference/info/functions/get-extension-funcs.xml: efdbd50709
 reference/info/functions/get-included-files.xml: efdbd50709
 reference/info/functions/get-loaded-extensions.xml: efdbd50709
 reference/info/functions/get-required-files.xml: efdbd50709
-reference/info/functions/getenv.xml: efdbd50709
+reference/info/functions/getenv.xml: 05a415e2d5
 reference/info/functions/getlastmod.xml: efdbd50709
 reference/info/functions/getmypid.xml: efdbd50709
 reference/info/functions/getmyuid.xml: efdbd50709
