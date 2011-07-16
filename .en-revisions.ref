@@ -2,8 +2,8 @@ appendices/aliases.xml: 003c9ebfb9
 appendices/comparisons.xml: efdbd50709
 appendices/configure/index.xml: ba470c3835
 appendices/configure/misc.xml: efdbd50709
-appendices/configure/php.xml: efdbd50709
-appendices/configure/servers.xml: efdbd50709
+appendices/configure/php.xml: 3ef1b24d91
+appendices/configure/servers.xml: 3623a22894
 appendices/debugger.xml: cbb67614a2
 appendices/ini.xml: 3d443bc87a
 appendices/reserved.constants.standard.xml: efdbd50709
