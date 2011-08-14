@@ -179,11 +179,12 @@ reference/array/functions/array-count-values.xml: efdbd50709
 reference/array/functions/array-diff-assoc.xml: efdbd50709
 reference/array/functions/array-diff-key.xml: efdbd50709
 reference/array/functions/array-diff-ukey.xml: efdbd50709
-reference/array/functions/array-diff.xml: efdbd50709
+reference/array/functions/array-diff.xml: a9d345a711
 reference/array/functions/array-fill-keys.xml: efdbd50709
 reference/array/functions/array-fill.xml: ef74e04642
 reference/array/functions/array-filter.xml: be46e03147
 reference/array/functions/array-flip.xml: efdbd50709
+reference/array/functions/array-intersect-assoc.xml: 94b489979d
 reference/array/functions/array-intersect-key.xml: efdbd50709
 reference/array/functions/array-intersect-uassoc.xml: efdbd50709
 reference/array/functions/array-intersect-ukey.xml: efdbd50709
@@ -246,8 +247,8 @@ reference/bzip2/configure.xml: efdbd50709
 reference/bzip2/constants.xml: 807c846e04
 reference/bzip2/examples.xml: efdbd50709
 reference/bzip2/functions/bzclose.xml: efdbd50709
-reference/bzip2/functions/bzcompress.xml: efdbd50709
-reference/bzip2/functions/bzdecompress.xml: efdbd50709
+reference/bzip2/functions/bzcompress.xml: 1d7f04f23d
+reference/bzip2/functions/bzdecompress.xml: 1d7f04f23d
 reference/bzip2/functions/bzerrno.xml: efdbd50709
 reference/bzip2/functions/bzerror.xml: efdbd50709
 reference/bzip2/functions/bzerrstr.xml: efdbd50709
@@ -1234,13 +1235,13 @@ reference/pcntl/reference.xml: efdbd50709
 reference/pcntl/setup.xml: 807c846e04
 reference/pcre/book.xml: efdbd50709
 reference/pcre/configure.xml: ae64065451
-reference/pcre/constants.xml: efdbd50709
+reference/pcre/constants.xml: 8402ae61e5
 reference/pcre/examples.xml: efdbd50709
 reference/pcre/functions/preg-filter.xml: b5fdc608dc
 reference/pcre/functions/preg-grep.xml: b5fdc608dc
 reference/pcre/functions/preg-last-error.xml: efdbd50709
-reference/pcre/functions/preg-match-all.xml: dc684047e6
-reference/pcre/functions/preg-match.xml: b5fdc608dc
+reference/pcre/functions/preg-match-all.xml: 252b5c44ce
+reference/pcre/functions/preg-match.xml: c447701b0f
 reference/pcre/functions/preg-quote.xml: edd2392da9
 reference/pcre/functions/preg-replace-callback.xml: b5fdc608dc
 reference/pcre/functions/preg-replace.xml: b5fdc608dc
@@ -1324,7 +1325,7 @@ reference/pdo_sqlite/functions/PDO-sqliteCreateFunction.xml: 2316a80c8a
 reference/pdo_sqlite/reference.xml: 67a8578bb2
 reference/pgsql/book.xml: 807c846e04
 reference/pgsql/configure.xml: efdbd50709
-reference/pgsql/constants.xml: efdbd50709
+reference/pgsql/constants.xml: 3bcaa002cf
 reference/pgsql/examples.xml: 83fc699d58
 reference/pgsql/functions/pg-affected-rows.xml: efdbd50709
 reference/pgsql/functions/pg-cancel-query.xml: efdbd50709
@@ -1353,7 +1354,7 @@ reference/pgsql/functions/pg-fetch-row.xml: efdbd50709
 reference/pgsql/functions/pg-field-is-null.xml: efdbd50709
 reference/pgsql/functions/pg-field-name.xml: efdbd50709
 reference/pgsql/functions/pg-field-num.xml: efdbd50709
-reference/pgsql/functions/pg-field-prtlen.xml: efdbd50709
+reference/pgsql/functions/pg-field-prtlen.xml: 115a67881a
 reference/pgsql/functions/pg-field-size.xml: efdbd50709
 reference/pgsql/functions/pg-field-table.xml: efdbd50709
 reference/pgsql/functions/pg-field-type-oid.xml: efdbd50709
@@ -1503,7 +1504,7 @@ reference/recode/book.xml: 807c846e04
 reference/recode/configure.xml: efdbd50709
 reference/recode/constants.xml: 807c846e04
 reference/recode/functions/recode-file.xml: efdbd50709
-reference/recode/functions/recode-string.xml: efdbd50709
+reference/recode/functions/recode-string.xml: 6ab8b51d8e
 reference/recode/functions/recode.xml: efdbd50709
 reference/recode/reference.xml: efdbd50709
 reference/recode/setup.xml: 807c846e04
@@ -1630,7 +1631,7 @@ reference/soap/soapserver/addfunction.xml: 96760d668b
 reference/soap/soapserver/fault.xml: 807c846e04
 reference/soap/soapserver/getfunctions.xml: 807c846e04
 reference/soap/soapserver/handle.xml: 807c846e04
-reference/soap/soapserver/setclass.xml: 807c846e04
+reference/soap/soapserver/setclass.xml: 76a6fabade
 reference/soap/soapserver/setpersistence.xml: a660b159a2
 reference/soap/soapvar/construct.xml: 807c846e04
 reference/soap/soapvar/soapvar.xml: 807c846e04
