@@ -203,7 +203,7 @@ reference/array/functions/array-shift.xml: efdbd50709
 reference/array/functions/array-slice.xml: efdbd50709
 reference/array/functions/array-splice.xml: 16b8702ceb
 reference/array/functions/array-sum.xml: efdbd50709
-reference/array/functions/array-unique.xml: 8bc32e4a90
+reference/array/functions/array-unique.xml: 1884a542a8
 reference/array/functions/array-values.xml: efdbd50709
 reference/array/functions/array-walk.xml: 143e6898f8
 reference/array/functions/array.xml: efdbd50709
