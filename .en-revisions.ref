@@ -508,6 +508,7 @@ reference/errorfunc/functions/debug-backtrace.xml: 0a3b8a6568
 reference/errorfunc/functions/debug-print-backtrace.xml: 0a3b8a6568
 reference/errorfunc/functions/error-get-last.xml: ef45cef47e
 reference/errorfunc/functions/error-log.xml: efdbd50709
+reference/errorfunc/functions/error-reporting.xml: dc3610dfa3
 reference/errorfunc/functions/restore-error-handler.xml: efdbd50709
 reference/errorfunc/functions/restore-exception-handler.xml: efdbd50709
 reference/errorfunc/functions/set-error-handler.xml: 807c846e04
