@@ -148,13 +148,13 @@ language/wrappers.xml: 07f040bc3f
 preface.xml: efdbd50709
 reference/apache/book.xml: 807c846e04
 reference/apache/constants.xml: 807c846e04
-reference/apache/functions/apache-child-terminate.xml: efdbd50709
+reference/apache/functions/apache-child-terminate.xml: 45efdecce1
 reference/apache/functions/apache-get-modules.xml: efdbd50709
 reference/apache/functions/apache-get-version.xml: efdbd50709
 reference/apache/functions/apache-getenv.xml: efdbd50709
 reference/apache/functions/apache-lookup-uri.xml: efdbd50709
 reference/apache/functions/apache-note.xml: efdbd50709
-reference/apache/functions/apache-request-headers.xml: efdbd50709
+reference/apache/functions/apache-request-headers.xml: 45efdecce1
 reference/apache/functions/apache-reset-timeout.xml: efdbd50709
 reference/apache/functions/apache-response-headers.xml: efdbd50709
 reference/apache/functions/apache-setenv.xml: efdbd50709
@@ -537,7 +537,7 @@ reference/exif/functions/read-exif-data.xml: efdbd50709
 reference/exif/ini.xml: efdbd50709
 reference/exif/reference.xml: efdbd50709
 reference/exif/setup.xml: 807c846e04
-reference/fbsql/book.xml: 807c846e04
+reference/fbsql/book.xml: fed9ea9182
 reference/fbsql/configure.xml: efdbd50709
 reference/fbsql/constants.xml: efdbd50709
 reference/fbsql/ini.xml: efdbd50709
@@ -578,7 +578,7 @@ reference/filesystem/functions/fflush.xml: efdbd50709
 reference/filesystem/functions/fgetss.xml: efdbd50709
 reference/filesystem/functions/file-get-contents.xml: 7c7480d977
 reference/filesystem/functions/file.xml: dc3610dfa3
-reference/filesystem/functions/filegroup.xml: efdbd50709
+reference/filesystem/functions/filegroup.xml: 1d7f04f23d
 reference/filesystem/functions/fread.xml: efdbd50709
 reference/filesystem/functions/fstat.xml: efdbd50709
 reference/filesystem/functions/glob.xml: efdbd50709
@@ -689,7 +689,7 @@ reference/gmp/constants.xml: efdbd50709
 reference/gmp/examples.xml: 807c846e04
 reference/gmp/reference.xml: efdbd50709
 reference/gmp/setup.xml: 807c846e04
-reference/hash/book.xml: 807c846e04
+reference/hash/book.xml: fed9ea9182
 reference/hash/constants.xml: 2316a80c8a
 reference/hash/functions/hash-algos.xml: 2b33562c77
 reference/hash/functions/hash-copy.xml: efdbd50709
@@ -1733,7 +1733,7 @@ reference/strings/book.xml: efdbd50709
 reference/strings/charsets.xml: efdbd50709
 reference/strings/constants.xml: 2316a80c8a
 reference/strings/functions/addcslashes.xml: efdbd50709
-reference/strings/functions/addslashes.xml: efdbd50709
+reference/strings/functions/addslashes.xml: 16a9343d41
 reference/strings/functions/bin2hex.xml: b0726827c5
 reference/strings/functions/chop.xml: efdbd50709
 reference/strings/functions/chr.xml: efdbd50709
@@ -1791,9 +1791,9 @@ reference/strings/functions/str-rot13.xml: efdbd50709
 reference/strings/functions/str-shuffle.xml: efdbd50709
 reference/strings/functions/str-split.xml: efdbd50709
 reference/strings/functions/str-word-count.xml: 807c846e04
-reference/strings/functions/strcasecmp.xml: efdbd50709
+reference/strings/functions/strcasecmp.xml: ef8c5a42f4
 reference/strings/functions/strchr.xml: efdbd50709
-reference/strings/functions/strcmp.xml: efdbd50709
+reference/strings/functions/strcmp.xml: ef8c5a42f4
 reference/strings/functions/strcoll.xml: efdbd50709
 reference/strings/functions/strcspn.xml: efdbd50709
 reference/strings/functions/strip-tags.xml: 52b6874628
@@ -1804,8 +1804,8 @@ reference/strings/functions/stristr.xml: efdbd50709
 reference/strings/functions/strlen.xml: efdbd50709
 reference/strings/functions/strnatcasecmp.xml: efdbd50709
 reference/strings/functions/strnatcmp.xml: efdbd50709
-reference/strings/functions/strncasecmp.xml: efdbd50709
-reference/strings/functions/strncmp.xml: efdbd50709
+reference/strings/functions/strncasecmp.xml: ef8c5a42f4
+reference/strings/functions/strncmp.xml: ef8c5a42f4
 reference/strings/functions/strpbrk.xml: 2316a80c8a
 reference/strings/functions/strpos.xml: efdbd50709
 reference/strings/functions/strrchr.xml: efdbd50709
@@ -1834,7 +1834,7 @@ reference/strings/setup.xml: efdbd50709
 reference/sybase/book.xml: 807c846e04
 reference/sybase/reference.xml: efdbd50709
 reference/sybase/setup.xml: 807c846e04
-reference/tokenizer/book.xml: efdbd50709
+reference/tokenizer/book.xml: fed9ea9182
 reference/tokenizer/configure.xml: efdbd50709
 reference/tokenizer/constants.xml: efdbd50709
 reference/tokenizer/examples.xml: efdbd50709
