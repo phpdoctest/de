@@ -1565,7 +1565,7 @@ reference/session/functions/session-start.xml: efdbd50709
 reference/session/functions/session-unregister.xml: efdbd50709
 reference/session/functions/session-unset.xml: efdbd50709
 reference/session/functions/session-write-close.xml: efdbd50709
-reference/session/ini.xml: 98f47887a3
+reference/session/ini.xml: cf2b455f7d
 reference/session/reference.xml: efdbd50709
 reference/session/security.xml: efdbd50709
 reference/session/setup.xml: efdbd50709
@@ -1808,11 +1808,11 @@ reference/strings/functions/strnatcmp.xml: efdbd50709
 reference/strings/functions/strncasecmp.xml: ef8c5a42f4
 reference/strings/functions/strncmp.xml: ef8c5a42f4
 reference/strings/functions/strpbrk.xml: 2316a80c8a
-reference/strings/functions/strpos.xml: efdbd50709
+reference/strings/functions/strpos.xml: 7605b65168
 reference/strings/functions/strrchr.xml: efdbd50709
 reference/strings/functions/strrev.xml: efdbd50709
-reference/strings/functions/strripos.xml: efdbd50709
-reference/strings/functions/strrpos.xml: 807c846e04
+reference/strings/functions/strripos.xml: 7605b65168
+reference/strings/functions/strrpos.xml: 7605b65168
 reference/strings/functions/strspn.xml: bf54ce4c56
 reference/strings/functions/strstr.xml: efdbd50709
 reference/strings/functions/strtok.xml: 807c846e04
