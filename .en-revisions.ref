@@ -1669,7 +1669,7 @@ reference/sqlite/constants.xml: 04442df273
 reference/sqlite/functions/sqlite-array-query.xml: d75d863908
 reference/sqlite/functions/sqlite-busy-timeout.xml: efdbd50709
 reference/sqlite/functions/sqlite-changes.xml: efdbd50709
-reference/sqlite/functions/sqlite-close.xml: efdbd50709
+reference/sqlite/functions/sqlite-close.xml: 2208fa8013
 reference/sqlite/functions/sqlite-column.xml: efdbd50709
 reference/sqlite/functions/sqlite-create-aggregate.xml: 9fe541d57b
 reference/sqlite/functions/sqlite-create-function.xml: efdbd50709
@@ -1698,7 +1698,7 @@ reference/sqlite/functions/sqlite-num-rows.xml: efdbd50709
 reference/sqlite/functions/sqlite-open.xml: 05365a0581
 reference/sqlite/functions/sqlite-popen.xml: efdbd50709
 reference/sqlite/functions/sqlite-prev.xml: efdbd50709
-reference/sqlite/functions/sqlite-query.xml: efdbd50709
+reference/sqlite/functions/sqlite-query.xml: d75d863908
 reference/sqlite/functions/sqlite-rewind.xml: efdbd50709
 reference/sqlite/functions/sqlite-seek.xml: efdbd50709
 reference/sqlite/functions/sqlite-single-query.xml: efdbd50709
