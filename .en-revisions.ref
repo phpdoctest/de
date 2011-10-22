@@ -1321,9 +1321,9 @@ reference/pdo/pdoexception.xml: 961c2937af
 reference/pdo/prepared-statements.xml: 807c846e04
 reference/pdo/setup.xml: 807c846e04
 reference/pdo/transactions.xml: 65547ddd80
-reference/pdo_sqlite/functions/PDO-sqliteCreateAggregate.xml: 2316a80c8a
-reference/pdo_sqlite/functions/PDO-sqliteCreateFunction.xml: 2316a80c8a
-reference/pdo_sqlite/reference.xml: 67a8578bb2
+reference/pdo_sqlite/functions/PDO-sqliteCreateAggregate.xml: 04442df273
+reference/pdo_sqlite/functions/PDO-sqliteCreateFunction.xml: 04442df273
+reference/pdo_sqlite/reference.xml: 04442df273
 reference/pgsql/book.xml: 807c846e04
 reference/pgsql/configure.xml: efdbd50709
 reference/pgsql/constants.xml: 3bcaa002cf
@@ -1664,9 +1664,9 @@ reference/sockets/functions/socket-write.xml: 807c846e04
 reference/sockets/reference.xml: 807c846e04
 reference/sockets/setup.xml: 807c846e04
 reference/spl/book.xml: 016339e3b2
-reference/sqlite/book.xml: 807c846e04
-reference/sqlite/constants.xml: 2316a80c8a
-reference/sqlite/functions/sqlite-array-query.xml: efdbd50709
+reference/sqlite/book.xml: fed9ea9182
+reference/sqlite/constants.xml: 04442df273
+reference/sqlite/functions/sqlite-array-query.xml: d75d863908
 reference/sqlite/functions/sqlite-busy-timeout.xml: efdbd50709
 reference/sqlite/functions/sqlite-changes.xml: efdbd50709
 reference/sqlite/functions/sqlite-close.xml: efdbd50709
@@ -1680,7 +1680,7 @@ reference/sqlite/functions/sqlite-exec.xml: efdbd50709
 reference/sqlite/functions/sqlite-factory.xml: 05365a0581
 reference/sqlite/functions/sqlite-fetch-all.xml: efdbd50709
 reference/sqlite/functions/sqlite-fetch-array.xml: efdbd50709
-reference/sqlite/functions/sqlite-fetch-column-types.xml: 2316a80c8a
+reference/sqlite/functions/sqlite-fetch-column-types.xml: 04442df273
 reference/sqlite/functions/sqlite-fetch-object.xml: efdbd50709
 reference/sqlite/functions/sqlite-fetch-single.xml: efdbd50709
 reference/sqlite/functions/sqlite-fetch-string.xml: efdbd50709
@@ -1691,7 +1691,7 @@ reference/sqlite/functions/sqlite-key.xml: efdbd50709
 reference/sqlite/functions/sqlite-last-error.xml: efdbd50709
 reference/sqlite/functions/sqlite-last-insert-rowid.xml: efdbd50709
 reference/sqlite/functions/sqlite-libencoding.xml: efdbd50709
-reference/sqlite/functions/sqlite-libversion.xml: efdbd50709
+reference/sqlite/functions/sqlite-libversion.xml: 520d62f5ff
 reference/sqlite/functions/sqlite-next.xml: efdbd50709
 reference/sqlite/functions/sqlite-num-fields.xml: efdbd50709
 reference/sqlite/functions/sqlite-num-rows.xml: efdbd50709
@@ -1704,9 +1704,10 @@ reference/sqlite/functions/sqlite-seek.xml: efdbd50709
 reference/sqlite/functions/sqlite-single-query.xml: efdbd50709
 reference/sqlite/functions/sqlite-udf-decode-binary.xml: efdbd50709
 reference/sqlite/functions/sqlite-udf-encode-binary.xml: efdbd50709
-reference/sqlite/functions/sqlite-unbuffered-query.xml: efdbd50709
+reference/sqlite/functions/sqlite-unbuffered-query.xml: d75d863908
 reference/sqlite/functions/sqlite-valid.xml: efdbd50709
-reference/sqlite/reference.xml: efdbd50709
+reference/sqlite/ini.xml: efdbd50709
+reference/sqlite/reference.xml: 0588d4cdc1
 reference/sqlite/setup.xml: 66117ac77f
 reference/sqlite3/book.xml: 4b581eb1de
 reference/sqlite3/configure.xml: 807c846e04
