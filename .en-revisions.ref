@@ -1,5 +1,5 @@
 appendices/aliases.xml: 003c9ebfb9
-appendices/comparisons.xml: efdbd50709
+appendices/comparisons.xml: ab034e9bd4
 appendices/configure/index.xml: ba470c3835
 appendices/configure/misc.xml: efdbd50709
 appendices/configure/php.xml: 3ef1b24d91
@@ -72,7 +72,7 @@ language/namespaces.xml: 991103bc31
 language/oop5.xml: 02c15020ac
 language/oop5/abstract.xml: d12da0aca8
 language/oop5/basic.xml: 4186dde003
-language/oop5/changelog.xml: ace25e8b5c
+language/oop5/changelog.xml: 0994070220
 language/oop5/constants.xml: 3f0437f93b
 language/oop5/decon.xml: 807c846e04
 language/oop5/final.xml: efdbd50709
