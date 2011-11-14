@@ -2065,11 +2065,11 @@ reference/zlib/setup.xml: 807c846e04
 security/apache.xml: 9a060a5958
 security/cgi-bin.xml: efdbd50709
 security/current.xml: efdbd50709
-security/database.xml: efdbd50709
+security/database.xml: 1d7f04f23d
 security/errors.xml: efdbd50709
-security/filesystem.xml: efdbd50709
+security/filesystem.xml: 9a060a5958
 security/general.xml: efdbd50709
 security/globals.xml: efdbd50709
 security/hiding.xml: 9a060a5958
 security/intro.xml: efdbd50709
-security/variables.xml: efdbd50709
+security/variables.xml: 9a060a5958
