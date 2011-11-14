@@ -1884,7 +1884,7 @@ reference/v8js/v8jsexception.xml: bac0d5e9ef
 reference/var/book.xml: efdbd50709
 reference/var/constants.xml: 807c846e04
 reference/var/functions/doubleval.xml: efdbd50709
-reference/var/functions/empty.xml: 468c5f0d77
+reference/var/functions/empty.xml: d1c3cf4bce
 reference/var/functions/floatval.xml: efdbd50709
 reference/var/functions/get-defined-vars.xml: efdbd50709
 reference/var/functions/get-resource-type.xml: efdbd50709
@@ -1909,10 +1909,10 @@ reference/var/functions/is-string.xml: 5c702e0b34
 reference/var/functions/is-unicode.xml: efdbd50709
 reference/var/functions/isset.xml: 2aac686d14
 reference/var/functions/print-r.xml: efdbd50709
-reference/var/functions/serialize.xml: efdbd50709
+reference/var/functions/serialize.xml: 4fe15f56ed
 reference/var/functions/settype.xml: efdbd50709
 reference/var/functions/strval.xml: e38e9c4e95
-reference/var/functions/unserialize.xml: efdbd50709
+reference/var/functions/unserialize.xml: 4fe15f56ed
 reference/var/functions/unset.xml: b3c79a918b
 reference/var/functions/var-dump.xml: b974f18142
 reference/var/functions/var-export.xml: ac0627b97a
