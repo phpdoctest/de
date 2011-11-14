@@ -226,6 +226,11 @@ reference/array/functions/uksort.xml: efdbd50709
 reference/array/functions/usort.xml: efdbd50709
 reference/array/reference.xml: efdbd50709
 reference/array/setup.xml: efdbd50709
+reference/bbcode/book.xml: efdbd50709
+reference/bbcode/configure.xml: efdbd50709
+reference/bbcode/constants.xml: 04442df273
+reference/bbcode/reference.xml: efdbd50709
+reference/bbcode/setup.xml: efdbd50709
 reference/bc/book.xml: 807c846e04
 reference/bc/configure.xml: efdbd50709
 reference/bc/constants.xml: 807c846e04
