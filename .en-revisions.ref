@@ -1998,7 +1998,7 @@ reference/xslt/functions/xslt-set-error-handler.xml: efdbd50709
 reference/xslt/functions/xslt-set-log.xml: efdbd50709
 reference/xslt/functions/xslt-set-sax-handler.xml: 66117ac77f
 reference/xslt/setup.xml: dbd2dd039b
-reference/zip/book.xml: 807c846e04
+reference/zip/book.xml: fed9ea9182
 reference/zip/configure.xml: efdbd50709
 reference/zip/examples.xml: efdbd50709
 reference/zip/functions/zip-close.xml: efdbd50709
@@ -2010,7 +2010,7 @@ reference/zip/functions/zip-entry-name.xml: efdbd50709
 reference/zip/functions/zip-entry-open.xml: efdbd50709
 reference/zip/functions/zip-entry-read.xml: efdbd50709
 reference/zip/functions/zip-open.xml: efdbd50709
-reference/zip/functions/zip-read.xml: efdbd50709
+reference/zip/functions/zip-read.xml: 1d7f04f23d
 reference/zip/reference.xml: efdbd50709
 reference/zip/setup.xml: 807c846e04
 reference/zip/ziparchive/addemptydir.xml: efdbd50709
