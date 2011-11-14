@@ -926,6 +926,7 @@ reference/misc/functions/highlight-file.xml: efdbd50709
 reference/misc/functions/highlight-string.xml: efdbd50709
 reference/misc/functions/ignore-user-abort.xml: 807c846e04
 reference/misc/functions/pack.xml: 8bf03fc6ad
+reference/misc/functions/php-check-syntax.xml: 04442df273
 reference/misc/functions/show-source.xml: 807c846e04
 reference/misc/functions/sleep.xml: eefc28553c
 reference/misc/functions/sys-getloadavg.xml: efdbd50709
