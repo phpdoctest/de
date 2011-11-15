@@ -405,7 +405,7 @@ reference/datetime/functions/timezone-transitions-get.xml: efdbd50709
 reference/datetime/ini.xml: efdbd50709
 reference/datetime/reference.xml: efdbd50709
 reference/datetime/setup.xml: 807c846e04
-reference/dba/book.xml: 5fd246cce4
+reference/dba/book.xml: fed9ea9182
 reference/dba/configure.xml: 5d1aa4f744
 reference/dba/constants.xml: 807c846e04
 reference/dba/examples.xml: 807c846e04
@@ -426,7 +426,7 @@ reference/dba/functions/dba-replace.xml: efdbd50709
 reference/dba/functions/dba-sync.xml: efdbd50709
 reference/dba/reference.xml: efdbd50709
 reference/dba/setup.xml: 2dfffd3a9e
-reference/dbase/book.xml: 807c846e04
+reference/dbase/book.xml: fed9ea9182
 reference/dbase/configure.xml: efdbd50709
 reference/dbase/constants.xml: 807c846e04
 reference/dbase/functions/dbase-add-record.xml: efdbd50709
@@ -1021,7 +1021,7 @@ reference/msql/functions/msql.xml: efdbd50709
 reference/msql/ini.xml: 807c846e04
 reference/msql/reference.xml: efdbd50709
 reference/msql/setup.xml: 807c846e04
-reference/mssql/book.xml: 196ff78803
+reference/mssql/book.xml: fed9ea9182
 reference/mssql/configure.xml: efdbd50709
 reference/mssql/constants.xml: efdbd50709
 reference/mssql/functions/mssql-bind.xml: efdbd50709
@@ -1240,7 +1240,7 @@ reference/pcntl/functions/pcntl-wstopsig.xml: efdbd50709
 reference/pcntl/functions/pcntl-wtermsig.xml: efdbd50709
 reference/pcntl/reference.xml: efdbd50709
 reference/pcntl/setup.xml: 807c846e04
-reference/pcre/book.xml: efdbd50709
+reference/pcre/book.xml: fed9ea9182
 reference/pcre/configure.xml: ae64065451
 reference/pcre/constants.xml: 8402ae61e5
 reference/pcre/examples.xml: efdbd50709
@@ -1419,7 +1419,7 @@ reference/pgsql/functions/pg-version.xml: 2316a80c8a
 reference/pgsql/ini.xml: efdbd50709
 reference/pgsql/reference.xml: efdbd50709
 reference/pgsql/setup.xml: 807c846e04
-reference/posix/book.xml: 807c846e04
+reference/posix/book.xml: fed9ea9182
 reference/posix/configure.xml: efdbd50709
 reference/posix/constants.xml: 2316a80c8a
 reference/posix/functions/posix-access.xml: efdbd50709
@@ -1465,7 +1465,7 @@ reference/printer/constants.xml: 807c846e04
 reference/printer/ini.xml: efdbd50709
 reference/printer/reference.xml: efdbd50709
 reference/printer/setup.xml: 807c846e04
-reference/pspell/book.xml: 807c846e04
+reference/pspell/book.xml: fed9ea9182
 reference/pspell/configure.xml: efdbd50709
 reference/pspell/constants.xml: efdbd50709
 reference/pspell/functions/pspell-add-to-personal.xml: efdbd50709
@@ -1515,7 +1515,7 @@ reference/recode/functions/recode-string.xml: 6ab8b51d8e
 reference/recode/functions/recode.xml: efdbd50709
 reference/recode/reference.xml: efdbd50709
 reference/recode/setup.xml: 807c846e04
-reference/regex/book.xml: efdbd50709
+reference/regex/book.xml: fed9ea9182
 reference/regex/configure.xml: efdbd50709
 reference/regex/constants.xml: efdbd50709
 reference/regex/examples.xml: efdbd50709
