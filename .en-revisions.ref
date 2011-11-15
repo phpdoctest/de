@@ -1927,10 +1927,10 @@ reference/xmlreader/setup.xml: dbd2dd039b
 reference/xmlreader/xmlreader.xml: 961c2937af
 reference/xmlreader/xmlreader/close.xml: efdbd50709
 reference/xmlreader/xmlreader/expand.xml: a660b159a2
-reference/xmlreader/xmlreader/getattribute.xml: 38346a0caf
+reference/xmlreader/xmlreader/getattribute.xml: 919271eb5c
 reference/xmlreader/xmlreader/getattributeno.xml: efdbd50709
 reference/xmlreader/xmlreader/getattributens.xml: efdbd50709
-reference/xmlreader/xmlreader/getparserproperty.xml: efdbd50709
+reference/xmlreader/xmlreader/getparserproperty.xml: 8d77d428c5
 reference/xmlreader/xmlreader/isvalid.xml: 06a77cb969
 reference/xmlreader/xmlreader/lookupnamespace.xml: efdbd50709
 reference/xmlreader/xmlreader/movetoattribute.xml: efdbd50709
