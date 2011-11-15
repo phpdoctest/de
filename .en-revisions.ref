@@ -24,7 +24,7 @@ faq/obtaining.xml: efdbd50709
 faq/using.xml: eddfcf184f
 features/connection-handling.xml: efdbd50709
 features/cookies.xml: efdbd50709
-features/http-auth.xml: 92a3a0e98a
+features/http-auth.xml: 0c16ec32c7
 features/persistent-connections.xml: efdbd50709
 features/remote-files.xml: efdbd50709
 features/sessions.xml: efdbd50709
