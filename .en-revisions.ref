@@ -1250,7 +1250,7 @@ reference/pcre/functions/preg-last-error.xml: efdbd50709
 reference/pcre/functions/preg-match-all.xml: 252b5c44ce
 reference/pcre/functions/preg-match.xml: c447701b0f
 reference/pcre/functions/preg-quote.xml: edd2392da9
-reference/pcre/functions/preg-replace-callback.xml: b5fdc608dc
+reference/pcre/functions/preg-replace-callback.xml: 0588d4cdc1
 reference/pcre/functions/preg-replace.xml: b5fdc608dc
 reference/pcre/functions/preg-split.xml: 9658d77bec
 reference/pcre/ini.xml: 3f023ddcd1
@@ -1550,7 +1550,7 @@ reference/sem/setup.xml: 807c846e04
 reference/session/book.xml: efdbd50709
 reference/session/configure.xml: efdbd50709
 reference/session/constants.xml: efdbd50709
-reference/session/examples.xml: 83fc699d58
+reference/session/examples.xml: 0588d4cdc1
 reference/session/functions/session-cache-expire.xml: 9239cfda15
 reference/session/functions/session-cache-limiter.xml: efdbd50709
 reference/session/functions/session-commit.xml: efdbd50709
