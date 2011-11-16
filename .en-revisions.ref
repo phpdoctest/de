@@ -1897,9 +1897,7 @@ reference/var/functions/get-resource-type.xml: efdbd50709
 reference/var/functions/gettype.xml: efdbd50709
 reference/var/functions/intval.xml: 1c5f4a2655
 reference/var/functions/is-array.xml: eb5bae1c6f
-reference/var/functions/is-binary.xml: efdbd50709
 reference/var/functions/is-bool.xml: efdbd50709
-reference/var/functions/is-buffer.xml: 807c846e04
 reference/var/functions/is-double.xml: efdbd50709
 reference/var/functions/is-float.xml: eb5bae1c6f
 reference/var/functions/is-int.xml: eb5bae1c6f
@@ -1912,7 +1910,6 @@ reference/var/functions/is-real.xml: efdbd50709
 reference/var/functions/is-resource.xml: efdbd50709
 reference/var/functions/is-scalar.xml: efdbd50709
 reference/var/functions/is-string.xml: 5c702e0b34
-reference/var/functions/is-unicode.xml: efdbd50709
 reference/var/functions/isset.xml: 2aac686d14
 reference/var/functions/print-r.xml: efdbd50709
 reference/var/functions/serialize.xml: 4fe15f56ed
