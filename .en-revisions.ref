@@ -1942,9 +1942,13 @@ reference/xmlreader/xmlreader/movetonextattribute.xml: efdbd50709
 reference/xmlreader/xmlreader/next.xml: 0588d4cdc1
 reference/xmlreader/xmlreader/open.xml: 6b7bc16f04
 reference/xmlreader/xmlreader/read.xml: efdbd50709
+reference/xmlreader/xmlreader/readinnerxml.xml: 807c846e04
+reference/xmlreader/xmlreader/readouterxml.xml: 807c846e04
+reference/xmlreader/xmlreader/readstring.xml: 5c702e0b34
 reference/xmlreader/xmlreader/setparserproperty.xml: 6f44a2889b
 reference/xmlreader/xmlreader/setrelaxngschema.xml: 06a77cb969
 reference/xmlreader/xmlreader/setrelaxngschemasource.xml: 06a77cb969
+reference/xmlreader/xmlreader/setschema.xml: 06a77cb969
 reference/xmlreader/xmlreader/xml.xml: 6b7bc16f04
 reference/xmlwriter/book.xml: fed9ea9182
 reference/xmlwriter/constants.xml: 807c846e04
