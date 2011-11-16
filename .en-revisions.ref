@@ -229,6 +229,10 @@ reference/array/setup.xml: efdbd50709
 reference/bbcode/book.xml: efdbd50709
 reference/bbcode/configure.xml: efdbd50709
 reference/bbcode/constants.xml: 04442df273
+reference/bbcode/functions/bbcode-add-element.xml: efdbd50709
+reference/bbcode/functions/bbcode-add-smiley.xml: efdbd50709
+reference/bbcode/functions/bbcode-destroy.xml: efdbd50709
+reference/bbcode/functions/bbcode-parse.xml: a5115ebcb2
 reference/bbcode/reference.xml: efdbd50709
 reference/bbcode/setup.xml: efdbd50709
 reference/bc/book.xml: 807c846e04
