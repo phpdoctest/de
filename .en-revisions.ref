@@ -677,6 +677,7 @@ reference/funchand/constants.xml: 807c846e04
 reference/funchand/functions/func-get-arg.xml: da369aa896
 reference/funchand/functions/function-exists.xml: 4d5e6a608d
 reference/funchand/functions/get-defined-functions.xml: efdbd50709
+reference/funchand/functions/register-shutdown-function.xml: 8b9d980c07
 reference/funchand/reference.xml: efdbd50709
 reference/funchand/setup.xml: efdbd50709
 reference/gettext/book.xml: 807c846e04
