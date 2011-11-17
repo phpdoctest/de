@@ -1775,7 +1775,7 @@ reference/strings/functions/lcfirst.xml: 77720f6a42
 reference/strings/functions/levenshtein.xml: 807c846e04
 reference/strings/functions/localeconv.xml: 807c846e04
 reference/strings/functions/ltrim.xml: efdbd50709
-reference/strings/functions/md5-file.xml: efdbd50709
+reference/strings/functions/md5-file.xml: 0588d4cdc1
 reference/strings/functions/md5.xml: 0588d4cdc1
 reference/strings/functions/metaphone.xml: e2a9be3d7b
 reference/strings/functions/nl-langinfo.xml: efdbd50709
