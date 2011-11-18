@@ -10,7 +10,7 @@ appendices/reserved.constants.standard.xml: efdbd50709
 appendices/resources.xml: efdbd50709
 appendices/transports.xml: 26e5c6e48d
 appendices/userlandnaming.xml: 593de58fd5
-bookinfo.xml: 650e4f45fb
+bookinfo.xml: 84d5e6c8ab
 chmonly/aboutchm.xml: efdbd50709
 chmonly/credits.xml: efdbd50709
 faq/build.xml: 52ee8b786b
