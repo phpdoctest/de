@@ -2089,6 +2089,7 @@ reference/zlib/functions/gzfile.xml: efdbd50709
 reference/zlib/functions/gzgets.xml: efdbd50709
 reference/zlib/functions/gzopen.xml: efdbd50709
 reference/zlib/functions/gzputs.xml: efdbd50709
+reference/zlib/functions/gzread.xml: efdbd50709
 reference/zlib/functions/gzrewind.xml: efdbd50709
 reference/zlib/functions/gzseek.xml: efdbd50709
 reference/zlib/functions/gztell.xml: efdbd50709
