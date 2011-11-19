@@ -2084,10 +2084,16 @@ reference/zlib/examples.xml: efdbd50709
 reference/zlib/functions/gzclose.xml: efdbd50709
 reference/zlib/functions/gzcompress.xml: efdbd50709
 reference/zlib/functions/gzdecode.xml: efdbd50709
+reference/zlib/functions/gzdeflate.xml: efdbd50709
 reference/zlib/functions/gzencode.xml: efdbd50709
+reference/zlib/functions/gzeof.xml: efdbd50709
 reference/zlib/functions/gzfile.xml: efdbd50709
+reference/zlib/functions/gzgetc.xml: efdbd50709
 reference/zlib/functions/gzgets.xml: efdbd50709
+reference/zlib/functions/gzgetss.xml: efdbd50709
+reference/zlib/functions/gzinflate.xml: efdbd50709
 reference/zlib/functions/gzopen.xml: efdbd50709
+reference/zlib/functions/gzpassthru.xml: efdbd50709
 reference/zlib/functions/gzputs.xml: efdbd50709
 reference/zlib/functions/gzread.xml: efdbd50709
 reference/zlib/functions/gzrewind.xml: efdbd50709
