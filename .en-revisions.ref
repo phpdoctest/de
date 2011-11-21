@@ -587,7 +587,12 @@ reference/filesystem/functions/chgrp.xml: fd2c899705
 reference/filesystem/functions/chmod.xml: efdbd50709
 reference/filesystem/functions/chown.xml: 61f346b199
 reference/filesystem/functions/clearstatcache.xml: 11d2d9f81a
+reference/filesystem/functions/copy.xml: efdbd50709
 reference/filesystem/functions/delete.xml: efdbd50709
+reference/filesystem/functions/dirname.xml: b9219211ac
+reference/filesystem/functions/disk-free-space.xml: 64571c1c65
+reference/filesystem/functions/disk-total-space.xml: 64571c1c65
+reference/filesystem/functions/diskfreespace.xml: efdbd50709
 reference/filesystem/functions/fclose.xml: efdbd50709
 reference/filesystem/functions/fflush.xml: efdbd50709
 reference/filesystem/functions/fgetss.xml: efdbd50709
