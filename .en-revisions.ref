@@ -1088,8 +1088,8 @@ reference/mssql/functions/mssql-select-db.xml: 5e837803af
 reference/mssql/ini.xml: efdbd50709
 reference/mssql/reference.xml: efdbd50709
 reference/mssql/setup.xml: 196ff78803
-reference/mysql/book.xml: 807c846e04
-reference/mysql/configure.xml: ac31c15500
+reference/mysql/book.xml: fed9ea9182
+reference/mysql/configure.xml: 4d490e71b1
 reference/mysql/examples.xml: ee00fe1a3d
 reference/mysql/functions/mysql-change-user.xml: 807c846e04
 reference/mysql/functions/mysql-fetch-field.xml: 29375729fa
