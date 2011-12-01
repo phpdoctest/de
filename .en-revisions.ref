@@ -1090,8 +1090,17 @@ reference/mssql/reference.xml: efdbd50709
 reference/mssql/setup.xml: 196ff78803
 reference/mysql/book.xml: fed9ea9182
 reference/mysql/configure.xml: 4d490e71b1
+reference/mysql/constants.xml: efdbd50709
 reference/mysql/examples.xml: ee00fe1a3d
+reference/mysql/functions/mysql-affected-rows.xml: efdbd50709
 reference/mysql/functions/mysql-change-user.xml: 807c846e04
+reference/mysql/functions/mysql-client-encoding.xml: efdbd50709
+reference/mysql/functions/mysql-close.xml: 385bbddd76
+reference/mysql/functions/mysql-connect.xml: 40c3a4aae6
+reference/mysql/functions/mysql-create-db.xml: 05365a0581
+reference/mysql/functions/mysql-data-seek.xml: efdbd50709
+reference/mysql/functions/mysql-db-name.xml: f65213571f
+reference/mysql/functions/mysql-db-query.xml: f65213571f
 reference/mysql/functions/mysql-fetch-field.xml: 29375729fa
 reference/mysql/functions/mysql-fetch-object.xml: efdbd50709
 reference/mysql/functions/mysql-ping.xml: efdbd50709
@@ -1099,6 +1108,7 @@ reference/mysql/functions/mysql-real-escape-string.xml: 05365a0581
 reference/mysql/functions/mysql-select-db.xml: efdbd50709
 reference/mysql/functions/mysql-set-charset.xml: efdbd50709
 reference/mysql/functions/mysql-tablename.xml: 50bec0597f
+reference/mysql/ini.xml: d4bc58ba44
 reference/mysql/reference.xml: efdbd50709
 reference/mysql/setup.xml: 807c846e04
 reference/mysqli/configure.xml: efdbd50709
