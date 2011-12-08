@@ -1663,8 +1663,8 @@ reference/simplexml/functions/simplexml-element-getNamespaces.xml: 48d0011a12
 reference/simplexml/functions/simplexml-element-registerXPathNamespace.xml: 48d0011a12
 reference/simplexml/functions/simplexml-element-xpath.xml: 48d0011a12
 reference/simplexml/functions/simplexml-import-dom.xml: efdbd50709
-reference/simplexml/functions/simplexml-load-file.xml: efdbd50709
-reference/simplexml/functions/simplexml-load-string.xml: efdbd50709
+reference/simplexml/functions/simplexml-load-file.xml: e9aaefe69e
+reference/simplexml/functions/simplexml-load-string.xml: e9aaefe69e
 reference/simplexml/reference.xml: efdbd50709
 reference/simplexml/setup.xml: 807c846e04
 reference/snmp/book.xml: 9fc8683ab0
@@ -1821,7 +1821,7 @@ reference/strings/functions/hebrev.xml: efdbd50709
 reference/strings/functions/hebrevc.xml: efdbd50709
 reference/strings/functions/hex2bin.xml: e4db6c4d61
 reference/strings/functions/html-entity-decode.xml: 7c025dd36c
-reference/strings/functions/htmlentities.xml: 25a9d782a2
+reference/strings/functions/htmlentities.xml: 7fe7915e59
 reference/strings/functions/htmlspecialchars-decode.xml: efdbd50709
 reference/strings/functions/htmlspecialchars.xml: 685277f7e5
 reference/strings/functions/implode.xml: 2fcf5fd7ae
