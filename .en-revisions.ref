@@ -100,7 +100,7 @@ language/predefined/errorexception/getseverity.xml: 807c846e04
 language/predefined/exception.xml: a570fdecc3
 language/predefined/exception/clone.xml: 807c846e04
 language/predefined/exception/construct.xml: edd2392da9
-language/predefined/exception/getcode.xml: 807c846e04
+language/predefined/exception/getcode.xml: d55f0ff0ca
 language/predefined/exception/getfile.xml: 807c846e04
 language/predefined/exception/getline.xml: 807c846e04
 language/predefined/exception/getmessage.xml: 807c846e04
