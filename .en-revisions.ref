@@ -30,6 +30,7 @@ features/remote-files.xml: efdbd50709
 features/sessions.xml: efdbd50709
 features/xforms.xml: efdbd50709
 install/cloud/index.xml: dc53bd9bb4
+install/fpm/configuration.xml: e4db6c4d61
 install/ini.xml: fb68014385
 install/intro.xml: efdbd50709
 install/macos/bundled.xml: efdbd50709
