@@ -72,13 +72,16 @@ language/expressions.xml: efdbd50709
 language/namespaces.xml: 92603fe4e8
 language/oop5.xml: 02c15020ac
 language/oop5/abstract.xml: 0994070220
+language/oop5/autoload.xml: 42a08c8541
 language/oop5/basic.xml: 4186dde003
 language/oop5/changelog.xml: 0994070220
+language/oop5/cloning.xml: 9dee3dd288
 language/oop5/constants.xml: 3f0437f93b
 language/oop5/decon.xml: 807c846e04
 language/oop5/final.xml: efdbd50709
 language/oop5/inheritance.xml: e4db6c4d61
 language/oop5/interfaces.xml: 3f0437f93b
+language/oop5/iterations.xml: 4e264cdb60
 language/oop5/late-static-bindings.xml: 807c846e04
 language/oop5/magic.xml: 807c846e04
 language/oop5/object-comparison.xml: 0588d4cdc1
