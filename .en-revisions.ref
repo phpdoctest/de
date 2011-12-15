@@ -89,6 +89,7 @@ language/oop5/overloading.xml: 2dcaefb619
 language/oop5/paamayim-nekudotayim.xml: efdbd50709
 language/oop5/patterns.xml: 43590ae296
 language/oop5/properties.xml: efdbd50709
+language/oop5/references.xml: 15a78e638d
 language/oop5/serialization.xml: e4db6c4d61
 language/oop5/static.xml: 3f0437f93b
 language/oop5/typehinting.xml: efdbd50709
