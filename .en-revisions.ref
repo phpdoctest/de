@@ -221,6 +221,7 @@ reference/array/functions/in-array.xml: 71afc8e076
 reference/array/functions/krsort.xml: efdbd50709
 reference/array/functions/ksort.xml: efdbd50709
 reference/array/functions/pos.xml: efdbd50709
+reference/array/functions/prev.xml: efdbd50709
 reference/array/functions/reset.xml: efdbd50709
 reference/array/functions/rsort.xml: efdbd50709
 reference/array/functions/shuffle.xml: efdbd50709
