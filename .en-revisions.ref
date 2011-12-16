@@ -536,7 +536,7 @@ reference/errorfunc/setup.xml: efdbd50709
 reference/exec/book.xml: b6180373fe
 reference/exec/constants.xml: 16f109a20c
 reference/exec/functions/passthru.xml: efdbd50709
-reference/exec/functions/proc-close.xml: efdbd50709
+reference/exec/functions/proc-close.xml: 794437c211
 reference/exec/functions/proc-get-status.xml: efdbd50709
 reference/exec/functions/proc-nice.xml: efdbd50709
 reference/exec/functions/proc-open.xml: e90fa26c3b
