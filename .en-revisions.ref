@@ -359,7 +359,7 @@ reference/curl/functions/curl-errno.xml: efdbd50709
 reference/curl/functions/curl-error.xml: efdbd50709
 reference/curl/functions/curl-exec.xml: efdbd50709
 reference/curl/functions/curl-getinfo.xml: efdbd50709
-reference/curl/functions/curl-init.xml: edd2392da9
+reference/curl/functions/curl-init.xml: 10021fab45
 reference/curl/functions/curl-multi-add-handle.xml: efdbd50709
 reference/curl/functions/curl-multi-close.xml: 711809a439
 reference/curl/functions/curl-multi-exec.xml: efdbd50709
@@ -635,7 +635,7 @@ reference/filesystem/functions/link.xml: d0bb0b4020
 reference/filesystem/functions/linkinfo.xml: efdbd50709
 reference/filesystem/functions/lstat.xml: 2a9076bd3e
 reference/filesystem/functions/mkdir.xml: 84243b9418
-reference/filesystem/functions/pathinfo.xml: 8f3db76086
+reference/filesystem/functions/pathinfo.xml: 741a38be24
 reference/filesystem/functions/realpath.xml: 16bd608fc2
 reference/filesystem/functions/rmdir.xml: baa3688115
 reference/filesystem/functions/stat.xml: 16bd608fc2
@@ -1839,9 +1839,9 @@ reference/strings/functions/hebrev.xml: efdbd50709
 reference/strings/functions/hebrevc.xml: efdbd50709
 reference/strings/functions/hex2bin.xml: e4db6c4d61
 reference/strings/functions/html-entity-decode.xml: 7c025dd36c
-reference/strings/functions/htmlentities.xml: 7fe7915e59
+reference/strings/functions/htmlentities.xml: 5e11005e09
 reference/strings/functions/htmlspecialchars-decode.xml: efdbd50709
-reference/strings/functions/htmlspecialchars.xml: 685277f7e5
+reference/strings/functions/htmlspecialchars.xml: 5e11005e09
 reference/strings/functions/implode.xml: 2fcf5fd7ae
 reference/strings/functions/join.xml: efdbd50709
 reference/strings/functions/lcfirst.xml: 77720f6a42
