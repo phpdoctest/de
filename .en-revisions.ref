@@ -766,6 +766,7 @@ reference/image/examples.xml: 83fc699d58
 reference/image/functions/getimagesize.xml: 807c846e04
 reference/image/functions/imagearc.xml: 20e2ed00ec
 reference/image/functions/imagechar.xml: efdbd50709
+reference/image/functions/imagecreatefromgif.xml: 66cf11bb10
 reference/image/functions/imagegif.xml: 66cf11bb10
 reference/image/functions/imagejpeg.xml: 66cf11bb10
 reference/image/functions/imagepng.xml: 66cf11bb10
