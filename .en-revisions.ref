@@ -73,7 +73,7 @@ language/namespaces.xml: 92603fe4e8
 language/oop5.xml: 02c15020ac
 language/oop5/abstract.xml: 0994070220
 language/oop5/autoload.xml: 42a08c8541
-language/oop5/basic.xml: 4186dde003
+language/oop5/basic.xml: ef3f6fab0d
 language/oop5/changelog.xml: 0994070220
 language/oop5/cloning.xml: 9dee3dd288
 language/oop5/constants.xml: 3f0437f93b
@@ -86,7 +86,7 @@ language/oop5/late-static-bindings.xml: 807c846e04
 language/oop5/magic.xml: 807c846e04
 language/oop5/object-comparison.xml: 0588d4cdc1
 language/oop5/overloading.xml: 2dcaefb619
-language/oop5/paamayim-nekudotayim.xml: efdbd50709
+language/oop5/paamayim-nekudotayim.xml: f8f32f1614
 language/oop5/patterns.xml: 43590ae296
 language/oop5/properties.xml: efdbd50709
 language/oop5/references.xml: 15a78e638d
