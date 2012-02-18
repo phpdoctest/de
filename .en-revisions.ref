@@ -64,7 +64,7 @@ language/control-structures/include-once.xml: f40cab318e
 language/control-structures/include.xml: e05a74a4be
 language/control-structures/require-once.xml: f40cab318e
 language/control-structures/require.xml: f40cab318e
-language/control-structures/return.xml: f40cab318e
+language/control-structures/return.xml: d1ede7ba97
 language/control-structures/switch.xml: f40cab318e
 language/control-structures/while.xml: f40cab318e
 language/exceptions.xml: 3f0437f93b
