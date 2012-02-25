@@ -157,9 +157,9 @@ reference/apache/constants.xml: 807c846e04
 reference/apache/functions/apache-child-terminate.xml: 45efdecce1
 reference/apache/functions/apache-get-modules.xml: efdbd50709
 reference/apache/functions/apache-get-version.xml: efdbd50709
-reference/apache/functions/apache-getenv.xml: efdbd50709
+reference/apache/functions/apache-getenv.xml: 2d9a88968f
 reference/apache/functions/apache-lookup-uri.xml: efdbd50709
-reference/apache/functions/apache-note.xml: efdbd50709
+reference/apache/functions/apache-note.xml: 2d9a88968f
 reference/apache/functions/apache-request-headers.xml: 45efdecce1
 reference/apache/functions/apache-reset-timeout.xml: efdbd50709
 reference/apache/functions/apache-response-headers.xml: efdbd50709
@@ -2121,8 +2121,8 @@ reference/zip/functions/zip-entry-filesize.xml: efdbd50709
 reference/zip/functions/zip-entry-name.xml: efdbd50709
 reference/zip/functions/zip-entry-open.xml: efdbd50709
 reference/zip/functions/zip-entry-read.xml: efdbd50709
-reference/zip/functions/zip-open.xml: efdbd50709
-reference/zip/functions/zip-read.xml: 1d7f04f23d
+reference/zip/functions/zip-open.xml: d99328136d
+reference/zip/functions/zip-read.xml: fc5cc05a2a
 reference/zip/reference.xml: efdbd50709
 reference/zip/setup.xml: 807c846e04
 reference/zip/ziparchive/addemptydir.xml: efdbd50709
