@@ -29,6 +29,8 @@ features/persistent-connections.xml: efdbd50709
 features/remote-files.xml: efdbd50709
 features/sessions.xml: efdbd50709
 features/xforms.xml: efdbd50709
+install/cloud/azure.xml: dc53bd9bb4
+install/cloud/ec2.xml: dc53bd9bb4
 install/cloud/index.xml: dc53bd9bb4
 install/fpm/configuration.xml: e4db6c4d61
 install/ini.xml: fb68014385
