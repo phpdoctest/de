@@ -483,6 +483,7 @@ reference/dio/reference.xml: efdbd50709
 reference/dio/setup.xml: 807c846e04
 reference/dir/book.xml: 807c846e04
 reference/dir/constants.xml: 2316a80c8a
+reference/dir/directory.xml: c3ae9105d7
 reference/dir/functions/chdir.xml: efdbd50709
 reference/dir/functions/chroot.xml: efdbd50709
 reference/dir/functions/class.dir.xml: efdbd50709
