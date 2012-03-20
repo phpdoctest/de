@@ -517,6 +517,7 @@ reference/domxml/functions/DomDocument-dump-mem.xml: efdbd50709
 reference/domxml/functions/DomDocument-get-element-by-id.xml: efdbd50709
 reference/domxml/functions/DomDocument-get-elements-by-tagname.xml: efdbd50709
 reference/domxml/functions/DomDocument-html-dump-mem.xml: efdbd50709
+reference/domxml/reference.xml: 812066d540
 reference/domxml/setup.xml: 807c846e04
 reference/dotnet/book.xml: 807c846e04
 reference/dotnet/constants.xml: 807c846e04
