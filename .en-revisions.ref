@@ -1414,7 +1414,7 @@ reference/pdo/setup.xml: 807c846e04
 reference/pdo/transactions.xml: 65547ddd80
 reference/pdo_sqlite/functions/PDO-sqliteCreateAggregate.xml: 04442df273
 reference/pdo_sqlite/functions/PDO-sqliteCreateFunction.xml: 04442df273
-reference/pdo_sqlite/reference.xml: 04442df273
+reference/pdo_sqlite/reference.xml: 812066d540
 reference/pgsql/book.xml: 807c846e04
 reference/pgsql/configure.xml: efdbd50709
 reference/pgsql/constants.xml: 3bcaa002cf
