@@ -146,7 +146,7 @@ language/predefined/variables/request.xml: 991103bc31
 language/predefined/variables/server.xml: 991103bc31
 language/predefined/variables/session.xml: 991103bc31
 language/predefined/variables/superglobals.xml: 807c846e04
-language/types.xml: af2b49a738
+language/types.xml: 7e146a5734
 language/types/boolean.xml: 27be162efc
 language/types/float.xml: b8b8dcc348
 language/types/integer.xml: 807c846e04
@@ -974,7 +974,7 @@ reference/misc/functions/show-source.xml: 807c846e04
 reference/misc/functions/sleep.xml: eefc28553c
 reference/misc/functions/sys-getloadavg.xml: efdbd50709
 reference/misc/functions/time-sleep-until.xml: efdbd50709
-reference/misc/functions/uniqid.xml: efdbd50709
+reference/misc/functions/uniqid.xml: 98ff363e66
 reference/misc/functions/unpack.xml: efdbd50709
 reference/misc/functions/usleep.xml: efdbd50709
 reference/misc/ini.xml: 98f47887a3
