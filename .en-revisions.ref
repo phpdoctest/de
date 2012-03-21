@@ -484,15 +484,15 @@ reference/dio/functions/dio-truncate.xml: efdbd50709
 reference/dio/functions/dio-write.xml: efdbd50709
 reference/dio/reference.xml: efdbd50709
 reference/dio/setup.xml: 807c846e04
-reference/dir/book.xml: 807c846e04
+reference/dir/book.xml: c3ae9105d7
 reference/dir/constants.xml: 2316a80c8a
 reference/dir/directory.xml: c3ae9105d7
 reference/dir/functions/chdir.xml: efdbd50709
 reference/dir/functions/chroot.xml: efdbd50709
-reference/dir/functions/class.dir.xml: efdbd50709
 reference/dir/functions/closedir.xml: efdbd50709
+reference/dir/functions/dir.xml: c3ae9105d7
 reference/dir/functions/getcwd.xml: efdbd50709
-reference/dir/functions/opendir.xml: efdbd50709
+reference/dir/functions/opendir.xml: c3ae9105d7
 reference/dir/functions/readdir.xml: efdbd50709
 reference/dir/functions/rewinddir.xml: efdbd50709
 reference/dir/functions/scandir.xml: efdbd50709
@@ -631,7 +631,7 @@ reference/filesystem/functions/fpassthru.xml: efdbd50709
 reference/filesystem/functions/fread.xml: 2ed43ef1b8
 reference/filesystem/functions/fstat.xml: efdbd50709
 reference/filesystem/functions/glob.xml: efdbd50709
-reference/filesystem/functions/is-dir.xml: 2a9076bd3e
+reference/filesystem/functions/is-dir.xml: c3ae9105d7
 reference/filesystem/functions/is-executable.xml: 2a9076bd3e
 reference/filesystem/functions/is-file.xml: 16bd608fc2
 reference/filesystem/functions/is-link.xml: 2a9076bd3e
