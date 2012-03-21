@@ -2130,6 +2130,7 @@ reference/zip/functions/zip-open.xml: d99328136d
 reference/zip/functions/zip-read.xml: fc5cc05a2a
 reference/zip/reference.xml: efdbd50709
 reference/zip/setup.xml: 807c846e04
+reference/zip/ziparchive.xml: 961c2937af
 reference/zip/ziparchive/addemptydir.xml: efdbd50709
 reference/zip/ziparchive/addfile.xml: 33c5735cf5
 reference/zip/ziparchive/addfromstring.xml: efdbd50709
