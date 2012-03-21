@@ -2183,6 +2183,8 @@ reference/zlib/functions/gztell.xml: efdbd50709
 reference/zlib/functions/gzuncompress.xml: efdbd50709
 reference/zlib/functions/gzwrite.xml: efdbd50709
 reference/zlib/functions/readgzfile.xml: efdbd50709
+reference/zlib/functions/zlib-decode.xml: c7cc08a35f
+reference/zlib/functions/zlib-encode.xml: c7cc08a35f
 reference/zlib/functions/zlib-get-coding-type.xml: efdbd50709
 reference/zlib/ini.xml: efdbd50709
 reference/zlib/reference.xml: efdbd50709
