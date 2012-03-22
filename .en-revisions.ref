@@ -79,7 +79,7 @@ language/oop5/autoload.xml: fffb9e3d97
 language/oop5/basic.xml: ef3f6fab0d
 language/oop5/changelog.xml: 3fea5c8be6
 language/oop5/cloning.xml: 3fea5c8be6
-language/oop5/constants.xml: 3f0437f93b
+language/oop5/constants.xml: 58146cd616
 language/oop5/decon.xml: cca3ef0baf
 language/oop5/final.xml: efdbd50709
 language/oop5/inheritance.xml: e4db6c4d61
