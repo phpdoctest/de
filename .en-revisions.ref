@@ -80,7 +80,7 @@ language/oop5/basic.xml: ef3f6fab0d
 language/oop5/changelog.xml: 3fea5c8be6
 language/oop5/cloning.xml: 3fea5c8be6
 language/oop5/constants.xml: 3f0437f93b
-language/oop5/decon.xml: 807c846e04
+language/oop5/decon.xml: cca3ef0baf
 language/oop5/final.xml: efdbd50709
 language/oop5/inheritance.xml: e4db6c4d61
 language/oop5/interfaces.xml: 3f0437f93b
