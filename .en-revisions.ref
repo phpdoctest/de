@@ -8,7 +8,7 @@ appendices/debugger.xml: cbb67614a2
 appendices/ini.core.xml: a7fbcdc91d
 appendices/ini.list.xml: a7fbcdc91d
 appendices/ini.sections.xml: d2c80d6672
-appendices/ini.xml: afd92f27bc
+appendices/ini.xml: b46b638142
 appendices/reserved.constants.standard.xml: efdbd50709
 appendices/reserved.xml: 8e3156cff5
 appendices/resources.xml: efdbd50709
