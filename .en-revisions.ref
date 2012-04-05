@@ -26,7 +26,7 @@ faq/mailinglist.xml: 4fae493c94
 faq/misc.xml: efdbd50709
 faq/obtaining.xml: efdbd50709
 faq/using.xml: eddfcf184f
-features/commandline.xml: e8d71264fc
+features/commandline.xml: a7fbcdc91d
 features/connection-handling.xml: efdbd50709
 features/cookies.xml: efdbd50709
 features/http-auth.xml: 0c16ec32c7
