@@ -2062,7 +2062,7 @@ reference/xmlwriter/functions/xmlwriter-start-attribute-ns.xml: 87c4553d96
 reference/xmlwriter/functions/xmlwriter-start-attribute.xml: 87c4553d96
 reference/xmlwriter/functions/xmlwriter-start-cdata.xml: 87c4553d96
 reference/xmlwriter/functions/xmlwriter-start-comment.xml: 87c4553d96
-reference/xmlwriter/functions/xmlwriter-start-document.xml: 87c4553d96
+reference/xmlwriter/functions/xmlwriter-start-document.xml: 4813485f94
 reference/xmlwriter/functions/xmlwriter-start-dtd-attlist.xml: 87c4553d96
 reference/xmlwriter/functions/xmlwriter-start-dtd-element.xml: 87c4553d96
 reference/xmlwriter/functions/xmlwriter-start-dtd-entity.xml: 87c4553d96
