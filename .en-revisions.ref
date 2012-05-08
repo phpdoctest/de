@@ -1833,7 +1833,7 @@ reference/strings/book.xml: efdbd50709
 reference/strings/charsets.xml: efdbd50709
 reference/strings/constants.xml: 2316a80c8a
 reference/strings/functions/addcslashes.xml: 63fa98890c
-reference/strings/functions/addslashes.xml: 16a9343d41
+reference/strings/functions/addslashes.xml: ed4f4505ed
 reference/strings/functions/bin2hex.xml: b0726827c5
 reference/strings/functions/chop.xml: efdbd50709
 reference/strings/functions/chr.xml: dc3610dfa3
