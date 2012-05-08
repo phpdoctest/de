@@ -5,7 +5,7 @@ appendices/configure/misc.xml: efdbd50709
 appendices/configure/php.xml: 3ef1b24d91
 appendices/configure/servers.xml: 3623a22894
 appendices/debugger.xml: cbb67614a2
-appendices/ini.core.xml: a7fbcdc91d
+appendices/ini.core.xml: 087999d634
 appendices/ini.list.xml: a7fbcdc91d
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
@@ -26,7 +26,7 @@ faq/mailinglist.xml: 4fae493c94
 faq/misc.xml: efdbd50709
 faq/obtaining.xml: efdbd50709
 faq/using.xml: eddfcf184f
-features/commandline.xml: a7fbcdc91d
+features/commandline.xml: 087999d634
 features/connection-handling.xml: efdbd50709
 features/cookies.xml: efdbd50709
 features/http-auth.xml: 0c16ec32c7
@@ -37,7 +37,7 @@ features/xforms.xml: efdbd50709
 install/cloud/azure.xml: dc53bd9bb4
 install/cloud/ec2.xml: dc53bd9bb4
 install/cloud/index.xml: dc53bd9bb4
-install/fpm/configuration.xml: 9389abf849
+install/fpm/configuration.xml: 6a59f09a50
 install/ini.xml: fb68014385
 install/intro.xml: efdbd50709
 install/macos/bundled.xml: efdbd50709
@@ -71,7 +71,7 @@ language/control-structures/include-once.xml: f40cab318e
 language/control-structures/include.xml: e05a74a4be
 language/control-structures/require-once.xml: f40cab318e
 language/control-structures/require.xml: f40cab318e
-language/control-structures/return.xml: d1ede7ba97
+language/control-structures/return.xml: 087999d634
 language/control-structures/switch.xml: f40cab318e
 language/control-structures/while.xml: f40cab318e
 language/exceptions.xml: 3f0437f93b
@@ -720,7 +720,7 @@ reference/funchand/constants.xml: 807c846e04
 reference/funchand/functions/func-get-arg.xml: da369aa896
 reference/funchand/functions/function-exists.xml: 4d5e6a608d
 reference/funchand/functions/get-defined-functions.xml: efdbd50709
-reference/funchand/functions/register-shutdown-function.xml: 7e146a5734
+reference/funchand/functions/register-shutdown-function.xml: 087999d634
 reference/funchand/reference.xml: efdbd50709
 reference/funchand/setup.xml: efdbd50709
 reference/gettext/book.xml: 807c846e04
@@ -1413,7 +1413,7 @@ reference/pdo/drivers.xml: 6254ba03ad
 reference/pdo/error-handling.xml: b49d47005e
 reference/pdo/lobs.xml: 807c846e04
 reference/pdo/pdo.xml: 807c846e04
-reference/pdo/pdo/exec.xml: efdbd50709
+reference/pdo/pdo/exec.xml: 087999d634
 reference/pdo/pdoexception.xml: 961c2937af
 reference/pdo/prepared-statements.xml: 807c846e04
 reference/pdo/setup.xml: 807c846e04
