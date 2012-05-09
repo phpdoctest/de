@@ -941,13 +941,14 @@ reference/math/functions/log.xml: efdbd50709
 reference/math/functions/log10.xml: efdbd50709
 reference/math/functions/max.xml: 807c846e04
 reference/math/functions/min.xml: efdbd50709
-reference/math/functions/mt-getrandmax.xml: efdbd50709
-reference/math/functions/mt-rand.xml: efdbd50709
+reference/math/functions/mt-getrandmax.xml: 3d7e6976f9
+reference/math/functions/mt-rand.xml: 6d9af9d73a
 reference/math/functions/mt-srand.xml: efdbd50709
 reference/math/functions/octdec.xml: efdbd50709
 reference/math/functions/pi.xml: efdbd50709
 reference/math/functions/pow.xml: 9958ff3043
 reference/math/functions/rad2deg.xml: efdbd50709
+reference/math/functions/rand.xml: 0c03607685
 reference/math/functions/round.xml: 15c2a73f47
 reference/math/functions/sin.xml: efdbd50709
 reference/math/functions/sinh.xml: efdbd50709
