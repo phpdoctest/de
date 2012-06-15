@@ -566,7 +566,7 @@ reference/exif/functions/read-exif-data.xml: efdbd50709
 reference/exif/ini.xml: efdbd50709
 reference/exif/reference.xml: efdbd50709
 reference/exif/setup.xml: 807c846e04
-reference/fbsql/book.xml: fed9ea9182
+reference/fbsql/book.xml: a45e54aa5a
 reference/fbsql/configure.xml: efdbd50709
 reference/fbsql/constants.xml: efdbd50709
 reference/fbsql/ini.xml: efdbd50709
@@ -1936,7 +1936,7 @@ reference/strings/setup.xml: efdbd50709
 reference/sybase/book.xml: 807c846e04
 reference/sybase/reference.xml: efdbd50709
 reference/sybase/setup.xml: 807c846e04
-reference/tokenizer/book.xml: fed9ea9182
+reference/tokenizer/book.xml: a45e54aa5a
 reference/tokenizer/configure.xml: efdbd50709
 reference/tokenizer/constants.xml: efdbd50709
 reference/tokenizer/examples.xml: efdbd50709
@@ -2012,7 +2012,7 @@ reference/var/reference.xml: efdbd50709
 reference/var/setup.xml: efdbd50709
 reference/xml/functions/utf8-decode.xml: efdbd50709
 reference/xml/functions/utf8-encode.xml: efdbd50709
-reference/xmlreader/book.xml: 4b581eb1de
+reference/xmlreader/book.xml: a45e54aa5a
 reference/xmlreader/constants.xml: 7a17087302
 reference/xmlreader/setup.xml: dbd2dd039b
 reference/xmlreader/xmlreader.xml: 961c2937af
@@ -2041,7 +2041,7 @@ reference/xmlreader/xmlreader/setrelaxngschema.xml: 06a77cb969
 reference/xmlreader/xmlreader/setrelaxngschemasource.xml: 06a77cb969
 reference/xmlreader/xmlreader/setschema.xml: 06a77cb969
 reference/xmlreader/xmlreader/xml.xml: 6b7bc16f04
-reference/xmlwriter/book.xml: fed9ea9182
+reference/xmlwriter/book.xml: a45e54aa5a
 reference/xmlwriter/constants.xml: 807c846e04
 reference/xmlwriter/functions/xmlwriter-end-attribute.xml: 4a09390428
 reference/xmlwriter/functions/xmlwriter-end-cdata.xml: 4a09390428
@@ -2081,8 +2081,8 @@ reference/xmlwriter/functions/xmlwriter-write-dtd-attlist.xml: 87c4553d96
 reference/xmlwriter/functions/xmlwriter-write-dtd-element.xml: 87c4553d96
 reference/xmlwriter/functions/xmlwriter-write-dtd-entity.xml: 87c4553d96
 reference/xmlwriter/functions/xmlwriter-write-dtd.xml: 87c4553d96
-reference/xmlwriter/functions/xmlwriter-write-element-ns.xml: 87c4553d96
-reference/xmlwriter/functions/xmlwriter-write-element.xml: 87c4553d96
+reference/xmlwriter/functions/xmlwriter-write-element-ns.xml: ac7103e439
+reference/xmlwriter/functions/xmlwriter-write-element.xml: ac7103e439
 reference/xmlwriter/functions/xmlwriter-write-pi.xml: 87c4553d96
 reference/xmlwriter/functions/xmlwriter-write-raw.xml: 87c4553d96
 reference/xmlwriter/reference.xml: efdbd50709
