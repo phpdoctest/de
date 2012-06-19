@@ -6,7 +6,7 @@ appendices/configure/php.xml: 3ef1b24d91
 appendices/configure/servers.xml: 3623a22894
 appendices/debugger.xml: cbb67614a2
 appendices/ini.core.xml: 087999d634
-appendices/ini.list.xml: a7fbcdc91d
+appendices/ini.list.xml: e6231a4bec
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
 appendices/reserved.constants.standard.xml: efdbd50709
