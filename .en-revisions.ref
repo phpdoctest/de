@@ -109,7 +109,7 @@ language/predefined/arrayaccess/offsetget.xml: c320e5d8c0
 language/predefined/arrayaccess/offsetset.xml: b0685d1810
 language/predefined/arrayaccess/offsetunset.xml: f262d5e396
 language/predefined/errorexception.xml: 961c2937af
-language/predefined/errorexception/construct.xml: 807c846e04
+language/predefined/errorexception/construct.xml: a05fa53a0d
 language/predefined/errorexception/getseverity.xml: 807c846e04
 language/predefined/exception.xml: a570fdecc3
 language/predefined/exception/clone.xml: 807c846e04
