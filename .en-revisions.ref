@@ -51,7 +51,7 @@ install/unix/debian.xml: 608eeed3cf
 install/unix/index.xml: ad774de3dd
 language/constants.xml: 5933f1cd66
 language/context.xml: 807c846e04
-language/context/curl.xml: 807c846e04
+language/context/curl.xml: b2d3012691
 language/context/ftp.xml: 5597841814
 language/context/parameters.xml: d51f19c092
 language/context/phar.xml: 39a2637d68
@@ -360,7 +360,7 @@ reference/ctype/functions/ctype-upper.xml: a44de5b418
 reference/ctype/functions/ctype-xdigit.xml: a44de5b418
 reference/ctype/reference.xml: efdbd50709
 reference/ctype/setup.xml: efdbd50709
-reference/curl/book.xml: 807c846e04
+reference/curl/book.xml: a45e54aa5a
 reference/curl/configure.xml: efdbd50709
 reference/curl/constants.xml: efdbd50709
 reference/curl/examples.xml: 83fc699d58
@@ -383,7 +383,7 @@ reference/curl/functions/curl-setopt-array.xml: 0699279cd3
 reference/curl/functions/curl-setopt.xml: e00ae760cf
 reference/curl/functions/curl-version.xml: efdbd50709
 reference/curl/reference.xml: efdbd50709
-reference/curl/setup.xml: 807c846e04
+reference/curl/setup.xml: 15fe90977f
 reference/datetime/book.xml: fed9ea9182
 reference/datetime/constants.xml: 04442df273
 reference/datetime/functions/checkdate.xml: efdbd50709
@@ -658,7 +658,7 @@ reference/filesystem/functions/tmpfile.xml: efdbd50709
 reference/filesystem/functions/touch.xml: 59ff3a624b
 reference/filesystem/functions/umask.xml: efdbd50709
 reference/filesystem/functions/unlink.xml: 079bda6961
-reference/filesystem/ini.xml: e8676d0d60
+reference/filesystem/ini.xml: 087999d634
 reference/filesystem/reference.xml: efdbd50709
 reference/filesystem/setup.xml: 1eb825980a
 reference/filter/book.xml: fed9ea9182
@@ -985,7 +985,7 @@ reference/misc/functions/time-sleep-until.xml: efdbd50709
 reference/misc/functions/uniqid.xml: 98ff363e66
 reference/misc/functions/unpack.xml: efdbd50709
 reference/misc/functions/usleep.xml: efdbd50709
-reference/misc/ini.xml: 98f47887a3
+reference/misc/ini.xml: a2ec56909c
 reference/misc/reference.xml: efdbd50709
 reference/misc/setup.xml: efdbd50709
 reference/mnogosearch/book.xml: fed9ea9182
@@ -1069,7 +1069,7 @@ reference/msql/functions/msql-result.xml: efdbd50709
 reference/msql/functions/msql-select-db.xml: efdbd50709
 reference/msql/functions/msql-tablename.xml: efdbd50709
 reference/msql/functions/msql.xml: efdbd50709
-reference/msql/ini.xml: 807c846e04
+reference/msql/ini.xml: d2c80d6672
 reference/msql/reference.xml: efdbd50709
 reference/msql/setup.xml: 807c846e04
 reference/mssql/book.xml: fed9ea9182
@@ -1315,7 +1315,7 @@ reference/outcontrol/functions/ob-flush.xml: efdbd50709
 reference/outcontrol/functions/ob-get-contents.xml: efdbd50709
 reference/outcontrol/functions/ob-get-level.xml: efdbd50709
 reference/outcontrol/functions/ob-implicit-flush.xml: efdbd50709
-reference/outcontrol/ini.xml: efdbd50709
+reference/outcontrol/ini.xml: 087999d634
 reference/outcontrol/reference.xml: efdbd50709
 reference/outcontrol/setup.xml: efdbd50709
 reference/overload/book.xml: efdbd50709
@@ -1509,7 +1509,7 @@ reference/pgsql/functions/pg-unescape-bytea.xml: efdbd50709
 reference/pgsql/functions/pg-untrace.xml: efdbd50709
 reference/pgsql/functions/pg-update.xml: efdbd50709
 reference/pgsql/functions/pg-version.xml: 2316a80c8a
-reference/pgsql/ini.xml: efdbd50709
+reference/pgsql/ini.xml: d2c80d6672
 reference/pgsql/reference.xml: efdbd50709
 reference/pgsql/setup.xml: 807c846e04
 reference/posix/book.xml: fed9ea9182
@@ -1664,7 +1664,7 @@ reference/session/functions/session-start.xml: efdbd50709
 reference/session/functions/session-unregister.xml: efdbd50709
 reference/session/functions/session-unset.xml: efdbd50709
 reference/session/functions/session-write-close.xml: efdbd50709
-reference/session/ini.xml: cf2b455f7d
+reference/session/ini.xml: 0fc72abd55
 reference/session/reference.xml: efdbd50709
 reference/session/security.xml: efdbd50709
 reference/session/setup.xml: efdbd50709
