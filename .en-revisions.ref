@@ -634,6 +634,7 @@ reference/filesystem/functions/flock.xml: d0c8736641
 reference/filesystem/functions/fopen.xml: b3551bef2d
 reference/filesystem/functions/fpassthru.xml: efdbd50709
 reference/filesystem/functions/fread.xml: 2ed43ef1b8
+reference/filesystem/functions/fscanf.xml: efdbd50709
 reference/filesystem/functions/fstat.xml: efdbd50709
 reference/filesystem/functions/glob.xml: efdbd50709
 reference/filesystem/functions/is-dir.xml: c3ae9105d7
