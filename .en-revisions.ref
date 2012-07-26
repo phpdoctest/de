@@ -176,7 +176,7 @@ reference/apache/functions/ascii2ebcdic.xml: 807c846e04
 reference/apache/functions/ebcdic2ascii.xml: 807c846e04
 reference/apache/functions/getallheaders.xml: efdbd50709
 reference/apache/functions/virtual.xml: efdbd50709
-reference/apache/ini.xml: efdbd50709
+reference/apache/ini.xml: d2c80d6672
 reference/apache/reference.xml: efdbd50709
 reference/apache/setup.xml: 807c846e04
 reference/apc/book.xml: fed9ea9182
@@ -265,7 +265,7 @@ reference/bc/functions/bcpowmod.xml: efdbd50709
 reference/bc/functions/bcscale.xml: efdbd50709
 reference/bc/functions/bcsqrt.xml: efdbd50709
 reference/bc/functions/bcsub.xml: efdbd50709
-reference/bc/ini.xml: efdbd50709
+reference/bc/ini.xml: d2c80d6672
 reference/bc/reference.xml: efdbd50709
 reference/bc/setup.xml: 807c846e04
 reference/bzip2/book.xml: 807c846e04
@@ -341,7 +341,7 @@ reference/crack/functions/crack-check.xml: efdbd50709
 reference/crack/functions/crack-closedict.xml: efdbd50709
 reference/crack/functions/crack-getlastmessage.xml: efdbd50709
 reference/crack/functions/crack-opendict.xml: efdbd50709
-reference/crack/ini.xml: efdbd50709
+reference/crack/ini.xml: d2c80d6672
 reference/crack/reference.xml: efdbd50709
 reference/crack/setup.xml: 807c846e04
 reference/ctype/book.xml: a45e54aa5a
@@ -423,7 +423,7 @@ reference/datetime/functions/timezone-name-get.xml: efdbd50709
 reference/datetime/functions/timezone-offset-get.xml: efdbd50709
 reference/datetime/functions/timezone-open.xml: a64304c60e
 reference/datetime/functions/timezone-transitions-get.xml: efdbd50709
-reference/datetime/ini.xml: efdbd50709
+reference/datetime/ini.xml: d2c80d6672
 reference/datetime/reference.xml: efdbd50709
 reference/datetime/setup.xml: 807c846e04
 reference/dba/book.xml: a45e54aa5a
@@ -474,7 +474,7 @@ reference/dbx/functions/dbx-error.xml: efdbd50709
 reference/dbx/functions/dbx-escape-string.xml: efdbd50709
 reference/dbx/functions/dbx-fetch-row.xml: efdbd50709
 reference/dbx/functions/dbx-sort.xml: efdbd50709
-reference/dbx/ini.xml: efdbd50709
+reference/dbx/ini.xml: d2c80d6672
 reference/dbx/reference.xml: efdbd50709
 reference/dbx/setup.xml: 807c846e04
 reference/dio/book.xml: 4b581eb1de
@@ -563,13 +563,13 @@ reference/exif/constants.xml: efdbd50709
 reference/exif/functions/exif-imagetype.xml: 3a418eb353
 reference/exif/functions/exif-thumbnail.xml: efdbd50709
 reference/exif/functions/read-exif-data.xml: efdbd50709
-reference/exif/ini.xml: efdbd50709
+reference/exif/ini.xml: d2c80d6672
 reference/exif/reference.xml: efdbd50709
 reference/exif/setup.xml: 807c846e04
 reference/fbsql/book.xml: a45e54aa5a
 reference/fbsql/configure.xml: efdbd50709
 reference/fbsql/constants.xml: efdbd50709
-reference/fbsql/ini.xml: efdbd50709
+reference/fbsql/ini.xml: d2c80d6672
 reference/fbsql/reference.xml: efdbd50709
 reference/fbsql/setup.xml: 807c846e04
 reference/fdf/book.xml: a45e54aa5a
@@ -889,7 +889,7 @@ reference/java/constants.xml: 807c846e04
 reference/java/examples.xml: 83fc699d58
 reference/java/functions/java-last-exception-clear.xml: efdbd50709
 reference/java/functions/java-last-exception-get.xml: efdbd50709
-reference/java/ini.xml: efdbd50709
+reference/java/ini.xml: d2c80d6672
 reference/java/reference.xml: 807c846e04
 reference/java/setup.xml: 807c846e04
 reference/json/book.xml: a45e54aa5a
@@ -903,13 +903,14 @@ reference/ldap/book.xml: a45e54aa5a
 reference/ldap/configure.xml: efdbd50709
 reference/ldap/constants.xml: efdbd50709
 reference/ldap/examples.xml: 83fc699d58
+reference/ldap/ini.xml: d2c80d6672
 reference/ldap/reference.xml: 807c846e04
 reference/ldap/setup.xml: 807c846e04
 reference/ldap/using.xml: 807c846e04
 reference/mail/book.xml: a45e54aa5a
 reference/mail/constants.xml: 807c846e04
 reference/mail/functions/ezmlm-hash.xml: efdbd50709
-reference/mail/ini.xml: 878fd4b3af
+reference/mail/ini.xml: d2c80d6672
 reference/mail/reference.xml: efdbd50709
 reference/mail/setup.xml: 807c846e04
 reference/math/book.xml: a45e54aa5a
@@ -1106,7 +1107,7 @@ reference/mssql/functions/mssql-query.xml: 05365a0581
 reference/mssql/functions/mssql-result.xml: efdbd50709
 reference/mssql/functions/mssql-rows-affected.xml: efdbd50709
 reference/mssql/functions/mssql-select-db.xml: 5e837803af
-reference/mssql/ini.xml: efdbd50709
+reference/mssql/ini.xml: d2c80d6672
 reference/mssql/reference.xml: efdbd50709
 reference/mssql/setup.xml: 196ff78803
 reference/mysql/book.xml: f8f32f1614
@@ -1161,7 +1162,7 @@ reference/mysql/functions/mysql-stat.xml: efdbd50709
 reference/mysql/functions/mysql-tablename.xml: 50bec0597f
 reference/mysql/functions/mysql-thread-id.xml: efdbd50709
 reference/mysql/functions/mysql-unbuffered-query.xml: 61054d8560
-reference/mysql/ini.xml: d4bc58ba44
+reference/mysql/ini.xml: d2c80d6672
 reference/mysql/reference.xml: efdbd50709
 reference/mysql/setup.xml: 807c846e04
 reference/mysqli/configure.xml: efdbd50709
@@ -1197,7 +1198,7 @@ reference/network/functions/socket-get-status.xml: efdbd50709
 reference/network/functions/socket-set-blocking.xml: efdbd50709
 reference/network/functions/socket-set-timeout.xml: efdbd50709
 reference/network/functions/syslog.xml: efdbd50709
-reference/network/ini.xml: 98f47887a3
+reference/network/ini.xml: d2c80d6672
 reference/network/reference.xml: 807c846e04
 reference/network/setup.xml: 15110920fa
 reference/nis/book.xml: fed9ea9182
@@ -1347,7 +1348,7 @@ reference/pcre/functions/preg-quote.xml: edd2392da9
 reference/pcre/functions/preg-replace-callback.xml: 0588d4cdc1
 reference/pcre/functions/preg-replace.xml: b5fdc608dc
 reference/pcre/functions/preg-split.xml: 9658d77bec
-reference/pcre/ini.xml: 3f023ddcd1
+reference/pcre/ini.xml: d2c80d6672
 reference/pcre/pattern.modifiers.xml: b0a814b2b3
 reference/pcre/pattern.xml: 2a59242e81
 reference/pcre/reference.xml: efdbd50709
@@ -1556,7 +1557,7 @@ reference/posix/setup.xml: 807c846e04
 reference/printer/book.xml: fed9ea9182
 reference/printer/configure.xml: efdbd50709
 reference/printer/constants.xml: 807c846e04
-reference/printer/ini.xml: efdbd50709
+reference/printer/ini.xml: d2c80d6672
 reference/printer/reference.xml: efdbd50709
 reference/printer/setup.xml: 807c846e04
 reference/pspell/book.xml: a45e54aa5a
@@ -1638,7 +1639,7 @@ reference/sem/functions/shm-attach.xml: 2cd90ca774
 reference/sem/functions/shm-detach.xml: efdbd50709
 reference/sem/functions/shm-remove-var.xml: efdbd50709
 reference/sem/functions/shm-remove.xml: efdbd50709
-reference/sem/ini.xml: efdbd50709
+reference/sem/ini.xml: d2c80d6672
 reference/sem/reference.xml: efdbd50709
 reference/sem/setup.xml: 807c846e04
 reference/session/book.xml: efdbd50709
@@ -2194,7 +2195,7 @@ reference/zlib/functions/readgzfile.xml: efdbd50709
 reference/zlib/functions/zlib-decode.xml: c7cc08a35f
 reference/zlib/functions/zlib-encode.xml: c7cc08a35f
 reference/zlib/functions/zlib-get-coding-type.xml: efdbd50709
-reference/zlib/ini.xml: efdbd50709
+reference/zlib/ini.xml: d2c80d6672
 reference/zlib/reference.xml: efdbd50709
 reference/zlib/setup.xml: 807c846e04
 security/apache.xml: 9a060a5958
