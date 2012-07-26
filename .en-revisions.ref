@@ -184,7 +184,7 @@ reference/apc/constants.xml: 4f9fcd25fe
 reference/apc/functions/apc-compile-file.xml: 133120beb3
 reference/apc/reference.xml: efdbd50709
 reference/apc/setup.xml: 9377642856
-reference/array/book.xml: fed9ea9182
+reference/array/book.xml: a45e54aa5a
 reference/array/constants.xml: efdbd50709
 reference/array/functions/array-change-key-case.xml: efdbd50709
 reference/array/functions/array-chunk.xml: efdbd50709
@@ -208,7 +208,7 @@ reference/array/functions/array-map.xml: 2c5972d002
 reference/array/functions/array-merge-recursive.xml: efdbd50709
 reference/array/functions/array-multisort.xml: efdbd50709
 reference/array/functions/array-pop.xml: efdbd50709
-reference/array/functions/array-product.xml: efdbd50709
+reference/array/functions/array-product.xml: 17714f9fae
 reference/array/functions/array-rand.xml: 86e8a33a38
 reference/array/functions/array-reduce.xml: 0855ef1b63
 reference/array/functions/array-reverse.xml: efdbd50709
@@ -237,9 +237,9 @@ reference/array/functions/rsort.xml: efdbd50709
 reference/array/functions/shuffle.xml: efdbd50709
 reference/array/functions/sizeof.xml: efdbd50709
 reference/array/functions/sort.xml: 0d3693c86a
-reference/array/functions/uasort.xml: efdbd50709
+reference/array/functions/uasort.xml: 7e146a5734
 reference/array/functions/uksort.xml: efdbd50709
-reference/array/functions/usort.xml: efdbd50709
+reference/array/functions/usort.xml: 090b7a6549
 reference/array/reference.xml: efdbd50709
 reference/array/setup.xml: efdbd50709
 reference/bbcode/book.xml: efdbd50709
