@@ -1847,7 +1847,7 @@ reference/strings/functions/convert-uudecode.xml: 04442df273
 reference/strings/functions/convert-uuencode.xml: 04442df273
 reference/strings/functions/count-chars.xml: efdbd50709
 reference/strings/functions/crc32.xml: efdbd50709
-reference/strings/functions/crypt.xml: 1db5a37486
+reference/strings/functions/crypt.xml: 275f5825ca
 reference/strings/functions/echo.xml: efdbd50709
 reference/strings/functions/explode.xml: 0c640f69dc
 reference/strings/functions/fprintf.xml: efdbd50709
