@@ -39,7 +39,7 @@ install/cloud/azure.xml: dc53bd9bb4
 install/cloud/ec2.xml: dc53bd9bb4
 install/cloud/index.xml: dc53bd9bb4
 install/fpm/configuration.xml: 6a59f09a50
-install/ini.xml: 7f95f6925d
+install/ini.xml: 0c3adf514a
 install/intro.xml: efdbd50709
 install/macos/bundled.xml: efdbd50709
 install/macos/compile.xml: 6039e8a267
@@ -2016,7 +2016,7 @@ reference/xml/functions/utf8-decode.xml: efdbd50709
 reference/xml/functions/utf8-encode.xml: efdbd50709
 reference/xmlreader/book.xml: a45e54aa5a
 reference/xmlreader/constants.xml: 7a17087302
-reference/xmlreader/setup.xml: dbd2dd039b
+reference/xmlreader/setup.xml: 6dfbe89af1
 reference/xmlreader/xmlreader.xml: 961c2937af
 reference/xmlreader/xmlreader/close.xml: efdbd50709
 reference/xmlreader/xmlreader/expand.xml: a660b159a2
