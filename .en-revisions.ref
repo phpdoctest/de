@@ -2091,10 +2091,10 @@ reference/xmlwriter/reference.xml: efdbd50709
 reference/xmlwriter/setup.xml: dbd2dd039b
 reference/xsl/book.xml: a45e54aa5a
 reference/xsl/configure.xml: efdbd50709
-reference/xsl/constants.xml: efdbd50709
+reference/xsl/constants.xml: f621e50377
 reference/xsl/examples.xml: 83fc699d58
 reference/xsl/setup.xml: dbd2dd039b
-reference/xsl/xsltprocessor.xml: 961c2937af
+reference/xsl/xsltprocessor.xml: 014662e997
 reference/xsl/xsltprocessor/construct.xml: 87c4553d96
 reference/xsl/xsltprocessor/getparameter.xml: 87c4553d96
 reference/xsl/xsltprocessor/getsecurityprefs.xml: a02cc795e2
