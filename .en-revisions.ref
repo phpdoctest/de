@@ -985,7 +985,7 @@ reference/misc/functions/sleep.xml: eefc28553c
 reference/misc/functions/sys-getloadavg.xml: efdbd50709
 reference/misc/functions/time-sleep-until.xml: efdbd50709
 reference/misc/functions/uniqid.xml: 98ff363e66
-reference/misc/functions/unpack.xml: efdbd50709
+reference/misc/functions/unpack.xml: 8a44cd0666
 reference/misc/functions/usleep.xml: efdbd50709
 reference/misc/ini.xml: a2ec56909c
 reference/misc/reference.xml: efdbd50709
