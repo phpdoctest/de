@@ -6,7 +6,7 @@ appendices/configure/php.xml: 3ef1b24d91
 appendices/configure/servers.xml: 3623a22894
 appendices/debugger.xml: cbb67614a2
 appendices/ini.core.xml: 087999d634
-appendices/ini.list.xml: e6231a4bec
+appendices/ini.list.xml: 82c231eadf
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
 appendices/reserved.constants.standard.xml: efdbd50709
@@ -1207,7 +1207,7 @@ reference/nis/constants.xml: efdbd50709
 reference/nis/functions/yp-next.xml: efdbd50709
 reference/nis/reference.xml: efdbd50709
 reference/nis/setup.xml: 807c846e04
-reference/oci8/aliases.xml: 50107ab344
+reference/oci8/aliases.xml: ee6e3a1d88
 reference/oci8/book.xml: a45e54aa5a
 reference/oci8/configure.xml: 807c846e04
 reference/oci8/constants.xml: 807c846e04
@@ -1231,7 +1231,7 @@ reference/oci8/functions/oci-fetch-object.xml: 807c846e04
 reference/oci8/functions/oci-fetch-row.xml: 807c846e04
 reference/oci8/functions/oci-fetch.xml: 807c846e04
 reference/oci8/functions/oci-free-statement.xml: efdbd50709
-reference/oci8/ini.xml: 807c846e04
+reference/oci8/ini.xml: 82c231eadf
 reference/oci8/oldaliases/ocibindbyname.xml: da32dac8b3
 reference/oci8/oldaliases/ocicancel.xml: da32dac8b3
 reference/oci8/oldaliases/ocicloselob.xml: 844678d1fc
