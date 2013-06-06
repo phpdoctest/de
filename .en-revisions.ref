@@ -2096,7 +2096,7 @@ reference/xsl/examples.xml: 83fc699d58
 reference/xsl/setup.xml: dbd2dd039b
 reference/xsl/xsltprocessor.xml: 014662e997
 reference/xsl/xsltprocessor/construct.xml: 87c4553d96
-reference/xsl/xsltprocessor/getparameter.xml: 87c4553d96
+reference/xsl/xsltprocessor/getparameter.xml: 674bc86e60
 reference/xsl/xsltprocessor/getsecurityprefs.xml: a02cc795e2
 reference/xsl/xsltprocessor/hasexsltsupport.xml: 87c4553d96
 reference/xsl/xsltprocessor/importstylesheet.xml: 87c4553d96
