@@ -893,7 +893,7 @@ reference/java/ini.xml: d2c80d6672
 reference/java/reference.xml: 807c846e04
 reference/java/setup.xml: 807c846e04
 reference/json/book.xml: a45e54aa5a
-reference/json/constants.xml: 807c846e04
+reference/json/constants.xml: 82dc27f0b5
 reference/json/functions/json-decode.xml: cd621e669b
 reference/json/functions/json-encode.xml: efdbd50709
 reference/json/functions/json-last-error.xml: 807c846e04
