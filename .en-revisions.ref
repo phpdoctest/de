@@ -44,7 +44,7 @@ install/intro.xml: efdbd50709
 install/macos/bundled.xml: efdbd50709
 install/macos/compile.xml: 6039e8a267
 install/macos/index.xml: 6039e8a267
-install/macos/packages.xml: efdbd50709
+install/macos/packages.xml: 8e4cf39fd1
 install/unix/apache1.xml: ff5b22acc2
 install/unix/apache2.xml: 807c846e04
 install/unix/debian.xml: 608eeed3cf
