@@ -100,7 +100,7 @@ language/oop5/properties.xml: efdbd50709
 language/oop5/references.xml: 15a78e638d
 language/oop5/serialization.xml: fa21450cc7
 language/oop5/static.xml: 3f0437f93b
-language/oop5/traits.xml: 5a00fbd2c0
+language/oop5/traits.xml: 3d258938b9
 language/oop5/typehinting.xml: efdbd50709
 language/oop5/visibility.xml: 9d9bc4172d
 language/predefined/arrayaccess.xml: 857605f5ef
