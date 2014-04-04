@@ -84,7 +84,7 @@ language/oop5.xml: 02c15020ac
 language/oop5/abstract.xml: 0994070220
 language/oop5/autoload.xml: fffb9e3d97
 language/oop5/basic.xml: ef3f6fab0d
-language/oop5/changelog.xml: 3fea5c8be6
+language/oop5/changelog.xml: e05272ea7f
 language/oop5/cloning.xml: 3fea5c8be6
 language/oop5/constants.xml: 58146cd616
 language/oop5/decon.xml: cca3ef0baf
@@ -192,13 +192,13 @@ reference/array/functions/array-change-key-case.xml: efdbd50709
 reference/array/functions/array-chunk.xml: efdbd50709
 reference/array/functions/array-combine.xml: dc238d115a
 reference/array/functions/array-count-values.xml: 65735b6b36
-reference/array/functions/array-diff-assoc.xml: efdbd50709
+reference/array/functions/array-diff-assoc.xml: 6b490dbc34
 reference/array/functions/array-diff-key.xml: efdbd50709
 reference/array/functions/array-diff-ukey.xml: 65735b6b36
 reference/array/functions/array-diff.xml: 665ac0ccbd
 reference/array/functions/array-fill-keys.xml: efdbd50709
 reference/array/functions/array-fill.xml: ef74e04642
-reference/array/functions/array-filter.xml: 65735b6b36
+reference/array/functions/array-filter.xml: 5041e5ca80
 reference/array/functions/array-flip.xml: 65735b6b36
 reference/array/functions/array-intersect-assoc.xml: 65735b6b36
 reference/array/functions/array-intersect-key.xml: efdbd50709
@@ -212,7 +212,7 @@ reference/array/functions/array-multisort.xml: efdbd50709
 reference/array/functions/array-pop.xml: efdbd50709
 reference/array/functions/array-product.xml: 17714f9fae
 reference/array/functions/array-rand.xml: 86e8a33a38
-reference/array/functions/array-reduce.xml: 0855ef1b63
+reference/array/functions/array-reduce.xml: 8ef9dd5b84
 reference/array/functions/array-reverse.xml: efdbd50709
 reference/array/functions/array-search.xml: b742f4ee25
 reference/array/functions/array-shift.xml: efdbd50709
