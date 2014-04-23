@@ -25,6 +25,7 @@ faq/installation.xml: 67970ba98e
 faq/mailinglist.xml: 4fae493c94
 faq/misc.xml: efdbd50709
 faq/obtaining.xml: efdbd50709
+faq/passwords.xml: 3e661618e0
 faq/using.xml: eddfcf184f
 features/commandline.xml: 087999d634
 features/connection-handling.xml: efdbd50709
@@ -49,8 +50,11 @@ install/macos/index.xml: 6039e8a267
 install/macos/packages.xml: 8e4cf39fd1
 install/unix/apache1.xml: ff5b22acc2
 install/unix/apache2.xml: 807c846e04
+install/unix/commandline.xml: 17a124fce7
 install/unix/debian.xml: 608eeed3cf
+install/unix/hpux.xml: efdbd50709
 install/unix/index.xml: ad774de3dd
+install/unix/lighttpd-14.xml: efdbd50709
 install/windows/index.xml: 8a8393a568
 language/constants.xml: 5933f1cd66
 language/context.xml: 55581364b8
@@ -1205,6 +1209,7 @@ reference/network/functions/closelog.xml: efdbd50709
 reference/network/functions/define-syslog-variables.xml: 807c846e04
 reference/network/functions/dns-check-record.xml: efdbd50709
 reference/network/functions/dns-get-mx.xml: efdbd50709
+reference/network/functions/dns-get-record.xml: 725f142544
 reference/network/functions/fsockopen.xml: 807c846e04
 reference/network/functions/gethostbyaddr.xml: efdbd50709
 reference/network/functions/gethostbyname.xml: efdbd50709
