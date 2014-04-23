@@ -85,8 +85,8 @@ language/control-structures/while.xml: f40cab318e
 language/exceptions.xml: 3f0437f93b
 language/expressions.xml: efdbd50709
 language/namespaces.xml: e6e099a76e
-language/oop5.xml: 02c15020ac
-language/oop5/abstract.xml: 0994070220
+language/oop5.xml: 4a24ab5bb7
+language/oop5/abstract.xml: 822b0a4ce9
 language/oop5/autoload.xml: b87188afdf
 language/oop5/basic.xml: ef3f6fab0d
 language/oop5/changelog.xml: e05272ea7f
@@ -422,7 +422,7 @@ reference/datetime/functions/date-timestamp-get.xml: 807c846e04
 reference/datetime/functions/date-timestamp-set.xml: 807c846e04
 reference/datetime/functions/date-timezone-get.xml: efdbd50709
 reference/datetime/functions/date-timezone-set.xml: efdbd50709
-reference/datetime/functions/date.xml: e4ef37d47e
+reference/datetime/functions/date.xml: 8465ad172c
 reference/datetime/functions/getdate.xml: 0193148f0c
 reference/datetime/functions/gettimeofday.xml: f7f234cfe9
 reference/datetime/functions/gmdate.xml: 617e2934f0
