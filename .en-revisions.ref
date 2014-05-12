@@ -39,6 +39,7 @@ features/xforms.xml: efdbd50709
 install/cloud/azure.xml: dc53bd9bb4
 install/cloud/ec2.xml: dc53bd9bb4
 install/cloud/index.xml: dc53bd9bb4
+install/cloud/rackspace.xml: 06691bae1c
 install/fpm/configuration.xml: 6a59f09a50
 install/fpm/index.xml: e4db6c4d61
 install/fpm/install.xml: e4db6c4d61
@@ -295,7 +296,9 @@ reference/calendar/book.xml: a45e54aa5a
 reference/calendar/configure.xml: efdbd50709
 reference/calendar/constants.xml: efdbd50709
 reference/calendar/functions/cal-days-in-month.xml: efdbd50709
+reference/calendar/functions/cal-from-jd.xml: efdbd50709
 reference/calendar/functions/cal-info.xml: 468c5f0d77
+reference/calendar/functions/cal-to-jd.xml: efdbd50709
 reference/calendar/functions/easter-date.xml: acaa02b602
 reference/calendar/functions/easter-days.xml: acaa02b602
 reference/calendar/functions/gregoriantojd.xml: efdbd50709
@@ -609,6 +612,8 @@ reference/fdf/functions/fdf-get-version.xml: efdbd50709
 reference/fdf/functions/fdf-header.xml: efdbd50709
 reference/fdf/reference.xml: efdbd50709
 reference/fdf/setup.xml: 807c846e04
+reference/fileinfo/book.xml: 890455fa05
+reference/fileinfo/configure.xml: 97e9a1f895
 reference/filepro/book.xml: fed9ea9182
 reference/filepro/configure.xml: efdbd50709
 reference/filepro/constants.xml: 807c846e04
