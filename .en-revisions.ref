@@ -781,9 +781,11 @@ reference/gmp/constants.xml: efdbd50709
 reference/gmp/examples.xml: 807c846e04
 reference/gmp/reference.xml: efdbd50709
 reference/gmp/setup.xml: 807c846e04
+reference/gnupg/book.xml: 890455fa05
 reference/gnupg/configure.xml: efdbd50709
 reference/gnupg/constants.xml: 5a28e2becc
 reference/gnupg/functions/gnupg-adddecryptkey.xml: efdbd50709
+reference/gnupg/ini.xml: efdbd50709
 reference/gnupg/reference.xml: 0588d4cdc1
 reference/gnupg/setup.xml: 807c846e04
 reference/hash/book.xml: 890455fa05
