@@ -614,6 +614,8 @@ reference/fdf/reference.xml: efdbd50709
 reference/fdf/setup.xml: 807c846e04
 reference/fileinfo/book.xml: 890455fa05
 reference/fileinfo/configure.xml: 97e9a1f895
+reference/fileinfo/constants.xml: 5a28e2becc
+reference/fileinfo/reference.xml: efdbd50709
 reference/filepro/book.xml: fed9ea9182
 reference/filepro/configure.xml: efdbd50709
 reference/filepro/constants.xml: 807c846e04
