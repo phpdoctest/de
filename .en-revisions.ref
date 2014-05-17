@@ -761,6 +761,10 @@ reference/funchand/functions/get-defined-functions.xml: efdbd50709
 reference/funchand/functions/register-shutdown-function.xml: e700de172b
 reference/funchand/reference.xml: efdbd50709
 reference/funchand/setup.xml: efdbd50709
+reference/geoip/book.xml: 890455fa05
+reference/geoip/constants.xml: 5a28e2becc
+reference/geoip/reference.xml: efdbd50709
+reference/geoip/setup.xml: efdbd50709
 reference/gettext/book.xml: a45e54aa5a
 reference/gettext/configure.xml: efdbd50709
 reference/gettext/constants.xml: 807c846e04
@@ -788,6 +792,7 @@ reference/gnupg/functions/gnupg-adddecryptkey.xml: efdbd50709
 reference/gnupg/ini.xml: efdbd50709
 reference/gnupg/reference.xml: 0588d4cdc1
 reference/gnupg/setup.xml: 807c846e04
+reference/haru/book.xml: 890455fa05
 reference/hash/book.xml: 890455fa05
 reference/hash/constants.xml: 2316a80c8a
 reference/hash/functions/hash-algos.xml: 2b33562c77
@@ -822,6 +827,7 @@ reference/ifx/reference.xml: efdbd50709
 reference/ifx/setup.xml: 807c846e04
 reference/image/book.xml: a45e54aa5a
 reference/image/examples.xml: 83fc699d58
+reference/image/functions/gd-info.xml: 3927db70f3
 reference/image/functions/getimagesize.xml: 807c846e04
 reference/image/functions/imagearc.xml: 20e2ed00ec
 reference/image/functions/imagechar.xml: efdbd50709
@@ -841,11 +847,14 @@ reference/imap/functions/imap-body.xml: efdbd50709
 reference/imap/functions/imap-bodystruct.xml: efdbd50709
 reference/imap/functions/imap-clearflag-full.xml: efdbd50709
 reference/imap/functions/imap-close.xml: efdbd50709
+reference/imap/functions/imap-create.xml: b0f052731e
 reference/imap/functions/imap-createmailbox.xml: efdbd50709
 reference/imap/functions/imap-delete.xml: efdbd50709
 reference/imap/functions/imap-deletemailbox.xml: efdbd50709
 reference/imap/functions/imap-expunge.xml: efdbd50709
 reference/imap/functions/imap-fetchbody.xml: efdbd50709
+reference/imap/functions/imap-fetchtext.xml: b0f052731e
+reference/imap/functions/imap-gc.xml: a660b159a2
 reference/imap/functions/imap-get-quota.xml: efdbd50709
 reference/imap/functions/imap-get-quotaroot.xml: efdbd50709
 reference/imap/functions/imap-getacl.xml: 2316a80c8a
@@ -864,11 +873,13 @@ reference/imap/functions/imap-num-msg.xml: efdbd50709
 reference/imap/functions/imap-num-recent.xml: efdbd50709
 reference/imap/functions/imap-ping.xml: efdbd50709
 reference/imap/functions/imap-qprint.xml: efdbd50709
+reference/imap/functions/imap-rename.xml: b0f052731e
 reference/imap/functions/imap-renamemailbox.xml: efdbd50709
 reference/imap/functions/imap-rfc822-parse-adrlist.xml: efdbd50709
 reference/imap/functions/imap-rfc822-parse-headers.xml: efdbd50709
 reference/imap/functions/imap-rfc822-write-address.xml: efdbd50709
 reference/imap/functions/imap-savebody.xml: efdbd50709
+reference/imap/functions/imap-scan.xml: b0f052731e
 reference/imap/functions/imap-scanmailbox.xml: efdbd50709
 reference/imap/functions/imap-set-quota.xml: efdbd50709
 reference/imap/functions/imap-setacl.xml: efdbd50709
@@ -1656,6 +1667,9 @@ reference/pspell/functions/pspell-store-replacement.xml: efdbd50709
 reference/pspell/functions/pspell-suggest.xml: efdbd50709
 reference/pspell/reference.xml: efdbd50709
 reference/pspell/setup.xml: 807c846e04
+reference/rar/book.xml: 890455fa05
+reference/rar/reference.xml: 5ab9a130d9
+reference/rar/setup.xml: 52f5317589
 reference/readline/book.xml: a45e54aa5a
 reference/readline/configure.xml: e216729a48
 reference/readline/constants.xml: 807c846e04
