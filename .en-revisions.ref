@@ -761,10 +761,6 @@ reference/funchand/functions/get-defined-functions.xml: efdbd50709
 reference/funchand/functions/register-shutdown-function.xml: e700de172b
 reference/funchand/reference.xml: efdbd50709
 reference/funchand/setup.xml: efdbd50709
-reference/geoip/book.xml: 890455fa05
-reference/geoip/constants.xml: 5a28e2becc
-reference/geoip/reference.xml: efdbd50709
-reference/geoip/setup.xml: efdbd50709
 reference/gettext/book.xml: a45e54aa5a
 reference/gettext/configure.xml: efdbd50709
 reference/gettext/constants.xml: 807c846e04
