@@ -447,6 +447,7 @@ reference/datetime/functions/timezone-transitions-get.xml: efdbd50709
 reference/datetime/ini.xml: d2c80d6672
 reference/datetime/reference.xml: efdbd50709
 reference/datetime/setup.xml: 807c846e04
+reference/datetime/timezones.xml: 15b068bf35
 reference/dba/book.xml: 890455fa05
 reference/dba/configure.xml: bcf09450f7
 reference/dba/constants.xml: 807c846e04
@@ -808,6 +809,8 @@ reference/htscanner/book.xml: 890455fa05
 reference/htscanner/configure.xml: 807c846e04
 reference/htscanner/ini.xml: f954cc9acb
 reference/htscanner/setup.xml: 807c846e04
+reference/http/install.xml: efdbd50709
+reference/http/resources.xml: efdbd50709
 reference/hw/functions/hw-output-document.xml: efdbd50709
 reference/iconv/functions/iconv-get-encoding.xml: efdbd50709
 reference/iconv/functions/iconv-set-encoding.xml: efdbd50709
@@ -952,6 +955,7 @@ reference/json/constants.xml: 82dc27f0b5
 reference/json/functions/json-decode.xml: cd621e669b
 reference/json/functions/json-encode.xml: efdbd50709
 reference/json/functions/json-last-error.xml: 807c846e04
+reference/json/jsonserializable.xml: b88ab30866
 reference/json/reference.xml: efdbd50709
 reference/json/setup.xml: 807c846e04
 reference/ldap/book.xml: a45e54aa5a
