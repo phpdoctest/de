@@ -954,6 +954,7 @@ reference/json/book.xml: a45e54aa5a
 reference/json/constants.xml: 82dc27f0b5
 reference/json/functions/json-decode.xml: cd621e669b
 reference/json/functions/json-encode.xml: efdbd50709
+reference/json/functions/json-last-error-msg.xml: 66591b76cd
 reference/json/functions/json-last-error.xml: 807c846e04
 reference/json/jsonserializable.xml: b88ab30866
 reference/json/reference.xml: efdbd50709
@@ -1224,8 +1225,18 @@ reference/mysql/functions/mysql-unbuffered-query.xml: 61054d8560
 reference/mysql/ini.xml: d2c80d6672
 reference/mysql/reference.xml: efdbd50709
 reference/mysql/setup.xml: 807c846e04
+reference/mysqli/book.xml: 890455fa05
 reference/mysqli/configure.xml: efdbd50709
 reference/mysqli/ini.xml: 807c846e04
+reference/mysqli/mysqli.xml: 832c5c52ab
+reference/mysqli/mysqli/affected-rows.xml: 0eac70f097
+reference/mysqli/mysqli_driver.xml: 832c5c52ab
+reference/mysqli/mysqli_result.xml: 832c5c52ab
+reference/mysqli/mysqli_sql_exception.xml: 31dffa4ce7
+reference/mysqli/mysqli_stmt.xml: 832c5c52ab
+reference/mysqli/mysqli_warning.xml: 832c5c52ab
+reference/mysqli/reference.xml: 807c846e04
+reference/mysqli/setup.xml: 807c846e04
 reference/network/book.xml: a45e54aa5a
 reference/network/constants.xml: efdbd50709
 reference/network/functions/checkdnsrr.xml: efdbd50709
