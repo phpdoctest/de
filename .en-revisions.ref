@@ -162,7 +162,7 @@ language/predefined/variables/session.xml: 991103bc31
 language/predefined/variables/superglobals.xml: 807c846e04
 language/types.xml: 7e146a5734
 language/types/boolean.xml: 27be162efc
-language/types/float.xml: 7057da047c
+language/types/float.xml: b8b8dcc348
 language/types/integer.xml: 807c846e04
 language/types/null.xml: 1cce082a04
 language/types/resource.xml: 807c846e04
@@ -685,6 +685,7 @@ reference/filesystem/functions/link.xml: d0bb0b4020
 reference/filesystem/functions/linkinfo.xml: efdbd50709
 reference/filesystem/functions/lstat.xml: 2a9076bd3e
 reference/filesystem/functions/mkdir.xml: 84243b9418
+reference/filesystem/functions/parse-ini-file.xml: efdbd50709
 reference/filesystem/functions/parse-ini-string.xml: bc301b4edb
 reference/filesystem/functions/pathinfo.xml: 741a38be24
 reference/filesystem/functions/realpath.xml: 3f3bf01dd9
