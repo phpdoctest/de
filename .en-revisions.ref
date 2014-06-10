@@ -1865,6 +1865,7 @@ reference/sockets/functions/socket-write.xml: efdbd50709
 reference/sockets/reference.xml: 807c846e04
 reference/sockets/setup.xml: 807c846e04
 reference/spl/book.xml: 016339e3b2
+reference/spl/recursivedirectoryiterator/next.xml: f8f08bae3b
 reference/sqlite/book.xml: a45e54aa5a
 reference/sqlite/constants.xml: 04442df273
 reference/sqlite/functions/sqlite-array-query.xml: d75d863908
