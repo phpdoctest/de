@@ -162,7 +162,6 @@ language/predefined/variables/session.xml: 991103bc31
 language/predefined/variables/superglobals.xml: 807c846e04
 language/types.xml: 7e146a5734
 language/types/boolean.xml: 27be162efc
-language/types/float.xml: b8b8dcc348
 language/types/integer.xml: 807c846e04
 language/types/null.xml: 1cce082a04
 language/types/resource.xml: 807c846e04
