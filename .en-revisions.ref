@@ -235,6 +235,7 @@ reference/array/functions/each.xml: efdbd50709
 reference/array/functions/end.xml: efdbd50709
 reference/array/functions/extract.xml: ce3f0ba23e
 reference/array/functions/in-array.xml: 71afc8e076
+reference/array/functions/key-exists.xml: 10ed310202
 reference/array/functions/krsort.xml: efdbd50709
 reference/array/functions/ksort.xml: efdbd50709
 reference/array/functions/pos.xml: efdbd50709
@@ -530,6 +531,7 @@ reference/dir/functions/rewinddir.xml: efdbd50709
 reference/dir/functions/scandir.xml: efdbd50709
 reference/dir/reference.xml: efdbd50709
 reference/dir/setup.xml: 807c846e04
+reference/dom/book.xml: ea628c859d
 reference/dom/functions/dom-import-simplexml.xml: efdbd50709
 reference/domxml/book.xml: fed9ea9182
 reference/domxml/configure.xml: efdbd50709
@@ -623,6 +625,7 @@ reference/fileinfo/functions/finfo-open.xml: 3b4167177a
 reference/fileinfo/functions/finfo-set-flags.xml: 3b4167177a
 reference/fileinfo/functions/mime-content-type.xml: efdbd50709
 reference/fileinfo/reference.xml: efdbd50709
+reference/fileinfo/setup.xml: 807c846e04
 reference/filepro/book.xml: fed9ea9182
 reference/filepro/configure.xml: efdbd50709
 reference/filepro/constants.xml: 807c846e04
