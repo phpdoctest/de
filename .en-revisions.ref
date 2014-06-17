@@ -372,6 +372,7 @@ reference/ctype/setup.xml: efdbd50709
 reference/curl/book.xml: a45e54aa5a
 reference/curl/configure.xml: efdbd50709
 reference/curl/constants.xml: efdbd50709
+reference/curl/curlfile.xml: d709762aa1
 reference/curl/curlfile/construct.xml: 6d20e161d8
 reference/curl/curlfile/getfilename.xml: 2b7cef5f28
 reference/curl/curlfile/getmimetype.xml: 2b7cef5f28
@@ -396,7 +397,9 @@ reference/curl/functions/curl-multi-info-read.xml: edd2392da9
 reference/curl/functions/curl-multi-init.xml: efdbd50709
 reference/curl/functions/curl-multi-remove-handle.xml: efdbd50709
 reference/curl/functions/curl-multi-select.xml: efdbd50709
+reference/curl/functions/curl-multi-setopt.xml: 5a67ba21cb
 reference/curl/functions/curl-multi-strerror.xml: fe14cec8a2
+reference/curl/functions/curl-pause.xml: fe6975c008
 reference/curl/functions/curl-setopt-array.xml: 0699279cd3
 reference/curl/functions/curl-setopt.xml: e00ae760cf
 reference/curl/functions/curl-version.xml: efdbd50709
