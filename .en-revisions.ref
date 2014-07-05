@@ -18,7 +18,7 @@ bookinfo.xml: 84d5e6c8ab
 chmonly/aboutchm.xml: efdbd50709
 chmonly/credits.xml: efdbd50709
 faq/build.xml: 52ee8b786b
-faq/databases.xml: efdbd50709
+faq/databases.xml: 7fa93317d6
 faq/general.xml: efdbd50709
 faq/html.xml: 35b013b1b6
 faq/installation.xml: 67970ba98e
