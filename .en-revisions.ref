@@ -763,6 +763,7 @@ reference/ftp/reference.xml: efdbd50709
 reference/ftp/setup.xml: 807c846e04
 reference/funchand/book.xml: a45e54aa5a
 reference/funchand/constants.xml: 807c846e04
+reference/funchand/functions/call-user-func.xml: 7e146a5734
 reference/funchand/functions/func-get-arg.xml: da369aa896
 reference/funchand/functions/function-exists.xml: 4d5e6a608d
 reference/funchand/functions/get-defined-functions.xml: efdbd50709
@@ -979,8 +980,8 @@ reference/java/reference.xml: 807c846e04
 reference/java/setup.xml: 807c846e04
 reference/json/book.xml: a45e54aa5a
 reference/json/constants.xml: 82dc27f0b5
-reference/json/functions/json-decode.xml: cd621e669b
-reference/json/functions/json-encode.xml: efdbd50709
+reference/json/functions/json-decode.xml: e9502ac2d8
+reference/json/functions/json-encode.xml: 67747d0e95
 reference/json/functions/json-last-error-msg.xml: 66591b76cd
 reference/json/functions/json-last-error.xml: 807c846e04
 reference/json/jsonserializable.xml: b88ab30866
@@ -2087,8 +2088,8 @@ reference/url/functions/get-headers.xml: efdbd50709
 reference/url/functions/get-meta-tags.xml: efdbd50709
 reference/url/functions/http-build-query.xml: efdbd50709
 reference/url/functions/parse-url.xml: efdbd50709
-reference/url/functions/rawurldecode.xml: efdbd50709
-reference/url/functions/rawurlencode.xml: efdbd50709
+reference/url/functions/rawurldecode.xml: a36c097f6f
+reference/url/functions/rawurlencode.xml: 23261a7272
 reference/url/functions/urldecode.xml: efdbd50709
 reference/url/functions/urlencode.xml: efdbd50709
 reference/url/reference.xml: efdbd50709
