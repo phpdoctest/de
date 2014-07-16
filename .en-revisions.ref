@@ -1431,7 +1431,7 @@ reference/openssl/functions/openssl-x509-read.xml: 807c846e04
 reference/openssl/reference.xml: efdbd50709
 reference/openssl/setup.xml: 807c846e04
 reference/outcontrol/book.xml: a45e54aa5a
-reference/outcontrol/constants.xml: efdbd50709
+reference/outcontrol/constants.xml: 8ed18e72f5
 reference/outcontrol/examples.xml: 83fc699d58
 reference/outcontrol/functions/ob-clean.xml: efdbd50709
 reference/outcontrol/functions/ob-end-clean.xml: efdbd50709
