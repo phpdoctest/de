@@ -99,7 +99,7 @@ language/oop5/inheritance.xml: fa21450cc7
 language/oop5/interfaces.xml: 3f0437f93b
 language/oop5/iterations.xml: 23e853f430
 language/oop5/late-static-bindings.xml: 807c846e04
-language/oop5/magic.xml: 3fea5c8be6
+language/oop5/magic.xml: 9c261b1c69
 language/oop5/object-comparison.xml: 0588d4cdc1
 language/oop5/overloading.xml: 41e7b91a5c
 language/oop5/paamayim-nekudotayim.xml: f8f32f1614
