@@ -14,7 +14,7 @@ appendices/reserved.xml: 8e3156cff5
 appendices/resources.xml: efdbd50709
 appendices/transports.xml: 26e5c6e48d
 appendices/userlandnaming.xml: 593de58fd5
-bookinfo.xml: 84d5e6c8ab
+bookinfo.xml: 30497110b3
 chmonly/aboutchm.xml: efdbd50709
 chmonly/credits.xml: efdbd50709
 faq/build.xml: 52ee8b786b
@@ -85,7 +85,7 @@ language/control-structures/switch.xml: f40cab318e
 language/control-structures/while.xml: f40cab318e
 language/exceptions.xml: 3f0437f93b
 language/expressions.xml: efdbd50709
-language/namespaces.xml: 37c86a9729
+language/namespaces.xml: 30497110b3
 language/oop5.xml: 4a24ab5bb7
 language/oop5/abstract.xml: 822b0a4ce9
 language/oop5/autoload.xml: b87188afdf
@@ -620,7 +620,7 @@ reference/fdf/reference.xml: efdbd50709
 reference/fdf/setup.xml: 807c846e04
 reference/fileinfo/book.xml: 890455fa05
 reference/fileinfo/configure.xml: 97e9a1f895
-reference/fileinfo/constants.xml: 5a28e2becc
+reference/fileinfo/constants.xml: 30497110b3
 reference/fileinfo/functions/finfo-close.xml: 1c63cc33e6
 reference/fileinfo/functions/finfo-open.xml: 3b4167177a
 reference/fileinfo/functions/finfo-set-flags.xml: 3b4167177a
@@ -644,7 +644,7 @@ reference/filesystem/constants.xml: 04442df273
 reference/filesystem/functions/basename.xml: 32087f89bd
 reference/filesystem/functions/chgrp.xml: fd2c899705
 reference/filesystem/functions/chmod.xml: efdbd50709
-reference/filesystem/functions/chown.xml: 61f346b199
+reference/filesystem/functions/chown.xml: 30497110b3
 reference/filesystem/functions/clearstatcache.xml: 11d2d9f81a
 reference/filesystem/functions/copy.xml: efdbd50709
 reference/filesystem/functions/delete.xml: efdbd50709
@@ -691,7 +691,7 @@ reference/filesystem/functions/link.xml: d0bb0b4020
 reference/filesystem/functions/linkinfo.xml: efdbd50709
 reference/filesystem/functions/lstat.xml: 2a9076bd3e
 reference/filesystem/functions/mkdir.xml: 84243b9418
-reference/filesystem/functions/parse-ini-file.xml: b2299eb7fb
+reference/filesystem/functions/parse-ini-file.xml: 30497110b3
 reference/filesystem/functions/parse-ini-string.xml: bc301b4edb
 reference/filesystem/functions/pathinfo.xml: 741a38be24
 reference/filesystem/functions/realpath.xml: 3f3bf01dd9
@@ -842,7 +842,7 @@ reference/http/resources.xml: efdbd50709
 reference/hw/functions/hw-output-document.xml: efdbd50709
 reference/iconv/functions/iconv-get-encoding.xml: efdbd50709
 reference/iconv/functions/iconv-set-encoding.xml: efdbd50709
-reference/iconv/functions/iconv.xml: 5567574cf4
+reference/iconv/functions/iconv.xml: 30497110b3
 reference/iconv/functions/ob-iconv-handler.xml: efdbd50709
 reference/id3/book.xml: fed9ea9182
 reference/id3/constants.xml: 2316a80c8a
@@ -1071,7 +1071,7 @@ reference/misc/functions/php-check-syntax.xml: 04442df273
 reference/misc/functions/show-source.xml: 807c846e04
 reference/misc/functions/sleep.xml: eefc28553c
 reference/misc/functions/sys-getloadavg.xml: efdbd50709
-reference/misc/functions/time-nanosleep.xml: 04442df273
+reference/misc/functions/time-nanosleep.xml: 30497110b3
 reference/misc/functions/time-sleep-until.xml: efdbd50709
 reference/misc/functions/uniqid.xml: 98ff363e66
 reference/misc/functions/unpack.xml: 8a44cd0666
@@ -1502,7 +1502,7 @@ reference/pdf/functions/pdf-begin-font.xml: efdbd50709
 reference/pdf/functions/pdf-begin-glyph.xml: efdbd50709
 reference/pdf/functions/pdf-begin-item.xml: efdbd50709
 reference/pdf/functions/pdf-begin-layer.xml: efdbd50709
-reference/pdf/functions/pdf-begin-page-ext.xml: 807c846e04
+reference/pdf/functions/pdf-begin-page-ext.xml: 30497110b3
 reference/pdf/functions/pdf-begin-page.xml: efdbd50709
 reference/pdf/functions/pdf-begin-pattern.xml: efdbd50709
 reference/pdf/functions/pdf-begin-template-ext.xml: efdbd50709
@@ -1640,7 +1640,7 @@ reference/pgsql/reference.xml: efdbd50709
 reference/pgsql/setup.xml: 807c846e04
 reference/posix/book.xml: 890455fa05
 reference/posix/configure.xml: efdbd50709
-reference/posix/constants.xml: 5a28e2becc
+reference/posix/constants.xml: 30497110b3
 reference/posix/functions/posix-access.xml: efdbd50709
 reference/posix/functions/posix-ctermid.xml: efdbd50709
 reference/posix/functions/posix-get-last-error.xml: efdbd50709
@@ -1692,8 +1692,8 @@ reference/pspell/functions/pspell-add-to-session.xml: efdbd50709
 reference/pspell/functions/pspell-check.xml: efdbd50709
 reference/pspell/functions/pspell-clear-session.xml: efdbd50709
 reference/pspell/functions/pspell-config-create.xml: efdbd50709
-reference/pspell/functions/pspell-config-data-dir.xml: 04442df273
-reference/pspell/functions/pspell-config-dict-dir.xml: 04442df273
+reference/pspell/functions/pspell-config-data-dir.xml: 30497110b3
+reference/pspell/functions/pspell-config-dict-dir.xml: 30497110b3
 reference/pspell/functions/pspell-config-ignore.xml: efdbd50709
 reference/pspell/functions/pspell-config-mode.xml: efdbd50709
 reference/pspell/functions/pspell-config-personal.xml: efdbd50709
@@ -1895,7 +1895,7 @@ reference/sockets/functions/socket-write.xml: efdbd50709
 reference/sockets/reference.xml: 807c846e04
 reference/sockets/setup.xml: 807c846e04
 reference/spl/book.xml: 016339e3b2
-reference/spl/recursivedirectoryiterator/next.xml: f8f08bae3b
+reference/spl/recursivedirectoryiterator/next.xml: 30497110b3
 reference/sqlite/book.xml: a45e54aa5a
 reference/sqlite/constants.xml: 04442df273
 reference/sqlite/functions/sqlite-array-query.xml: d75d863908
@@ -2024,7 +2024,7 @@ reference/strings/functions/str-replace.xml: 6f9aa68753
 reference/strings/functions/str-rot13.xml: efdbd50709
 reference/strings/functions/str-shuffle.xml: efdbd50709
 reference/strings/functions/str-split.xml: efdbd50709
-reference/strings/functions/str-word-count.xml: 807c846e04
+reference/strings/functions/str-word-count.xml: 30497110b3
 reference/strings/functions/strcasecmp.xml: ef8c5a42f4
 reference/strings/functions/strchr.xml: efdbd50709
 reference/strings/functions/strcmp.xml: ef8c5a42f4
@@ -2050,7 +2050,7 @@ reference/strings/functions/strspn.xml: 711acfa7fb
 reference/strings/functions/strstr.xml: efdbd50709
 reference/strings/functions/strtok.xml: 807c846e04
 reference/strings/functions/strtolower.xml: 77720f6a42
-reference/strings/functions/strtoupper.xml: 807c846e04
+reference/strings/functions/strtoupper.xml: 30497110b3
 reference/strings/functions/strtr.xml: efc1c2e788
 reference/strings/functions/substr-compare.xml: 04442df273
 reference/strings/functions/substr-count.xml: 84fbb66a39
