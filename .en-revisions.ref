@@ -985,6 +985,7 @@ reference/json/functions/json-encode.xml: 67747d0e95
 reference/json/functions/json-last-error-msg.xml: 66591b76cd
 reference/json/functions/json-last-error.xml: 807c846e04
 reference/json/jsonserializable.xml: b88ab30866
+reference/json/jsonserializable/jsonserialize.xml: c66f7bcc78
 reference/json/reference.xml: efdbd50709
 reference/json/setup.xml: 807c846e04
 reference/ldap/book.xml: a45e54aa5a
@@ -1049,6 +1050,15 @@ reference/math/functions/tan.xml: efdbd50709
 reference/math/functions/tanh.xml: efdbd50709
 reference/math/reference.xml: efdbd50709
 reference/math/setup.xml: 807c846e04
+reference/mcrypt/book.xml: 890455fa05
+reference/mcrypt/ciphers.xml: 807c846e04
+reference/mcrypt/configure.xml: efdbd50709
+reference/mcrypt/constants.xml: 0f84c9f07a
+reference/mcrypt/examples.xml: 054e4d5cfb
+reference/mcrypt/functions/mcrypt-cbc.xml: 23e853f430
+reference/mcrypt/ini.xml: d2c80d6672
+reference/mcrypt/reference.xml: efdbd50709
+reference/mcrypt/setup.xml: fc8f6edf6f
 reference/mhash/functions/mhash-count.xml: ea65414ea5
 reference/misc/book.xml: a45e54aa5a
 reference/misc/constants.xml: 2316a80c8a
@@ -1831,6 +1841,8 @@ reference/simplexml/functions/simplexml-load-file.xml: e9aaefe69e
 reference/simplexml/functions/simplexml-load-string.xml: e9aaefe69e
 reference/simplexml/reference.xml: efdbd50709
 reference/simplexml/setup.xml: 807c846e04
+reference/simplexml/simplexmlelement.xml: e4db6c4d61
+reference/simplexml/simplexmliterator.xml: d825e2d300
 reference/snmp/book.xml: a45e54aa5a
 reference/snmp/configure.xml: 6a07cd1dd4
 reference/snmp/constants.xml: 2316a80c8a
@@ -2076,6 +2088,7 @@ reference/tokenizer/functions/token-get-all.xml: efdbd50709
 reference/tokenizer/functions/token-name.xml: 191171dda6
 reference/tokenizer/reference.xml: efdbd50709
 reference/tokenizer/setup.xml: efdbd50709
+reference/unicode/functions/unicode-decode.xml: efdbd50709
 reference/uodbc/book.xml: a45e54aa5a
 reference/uodbc/constants.xml: efdbd50709
 reference/uodbc/functions/odbc-fetch-into.xml: efdbd50709
