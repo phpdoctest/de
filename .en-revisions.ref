@@ -2233,7 +2233,7 @@ reference/xmlwriter/functions/xmlwriter-write-raw.xml: 87c4553d96
 reference/xmlwriter/reference.xml: efdbd50709
 reference/xmlwriter/setup.xml: 348cdafcf7
 reference/xsl/book.xml: 890455fa05
-reference/xsl/configure.xml: efdbd50709
+reference/xsl/configure.xml: 9eb6e02fe8
 reference/xsl/constants.xml: f621e50377
 reference/xsl/examples.xml: 83fc699d58
 reference/xsl/setup.xml: dbd2dd039b
