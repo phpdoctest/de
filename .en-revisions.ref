@@ -85,6 +85,7 @@ language/control-structures/switch.xml: f40cab318e
 language/control-structures/while.xml: f40cab318e
 language/exceptions.xml: 3f0437f93b
 language/expressions.xml: efdbd50709
+language/functions.xml: 106c53bfba
 language/namespaces.xml: 30497110b3
 language/oop5.xml: 4a24ab5bb7
 language/oop5/abstract.xml: 822b0a4ce9
@@ -999,7 +1000,7 @@ reference/ldap/using.xml: 807c846e04
 reference/mail/book.xml: a45e54aa5a
 reference/mail/constants.xml: 807c846e04
 reference/mail/functions/ezmlm-hash.xml: efdbd50709
-reference/mail/ini.xml: d2c80d6672
+reference/mail/ini.xml: 71d240d454
 reference/mail/reference.xml: efdbd50709
 reference/mail/setup.xml: 807c846e04
 reference/math/book.xml: a45e54aa5a
