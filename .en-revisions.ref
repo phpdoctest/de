@@ -1911,6 +1911,8 @@ reference/sockets/functions/socket-write.xml: efdbd50709
 reference/sockets/reference.xml: 807c846e04
 reference/sockets/setup.xml: 807c846e04
 reference/spl/book.xml: 016339e3b2
+reference/spl/functions/spl-autoload-extensions.xml: 30497110b3
+reference/spl/functions/spl-autoload-functions.xml: 8bb74abd4c
 reference/spl/recursivedirectoryiterator/next.xml: 30497110b3
 reference/sqlite/book.xml: a45e54aa5a
 reference/sqlite/constants.xml: 04442df273
