@@ -21,7 +21,7 @@ faq/build.xml: 52ee8b786b
 faq/databases.xml: 7fa93317d6
 faq/general.xml: efdbd50709
 faq/html.xml: 35b013b1b6
-faq/installation.xml: 67970ba98e
+faq/installation.xml: 0e302b252e
 faq/mailinglist.xml: 4fae493c94
 faq/misc.xml: efdbd50709
 faq/obtaining.xml: efdbd50709
@@ -31,9 +31,9 @@ features/commandline.xml: 087999d634
 features/connection-handling.xml: efdbd50709
 features/cookies.xml: efdbd50709
 features/file-upload.xml: 8d83f02844
-features/http-auth.xml: 0c16ec32c7
+features/http-auth.xml: 8c1e11898a
 features/persistent-connections.xml: efdbd50709
-features/remote-files.xml: 087999d634
+features/remote-files.xml: 8c1e11898a
 features/sessions.xml: efdbd50709
 features/xforms.xml: efdbd50709
 install/cloud/azure.xml: dc53bd9bb4
@@ -326,7 +326,7 @@ reference/classobj/functions/get-class.xml: 807c846e04
 reference/classobj/functions/get-declared-classes.xml: efdbd50709
 reference/classobj/functions/get-declared-interfaces.xml: 2316a80c8a
 reference/classobj/functions/get-object-vars.xml: 807c846e04
-reference/classobj/functions/get-parent-class.xml: 4772ef3d2e
+reference/classobj/functions/get-parent-class.xml: 7237f64379
 reference/classobj/functions/interface-exists.xml: efdbd50709
 reference/classobj/functions/is-subclass-of.xml: 807c846e04
 reference/classobj/functions/method-exists.xml: 807c846e04
@@ -467,7 +467,7 @@ reference/dba/functions/dba-insert.xml: efdbd50709
 reference/dba/functions/dba-key-split.xml: efdbd50709
 reference/dba/functions/dba-list.xml: efdbd50709
 reference/dba/functions/dba-nextkey.xml: efdbd50709
-reference/dba/functions/dba-open.xml: 4772ef3d2e
+reference/dba/functions/dba-open.xml: 8868566c3a
 reference/dba/functions/dba-optimize.xml: efdbd50709
 reference/dba/functions/dba-popen.xml: efdbd50709
 reference/dba/functions/dba-replace.xml: efdbd50709
@@ -1179,7 +1179,7 @@ reference/mssql/configure.xml: efdbd50709
 reference/mssql/constants.xml: 5a28e2becc
 reference/mssql/functions/mssql-bind.xml: efdbd50709
 reference/mssql/functions/mssql-close.xml: efdbd50709
-reference/mssql/functions/mssql-connect.xml: a660b159a2
+reference/mssql/functions/mssql-connect.xml: cf6ce7b4e1
 reference/mssql/functions/mssql-data-seek.xml: efdbd50709
 reference/mssql/functions/mssql-execute.xml: efdbd50709
 reference/mssql/functions/mssql-fetch-array.xml: efdbd50709
@@ -1474,7 +1474,7 @@ reference/pcntl/functions/pcntl-wtermsig.xml: efdbd50709
 reference/pcntl/reference.xml: efdbd50709
 reference/pcntl/setup.xml: 807c846e04
 reference/pcre/book.xml: 890455fa05
-reference/pcre/configure.xml: 3253884664
+reference/pcre/configure.xml: e7f4388a6c
 reference/pcre/constants.xml: 7a17087302
 reference/pcre/examples.xml: efdbd50709
 reference/pcre/functions/preg-filter.xml: b5fdc608dc
