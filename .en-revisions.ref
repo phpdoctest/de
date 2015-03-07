@@ -83,7 +83,7 @@ language/control-structures/require.xml: f40cab318e
 language/control-structures/return.xml: 087999d634
 language/control-structures/switch.xml: f40cab318e
 language/control-structures/while.xml: f40cab318e
-language/exceptions.xml: 3f0437f93b
+language/exceptions.xml: b1adf5cb44
 language/expressions.xml: efdbd50709
 language/functions.xml: 106c53bfba
 language/namespaces.xml: 30497110b3
