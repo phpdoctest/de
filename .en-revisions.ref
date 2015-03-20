@@ -2051,7 +2051,7 @@ reference/strings/functions/strcspn.xml: b97edaff38
 reference/strings/functions/strip-tags.xml: 8efd9882e6
 reference/strings/functions/stripcslashes.xml: efdbd50709
 reference/strings/functions/stripos.xml: 7b5a620d4e
-reference/strings/functions/stripslashes.xml: efdbd50709
+reference/strings/functions/stripslashes.xml: ed4f4505ed
 reference/strings/functions/stristr.xml: efdbd50709
 reference/strings/functions/strlen.xml: c7ba4ebf74
 reference/strings/functions/strnatcasecmp.xml: efdbd50709
