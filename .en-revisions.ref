@@ -1540,6 +1540,7 @@ reference/pdf/functions/pdf-create-3dview.xml: efdbd50709
 reference/pdf/functions/pdf-create-action.xml: efdbd50709
 reference/pdf/functions/pdf-create-annotation.xml: efdbd50709
 reference/pdf/functions/pdf-create-bookmark.xml: efdbd50709
+reference/pdf/functions/pdf-open-pdi-document.xml: 531fee1c8e
 reference/pdf/functions/pdf-shading-pattern.xml: efdbd50709
 reference/pdf/functions/pdf-shading.xml: efdbd50709
 reference/pdf/functions/pdf-shfill.xml: efdbd50709
