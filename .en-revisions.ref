@@ -4,11 +4,12 @@ appendices/configure/index.xml: ba470c3835
 appendices/configure/misc.xml: efdbd50709
 appendices/configure/php.xml: 3ef1b24d91
 appendices/configure/servers.xml: 3623a22894
-appendices/debugger.xml: cbb67614a2
+appendices/debugger.xml: 0f7e7dec4f
 appendices/ini.core.xml: 087999d634
 appendices/ini.list.xml: 82c231eadf
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
+appendices/reserved.constants.core.xml: 8c1e11898a
 appendices/reserved.constants.standard.xml: efdbd50709
 appendices/reserved.xml: 8e3156cff5
 appendices/resources.xml: efdbd50709
@@ -856,9 +857,10 @@ reference/ifx/setup.xml: 807c846e04
 reference/image/book.xml: a45e54aa5a
 reference/image/examples.xml: 83fc699d58
 reference/image/functions/gd-info.xml: 3927db70f3
-reference/image/functions/getimagesize.xml: 807c846e04
+reference/image/functions/getimagesize.xml: 7237f64379
 reference/image/functions/imagearc.xml: 20e2ed00ec
 reference/image/functions/imagechar.xml: efdbd50709
+reference/image/functions/imagecopyresized.xml: dd9a29a077
 reference/image/functions/imagecreatefromgif.xml: 6d94481e76
 reference/image/functions/imagegif.xml: 66cf11bb10
 reference/image/functions/imagejpeg.xml: 66cf11bb10
