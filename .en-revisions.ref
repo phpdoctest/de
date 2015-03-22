@@ -923,6 +923,7 @@ reference/imap/functions/imap-utf7-decode.xml: efdbd50709
 reference/imap/functions/imap-utf7-encode.xml: efdbd50709
 reference/imap/functions/imap-utf8.xml: efdbd50709
 reference/imap/setup.xml: 807c846e04
+reference/inclued/functions/inclued-get-data.xml: 087999d634
 reference/info/book.xml: a45e54aa5a
 reference/info/functions/extension-loaded.xml: 807c846e04
 reference/info/functions/get-cfg-var.xml: efdbd50709
@@ -1223,7 +1224,7 @@ reference/mysql/functions/mysql-create-db.xml: aa4cad3a87
 reference/mysql/functions/mysql-data-seek.xml: 8fb0bc6cab
 reference/mysql/functions/mysql-db-name.xml: 8fb0bc6cab
 reference/mysql/functions/mysql-db-query.xml: aa4cad3a87
-reference/mysql/functions/mysql-drop-db.xml: 8fb0bc6cab
+reference/mysql/functions/mysql-drop-db.xml: aa4cad3a87
 reference/mysql/functions/mysql-errno.xml: 8fb0bc6cab
 reference/mysql/functions/mysql-error.xml: 8fb0bc6cab
 reference/mysql/functions/mysql-escape-string.xml: aa4cad3a87
