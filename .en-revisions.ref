@@ -412,6 +412,7 @@ reference/curl/reference.xml: efdbd50709
 reference/curl/setup.xml: 15fe90977f
 reference/datetime/book.xml: a45e54aa5a
 reference/datetime/constants.xml: 04442df273
+reference/datetime/dateperiod.xml: 728f86caf3
 reference/datetime/datetime/add.xml: 87be1e4aab
 reference/datetime/datetime/getlasterrors.xml: 1d02f956d5
 reference/datetime/datetime/modify.xml: 87be1e4aab
@@ -419,6 +420,7 @@ reference/datetime/datetime/set-state.xml: 3fea5c8be6
 reference/datetime/datetime/settimestamp.xml: 87be1e4aab
 reference/datetime/datetime/settimezone.xml: 99f27d61cf
 reference/datetime/datetime/sub.xml: 87be1e4aab
+reference/datetime/datetimeimmutable.xml: 4e757fdf6f
 reference/datetime/datetimezone.xml: 70432ad899
 reference/datetime/functions/checkdate.xml: efdbd50709
 reference/datetime/functions/date-add.xml: efdbd50709
