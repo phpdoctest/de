@@ -217,7 +217,7 @@ reference/array/functions/array-keys.xml: e29e1f794b
 reference/array/functions/array-map.xml: 2c5972d002
 reference/array/functions/array-merge-recursive.xml: efdbd50709
 reference/array/functions/array-multisort.xml: efdbd50709
-reference/array/functions/array-pop.xml: efdbd50709
+reference/array/functions/array-pop.xml: d02e9c4340
 reference/array/functions/array-product.xml: 17714f9fae
 reference/array/functions/array-rand.xml: 86e8a33a38
 reference/array/functions/array-reduce.xml: 840117db94
@@ -226,7 +226,7 @@ reference/array/functions/array-search.xml: ba17582882
 reference/array/functions/array-shift.xml: efdbd50709
 reference/array/functions/array-slice.xml: efdbd50709
 reference/array/functions/array-splice.xml: 16b8702ceb
-reference/array/functions/array-sum.xml: efdbd50709
+reference/array/functions/array-sum.xml: 8868566c3a
 reference/array/functions/array-unique.xml: 1884a542a8
 reference/array/functions/array-values.xml: 65735b6b36
 reference/array/functions/array-walk.xml: 143e6898f8
@@ -236,7 +236,7 @@ reference/array/functions/asort.xml: efdbd50709
 reference/array/functions/current.xml: e7813809b7
 reference/array/functions/each.xml: efdbd50709
 reference/array/functions/end.xml: efdbd50709
-reference/array/functions/extract.xml: ce3f0ba23e
+reference/array/functions/extract.xml: 7237f64379
 reference/array/functions/in-array.xml: 71afc8e076
 reference/array/functions/key-exists.xml: 10ed310202
 reference/array/functions/krsort.xml: efdbd50709
@@ -245,11 +245,11 @@ reference/array/functions/pos.xml: efdbd50709
 reference/array/functions/prev.xml: efdbd50709
 reference/array/functions/reset.xml: efdbd50709
 reference/array/functions/rsort.xml: efdbd50709
-reference/array/functions/shuffle.xml: efdbd50709
+reference/array/functions/shuffle.xml: 8868566c3a
 reference/array/functions/sizeof.xml: efdbd50709
 reference/array/functions/sort.xml: fda43b87c7
 reference/array/functions/uasort.xml: 7e146a5734
-reference/array/functions/uksort.xml: efdbd50709
+reference/array/functions/uksort.xml: 65735b6b36
 reference/array/functions/usort.xml: 090b7a6549
 reference/array/reference.xml: efdbd50709
 reference/array/setup.xml: efdbd50709
