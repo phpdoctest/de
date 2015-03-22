@@ -1746,6 +1746,7 @@ reference/readline/functions/readline-read-history.xml: efdbd50709
 reference/readline/functions/readline-redisplay.xml: 2316a80c8a
 reference/readline/functions/readline-write-history.xml: efdbd50709
 reference/readline/functions/readline.xml: efdbd50709
+reference/readline/ini.xml: d2c80d6672
 reference/readline/reference.xml: efdbd50709
 reference/readline/setup.xml: 3d443bc87a
 reference/recode/book.xml: a45e54aa5a
