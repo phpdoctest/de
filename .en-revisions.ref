@@ -1515,7 +1515,7 @@ reference/outcontrol/functions/ob-flush.xml: efdbd50709
 reference/outcontrol/functions/ob-get-contents.xml: efdbd50709
 reference/outcontrol/functions/ob-get-level.xml: efdbd50709
 reference/outcontrol/functions/ob-implicit-flush.xml: efdbd50709
-reference/outcontrol/functions/ob-start.xml: 8ed18e72f5
+reference/outcontrol/functions/ob-start.xml: 199e143acf
 reference/outcontrol/ini.xml: 087999d634
 reference/outcontrol/reference.xml: efdbd50709
 reference/outcontrol/setup.xml: efdbd50709
