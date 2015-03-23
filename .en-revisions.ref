@@ -1831,7 +1831,7 @@ reference/sem/functions/shm-remove.xml: efdbd50709
 reference/sem/ini.xml: d2c80d6672
 reference/sem/reference.xml: efdbd50709
 reference/sem/setup.xml: 807c846e04
-reference/session/book.xml: a45e54aa5a
+reference/session/book.xml: 7f5c229aac
 reference/session/configure.xml: efdbd50709
 reference/session/constants.xml: 651f4db9ee
 reference/session/examples.xml: 0588d4cdc1
