@@ -1836,13 +1836,13 @@ reference/session/configure.xml: efdbd50709
 reference/session/constants.xml: 651f4db9ee
 reference/session/examples.xml: 0588d4cdc1
 reference/session/functions/session-cache-expire.xml: 9239cfda15
-reference/session/functions/session-cache-limiter.xml: c5216eba44
+reference/session/functions/session-cache-limiter.xml: 8868566c3a
 reference/session/functions/session-commit.xml: efdbd50709
 reference/session/functions/session-decode.xml: efdbd50709
 reference/session/functions/session-destroy.xml: efdbd50709
 reference/session/functions/session-encode.xml: efdbd50709
-reference/session/functions/session-get-cookie-params.xml: efdbd50709
-reference/session/functions/session-id.xml: efdbd50709
+reference/session/functions/session-get-cookie-params.xml: 7237f64379
+reference/session/functions/session-id.xml: cf6ce7b4e1
 reference/session/functions/session-is-registered.xml: 0688afe7e3
 reference/session/functions/session-module-name.xml: efdbd50709
 reference/session/functions/session-name.xml: 395947116a
@@ -1850,7 +1850,7 @@ reference/session/functions/session-regenerate-id.xml: efdbd50709
 reference/session/functions/session-register-shutdown.xml: 09cf5e4bab
 reference/session/functions/session-register.xml: 0688afe7e3
 reference/session/functions/session-save-path.xml: efdbd50709
-reference/session/functions/session-set-cookie-params.xml: 96c6930aa5
+reference/session/functions/session-set-cookie-params.xml: 7237f64379
 reference/session/functions/session-set-save-handler.xml: 8465081c08
 reference/session/functions/session-start.xml: 76eeaff03f
 reference/session/functions/session-status.xml: 826c6a08ef
