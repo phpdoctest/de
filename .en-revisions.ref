@@ -402,7 +402,7 @@ reference/curl/functions/curl-multi-exec.xml: efdbd50709
 reference/curl/functions/curl-multi-getcontent.xml: efdbd50709
 reference/curl/functions/curl-multi-info-read.xml: edd2392da9
 reference/curl/functions/curl-multi-init.xml: efdbd50709
-reference/curl/functions/curl-multi-remove-handle.xml: efdbd50709
+reference/curl/functions/curl-multi-remove-handle.xml: a0aca4413c
 reference/curl/functions/curl-multi-select.xml: efdbd50709
 reference/curl/functions/curl-multi-setopt.xml: 5a67ba21cb
 reference/curl/functions/curl-multi-strerror.xml: fe14cec8a2
@@ -532,7 +532,7 @@ reference/dio/functions/dio-write.xml: efdbd50709
 reference/dio/reference.xml: efdbd50709
 reference/dio/setup.xml: 807c846e04
 reference/dir/book.xml: a45e54aa5a
-reference/dir/constants.xml: 2316a80c8a
+reference/dir/constants.xml: 30497110b3
 reference/dir/directory.xml: c3ae9105d7
 reference/dir/directory/close.xml: c3ae9105d7
 reference/dir/directory/read.xml: c3ae9105d7
@@ -595,6 +595,7 @@ reference/errorfunc/reference.xml: efdbd50709
 reference/errorfunc/setup.xml: efdbd50709
 reference/exec/book.xml: a45e54aa5a
 reference/exec/constants.xml: 16f109a20c
+reference/exec/functions/exec.xml: efdbd50709
 reference/exec/functions/passthru.xml: efdbd50709
 reference/exec/functions/proc-close.xml: 794437c211
 reference/exec/functions/proc-get-status.xml: efdbd50709
@@ -782,6 +783,7 @@ reference/ftp/setup.xml: 807c846e04
 reference/funchand/book.xml: a45e54aa5a
 reference/funchand/constants.xml: 807c846e04
 reference/funchand/functions/call-user-func.xml: 9c93165980
+reference/funchand/functions/create-function.xml: 45482fefbe
 reference/funchand/functions/func-get-arg.xml: da369aa896
 reference/funchand/functions/function-exists.xml: 4d5e6a608d
 reference/funchand/functions/get-defined-functions.xml: efdbd50709
@@ -1958,7 +1960,7 @@ reference/sockets/functions/socket-strerror.xml: efdbd50709
 reference/sockets/functions/socket-write.xml: efdbd50709
 reference/sockets/reference.xml: 807c846e04
 reference/sockets/setup.xml: 807c846e04
-reference/spl/book.xml: 016339e3b2
+reference/spl/book.xml: 8f4b1a6108
 reference/spl/functions/spl-autoload-extensions.xml: 30497110b3
 reference/spl/functions/spl-autoload-functions.xml: 8bb74abd4c
 reference/spl/recursivedirectoryiterator/next.xml: 30497110b3
@@ -2066,7 +2068,7 @@ reference/strings/functions/md5.xml: 0588d4cdc1
 reference/strings/functions/metaphone.xml: e2a9be3d7b
 reference/strings/functions/nl-langinfo.xml: efdbd50709
 reference/strings/functions/nl2br.xml: 0c86c9bd2f
-reference/strings/functions/number-format.xml: 4bf3a854ec
+reference/strings/functions/number-format.xml: e7b86f1480
 reference/strings/functions/ord.xml: efdbd50709
 reference/strings/functions/parse-str.xml: efdbd50709
 reference/strings/functions/print.xml: 5dd287b420
@@ -2111,7 +2113,7 @@ reference/strings/functions/strpos.xml: 7605b65168
 reference/strings/functions/strrchr.xml: efdbd50709
 reference/strings/functions/strrev.xml: efdbd50709
 reference/strings/functions/strripos.xml: 7605b65168
-reference/strings/functions/strrpos.xml: 7605b65168
+reference/strings/functions/strrpos.xml: cf6ce7b4e1
 reference/strings/functions/strspn.xml: 711acfa7fb
 reference/strings/functions/strstr.xml: efdbd50709
 reference/strings/functions/strtok.xml: 807c846e04
