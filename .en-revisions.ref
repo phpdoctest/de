@@ -57,6 +57,7 @@ install/unix/debian.xml: 608eeed3cf
 install/unix/hpux.xml: efdbd50709
 install/unix/index.xml: ad774de3dd
 install/unix/lighttpd-14.xml: efdbd50709
+install/unix/nginx.xml: 12c6fac392
 install/windows/index.xml: 8a8393a568
 language/constants.xml: 5933f1cd66
 language/context.xml: 55581364b8
@@ -87,6 +88,7 @@ language/control-structures/while.xml: f40cab318e
 language/exceptions.xml: b1adf5cb44
 language/expressions.xml: efdbd50709
 language/functions.xml: 106c53bfba
+language/generators.xml: c094dd7da1
 language/namespaces.xml: a42fd11b8f
 language/oop5.xml: 4a24ab5bb7
 language/oop5/abstract.xml: 822b0a4ce9
@@ -133,6 +135,7 @@ language/predefined/exception/gettrace.xml: 807c846e04
 language/predefined/exception/gettraceasstring.xml: 807c846e04
 language/predefined/exception/tostring.xml: 807c846e04
 language/predefined/exceptions.xml: 807c846e04
+language/predefined/generator.xml: 42a79d6998
 language/predefined/interfaces.xml: 62d73efbfb
 language/predefined/iterator.xml: 961c2937af
 language/predefined/iterator/current.xml: 807c846e04
@@ -416,6 +419,8 @@ reference/curl/setup.xml: 15fe90977f
 reference/datetime/book.xml: a45e54aa5a
 reference/datetime/constants.xml: 04442df273
 reference/datetime/dateinterval.xml: 32efa35769
+reference/datetime/dateinterval/construct.xml: f4cdcc7a0e
+reference/datetime/dateinterval/createfromdatestring.xml: 6f8f911bc8
 reference/datetime/dateperiod.xml: 728f86caf3
 reference/datetime/datetime.xml: 3e4b5d65f5
 reference/datetime/datetime/add.xml: 87be1e4aab
@@ -426,6 +431,7 @@ reference/datetime/datetime/settimestamp.xml: 87be1e4aab
 reference/datetime/datetime/settimezone.xml: 99f27d61cf
 reference/datetime/datetime/sub.xml: 87be1e4aab
 reference/datetime/datetimeimmutable.xml: 4e757fdf6f
+reference/datetime/datetimeinterface.xml: 4e757fdf6f
 reference/datetime/datetimezone.xml: 70432ad899
 reference/datetime/functions/checkdate.xml: efdbd50709
 reference/datetime/functions/date-add.xml: efdbd50709
@@ -857,6 +863,7 @@ reference/htscanner/book.xml: 890455fa05
 reference/htscanner/configure.xml: 807c846e04
 reference/htscanner/ini.xml: f954cc9acb
 reference/htscanner/setup.xml: 807c846e04
+reference/http/HttpRequest/addCookies.xml: f7f145c8f6
 reference/http/install.xml: efdbd50709
 reference/http/resources.xml: efdbd50709
 reference/hw/functions/hw-output-document.xml: efdbd50709
@@ -1134,6 +1141,8 @@ reference/mnogosearch/functions/udm-get-doc-count.xml: efdbd50709
 reference/mnogosearch/functions/udm-open-stored.xml: efdbd50709
 reference/mnogosearch/reference.xml: efdbd50709
 reference/mnogosearch/setup.xml: 807c846e04
+reference/mongo/mongogridfs/get.xml: e4db6c4d61
+reference/mongo/mongogridfs/put.xml: 74511ea4e6
 reference/msession/book.xml: fed9ea9182
 reference/msession/configure.xml: efdbd50709
 reference/msession/constants.xml: efdbd50709
@@ -1316,8 +1325,10 @@ reference/mysqli/functions/mysqli-slave-query.xml: efdbd50709
 reference/mysqli/ini.xml: 807c846e04
 reference/mysqli/mysqli.xml: 832c5c52ab
 reference/mysqli/mysqli/affected-rows.xml: 0eac70f097
+reference/mysqli/mysqli/autocommit.xml: 693ac6fde1
 reference/mysqli/mysqli/close.xml: c18ad193be
 reference/mysqli/mysqli/stat.xml: 832c5c52ab
+reference/mysqli/mysqli/warning-count.xml: fcb240771f
 reference/mysqli/mysqli_driver.xml: 832c5c52ab
 reference/mysqli/mysqli_result.xml: 832c5c52ab
 reference/mysqli/mysqli_sql_exception.xml: 31dffa4ce7
@@ -1366,6 +1377,7 @@ reference/nis/constants.xml: efdbd50709
 reference/nis/functions/yp-next.xml: efdbd50709
 reference/nis/reference.xml: efdbd50709
 reference/nis/setup.xml: 807c846e04
+reference/oauth/functions/oauth-urlencode.xml: 6ab0e47a98
 reference/oci8/aliases.xml: ee6e3a1d88
 reference/oci8/book.xml: 9f1d0ed21a
 reference/oci8/configure.xml: 807c846e04
@@ -1462,6 +1474,11 @@ reference/oci8/oldaliases/ocisetprefetch.xml: da32dac8b3
 reference/oci8/oldaliases/ocistatementtype.xml: da32dac8b3
 reference/oci8/oldaliases/ociwritelobtofile.xml: 844678d1fc
 reference/oci8/oldaliases/ociwritetemporarylob.xml: 844678d1fc
+reference/opcache/book.xml: d3de1e860d
+reference/opcache/functions/opcache-get-status.xml: 526f406ec7
+reference/opcache/functions/opcache-reset.xml: d3de1e860d
+reference/opcache/reference.xml: 4dc775485a
+reference/opcache/setup.xml: 4dc775485a
 reference/openssl/book.xml: a45e54aa5a
 reference/openssl/cert-verification.xml: efdbd50709
 reference/openssl/certparams.xml: efdbd50709
@@ -1600,6 +1617,7 @@ reference/pdf/setup.xml: 807c846e04
 reference/pdo/book.xml: 807c846e04
 reference/pdo/configure.xml: 0afc43eef8
 reference/pdo/connections.xml: 807c846e04
+reference/pdo/constants.xml: 5a28e2becc
 reference/pdo/drivers.xml: 6254ba03ad
 reference/pdo/error-handling.xml: b49d47005e
 reference/pdo/lobs.xml: 807c846e04
@@ -1961,6 +1979,7 @@ reference/sockets/functions/socket-write.xml: efdbd50709
 reference/sockets/reference.xml: 807c846e04
 reference/sockets/setup.xml: 807c846e04
 reference/spl/book.xml: 8f4b1a6108
+reference/spl/countable/count.xml: 82e5bbc8d0
 reference/spl/functions/spl-autoload-extensions.xml: 30497110b3
 reference/spl/functions/spl-autoload-functions.xml: 8bb74abd4c
 reference/spl/recursivedirectoryiterator/next.xml: 30497110b3
@@ -2066,6 +2085,7 @@ reference/strings/functions/ltrim.xml: efdbd50709
 reference/strings/functions/md5-file.xml: 0588d4cdc1
 reference/strings/functions/md5.xml: 0588d4cdc1
 reference/strings/functions/metaphone.xml: e2a9be3d7b
+reference/strings/functions/money-format.xml: efdbd50709
 reference/strings/functions/nl-langinfo.xml: efdbd50709
 reference/strings/functions/nl2br.xml: 0c86c9bd2f
 reference/strings/functions/number-format.xml: e7b86f1480
