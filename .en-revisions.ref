@@ -2311,7 +2311,7 @@ reference/xmlwriter/setup.xml: 348cdafcf7
 reference/xsl/book.xml: 890455fa05
 reference/xsl/configure.xml: 9eb6e02fe8
 reference/xsl/constants.xml: f621e50377
-reference/xsl/examples.xml: 83fc699d58
+reference/xsl/examples.xml: 26f5895a06
 reference/xsl/setup.xml: dbd2dd039b
 reference/xsl/xsltprocessor.xml: 014662e997
 reference/xsl/xsltprocessor/construct.xml: 0b8294a29b
