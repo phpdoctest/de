@@ -68,8 +68,8 @@ language/context/phar.xml: 39a2637d68
 language/context/socket.xml: 52ba4714c6
 language/context/ssl.xml: 836f27ef11
 language/control-structures.xml: 807c846e04
-language/control-structures/alternative-syntax.xml: f40cab318e
-language/control-structures/break.xml: f40cab318e
+language/control-structures/alternative-syntax.xml: 4d986b284b
+language/control-structures/break.xml: 25d1a00b1f
 language/control-structures/continue.xml: f40cab318e
 language/control-structures/declare.xml: f40cab318e
 language/control-structures/do-while.xml: f40cab318e
@@ -78,11 +78,11 @@ language/control-structures/elseif.xml: f40cab318e
 language/control-structures/for.xml: a9629cd38f
 language/control-structures/goto.xml: f40cab318e
 language/control-structures/if.xml: f40cab318e
-language/control-structures/include-once.xml: f40cab318e
-language/control-structures/include.xml: e05a74a4be
+language/control-structures/include-once.xml: 087999d634
+language/control-structures/include.xml: ebef5188b5
 language/control-structures/require-once.xml: f40cab318e
-language/control-structures/require.xml: f40cab318e
-language/control-structures/return.xml: 087999d634
+language/control-structures/require.xml: 087999d634
+language/control-structures/return.xml: fd29dc5ddb
 language/control-structures/switch.xml: f40cab318e
 language/control-structures/while.xml: f40cab318e
 language/exceptions.xml: b1adf5cb44
