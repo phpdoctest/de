@@ -59,7 +59,7 @@ install/unix/index.xml: ad774de3dd
 install/unix/lighttpd-14.xml: efdbd50709
 install/unix/nginx.xml: 12c6fac392
 install/windows/index.xml: 8a8393a568
-language/constants.xml: 5933f1cd66
+language/constants.xml: c03a7098bb
 language/context.xml: 55581364b8
 language/context/curl.xml: b2d3012691
 language/context/ftp.xml: 5597841814
@@ -86,7 +86,7 @@ language/control-structures/return.xml: 087999d634
 language/control-structures/switch.xml: f40cab318e
 language/control-structures/while.xml: f40cab318e
 language/exceptions.xml: b1adf5cb44
-language/expressions.xml: efdbd50709
+language/expressions.xml: 1532065cd7
 language/functions.xml: 106c53bfba
 language/generators.xml: c094dd7da1
 language/namespaces.xml: a42fd11b8f
@@ -98,7 +98,7 @@ language/oop5/changelog.xml: 7f5c229aac
 language/oop5/cloning.xml: f03553a9bb
 language/oop5/constants.xml: 58146cd616
 language/oop5/decon.xml: cca3ef0baf
-language/oop5/final.xml: efdbd50709
+language/oop5/final.xml: f03553a9bb
 language/oop5/inheritance.xml: 7101d7984a
 language/oop5/interfaces.xml: 3f0437f93b
 language/oop5/iterations.xml: 23e853f430
