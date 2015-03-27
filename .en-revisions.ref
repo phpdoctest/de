@@ -116,7 +116,7 @@ language/oop5/traits.xml: 2223e27adb
 language/oop5/typehinting.xml: 8f4b1a6108
 language/oop5/visibility.xml: 8e2d295e8f
 language/predefined/arrayaccess.xml: 857605f5ef
-language/predefined/arrayaccess/offsetexists.xml: f262d5e396
+language/predefined/arrayaccess/offsetexists.xml: 65a2571751
 language/predefined/arrayaccess/offsetget.xml: c320e5d8c0
 language/predefined/arrayaccess/offsetset.xml: b0685d1810
 language/predefined/arrayaccess/offsetunset.xml: f262d5e396
