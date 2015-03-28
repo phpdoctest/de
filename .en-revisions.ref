@@ -1854,7 +1854,7 @@ reference/sem/setup.xml: 807c846e04
 reference/session/book.xml: 7f5c229aac
 reference/session/configure.xml: efdbd50709
 reference/session/constants.xml: 651f4db9ee
-reference/session/examples.xml: 0588d4cdc1
+reference/session/examples.xml: 17fb3a4d8c
 reference/session/functions/session-cache-expire.xml: 9239cfda15
 reference/session/functions/session-cache-limiter.xml: 8868566c3a
 reference/session/functions/session-commit.xml: efdbd50709
