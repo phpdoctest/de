@@ -65,7 +65,6 @@ language/context/curl.xml: b2d3012691
 language/context/ftp.xml: 5597841814
 language/context/parameters.xml: d51f19c092
 language/context/phar.xml: 39a2637d68
-language/context/socket.xml: 52ba4714c6
 language/context/ssl.xml: 836f27ef11
 language/control-structures.xml: 807c846e04
 language/control-structures/alternative-syntax.xml: 4d986b284b
