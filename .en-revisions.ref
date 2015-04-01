@@ -1628,6 +1628,7 @@ reference/pdo/pdoexception.xml: 961c2937af
 reference/pdo/prepared-statements.xml: 807c846e04
 reference/pdo/setup.xml: 807c846e04
 reference/pdo/transactions.xml: 65547ddd80
+reference/pdo_mysql/reference.xml: 30497110b3
 reference/pdo_sqlite/functions/PDO-sqliteCreateAggregate.xml: 04442df273
 reference/pdo_sqlite/functions/PDO-sqliteCreateFunction.xml: 04442df273
 reference/pdo_sqlite/reference.xml: 812066d540
