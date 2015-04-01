@@ -206,6 +206,7 @@ reference/array/functions/array-combine.xml: dc238d115a
 reference/array/functions/array-count-values.xml: 65735b6b36
 reference/array/functions/array-diff-assoc.xml: fbf0b98fa8
 reference/array/functions/array-diff-key.xml: efdbd50709
+reference/array/functions/array-diff-uassoc.xml: 7e146a5734
 reference/array/functions/array-diff-ukey.xml: 65735b6b36
 reference/array/functions/array-diff.xml: 665ac0ccbd
 reference/array/functions/array-fill-keys.xml: efdbd50709
@@ -216,6 +217,7 @@ reference/array/functions/array-intersect-assoc.xml: 65735b6b36
 reference/array/functions/array-intersect-key.xml: 65735b6b36
 reference/array/functions/array-intersect-uassoc.xml: 65735b6b36
 reference/array/functions/array-intersect-ukey.xml: 65735b6b36
+reference/array/functions/array-intersect.xml: 65735b6b36
 reference/array/functions/array-key-exists.xml: 65735b6b36
 reference/array/functions/array-keys.xml: cf6ce7b4e1
 reference/array/functions/array-map.xml: bdfea6b203
