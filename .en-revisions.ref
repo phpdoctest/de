@@ -222,6 +222,7 @@ reference/array/functions/array-key-exists.xml: 65735b6b36
 reference/array/functions/array-keys.xml: cf6ce7b4e1
 reference/array/functions/array-map.xml: bdfea6b203
 reference/array/functions/array-merge-recursive.xml: 7b5f562fc1
+reference/array/functions/array-merge.xml: cf6ce7b4e1
 reference/array/functions/array-multisort.xml: 65735b6b36
 reference/array/functions/array-pop.xml: d02e9c4340
 reference/array/functions/array-product.xml: cfd4938f68
