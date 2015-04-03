@@ -414,7 +414,7 @@ reference/curl/functions/curl-multi-setopt.xml: f1b66029e9
 reference/curl/functions/curl-multi-strerror.xml: fe14cec8a2
 reference/curl/functions/curl-pause.xml: fe6975c008
 reference/curl/functions/curl-setopt-array.xml: 0699279cd3
-reference/curl/functions/curl-setopt.xml: e00ae760cf
+reference/curl/functions/curl-setopt.xml: 68c0f6f70a
 reference/curl/functions/curl-version.xml: f0e133d57d
 reference/curl/ini.xml: d2c80d6672
 reference/curl/reference.xml: efdbd50709
