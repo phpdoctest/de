@@ -440,6 +440,7 @@ reference/datetime/functions/checkdate.xml: efdbd50709
 reference/datetime/functions/date-add.xml: efdbd50709
 reference/datetime/functions/date-create-from-format.xml: 807c846e04
 reference/datetime/functions/date-date-set.xml: efdbd50709
+reference/datetime/functions/date-default-timezone-set.xml: d7cda5ba94
 reference/datetime/functions/date-diff.xml: 807c846e04
 reference/datetime/functions/date-format.xml: efdbd50709
 reference/datetime/functions/date-get-last-errors.xml: 807c846e04
@@ -602,6 +603,8 @@ reference/errorfunc/functions/trigger-error.xml: efdbd50709
 reference/errorfunc/functions/user-error.xml: efdbd50709
 reference/errorfunc/reference.xml: efdbd50709
 reference/errorfunc/setup.xml: efdbd50709
+reference/event/eventbuffer/write.xml: 20cb9b4088
+reference/event/eventbufferevent/write.xml: 20cb9b4088
 reference/exec/book.xml: a45e54aa5a
 reference/exec/constants.xml: 16f109a20c
 reference/exec/functions/exec.xml: efdbd50709
@@ -896,6 +899,7 @@ reference/image/functions/imagepng.xml: 66cf11bb10
 reference/image/functions/jpeg2wbmp.xml: efdbd50709
 reference/image/reference.xml: efdbd50709
 reference/image/setup.xml: a367df80fc
+reference/imagick/imagick/pingimage.xml: f7f145c8f6
 reference/imap/book.xml: a45e54aa5a
 reference/imap/configure.xml: efdbd50709
 reference/imap/functions/imap-8bit.xml: efdbd50709
