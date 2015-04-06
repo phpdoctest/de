@@ -228,6 +228,7 @@ reference/array/functions/array-pop.xml: d02e9c4340
 reference/array/functions/array-product.xml: cfd4938f68
 reference/array/functions/array-rand.xml: 8868566c3a
 reference/array/functions/array-reduce.xml: 840117db94
+reference/array/functions/array-replace.xml: b0db98d861
 reference/array/functions/array-reverse.xml: 7237f64379
 reference/array/functions/array-search.xml: ba17582882
 reference/array/functions/array-shift.xml: efdbd50709
