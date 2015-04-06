@@ -78,7 +78,7 @@ language/control-structures/for.xml: a9629cd38f
 language/control-structures/goto.xml: e7e490bf08
 language/control-structures/if.xml: f40cab318e
 language/control-structures/include-once.xml: 087999d634
-language/control-structures/include.xml: ebef5188b5
+language/control-structures/include.xml: cfc26695eb
 language/control-structures/require-once.xml: 087999d634
 language/control-structures/require.xml: 087999d634
 language/control-structures/return.xml: fd29dc5ddb
@@ -166,9 +166,9 @@ language/predefined/variables/session.xml: 991103bc31
 language/predefined/variables/superglobals.xml: 807c846e04
 language/types.xml: c4ba111552
 language/types/array.xml: 54bebf488f
-language/types/boolean.xml: 27be162efc
-language/types/null.xml: 1cce082a04
-language/types/resource.xml: 807c846e04
+language/types/boolean.xml: 84e1c878b0
+language/types/null.xml: dff197a9c6
+language/types/resource.xml: 840b027a94
 language/wrappers.xml: 07f040bc3f
 preface.xml: 09818bff14
 reference/amqp/amqpchannel/isconnected.xml: 467a2a01a2
