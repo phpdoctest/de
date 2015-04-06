@@ -167,7 +167,6 @@ language/predefined/variables/superglobals.xml: 807c846e04
 language/types.xml: c4ba111552
 language/types/array.xml: 54bebf488f
 language/types/boolean.xml: 27be162efc
-language/types/integer.xml: 807c846e04
 language/types/null.xml: 1cce082a04
 language/types/resource.xml: 807c846e04
 language/wrappers.xml: 07f040bc3f
