@@ -2356,10 +2356,10 @@ reference/xslt/functions/xslt-set-error-handler.xml: efdbd50709
 reference/xslt/functions/xslt-set-log.xml: efdbd50709
 reference/xslt/functions/xslt-set-sax-handler.xml: 66117ac77f
 reference/xslt/setup.xml: dbd2dd039b
-reference/zip/book.xml: fed9ea9182
-reference/zip/configure.xml: efdbd50709
+reference/zip/book.xml: 890455fa05
+reference/zip/configure.xml: cfc26695eb
 reference/zip/constants.xml: 30497110b3
-reference/zip/examples.xml: efdbd50709
+reference/zip/examples.xml: e29d0e2c44
 reference/zip/functions/zip-close.xml: efdbd50709
 reference/zip/functions/zip-entry-close.xml: efdbd50709
 reference/zip/functions/zip-entry-compressedsize.xml: efdbd50709
@@ -2372,7 +2372,7 @@ reference/zip/functions/zip-open.xml: d99328136d
 reference/zip/functions/zip-read.xml: fc5cc05a2a
 reference/zip/reference.xml: efdbd50709
 reference/zip/setup.xml: 807c846e04
-reference/zip/ziparchive.xml: 961c2937af
+reference/zip/ziparchive.xml: cd38d65add
 reference/zip/ziparchive/addemptydir.xml: efdbd50709
 reference/zip/ziparchive/addfile.xml: 33c5735cf5
 reference/zip/ziparchive/addfromstring.xml: efdbd50709
