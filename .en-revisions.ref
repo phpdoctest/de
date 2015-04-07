@@ -9,6 +9,7 @@ appendices/ini.core.xml: 087999d634
 appendices/ini.list.xml: 82c231eadf
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
+appendices/migration54.xml: 58baf42ea5
 appendices/reserved.constants.core.xml: 8c1e11898a
 appendices/reserved.constants.standard.xml: efdbd50709
 appendices/reserved.xml: 8e3156cff5
