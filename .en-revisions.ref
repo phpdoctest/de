@@ -2208,7 +2208,7 @@ reference/v8js/v8js/getextensions.xml: b5537122ba
 reference/v8js/v8js/getpendingexception.xml: b5537122ba
 reference/v8js/v8js/registerextension.xml: b5537122ba
 reference/v8js/v8jsexception.xml: bac0d5e9ef
-reference/var/book.xml: a45e54aa5a
+reference/var/book.xml: 890455fa05
 reference/var/constants.xml: 807c846e04
 reference/var/functions/doubleval.xml: efdbd50709
 reference/var/functions/empty.xml: d1c3cf4bce
@@ -2240,7 +2240,7 @@ reference/var/functions/unserialize.xml: 4fe15f56ed
 reference/var/functions/unset.xml: b3c79a918b
 reference/var/functions/var-dump.xml: b974f18142
 reference/var/functions/var-export.xml: ac0627b97a
-reference/var/ini.xml: efdbd50709
+reference/var/ini.xml: d2c80d6672
 reference/var/reference.xml: efdbd50709
 reference/var/setup.xml: efdbd50709
 reference/xml/functions/utf8-decode.xml: efdbd50709
