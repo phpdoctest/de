@@ -2441,7 +2441,6 @@ security/database.xml: 2c0e026aac
 security/errors.xml: efdbd50709
 security/filesystem.xml: 9a060a5958
 security/general.xml: efdbd50709
-security/globals.xml: efdbd50709
 security/hiding.xml: 9a060a5958
 security/intro.xml: efdbd50709
 security/variables.xml: 9a060a5958
