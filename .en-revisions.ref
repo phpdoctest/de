@@ -421,6 +421,7 @@ reference/curl/ini.xml: d2c80d6672
 reference/curl/reference.xml: efdbd50709
 reference/curl/setup.xml: 07f68ffc96
 reference/datetime/book.xml: 890455fa05
+reference/datetime/configure.xml: 807c846e04
 reference/datetime/constants.xml: 30497110b3
 reference/datetime/dateinterval.xml: 32efa35769
 reference/datetime/dateinterval/construct.xml: f4cdcc7a0e
