@@ -28,7 +28,7 @@ faq/mailinglist.xml: 0c3adf514a
 faq/misc.xml: efdbd50709
 faq/obtaining.xml: efdbd50709
 faq/passwords.xml: 3e661618e0
-faq/using.xml: eddfcf184f
+faq/using.xml: cfc26695eb
 features/commandline.xml: 087999d634
 features/connection-handling.xml: efdbd50709
 features/cookies.xml: efdbd50709
@@ -897,7 +897,7 @@ reference/image/functions/getimagesize.xml: 7237f64379
 reference/image/functions/imagearc.xml: 20e2ed00ec
 reference/image/functions/imagechar.xml: efdbd50709
 reference/image/functions/imagecopyresized.xml: dd9a29a077
-reference/image/functions/imagecreatefromgif.xml: 6d94481e76
+reference/image/functions/imagecreatefromgif.xml: cfc26695eb
 reference/image/functions/imagegif.xml: 66cf11bb10
 reference/image/functions/imagejpeg.xml: 66cf11bb10
 reference/image/functions/imagepng.xml: 66cf11bb10
