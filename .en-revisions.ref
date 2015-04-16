@@ -1998,6 +1998,7 @@ reference/spl/countable/count.xml: 82e5bbc8d0
 reference/spl/functions/spl-autoload-extensions.xml: 30497110b3
 reference/spl/functions/spl-autoload-functions.xml: 8bb74abd4c
 reference/spl/recursivedirectoryiterator/next.xml: 30497110b3
+reference/spl_types/splenum.xml: 70bb768531
 reference/sqlite/book.xml: a45e54aa5a
 reference/sqlite/constants.xml: 04442df273
 reference/sqlite/functions/sqlite-array-query.xml: d75d863908
