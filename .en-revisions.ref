@@ -2066,9 +2066,9 @@ reference/sqlite3/sqlite3/prepare.xml: 5567574cf4
 reference/sqlite3/sqlite3/query.xml: 807c846e04
 reference/sqlite3/sqlite3result.xml: 961c2937af
 reference/sqlite3/sqlite3stmt.xml: 961c2937af
-reference/strings/book.xml: a45e54aa5a
-reference/strings/charsets.xml: efdbd50709
-reference/strings/constants.xml: 2316a80c8a
+reference/strings/book.xml: 890455fa05
+reference/strings/charsets.xml: 95491c26ae
+reference/strings/constants.xml: 30497110b3
 reference/strings/functions/addcslashes.xml: 63fa98890c
 reference/strings/functions/addslashes.xml: ed4f4505ed
 reference/strings/functions/bin2hex.xml: b0726827c5
