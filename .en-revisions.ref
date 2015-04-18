@@ -732,7 +732,7 @@ reference/filesystem/functions/link.xml: bd3e5c6949
 reference/filesystem/functions/linkinfo.xml: efdbd50709
 reference/filesystem/functions/lstat.xml: 2a9076bd3e
 reference/filesystem/functions/mkdir.xml: 8868566c3a
-reference/filesystem/functions/parse-ini-file.xml: 30497110b3
+reference/filesystem/functions/parse-ini-file.xml: 24fc0ec86d
 reference/filesystem/functions/parse-ini-string.xml: bc301b4edb
 reference/filesystem/functions/pathinfo.xml: f03553a9bb
 reference/filesystem/functions/realpath.xml: cf6ce7b4e1
