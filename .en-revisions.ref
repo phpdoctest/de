@@ -488,7 +488,6 @@ reference/datetime/functions/timezone-transitions-get.xml: efdbd50709
 reference/datetime/ini.xml: d2c80d6672
 reference/datetime/reference.xml: efdbd50709
 reference/datetime/setup.xml: 807c846e04
-reference/datetime/timezones.xml: 7175efeaf8
 reference/dba/book.xml: 890455fa05
 reference/dba/configure.xml: bcf09450f7
 reference/dba/constants.xml: 807c846e04
