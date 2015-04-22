@@ -24,7 +24,7 @@ appendices/reserved.xml: 8e3156cff5
 appendices/resources.xml: efdbd50709
 appendices/transports.xml: 26e5c6e48d
 appendices/userlandnaming.xml: 593de58fd5
-bookinfo.xml: 30497110b3
+bookinfo.xml: ffb234e0e2
 chmonly/aboutchm.xml: efdbd50709
 chmonly/credits.xml: efdbd50709
 faq/build.xml: 52ee8b786b
@@ -84,6 +84,7 @@ language/control-structures/do-while.xml: f40cab318e
 language/control-structures/else.xml: f40cab318e
 language/control-structures/elseif.xml: f40cab318e
 language/control-structures/for.xml: a9629cd38f
+language/control-structures/foreach.xml: e58e3175cd
 language/control-structures/goto.xml: e7e490bf08
 language/control-structures/if.xml: f40cab318e
 language/control-structures/include-once.xml: 087999d634
