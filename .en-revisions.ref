@@ -876,7 +876,7 @@ reference/hash/functions/hash-init.xml: 4c5ec4762b
 reference/hash/functions/hash-update-file.xml: fb733b72bb
 reference/hash/functions/hash-update-stream.xml: efdbd50709
 reference/hash/functions/hash-update.xml: efdbd50709
-reference/hash/functions/hash.xml: 25629d416a
+reference/hash/functions/hash.xml: df07d9e08a
 reference/hash/reference.xml: efdbd50709
 reference/hash/setup.xml: 64e32f0eee
 reference/htscanner/book.xml: 949d5fbbc6
@@ -1164,7 +1164,7 @@ reference/mnogosearch/reference.xml: efdbd50709
 reference/mnogosearch/setup.xml: 807c846e04
 reference/mongo/mongogridfs/get.xml: e4db6c4d61
 reference/mongo/mongogridfs/put.xml: 74511ea4e6
-reference/msession/book.xml: fed9ea9182
+reference/msession/book.xml: 890455fa05
 reference/msession/configure.xml: efdbd50709
 reference/msession/constants.xml: efdbd50709
 reference/msession/functions/msession-connect.xml: efdbd50709
@@ -1343,8 +1343,8 @@ reference/mysqli/functions/mysqli-report.xml: 037dcce94d
 reference/mysqli/functions/mysqli-send-long-data.xml: 03b10d1950
 reference/mysqli/functions/mysqli-set-opt.xml: c1eadc54cc
 reference/mysqli/functions/mysqli-slave-query.xml: efdbd50709
-reference/mysqli/ini.xml: 807c846e04
-reference/mysqli/mysqli.xml: 832c5c52ab
+reference/mysqli/ini.xml: eae1382f1a
+reference/mysqli/mysqli.xml: f861061e99
 reference/mysqli/mysqli/affected-rows.xml: 0eac70f097
 reference/mysqli/mysqli/autocommit.xml: 693ac6fde1
 reference/mysqli/mysqli/close.xml: c18ad193be
@@ -1353,7 +1353,7 @@ reference/mysqli/mysqli/warning-count.xml: fcb240771f
 reference/mysqli/mysqli_driver.xml: 832c5c52ab
 reference/mysqli/mysqli_result.xml: 832c5c52ab
 reference/mysqli/mysqli_sql_exception.xml: 31dffa4ce7
-reference/mysqli/mysqli_stmt.xml: 832c5c52ab
+reference/mysqli/mysqli_stmt.xml: e2f205bd4d
 reference/mysqli/mysqli_warning.xml: 832c5c52ab
 reference/mysqli/reference.xml: 807c846e04
 reference/mysqli/setup.xml: 807c846e04
@@ -1392,9 +1392,9 @@ reference/network/functions/syslog.xml: efdbd50709
 reference/network/ini.xml: d2c80d6672
 reference/network/reference.xml: 807c846e04
 reference/network/setup.xml: 15110920fa
-reference/nis/book.xml: fed9ea9182
+reference/nis/book.xml: 890455fa05
 reference/nis/configure.xml: efdbd50709
-reference/nis/constants.xml: efdbd50709
+reference/nis/constants.xml: 5a28e2becc
 reference/nis/functions/yp-next.xml: efdbd50709
 reference/nis/reference.xml: efdbd50709
 reference/nis/setup.xml: 807c846e04
@@ -1406,7 +1406,7 @@ reference/oci8/constants.xml: 807c846e04
 reference/oci8/functions/oci-bind-array-by-name.xml: efdbd50709
 reference/oci8/functions/oci-bind-by-name.xml: 807c846e04
 reference/oci8/functions/oci-cancel.xml: efdbd50709
-reference/oci8/functions/oci-close.xml: 807c846e04
+reference/oci8/functions/oci-close.xml: 9f1d0ed21a
 reference/oci8/functions/oci-collection-append.xml: efdbd50709
 reference/oci8/functions/oci-collection-assign.xml: efdbd50709
 reference/oci8/functions/oci-collection-assignelem.xml: efdbd50709
@@ -1423,7 +1423,7 @@ reference/oci8/functions/oci-fetch-object.xml: 807c846e04
 reference/oci8/functions/oci-fetch-row.xml: 807c846e04
 reference/oci8/functions/oci-fetch.xml: 807c846e04
 reference/oci8/functions/oci-free-statement.xml: efdbd50709
-reference/oci8/ini.xml: 82c231eadf
+reference/oci8/ini.xml: 0d2e829f97
 reference/oci8/OCI-Lob/append.xml: b2497f46f1
 reference/oci8/OCI-Lob/close.xml: b2497f46f1
 reference/oci8/OCI-Lob/eof.xml: b2497f46f1
