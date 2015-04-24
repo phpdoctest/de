@@ -1434,7 +1434,6 @@ reference/oci8/OCI-Lob/free.xml: b2497f46f1
 reference/oci8/OCI-Lob/getBuffering.xml: b2497f46f1
 reference/oci8/OCI-Lob/import.xml: b2497f46f1
 reference/oci8/OCI-Lob/load.xml: b2497f46f1
-reference/oci8/OCI-Lob/read.xml: b2497f46f1
 reference/oci8/OCI-Lob/rewind.xml: b2497f46f1
 reference/oci8/OCI-Lob/save.xml: b2497f46f1
 reference/oci8/OCI-Lob/saveFile.xml: b2497f46f1
