@@ -1651,7 +1651,7 @@ reference/pdo_mysql/reference.xml: 30497110b3
 reference/pdo_sqlite/functions/PDO-sqliteCreateAggregate.xml: 04442df273
 reference/pdo_sqlite/functions/PDO-sqliteCreateFunction.xml: 04442df273
 reference/pdo_sqlite/reference.xml: 30497110b3
-reference/pgsql/book.xml: a45e54aa5a
+reference/pgsql/book.xml: 137ca00925
 reference/pgsql/configure.xml: efdbd50709
 reference/pgsql/constants.xml: 3bcaa002cf
 reference/pgsql/examples.xml: 83fc699d58
