@@ -1974,7 +1974,7 @@ reference/soap/soapvar/construct.xml: 807c846e04
 reference/soap/soapvar/soapvar.xml: 31b19f634d
 reference/sockets/book.xml: 890455fa05
 reference/sockets/configure.xml: efdbd50709
-reference/sockets/constants.xml: efdbd50709
+reference/sockets/constants.xml: e34e935f28
 reference/sockets/errors.xml: 66117ac77f
 reference/sockets/examples.xml: 807c846e04
 reference/sockets/functions/socket-accept.xml: efdbd50709
