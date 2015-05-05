@@ -245,7 +245,7 @@ reference/array/functions/array-shift.xml: efdbd50709
 reference/array/functions/array-slice.xml: d1df976717
 reference/array/functions/array-splice.xml: 20ae618254
 reference/array/functions/array-sum.xml: 8868566c3a
-reference/array/functions/array-udiff.xml: 65735b6b36
+reference/array/functions/array-udiff.xml: 27997cced8
 reference/array/functions/array-unique.xml: 7b9fa864e5
 reference/array/functions/array-values.xml: 65735b6b36
 reference/array/functions/array-walk.xml: 5fc0122c40
@@ -1745,7 +1745,7 @@ reference/pdf/functions/pdf-setcolor.xml: efdbd50709
 reference/pdf/functions/pdf-setdash.xml: efdbd50709
 reference/pdf/functions/pdf-setdashpattern.xml: efdbd50709
 reference/pdf/functions/pdf-setflat.xml: efdbd50709
-reference/pdf/functions/pdf-setfont.xml: efdbd50709
+reference/pdf/functions/pdf-setfont.xml: 27997cced8
 reference/pdf/functions/pdf-setgray-fill.xml: efdbd50709
 reference/pdf/functions/pdf-setgray-stroke.xml: efdbd50709
 reference/pdf/functions/pdf-setgray.xml: efdbd50709
@@ -1764,7 +1764,7 @@ reference/pdf/functions/pdf-shfill.xml: efdbd50709
 reference/pdf/functions/pdf-show-boxed.xml: efdbd50709
 reference/pdf/functions/pdf-show-xy.xml: efdbd50709
 reference/pdf/functions/pdf-show.xml: efdbd50709
-reference/pdf/functions/pdf-skew.xml: efdbd50709
+reference/pdf/functions/pdf-skew.xml: 27997cced8
 reference/pdf/functions/pdf-stringwidth.xml: efdbd50709
 reference/pdf/functions/pdf-stroke.xml: efdbd50709
 reference/pdf/functions/pdf-suspend-page.xml: efdbd50709
