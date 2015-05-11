@@ -715,7 +715,7 @@ reference/fileinfo/book.xml: 079bf0cd64
 reference/fileinfo/configure.xml: 97e9a1f895
 reference/fileinfo/constants.xml: 30497110b3
 reference/fileinfo/functions/finfo-close.xml: 1c63cc33e6
-reference/fileinfo/functions/finfo-file.xml: 87c4553d96
+reference/fileinfo/functions/finfo-file.xml: 3484ac0728
 reference/fileinfo/functions/finfo-open.xml: 3b4167177a
 reference/fileinfo/functions/finfo-set-flags.xml: 3b4167177a
 reference/fileinfo/functions/mime-content-type.xml: efdbd50709
@@ -797,8 +797,12 @@ reference/filesystem/functions/pathinfo.xml: f03553a9bb
 reference/filesystem/functions/pclose.xml: f66af8a837
 reference/filesystem/functions/popen.xml: 8538bdabbc
 reference/filesystem/functions/readfile.xml: cc051aff8b
+reference/filesystem/functions/readlink.xml: efdbd50709
 reference/filesystem/functions/realpath.xml: c9a65557b0
+reference/filesystem/functions/rename.xml: 169b85bcf8
+reference/filesystem/functions/rewind.xml: efdbd50709
 reference/filesystem/functions/rmdir.xml: baa3688115
+reference/filesystem/functions/set-file-buffer.xml: efdbd50709
 reference/filesystem/functions/stat.xml: 8868566c3a
 reference/filesystem/functions/symlink.xml: 3963a9acda
 reference/filesystem/functions/tempnam.xml: 7237f64379
