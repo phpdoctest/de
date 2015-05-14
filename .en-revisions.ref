@@ -2613,7 +2613,6 @@ reference/zlib/functions/gzclose.xml: efdbd50709
 reference/zlib/functions/gzcompress.xml: 7f5c229aac
 reference/zlib/functions/gzdecode.xml: efdbd50709
 reference/zlib/functions/gzdeflate.xml: ee6662ac15
-reference/zlib/functions/gzencode.xml: efdbd50709
 reference/zlib/functions/gzeof.xml: efdbd50709
 reference/zlib/functions/gzfile.xml: efdbd50709
 reference/zlib/functions/gzgetc.xml: efdbd50709
