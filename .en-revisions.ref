@@ -27,10 +27,10 @@ appendices/userlandnaming.xml: 593de58fd5
 bookinfo.xml: ffb234e0e2
 chmonly/aboutchm.xml: efdbd50709
 chmonly/credits.xml: efdbd50709
-faq/build.xml: 52ee8b786b
+faq/build.xml: eae1382f1a
 faq/databases.xml: 0e302b252e
 faq/general.xml: efdbd50709
-faq/html.xml: 35b013b1b6
+faq/html.xml: a70e7624da
 faq/installation.xml: 0e302b252e
 faq/mailinglist.xml: 0c3adf514a
 faq/misc.xml: efdbd50709
@@ -213,7 +213,7 @@ reference/array/functions/array-change-key-case.xml: 65735b6b36
 reference/array/functions/array-chunk.xml: 4436eb8c39
 reference/array/functions/array-combine.xml: dc238d115a
 reference/array/functions/array-count-values.xml: 65735b6b36
-reference/array/functions/array-diff-assoc.xml: fbf0b98fa8
+reference/array/functions/array-diff-assoc.xml: 1aae2865c1
 reference/array/functions/array-diff-key.xml: efdbd50709
 reference/array/functions/array-diff-uassoc.xml: 7e146a5734
 reference/array/functions/array-diff-ukey.xml: 65735b6b36
@@ -250,7 +250,7 @@ reference/array/functions/array-udiff-assoc.xml: 65735b6b36
 reference/array/functions/array-udiff-uassoc.xml: 65735b6b36
 reference/array/functions/array-udiff.xml: 27997cced8
 reference/array/functions/array-uintersect-assoc.xml: 65735b6b36
-reference/array/functions/array-uintersect-uassoc.xml: 65735b6b36
+reference/array/functions/array-uintersect-uassoc.xml: 85e0ef7df1
 reference/array/functions/array-uintersect.xml: 65735b6b36
 reference/array/functions/array-unique.xml: 7b9fa864e5
 reference/array/functions/array-unshift.xml: 65735b6b36
@@ -273,7 +273,7 @@ reference/array/functions/krsort.xml: efdbd50709
 reference/array/functions/ksort.xml: efdbd50709
 reference/array/functions/list.xml: 65735b6b36
 reference/array/functions/natcasesort.xml: efdbd50709
-reference/array/functions/natsort.xml: acc79df14c
+reference/array/functions/natsort.xml: 5c8d0b4c2f
 reference/array/functions/next.xml: efdbd50709
 reference/array/functions/pos.xml: efdbd50709
 reference/array/functions/prev.xml: efdbd50709
@@ -892,7 +892,7 @@ reference/funchand/book.xml: 890455fa05
 reference/funchand/constants.xml: 807c846e04
 reference/funchand/functions/call-user-func.xml: 9c93165980
 reference/funchand/functions/create-function.xml: 45482fefbe
-reference/funchand/functions/func-get-arg.xml: 60eabe2135
+reference/funchand/functions/func-get-arg.xml: a2b58d6ecc
 reference/funchand/functions/function-exists.xml: 087999d634
 reference/funchand/functions/get-defined-functions.xml: 841b4dcd0f
 reference/funchand/functions/register-shutdown-function.xml: 8868566c3a
