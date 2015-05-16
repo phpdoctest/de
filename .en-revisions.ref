@@ -975,6 +975,16 @@ reference/http/HttpRequest/addCookies.xml: f7f145c8f6
 reference/http/install.xml: efdbd50709
 reference/http/resources.xml: efdbd50709
 reference/hw/functions/hw-output-document.xml: efdbd50709
+reference/ibase/functions/ibase-close.xml: edd2392da9
+reference/ibase/functions/ibase-connect.xml: 553dd2659b
+reference/ibase/functions/ibase-execute.xml: 55b24d1b2b
+reference/ibase/functions/ibase-fetch-row.xml: efdbd50709
+reference/ibase/functions/ibase-free-query.xml: efdbd50709
+reference/ibase/functions/ibase-free-result.xml: efdbd50709
+reference/ibase/functions/ibase-num-fields.xml: efdbd50709
+reference/ibase/functions/ibase-pconnect.xml: efdbd50709
+reference/ibase/functions/ibase-prepare.xml: efdbd50709
+reference/ibase/functions/ibase-query.xml: efdbd50709
 reference/iconv/functions/iconv-get-encoding.xml: efdbd50709
 reference/iconv/functions/iconv-set-encoding.xml: e808304b71
 reference/iconv/functions/iconv.xml: dcccc1679e
