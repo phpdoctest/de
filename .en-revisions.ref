@@ -1,9 +1,6 @@
 appendices/aliases.xml: 53076d9726
 appendices/comparisons.xml: f0b5fe9b78
-appendices/configure/index.xml: ba470c3835
-appendices/configure/misc.xml: efdbd50709
 appendices/configure/php.xml: 3ef1b24d91
-appendices/configure/servers.xml: 3623a22894
 appendices/debugger.xml: 0f7e7dec4f
 appendices/ini.core.xml: 087999d634
 appendices/ini.list.xml: 82c231eadf
@@ -1524,7 +1521,6 @@ reference/oci8/functions/oci-free-statement.xml: efdbd50709
 reference/oci8/ini.xml: 0d2e829f97
 reference/oci8/OCI-Lob/append.xml: b2497f46f1
 reference/oci8/OCI-Lob/close.xml: b2497f46f1
-reference/oci8/OCI-Lob/eof.xml: b2497f46f1
 reference/oci8/OCI-Lob/erase.xml: b2497f46f1
 reference/oci8/OCI-Lob/export.xml: b2497f46f1
 reference/oci8/OCI-Lob/flush.xml: b2497f46f1
