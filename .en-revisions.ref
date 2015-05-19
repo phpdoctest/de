@@ -2,8 +2,8 @@ appendices/aliases.xml: 53076d9726
 appendices/comparisons.xml: f0b5fe9b78
 appendices/configure/php.xml: 3ef1b24d91
 appendices/debugger.xml: 0f7e7dec4f
-appendices/ini.core.xml: 087999d634
-appendices/ini.list.xml: 82c231eadf
+appendices/ini.core.xml: de1b0ce4a3
+appendices/ini.list.xml: 2b58c3222b
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
 appendices/migration54.xml: 58baf42ea5
