@@ -9,6 +9,7 @@ appendices/ini.xml: b46b638142
 appendices/migration54.xml: 58baf42ea5
 appendices/migration56.xml: fbf9594048
 appendices/migration56/changed-functions.xml: 39b2fbf686
+appendices/migration56/constants.xml: f45916db83
 appendices/migration56/deprecated.xml: 968a7d1396
 appendices/migration56/extensions.xml: 1226a7bb21
 appendices/migration56/incompatible.xml: b1056a26f3
@@ -89,7 +90,7 @@ language/control-structures/include.xml: cfc26695eb
 language/control-structures/require-once.xml: 087999d634
 language/control-structures/require.xml: 087999d634
 language/control-structures/return.xml: fd29dc5ddb
-language/control-structures/switch.xml: 350438ce4d
+language/control-structures/switch.xml: 4f95ae282f
 language/control-structures/while.xml: f40cab318e
 language/exceptions.xml: b1adf5cb44
 language/expressions.xml: 1532065cd7
@@ -1530,7 +1531,7 @@ reference/oci8/OCI-Lob/import.xml: b2497f46f1
 reference/oci8/OCI-Lob/load.xml: b2497f46f1
 reference/oci8/OCI-Lob/rewind.xml: b2497f46f1
 reference/oci8/OCI-Lob/save.xml: b2497f46f1
-reference/oci8/OCI-Lob/saveFile.xml: b2497f46f1
+reference/oci8/OCI-Lob/saveFile.xml: 350be96cc9
 reference/oci8/OCI-Lob/seek.xml: b2497f46f1
 reference/oci8/OCI-Lob/setBuffering.xml: b2497f46f1
 reference/oci8/OCI-Lob/size.xml: b2497f46f1
