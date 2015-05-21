@@ -1115,6 +1115,7 @@ reference/ingres-ii/functions/ingres-result-seek.xml: dae55a39ce
 reference/ingres-ii/functions/ingres-rollback.xml: efdbd50709
 reference/ingres-ii/functions/ingres-set-environment.xml: 0588d4cdc1
 reference/ingres-ii/functions/ingres-unbuffered-query.xml: e257bc69c5
+reference/ingres-ii/ini.xml: f4d787b822
 reference/ingres-ii/reference.xml: efdbd50709
 reference/ingres-ii/setup.xml: 807c846e04
 reference/java/book.xml: fed9ea9182
