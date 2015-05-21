@@ -6,7 +6,7 @@ appendices/ini.core.xml: de1b0ce4a3
 appendices/ini.list.xml: 2b58c3222b
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
-appendices/migration54.xml: 58baf42ea5
+appendices/migration54.xml: 8a3f2eeef1
 appendices/migration56.xml: fbf9594048
 appendices/migration56/changed-functions.xml: 39b2fbf686
 appendices/migration56/constants.xml: f45916db83
@@ -16,12 +16,12 @@ appendices/migration56/incompatible.xml: b1056a26f3
 appendices/migration56/new-features.xml: b2d86dd15d
 appendices/migration56/new-functions.xml: ebeae8c931
 appendices/migration56/openssl.xml: cbdd521e64
-appendices/reserved.constants.core.xml: 8c1e11898a
+appendices/reserved.constants.core.xml: 1e2eb84d93
 appendices/reserved.constants.standard.xml: 0d8699fe99
-appendices/reserved.xml: 8e3156cff5
+appendices/reserved.xml: d839cb6fae
 appendices/resources.xml: 1113c3b278
 appendices/transports.xml: fda43b87c7
-appendices/userlandnaming.xml: 593de58fd5
+appendices/userlandnaming.xml: cca3ef0baf
 bookinfo.xml: ffb234e0e2
 chmonly/aboutchm.xml: efdbd50709
 chmonly/credits.xml: efdbd50709
