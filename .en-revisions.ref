@@ -35,7 +35,7 @@ faq/misc.xml: efdbd50709
 faq/obtaining.xml: 3d5109404f
 faq/passwords.xml: 3e661618e0
 faq/using.xml: cfc26695eb
-features/commandline.xml: 087999d634
+features/commandline.xml: 8c1e11898a
 features/connection-handling.xml: b4dffc797a
 features/cookies.xml: 1107b45313
 features/file-upload.xml: 8c1e11898a
@@ -48,12 +48,12 @@ install/cloud/azure.xml: dc53bd9bb4
 install/cloud/ec2.xml: dc53bd9bb4
 install/cloud/index.xml: dc53bd9bb4
 install/cloud/rackspace.xml: 06691bae1c
-install/fpm/configuration.xml: 6a59f09a50
+install/fpm/configuration.xml: b2606f15c7
 install/fpm/index.xml: e4db6c4d61
 install/fpm/install.xml: fb51a65ea2
 install/ini.xml: 634f58fd15
 install/intro.xml: efdbd50709
-install/macos/bundled.xml: efdbd50709
+install/macos/bundled.xml: bbe41779f4
 install/macos/compile.xml: 6039e8a267
 install/macos/index.xml: 6039e8a267
 install/macos/packages.xml: 8e4cf39fd1
@@ -62,11 +62,11 @@ install/unix/apache2.xml: 807c846e04
 install/unix/commandline.xml: 17a124fce7
 install/unix/debian.xml: 608eeed3cf
 install/unix/hpux.xml: efdbd50709
-install/unix/index.xml: ad774de3dd
+install/unix/index.xml: 226a48f372
 install/unix/lighttpd-14.xml: efdbd50709
 install/unix/nginx.xml: 12c6fac392
 install/windows/index.xml: d9fcd65d07
-language/constants.xml: c03a7098bb
+language/constants.xml: 51b6c7b650
 language/context.xml: 55581364b8
 language/context/curl.xml: b2d3012691
 language/context/ftp.xml: 5597841814
@@ -90,7 +90,7 @@ language/control-structures/include.xml: cfc26695eb
 language/control-structures/require-once.xml: 087999d634
 language/control-structures/require.xml: 087999d634
 language/control-structures/return.xml: fd29dc5ddb
-language/control-structures/switch.xml: 4f95ae282f
+language/control-structures/switch.xml: 5b713ca500
 language/control-structures/while.xml: f40cab318e
 language/exceptions.xml: b1adf5cb44
 language/expressions.xml: 1532065cd7
@@ -103,7 +103,7 @@ language/oop5/autoload.xml: b87188afdf
 language/oop5/basic.xml: 27997cced8
 language/oop5/changelog.xml: 7f5c229aac
 language/oop5/cloning.xml: f03553a9bb
-language/oop5/constants.xml: a48b041e96
+language/oop5/constants.xml: 8eaea79b42
 language/oop5/decon.xml: 4b29caff2c
 language/oop5/final.xml: f03553a9bb
 language/oop5/inheritance.xml: 7101d7984a
@@ -125,8 +125,8 @@ language/oop5/visibility.xml: 8e2d295e8f
 language/predefined/arrayaccess.xml: 54fc72fb20
 language/predefined/arrayaccess/offsetexists.xml: 65a2571751
 language/predefined/arrayaccess/offsetget.xml: c320e5d8c0
-language/predefined/arrayaccess/offsetset.xml: b0685d1810
-language/predefined/arrayaccess/offsetunset.xml: f262d5e396
+language/predefined/arrayaccess/offsetset.xml: 21a4e2f50f
+language/predefined/arrayaccess/offsetunset.xml: 21a4e2f50f
 language/predefined/errorexception.xml: 790ceaa8fa
 language/predefined/errorexception/construct.xml: d40a1a6516
 language/predefined/errorexception/getseverity.xml: 807c846e04
@@ -488,11 +488,11 @@ reference/datetime/functions/date.xml: 8465ad172c
 reference/datetime/functions/getdate.xml: 0193148f0c
 reference/datetime/functions/gettimeofday.xml: f7f234cfe9
 reference/datetime/functions/gmdate.xml: 617e2934f0
-reference/datetime/functions/gmmktime.xml: c18ad193be
+reference/datetime/functions/gmmktime.xml: c23965ebb5
 reference/datetime/functions/gmstrftime.xml: efdbd50709
 reference/datetime/functions/localtime.xml: 0193148f0c
 reference/datetime/functions/microtime.xml: cf6ce7b4e1
-reference/datetime/functions/mktime.xml: 58993424a9
+reference/datetime/functions/mktime.xml: c23965ebb5
 reference/datetime/functions/strtotime.xml: cf6ce7b4e1
 reference/datetime/functions/time.xml: dbc23c8d6a
 reference/datetime/functions/timezone-abbreviations-list.xml: efdbd50709
@@ -626,7 +626,7 @@ reference/errorfunc/functions/error-reporting.xml: e089f863cf
 reference/errorfunc/functions/restore-error-handler.xml: fc21ef4038
 reference/errorfunc/functions/restore-exception-handler.xml: efdbd50709
 reference/errorfunc/functions/set-error-handler.xml: cf6ce7b4e1
-reference/errorfunc/functions/set-exception-handler.xml: e34b8cfd57
+reference/errorfunc/functions/set-exception-handler.xml: 9c40885ebc
 reference/errorfunc/functions/trigger-error.xml: 5c025c383e
 reference/errorfunc/functions/user-error.xml: efdbd50709
 reference/errorfunc/reference.xml: efdbd50709
@@ -1222,7 +1222,7 @@ reference/misc/functions/connection-aborted.xml: efdbd50709
 reference/misc/functions/connection-status.xml: efdbd50709
 reference/misc/functions/connection-timeout.xml: efdbd50709
 reference/misc/functions/constant.xml: f5607232d1
-reference/misc/functions/define.xml: efdbd50709
+reference/misc/functions/define.xml: 51b6c7b650
 reference/misc/functions/defined.xml: efdbd50709
 reference/misc/functions/die.xml: 087999d634
 reference/misc/functions/eval.xml: 5dc963f4d4
@@ -1667,7 +1667,7 @@ reference/pcre/functions/preg-replace-callback.xml: 7c1a70df96
 reference/pcre/functions/preg-replace.xml: 34a007ca44
 reference/pcre/functions/preg-split.xml: 7c1a70df96
 reference/pcre/ini.xml: d2c80d6672
-reference/pcre/pattern.modifiers.xml: 4ab6515ae4
+reference/pcre/pattern.modifiers.xml: f4c8a28202
 reference/pcre/pattern.xml: 2a59242e81
 reference/pcre/reference.xml: efdbd50709
 reference/pcre/setup.xml: efdbd50709
@@ -2342,7 +2342,7 @@ reference/strings/functions/quoted-printable-decode.xml: efdbd50709
 reference/strings/functions/quoted-printable-encode.xml: efdbd50709
 reference/strings/functions/quotemeta.xml: 95405358b3
 reference/strings/functions/rtrim.xml: 8868566c3a
-reference/strings/functions/setlocale.xml: 90afdc4413
+reference/strings/functions/setlocale.xml: 88ca8bf0ff
 reference/strings/functions/sha1-file.xml: cf6ce7b4e1
 reference/strings/functions/sha1.xml: cf6ce7b4e1
 reference/strings/functions/similar-text.xml: 5f574b3534
