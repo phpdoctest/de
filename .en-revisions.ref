@@ -1,12 +1,12 @@
 appendices/aliases.xml: 53076d9726
 appendices/comparisons.xml: f0b5fe9b78
-appendices/configure/php.xml: 3ef1b24d91
+appendices/configure/php.xml: 60908ca2bd
 appendices/debugger.xml: 0f7e7dec4f
-appendices/ini.core.xml: de1b0ce4a3
-appendices/ini.list.xml: 2b58c3222b
+appendices/ini.core.xml: 96572a8f28
+appendices/ini.list.xml: 96572a8f28
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
-appendices/migration54.xml: 8a3f2eeef1
+appendices/migration54.xml: 613cc7642d
 appendices/migration56.xml: fbf9594048
 appendices/migration56/changed-functions.xml: 39b2fbf686
 appendices/migration56/constants.xml: f45916db83
@@ -58,11 +58,11 @@ install/macos/compile.xml: 6039e8a267
 install/macos/index.xml: 6039e8a267
 install/macos/packages.xml: 8e4cf39fd1
 install/unix/apache1.xml: ff5b22acc2
-install/unix/apache2.xml: 807c846e04
+install/unix/apache2.xml: 08ad342b66
 install/unix/commandline.xml: 17a124fce7
 install/unix/debian.xml: 608eeed3cf
 install/unix/hpux.xml: efdbd50709
-install/unix/index.xml: 226a48f372
+install/unix/index.xml: b8c67c5c74
 install/unix/lighttpd-14.xml: efdbd50709
 install/unix/nginx.xml: 12c6fac392
 install/windows/index.xml: d9fcd65d07
@@ -1665,7 +1665,7 @@ reference/pcre/functions/preg-match-all.xml: 7c1a70df96
 reference/pcre/functions/preg-match.xml: 7c1a70df96
 reference/pcre/functions/preg-quote.xml: a79ad8af90
 reference/pcre/functions/preg-replace-callback.xml: 7c1a70df96
-reference/pcre/functions/preg-replace.xml: 34a007ca44
+reference/pcre/functions/preg-replace.xml: f4c8a28202
 reference/pcre/functions/preg-split.xml: 7c1a70df96
 reference/pcre/ini.xml: d2c80d6672
 reference/pcre/pattern.modifiers.xml: f4c8a28202
@@ -2116,7 +2116,7 @@ reference/session/functions/session-register-shutdown.xml: 09cf5e4bab
 reference/session/functions/session-register.xml: 0688afe7e3
 reference/session/functions/session-save-path.xml: efdbd50709
 reference/session/functions/session-set-cookie-params.xml: 7237f64379
-reference/session/functions/session-set-save-handler.xml: 8465081c08
+reference/session/functions/session-set-save-handler.xml: 7853943a93
 reference/session/functions/session-start.xml: 76eeaff03f
 reference/session/functions/session-status.xml: 826c6a08ef
 reference/session/functions/session-unregister.xml: 0688afe7e3
@@ -2141,7 +2141,7 @@ reference/shmop/setup.xml: 807c846e04
 reference/simplexml/book.xml: 890455fa05
 reference/simplexml/configure.xml: dbd2dd039b
 reference/simplexml/constants.xml: 807c846e04
-reference/simplexml/examples.xml: 807c846e04
+reference/simplexml/examples.xml: 033a479789
 reference/simplexml/functions/simplexml-element-addAttribute.xml: 48d0011a12
 reference/simplexml/functions/simplexml-element-addChild.xml: 48d0011a12
 reference/simplexml/functions/simplexml-element-asXML.xml: 48d0011a12
@@ -2166,7 +2166,7 @@ reference/snmp/constants.xml: 30497110b3
 reference/snmp/reference.xml: efdbd50709
 reference/snmp/setup.xml: 27997cced8
 reference/soap/book.xml: 890455fa05
-reference/soap/constants.xml: 807c846e04
+reference/soap/constants.xml: 59411c3629
 reference/soap/functions/is-soap-fault.xml: 807c846e04
 reference/soap/functions/use-soap-error-handler.xml: 09a0eb1dda
 reference/soap/ini.xml: d2c80d6672
