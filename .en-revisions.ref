@@ -337,7 +337,7 @@ reference/calendar/functions/cal-info.xml: cf6ce7b4e1
 reference/calendar/functions/cal-to-jd.xml: efdbd50709
 reference/calendar/functions/easter-date.xml: 8868566c3a
 reference/calendar/functions/easter-days.xml: 8868566c3a
-reference/calendar/functions/frenchtojd.xml: 30497110b3
+reference/calendar/functions/frenchtojd.xml: 3cc2829ebc
 reference/calendar/functions/gregoriantojd.xml: efdbd50709
 reference/calendar/functions/jddayofweek.xml: efdbd50709
 reference/calendar/functions/jdmonthname.xml: efdbd50709
@@ -357,7 +357,7 @@ reference/classobj/examples.xml: efdbd50709
 reference/classobj/functions/call-user-method.xml: 91fe74c4f3
 reference/classobj/functions/class-exists.xml: cf6ce7b4e1
 reference/classobj/functions/get-class-methods.xml: 8868566c3a
-reference/classobj/functions/get-class-vars.xml: 8868566c3a
+reference/classobj/functions/get-class-vars.xml: 9d3cae73ea
 reference/classobj/functions/get-class.xml: cf6ce7b4e1
 reference/classobj/functions/get-declared-classes.xml: efdbd50709
 reference/classobj/functions/get-declared-interfaces.xml: 30497110b3
