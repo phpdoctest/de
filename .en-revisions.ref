@@ -974,7 +974,7 @@ reference/http/install.xml: efdbd50709
 reference/http/resources.xml: efdbd50709
 reference/hw/functions/hw-output-document.xml: efdbd50709
 reference/ibase/functions/ibase-close.xml: edd2392da9
-reference/ibase/functions/ibase-connect.xml: 553dd2659b
+reference/ibase/functions/ibase-connect.xml: 2a77481f1a
 reference/ibase/functions/ibase-execute.xml: 55b24d1b2b
 reference/ibase/functions/ibase-fetch-row.xml: efdbd50709
 reference/ibase/functions/ibase-free-query.xml: efdbd50709
