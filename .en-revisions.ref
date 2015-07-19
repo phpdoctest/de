@@ -484,7 +484,7 @@ reference/datetime/functions/date-timestamp-get.xml: 807c846e04
 reference/datetime/functions/date-timestamp-set.xml: 807c846e04
 reference/datetime/functions/date-timezone-get.xml: efdbd50709
 reference/datetime/functions/date-timezone-set.xml: efdbd50709
-reference/datetime/functions/date.xml: 8465ad172c
+reference/datetime/functions/date.xml: 20907f00f3
 reference/datetime/functions/getdate.xml: 0193148f0c
 reference/datetime/functions/gettimeofday.xml: f7f234cfe9
 reference/datetime/functions/gmdate.xml: 617e2934f0
@@ -811,7 +811,7 @@ reference/filesystem/functions/linkinfo.xml: efdbd50709
 reference/filesystem/functions/lstat.xml: 2a9076bd3e
 reference/filesystem/functions/mkdir.xml: 8868566c3a
 reference/filesystem/functions/move-uploaded-file.xml: d18bb5f7d9
-reference/filesystem/functions/parse-ini-file.xml: 24fc0ec86d
+reference/filesystem/functions/parse-ini-file.xml: 74591163cd
 reference/filesystem/functions/parse-ini-string.xml: bc301b4edb
 reference/filesystem/functions/pathinfo.xml: f03553a9bb
 reference/filesystem/functions/pclose.xml: f66af8a837
@@ -1004,7 +1004,7 @@ reference/image/functions/imagechar.xml: efdbd50709
 reference/image/functions/imagecopyresized.xml: dd9a29a077
 reference/image/functions/imagecreatefromgif.xml: cfc26695eb
 reference/image/functions/imagegif.xml: 66cf11bb10
-reference/image/functions/imagejpeg.xml: 66cf11bb10
+reference/image/functions/imagejpeg.xml: 02c95c6518
 reference/image/functions/imagepng.xml: 66cf11bb10
 reference/image/functions/jpeg2wbmp.xml: efdbd50709
 reference/image/reference.xml: efdbd50709
@@ -1141,6 +1141,7 @@ reference/ldap/book.xml: 890455fa05
 reference/ldap/configure.xml: efdbd50709
 reference/ldap/constants.xml: 5a28e2becc
 reference/ldap/examples.xml: 97cb6e67ba
+reference/ldap/functions/ldap-connect.xml: 7237f64379
 reference/ldap/ini.xml: 45af7229b7
 reference/ldap/reference.xml: 807c846e04
 reference/ldap/setup.xml: 807c846e04
