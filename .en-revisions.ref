@@ -1142,6 +1142,7 @@ reference/ldap/configure.xml: efdbd50709
 reference/ldap/constants.xml: 5a28e2becc
 reference/ldap/examples.xml: 97cb6e67ba
 reference/ldap/functions/ldap-connect.xml: 7237f64379
+reference/ldap/functions/ldap-modify.xml: efdbd50709
 reference/ldap/ini.xml: 45af7229b7
 reference/ldap/reference.xml: 807c846e04
 reference/ldap/setup.xml: 807c846e04
