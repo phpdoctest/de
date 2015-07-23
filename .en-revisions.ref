@@ -463,7 +463,7 @@ reference/datetime/datetime/settimestamp.xml: 87be1e4aab
 reference/datetime/datetime/settimezone.xml: 99f27d61cf
 reference/datetime/datetime/sub.xml: 87be1e4aab
 reference/datetime/datetimeimmutable.xml: 4e757fdf6f
-reference/datetime/datetimeinterface.xml: 4e757fdf6f
+reference/datetime/datetimeinterface.xml: f7fee46521
 reference/datetime/datetimezone.xml: 70432ad899
 reference/datetime/functions/checkdate.xml: efdbd50709
 reference/datetime/functions/date-add.xml: efdbd50709
