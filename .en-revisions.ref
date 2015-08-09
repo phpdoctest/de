@@ -269,7 +269,7 @@ reference/array/functions/key-exists.xml: 10ed310202
 reference/array/functions/key.xml: efdbd50709
 reference/array/functions/krsort.xml: efdbd50709
 reference/array/functions/ksort.xml: efdbd50709
-reference/array/functions/list.xml: 65735b6b36
+reference/array/functions/list.xml: ac190b60e2
 reference/array/functions/natcasesort.xml: efdbd50709
 reference/array/functions/natsort.xml: 5c8d0b4c2f
 reference/array/functions/next.xml: efdbd50709
