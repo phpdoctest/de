@@ -94,7 +94,7 @@ language/control-structures/switch.xml: 5b713ca500
 language/control-structures/while.xml: f40cab318e
 language/exceptions.xml: b1adf5cb44
 language/expressions.xml: 1532065cd7
-language/functions.xml: 106c53bfba
+language/functions.xml: d169c15948
 language/generators.xml: c094dd7da1
 language/namespaces.xml: a42fd11b8f
 language/oop5.xml: 4a24ab5bb7
