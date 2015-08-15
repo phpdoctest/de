@@ -99,6 +99,7 @@ language/generators.xml: c094dd7da1
 language/namespaces.xml: a42fd11b8f
 language/oop5.xml: 4a24ab5bb7
 language/oop5/abstract.xml: 822b0a4ce9
+language/oop5/anonymous.xml: e05d88bfe0
 language/oop5/autoload.xml: b87188afdf
 language/oop5/basic.xml: 27997cced8
 language/oop5/changelog.xml: 7f5c229aac
