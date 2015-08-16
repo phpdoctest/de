@@ -270,7 +270,7 @@ reference/array/functions/key-exists.xml: 10ed310202
 reference/array/functions/key.xml: efdbd50709
 reference/array/functions/krsort.xml: efdbd50709
 reference/array/functions/ksort.xml: efdbd50709
-reference/array/functions/list.xml: ac190b60e2
+reference/array/functions/list.xml: bca47e1d04
 reference/array/functions/natcasesort.xml: efdbd50709
 reference/array/functions/natsort.xml: 5c8d0b4c2f
 reference/array/functions/next.xml: efdbd50709
@@ -817,7 +817,7 @@ reference/filesystem/functions/parse-ini-string.xml: bc301b4edb
 reference/filesystem/functions/pathinfo.xml: f03553a9bb
 reference/filesystem/functions/pclose.xml: f66af8a837
 reference/filesystem/functions/popen.xml: 8538bdabbc
-reference/filesystem/functions/readfile.xml: cc051aff8b
+reference/filesystem/functions/readfile.xml: 698ebf7fb5
 reference/filesystem/functions/readlink.xml: efdbd50709
 reference/filesystem/functions/realpath.xml: c9a65557b0
 reference/filesystem/functions/rename.xml: 169b85bcf8
