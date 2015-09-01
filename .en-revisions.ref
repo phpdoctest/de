@@ -840,6 +840,7 @@ reference/filter/constants.xml: 660e4b53e4
 reference/filter/filters.xml: c09312f2fb
 reference/filter/functions/filter-has-var.xml: cc0e6f9c47
 reference/filter/functions/filter-id.xml: 9539b92f7a
+reference/filter/functions/filter-input-array.xml: 725f142544
 reference/filter/functions/filter-list.xml: efdbd50709
 reference/filter/ini.xml: d2c80d6672
 reference/filter/reference.xml: efdbd50709
