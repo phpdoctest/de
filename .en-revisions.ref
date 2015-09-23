@@ -1972,7 +1972,7 @@ reference/pgsql/setup.xml: 807c846e04
 reference/phar/Phar.xml: 5ac964e123
 reference/posix/book.xml: 890455fa05
 reference/posix/configure.xml: efdbd50709
-reference/posix/constants.xml: 30497110b3
+reference/posix/constants.xml: 877e6cc4e0
 reference/posix/functions/posix-access.xml: efdbd50709
 reference/posix/functions/posix-ctermid.xml: efdbd50709
 reference/posix/functions/posix-get-last-error.xml: efdbd50709
