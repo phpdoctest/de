@@ -2128,7 +2128,7 @@ reference/session/functions/session-status.xml: 826c6a08ef
 reference/session/functions/session-unregister.xml: 0688afe7e3
 reference/session/functions/session-unset.xml: efdbd50709
 reference/session/functions/session-write-close.xml: 537ae940cb
-reference/session/ini.xml: 0339661771
+reference/session/ini.xml: 2cb2ae03ec
 reference/session/reference.xml: efdbd50709
 reference/session/security.xml: efdbd50709
 reference/session/setup.xml: efdbd50709
