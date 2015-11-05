@@ -177,6 +177,7 @@ language/types.xml: c4ba111552
 language/types/array.xml: 54bebf488f
 language/types/boolean.xml: 84e1c878b0
 language/types/null.xml: dff197a9c6
+language/types/object.xml: 03a4417914
 language/types/resource.xml: 840b027a94
 language/wrappers.xml: 07f040bc3f
 preface.xml: 09818bff14
