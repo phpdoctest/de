@@ -26,7 +26,7 @@ bookinfo.xml: ffb234e0e2
 chmonly/aboutchm.xml: efdbd50709
 chmonly/credits.xml: efdbd50709
 faq/build.xml: ab900ea494
-faq/databases.xml: 0e302b252e
+faq/databases.xml: 5f29884034
 faq/general.xml: efdbd50709
 faq/html.xml: a70e7624da
 faq/installation.xml: 16450cecd1
@@ -103,7 +103,7 @@ language/oop5/anonymous.xml: e05d88bfe0
 language/oop5/autoload.xml: b87188afdf
 language/oop5/basic.xml: 27997cced8
 language/oop5/changelog.xml: 7f5c229aac
-language/oop5/cloning.xml: f03553a9bb
+language/oop5/cloning.xml: 5af43ef4d0
 language/oop5/constants.xml: 8eaea79b42
 language/oop5/decon.xml: 4b29caff2c
 language/oop5/final.xml: f03553a9bb
@@ -237,7 +237,7 @@ reference/array/functions/array-pop.xml: d02e9c4340
 reference/array/functions/array-product.xml: cfd4938f68
 reference/array/functions/array-push.xml: 65735b6b36
 reference/array/functions/array-rand.xml: 8868566c3a
-reference/array/functions/array-reduce.xml: 840117db94
+reference/array/functions/array-reduce.xml: 0f1a264dd4
 reference/array/functions/array-replace.xml: b0db98d861
 reference/array/functions/array-reverse.xml: 7237f64379
 reference/array/functions/array-search.xml: ba17582882
@@ -1374,7 +1374,7 @@ reference/mssql/functions/mssql-select-db.xml: 5e837803af
 reference/mssql/ini.xml: d2c80d6672
 reference/mssql/reference.xml: efdbd50709
 reference/mssql/setup.xml: 196ff78803
-reference/mysql/book.xml: bba98a4aff
+reference/mysql/book.xml: d16ba5b851
 reference/mysql/configure.xml: 0e302b252e
 reference/mysql/constants.xml: 7a17087302
 reference/mysql/examples.xml: ee00fe1a3d
