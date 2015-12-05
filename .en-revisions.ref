@@ -1086,6 +1086,7 @@ reference/info/functions/getenv.xml: 05a415e2d5
 reference/info/functions/getlastmod.xml: 7fab98fb9b
 reference/info/functions/getmypid.xml: efdbd50709
 reference/info/functions/getmyuid.xml: efdbd50709
+reference/info/functions/php-ini-scanned-files.xml: e5984e6f8d
 reference/info/functions/php-logo-guid.xml: 23e853f430
 reference/info/functions/php-sapi-name.xml: 8f4b1a6108
 reference/info/functions/phpinfo.xml: acc93e6115
