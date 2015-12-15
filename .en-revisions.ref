@@ -1875,6 +1875,7 @@ reference/pdo/lobs.xml: 0588d4cdc1
 reference/pdo/pdo.xml: 807c846e04
 reference/pdo/pdo/exec.xml: 3b4167177a
 reference/pdo/pdoexception.xml: 31dffa4ce7
+reference/pdo/pdostatement.xml: a4d2b468a0
 reference/pdo/prepared-statements.xml: 0588d4cdc1
 reference/pdo/setup.xml: 807c846e04
 reference/pdo/transactions.xml: 0588d4cdc1
