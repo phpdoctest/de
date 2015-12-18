@@ -1074,7 +1074,7 @@ reference/imap/setup.xml: 807c846e04
 reference/inclued/functions/inclued-get-data.xml: 087999d634
 reference/info/book.xml: 890455fa05
 reference/info/functions/assert-options.xml: efdbd50709
-reference/info/functions/assert.xml: f211ff3f18
+reference/info/functions/assert.xml: 9b35e741f4
 reference/info/functions/extension-loaded.xml: cf6ce7b4e1
 reference/info/functions/get-cfg-var.xml: efdbd50709
 reference/info/functions/get-current-user.xml: efdbd50709
