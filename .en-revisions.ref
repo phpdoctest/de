@@ -1216,7 +1216,7 @@ reference/mcrypt/functions/mcrypt-cbc.xml: 78f0cd72e0
 reference/mcrypt/ini.xml: d2c80d6672
 reference/mcrypt/reference.xml: efdbd50709
 reference/mcrypt/setup.xml: fc8f6edf6f
-reference/memcache/book.xml: fed9ea9182
+reference/memcache/book.xml: 890455fa05
 reference/memcache/configure.xml: 807c846e04
 reference/memcache/constants.xml: 0588d4cdc1
 reference/memcache/examples.xml: 83fc699d58
@@ -1432,7 +1432,7 @@ reference/mysql/functions/mysql-unbuffered-query.xml: 8fb0bc6cab
 reference/mysql/ini.xml: 893c32681b
 reference/mysql/reference.xml: efdbd50709
 reference/mysql/setup.xml: 807c846e04
-reference/mysqli/book.xml: 890455fa05
+reference/mysqli/book.xml: 9c835e0ad8
 reference/mysqli/configure.xml: efdbd50709
 reference/mysqli/functions/mysqli-bind-param.xml: 03b10d1950
 reference/mysqli/functions/mysqli-bind-result.xml: 03b10d1950
@@ -1972,7 +1972,7 @@ reference/pgsql/functions/pg-version.xml: 30497110b3
 reference/pgsql/ini.xml: d2c80d6672
 reference/pgsql/reference.xml: 9e7c298085
 reference/pgsql/setup.xml: 807c846e04
-reference/phar/Phar.xml: 5ac964e123
+reference/phar/Phar.xml: ad7b30181c
 reference/posix/book.xml: 890455fa05
 reference/posix/configure.xml: efdbd50709
 reference/posix/constants.xml: 877e6cc4e0
