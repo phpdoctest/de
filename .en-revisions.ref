@@ -92,6 +92,7 @@ language/control-structures/require.xml: 087999d634
 language/control-structures/return.xml: fd29dc5ddb
 language/control-structures/switch.xml: 5b713ca500
 language/control-structures/while.xml: f40cab318e
+language/errors.xml: e05d88bfe0
 language/exceptions.xml: b1adf5cb44
 language/expressions.xml: 1532065cd7
 language/functions.xml: d169c15948
