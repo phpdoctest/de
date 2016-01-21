@@ -974,9 +974,6 @@ reference/htscanner/book.xml: 949d5fbbc6
 reference/htscanner/configure.xml: 807c846e04
 reference/htscanner/ini.xml: f954cc9acb
 reference/htscanner/setup.xml: 807c846e04
-reference/http/HttpRequest/addCookies.xml: f7f145c8f6
-reference/http/install.xml: efdbd50709
-reference/http/resources.xml: efdbd50709
 reference/hw/functions/hw-output-document.xml: efdbd50709
 reference/ibase/functions/ibase-close.xml: edd2392da9
 reference/ibase/functions/ibase-connect.xml: 2a77481f1a
