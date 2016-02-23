@@ -2398,7 +2398,7 @@ reference/strings/functions/strtr.xml: 30497110b3
 reference/strings/functions/substr-compare.xml: 30497110b3
 reference/strings/functions/substr-count.xml: 84fbb66a39
 reference/strings/functions/substr-replace.xml: cf6ce7b4e1
-reference/strings/functions/substr.xml: c4c6777a70
+reference/strings/functions/substr.xml: 66a03d35fd
 reference/strings/functions/trim.xml: 8868566c3a
 reference/strings/functions/ucfirst.xml: 77720f6a42
 reference/strings/functions/ucwords.xml: efdbd50709
