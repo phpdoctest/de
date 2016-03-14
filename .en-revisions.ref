@@ -6,7 +6,7 @@ appendices/ini.core.xml: aca8344333
 appendices/ini.list.xml: 96572a8f28
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
-appendices/migration54.xml: 613cc7642d
+appendices/migration54.xml: 0ee98820df
 appendices/migration56.xml: fbf9594048
 appendices/migration56/changed-functions.xml: 39b2fbf686
 appendices/migration56/constants.xml: f45916db83
