@@ -1134,7 +1134,7 @@ reference/java/ini.xml: d2c80d6672
 reference/java/reference.xml: 807c846e04
 reference/java/setup.xml: 807c846e04
 reference/json/book.xml: 582059e668
-reference/json/constants.xml: 9925a9f5b0
+reference/json/constants.xml: 2574024293
 reference/json/functions/json-decode.xml: e9502ac2d8
 reference/json/functions/json-encode.xml: 9925a9f5b0
 reference/json/functions/json-last-error-msg.xml: 2716185c26
