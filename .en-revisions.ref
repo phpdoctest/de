@@ -1459,6 +1459,7 @@ reference/mysqli/mysqli_driver.xml: 832c5c52ab
 reference/mysqli/mysqli_result.xml: 832c5c52ab
 reference/mysqli/mysqli_sql_exception.xml: 31dffa4ce7
 reference/mysqli/mysqli_stmt.xml: e2f205bd4d
+reference/mysqli/mysqli_stmt/affected-rows.xml: 4b6613bed9
 reference/mysqli/mysqli_warning.xml: 832c5c52ab
 reference/mysqli/reference.xml: 807c846e04
 reference/mysqli/setup.xml: 807c846e04
@@ -2305,6 +2306,7 @@ reference/sqlite3/sqlite3/prepare.xml: 5567574cf4
 reference/sqlite3/sqlite3/query.xml: 807c846e04
 reference/sqlite3/sqlite3result.xml: 961c2937af
 reference/sqlite3/sqlite3stmt.xml: 961c2937af
+reference/ssh2/book.xml: 890455fa05
 reference/strings/book.xml: 890455fa05
 reference/strings/charsets.xml: 95491c26ae
 reference/strings/constants.xml: 30497110b3
