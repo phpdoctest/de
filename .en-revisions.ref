@@ -1006,6 +1006,7 @@ reference/image/functions/imagearc.xml: 20e2ed00ec
 reference/image/functions/imagechar.xml: efdbd50709
 reference/image/functions/imagecopyresized.xml: dd9a29a077
 reference/image/functions/imagecreatefromgif.xml: cfc26695eb
+reference/image/functions/imagedestroy.xml: efdbd50709
 reference/image/functions/imagegif.xml: 66cf11bb10
 reference/image/functions/imagejpeg.xml: 02c95c6518
 reference/image/functions/imagepng.xml: 66cf11bb10
