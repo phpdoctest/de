@@ -922,6 +922,8 @@ reference/gettext/functions/ngettext.xml: e886aea03d
 reference/gettext/functions/textdomain.xml: efdbd50709
 reference/gettext/reference.xml: efdbd50709
 reference/gettext/setup.xml: 807c846e04
+reference/gmagick/gmagickpixel/construct.xml: eee6ff402f
+reference/gmagick/gmagickpixel/getcolor.xml: d7a12dd824
 reference/gmp/book.xml: 4e98ccb8b3
 reference/gmp/configure.xml: efdbd50709
 reference/gmp/constants.xml: de9b095be5
