@@ -1619,6 +1619,7 @@ reference/openssl/cert-verification.xml: efdbd50709
 reference/openssl/certparams.xml: efdbd50709
 reference/openssl/configure.xml: 699c428c56
 reference/openssl/functions/openssl-csr-new.xml: a767261813
+reference/openssl/functions/openssl-encrypt.xml: 92d2543e04
 reference/openssl/functions/openssl-error-string.xml: 888dad4a31
 reference/openssl/functions/openssl-free-key.xml: efdbd50709
 reference/openssl/functions/openssl-get-privatekey.xml: efdbd50709
