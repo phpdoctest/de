@@ -1660,6 +1660,7 @@ reference/overload/examples.xml: 83fc699d58
 reference/overload/functions/overload.xml: efdbd50709
 reference/overload/reference.xml: efdbd50709
 reference/overload/setup.xml: efdbd50709
+reference/password/book.xml: 890455fa05
 reference/password/functions/password-get-info.xml: 950bbe8fd9
 reference/password/functions/password-hash.xml: 268d20acb7
 reference/password/functions/password-needs-rehash.xml: d49b4d921c
