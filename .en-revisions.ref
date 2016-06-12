@@ -1638,7 +1638,7 @@ reference/pcre/functions/preg-match-all.xml: 7c1a70df96
 reference/pcre/functions/preg-match.xml: 457439bdd1
 reference/pcre/functions/preg-quote.xml: a79ad8af90
 reference/pcre/functions/preg-replace-callback.xml: 366f584db7
-reference/pcre/functions/preg-replace.xml: f4c8a28202
+reference/pcre/functions/preg-replace.xml: f822f27d98
 reference/pcre/functions/preg-split.xml: 7c1a70df96
 reference/pcre/ini.xml: 56502915c8
 reference/pcre/pattern.modifiers.xml: f4c8a28202
