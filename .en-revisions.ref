@@ -99,7 +99,7 @@ language/exceptions.xml: b1adf5cb44
 language/expressions.xml: 1532065cd7
 language/functions.xml: d169c15948
 language/generators.xml: 019afe356a
-language/namespaces.xml: a42fd11b8f
+language/namespaces.xml: c7d898cc2d
 language/oop5.xml: 4a24ab5bb7
 language/oop5/abstract.xml: 822b0a4ce9
 language/oop5/anonymous.xml: e05d88bfe0
