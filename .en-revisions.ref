@@ -1427,6 +1427,8 @@ reference/mysqli/mysqli_stmt/affected-rows.xml: 4b6613bed9
 reference/mysqli/mysqli_stmt/attr-get.xml: 832c5c52ab
 reference/mysqli/mysqli_stmt/attr-set.xml: c10f57dacd
 reference/mysqli/mysqli_stmt/bind-param.xml: 832c5c52ab
+reference/mysqli/mysqli_stmt/close.xml: 832c5c52ab
+reference/mysqli/mysqli_stmt/construct.xml: 6be90e678d
 reference/mysqli/mysqli_stmt/more-results.xml: 50108f7433
 reference/mysqli/mysqli_stmt/next-result.xml: 50108f7433
 reference/mysqli/mysqli_stmt/send-long-data.xml: 832c5c52ab
