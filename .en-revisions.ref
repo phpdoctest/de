@@ -1429,6 +1429,8 @@ reference/mysqli/mysqli_stmt/attr-set.xml: c10f57dacd
 reference/mysqli/mysqli_stmt/bind-param.xml: 832c5c52ab
 reference/mysqli/mysqli_stmt/more-results.xml: 50108f7433
 reference/mysqli/mysqli_stmt/next-result.xml: 50108f7433
+reference/mysqli/mysqli_stmt/send-long-data.xml: 832c5c52ab
+reference/mysqli/mysqli_stmt/store-result.xml: d259c82a0e
 reference/mysqli/mysqli_warning.xml: 832c5c52ab
 reference/mysqli/reference.xml: 807c846e04
 reference/mysqli/setup.xml: 807c846e04
