@@ -267,12 +267,12 @@ reference/array/functions/end.xml: efdbd50709
 reference/array/functions/extract.xml: 7237f64379
 reference/array/functions/in-array.xml: 8868566c3a
 reference/array/functions/key-exists.xml: 10ed310202
-reference/array/functions/key.xml: efdbd50709
+reference/array/functions/key.xml: 27b38016d0
 reference/array/functions/krsort.xml: efdbd50709
 reference/array/functions/ksort.xml: efdbd50709
 reference/array/functions/list.xml: bca47e1d04
-reference/array/functions/natcasesort.xml: efdbd50709
-reference/array/functions/natsort.xml: 5c8d0b4c2f
+reference/array/functions/natcasesort.xml: 8b0a9a0b34
+reference/array/functions/natsort.xml: 8b0a9a0b34
 reference/array/functions/next.xml: efdbd50709
 reference/array/functions/pos.xml: efdbd50709
 reference/array/functions/prev.xml: efdbd50709
@@ -453,8 +453,8 @@ reference/datetime/constants.xml: 30497110b3
 reference/datetime/dateinterval.xml: 32efa35769
 reference/datetime/dateinterval/construct.xml: f4cdcc7a0e
 reference/datetime/dateinterval/createfromdatestring.xml: 6f8f911bc8
-reference/datetime/dateperiod.xml: 728f86caf3
-reference/datetime/dateperiod/construct.xml: bb90bdaaf9
+reference/datetime/dateperiod.xml: 9c1af0c54a
+reference/datetime/dateperiod/construct.xml: 81c177a949
 reference/datetime/datetime.xml: 0b35254063
 reference/datetime/datetime/add.xml: 87be1e4aab
 reference/datetime/datetime/getlasterrors.xml: 1d02f956d5
@@ -789,7 +789,7 @@ reference/filesystem/functions/move-uploaded-file.xml: d18bb5f7d9
 reference/filesystem/functions/parse-ini-file.xml: 74591163cd
 reference/filesystem/functions/parse-ini-string.xml: bc301b4edb
 reference/filesystem/functions/pathinfo.xml: f03553a9bb
-reference/filesystem/functions/pclose.xml: f66af8a837
+reference/filesystem/functions/pclose.xml: f39c430aeb
 reference/filesystem/functions/popen.xml: 8538bdabbc
 reference/filesystem/functions/readfile.xml: 698ebf7fb5
 reference/filesystem/functions/readlink.xml: efdbd50709
@@ -817,7 +817,7 @@ reference/filter/functions/filter-id.xml: 9539b92f7a
 reference/filter/functions/filter-input-array.xml: 725f142544
 reference/filter/functions/filter-input.xml: f51eac52a3
 reference/filter/functions/filter-list.xml: efdbd50709
-reference/filter/functions/filter-var.xml: f51eac52a3
+reference/filter/functions/filter-var.xml: b77ccde4ea
 reference/filter/ini.xml: d2c80d6672
 reference/filter/reference.xml: efdbd50709
 reference/filter/setup.xml: efdbd50709
@@ -895,7 +895,7 @@ reference/gettext/functions/textdomain.xml: efdbd50709
 reference/gettext/reference.xml: efdbd50709
 reference/gettext/setup.xml: 807c846e04
 reference/gmagick/gmagickpixel/construct.xml: eee6ff402f
-reference/gmagick/gmagickpixel/getcolor.xml: d7a12dd824
+reference/gmagick/gmagickpixel/getcolor.xml: b67fa2e9ad
 reference/gmp/book.xml: 4e98ccb8b3
 reference/gmp/configure.xml: efdbd50709
 reference/gmp/constants.xml: de9b095be5
@@ -1048,7 +1048,7 @@ reference/imap/setup.xml: 807c846e04
 reference/inclued/functions/inclued-get-data.xml: 087999d634
 reference/info/book.xml: 890455fa05
 reference/info/functions/assert-options.xml: efdbd50709
-reference/info/functions/assert.xml: 9b35e741f4
+reference/info/functions/assert.xml: 2808151c32
 reference/info/functions/extension-loaded.xml: cf6ce7b4e1
 reference/info/functions/get-cfg-var.xml: efdbd50709
 reference/info/functions/get-current-user.xml: efdbd50709
