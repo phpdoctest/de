@@ -737,7 +737,7 @@ reference/filesystem/functions/chown.xml: 843eafda0a
 reference/filesystem/functions/clearstatcache.xml: efd783e008
 reference/filesystem/functions/copy.xml: 420c601685
 reference/filesystem/functions/delete.xml: e72b795a84
-reference/filesystem/functions/dirname.xml: 7237f64379
+reference/filesystem/functions/dirname.xml: d74829bdea
 reference/filesystem/functions/disk-free-space.xml: 64571c1c65
 reference/filesystem/functions/disk-total-space.xml: 64571c1c65
 reference/filesystem/functions/diskfreespace.xml: efdbd50709
