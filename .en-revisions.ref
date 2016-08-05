@@ -3,8 +3,8 @@ appendices/aliases.xml: 53076d9726
 appendices/comparisons.xml: f0b5fe9b78
 appendices/configure/php.xml: 60908ca2bd
 appendices/debugger.xml: 0f7e7dec4f
-appendices/ini.core.xml: aca8344333
-appendices/ini.list.xml: 96572a8f28
+appendices/ini.core.xml: c7c51ad050
+appendices/ini.list.xml: aeb2d52d26
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
 appendices/migration54.xml: 0ee98820df
