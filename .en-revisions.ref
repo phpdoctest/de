@@ -1436,6 +1436,7 @@ reference/mysqli/mysqli_stmt/next-result.xml: 50108f7433
 reference/mysqli/mysqli_stmt/num-rows.xml: 4b6613bed9
 reference/mysqli/mysqli_stmt/param-count.xml: 4b6613bed9
 reference/mysqli/mysqli_stmt/send-long-data.xml: 832c5c52ab
+reference/mysqli/mysqli_stmt/sqlstate.xml: 4b6613bed9
 reference/mysqli/mysqli_stmt/store-result.xml: d259c82a0e
 reference/mysqli/mysqli_warning.xml: 832c5c52ab
 reference/mysqli/reference.xml: 807c846e04
