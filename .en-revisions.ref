@@ -2436,7 +2436,7 @@ reference/var/functions/is-int.xml: 07f451ea83
 reference/var/functions/is-integer.xml: 07f451ea83
 reference/var/functions/is-long.xml: 07f451ea83
 reference/var/functions/is-null.xml: efdbd50709
-reference/var/functions/is-numeric.xml: f8032c3f30
+reference/var/functions/is-numeric.xml: 051969e94c
 reference/var/functions/is-object.xml: eb5bae1c6f
 reference/var/functions/is-real.xml: efdbd50709
 reference/var/functions/is-resource.xml: 024fbe11f2
