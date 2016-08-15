@@ -2447,10 +2447,10 @@ reference/var/functions/print-r.xml: 7237f64379
 reference/var/functions/serialize.xml: 3963a9acda
 reference/var/functions/settype.xml: efdbd50709
 reference/var/functions/strval.xml: 3e45e528b0
-reference/var/functions/unserialize.xml: 39b2fbf686
+reference/var/functions/unserialize.xml: 32c11f2020
 reference/var/functions/unset.xml: 7237f64379
 reference/var/functions/var-dump.xml: 9c261b1c69
-reference/var/functions/var-export.xml: 3963a9acda
+reference/var/functions/var-export.xml: d1b63c1aa6
 reference/var/ini.xml: d2c80d6672
 reference/var/reference.xml: efdbd50709
 reference/var/setup.xml: efdbd50709
