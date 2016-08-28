@@ -27,11 +27,13 @@ bookinfo.xml: ffb234e0e2
 chmonly/aboutchm.xml: efdbd50709
 chmonly/credits.xml: efdbd50709
 faq/build.xml: ab900ea494
+faq/com.xml: 8c1e11898a
 faq/databases.xml: 5f29884034
 faq/general.xml: efdbd50709
 faq/html.xml: a70e7624da
 faq/installation.xml: 16450cecd1
 faq/mailinglist.xml: 0c3adf514a
+faq/migration5.xml: efdbd50709
 faq/misc.xml: efdbd50709
 faq/obtaining.xml: 3d5109404f
 faq/passwords.xml: 3e661618e0
