@@ -1622,7 +1622,7 @@ reference/outcontrol/functions/ob-get-contents.xml: efdbd50709
 reference/outcontrol/functions/ob-get-level.xml: efdbd50709
 reference/outcontrol/functions/ob-implicit-flush.xml: efdbd50709
 reference/outcontrol/functions/ob-start.xml: 199e143acf
-reference/outcontrol/ini.xml: 087999d634
+reference/outcontrol/ini.xml: ba4f07905d
 reference/outcontrol/reference.xml: efdbd50709
 reference/outcontrol/setup.xml: efdbd50709
 reference/password/book.xml: 890455fa05
@@ -2101,7 +2101,7 @@ reference/session/functions/session-status.xml: 826c6a08ef
 reference/session/functions/session-unregister.xml: 0688afe7e3
 reference/session/functions/session-unset.xml: efdbd50709
 reference/session/functions/session-write-close.xml: 537ae940cb
-reference/session/ini.xml: 2cb2ae03ec
+reference/session/ini.xml: ba4f07905d
 reference/session/reference.xml: efdbd50709
 reference/session/security.xml: efdbd50709
 reference/session/setup.xml: efdbd50709
