@@ -2064,7 +2064,7 @@ reference/sem/functions/msg-get-queue.xml: 4ecae30e3f
 reference/sem/functions/msg-remove-queue.xml: efdbd50709
 reference/sem/functions/msg-set-queue.xml: efdbd50709
 reference/sem/functions/msg-stat-queue.xml: efdbd50709
-reference/sem/functions/sem-acquire.xml: efdbd50709
+reference/sem/functions/sem-acquire.xml: 886c9f639e
 reference/sem/functions/sem-get.xml: 8868566c3a
 reference/sem/functions/sem-release.xml: efdbd50709
 reference/sem/functions/sem-remove.xml: 8011644d1f
