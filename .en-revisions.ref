@@ -69,8 +69,8 @@ install/unix/index.xml: b8c67c5c74
 install/unix/lighttpd-14.xml: efdbd50709
 install/unix/nginx.xml: 12c6fac392
 install/windows/legacy/index.xml: d9fcd65d07
-language/basic-syntax.xml: 45223109e3
-language/constants.xml: 51b6c7b650
+language/basic-syntax.xml: 0034f9b99e
+language/constants.xml: 2548d69c4e
 language/context.xml: 55581364b8
 language/context/curl.xml: b2d3012691
 language/context/ftp.xml: 5597841814
@@ -97,12 +97,12 @@ language/control-structures/return.xml: cdc0b201fa
 language/control-structures/switch.xml: 5412a63c8f
 language/control-structures/while.xml: f40cab318e
 language/errors.xml: e05d88bfe0
-language/exceptions.xml: b1adf5cb44
+language/exceptions.xml: ec1d948c3c
 language/expressions.xml: 1532065cd7
-language/functions.xml: d169c15948
+language/functions.xml: ba8616b76a
 language/generators.xml: 019afe356a
 language/namespaces.xml: c7d898cc2d
-language/oop5.xml: 4a24ab5bb7
+language/oop5.xml: f405eecb99
 language/oop5/abstract.xml: 822b0a4ce9
 language/oop5/anonymous.xml: e05d88bfe0
 language/oop5/autoload.xml: b87188afdf
@@ -116,7 +116,7 @@ language/oop5/inheritance.xml: 7101d7984a
 language/oop5/interfaces.xml: d19a1bfa20
 language/oop5/iterations.xml: 23e853f430
 language/oop5/late-static-bindings.xml: c319fbc19d
-language/oop5/magic.xml: 9c261b1c69
+language/oop5/magic.xml: e771b950de
 language/oop5/object-comparison.xml: 6531b1cf88
 language/oop5/overloading.xml: 41e7b91a5c
 language/oop5/paamayim-nekudotayim.xml: f8f32f1614
@@ -125,7 +125,7 @@ language/oop5/properties.xml: 9ad6ead5a2
 language/oop5/references.xml: 15a78e638d
 language/oop5/serialization.xml: 5b4d184efb
 language/oop5/static.xml: a48b18e08e
-language/oop5/traits.xml: 13e0c968bf
+language/oop5/traits.xml: 4c9f539e4b
 language/oop5/typehinting.xml: 8f4b1a6108
 language/oop5/visibility.xml: 8e2d295e8f
 language/predefined/arrayaccess.xml: 54fc72fb20
@@ -178,7 +178,7 @@ language/predefined/variables/request.xml: 991103bc31
 language/predefined/variables/server.xml: 4dc9ec9ab5
 language/predefined/variables/session.xml: 991103bc31
 language/predefined/variables/superglobals.xml: 807c846e04
-language/types.xml: c4ba111552
+language/types.xml: d2921d5a59
 language/types/array.xml: 54bebf488f
 language/types/boolean.xml: 84e1c878b0
 language/types/null.xml: dff197a9c6
