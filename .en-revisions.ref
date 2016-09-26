@@ -100,7 +100,7 @@ language/errors.xml: e05d88bfe0
 language/exceptions.xml: ec1d948c3c
 language/expressions.xml: 1532065cd7
 language/functions.xml: ba8616b76a
-language/generators.xml: 019afe356a
+language/generators.xml: 2669d757dd
 language/namespaces.xml: c7d898cc2d
 language/oop5.xml: f405eecb99
 language/oop5/abstract.xml: 822b0a4ce9
