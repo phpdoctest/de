@@ -105,7 +105,7 @@ language/namespaces.xml: c7d898cc2d
 language/oop5.xml: f405eecb99
 language/oop5/abstract.xml: 822b0a4ce9
 language/oop5/anonymous.xml: e39bb029e1
-language/oop5/autoload.xml: 8705ba273b
+language/oop5/autoload.xml: 3a93ed7cec
 language/oop5/basic.xml: 27997cced8
 language/oop5/changelog.xml: 7f5c229aac
 language/oop5/cloning.xml: 5af43ef4d0
