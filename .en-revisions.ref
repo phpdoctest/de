@@ -2156,7 +2156,7 @@ reference/soap/soapclient/construct.xml: eee6ff402f
 reference/soap/soapclient/dorequest.xml: f09425514e
 reference/soap/soapclient/getfunctions.xml: e3849850f1
 reference/soap/soapclient/getlastrequest.xml: 27997cced8
-reference/soap/soapclient/getlastrequestheaders.xml: 844678d1fc
+reference/soap/soapclient/getlastrequestheaders.xml: d555d11433
 reference/soap/soapclient/getlastresponse.xml: 844678d1fc
 reference/soap/soapclient/getlastresponseheaders.xml: 844678d1fc
 reference/soap/soapclient/gettypes.xml: e3849850f1
