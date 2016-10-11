@@ -148,7 +148,7 @@ language/predefined/exception/gettrace.xml: 807c846e04
 language/predefined/exception/gettraceasstring.xml: 807c846e04
 language/predefined/exception/tostring.xml: 807c846e04
 language/predefined/exceptions.xml: 807c846e04
-language/predefined/generator.xml: 42a79d6998
+language/predefined/generator.xml: 302f15026e
 language/predefined/interfaces.xml: 42a79d6998
 language/predefined/iterator.xml: 7e866c0bfc
 language/predefined/iterator/current.xml: 807c846e04
