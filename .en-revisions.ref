@@ -178,7 +178,7 @@ language/predefined/variables/server.xml: 4dc9ec9ab5
 language/predefined/variables/session.xml: 991103bc31
 language/predefined/variables/superglobals.xml: 807c846e04
 language/types.xml: d2921d5a59
-language/types/array.xml: 54bebf488f
+language/types/array.xml: 6c90a67d87
 language/types/boolean.xml: 84e1c878b0
 language/types/null.xml: dff197a9c6
 language/types/object.xml: 03a4417914
