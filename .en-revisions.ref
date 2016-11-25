@@ -243,7 +243,7 @@ reference/array/functions/array-replace.xml: b0db98d861
 reference/array/functions/array-reverse.xml: 7237f64379
 reference/array/functions/array-search.xml: ba17582882
 reference/array/functions/array-shift.xml: efdbd50709
-reference/array/functions/array-slice.xml: d1df976717
+reference/array/functions/array-slice.xml: 6f7d7d72c5
 reference/array/functions/array-splice.xml: 20ae618254
 reference/array/functions/array-sum.xml: 3114e5c923
 reference/array/functions/array-udiff-assoc.xml: 65735b6b36
