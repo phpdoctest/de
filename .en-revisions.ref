@@ -245,7 +245,7 @@ reference/array/functions/array-search.xml: ba17582882
 reference/array/functions/array-shift.xml: efdbd50709
 reference/array/functions/array-slice.xml: d1df976717
 reference/array/functions/array-splice.xml: 20ae618254
-reference/array/functions/array-sum.xml: 8868566c3a
+reference/array/functions/array-sum.xml: 3114e5c923
 reference/array/functions/array-udiff-assoc.xml: 65735b6b36
 reference/array/functions/array-udiff-uassoc.xml: 65735b6b36
 reference/array/functions/array-udiff.xml: 27997cced8
