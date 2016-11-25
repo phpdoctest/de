@@ -448,7 +448,7 @@ reference/curl/functions/curl-version.xml: f0e133d57d
 reference/curl/ini.xml: d2c80d6672
 reference/curl/reference.xml: efdbd50709
 reference/curl/setup.xml: 07f68ffc96
-reference/datetime/book.xml: 890455fa05
+reference/datetime/book.xml: 0ea01e7a78
 reference/datetime/configure.xml: 807c846e04
 reference/datetime/constants.xml: 30497110b3
 reference/datetime/dateinterval.xml: 32efa35769
