@@ -237,7 +237,7 @@ reference/array/functions/array-pad.xml: 65735b6b36
 reference/array/functions/array-pop.xml: d02e9c4340
 reference/array/functions/array-product.xml: cfd4938f68
 reference/array/functions/array-push.xml: 65735b6b36
-reference/array/functions/array-rand.xml: 8868566c3a
+reference/array/functions/array-rand.xml: d7feb17771
 reference/array/functions/array-reduce.xml: 0f1a264dd4
 reference/array/functions/array-replace.xml: b0db98d861
 reference/array/functions/array-reverse.xml: 7237f64379
