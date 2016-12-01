@@ -976,6 +976,7 @@ reference/image/book.xml: 890455fa05
 reference/image/examples.xml: 537eab180d
 reference/image/functions/gd-info.xml: 3927db70f3
 reference/image/functions/getimagesize.xml: 7237f64379
+reference/image/functions/getimagesizefromstring.xml: c7cc08a35f
 reference/image/functions/imagearc.xml: 20e2ed00ec
 reference/image/functions/imagechar.xml: efdbd50709
 reference/image/functions/imagecopyresized.xml: dd9a29a077
