@@ -24,11 +24,12 @@ appendices/resources.xml: 26a369252f
 appendices/transports.xml: fda43b87c7
 appendices/userlandnaming.xml: cca3ef0baf
 bookinfo.xml: ffb234e0e2
+chapters/tutorial.xml: 182459e2c8
 chmonly/aboutchm.xml: efdbd50709
 chmonly/credits.xml: efdbd50709
 faq/build.xml: ab900ea494
 faq/com.xml: 8c1e11898a
-faq/databases.xml: 5f29884034
+faq/databases.xml: b4ab143744
 faq/general.xml: efdbd50709
 faq/html.xml: a70e7624da
 faq/installation.xml: 16450cecd1
@@ -46,7 +47,6 @@ features/persistent-connections.xml: efdbd50709
 features/remote-files.xml: 8c1e11898a
 features/sessions.xml: efdbd50709
 features/xforms.xml: efdbd50709
-install/cloud/azure.xml: dc53bd9bb4
 install/cloud/ec2.xml: dc53bd9bb4
 install/cloud/index.xml: dc53bd9bb4
 install/cloud/rackspace.xml: 06691bae1c
@@ -1343,7 +1343,7 @@ reference/mssql/ini.xml: d2c80d6672
 reference/mssql/reference.xml: efdbd50709
 reference/mssql/setup.xml: 196ff78803
 reference/mysql/book.xml: d16ba5b851
-reference/mysql/configure.xml: 0e302b252e
+reference/mysql/configure.xml: 7f3bd947da
 reference/mysql/constants.xml: 7a17087302
 reference/mysql/examples.xml: ee00fe1a3d
 reference/mysql/functions/mysql-affected-rows.xml: 8fb0bc6cab
@@ -1587,7 +1587,7 @@ reference/opcache/setup.xml: 4dc775485a
 reference/openssl/book.xml: 890455fa05
 reference/openssl/cert-verification.xml: efdbd50709
 reference/openssl/certparams.xml: efdbd50709
-reference/openssl/configure.xml: 699c428c56
+reference/openssl/configure.xml: 7f3bd947da
 reference/openssl/constants.xml: f62128422e
 reference/openssl/functions/openssl-csr-new.xml: a767261813
 reference/openssl/functions/openssl-encrypt.xml: 92d2543e04
