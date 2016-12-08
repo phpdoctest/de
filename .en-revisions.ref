@@ -24,6 +24,7 @@ appendices/resources.xml: 26a369252f
 appendices/transports.xml: fda43b87c7
 appendices/userlandnaming.xml: cca3ef0baf
 bookinfo.xml: ffb234e0e2
+chapters/intro.xml: 92a5069f3a
 chapters/tutorial.xml: 182459e2c8
 chmonly/aboutchm.xml: efdbd50709
 chmonly/credits.xml: efdbd50709
