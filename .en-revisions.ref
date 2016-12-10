@@ -99,7 +99,7 @@ language/control-structures/while.xml: f40cab318e
 language/errors.xml: e05d88bfe0
 language/exceptions.xml: ec1d948c3c
 language/expressions.xml: 1532065cd7
-language/functions.xml: ba8616b76a
+language/functions.xml: ca1a871e55
 language/generators.xml: 2669d757dd
 language/namespaces.xml: c7d898cc2d
 language/oop5.xml: f405eecb99
@@ -126,7 +126,7 @@ language/oop5/references.xml: 15a78e638d
 language/oop5/serialization.xml: 5b4d184efb
 language/oop5/static.xml: 77c3efb7c2
 language/oop5/traits.xml: 4c9f539e4b
-language/oop5/typehinting.xml: 8f4b1a6108
+language/oop5/typehinting.xml: 476e58b54c
 language/oop5/visibility.xml: 8e2d295e8f
 language/predefined/arrayaccess.xml: 54fc72fb20
 language/predefined/arrayaccess/offsetexists.xml: 65a2571751
