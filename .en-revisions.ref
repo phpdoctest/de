@@ -974,7 +974,7 @@ reference/ifx/configure.xml: efdbd50709
 reference/ifx/reference.xml: efdbd50709
 reference/ifx/setup.xml: 0e302b252e
 reference/image/book.xml: 3df7bdad06
-reference/image/examples.xml: 537eab180d
+reference/image/examples.xml: 99b1e62273
 reference/image/functions/gd-info.xml: a1f8424cc9
 reference/image/functions/getimagesize.xml: 2dccf152ae
 reference/image/functions/getimagesizefromstring.xml: c7cc08a35f
