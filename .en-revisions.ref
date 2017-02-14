@@ -2050,7 +2050,7 @@ reference/regex/configure.xml: efdbd50709
 reference/regex/constants.xml: efdbd50709
 reference/regex/examples.xml: efdbd50709
 reference/regex/functions/ereg-replace.xml: 95405358b3
-reference/regex/functions/ereg.xml: 9f551fd26c
+reference/regex/functions/ereg.xml: cf34b4ab28
 reference/regex/functions/eregi-replace.xml: 95405358b3
 reference/regex/functions/eregi.xml: 95405358b3
 reference/regex/functions/split.xml: 9f551fd26c
