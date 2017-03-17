@@ -2292,7 +2292,7 @@ reference/strings/functions/convert-uudecode.xml: 30497110b3
 reference/strings/functions/convert-uuencode.xml: 33eec1e748
 reference/strings/functions/count-chars.xml: efdbd50709
 reference/strings/functions/crc32.xml: 09bcf115a7
-reference/strings/functions/crypt.xml: 19046180ea
+reference/strings/functions/crypt.xml: 2217cbe884
 reference/strings/functions/echo.xml: 7c8c7ac0db
 reference/strings/functions/explode.xml: 7237f64379
 reference/strings/functions/fprintf.xml: efdbd50709
