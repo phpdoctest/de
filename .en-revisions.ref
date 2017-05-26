@@ -2449,7 +2449,7 @@ reference/var/functions/is-string.xml: 4c2576fead
 reference/var/functions/isset.xml: 27997cced8
 reference/var/functions/print-r.xml: 7237f64379
 reference/var/functions/serialize.xml: 3963a9acda
-reference/var/functions/settype.xml: efdbd50709
+reference/var/functions/settype.xml: 7f3bd947da
 reference/var/functions/strval.xml: 3e45e528b0
 reference/var/functions/unserialize.xml: 32c11f2020
 reference/var/functions/unset.xml: 7237f64379
