@@ -1202,7 +1202,7 @@ reference/misc/functions/define.xml: 51b6c7b650
 reference/misc/functions/defined.xml: efdbd50709
 reference/misc/functions/die.xml: 087999d634
 reference/misc/functions/eval.xml: 5dc963f4d4
-reference/misc/functions/exit.xml: 087999d634
+reference/misc/functions/exit.xml: ef0e81d4e8
 reference/misc/functions/get-browser.xml: 8868566c3a
 reference/misc/functions/halt-compiler.xml: efdbd50709
 reference/misc/functions/highlight-file.xml: 8868566c3a
