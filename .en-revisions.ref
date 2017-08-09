@@ -18,6 +18,11 @@ appendices/migration56/new-features.xml: b2d86dd15d
 appendices/migration56/new-functions.xml: ebeae8c931
 appendices/migration56/openssl.xml: cbdd521e64
 appendices/migration70.xml: 3df402bafb
+appendices/migration70/changed-functions.xml: 376aee2df1
+appendices/migration70/classes.xml: 2ded59b783
+appendices/migration70/constants.xml: 916abc8611
+appendices/migration70/incompatible.xml: 5b9a029379
+appendices/migration70/removed-exts-sapis.xml: 2ded59b783
 appendices/migration71.xml: 6eb60e4c67
 appendices/reserved.constants.core.xml: 1e2eb84d93
 appendices/reserved.constants.standard.xml: 0d8699fe99
