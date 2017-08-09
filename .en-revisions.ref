@@ -367,7 +367,7 @@ reference/classobj/examples.xml: efdbd50709
 reference/classobj/functions/call-user-method.xml: a54fded8f2
 reference/classobj/functions/class-exists.xml: cf6ce7b4e1
 reference/classobj/functions/get-class-methods.xml: 8868566c3a
-reference/classobj/functions/get-class-vars.xml: 9d3cae73ea
+reference/classobj/functions/get-class-vars.xml: 8d4ae76367
 reference/classobj/functions/get-class.xml: cf6ce7b4e1
 reference/classobj/functions/get-declared-classes.xml: efdbd50709
 reference/classobj/functions/get-declared-interfaces.xml: 30497110b3
@@ -459,11 +459,11 @@ reference/curl/setup.xml: 07f68ffc96
 reference/datetime/book.xml: 0ea01e7a78
 reference/datetime/configure.xml: 807c846e04
 reference/datetime/constants.xml: 30497110b3
-reference/datetime/dateinterval.xml: 32efa35769
+reference/datetime/dateinterval.xml: 84fa9cfbb7
 reference/datetime/dateinterval/construct.xml: f4cdcc7a0e
 reference/datetime/dateinterval/createfromdatestring.xml: 6f8f911bc8
 reference/datetime/dateperiod.xml: 9c1af0c54a
-reference/datetime/dateperiod/construct.xml: ae3a17739c
+reference/datetime/dateperiod/construct.xml: 349635fc72
 reference/datetime/datetime.xml: 0b35254063
 reference/datetime/datetime/add.xml: 87be1e4aab
 reference/datetime/datetime/construct.xml: bdef22634b
@@ -476,7 +476,7 @@ reference/datetime/datetime/sub.xml: 87be1e4aab
 reference/datetime/datetimeimmutable.xml: 4e757fdf6f
 reference/datetime/datetimeinterface.xml: f7fee46521
 reference/datetime/datetimezone.xml: 70432ad899
-reference/datetime/datetimezone/construct.xml: 12af208f6a
+reference/datetime/datetimezone/construct.xml: e7ceb86204
 reference/datetime/functions/checkdate.xml: efdbd50709
 reference/datetime/functions/date-add.xml: efdbd50709
 reference/datetime/functions/date-create-from-format.xml: 807c846e04
@@ -804,7 +804,7 @@ reference/filesystem/functions/popen.xml: 8538bdabbc
 reference/filesystem/functions/readfile.xml: 698ebf7fb5
 reference/filesystem/functions/readlink.xml: efdbd50709
 reference/filesystem/functions/realpath.xml: c9a65557b0
-reference/filesystem/functions/rename.xml: 169b85bcf8
+reference/filesystem/functions/rename.xml: 75525907fb
 reference/filesystem/functions/rewind.xml: efdbd50709
 reference/filesystem/functions/rmdir.xml: baa3688115
 reference/filesystem/functions/set-file-buffer.xml: efdbd50709
