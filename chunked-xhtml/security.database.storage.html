@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Verschl&uuml;sseltes Speichermodell</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="security.html">Sicherheit</a></li>
+  <li class="header up"><a href="security.database.html">Datenbank - Sicherheit</a></li>
+  <li><a href="security.database.design.html">Datenbanken designen</a></li>
+  <li><a href="security.database.connection.html">Zur Datenbank verbinden</a></li>
+  <li class="active"><a href="security.database.storage.html">Verschl&uuml;sseltes Speichermodell</a></li>
+  <li><a href="security.database.sql-injection.html">SQL Injection</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="security.database.connection.html">Zur Datenbank verbinden</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="security.database.sql-injection.html">SQL Injection</a></div>
+                <div class="up"><a href="security.database.html">Datenbank - Sicherheit</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="security.database.storage" class="sect1">
+    <h2 class="title">Verschlüsseltes Speichermodell</h2>
+    <p class="simpara">
+     SSL/SSH schützt zwar die gerade auf dem Weg befindlichen Daten vom Client
+     zum Server: SSL/SSH schützt jedoch nicht die dauernd in einer
+     Datenbank gespeicherten Daten. SSL ist ein &quot;auf-der-Leitung&quot; Protokoll.
+    </p>
+    <p class="simpara">
+     Hat ein Angreifer direkten Zugriff auf Ihre Datenbank (den Webserver
+     umgehend), können gespeicherte heikle Daten aufgedeckt oder
+     zweckentfremdet werden, außer wenn die Information von der Datenbank selbst
+     geschützt ist. Die Daten zu verschlüsseln ist ein guter Weg, diese Gefahr
+     zu mildern, doch bieten nur wenige Datenbanken diese Art der
+     Verschlüsselung von Daten.
+    </p>
+    <p class="simpara">
+     Der einfachste Weg, dieses Problem zu umgehen ist, erst einmal Ihr eigenes
+     Verschlüsselungspaket zu erstellen, und dieses dann in Ihren <acronym class="acronym">PHP</acronym> Skripten
+     zu nutzen. <acronym class="acronym">PHP</acronym> kann Ihnen in diesem Fall mit seinen verschiedenen
+     Erweiterungen helfen, wie z.B. <a href="ref.mcrypt.html" class="link">Mcrypt</a>
+     and <a href="ref.mhash.html" class="link">Mhash</a>, welche eine große Auswahl an
+     Verschlüsselungsalgorhythmen abdecken. Das Skript verschlüsselt die Daten
+     vor dem Speichern, und entschlüsselt diese wieder beim Erhalt. Siehe die
+     Verweise für weitere Beispiele, wie Verschlüsselung arbeitet.
+    </p>
+    <p class="simpara">
+     Im Fall von wirklich versteckten Daten, wenn deren unverfälschte
+     Repräsentation nicht nötig ist (z.B. keine Anzeige), ist hashing ebenfalls
+     überlegenswert. Das bekannte Beispiel für Hashing ist das Speichern des
+     kryptographischen Hashs eines Passwortes in einer Datenbank, anstatt des Passwortes selbst.
+     Siehe auch <span class="function">crypt</span>.
+    </p>
+    <div class="example" id="example-352">
+     <p><strong>Beispiel #1 Verwenden eines hashed Passwortfeldes</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+//&nbsp;Speichern&nbsp;des&nbsp;Passwort&nbsp;hash<br />//&nbsp;$random_chars&nbsp;z.B.&nbsp;unter&nbsp;Verwendung&nbsp;von&nbsp;/dev/random&nbsp;abgerufen<br />$query&nbsp;&nbsp;=&nbsp;sprintf("INSERT&nbsp;INTO&nbsp;users(name,pwd)&nbsp;VALUES('%s','%s');",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pg_escape_string($username),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pg_escape_string(crypt($password,&nbsp;'$2a$07$'&nbsp;.&nbsp;$random_chars&nbsp;.&nbsp;'$')));<br />$result&nbsp;=&nbsp;pg_query($connection,&nbsp;$query);<br /><br />//&nbsp;Afragen,&nbsp;ob&nbsp;der&nbsp;User&nbsp;das&nbsp;richtige&nbsp;Passwort&nbsp;übermittelt&nbsp;hat<br />$query&nbsp;=&nbsp;sprintf("SELECT&nbsp;pwd&nbsp;FROM&nbsp;users&nbsp;WHERE&nbsp;name='%s';",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pg_escape_string($username));<br />$row&nbsp;=&nbsp;pg_fetch_assoc(pg_query($connection,&nbsp;$query));<br /><br />if&nbsp;($row&nbsp;&amp;&amp;&nbsp;crypt($password,&nbsp;$row['pwd'])&nbsp;==&nbsp;$row['pwd'])&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;'Willkommen,&nbsp;'&nbsp;.&nbsp;htmlspecialchars($username)&nbsp;.&nbsp;'!';<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;'Authentifikation&nbsp;für&nbsp;'&nbsp;.&nbsp;htmlspecialchars($username)&nbsp;.&nbsp;'&nbsp;fehlgeschlagen.';<br />}<br /><br />?&gt;</span>
+</code></div>
+     </div>
+
+    </div>
+   </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

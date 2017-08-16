@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Die Grundlagen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.oop5.html">Klassen und Objekte</a></li>
+  <li><a href="oop5.intro.html">Einf&uuml;hrung</a></li>
+  <li class="active"><a href="language.oop5.basic.html">Die Grundlagen</a></li>
+  <li><a href="language.oop5.properties.html">Eigenschaften</a></li>
+  <li><a href="language.oop5.constants.html">Klassenkonstanten</a></li>
+  <li><a href="language.oop5.autoload.html">Autoloading</a></li>
+  <li><a href="language.oop5.decon.html">Konstruktoren und Destruktoren</a></li>
+  <li><a href="language.oop5.visibility.html">Sichtbarkeit</a></li>
+  <li><a href="language.oop5.inheritance.html">Objekt-Vererbung</a></li>
+  <li><a href="language.oop5.paamayim-nekudotayim.html">G&uuml;ltigkeitsbereichsoperator (::)</a></li>
+  <li><a href="language.oop5.static.html">Static-Schl&uuml;sselwort</a></li>
+  <li><a href="language.oop5.abstract.html">Klassenabstraktion</a></li>
+  <li><a href="language.oop5.interfaces.html">Interfaces</a></li>
+  <li><a href="language.oop5.traits.html">Traits</a></li>
+  <li><a href="language.oop5.anonymous.html">Anonyme Klassen</a></li>
+  <li><a href="language.oop5.overloading.html">&Uuml;berladung</a></li>
+  <li><a href="language.oop5.iterations.html">Objektiteration</a></li>
+  <li><a href="language.oop5.magic.html">Magische Methoden</a></li>
+  <li><a href="language.oop5.final.html">Final-Schl&uuml;sselwort</a></li>
+  <li><a href="language.oop5.cloning.html">Objekte klonen</a></li>
+  <li><a href="language.oop5.object-comparison.html">Objekte vergleichen</a></li>
+  <li><a href="language.oop5.typehinting.html">Type-Hints</a></li>
+  <li><a href="language.oop5.late-static-bindings.html">Sp&auml;te statische Bindung</a></li>
+  <li><a href="language.oop5.references.html">Objekte und Referenzen</a></li>
+  <li><a href="language.oop5.serialization.html">Serialisierung von Objekten</a></li>
+  <li><a href="language.oop5.changelog.html">OOP-Changelog</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="oop5.intro.html">Einf&uuml;hrung</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.oop5.properties.html">Eigenschaften</a></div>
+                <div class="up"><a href="language.oop5.html">Klassen und Objekte</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.oop5.basic" class="sect1">
+  <h2 class="title">Die Grundlagen</h2>
+
+  <div class="sect2" id="language.oop5.basic.class">
+   <h3 class="title">class</h3>
+   <p class="para">
+    Einfache Klassendefinitionen beginnen mit dem Schlüsselwort
+    <em>class</em>, gefolgt von einem Klassennamen, gefolgt von
+    einem Paar geschweifter Klammern, die die Definitionen der
+    Eigenschaften und Methoden der Klasse enthalten.
+   </p>
+   <p class="para">
+    Der Klassenname kann jeder gültige Bezeichner sein, vorausgesetzt es ist kein von PHP
+    <a href="reserved.html" class="link">reserviertes Wort</a>. Ein gültiger
+    Klassenname beginnt mit einem Buchstaben oder einem Unterstrich, gefolgt
+    von einer beliebigen Anzahl von Buchstaben, Ziffern oder Unterstrichen;
+    als regulärer Ausdruck formuliert:
+    <em>^[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*$</em>.
+   </p>
+   <p class="para">
+    Eine Klasse darf aus ihren eigenen
+    <a href="language.oop5.constants.html" class="link">Konstanten</a>,
+    <a href="language.oop5.properties.html" class="link">Variablen</a>
+    (&quot;Eigenschaften&quot; genannt) und Funktionen (&quot;Methoden&quot; genannt)
+    bestehen.
+   </p>
+   <div class="example" id="example-180">
+    <p><strong>Beispiel #1 Definition einer einfachen Klasse</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">SimpleClass<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Deklaration&nbsp;einer&nbsp;Eigenschaft<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;</span><span style="color: #0000BB">$var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'ein&nbsp;Standardwert'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Deklaration&nbsp;einer&nbsp;Methode<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">displayVar</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">var</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <p class="para">
+    Die Pseudovariable
+    <var class="varname">$this</var> ist verfügbar, falls eine Methode aus einem 
+    Objektkontext heraus aufgerufen wird. <var class="varname">$this</var> ist eine
+    Referenz auf das aufrufende Objekt (üblicherweise das Objekt, zu dem die 
+    Methode gehört, aber möglicherweise ein anderes Objekt, falls 
+    die Methode <a href="language.oop5.static.html" class="link">statisch</a> aus dem
+    Kontext eines zusätzlichen Objektes aufgerufen wird).
+   </p>
+   <p class="para">
+    <div class="example" id="language.oop5.basic.class.this">
+     <p><strong>Beispiel #2 Einige Beispiele für die <var class="varname">$this</var>-Pseudovariable</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">A<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(isset(</span><span style="color: #0000BB">$this</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'$this&nbsp;ist&nbsp;definiert&nbsp;('</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">get_class</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">")\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"\$this&nbsp;ist&nbsp;nicht&nbsp;definiert.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">B<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Hinweis:&nbsp;die&nbsp;folgende&nbsp;Zeile&nbsp;führt&nbsp;zu&nbsp;einer&nbsp;Warnung,&nbsp;wenn<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;E_STRICT&nbsp;aktiviert&nbsp;ist<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">A</span><span style="color: #007700">::</span><span style="color: #0000BB">foo</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">A</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$a</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">foo</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;Hinweis:&nbsp;die&nbsp;folgende&nbsp;Zeile&nbsp;führt&nbsp;zu&nbsp;einer&nbsp;Warnung,&nbsp;wenn&nbsp;E_STRICT&nbsp;aktiviert&nbsp;ist<br /></span><span style="color: #0000BB">A</span><span style="color: #007700">::</span><span style="color: #0000BB">foo</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">B</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$b</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bar</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;Hinweis:&nbsp;die&nbsp;folgende&nbsp;Zeile&nbsp;führt&nbsp;zu&nbsp;einer&nbsp;Warnung,&nbsp;wenn&nbsp;E_STRICT&nbsp;aktiviert&nbsp;ist<br /></span><span style="color: #0000BB">B</span><span style="color: #007700">::</span><span style="color: #0000BB">bar</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+     <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+     <div class="example-contents screen">
+<div class="cdata"><pre>
+$this ist definiert (A)
+$this ist nicht definiert.
+$this ist definiert (B)
+$this ist nicht definiert.
+</pre></div>
+     </div>
+    </div>
+   </p>
+  </div>
+
+  <div class="sect2" id="language.oop5.basic.new">
+   <h3 class="title">new</h3>
+   <p class="para">
+    Um eine Instanz einer Klasse zu erzeugen, muss das <em>new</em>-Schlüsselwort
+    verwendet werden. Ein Objekt wird immer erzeugt, außer wenn das Objekt einen definierten
+    <a href="language.oop5.decon.html" class="link">Konstruktor</a> besitzt, der
+    aufgrund eines Fehlers eine <a href="language.exceptions.html" class="link">Exception</a>
+    wirft. Klassen sollten vor ihrer Instantiierung definiert werden (in manchen
+    Fällen ist dies eine Notwendigkeit).
+   </p>
+   <p class="para">
+    Wenn ein <span class="type">string</span> mit dem Namen einer Klasse mit <em>new</em>
+    genutzt wird, wird eine neue Instanz dieser Klasse erzeugt. Falls sich die Klasse
+    in einem Namensraum befindet, muss der vollqualifizierte Name hierfür genutzt werden.
+   </p>
+   <div class="example" id="example-182">
+    <p><strong>Beispiel #3 Eine Instanz erzeugen</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$instanz&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SimpleClass</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;dies&nbsp;ist&nbsp;auch&nbsp;mit&nbsp;einer&nbsp;Variablen&nbsp;möglich:<br /></span><span style="color: #0000BB">$klassenname&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'SimpleClass'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$instanz&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">$klassenname</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;new&nbsp;SimpleClass()<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <p class="para">
+    Im Kontext einer Klasse ist es möglich, neue Objekte mit
+    <em>new self</em> und <em>new parent</em>
+    anzulegen.
+   </p>
+   <p class="para">
+    Wenn man eine bereits erzeugte Instanz einer Klasse einer neuen Variablen
+    zuweist, wird die neue Variable auf die selbe Instanz zugreifen wie das
+    Objekt, das zugewiesen wurde. Dieses Verhalten ist das selbe, wenn man
+    Instanzen an Funktionen übergibt. Eine Kopie eines bereits erzeugten
+    Objektes erhält man, indem man es
+    <a href="language.oop5.cloning.html" class="link">klont</a>.
+   </p>
+   <div class="example" id="example-183">
+    <p><strong>Beispiel #4 Objektzuweisung</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$instanz&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SimpleClass</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$zugewiesen&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;&nbsp;</span><span style="color: #0000BB">$instanz</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$referenz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&amp;&nbsp;</span><span style="color: #0000BB">$instanz</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$instanz</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'$zugewiesen&nbsp;wird&nbsp;diesen&nbsp;Wert&nbsp;haben'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$instanz&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;$instanz&nbsp;und&nbsp;$referenz&nbsp;werden&nbsp;null<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$instanz</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$referenz</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$zugewiesen</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+NULL
+NULL
+object(SimpleClass)#1 (1) {
+   [&quot;var&quot;]=&gt;
+     string(30) &quot;$zugewiesen wird diesen Wert haben&quot;
+}
+</pre></div>
+    </div>
+   </div>
+   <p class="para">
+    Mit PHP 5.3.0 wurden neue Möglichkeiten zur Erzeugung von Instanzen eines
+    Objekts eingeführt:
+   </p>
+   <div class="example" id="example-184">
+    <p><strong>Beispiel #5 Erzeugen neuer Objekte</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Test<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">getNew</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;static;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">Child&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Test<br /></span><span style="color: #007700">{}<br /><br /></span><span style="color: #0000BB">$obj1&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Test</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$obj2&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">$obj1</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$obj1&nbsp;</span><span style="color: #007700">!==&nbsp;</span><span style="color: #0000BB">$obj2</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$obj3&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">Test</span><span style="color: #007700">::</span><span style="color: #0000BB">getNew</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$obj3&nbsp;</span><span style="color: #007700">instanceof&nbsp;</span><span style="color: #0000BB">Test</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$obj4&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">Child</span><span style="color: #007700">::</span><span style="color: #0000BB">getNew</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$obj4&nbsp;</span><span style="color: #007700">instanceof&nbsp;</span><span style="color: #0000BB">Child</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+bool(true)
+bool(true)
+bool(true)
+</pre></div>
+    </div>
+   </div>
+  </div>
+
+  <div class="sect2" id="language.oop5.basic.extends">
+   <h3 class="title">extends</h3>
+   <p class="para">
+    Eine Klasse kann Methoden und Eigenschaften einer anderen Klasse erben, indem
+    man das <em>extends</em>-Schlüsselwort in der Deklaration benutzt.
+    Es ist nicht möglich, mehrere Klassen zu erweitern; eine Klasse kann nur eine
+    einzige Basisklasse beerben.
+   </p>
+   <p class="para">
+    Die geerbten Methoden und Eigenschaften können durch eine Neudeklaration
+    mit dem gleichen Namen wie in der Elternklasse überschrieben werden. Falls
+    die Elternklasse eine Methode als <a href="language.oop5.final.html" class="link">final</a>
+    definiert hat, kann diese Methode nicht überschrieben werden. Es ist möglich,
+    auf die überschriebenen Methoden oder statischen Eigenschaften zuzugreifen,
+    wenn diese mittels
+    <a href="language.oop5.paamayim-nekudotayim.html" class="link">parent::</a>
+    referenziert werden.
+   </p>
+   <p class="para">
+    Wenn Methoden überschrieben werden, sollte die Parametersignatur gleich
+    bleiben; andernfalls wird PHP einen <strong><code>E_STRICT</code></strong>-Fehler
+    generieren. Dies gilt nicht für den Konstruktor, der das Überschreiben
+    mit unterschiedlichen Parameter erlaubt.
+   </p>
+   <div class="example" id="example-185">
+    <p><strong>Beispiel #6 Einfache Vererbung</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">ExtendClass&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">SimpleClass<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Die&nbsp;Vatermethode&nbsp;überschreiben<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">displayVar</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Erweiternde&nbsp;Klasse\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">parent</span><span style="color: #007700">::</span><span style="color: #0000BB">displayVar</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$extended&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">ExtendClass</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$extended</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">displayVar</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Erweiternde Klasse
+ein Standardwert
+</pre></div>
+    </div>
+   </div>
+  </div>
+
+ <div class="sect2" id="language.oop5.basic.class.class">
+   <h3 class="title">::class</h3>
+
+   <p class="para">
+    Mit PHP 5.5 kann auch das Schlüsselwort <em>class</em> für die
+    Namensauflösung einer Klasse verwendet werden. Man erhält den vollständig
+    qualifizierten Namen der Klasse <em>ClassName</em> durch
+    Verwendung von <em>ClassName::class</em>. Dies ist vor allem
+    dann praktisch, wenn mit
+    <a href="language.namespaces.html" class="link">Namensräumen</a> gearbeitet wird.    
+   </p>
+   <p class="para">
+    <div class="example" id="language.oop5.basic.class.class.name">
+     <p><strong>Beispiel #7 Auflösung von Klassennamen</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">NS&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;</span><span style="color: #0000BB">ClassName&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">ClassName</span><span style="color: #007700">::class;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+     <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+     <div class="example-contents screen">
+<div class="cdata"><pre>
+NS\ClassName
+</pre></div>
+     </div>
+    </div>
+   </p>
+  </div>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

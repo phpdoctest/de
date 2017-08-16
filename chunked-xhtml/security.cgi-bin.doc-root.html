@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Fall 3: doc_root oder user_dir festlegen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="security.html">Sicherheit</a></li>
+  <li class="header up"><a href="security.cgi-bin.html">Installiert als CGI-Version</a></li>
+  <li><a href="security.cgi-bin.attacks.html">M&ouml;gliche Angriffe</a></li>
+  <li><a href="security.cgi-bin.default.html">Fall 1: Nur &ouml;ffentliche Dateien vorhanden</a></li>
+  <li><a href="security.cgi-bin.force-redirect.html">Fall 2: --enable-force-cgi-redirect benutzen</a></li>
+  <li class="active"><a href="security.cgi-bin.doc-root.html">Fall 3: doc_root oder user_dir festlegen</a></li>
+  <li><a href="security.cgi-bin.shell.html">Fall 4: PHP-Parser au&szlig;erhalb des Webverzeichnisbaums</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="security.cgi-bin.force-redirect.html">Fall 2: --enable-force-cgi-redirect benutzen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="security.cgi-bin.shell.html">Fall 4: PHP-Parser au&szlig;erhalb des Webverzeichnisbaums</a></div>
+                <div class="up"><a href="security.cgi-bin.html">Installiert als CGI-Version</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="security.cgi-bin.doc-root" class="sect1">
+    <h2 class="title">Fall 3: doc_root oder user_dir festlegen</h2>
+    <p class="simpara">
+     Aktiven Inhalt, wie beispielsweise Skripts und ausführbare
+     Dateien, in den Dokumentverzeichnissen des Webservers abzulegen,
+     wird manchmal als unsichere Methode angesehen.
+     Wenn, beispielsweise aufgrund von Konfigurationsfehlern, die
+     Skripte nicht ausgeführt, sondern als reguläre HTML-Dokumente
+     angezeigt werden, kann dies ein Durchsickern von geistigem Eigentum
+     und sicherheitsrelevanter Informationen wie Passwörtern zur Folge
+     haben. Deshalb ziehen es viele Systemadministratoren vor, eine
+     zweite Verzeichnisstruktur für Skripte einzurichten, auf die nur
+     durch das PHP-CGI zugegriffen werden kann. Diese werden dann stets
+     interpretiert und nicht angezeigt.
+    </p>
+    <p class="simpara">
+     Auch wenn die Methode zum sichergestellten Verhindern einer Umleitung
+     von Anfragen (wie im vorangegangenen Abschnitt beschrieben) nicht
+     verfügbar ist, ist es notwendig, ein doc_root für Skripte zusätzlich
+     zum Web-Dokumentenverzeichnis einzurichten.
+    </p>
+    <p class="simpara">
+     Sie können das PHP-Skriptverzeichnis durch die Direktive
+     <a href="ini.core.html#ini.doc-root" class="link">doc_root</a> in der
+     <a href="configuration.file.html" class="link">Konfigurationsdatei</a>
+     festlegen, oder Sie setzen die Umgebungsvariable
+     <var class="envar">PHP_DOCUMENT_ROOT</var>. Wenn sie gesetzt ist, wird die
+     <acronym class="acronym">CGI</acronym>-Version von PHP den Namen der zu öffnenden Datei
+     stets aus <code class="parameter">doc_root</code> und der Pfadinformation der
+     Anfrage zusammensetzen, sodass man sicher sein kann, dass außerhalb
+     dieses Verzeichnisses keine Skripte ausgeführt werden (außer
+     <code class="parameter">user_dir</code>, siehe unten).
+    </p>
+    <p class="simpara">
+     Eine weitere hier nützliche Option ist <a href="ini.core.html#ini.user-dir" class="link">user_dir</a>. Wenn das
+     <code class="parameter">user_dir</code> nicht gesetzt ist, hat nur
+     <code class="parameter">doc_root</code> Einfluss auf die zu öffnende Datei.
+     Der Aufruf einer URL wie <var class="filename">http://my.host/~user/doc.php</var> hat nicht zum
+     Ergebnis, dass eine Datei im Heimatverzeichnis des Benutzers geöffnet
+     wird, sondern eine Datei namens <var class="filename">~user/doc.php</var>
+     unterhalb des doc_root. (Ja, ein Verzeichnisname, der mit einer Tilde anfängt
+     [<em>~</em>].)
+    </p>
+    <p class="simpara">
+     Ist das user_dir beispielsweise auf <var class="filename">public_php</var> gesetzt,
+     wird eine Anfrage wie <var class="filename">http://my.host/~user/doc.php</var>
+     eine Datei namens <var class="filename">doc.php</var> im Verzeichnis
+     <var class="filename">public_php</var> im Heimatverzeichnis
+     des Benutzers öffnen. Wenn das Heimatverzeichnis des Benutzers
+     <var class="filename">/home/user</var> ist, so ist die ausgeführte
+     Datei <var class="filename">/home/user/public_php/doc.php</var>.
+    </p>
+    <p class="simpara">
+     Die <code class="parameter">user_dir</code>-Expansion erfolgt ohne Berücksichtigung
+     der <code class="parameter">doc_root</code>-Einstellung. So können Zugriffe
+     auf die Dokumenten- und Benutzerverzeichnisse separat gesteuert werden.
+    </p>
+   </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Sendet ein Cookie</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li class="header up"><a href="book.network.html">Network</a></li>
+  <li class="header up"><a href="ref.network.html">Netzwerk-Funktionen</a></li>
+  <li><a href="function.checkdnsrr.html">checkdnsrr</a></li>
+  <li><a href="function.closelog.html">closelog</a></li>
+  <li><a href="function.define-syslog-variables.html">define_syslog_variables</a></li>
+  <li><a href="function.dns-check-record.html">dns_check_record</a></li>
+  <li><a href="function.dns-get-mx.html">dns_get_mx</a></li>
+  <li><a href="function.dns-get-record.html">dns_get_record</a></li>
+  <li><a href="function.fsockopen.html">fsockopen</a></li>
+  <li><a href="function.gethostbyaddr.html">gethostbyaddr</a></li>
+  <li><a href="function.gethostbyname.html">gethostbyname</a></li>
+  <li><a href="function.gethostbynamel.html">gethostbynamel</a></li>
+  <li><a href="function.gethostname.html">gethostname</a></li>
+  <li><a href="function.getmxrr.html">getmxrr</a></li>
+  <li><a href="function.getprotobyname.html">getprotobyname</a></li>
+  <li><a href="function.getprotobynumber.html">getprotobynumber</a></li>
+  <li><a href="function.getservbyname.html">getservbyname</a></li>
+  <li><a href="function.getservbyport.html">getservbyport</a></li>
+  <li><a href="function.header-register-callback.html">header_register_callback</a></li>
+  <li><a href="function.header-remove.html">header_remove</a></li>
+  <li><a href="function.header.html">header</a></li>
+  <li><a href="function.headers-list.html">headers_list</a></li>
+  <li><a href="function.headers-sent.html">headers_sent</a></li>
+  <li><a href="function.http-response-code.html">http_response_code</a></li>
+  <li><a href="function.inet-ntop.html">inet_ntop</a></li>
+  <li><a href="function.inet-pton.html">inet_pton</a></li>
+  <li><a href="function.ip2long.html">ip2long</a></li>
+  <li><a href="function.long2ip.html">long2ip</a></li>
+  <li><a href="function.openlog.html">openlog</a></li>
+  <li><a href="function.pfsockopen.html">pfsockopen</a></li>
+  <li class="active"><a href="function.setcookie.html">setcookie</a></li>
+  <li><a href="function.setrawcookie.html">setrawcookie</a></li>
+  <li><a href="function.socket-get-status.html">socket_get_status</a></li>
+  <li><a href="function.socket-set-blocking.html">socket_set_blocking</a></li>
+  <li><a href="function.socket-set-timeout.html">socket_set_timeout</a></li>
+  <li><a href="function.syslog.html">syslog</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.pfsockopen.html">pfsockopen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.setrawcookie.html">setrawcookie</a></div>
+                <div class="up"><a href="ref.network.html">Netzwerk-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.setcookie" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">setcookie</h1>
+  <p class="refpurpose">Sendet ein Cookie</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.setcookie-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">setcookie</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$expire</code><span class="initializer"> = 0</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$domain</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$secure</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$httponly</code><span class="initializer"> = false</span></span>
+  ]]]]]] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">setcookie</span> definiert ein mit den HTTP
+   Header-Informationen zu übertragendes Cookie. Wie andere Header auch,
+   müssen Cookies <em class="emphasis">vor</em> jeglicher Ausgabe Ihres Skriptes
+   gesendet werden (dies ist eine Einschränkung des Protokolls). Das bedeutet,
+   dass Sie diese Funktion aufrufen müssen, bevor Sie eine Ausgabe, dazu
+   zählen auch <em>&lt;html&gt;</em>- oder
+   <em>&lt;head&gt;</em>-Tags sowie jede Art von Whitespaces,
+   übermitteln.
+  </p>
+  <p class="para">
+   Sind die Cookies einmal gesetzt, können Sie beim nächsten Seitenaufruf
+   anhand der <var class="varname">$_COOKIE</var> oder
+   <var class="varname">$HTTP_COOKIE_VARS</var> Arrays auf diese zugreifen.
+   Beachten Sie, dass die <a href="language.variables.superglobals.html" class="link">Superglobals</a> wie
+   <var class="varname">$_COOKIE</var> seit PHP 4.1.0 verfügbar sind.
+   Die Cookie-Werte stehen auch in <var class="varname">$_REQUEST</var>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.setcookie-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   Alle Argumente außer <code class="parameter">name</code> sind optional. Sie können
+   ein Argument auch mit einem leeren String (<em class="emphasis">&quot;&quot;</em>)
+   ersetzen, wenn Sie es übergehen wollen. Da der
+   <code class="parameter">expire</code>-Parameter einen Integer-Wert darstellt, kann
+   er nicht durch die Angabe eines Leerstrings übersprungen werden, verwenden
+   Sie daher statt dessen die Null (<em class="emphasis">0</em>).
+  </p>
+  <p class="para">
+   <a href="http://www.faqs.org/rfcs/rfc6265" class="link external">&raquo;&nbsp;RFC 6265</a> liefert die normative
+   Referenz wie die jeweiligen <span class="function">setcookie</span> Parameter
+   interpretiert werden.
+   <dl>
+
+    
+     <dt>
+<code class="parameter">name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Name des Cookies.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">value</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Wert des Cookies. Dieser Wert wird auf dem Computer des Benutzers
+       gespeichert, speichern Sie deshalb darin keine sensiblen Informationen.
+       Angenommen der Parameter <code class="parameter">name</code> ist &#039;cookiename&#039;,
+       so erhält man seinen Wert mittels <var class="varname">$_COOKIE[&#039;cookiename&#039;]</var>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">expire</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Zeitpunkt, an dem das Cookie ungültig wird. Dies ist ein Unix
+       Timestamp, also die Anzahl Sekunden seit Beginn der Epoche. Mit anderen
+       Worten, Sie werden diesen Wert wahrscheinlich mittels der Funktion
+       <span class="function">time</span> plus der Anzahl Sekunden bis zum gewünschten
+       Ablauf des Cookies setzen. Sie könnten aber auch <span class="function">mktime</span>
+       verwenden.
+       <em>time()+60*60*24*30</em> wird das Cookie in 30 Tagen
+       ablaufen lassen. Hat der Parameter den Wert 0 oder ist er nicht
+       gesetzt, verfällt das Cookie am Ende der Session (wenn der Browser
+       geschlossen wird).
+      </p>
+      <p class="para">
+       <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+        <p class="para">
+         Beachten Sie, dass der <code class="parameter">expire</code>-Parameter einen
+         Unix-Timestamp enthält, im Gegensatz zum Datumsformat <em>Wdy,
+         DD-Mon-YYYY HH:MM:SS GMT</em>. Die Konvertierung wird von PHP intern
+         durchgeführt.
+        </p>
+       </p></blockquote>
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">path</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Pfad auf dem Server, für welchen das Cookie verfügbar sein wird.
+       Ist er auf <em>&#039;/&#039;</em> gesetzt, wird das Cookie innerhalb
+       der gesamten <code class="parameter">domain</code> verfügbar. Ist er auf
+       <em>&#039;/foo/&#039;</em> gesetzt, wird das Cookie nur innerhalb des
+       Verzeichnisses <em>/foo/</em> sowie allen Unterverzeichnissen
+       wie z.B. <em>/foo/bar/</em> der <code class="parameter">domain</code>
+       verfügbar. Der Standardwert ist das aktuelle Verzeichnis, in dem das
+       Cookie gesetzt wurde.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">domain</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Domain, der das Cookie zur Verfügung steht. Wird die Domain auf
+       <em>&#039;www.example.com&#039;</em> gesetzt, ist das Cookie in der
+       <em>www</em> Subdomain und in höheren Subdomains verfügbar.
+       Cookies die in einer niedrigeren Subdomain verfügbar sind, wie
+       <em>&#039;example.com&#039;</em>, sind in höheren Subdomains verfügbar,
+       wie <em>&#039;www.example.com&#039;</em>.
+       Ältere Browser, die noch immer das veraltete
+       <a href="http://www.faqs.org/rfcs/rfc2109" class="link external">&raquo;&nbsp;RFC 2109</a> implementieren, können
+       ein führendes <em>.</em> benötigen, um alle Subdomains
+       abzudecken.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">secure</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Gibt an, dass das Cookie vom Client nur über eine sichere
+       HTTPS-Verbindung übertragen werden soll. Ist der Wert auf <strong><code>TRUE</code></strong>
+       gesetzt, wird das Cookie nur gesendet, wenn eine sichere Verbindung
+       besteht. Auf der Serverseite muss der
+       Programmierer selbst darauf achten, dass entsprechende Cookies über
+       eine sichere Verbindung gesendet werden (z.B. unter Berücksichtigung
+       von <var class="varname">$_SERVER[&quot;HTTPS&quot;]</var>).
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">httponly</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Wenn auf <strong><code>TRUE</code></strong> gesetzt, ist das Cookie nur via HTTP-Protokoll
+       zugreifbar. Das bedeutet, dass das Cookie nicht mehr für Skriptsprachen
+       wie JavaScript auslesbar/veränderbar ist. Diese Einstellung kann
+       eine effektive Hilfe sein, um Identitätsdiebstahl per XSS-Angriff
+       zu vermindern (allerdings wird dies nicht von allen Browsern
+       unterstützt). Hinzugefügt in PHP 5.2.0.
+       <strong><code>TRUE</code></strong> oder <strong><code>FALSE</code></strong>
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.setcookie-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Erfolgt eine Ausgabe vor dem Aufruf dieser Funktion, wird
+   <span class="function">setcookie</span> fehlschlagen und <strong><code>FALSE</code></strong> zurückgeben. Wenn
+   <span class="function">setcookie</span> erfolgreich durchgeführt wird, wird <strong><code>TRUE</code></strong>
+   zurückgegeben. Dies sagt jedoch nichts darüber aus, ob der Benutzer das
+   Cookie auch akzeptiert hat.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.setcookie-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   Einige Beispiele, wie Cookies gesetzt werden:
+   <div class="example" id="example-4943">
+    <p><strong>Beispiel #1 <span class="function">setcookie</span>-Beispiele:</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$value&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'irgendetwas&nbsp;von&nbsp;irgendwo'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">setcookie</span><span style="color: #007700">(</span><span style="color: #DD0000">"TestCookie"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">setcookie</span><span style="color: #007700">(</span><span style="color: #DD0000">"TestCookie"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()+</span><span style="color: #0000BB">3600</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;verfällt&nbsp;in&nbsp;1&nbsp;Stunde&nbsp;*/<br /></span><span style="color: #0000BB">setcookie</span><span style="color: #007700">(</span><span style="color: #DD0000">"TestCookie"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()+</span><span style="color: #0000BB">3600</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"/~rasmus/"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"example.com"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   Beachten Sie, dass der Wertebereich des Cookies automatisch URL-konform
+   kodiert (urlencoded) wird, sobald Sie das Cookie senden, und es beim Erhalt
+   automatisch dekodiert und einer Variablen zugewiesen wird, die den selben
+   Namen wie das Cookie trägt. Wenn Sie dies nicht möchten, können Sie
+   stattdessen <span class="function">setrawcookie</span> verwenden, wenn sie PHP 5
+   nutzen. Um die Inhalte unseres Test-Cookies in einem Skript sichtbar zu
+   machen, verwenden Sie einfach eines der folgenden Beispiele:
+  </p>
+  <p class="para">
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;ein&nbsp;bestimmtes&nbsp;Cookie&nbsp;ausgeben<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$_COOKIE</span><span style="color: #007700">[</span><span style="color: #DD0000">"TestCookie"</span><span style="color: #007700">];<br />echo&nbsp;</span><span style="color: #0000BB">$HTTP_COOKIE_VARS</span><span style="color: #007700">[</span><span style="color: #DD0000">"TestCookie"</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;Ein&nbsp;anderer&nbsp;Weg&nbsp;zu&nbsp;Debuggen/Testen&nbsp;ist,&nbsp;alle&nbsp;Cookies&nbsp;anzuzeigen<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$_COOKIE</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-4944">
+    <p><strong>Beispiel #2 <span class="function">setcookie</span>-Beispiele zum Löschen</strong></p>
+    <div class="example-contents"><p>
+     Beim Löschen eines Cookies sollten Sie sicherstellen, dass das
+     Verfallsdatum in der Vergangenheit liegt, um den Mechanismus zum
+     Löschen des Cookies im Browser auszulösen. Die folgenden Beispiele
+     zeigen, wie die im vorigen Beispiel gesendeten Cookies wieder gelöscht
+     werden:
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Setzen&nbsp;des&nbsp;Verfalls-Zeitpunktes&nbsp;auf&nbsp;1&nbsp;Stunde&nbsp;in&nbsp;der&nbsp;Vergangenheit<br /></span><span style="color: #0000BB">setcookie&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"TestCookie"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()&nbsp;-&nbsp;</span><span style="color: #0000BB">3600</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">setcookie&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"TestCookie"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()&nbsp;-&nbsp;</span><span style="color: #0000BB">3600</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"/~rasmus/"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"example.com"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-4945">
+    <p><strong>Beispiel #3 <span class="function">setcookie</span> und Arrays</strong></p>
+    <div class="example-contents"><p>
+     Sie können auch ein Array von Cookies setzen, in dem Sie die
+     Array-Schreibweise im Cookienamen verwenden. Dadurch werden so viele
+     Cookies gesetzt, wie Ihr Array Elemente hat. Sobald das Cookie aber von
+     Ihrem Skript gelesen wird, werden alle Werte in ein einziges
+     Array mit dem Cookienamen eingelesen:
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Setzen&nbsp;der&nbsp;Cookies<br /></span><span style="color: #0000BB">setcookie&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"cookie[three]"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"cookiethree"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">setcookie&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"cookie[two]"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"cookietwo"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">setcookie&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"cookie[one]"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"cookieone"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Nach&nbsp;dem&nbsp;Neuladen&nbsp;der&nbsp;Seite&nbsp;wieder&nbsp;ausgeben<br /></span><span style="color: #007700">if&nbsp;(isset(</span><span style="color: #0000BB">$_COOKIE</span><span style="color: #007700">[</span><span style="color: #DD0000">'cookie'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$_COOKIE</span><span style="color: #007700">[</span><span style="color: #DD0000">'cookie'</span><span style="color: #007700">]&nbsp;as&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">htmlspecialchars</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">htmlspecialchars</span><span style="color: #007700">(</span><span style="color: #0000BB">$value</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$name</span><span style="color: #DD0000">&nbsp;:&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #DD0000">&nbsp;&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+three : cookiethree
+two : cookietwo
+one : cookieone
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.setcookie-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.5.0</td>
+       <td>
+        Ein Max-Age Attribut ist nun im Set-Cookie Header, der an den Client
+        gesendet wird, enthalten.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.2.0</td>
+       <td>
+        Der <code class="parameter">httponly</code>-Parameter wurde hinzugefügt.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.setcookie-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Sie können den Ausgabepuffer verwenden, um Ausgaben vor dem Aufruf dieser
+    Funktion duchführen zu können. Dies hat allerdings zur Folge, dass alle
+    Ihre Ausgaben zum Browser am Server zwischengespeichert werden, bis Sie
+    diese senden. Sie können dies in Ihrem Skript mittels der Funktionen
+    <span class="function">ob_start</span> und <span class="function">ob_end_flush</span> oder
+    mittels der Konfigurationseinstellung <em>output_buffering</em>
+    in Ihrer <var class="filename">php.ini</var> mitteilen, oder Sie ändern entsprechende
+    Konfigurationseinstellungen am Server.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Ist die PHP-Direktive <a href="ini.core.html#ini.register-globals" class="link">register_globals</a> auf
+    <em>on</em> gesetzt, stehen die Cookies auch als eigene
+    Variablen zur Verfügung. In den nachstehenden Beispielen wird
+    <var class="varname">$TextCookie</var> also existieren. Es ist jedoch dringend
+    empfohlen, <var class="varname">$_COOKIE</var> zu verwenden.
+   </p>
+  </p></blockquote>
+  <p class="para">
+   Häufige Probleme:
+   <ul class="itemizedlist">
+    <li class="listitem">
+     <span class="simpara">
+      Cookies werden nicht sichtbar, bevor nicht eine Seite geladen
+      wird, für die das Cookie sichtbar sein soll. Um zu testen, ob ein
+      Cookie erfolgreich gesetzt wurde, prüfen Sie noch vor der Ablaufzeit
+      auf der nächsten geladenen Seite, ob das Cookie vorhanden ist. Die
+      Ablaufzeit wird mittels des Parameters <code class="parameter">expire</code>
+      gesetzt. Eine gute Möglichkeit, die Existenz von Cookies zu prüfen, ist
+      einfach <em>print_r($_COOKIE);</em> aufzurufen.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      Cookies müssen mit den selben Parametern gelöscht werden, mit
+      denen sie gesetzt wurden. Ist der value-Parameter ein leerer String oder
+      <strong><code>FALSE</code></strong> und alle anderen Werte entsprechen dem früheren Aufruf von
+      setcookie, wird das Cookie mit dem angegebenen Namen vom Client gelöscht.
+      Die wird intern ausgeführt, indem der Wert auf &#039;deleted&#039; und die
+      Verfallszeit auf ein Jahr in der Vergangenheit gesetzt wird.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      Da beim Setzen eines Cookies mit dem Value <strong><code>FALSE</code></strong> versucht wird, das
+      entsprechende Cookie zu löschen, sollten Sie keine boolschen Werte
+      verwenden. Nutzen Sie statt dessen <em class="emphasis">0</em> für <strong><code>FALSE</code></strong>
+      und <em class="emphasis">1</em> für <strong><code>TRUE</code></strong>.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      Namen von Cookies können auch als Arraynamen gesetzt werden und stehen
+      dann in Ihren Skripten als Arrays zu Verfügung, während sie auf dem System
+      des Benutzers als separate Cookies abgespeichert werden. Erwägen Sie den
+      Einsatz von <span class="function">explode</span>, um ein ein Cookie mit mehreren
+      Namen und Werten zu setzen. Es ist nicht empfehlenswert, zu diesem Zweck
+      <span class="function">serialize</span> einzusetzen, da hieraus Sicherheitslöcher
+      erwachsen können.
+     </span>
+    </li>
+   </ul>
+  </p>
+  <p class="simpara">
+   Mehrfache Aufrufe von <span class="function">setcookie</span> werden in der Reihenfolge
+   ihres Aufrufs ausgeführt.
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.setcookie-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">header</span></li>
+    <li class="member"><span class="function">setrawcookie</span></li>
+    <li class="member"><a href="features.cookies.html" class="link">Cookies</a></li>
+    <li class="member"><a href="http://www.faqs.org/rfcs/rfc6265" class="link external">&raquo;&nbsp;RFC 6265</a></li>
+    <li class="member"><a href="http://www.faqs.org/rfcs/rfc2109" class="link external">&raquo;&nbsp;RFC 2109</a></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

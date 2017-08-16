@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Weist Variablen zu, als w&auml;ren sie ein Array</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li class="header up"><a href="book.array.html">Arrays</a></li>
+  <li class="header up"><a href="ref.array.html">Array Funktionen</a></li>
+  <li><a href="function.array-change-key-case.html">array_change_key_case</a></li>
+  <li><a href="function.array-chunk.html">array_chunk</a></li>
+  <li><a href="function.array-column.html">array_column</a></li>
+  <li><a href="function.array-combine.html">array_combine</a></li>
+  <li><a href="function.array-count-values.html">array_count_values</a></li>
+  <li><a href="function.array-diff-assoc.html">array_diff_assoc</a></li>
+  <li><a href="function.array-diff-key.html">array_diff_key</a></li>
+  <li><a href="function.array-diff-uassoc.html">array_diff_uassoc</a></li>
+  <li><a href="function.array-diff-ukey.html">array_diff_ukey</a></li>
+  <li><a href="function.array-diff.html">array_diff</a></li>
+  <li><a href="function.array-fill-keys.html">array_fill_keys</a></li>
+  <li><a href="function.array-fill.html">array_fill</a></li>
+  <li><a href="function.array-filter.html">array_filter</a></li>
+  <li><a href="function.array-flip.html">array_flip</a></li>
+  <li><a href="function.array-intersect-assoc.html">array_intersect_assoc</a></li>
+  <li><a href="function.array-intersect-key.html">array_intersect_key</a></li>
+  <li><a href="function.array-intersect-uassoc.html">array_intersect_uassoc</a></li>
+  <li><a href="function.array-intersect-ukey.html">array_intersect_ukey</a></li>
+  <li><a href="function.array-intersect.html">array_intersect</a></li>
+  <li><a href="function.array-key-exists.html">array_key_exists</a></li>
+  <li><a href="function.array-keys.html">array_keys</a></li>
+  <li><a href="function.array-map.html">array_map</a></li>
+  <li><a href="function.array-merge-recursive.html">array_merge_recursive</a></li>
+  <li><a href="function.array-merge.html">array_merge</a></li>
+  <li><a href="function.array-multisort.html">array_multisort</a></li>
+  <li><a href="function.array-pad.html">array_pad</a></li>
+  <li><a href="function.array-pop.html">array_pop</a></li>
+  <li><a href="function.array-product.html">array_product</a></li>
+  <li><a href="function.array-push.html">array_push</a></li>
+  <li><a href="function.array-rand.html">array_rand</a></li>
+  <li><a href="function.array-reduce.html">array_reduce</a></li>
+  <li><a href="function.array-replace-recursive.html">array_replace_recursive</a></li>
+  <li><a href="function.array-replace.html">array_replace</a></li>
+  <li><a href="function.array-reverse.html">array_reverse</a></li>
+  <li><a href="function.array-search.html">array_search</a></li>
+  <li><a href="function.array-shift.html">array_shift</a></li>
+  <li><a href="function.array-slice.html">array_slice</a></li>
+  <li><a href="function.array-splice.html">array_splice</a></li>
+  <li><a href="function.array-sum.html">array_sum</a></li>
+  <li><a href="function.array-udiff-assoc.html">array_udiff_assoc</a></li>
+  <li><a href="function.array-udiff-uassoc.html">array_udiff_uassoc</a></li>
+  <li><a href="function.array-udiff.html">array_udiff</a></li>
+  <li><a href="function.array-uintersect-assoc.html">array_uintersect_assoc</a></li>
+  <li><a href="function.array-uintersect-uassoc.html">array_uintersect_uassoc</a></li>
+  <li><a href="function.array-uintersect.html">array_uintersect</a></li>
+  <li><a href="function.array-unique.html">array_unique</a></li>
+  <li><a href="function.array-unshift.html">array_unshift</a></li>
+  <li><a href="function.array-values.html">array_values</a></li>
+  <li><a href="function.array-walk-recursive.html">array_walk_recursive</a></li>
+  <li><a href="function.array-walk.html">array_walk</a></li>
+  <li><a href="function.array.html">array</a></li>
+  <li><a href="function.arsort.html">arsort</a></li>
+  <li><a href="function.asort.html">asort</a></li>
+  <li><a href="function.compact.html">compact</a></li>
+  <li><a href="function.count.html">count</a></li>
+  <li><a href="function.current.html">current</a></li>
+  <li><a href="function.each.html">each</a></li>
+  <li><a href="function.end.html">end</a></li>
+  <li><a href="function.extract.html">extract</a></li>
+  <li><a href="function.in-array.html">in_array</a></li>
+  <li><a href="function.key-exists.html">key_exists</a></li>
+  <li><a href="function.key.html">key</a></li>
+  <li><a href="function.krsort.html">krsort</a></li>
+  <li><a href="function.ksort.html">ksort</a></li>
+  <li class="active"><a href="function.list.html">list</a></li>
+  <li><a href="function.natcasesort.html">natcasesort</a></li>
+  <li><a href="function.natsort.html">natsort</a></li>
+  <li><a href="function.next.html">next</a></li>
+  <li><a href="function.pos.html">pos</a></li>
+  <li><a href="function.prev.html">prev</a></li>
+  <li><a href="function.range.html">range</a></li>
+  <li><a href="function.reset.html">reset</a></li>
+  <li><a href="function.rsort.html">rsort</a></li>
+  <li><a href="function.shuffle.html">shuffle</a></li>
+  <li><a href="function.sizeof.html">sizeof</a></li>
+  <li><a href="function.sort.html">sort</a></li>
+  <li><a href="function.uasort.html">uasort</a></li>
+  <li><a href="function.uksort.html">uksort</a></li>
+  <li><a href="function.usort.html">usort</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.ksort.html">ksort</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.natcasesort.html">natcasesort</a></div>
+                <div class="up"><a href="ref.array.html">Array Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.list" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">list</h1>
+  <p class="refpurpose">Weist Variablen zu, als wären sie ein Array</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.list-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname">list</span>
+    ( <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$var1</code></span>
+   [, <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$...</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Wie <span class="function">array</span> ist auch dies keine wirkliche
+   Funktion, sondern ein Sprachkonstrukt. <span class="function">list</span>
+   wird verwendet, um eine Liste von Variablen mit einer
+   Operation zuzuweisen.
+  </p>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    <span class="function">list</span> funktioniert nur bei numerischen Arrays und
+    basiert auf der Annahme, dass die numerischen Indizes bei 0 beginnen.
+   </p>
+  </p></blockquote>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="para">
+    In PHP 5 weist <span class="function">list</span> die Werte von rechts beginnend zu.
+    In PHP 7 beginnt <span class="function">list</span> von links.
+   </p>
+   <p class="para">
+    Wenn Sie einfache Variablen benutzen, brauchen Sie sich nicht darum
+    zu kümmern. Wenn Sie jedoch Arrays mit Indizes verwenden, erwarten Sie
+    gewöhnlich die Reihenfolge der Indizes in dem Array genau so, wie Sie
+    sie in <span class="function">list</span> geschrieben haben (von links nach
+    rechts), was jedoch in PHP 5 nicht der Fall ist. Es wird in der umgekehrten
+    Reihenfolge zugewiesen.
+   </p>
+   <p class="para">
+    Allgemein gesagt, ist es ratsam sich nicht auf eine bestimmte Operations-Reihenfolge
+    zu verlassen, da sich diese zukünftig wieder ändern könnte.
+   </p>
+  </div>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="para">
+    Die Veränderung des Array während der Ausführung von
+    <span class="function">list</span> (z.B. durch <em>list($a, $b) = $b</em>),
+    hat undefiniertes Verhalten zur Folge.
+   </p>
+  </div>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.list-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">var1</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Eine Variable.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.list-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt das zugewiesene Array zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.list-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.0.0</td>
+       <td>
+        <a href="migration70.incompatible.html#migration70.incompatible.variable-handling.list.order" class="link">
+         Die Reihenfolge, in der die Zuweisungsoperationen durchgeführt werden,
+         wurde geändert.
+        </a>
+       </td>
+      </tr>
+
+      <tr>
+       <td>7.0.0</td>
+       <td>
+        <a href="migration70.incompatible.html#migration70.incompatible.variable-handling.list.empty" class="link">
+         <span class="function">list</span> Ausdrücke dürfen nicht mehr vollständig leer
+         sein.
+        </a>
+       </td>
+      </tr>
+
+      <tr>
+       <td>7.0.0</td>
+       <td>
+        <a href="migration70.incompatible.html#migration70.incompatible.variable-handling.list.string" class="link">
+         Zeichenketten können nicht mehr entpackt werden.
+        </a>
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 examples" id="refsect1-function.list-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-5523">
+    <p><strong>Beispiel #1 <span class="function">list</span> Beispiele</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$info&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'Kaffee'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'braun'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Koffein'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Auflisten&nbsp;aller&nbsp;Variablen<br /></span><span style="color: #007700">list(</span><span style="color: #0000BB">$drink</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$color</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$power</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$drink</span><span style="color: #DD0000">&nbsp;ist&nbsp;</span><span style="color: #0000BB">$color</span><span style="color: #DD0000">&nbsp;und&nbsp;</span><span style="color: #0000BB">$power</span><span style="color: #DD0000">&nbsp;macht&nbsp;es&nbsp;zu&nbsp;etwas&nbsp;besonderem.\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Ein&nbsp;paar&nbsp;davon&nbsp;auflisten<br /></span><span style="color: #007700">list(</span><span style="color: #0000BB">$drink</span><span style="color: #007700">,&nbsp;,&nbsp;</span><span style="color: #0000BB">$power</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$drink</span><span style="color: #DD0000">&nbsp;hat&nbsp;</span><span style="color: #0000BB">$power</span><span style="color: #DD0000">.\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Oder&nbsp;nur&nbsp;die&nbsp;dritte&nbsp;ausgeben<br /></span><span style="color: #007700">list(&nbsp;,&nbsp;,&nbsp;</span><span style="color: #0000BB">$power</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Ich&nbsp;brauche&nbsp;</span><span style="color: #0000BB">$power</span><span style="color: #DD0000">!\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;list()&nbsp;funktioniert&nbsp;nicht&nbsp;mit&nbsp;Zeichenketten<br /></span><span style="color: #007700">list(</span><span style="color: #0000BB">$bar</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #DD0000">"abcde"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$bar</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;NULL<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-5524">
+    <p><strong>Beispiel #2 Eine Beispielverwendung von <span class="function">list</span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+&lt;table&gt;<br />&nbsp;&lt;tr&gt;<br />&nbsp;&nbsp;&lt;th&gt;Mitarbeitername&lt;/th&gt;<br />&nbsp;&nbsp;&lt;th&gt;Gehalt&lt;/th&gt;<br />&nbsp;&lt;/tr&gt;<br /><br /><span style="color: #0000BB">&lt;?php<br /><br />$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$pdo</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;id,&nbsp;name,&nbsp;salary&nbsp;FROM&nbsp;employees"</span><span style="color: #007700">);<br />while&nbsp;(list(</span><span style="color: #0000BB">$id</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$salary</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">$result</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fetch</span><span style="color: #007700">(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">FETCH_NUM</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&nbsp;&lt;tr&gt;\n"</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"&nbsp;&nbsp;&lt;td&gt;&lt;a&nbsp;href=\"info.php?id=</span><span style="color: #0000BB">$id</span><span style="color: #DD0000">\"&gt;</span><span style="color: #0000BB">$name</span><span style="color: #DD0000">&lt;/a&gt;&lt;/td&gt;\n"</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"&nbsp;&nbsp;&lt;td&gt;</span><span style="color: #0000BB">$salary</span><span style="color: #DD0000">&lt;/td&gt;\n"</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"&nbsp;&lt;/tr&gt;\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;<br /></span><br />&lt;/table&gt;</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-5525">
+    <p><strong>Beispiel #3 Verschachtelte <span class="function">list</span> verwenden</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">list(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;list(</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">))&nbsp;=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+int(1)
+int(2)
+int(3)
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-5526">
+    <p><strong>Beispiel #4 <span class="function">list</span> mit Array Indizes verwenden</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$info&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'Kaffee'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'braun'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Koffein'</span><span style="color: #007700">);<br /><br />list(</span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">])&nbsp;=&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Erzeugt folgende Ausgabe (beachten Sie die Reihenfolge der Elemente verglichen mit
+     der in <span class="function">list</span> eingetragenen Reihenfolge):
+    </p></div>
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende Ausgabe mit PHP 7:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+array(3) {
+  [0]=&gt;
+  string(6) &quot;Kaffee&quot;
+  [1]=&gt;
+  string(5) &quot;braun&quot;
+  [2]=&gt;
+  string(7) &quot;Koffein&quot;
+}
+</pre></div>
+    </div>
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende Ausgabe mit PHP 5:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+array(3) {
+  [2]=&gt;
+  string(7) &quot;Koffein&quot;
+  [1]=&gt;
+  string(5) &quot;braun&quot;
+  [0]=&gt;
+  string(6) &quot;Kaffee&quot;
+}
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-5527">
+    <p><strong>Beispiel #5 <span class="function">list</span> und die Reihenfolge der Index-Definitionen</strong></p>
+    <div class="example-contents"><p>
+     Die Reihenfolge, in der die Indizes des von <span class="function">list</span> zu
+     konsumierenden Arrays definiert wurden, ist irrelevant.
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$foo&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">2&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'a'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'foo'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'b'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'c'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$foo</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'d'</span><span style="color: #007700">;<br />list(</span><span style="color: #0000BB">$x</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$y</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$z</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">$foo</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$foo</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$x</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$y</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$z</span><span style="color: #007700">);</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Erzeugt folgende Ausgabe (beachten Sie die Reihenfolge der Elemente verglichen mit
+     der in <span class="function">list</span> eingetragenen Reihenfolge):
+    </p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+array(4) {
+  [2]=&gt;
+  string(1) &quot;a&quot;
+  [&quot;foo&quot;]=&gt;
+  string(1) &quot;b&quot;
+  [0]=&gt;
+  string(1) &quot;c&quot;
+  [1]=&gt;
+  string(1) &quot;d&quot;
+}
+string(1) &quot;c&quot;
+string(1) &quot;d&quot;
+string(1) &quot;a&quot;
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.list-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">each</span></li>
+    <li class="member"><span class="function">array</span></li>
+    <li class="member"><span class="function">extract</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

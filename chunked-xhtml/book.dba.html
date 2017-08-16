@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Abstraktionsschicht f&uuml;r dbm-style-Datenbanken</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.abstract.html">Abstraktionsebenen</a></li>
+  <li class="active"><a href="book.dba.html">DBA</a></li>
+  <li><a href="book.dbx.html">dbx</a></li>
+  <li><a href="book.uodbc.html">ODBC</a></li>
+  <li><a href="book.pdo.html">PDO</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="refs.database.abstract.html">Abstraktionsebenen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.dba.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.database.abstract.html">Abstraktionsebenen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.dba" class="book">
+ 
+ <h1>Abstraktionsschicht für dbm-style-Datenbanken</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.dba.html">Einf&uuml;hrung</a></li>
+<li><a href="dba.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="dba.requirements.html">Anforderungen</a></li>
+<li><a href="dba.installation.html">Installation</a></li>
+<li><a href="dba.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="dba.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="dba.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="dba.examples.html">Beispiele</a><ul class="chunklist chunklist_title">
+<li><a href="dba.example.html">Die grundlegende Verwendung</a></li>
+</ul>
+</li>
+<li><a href="ref.dba.html">DBA-Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.dba-close.html">dba_close</a> — Schlie&szlig;t eine DBA-Datenbank</li>
+<li><a href="function.dba-delete.html">dba_delete</a> — L&ouml;scht den zum angegebenen Schl&uuml;ssel geh&ouml;rigen DBA-Eintrag</li>
+<li><a href="function.dba-exists.html">dba_exists</a> — &Uuml;berpr&uuml;ft, ob ein angegebener Schl&uuml;ssel existiert</li>
+<li><a href="function.dba-fetch.html">dba_fetch</a> — Liest die Daten zu einem angegebenen Schl&uuml;ssel aus</li>
+<li><a href="function.dba-firstkey.html">dba_firstkey</a> — Liefert den ersten Schl&uuml;ssel</li>
+<li><a href="function.dba-handlers.html">dba_handlers</a> — Listet alle verf&uuml;gbaren Handler auf</li>
+<li><a href="function.dba-insert.html">dba_insert</a> — F&uuml;gt einen Eintrag ein</li>
+<li><a href="function.dba-key-split.html">dba_key_split</a> — Zerlegt einen Schl&uuml;ssel in Zeichenketten-Darstellung in eine Array-Darstellung</li>
+<li><a href="function.dba-list.html">dba_list</a> — Listet alle offenen Datenbank-Dateien auf</li>
+<li><a href="function.dba-nextkey.html">dba_nextkey</a> — Liefert den nachfolgenden Schl&uuml;ssel</li>
+<li><a href="function.dba-open.html">dba_open</a> — &Ouml;ffnet eine Datenbank</li>
+<li><a href="function.dba-optimize.html">dba_optimize</a> — Optimiert eine Datenbank</li>
+<li><a href="function.dba-popen.html">dba_popen</a> — &Ouml;ffnet eine persistente Datenbank-Verbindung</li>
+<li><a href="function.dba-replace.html">dba_replace</a> — Ersetzt einen Eintrag oder f&uuml;gt ihn ein</li>
+<li><a href="function.dba-sync.html">dba_sync</a> — Synchronisiert eine Datenbank</li>
+</ul>
+</li>
+</ul>
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Installation</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.ingres.html">Ingres</a></li>
+  <li class="header up"><a href="ingres.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="ingres.requirements.html">Anforderungen</a></li>
+  <li class="active"><a href="ingres.installation.html">Installation</a></li>
+  <li><a href="ingres.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="ingres.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="ingres.requirements.html">Anforderungen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ingres.configuration.html">Laufzeit-Konfiguration</a></div>
+                <div class="up"><a href="ingres.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="ingres.installation" class="section">
+ <h2 class="title">Installation</h2>
+ <p class="para">
+  Diese <a href="http://pecl.php.net/" class="link external">&raquo;&nbsp;PECL</a>-Extension
+ist nicht Teil von PHP.
+  Information zur Installation dieser PECL-Extension
+finden sie im Kapitel <a href="install.pecl.html" class="link">Installation von PECL-Extensions</a>.
+Zusätzliche Informationen wie neue Releases, Downloads,
+Quelldateien, Maintainerinformation und ein CHANGELOG finden Sie hier: 
+  <a href="http://pecl.php.net/package/ingres" class="link external">&raquo;&nbsp;http://pecl.php.net/package/ingres</a>.
+ </p>
+ <p class="para">
+  Die DLL-Datei für diese Erweiterung kann von <a href="http://esd.ingres.com/product/drivers/PHP/" class="link external">&raquo;&nbsp;http://esd.ingres.com/product/drivers/PHP/</a> heruntergeladen werden
+ </p>
+ <p class="para">
+  Um auf diese Funktionen zugreifen zu können, müssen Sie  diese Erweiterung <a href="http://pecl.php.net/package/ingres" class="link external">&raquo;&nbsp;herunterladen</a> und PHP mit der
+  Ingres-Unterstützung kompilieren, indem Sie
+  <strong class="option configure">--with-ingres[=DIR]</strong>
+ angeben. DIR ist das
+  Installationsverzeichnis von Ingres. Falls die Umgebungsvariable <var class="varname">II_SYSTEM</var>
+  nicht korrekt gesetzt ist, müssen Sie möglicherweise die Option
+  <strong class="option configure">--with-ingres=DIR</strong>
+ verwenden, um Ihr
+  Ingres-Installationsverzeichnis anzugeben.
+ </p>
+ <p class="para">
+  PHP-Code, der für die Versionen 2.x und später geschrieben wurde, ist nicht
+  abwärtskompatibel mit früheren Versionen dieser PHP-Erweiterung. Es ist jedoch
+  möglich, mit der Option <strong class="option configure">--enable-ingres2</strong>
+ zwei nicht kompatiblen Versionen
+  innerhalb derselben PHP-Umgebung zu benutzen. Diese Konfigurationseinstellung
+  benennt die Erweiterung um in ingres2 und verändert die Namen von Funktionen,
+  Einstellungen und Konstanten entsprechend. Ist diese Option aktiviert, wird
+  beispielsweise aus <span class="function">ingres_connect</span> die Funktion <span class="function">ingres2_connect</span>.
+ </p>
+ <p class="para">
+  Um diese Erweiterung zu benutzen, muß die Systemvariable II_SYSTEM definiert
+  sein. Linux- und Unix-Benutzer müssen außerdem den Suchpfad für gemeinsam benutzte
+  Bibliotheken setzen, etwa im <var class="varname">LD_LIBRARY_PATH</var>. Wenn die Erweiterung
+  zusammen mit dem Apache Webserver eingesetzt wird, müssen diese Variablen explizit
+  im Startskript des Webservers gesetzt werden. Ebenso setzt die Ingres-Erweiterung die
+  Direktive <em>PassEnv</em> voraus, damit die korrekten gemeinsamen
+  Bibliotheken geladen werden können. Ein Beispiel:
+ </p>
+ <div class="example" id="example-1270">
+  <p><strong>Beispiel #1 Verwendungsbeispiel für PassEnv für Ingres</strong></p>
+  <div class="example-contents">
+<div class="cdata"><pre>
+&lt;IfModule mod_env.c&gt;
+    PassEnv II_SYSTEM
+    PassEnv LD_LIBRARY_PATH
+&lt;/IfModule&gt;
+</pre></div>
+  </div>
+
+ </div>
+ <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+  <p class="para">
+   Beispielkonfiguration für verschiedene Webserver und Betriebssysteme
+   finden sie hier:
+   <a href="http://community.ingres.com/wiki/Ingres_Articles#Ingres_and_Web_Servers" class="link external">&raquo;&nbsp;http://community.ingres.com/wiki/Ingres_Articles#Ingres_and_Web_Servers</a>.
+  </p>
+ </p></blockquote>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Fall 4: PHP-Parser au&szlig;erhalb des Webverzeichnisbaums</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="security.html">Sicherheit</a></li>
+  <li class="header up"><a href="security.cgi-bin.html">Installiert als CGI-Version</a></li>
+  <li><a href="security.cgi-bin.attacks.html">M&ouml;gliche Angriffe</a></li>
+  <li><a href="security.cgi-bin.default.html">Fall 1: Nur &ouml;ffentliche Dateien vorhanden</a></li>
+  <li><a href="security.cgi-bin.force-redirect.html">Fall 2: --enable-force-cgi-redirect benutzen</a></li>
+  <li><a href="security.cgi-bin.doc-root.html">Fall 3: doc_root oder user_dir festlegen</a></li>
+  <li class="active"><a href="security.cgi-bin.shell.html">Fall 4: PHP-Parser au&szlig;erhalb des Webverzeichnisbaums</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="security.cgi-bin.doc-root.html">Fall 3: doc_root oder user_dir festlegen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="security.apache.html">Verwendung als Apache-Modul</a></div>
+                <div class="up"><a href="security.cgi-bin.html">Installiert als CGI-Version</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="security.cgi-bin.shell" class="sect1">
+    <h2 class="title">Fall 4: PHP-Parser außerhalb des Webverzeichnisbaums</h2>
+    <p class="para">
+     Eine sehr sichere Sache ist es, das PHP-Parser-Binary irgendwo
+     außerhalb des Webverzeichnisbaums zu platzieren, beispielsweise
+     in <var class="filename">/usr/local/bin</var>. Der einzige
+     Nachteil dieses Verfahrens ist, dass eine Zeile ähnlich der
+     folgenden Zeile:
+     <div class="informalexample">
+      <div class="example-contents">
+<div class="cdata"><pre>
+#!/usr/local/bin/php
+</pre></div>
+      </div>
+
+     </div>
+     als erste Zeile in jeder Datei, die PHP-Tags enthält, stehen muss.
+     Außerdem muss die Datei ausführbar sein. Ansonsten ist sie genauso
+     zu behandeln wie ein beliebiges CGI-Script in Perl oder sh oder
+     anderen gebräuchlichen Skriptsprachen, die den
+     <em>#!</em>-shell-escape-Mechanismus nutzen, um sich
+     selbst aufzurufen.
+    </p>
+    <p class="para">
+     Damit PHP bei dieser Konfiguration die <var class="envar">PATH_INFO</var>- und
+     <var class="envar">PATH_TRANSLATED</var>-Informationen korrekt auswertet,
+     sollte der PHP-Parser mit der Option <a href="configure.about.html#configure.enable-discard-path" class="link">--enable-discard-path</a>
+     kompiliert werden.
+    </p>
+   </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

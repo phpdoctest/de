@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: if</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.control-structures.html">Kontrollstrukturen</a></li>
+  <li><a href="control-structures.intro.html">Einf&uuml;hrung</a></li>
+  <li class="active"><a href="control-structures.if.html">if</a></li>
+  <li><a href="control-structures.else.html">else</a></li>
+  <li><a href="control-structures.elseif.html">elseif/else if</a></li>
+  <li><a href="control-structures.alternative-syntax.html">Alternative Syntax f&uuml;r Kontrollstrukturen</a></li>
+  <li><a href="control-structures.while.html">while</a></li>
+  <li><a href="control-structures.do.while.html">do-while</a></li>
+  <li><a href="control-structures.for.html">for</a></li>
+  <li><a href="control-structures.foreach.html">foreach</a></li>
+  <li><a href="control-structures.break.html">break</a></li>
+  <li><a href="control-structures.continue.html">continue</a></li>
+  <li><a href="control-structures.switch.html">switch</a></li>
+  <li><a href="control-structures.declare.html">declare</a></li>
+  <li><a href="function.return.html">return</a></li>
+  <li><a href="function.require.html">require</a></li>
+  <li><a href="function.include.html">include</a></li>
+  <li><a href="function.require-once.html">require_once</a></li>
+  <li><a href="function.include-once.html">include_once</a></li>
+  <li><a href="control-structures.goto.html">goto</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="control-structures.intro.html">Einf&uuml;hrung</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="control-structures.else.html">else</a></div>
+                <div class="up"><a href="language.control-structures.html">Kontrollstrukturen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="control-structures.if" class="sect1">
+ <h2 class="title"><em>if</em></h2>
+ 
+ <p class="para">
+  Das <em>if</em>-Konstrukt ist eines der wichtigsten
+  Features vieler Programmiersprachen, so auch in PHP, denn es
+  ermöglicht die bedingte Ausführung von Kodefragmenten.
+  PHP bietet eine <em>if</em>-Anweisung die der in
+  C ähnelt:
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="cdata"><pre>
+if (expression)
+  statement
+</pre></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="simpara">
+  <span class="replaceable">expression</span> wird wie im <a href="language.expressions.html" class="link">Abschnitt über Ausdrücke</a>
+  beschrieben zu einem boolschen Wahrheitswert ausgewertet.
+  Evaluiert <span class="replaceable">expression</span> zu <strong><code>TRUE</code></strong> so wird 
+  <span class="replaceable">statement</span> von PHP ausgeführt, anderenfalls
+  wird es ignoriert. Weitere Informationen dazu welche Werte als <strong><code>TRUE</code></strong>
+  oder <strong><code>FALSE</code></strong> ausgewertet werden können Sie im Abschnitt <a href="language.types.boolean.html#language.types.boolean.casting" class="link">&#039;Umwandlung zu 
+  <span class="type">boolean</span>&#039;</a>.
+ </p>
+ <p class="para">
+  Das folgende Beispiel würde <span class="computeroutput">a ist größer als b</span>
+  ausgeben wenn <var class="varname">$a</var> größer als <var class="varname">$b</var> ist:
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">)<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"a&nbsp;ist&nbsp;größer&nbsp;als&nbsp;b"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="para">
+  Oft werden Sie mehr als eine Anweisung bedingt ausführen wollen.
+  Dazu ist es natürlich nicht möglich jede Anweisung mit einer
+  eigenen <em>if</em>-Anweisung zu versehen.
+  Sie können statt dessen mehrere Anweisung zu einer Anweisungsgruppe
+  zusammenfassen. So würde z.B. der folgende Programmcode
+  <span class="computeroutput">a ist größer als b</span> ausgeben,
+  falls <var class="varname">$a</var> größer als <var class="varname">$b</var> ist,
+  und den Wert von <var class="varname">$a</var> an <var class="varname">$b</var> 
+  zuweisen:
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"a&nbsp;ist&nbsp;größer&nbsp;als&nbsp;b"</span><span style="color: #007700">;<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="simpara">
+  <em>If</em>-Anweisungen können beliebig oft ineinander 
+  verschachtelt werden und bieten Ihnen so vollständige Flexibilität
+  für die bedingte Ausführung der verschiedenen Teile Ihres Programs.
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

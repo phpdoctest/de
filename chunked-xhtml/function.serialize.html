@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Erzeugt eine speicherbare Repr&auml;sentation eines Wertes.</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li class="header up"><a href="book.var.html">Variablenbehandlung</a></li>
+  <li class="header up"><a href="ref.var.html">Funktionen zur Behandlung von Variablen</a></li>
+  <li><a href="function.boolval.html">boolval</a></li>
+  <li><a href="function.debug-zval-dump.html">debug_zval_dump</a></li>
+  <li><a href="function.doubleval.html">doubleval</a></li>
+  <li><a href="function.empty.html">empty</a></li>
+  <li><a href="function.floatval.html">floatval</a></li>
+  <li><a href="function.get-defined-vars.html">get_defined_vars</a></li>
+  <li><a href="function.get-resource-type.html">get_resource_type</a></li>
+  <li><a href="function.gettype.html">gettype</a></li>
+  <li><a href="function.import-request-variables.html">import_request_variables</a></li>
+  <li><a href="function.intval.html">intval</a></li>
+  <li><a href="function.is-array.html">is_array</a></li>
+  <li><a href="function.is-bool.html">is_bool</a></li>
+  <li><a href="function.is-callable.html">is_callable</a></li>
+  <li><a href="function.is-double.html">is_double</a></li>
+  <li><a href="function.is-float.html">is_float</a></li>
+  <li><a href="function.is-int.html">is_int</a></li>
+  <li><a href="function.is-integer.html">is_integer</a></li>
+  <li><a href="function.is-iterable.html">is_iterable</a></li>
+  <li><a href="function.is-long.html">is_long</a></li>
+  <li><a href="function.is-null.html">is_null</a></li>
+  <li><a href="function.is-numeric.html">is_numeric</a></li>
+  <li><a href="function.is-object.html">is_object</a></li>
+  <li><a href="function.is-real.html">is_real</a></li>
+  <li><a href="function.is-resource.html">is_resource</a></li>
+  <li><a href="function.is-scalar.html">is_scalar</a></li>
+  <li><a href="function.is-string.html">is_string</a></li>
+  <li><a href="function.isset.html">isset</a></li>
+  <li><a href="function.print-r.html">print_r</a></li>
+  <li class="active"><a href="function.serialize.html">serialize</a></li>
+  <li><a href="function.settype.html">settype</a></li>
+  <li><a href="function.strval.html">strval</a></li>
+  <li><a href="function.unserialize.html">unserialize</a></li>
+  <li><a href="function.unset.html">unset</a></li>
+  <li><a href="function.var-dump.html">var_dump</a></li>
+  <li><a href="function.var-export.html">var_export</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.print-r.html">print_r</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.settype.html">settype</a></div>
+                <div class="up"><a href="ref.var.html">Funktionen zur Behandlung von Variablen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.serialize" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">serialize</h1>
+  <p class="refpurpose">Erzeugt eine speicherbare Repräsentation eines Wertes.</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.serialize-description">
+  <h3 class="title">Beschreibung</h3>
+   <div class="methodsynopsis dc-description">
+    <span class="type">string</span> <span class="methodname">serialize</span>
+     ( <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$value</code></span>
+    )</div>
+
+  <p class="para rdfs-comment">
+   Erzeugt eine speicherbare Repräsentation eines Wertes.
+  </p>
+  <p class="para">
+   Diese Funktion dient der Speicherung oder Übergabe von PHP-Werten, ohne
+   dass diese ihren Typ oder ihre Struktur verlieren.
+  </p>
+  <p class="para">
+   Um eine serialisierte Zeichenkette wieder als PHP-Wert verfügbar zu machen,
+   verwenden Sie <span class="function">unserialize</span>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.serialize-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">value</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der zu serialisierende Wert. <span class="function">serialize</span> kann mit allen
+       Typen umgehen, ausgenommen mit dem <span class="type">resource</span>-Typ. Sie können
+       sogar Arrays serialisieren, die Referenzen auf sich selbst enthalten.
+       Zirkelbezüge innerhalb des Arrays/Objekts, das Sie serialisieren, werden
+       ebenfalls gespeichert. Alle anderen Referenzen gehen verloren.
+      </p>
+      <p class="para">
+       Wenn Objekte serialisiert werden, versucht PHP die
+       Methode <a href="language.oop5.magic.html#object.sleep" class="link">__sleep</a>
+       vor der Serialisierung
+       aufzurufen. Dies erlaubt einem Objekt z.B. letzte &quot;Aufräumaktionen&quot;,
+       bevor es serialisiert wird. Ebenso wird die Methode <a href="language.oop5.magic.html#object.wakeup" class="link">__wakeup</a> aufgerufen, wenn das
+       Objekt mittels <span class="function">unserialize</span> wiederhergestellt wird.
+      </p>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+        Den Namen der privaten Eigenschaften eines Objekts wird der Klassenname
+        vorangestellt; den Namen geschützter Eigenschaften wird ein &#039;*&#039;
+        vorangestellt. Diese vorangestellten Werte werden von Nullbytes
+        umschlossen.
+       </p>
+      </p></blockquote>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.serialize-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt einen String zurück, der eine Byte-Stream-Repräsentation von
+   <code class="parameter">value</code> enthält, die beliebig gespeichert werden kann.
+  </p>
+  <p class="para">
+   Es ist zu beachten, dass dies ein Binärstring ist, der Null-Bytes enthalten
+   kann, und als solcher gespeichert und behandelt werden muss. Zum Beispiel
+   sollte die Ausgabe von <span class="function">serialize</span> grundsätzlich in einem
+   BLOB- statt einem CHAR- oder TEXT-Feld in einer Datenbank gespeichert werden.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.serialize-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-6026">
+    <p><strong>Beispiel #1 <span class="function">serialize</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;$session_data&nbsp;enthält&nbsp;ein&nbsp;mehrdimensionales&nbsp;Array&nbsp;mit&nbsp;Session-Informationen<br />//&nbsp;des&nbsp;aktuellen&nbsp;Benutzers.&nbsp;Wir&nbsp;benutzen&nbsp;serialize()&nbsp;um&nbsp;diese&nbsp;Infos&nbsp;am&nbsp;Ende<br />//&nbsp;der&nbsp;Anfrage&nbsp;in&nbsp;eine&nbsp;Datenbank&nbsp;zu&nbsp;speichern.<br /><br /></span><span style="color: #0000BB">$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">odbc_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"webdb"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"php"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"chicken"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">odbc_prepare</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"UPDATE&nbsp;sessions&nbsp;SET&nbsp;data&nbsp;=&nbsp;?&nbsp;WHERE&nbsp;id&nbsp;=&nbsp;?"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$sqldata&nbsp;</span><span style="color: #007700">=&nbsp;array&nbsp;(</span><span style="color: #0000BB">serialize</span><span style="color: #007700">(</span><span style="color: #0000BB">$session_data</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_AUTH_USER'</span><span style="color: #007700">]);<br />if&nbsp;(!</span><span style="color: #0000BB">odbc_execute</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$sqldata</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">odbc_prepare</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"INSERT&nbsp;INTO&nbsp;sessions&nbsp;(id,&nbsp;data)&nbsp;VALUES(?,&nbsp;?)"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">odbc_execute</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$sqldata</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Irgendwas&nbsp;ging&nbsp;schief&nbsp;...&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.serialize-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Beachte, dass viele eingebaute PHP Objekte nicht serialisiert
+    werden können. Diejenigen mit dieser Eigenschaft implementieren
+    entweder das <span class="interfacename">Serializable</span> Interface
+    oder die magischen <a href="language.oop5.magic.html#object.sleep" class="link">__sleep</a>
+    und <a href="language.oop5.magic.html#object.wakeup" class="link">__wakeup</a>
+    Methoden. Wenn eine eingebaute Klasse nicht mindestens eine dieser
+    Voraussetzungen erfüllt, kann sie nicht verlässlich serialisiert werden.
+   </p>
+   <p class="para">
+     Es gibt einige historische Ausnahmen dieser Regel, bei denen
+    interne Objekte serialisiert werden konnten, ohne das Interface zu
+    implementieren oder die Methoden offenzulegen. Namentlich
+    <span class="classname">ArrayObject</span> vor PHP 5.2.0.
+   </p>
+  </p></blockquote>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="para">
+    Wenn <span class="function">serialize</span> Objekte serialisiert, ist zwecks
+    größtmöglicher Kompatibilität der führende Backslash nicht im Namen von
+    Klassen in Namensräumen enthalten.
+   </p>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.serialize-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">unserialize</span></li>
+    <li class="member"><span class="function">var_export</span></li>
+     <li class="member"><span class="function">json_encode</span></li>
+    <li class="member"><a href="language.oop5.serialization.html" class="link">Objekte serialisieren</a></li>
+    <li class="member"><a href="language.oop5.magic.html#object.sleep" class="link">__sleep</a></li>
+    <li class="member"><a href="language.oop5.magic.html#object.wakeup" class="link">__wakeup</a></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

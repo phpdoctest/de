@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Installation</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.pgsql.html">PostgreSQL</a></li>
+  <li class="header up"><a href="pgsql.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="pgsql.requirements.html">Anforderungen</a></li>
+  <li class="active"><a href="pgsql.installation.html">Installation</a></li>
+  <li><a href="pgsql.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="pgsql.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="pgsql.requirements.html">Anforderungen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="pgsql.configuration.html">Laufzeit-Konfiguration</a></div>
+                <div class="up"><a href="pgsql.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="pgsql.installation" class="section">
+ <h2 class="title">Installation</h2>
+ <p class="para">
+  Um die PostgreSQL-Unterstützung zu aktivieren, müssen Sie PHP mit der
+  Option <strong class="option configure">--with-pgsql[=DIR]</strong>
+ kompilieren.
+  <em>DIR</em> ist das Basis-Installationsverzeichnis von PostgreSQL,
+  normalerweise <var class="filename">/usr/local/pgsql</var>. Falls das
+  shared-object-Modul verfügbar ist, kann PostgreSQL mit der
+  <a href="ini.core.html#ini.extension" class="link">extension</a>-Directive in der <var class="filename">php.ini</var>
+  oder der Funktion <span class="function">dl</span> geladen werden.
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Liefert ein bestimmtes Funktionsargument</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li class="header up"><a href="book.funchand.html">Function Handling</a></li>
+  <li class="header up"><a href="ref.funchand.html">Function handling Funktionen</a></li>
+  <li><a href="function.call-user-func-array.html">call_user_func_array</a></li>
+  <li><a href="function.call-user-func.html">call_user_func</a></li>
+  <li><a href="function.create-function.html">create_function</a></li>
+  <li><a href="function.forward-static-call-array.html">forward_static_call_array</a></li>
+  <li><a href="function.forward-static-call.html">forward_static_call</a></li>
+  <li class="active"><a href="function.func-get-arg.html">func_get_arg</a></li>
+  <li><a href="function.func-get-args.html">func_get_args</a></li>
+  <li><a href="function.func-num-args.html">func_num_args</a></li>
+  <li><a href="function.function-exists.html">function_exists</a></li>
+  <li><a href="function.get-defined-functions.html">get_defined_functions</a></li>
+  <li><a href="function.register-shutdown-function.html">register_shutdown_function</a></li>
+  <li><a href="function.register-tick-function.html">register_tick_function</a></li>
+  <li><a href="function.unregister-tick-function.html">unregister_tick_function</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.forward-static-call.html">forward_static_call</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.func-get-args.html">func_get_args</a></div>
+                <div class="up"><a href="ref.funchand.html">Function handling Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.func-get-arg" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">func_get_arg</h1>
+  <p class="refpurpose">Liefert ein bestimmtes Funktionsargument</p>
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.func-get-arg-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname">func_get_arg</span>
+    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$arg_num</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Liefert das mit <code class="parameter">arg_num</code> angegebene Argument
+   aus der Liste der Argumente einer benutzerdefinierten Funktion.
+  </p>
+  <p class="para">
+   Diese Funktion kann zusammen mit <span class="function">func_get_args</span>
+   und <span class="function">func_num_args</span> genutzt werden um benutzerdefinierte
+   Funktionen mit einer variablen Anzahl von Argumenten zu implementieren.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.func-get-arg-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">arg_num</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Offset des Arguments. Funktionsargumente werden mit 0 beginnend
+       gezählt.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.func-get-arg-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Liefert das gewünschte Argument oder <strong><code>FALSE</code></strong> bei Fehlern.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.func-get-arg-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        Diese Funktion kann nun auch in Parameterlisten genutzt werden. 
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        Wird diese Funktion aus dem äußersten Geltungsbereich einer Datei
+        aufgerufen, die durch den Aufruf von <span class="function">include</span> oder
+        <span class="function">require</span> innerhalb einer Funktion in der aufrufenden
+        Datei inkludiert wurde, wird nun eine Warnung generiert und <strong><code>FALSE</code></strong>
+        zurückgegeben.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-function.func-get-arg-errors">
+  <h3 class="title">Fehler/Exceptions</h3>
+  <p class="para">
+   Die Funktion generiert eine Warnung wenn sie außerhalb einer
+   benutzerdefinierten Funktion aufgerufen wird oder wenn 
+   <code class="parameter">arg_num</code> größer ist als die Anzahl der
+   tatsächlich übergebenen Argumente.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.func-get-arg-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-5848">
+    <p><strong>Beispiel #1 <span class="function">func_get_arg</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$numargs&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">func_num_args</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Anzahl&nbsp;der&nbsp;Funktionsargumente:&nbsp;</span><span style="color: #0000BB">$numargs</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$numargs&nbsp;</span><span style="color: #007700">&gt;=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Das&nbsp;zweite&nbsp;Argument&nbsp;ist:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">func_get_arg</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Anzahl der Funktionsargumente: 3
+Das zweite Argument ist: 2
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-5849">
+    <p><strong>Beispiel #2 <span class="function">func_get_arg</span> Beispiel vor and nach PHP 5.3</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+test.php<br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;include&nbsp;</span><span style="color: #DD0000">'./fga.inc'</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #DD0000">'Erstes&nbsp;Argument'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Zweites&nbsp;Argument'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;<br /></span><br />fga.inc<br /><span style="color: #0000BB">&lt;?php<br /><br />$arg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">func_get_arg</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_export</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Ausgabe vor PHP 5.3:
+    </p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+&#039;Zweites Argument&#039;
+</pre></div>
+    </div>
+    <div class="example-contents"><p>
+     Ausgabe in PHP 5.3 und neuer:
+    </p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Warning: func_get_arg():  Called from the global scope - no function
+context in /home/torben/Desktop/code/ml/fga.inc on line 3
+false
+</pre></div>
+    </div>
+   </div>
+  </p>
+
+  <p class="para">
+   <div class="example" id="example-5850">
+    <p><strong>Beispiel #3 <span class="function">func_get_arg</span> Beispiel zu byref und byval Argumenten</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">byVal</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Wie&nbsp;übergeben&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">var_export</span><span style="color: #007700">(</span><span style="color: #0000BB">func_get_arg</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">)),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'baz'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Nach&nbsp;Änderung&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">var_export</span><span style="color: #007700">(</span><span style="color: #0000BB">func_get_arg</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">)),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />}<br /><br />function&nbsp;</span><span style="color: #0000BB">byRef</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$arg</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Wie&nbsp;übergeben&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">var_export</span><span style="color: #007700">(</span><span style="color: #0000BB">func_get_arg</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">)),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'baz'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Nach&nbsp;Änderung&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">var_export</span><span style="color: #007700">(</span><span style="color: #0000BB">func_get_arg</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">)),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$arg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">byVal</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">byRef</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+     <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen"><br />
+Wie übergeben : &#039;bar&#039;<br />
+Nach Änderung : &#039;bar&#039;<br />
+Wie übergeben : &#039;bar&#039;<br />
+Nach Änderung : &#039;baz&#039;<br />
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.func-get-arg-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Da diese Funktion bei der Ermittlung
+der Parameterdetails von dem aktuellen Ausführungskontext abhängt, kann sie in PHP-Versionen vor 5.3.0
+selbst nicht als Funktionsparameter genutzt werden. Wenn Sie ihre Ergebnisse
+tatsächlich weitergeben müssen, so müssen Sie diese zunächst einer Variablen
+zuweisen und dann diese Variable übergeben</p></p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Wenn die Parameter
+als Referenzen übergeben werden, so finden sich alle Änderungen an diesen Parametern in
+den Rückgabewerten dieser Funktion wieder.</p></p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    Diese Funktion liefert eine Kopie des übergebenen Arguments.
+    Sie hat nur Zugriff auf tatsächlich übergebene Argumente, 
+    Vorgabewerte von Parametern sind für sie nicht sichtbar. 
+   </span>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.func-get-arg-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><a href="functions.arguments.html#functions.variable-arg-list.new" class="link"><em>...</em> syntax in PHP 5.6+</a></li>
+    <li class="member"><span class="function">func_get_args</span></li>
+    <li class="member"><span class="function">func_num_args</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

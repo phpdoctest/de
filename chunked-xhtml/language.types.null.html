@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: NULL</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.types.html">Typen</a></li>
+  <li><a href="language.types.intro.html">Einf&uuml;hrung</a></li>
+  <li><a href="language.types.boolean.html">Booleans</a></li>
+  <li><a href="language.types.integer.html">Integers</a></li>
+  <li><a href="language.types.float.html">Floating point numbers</a></li>
+  <li><a href="language.types.string.html">Strings</a></li>
+  <li><a href="language.types.array.html">Arrays</a></li>
+  <li><a href="language.types.object.html">Objekte</a></li>
+  <li><a href="language.types.resource.html">Ressourcen</a></li>
+  <li class="active"><a href="language.types.null.html">NULL</a></li>
+  <li><a href="language.types.callable.html">Callbacks / Callables</a></li>
+  <li><a href="language.pseudo-types.html">Pseudo-types and variables used in this documentation</a></li>
+  <li><a href="language.types.type-juggling.html">Type Juggling</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.types.resource.html">Ressourcen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.types.callable.html">Callbacks / Callables</a></div>
+                <div class="up"><a href="language.types.html">Typen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.types.null" class="sect1">
+ <h2 class="title">NULL</h2>
+  
+ <p class="para">
+  Der spezielle Wert <strong><code>NULL</code></strong> repräsentiert eine Variable ohne Wert.
+  <strong><code>NULL</code></strong> ist der einzig mögliche Wert des Typs <span class="type">null</span>.
+ </p>
+
+ <p class="para">
+  Eine Variable gilt als vom Typ <span class="type">null</span> wenn:
+ </p>
+
+ <ul class="itemizedlist">
+  <li class="listitem">
+   <p class="para">
+    ihr die Konstante <strong><code>NULL</code></strong> zugewiesen wurde.
+   </p>
+  </li>
+  <li class="listitem">
+   <p class="para">
+    ihr noch kein Wert zugewiesen wurde.
+   </p>
+  </li>
+  <li class="listitem">
+   <p class="para">
+    sie mit <span class="function">unset</span> gelöscht wurde.
+   </p>
+  </li>
+ </ul>
+  
+ <div class="sect2" id="language.types.null.syntax">
+  <h3 class="title">Syntax</h3>
+
+  <p class="para">
+   Es gibt nur einen Wert vom Typ <span class="type">null</span>:
+   die Konstante <strong><code>NULL</code></strong> (Groß- und Kleinschreibung ist
+   dabei nicht wichtig).
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+  <p class="para">
+   Siehe auch die Funktionen <span class="function">is_null</span> und
+   <span class="function">unset</span>.
+  </p>
+
+ </div>
+
+ <div class="sect2" id="language.types.null.casting">
+  <h3 class="title">Umwandlung in <strong><code>NULL</code></strong></h3>
+
+  <p class="para">
+   Die Umwandlung einer Variable auf den Typ <span class="type">null</span> durch
+   <em>(unset) $var</em>
+   entfernt die Variable <em class="emphasis">nicht</em> und löscht <em class="emphasis">nicht </em> ihren Inhalt.
+   Es wird lediglich ein <strong><code>NULL</code></strong> Wert zurück gegeben.
+  </p>
+
+ </div>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

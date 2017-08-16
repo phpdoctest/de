@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Schlie&szlig;t eine Oracle-Verbindung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.oci8.html">OCI8</a></li>
+  <li class="header up"><a href="ref.oci8.html">OCI8 Funktionen</a></li>
+  <li><a href="function.oci-bind-array-by-name.html">oci_bind_array_by_name</a></li>
+  <li><a href="function.oci-bind-by-name.html">oci_bind_by_name</a></li>
+  <li><a href="function.oci-cancel.html">oci_cancel</a></li>
+  <li><a href="function.oci-client-version.html">oci_client_version</a></li>
+  <li class="active"><a href="function.oci-close.html">oci_close</a></li>
+  <li><a href="function.oci-commit.html">oci_commit</a></li>
+  <li><a href="function.oci-connect.html">oci_connect</a></li>
+  <li><a href="function.oci-define-by-name.html">oci_define_by_name</a></li>
+  <li><a href="function.oci-error.html">oci_error</a></li>
+  <li><a href="function.oci-execute.html">oci_execute</a></li>
+  <li><a href="function.oci-fetch-all.html">oci_fetch_all</a></li>
+  <li><a href="function.oci-fetch-array.html">oci_fetch_array</a></li>
+  <li><a href="function.oci-fetch-assoc.html">oci_fetch_assoc</a></li>
+  <li><a href="function.oci-fetch-object.html">oci_fetch_object</a></li>
+  <li><a href="function.oci-fetch-row.html">oci_fetch_row</a></li>
+  <li><a href="function.oci-fetch.html">oci_fetch</a></li>
+  <li><a href="function.oci-field-is-null.html">oci_field_is_null</a></li>
+  <li><a href="function.oci-field-name.html">oci_field_name</a></li>
+  <li><a href="function.oci-field-precision.html">oci_field_precision</a></li>
+  <li><a href="function.oci-field-scale.html">oci_field_scale</a></li>
+  <li><a href="function.oci-field-size.html">oci_field_size</a></li>
+  <li><a href="function.oci-field-type-raw.html">oci_field_type_raw</a></li>
+  <li><a href="function.oci-field-type.html">oci_field_type</a></li>
+  <li><a href="function.oci-free-descriptor.html">oci_free_descriptor</a></li>
+  <li><a href="function.oci-free-statement.html">oci_free_statement</a></li>
+  <li><a href="function.oci-get-implicit-resultset.html">oci_get_implicit_resultset</a></li>
+  <li><a href="function.oci-internal-debug.html">oci_internal_debug</a></li>
+  <li><a href="function.oci-lob-copy.html">oci_lob_copy</a></li>
+  <li><a href="function.oci-lob-is-equal.html">oci_lob_is_equal</a></li>
+  <li><a href="function.oci-new-collection.html">oci_new_collection</a></li>
+  <li><a href="function.oci-new-connect.html">oci_new_connect</a></li>
+  <li><a href="function.oci-new-cursor.html">oci_new_cursor</a></li>
+  <li><a href="function.oci-new-descriptor.html">oci_new_descriptor</a></li>
+  <li><a href="function.oci-num-fields.html">oci_num_fields</a></li>
+  <li><a href="function.oci-num-rows.html">oci_num_rows</a></li>
+  <li><a href="function.oci-parse.html">oci_parse</a></li>
+  <li><a href="function.oci-password-change.html">oci_password_change</a></li>
+  <li><a href="function.oci-pconnect.html">oci_pconnect</a></li>
+  <li><a href="function.oci-result.html">oci_result</a></li>
+  <li><a href="function.oci-rollback.html">oci_rollback</a></li>
+  <li><a href="function.oci-server-version.html">oci_server_version</a></li>
+  <li><a href="function.oci-set-action.html">oci_set_action</a></li>
+  <li><a href="function.oci-set-client-identifier.html">oci_set_client_identifier</a></li>
+  <li><a href="function.oci-set-client-info.html">oci_set_client_info</a></li>
+  <li><a href="function.oci-set-edition.html">oci_set_edition</a></li>
+  <li><a href="function.oci-set-module-name.html">oci_set_module_name</a></li>
+  <li><a href="function.oci-set-prefetch.html">oci_set_prefetch</a></li>
+  <li><a href="function.oci-statement-type.html">oci_statement_type</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.oci-client-version.html">oci_client_version</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.oci-commit.html">oci_commit</a></div>
+                <div class="up"><a href="ref.oci8.html">OCI8 Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.oci-close" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">oci_close</h1>
+  <p class="refpurpose">Schließt eine Oracle-Verbindung</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.oci-close-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">oci_close</span>
+    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Hebt die <code class="parameter">connection</code> auf. Die unterliegende
+   Datenbank-Verbindung wird geschlossen, wenn sie von keinen anderen Ressourcen
+   verwendet wird, und wenn sie mit <span class="function">oci_connect</span> oder
+   <span class="function">oci_new_connect</span> erzeugt wurde.
+  </p>
+  <p class="para">
+   Es wird empfohlen nicht mehr benötigte Verbindungen zu schließen, da dies
+   Datenbankressourcen für andere Nutzer frei gibt.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.oci-close-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">connection</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ein Zeiger auf eine Oracle-Verbindung, die durch <span class="function">oci_connect</span>,
+       <span class="function">oci_pconnect</span> oder <span class="function">oci_new_connect</span>
+       zurückgegeben wurde.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.oci-close-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+
+ <div class="refsect1 examples" id="refsect1-function.oci-close-examples">
+  <h3 class="title">Beispiele</h3>
+  <div class="example" id="example-2167">
+   <p><strong>Beispiel #1 Schließen einer Verbindung</strong></p>
+   <div class="example-contents"><p>
+    Ressourcen, die mit einer Verbindung assoziiert sind, sollten geschlossen
+    werden, um sicher zu stellen, dass die unterliegende Datenbankverbindung
+    ordnungsgemäß beendet wird, und die Datenbankressourcen frei gegeben werden.
+   </p></div>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'hr'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'welcome'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'localhost/XE'</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$conn</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$e&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_error</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">trigger_error</span><span style="color: #007700">(</span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">$e</span><span style="color: #007700">[</span><span style="color: #DD0000">'message'</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">ENT_QUOTES</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">E_USER_ERROR</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">$stid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_parse</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SELECT&nbsp;*&nbsp;FROM&nbsp;departments'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$r&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_execute</span><span style="color: #007700">(</span><span style="color: #0000BB">$stid</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">oci_fetch_all</span><span style="color: #007700">(</span><span style="color: #0000BB">$stid</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$res</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Freigeben&nbsp;des&nbsp;Anweisungsbezeichners,&nbsp;wenn&nbsp;die&nbsp;Verbindung&nbsp;geschlossen&nbsp;wird<br /></span><span style="color: #0000BB">oci_free_statement</span><span style="color: #007700">(</span><span style="color: #0000BB">$stid</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">oci_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+  <div class="example" id="example-2168">
+   <p><strong>Beispiel #2 Datenbankverbindungen werden nicht geschlossen, bevor alle Referenzen geschlossen wurden</strong></p>
+   <div class="example-contents"><p>
+    Der interne Referenzzähler eines Verbindungsbezeichners muss null (0) sein,
+    bevor die unterliegende Verbindung zur Datenbank geschlossen wird.
+   </p></div>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'hr'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'welcome'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'localhost/XE'</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$conn</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$e&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_error</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">trigger_error</span><span style="color: #007700">(</span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">$e</span><span style="color: #007700">[</span><span style="color: #DD0000">'message'</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">ENT_QUOTES</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">E_USER_ERROR</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">$stid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_parse</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SELECT&nbsp;*&nbsp;FROM&nbsp;departments'</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;dies&nbsp;erhöht&nbsp;den&nbsp;Referenzzähler&nbsp;von&nbsp;$conn<br /></span><span style="color: #0000BB">oci_execute</span><span style="color: #007700">(</span><span style="color: #0000BB">$stid</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">oci_fetch_all</span><span style="color: #007700">(</span><span style="color: #0000BB">$stid</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$res</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">oci_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;$conn&nbsp;ist&nbsp;im&nbsp;Script&nbsp;nicht&nbsp;länger&nbsp;verwendbar,&nbsp;aber&nbsp;die&nbsp;unterliegende<br />//&nbsp;Datenbankverbindung&nbsp;wird&nbsp;solange&nbsp;offen&nbsp;gehalten&nbsp;bis&nbsp;$stid&nbsp;frei&nbsp;gegeben&nbsp;wird.<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;NULL&nbsp;aus<br /><br />//&nbsp;Während&nbsp;PHP&nbsp;schläft,&nbsp;zeigt&nbsp;das&nbsp;Abfragen&nbsp;der&nbsp;Oracle&nbsp;V$SESSION&nbsp;Ansicht&nbsp;in&nbsp;einem<br />//&nbsp;Terminal-Fenster,&nbsp;dass&nbsp;der&nbsp;Datenbanknutzer&nbsp;immer&nbsp;noch&nbsp;verbunden&nbsp;ist.<br /></span><span style="color: #0000BB">sleep</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Wenn&nbsp;$stid&nbsp;frei&nbsp;gegegben&nbsp;wird,&nbsp;wird&nbsp;die&nbsp;Datenbankverbindung&nbsp;physikalisch&nbsp;geschlossen<br /></span><span style="color: #0000BB">oci_free_statement</span><span style="color: #007700">(</span><span style="color: #0000BB">$stid</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Während&nbsp;PHP&nbsp;schläft,&nbsp;zeigt&nbsp;das&nbsp;Abfragen&nbsp;der&nbsp;Oracle&nbsp;V$SESSION&nbsp;Ansicht&nbsp;in&nbsp;einem<br />//&nbsp;Terminal-Fenster,&nbsp;dass&nbsp;der&nbsp;Datenbanknutzer&nbsp;getrennt&nbsp;wurde<br /></span><span style="color: #0000BB">sleep</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+  <div class="example" id="example-2169">
+   <p><strong>Beispiel #3 Schließen einer Verbindung, die mehr als einmal geöffnet wurde</strong></p>
+   <div class="example-contents"><p>
+    Wenn Datenbankanmeldedaten wiederverwendet werden, müssen beide Verbindungen
+    geschlossen werden, bevor die unterliegende Datenbankverbindung geschlossen
+    wird.
+   </p></div>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$conn1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'hr'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'welcome'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'localhost/XE'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Die&nbsp;Verwendung&nbsp;der&nbsp;selben&nbsp;Anmeldedaten&nbsp;benutzt&nbsp;die&nbsp;selbe&nbsp;unterliegende&nbsp;Datenbankverbindung&nbsp;nochmals<br />//&nbsp;Jegliche&nbsp;unbestätigten&nbsp;Änderungen,&nbsp;die&nbsp;auf&nbsp;$conn1&nbsp;durchgeführt&nbsp;wurden,&nbsp;sind&nbsp;in&nbsp;$conn2&nbsp;sichtbar<br /></span><span style="color: #0000BB">$conn2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'hr'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'welcome'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'localhost/XE'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Während&nbsp;PHP&nbsp;schläft,&nbsp;zeigt&nbsp;das&nbsp;Abfragen&nbsp;der&nbsp;Oracle&nbsp;V$SESSION&nbsp;Ansicht&nbsp;in&nbsp;einem<br />//&nbsp;Terminal-Fenster,&nbsp;dass&nbsp;nur&nbsp;ein&nbsp;Datenbanknutzer&nbsp;verbunden&nbsp;ist.<br /></span><span style="color: #0000BB">sleep</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">oci_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn1</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;schließt&nbsp;nicht&nbsp;die&nbsp;unterliegende&nbsp;Datenbankverbindung<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn1</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;NULL&nbsp;aus,&nbsp;weil&nbsp;die&nbsp;Variable&nbsp;$conn1&nbsp;nicht&nbsp;länger&nbsp;verwendbar&nbsp;ist<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn2</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;zeigt&nbsp;an,&nbsp;dass&nbsp;$conn2&nbsp;noch&nbsp;immer&nbsp;eine&nbsp;gültige&nbsp;Verbindungsressource&nbsp;ist<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+  <div class="example" id="example-2170">
+   <p><strong>Beispiel #4 Verbindungen werden geschlossen, wenn die Variablen den Geltungsbereich verlassen</strong></p>
+   <div class="example-contents"><p>
+    Wenn alle Variablen, die eine Verbindung referenzieren, den Geltungsbereich
+    verlassen und von PHP frei gegeben werden, erfolgt ein Rollback (falls
+    nötig) und die unterliegende Verbindung zur Datenbank wird geschlossen.
+   </p></div>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">myfunc</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'hr'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'hrpwd'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'localhost/XE'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">$conn</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$e&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_error</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">trigger_error</span><span style="color: #007700">(</span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">$e</span><span style="color: #007700">[</span><span style="color: #DD0000">'message'</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">ENT_QUOTES</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">E_USER_ERROR</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_parse</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'UPDATE&nbsp;mytab&nbsp;SET&nbsp;id&nbsp;=&nbsp;100'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">oci_execute</span><span style="color: #007700">(</span><span style="color: #0000BB">$stid</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">OCI_NO_AUTO_COMMIT</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">"Beendet"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$r&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">myfunc</span><span style="color: #007700">();<br /></span><span style="color: #FF8000">//&nbsp;In&nbsp;diesem&nbsp;Moment&nbsp;erfolgte&nbsp;ein&nbsp;Rollback&nbsp;und&nbsp;die&nbsp;unterliegende&nbsp;Datenbankverbindung&nbsp;wurde&nbsp;frei&nbsp;gegeben.<br /><br /></span><span style="color: #007700">print&nbsp;</span><span style="color: #0000BB">$r</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;zeigt&nbsp;den&nbsp;Funktionsrückgabewert&nbsp;"Beendet"&nbsp;an<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.oci-close-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Variablen, die eine Abhängigkeit vom Verbindungsbezeichner haben, wie von
+    <span class="function">oci_parse</span> zurückgegebene Anweisungsbezeichner, müssen
+    ebenfalls frei gegeben werden, bevor die unterliegende Datenbankverbindung
+    geschlossen wird.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Vor Version PHP 5.1.2 (PECL OCI8 1.1) hatte <span class="function">oci_close</span>
+    keine Wirkung. In neueren Version schließt es korrekt die Oracle-Verbindung.
+    <a href="oci8.configuration.html#ini.oci8.old-oci-close-semantics" class="link">oci8.old_oci_close_semantics</a>
+    kann verwendet werden, um das alte Verhalten dieser Funktion wieder
+    herzustellen.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Die <span class="function">oci_close</span> Funktion schließt nicht unterliegende
+    Datenbankverbindungen, die mit <span class="function">oci_pconnect</span> erzeugt
+    wurden.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.oci-close-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">oci_connect</span></li>
+    <li class="member"><span class="function">oci_free_statement</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Allgemeine &Uuml;berlegungen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="security.html">Sicherheit</a></li>
+  <li><a href="security.intro.html">Einf&uuml;hrung</a></li>
+  <li class="active"><a href="security.general.html">Allgemeine &Uuml;berlegungen</a></li>
+  <li><a href="security.cgi-bin.html">Installiert als CGI-Version</a></li>
+  <li><a href="security.apache.html">Verwendung als Apache-Modul</a></li>
+  <li><a href="security.sessions.html">Session Security</a></li>
+  <li><a href="security.filesystem.html">Dateisystem - Sicherheit</a></li>
+  <li><a href="security.database.html">Datenbank - Sicherheit</a></li>
+  <li><a href="security.errors.html">Fehlerbehandlung</a></li>
+  <li><a href="security.globals.html">Using Register Globals</a></li>
+  <li><a href="security.variables.html">Vom Nutzer &uuml;bermittelte Daten</a></li>
+  <li><a href="security.magicquotes.html">Magic Quotes</a></li>
+  <li><a href="security.hiding.html">PHP verstecken</a></li>
+  <li><a href="security.current.html">Aktuell bleiben</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="security.intro.html">Einf&uuml;hrung</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="security.cgi-bin.html">Installiert als CGI-Version</a></div>
+                <div class="up"><a href="security.html">Sicherheit</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="security.general" class="chapter">
+   <h1>Allgemeine Überlegungen</h1>
+   <p class="simpara">
+    Ein komplett sicheres System ist praktisch ein Ding der Unmöglichkeit,
+    weshalb ein unter Sicherheitsprofis oft genutzter Ansatz ist, einen
+    Mittelweg zwischen Risiko und Verwendbarkeit zu finden.
+    Wenn jede von einem Benutzer übermittelte Variable zwei Formen von
+    biometrischer Prüfung (wie z.B. ein Scan der Netzhaut und ein
+    Fingerabdruck) verlangen würde, wäre eine extrem hohe Ebene der
+    Verantwortlichkeit erreicht. Ein sehr komplexes Formular auszufüllen
+    würde auch eine halbe Stunde in Anspruch nehmen, die Benutzer dazu
+    ermuntern könnte, Wege zur Umgehung der Sicherheitsmaßnahmen zu suchen.
+   </p>
+   <p class="simpara">
+    Die beste Sicherheit ist oft unaufdringlich genug, um den Anforderungen
+    zu entsprechen, ohne den Benutzer an seiner Arbeit zu hindern oder den
+    Code-Autor mit übertriebener Komplexität zu überlasten. Tatsächlich
+    sind einige Sicherheitsangriffe nur die Folge von allzu strengen
+    Sicherheitsmaßnahmen, was mit der Zeit nur zu deren Unterminierung
+    führt.
+   </p>
+   <p class="simpara">
+    Eine Phrase, die es wert ist, sich an sie zu erinnern: Ein System ist nur
+    so gut wie das schwächste Glied in der Kette. Wenn alle Transaktionen
+    mittels Zeit, Ort, Transaktionstyp, etc. streng mitprotokolliert werden,
+    der Benutzer aber nur mittels eines einzigen Cookies verifiziert wird,
+    lässt die Zuverlässigkeit für die Bindung des Benutzers an das
+    Transaktions-Log bedrohlich nach.
+   </p>
+   <p class="simpara">
+    Denken Sie während der Tests daran, dass Sie selbst für die einfachsten
+    Seiten nicht alle Möglichkeiten testen können. Der von Ihnen vielleicht
+    erwartete Input wird zu dem eines verstimmten Mitarbeiters oder eines
+    Crackers, der Monate Zeit hat, oder einer Katze, die über die Tastatur
+    läuft, in keinerlei Zusammenhang stehen. Deshalb betrachten Sie Ihren
+    Code am Besten aus der logischen Perspektive, um zu erkennen, wo
+    unerwartete Daten eingebracht werden können und fragen sich dann,
+    wie diese modifiziert, reduziert, oder weiter ausgeführt werden.
+   </p>
+   <p class="simpara">
+    Das Internet ist voll von Leuten, die versuchen, sich durch
+    Entschlüsseln/Zerstören Ihres Codes, den Zusammenbruch Ihres
+    Systems, Einsetzen von unangebrachten Inhalten, und anderen, Ihren
+    Tag interessant gestaltenden Maßnahmen, einen Namen zu machen.
+    Es ist egal, ob Sie eine kleine oder große Site haben, Sie sind
+    einfach ein Ziel, wenn Sie online sind oder wenn Sie einen Server
+    haben, zu dem man eine Verbindung aufbauen kann. Viele
+    Cracker-Programme erkennen nicht die Größe, sondern durchsieben
+    einfach gewaltige IP-Blöcke im Netz, um Opfer zu finden. Versuchen
+    Sie, keines zu werden.
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

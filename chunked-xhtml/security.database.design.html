@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Datenbanken designen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="security.html">Sicherheit</a></li>
+  <li class="header up"><a href="security.database.html">Datenbank - Sicherheit</a></li>
+  <li class="active"><a href="security.database.design.html">Datenbanken designen</a></li>
+  <li><a href="security.database.connection.html">Zur Datenbank verbinden</a></li>
+  <li><a href="security.database.storage.html">Verschl&uuml;sseltes Speichermodell</a></li>
+  <li><a href="security.database.sql-injection.html">SQL Injection</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="security.database.html">Datenbank - Sicherheit</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="security.database.connection.html">Zur Datenbank verbinden</a></div>
+                <div class="up"><a href="security.database.html">Datenbank - Sicherheit</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="security.database.design" class="sect1">
+    <h2 class="title">Datenbanken designen</h2>
+     <p class="simpara">
+      Der erste Schritt liegt immer im Erstellen der Datenbank, außer Sie wollen
+      eine bereits existierende Dritter verwenden. Ist eine Datenbank erstellt,
+      ist sie einem Eigentümer zugewiesen, welcher das Kommando zum Erstellen
+      ausgeführt hat. Gewöhnlich kann nur der Eigentümer (oder ein Superuser)
+      alles mit den Objekten in dieser Datenbank machen, und um anderen Benutzern
+      die Verwendung zu erlauben, müssen Rechte vergeben werden.
+     </p>
+     <p class="simpara">
+      Applikationen sollten sich mit der Datenbank nie als deren Eigentümer
+      oder als ein Superuser verbinden, da diese Benutzer jede gewollte Abfrage
+      ausführen können, um z.B. das Schema zu modifizieren (z.B. Tabellen
+      löschen) oder den gesamten Inhalt löschen.
+     </p>
+     <p class="simpara">
+      Sie können verschiedene Datenbanknutzer mit sehr limitierten Rechten auf
+      Datenbankobjekte für jeden Aspekt Ihrer Applikation anlegen. Nur die
+      wirklich benötigten Rechte sollten gewährt werden, und vermeiden Sie, dass
+      der gleiche Benutzer in verschiedenen Anwendungsfällen mit der Datenbank
+      interagieren kann. Das heißt, dass Eindringlinge, welche unter Verwendung
+      einer dieser Referenzen Zugriff auf Ihre Datenbank erlangt haben, nur so
+      viele Änderungen durchführen können, wie es Ihre Applikation kann.
+     </p>
+     <p class="simpara">
+      Implementieren Sie nicht alle Geschäftslogik in die Webapplikation (z.B.
+      Ihr Skript), sondern tun Sie das im Datenbankschema unter Verwendung von
+      Sichten, Triggern, oder Regeln. Wenn sich das System entwickelt, werden
+      neu zu öffnende Ports zu der Datenbank vorgesehen, und Sie müssen die
+      Logik in jedem Datenbank-Client neu implementieren. Überdies können
+      Trigger verwendet werden, um transparent und automatisch mit Feldern
+      umzugehen, welche beim debuggen Ihrer Applikation oder beim
+      Zurückverfolgen von Transaktionen oft einen Einblick gewähren.
+     </p>
+   </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Variable Variablen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.variables.html">Variablen</a></li>
+  <li><a href="language.variables.basics.html">Grundlegendes</a></li>
+  <li><a href="language.variables.predefined.html">Vordefinierte Variablen</a></li>
+  <li><a href="language.variables.scope.html">Geltungsbereich von Variablen</a></li>
+  <li class="active"><a href="language.variables.variable.html">Variable Variablen</a></li>
+  <li><a href="language.variables.external.html">Variablen aus externen Quellen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.variables.scope.html">Geltungsbereich von Variablen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.variables.external.html">Variablen aus externen Quellen</a></div>
+                <div class="up"><a href="language.variables.html">Variablen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.variables.variable" class="sect1">
+   <h2 class="title">Variable Variablen</h2>
+   <p class="simpara">
+    Manchmal ist es komfortabel, variable Variablen-Bezeichner zu
+    benutzen. Das bedeutet, einen Variablen-Namen zu setzen und
+    dynamisch zu gebrauchen. Eine normale Variable wird wie folgt
+    gebildet:
+   </p>
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Hallo"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <p class="simpara">
+    Eine variable Variable nimmt den Wert einer Variablen und
+    behandelt ihn als Bezeichner der Variablen. Im obigen Beispiel
+    kann <em class="emphasis">Hallo</em> als Variablen-Name gebraucht
+    werden, indem man zwei $-Zeichen benutzt, also schreibt:
+   </p>
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">$</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Welt"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <p class="simpara">
+    Nun existieren in der PHP-Symbol-Struktur zwei definierte und
+    gespeicherte Variablen: <var class="varname">$a</var> mit dem Inhalt &quot;Hallo&quot;
+    und <var class="varname">$Hallo</var> mit dem Inhalt &quot;Welt&quot;. Deshalb wird die
+    Anweisung
+   </p>
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$a</span><span style="color: #DD0000">&nbsp;</span><span style="color: #007700">${</span><span style="color: #0000BB">$a</span><span style="color: #007700">}</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <p class="simpara">
+    zur genau gleichen Ausgabe führen wie:
+   </p>
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="cdata"><pre>
+&lt;?php
+echo &quot;$a $Hallo&quot;;
+?&gt;
+</pre></div>
+    </div>
+
+   </div>
+   <p class="simpara">
+    also zu: <span class="computeroutput">Hallo Welt</span>.
+   </p>
+   <p class="simpara">
+    Wenn Sie variable Variablen mit Arrays verwenden, müssen Sie eine
+    Doppeldeutigkeit beachten. Wenn Sie nämlich
+    <var class="varname">$$a[1]</var> schreiben, dann muss der Parser wissen,
+    ob Sie <var class="varname">$a[1]</var> als Variable oder
+    <var class="varname">$$a</var> als Variable und dann [1] als Index dieser
+    Variablen verwenden wollen bzw. gemeint haben. Die Syntax zur
+    Lösung dieser Doppeldeutigkeit: Verwenden Sie im ersten Fall
+    <var class="varname">${$a[1]}</var> und im zweiten Fall
+    <var class="varname">${$a}[1]</var>.
+   </p>
+   <div class="warning"><strong class="warning">Warnung</strong>
+    <p class="simpara">
+     Bitte beachten Sie, dass variable Variablen nicht bei <a href="language.variables.superglobals.html" class="link">Superglobalen
+     Arrays</a> verwendet werden können.
+     Die Variable <em>$this</em> ist also eine 
+     spezielle Variable, die nicht dynamisch referenziert
+     werden kann.
+    </p>
+   </div>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

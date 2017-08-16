@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: F&uuml;gt dem XML-Knoten ein Kind-Element hinzu</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.xml.html">XML-Manipulation</a></li>
+  <li class="header up"><a href="book.simplexml.html">SimpleXML</a></li>
+  <li class="header up"><a href="class.simplexmlelement.html">SimpleXMLElement</a></li>
+  <li><a href="simplexmlelement.addAttribute.html">SimpleXMLElement::addAttribute</a></li>
+  <li class="active"><a href="simplexmlelement.addChild.html">SimpleXMLElement::addChild</a></li>
+  <li><a href="simplexmlelement.asXML.html">SimpleXMLElement::asXML</a></li>
+  <li><a href="simplexmlelement.attributes.html">SimpleXMLElement::attributes</a></li>
+  <li><a href="simplexmlelement.children.html">SimpleXMLElement::children</a></li>
+  <li><a href="simplexmlelement.construct.html">SimpleXMLElement::__construct</a></li>
+  <li><a href="simplexmlelement.count.html">SimpleXMLElement::count</a></li>
+  <li><a href="simplexmlelement.getDocNamespaces.html">SimpleXMLElement::getDocNamespaces</a></li>
+  <li><a href="simplexmlelement.getName.html">SimpleXMLElement::getName</a></li>
+  <li><a href="simplexmlelement.getNamespaces.html">SimpleXMLElement::getNamespaces</a></li>
+  <li><a href="simplexmlelement.registerXPathNamespace.html">SimpleXMLElement::registerXPathNamespace</a></li>
+  <li><a href="simplexmlelement.savexml.html">SimpleXMLElement::saveXML</a></li>
+  <li><a href="simplexmlelement.tostring.html">SimpleXMLElement::__toString</a></li>
+  <li><a href="simplexmlelement.xpath.html">SimpleXMLElement::xpath</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="simplexmlelement.addAttribute.html">SimpleXMLElement::addAttribute</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="simplexmlelement.asXML.html">SimpleXMLElement::asXML</a></div>
+                <div class="up"><a href="class.simplexmlelement.html">SimpleXMLElement</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="simplexmlelement.addChild" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">SimpleXMLElement::addChild</h1>
+  <p class="refpurpose">Fügt dem XML-Knoten ein Kind-Element hinzu</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-simplexmlelement.addChild-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="classsynopsis">
+   <div class="ooclass"><strong class="classname">SimpleXMLElement</strong></div>
+   <div class="methodsynopsis dc-description">
+    <span class="type">SimpleXMLElement</span> <span class="methodname">addChild</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
+    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$namespace</code></span>
+   ]] )</div>
+
+  </div>
+  <p class="para">
+   Fügt ein Kind-Element an den Knoten und gibt ein SimpleXMLElement des Kindes
+   zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-simplexmlelement.addChild-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Name des hinzuzufügenden Kind-Elements.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">value</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Wenn angegeben, der Wert des Kind-Elements.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">namespace</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Wenn angegeben, der Namespace, zu dem das Kind-Element gehört.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-simplexmlelement.addChild-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Die <em>addChild</em>-Methode gibt ein
+   <span class="type">SimpleXMLElement</span>-Objekt zurück, das das zum XML-Knoten
+   hinzugefügte Kind repräsentiert.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-simplexmlelement.addChild-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-6230">
+    <p><strong>Beispiel #1 Hinzufügen von Attributen und Kindern zu einem SimpleXML-Element</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">'example.php'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$sxe&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SimpleXMLElement</span><span style="color: #007700">(</span><span style="color: #0000BB">$xmlstr</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$sxe</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addAttribute</span><span style="color: #007700">(</span><span style="color: #DD0000">'type'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'documentary'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$movie&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$sxe</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addChild</span><span style="color: #007700">(</span><span style="color: #DD0000">'movie'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$movie</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addChild</span><span style="color: #007700">(</span><span style="color: #DD0000">'title'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PHP2:&nbsp;Noch&nbsp;mehr&nbsp;Parser-Geschichten'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$movie</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addChild</span><span style="color: #007700">(</span><span style="color: #DD0000">'plot'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Alles&nbsp;ueber&nbsp;die&nbsp;Leute,&nbsp;die&nbsp;das&nbsp;Kind&nbsp;am&nbsp;Leben&nbsp;erhalten.'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$characters&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$movie</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addChild</span><span style="color: #007700">(</span><span style="color: #DD0000">'characters'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$character&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$characters</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addChild</span><span style="color: #007700">(</span><span style="color: #DD0000">'character'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$character</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addChild</span><span style="color: #007700">(</span><span style="color: #DD0000">'name'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Mr.&nbsp;Parser'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$character</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addChild</span><span style="color: #007700">(</span><span style="color: #DD0000">'actor'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'John&nbsp;Doe'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$rating&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$movie</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addChild</span><span style="color: #007700">(</span><span style="color: #DD0000">'rating'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'5'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$rating</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addAttribute</span><span style="color: #007700">(</span><span style="color: #DD0000">'type'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'stars'</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">$sxe</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">asXML</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-simplexmlelement.addChild-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"> <span class="methodname">SimpleXMLElement::addAttribute</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

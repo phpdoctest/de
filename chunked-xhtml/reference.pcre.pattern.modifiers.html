@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Suchmuster-Modifikatoren</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li class="header up"><a href="book.pcre.html">PCRE</a></li>
+  <li class="header up"><a href="pcre.pattern.html">PCRE-Suchmuster</a></li>
+  <li><a href="reference.pcre.pattern.syntax.html">PCRE regex syntax</a></li>
+  <li class="active"><a href="reference.pcre.pattern.modifiers.html">M&ouml;gliche Modifikatoren in RegEx-Suchmustern</a></li>
+  <li><a href="reference.pcre.pattern.differences.html">Differences From Perl</a></li>
+  <li><a href="reference.pcre.pattern.posix.html">Differences from POSIX regex</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="regexp.reference.performance.html">Performance</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="reference.pcre.pattern.differences.html">Differences From Perl</a></div>
+                <div class="up"><a href="pcre.pattern.html">PCRE-Suchmuster</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="reference.pcre.pattern.modifiers" class="article">
+ <h1>Suchmuster-Modifikatoren</h1>
+ 
+ <p class="para">
+  Die zurzeit möglichen PCRE-Modifikatoren sind unten aufgelistet. Die
+  Bezeichnungen in Klammern beziehen sich auf die internen PCRE-Bezeichnungen
+  für diese Modifikatoren. Leerzeichen und Zeilenumbrüche in Modifikatoren
+  werden ignoriert. Andere Zeichen führen zu einem Fehler.
+ </p>
+ <p class="para">
+  <blockquote class="blockquote">
+   <dl>
+
+    
+     <dt>
+<em class="emphasis">i</em> (<em>PCRE_CASELESS</em>)</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Wenn dieser Modifikator gesetzt ist, passen Buchstaben im Suchmuster
+       sowohl auf groß- als auch auf kleingeschriebene Buchstaben.
+      </span>
+     </dd>
+
+    
+    
+     <dt>
+<em class="emphasis">m</em> (<em>PCRE_MULTILINE</em>)</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Standardmäßig behandelt PCRE eine zu durchsuchende Zeichenkette wie
+       eine einzige Zeile von Zeichen (auch wenn sie tatsächlich mehrere
+       Zeilenumbrüche enthält). Das Metazeichen für einen Zeilenanfang (^)
+       passt nur auf den Anfang der Zeichenkette, das Metazeichen für ein
+       Zeilenende ($) nur auf das Ende der Zeichenkette (falls der Modifikator
+       <em class="emphasis">D</em> nicht gesetzt ist). Das ist genauso wie bei
+       Perl.
+      </span>
+      <span class="simpara">
+       Wenn dieser Modifikator gesetzt ist, passen die Zeilenanfang- und
+       Zeilenende-Konstrukte in der Zeichenkette sowohl direkt nach, bzw. vor
+       einem Zeilenumbruch als auch auf deren Anfang und Ende. Das entspricht
+       dem Perl-Modifikator /m. Falls die Zeichenkette keine Sequenz &quot;\n&quot;
+       enthält, oder im Suchmuster kein ^ oder $ vorkommt, hat dieser
+       Modifikator keine Wirkung.
+      </span>
+     </dd>
+
+    
+    
+     <dt>
+<em class="emphasis">s</em> (<em>PCRE_DOTALL</em>)</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Wenn dieser Modifikator gesetzt ist, passt das Metazeichen Punkt im
+       Suchmuster auf alle Zeichen inklusive Zeilenumbrüche. Ohne diesen
+       Modifikator sind Zeilenumbrüche ausgeschlossen. Dieser Modifikator
+       entspricht dem Perl-Modifikator /s. Unabhängig davon, ob dieser
+       Modifikator gesetzt ist, passt eine verneinende Zeichenklasse wie z.B.
+       [^a] immer auf einen Zeilenumbruch.
+      </span>
+     </dd>
+
+    
+    
+     <dt>
+<em class="emphasis">x</em> (<em>PCRE_EXTENDED</em>)</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Wenn dieser Modifikator gesetzt ist, werden Leerräume im Suchmuster
+       ignoriert, sofern sie nicht maskiert sind oder sich innerhalb einer
+       Zeichenklasse befinden. Außerdem werden Zeichen, die außerhalb einer
+       Zeichenklasse zwischen nicht maskierten # stehen, einschließlich dem
+       nächsten Zeilenumbruch ignoriert. Das entspricht dem Perl-Modifikator
+       /x und bietet die Möglichkeit, Kommentare in komplizierte Suchmuster
+       einzufügen. Beachten Sie aber, dass dies nur für Datenzeichen gilt.
+       Leerräume dürfen niemals innerhalb einer Folge spezieller Zeichen
+       auftreten, zum Beispiel in der Folge (?(, die einen
+       bedingten Teilausdruck einleitet.
+      </span>
+     </dd>
+
+    
+    
+     <dt id="reference.pcre.pattern.modifiers.eval"><em class="emphasis">e</em> (<em>PREG_REPLACE_EVAL</em>)</dt>
+
+     <dd>
+
+      <div class="warning"><strong class="warning">Warnung</strong><p class="simpara">Dieses Feature ist
+seit PHP 5.5.0 <em class="emphasis">DEPRECATED</em> (veraltet) und seit PHP 7.0.0 <em class="emphasis">ENTFERNT</em>.</p></div>
+      <span class="simpara">
+       Wenn dieser veraltete Modifikator gesetzt ist, macht
+       <span class="function">preg_replace</span> in der Ersetzungszeichenkette eine
+       normale Ersetzung von Rückrefenzen, wertet sie als PHP-Code aus und
+       verwendet das Ergebnis um damit die gesuchte Zeichenkette zu ersetzen.
+       Einfache Anführungszeichen, doppelte Anführungszeichen, Backslashes
+       (<em>\</em>) und NULL-Zeichen werden in den ersetzten
+       Rückreferenzen mit einem Backslash maskiert.
+      </span>
+      <div class="caution"><strong class="caution">Achtung</strong>
+       <p class="para">
+        Bei jeder passenden Rückreferenz wird die Funktion
+        <span class="function">addslashes</span> aufgerufen, bevor sie ersetzt wird.
+        Wenn die Rückreferenz als Zeichenkette in Anführungszeichen verwendet
+        wird, werden von daher maskierte Zeichen in Buchstabensymbole
+        umgewandelt. Allerdings behalten maskierte Zeichen, die normalerweise
+        nicht umgewandelt würden, ihre Backslashes. Das macht die Verwendung
+        dieses Modifikators sehr kompliziert.
+       </p>
+      </div>
+      <div class="caution"><strong class="caution">Achtung</strong>
+       <p class="para">
+        Stellen Sie sicher, dass <code class="parameter">replacement</code> gültigen
+        PHP-Code erzeugt, weil sich PHP sonst über einen Parse Error in der
+        Zeile beschwert, die den Aufruf von <span class="function">preg_replace</span>
+        enthält.
+       </p>
+      </div>
+      <div class="caution"><strong class="caution">Achtung</strong>
+       <p class="para">
+        Von der Verwendung dieses Modifikators wird
+        <em class="emphasis">abgeraten</em>, weil damit sehr leicht
+        Sicherheitslücken entstehen können:
+       </p>
+       <div class="informalexample">
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$html&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'html'</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;großgeschriebene&nbsp;Überschriften<br /></span><span style="color: #0000BB">$html&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'(&lt;h([1-6])&gt;(.*?)&lt;/h\1&gt;)e'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'"&lt;h$1&gt;"&nbsp;.&nbsp;strtoupper("$2")&nbsp;.&nbsp;"&lt;/h$1&gt;"'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$html<br /></span><span style="color: #007700">);</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
+       <p class="para">
+        Der obige Beispiel-Code kann durch Übergabe einer Zeichenkette wie
+        z.B.
+        <em>&lt;h1&gt;{${eval($_GET[php_code])}}&lt;/h1&gt;</em>
+        leicht ausgenutzt werden. Das gibt dem Angreifer die Möglichkeit,
+        beliebigen PHP-Code auszuführen und gibt ihm somit beinahe
+        vollständigen Zugriff auf den Server.
+       </p>
+       <p class="para">
+        Um diese Sicherheitslücke zur Ausführung von Code von außen (Remote
+        Code Execution) zu vermeiden, sollte stattdessen die Funktion
+        <span class="function">preg_replace_callback</span> verwendet werden:
+       </p>
+       <div class="informalexample">
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$html&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'html'</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;großgeschriebene&nbsp;Überschriften<br /></span><span style="color: #0000BB">$html&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_replace_callback</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'(&lt;h([1-6])&gt;(.*?)&lt;/h\1&gt;)'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;(</span><span style="color: #0000BB">$m</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">"&lt;h</span><span style="color: #0000BB">$m</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]</span><span style="color: #DD0000">&gt;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">strtoupper</span><span style="color: #007700">(</span><span style="color: #0000BB">$m</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">])&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;/h</span><span style="color: #0000BB">$m</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]</span><span style="color: #DD0000">&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$html<br /></span><span style="color: #007700">);</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
+      </div>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+        Dieser Modifikator wird nur von <span class="function">preg_replace</span>
+        verwendet; von anderen PCRE-Funktionen wird er ignoriert.
+       </p>
+      </p></blockquote>
+     </dd>
+
+    
+    
+     <dt>
+<em class="emphasis">A</em> (<em>PCRE_ANCHORED</em>)</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Wenn dieser Modifikator gesetzt ist, wird das Suchmuster &quot;verankert&quot;,
+       das bedeutet, dass es gezwungen wird, nur auf den Anfang der
+       durchsuchten Zeichenkette zu passen. Diese Wirkung kann auch durch
+       geeignete Konstrukte im Suchmuster selbst erreicht werden, was in Perl
+       die einzige Möglichkeit ist, sie zu realisieren.
+      </span>
+     </dd>
+
+    
+    
+     <dt>
+<em class="emphasis">D</em> (<em>PCRE_DOLLAR_ENDONLY</em>)</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Wenn dieser Modifikator gesetzt ist, passt ein Dollar-Metazeichen im
+       Suchmuster nur auf das Ende der durchsuchten Zeichenkette. Ohne diesen
+       Modifikator passt ein Dollarzeichen auch direkt vor dem letzten
+       Zeichen, falls es ein Zeilenumbruch ist (aber nicht vor anderen
+       Zeilenumbrüchen). Wenn der Modifikator <em class="emphasis">m</em> gesetzt
+       ist, wird dieser Modifikator ignoriert. Für diesen Modifikator gibt es
+       in Perl keine Entsprechung.
+      </span>
+     </dd>
+
+    
+    
+     <dt>
+<em class="emphasis">S</em></dt>
+
+     <dd>
+
+      <span class="simpara">
+       Wenn ein Suchmuster mehrmals verwendet werden soll, lohnt es sich, mehr
+       Zeit für dessen Analyse aufzubringen um die Suche zu optimieren. Wenn
+       dieser Modifikator gesetzt ist, wird diese zusätzliche Analyse
+       durchgeführt. Gegenwärtig ist die Untersuchung eines Suchmusters nur
+       für nicht verankerte Suchmuster brauchbar, die am Anfang kein einzelnes
+       fixiertes Zeichen haben.
+      </span>
+     </dd>
+
+    
+    
+     <dt>
+<em class="emphasis">U</em> (<em>PCRE_UNGREEDY</em>)</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Dieser Modifikator kehrt die Gier von Quantifikatoren um, sodass sie
+       standardmäßig nicht gierig sind, aber gierig werden, wenn ihnen ein
+       <em>?</em> folgt. Das ist nicht mit Perl kompatibel. Es kann
+       auch <a href="regexp.reference.internal-options.html" class="link">innerhalb des
+       Suchmusters</a> mit dem Modifikator (<em>?U</em>) oder
+       durch ein Fragezeichen hinter dem Quantifikator (z.B.
+       <em>.*?</em>) gesetzt werden.
+      </span>
+       <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+        <p class="para">
+         Im Ungreedy-Modus ist es nicht möglich, mehr als <a href="pcre.configuration.html#ini.pcre.backtrack-limit" class="link">pcre.backtrack_limit</a>
+         Übereinstimmungen zu treffen.
+        </p>
+       </p></blockquote>
+     </dd>
+
+    
+    
+     <dt>
+<em class="emphasis">X</em> (<em>PCRE_EXTRA</em>)</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Dieser Modifikator schaltet zusätzliche PCRE-Funktionalität ein, die
+       nicht mit Perl kompatibel ist. Ein Backslash vor einem Buchstaben, der
+       keine spezielle Bedeutung hat, verursacht eine Fehlermeldung und
+       reserviert diese Kombinationen somit für künftige Erweiterungen.
+       Standardmäßig wird ein Backslash vor einem Buchstaben, der keine
+       spezielle Bedeutung hat, wie in Perl als Buchstabensymbol behandelt.
+       Gegenwärtig werden von diesem Modifikator keine weiteren Eigenschaften
+       kontrolliert.
+      </span>
+     </dd>
+
+    
+    
+     <dt>
+<em class="emphasis">J</em> (<em>PCRE_INFO_JCHANGED</em>)</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Die interne Option (?J) ändert die lokale Option
+       <em>PCRE_DUPNAMES</em>. Erlaubt doppelte Namen für
+       Teilsuchmuster.
+      </span>
+     </dd>
+
+    
+    
+     <dt>
+<em class="emphasis">u</em> (<em>PCRE_UTF8</em>)</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Dieser Modifikator schaltet zusätzliche PCRE-Funktionalität ein, die
+       nicht mit Perl kompatibel ist. Suchmuster und durchsuchte Zeichenketten
+       werden als UTF-8 behandelt. Dieser Modifikator steht unter Unix seit
+       PHP 4.1.0 und unter Win32 seit PHP 4.2.3 zur Verfügung. Ob es sich im
+       Suchmuster und in den Zeichenketten um gültiges UTF-8 handelt, wird
+       seit PHP 4.3.5 überprüft. Eine ungültige Zeichenkette bewirkt, dass
+       die preg_*-Funktionen keine Übereinstimmungen finden. Ein ungültiges
+       Suchmuster erzeugt einen Fehler der Stufe E_WARNING.
+       UTF-8-Zeichenfolgen mit fünf oder sechs Oktetten werden seit PHP 5.3.4,
+       bzw. PCRE 7.3 2007-08-28 als ungültig betrachtet; davor wurden sie als
+       gültiges UTF-8 betrachtet.
+      </span>
+     </dd>
+
+    
+   </dl>
+
+  </blockquote>
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

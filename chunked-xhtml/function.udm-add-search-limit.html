@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Verschiedene Beschr&auml;nkungen bei der Suche anwenden</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.search.html">Suchmaschinenerweiterungen</a></li>
+  <li class="header up"><a href="book.mnogosearch.html">mnoGoSearch</a></li>
+  <li class="header up"><a href="ref.mnogosearch.html">mnoGoSearch Funktionen</a></li>
+  <li class="active"><a href="function.udm-add-search-limit.html">udm_add_search_limit</a></li>
+  <li><a href="function.udm-alloc-agent-array.html">udm_alloc_agent_array</a></li>
+  <li><a href="function.udm-alloc-agent.html">udm_alloc_agent</a></li>
+  <li><a href="function.udm-api-version.html">udm_api_version</a></li>
+  <li><a href="function.udm-cat-list.html">udm_cat_list</a></li>
+  <li><a href="function.udm-cat-path.html">udm_cat_path</a></li>
+  <li><a href="function.udm-check-charset.html">udm_check_charset</a></li>
+  <li><a href="function.udm-clear-search-limits.html">udm_clear_search_limits</a></li>
+  <li><a href="function.udm-crc32.html">udm_crc32</a></li>
+  <li><a href="function.udm-errno.html">udm_errno</a></li>
+  <li><a href="function.udm-error.html">udm_error</a></li>
+  <li><a href="function.udm-find.html">udm_find</a></li>
+  <li><a href="function.udm-free-agent.html">udm_free_agent</a></li>
+  <li><a href="function.udm-free-ispell-data.html">udm_free_ispell_data</a></li>
+  <li><a href="function.udm-free-res.html">udm_free_res</a></li>
+  <li><a href="function.udm-get-doc-count.html">udm_get_doc_count</a></li>
+  <li><a href="function.udm-get-res-field.html">udm_get_res_field</a></li>
+  <li><a href="function.udm-get-res-param.html">udm_get_res_param</a></li>
+  <li><a href="function.udm-hash32.html">udm_hash32</a></li>
+  <li><a href="function.udm-load-ispell-data.html">udm_load_ispell_data</a></li>
+  <li><a href="function.udm-set-agent-param.html">udm_set_agent_param</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="ref.mnogosearch.html">mnoGoSearch Funktionen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.udm-alloc-agent-array.html">udm_alloc_agent_array</a></div>
+                <div class="up"><a href="ref.mnogosearch.html">mnoGoSearch Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.udm-add-search-limit" class="refentry">
+  <div class="refnamediv">
+   <h1 class="refname">udm_add_search_limit</h1>
+   <p class="refpurpose">Verschiedene Beschränkungen bei der Suche anwenden</p>
+  </div>
+  <div class="refsect1 unknown-seealsp" id="refsect1-function.udm-add-search-limit-unknown-seealsp">
+   <h3 class="title">Beschreibung</h3>
+    <div class="methodsynopsis dc-description">
+     <span class="type">int</span> <span class="methodname">udm_add_search_limit</span>
+      ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$agent</code></span>
+     , <span class="methodparam"><span class="type">int</span> <code class="parameter">$var</code></span>
+     , <span class="methodparam"><span class="type">string</span> <code class="parameter">$val</code></span>
+     )</div>
+
+   <p class="para rdfs-comment">
+    <span class="function">udm_add_search_limit</span> gibt <strong><code>TRUE</code></strong> bei Erfolg,
+    <strong><code>FALSE</code></strong> bei einem Fehler zurück. Fügt Suchrestritktionen
+    hinzu.
+   </p>
+   <p class="para">
+    <code class="parameter">agent</code> - ein Link zu einem Agent, erhalten nach
+    <span class="function">udm_alloc_agent</span>.
+   </p>
+   <p class="para">
+    <code class="parameter">var</code> - Definiert den Parameter der die Einschränkung
+    angibt.
+   </p>
+   <p class="para">
+    <code class="parameter">val</code> - Definiert den Wert des aktuellen Parameters.
+   </p>
+   <p class="para">
+    Mögliche Werte für <code class="parameter">var</code>:
+   </p>
+   <ul class="itemizedlist">
+    <li class="listitem">
+     <span class="simpara">
+      UDM_LIMIT_URL -
+      definiert URL Limitationen, um die Suche auf Unterbereiche einzuschränken
+      SQL % und _ LIKE Wildcards werden unterstützt, % entspricht dabei einer
+      beliebigen Anzahl von Zeichen, wobei auch keine Zeichen eingeschlossen
+      werden, _ entspricht genau einem Zeichen. So entspricht also
+      http://my.domain__/catalog sowohl http://my.domain.ru/catalog als auch
+      http://my.domain.ua/catalog.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      UDM_LIMIT_TAG -
+      definiert TAG Limitationen. In der indexer-conf können bestimmeten
+      Sites und Teilen von Sites sogenannte Tags zugewiesen werden. Auch bei
+      Tags werden % und _ unterstützt. Metasymbole erlauben die Suche
+      über Gruppen von Tags. So werden also die Tags ABCD und ABCE bei
+      einer Einschränkung auf ABC_ eingeschlossen.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      UDM_LIMIT_LANG - Definiert Sprachlimitationen.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      UDM_LIMIT_CAT - Definiert Dokumentenkategorielimitationen. Kategorien
+      sind den Tags ähnlich, jedoch im Gegensatz zu diesen verschachtelt. Eine
+      Kategorie kann also Unterkategorie einer anderen sein. Für jede Ebene
+      werden müssen zwei Zeichen verwendendet werden, entweder hexadezimale
+      Zahlen von 0-F oder Zahlen zur Basis 36 von 0-Z. Eine Kategorie der
+      obersten Ebene, z.B. &#039;Auto&#039; hätte die Zahl 01, die Unterkategorie &#039;Ford&#039;
+      hätte ebenfalls die 01 als Zahl. Zusammen ergäbe das dann die 0101. Eine
+      weitere Kategorie &#039;VW&#039; unterhalb der Kategorie &#039;Auto&#039; hätte dann die Zahl
+      0102 usw. Wenn &#039;VW&#039; eine Unterkategorie &#039;Golf&#039; hätte, wäre desren ID
+      010201.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      UDM_LIMIT_DATE - Definiert Einschränkungen in Bezug auf das Datum, wann
+      das Dokument zuletzt verändert wurde.
+     </span>
+     <span class="simpara">
+      Der Wert dieses Parameters ist das kleiner bzw. größer-Zeichen
+      (&lt; oder &gt;) gefolgt von einem Unix-Timestamp, also z.B.
+     </span>
+     <span class="simpara">
+      Udm_Add_Search_Limit($udm,UDM_LIMIT_DATE,&quot;&lt;908012006&quot;);
+     </span>
+     <span class="simpara">
+      Wenn das &gt;-Zeichen benutzt wird, wird die Suche auf diejenigen
+      Dokumente eingeschränkt, deren Veränderungsdatum jünger als das
+      eingegebene ist, beim &lt;-Zeichen erfolgt die Einschränkung
+      dementsprechend auf Dokumente, die Älter sind.
+     </span>
+    </li>
+   </ul>
+  </div>
+
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Holt alle Reihen der Ergebnisdaten in ein Array</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.oci8.html">OCI8</a></li>
+  <li class="header up"><a href="ref.oci8.html">OCI8 Funktionen</a></li>
+  <li><a href="function.oci-bind-array-by-name.html">oci_bind_array_by_name</a></li>
+  <li><a href="function.oci-bind-by-name.html">oci_bind_by_name</a></li>
+  <li><a href="function.oci-cancel.html">oci_cancel</a></li>
+  <li><a href="function.oci-client-version.html">oci_client_version</a></li>
+  <li><a href="function.oci-close.html">oci_close</a></li>
+  <li><a href="function.oci-commit.html">oci_commit</a></li>
+  <li><a href="function.oci-connect.html">oci_connect</a></li>
+  <li><a href="function.oci-define-by-name.html">oci_define_by_name</a></li>
+  <li><a href="function.oci-error.html">oci_error</a></li>
+  <li><a href="function.oci-execute.html">oci_execute</a></li>
+  <li class="active"><a href="function.oci-fetch-all.html">oci_fetch_all</a></li>
+  <li><a href="function.oci-fetch-array.html">oci_fetch_array</a></li>
+  <li><a href="function.oci-fetch-assoc.html">oci_fetch_assoc</a></li>
+  <li><a href="function.oci-fetch-object.html">oci_fetch_object</a></li>
+  <li><a href="function.oci-fetch-row.html">oci_fetch_row</a></li>
+  <li><a href="function.oci-fetch.html">oci_fetch</a></li>
+  <li><a href="function.oci-field-is-null.html">oci_field_is_null</a></li>
+  <li><a href="function.oci-field-name.html">oci_field_name</a></li>
+  <li><a href="function.oci-field-precision.html">oci_field_precision</a></li>
+  <li><a href="function.oci-field-scale.html">oci_field_scale</a></li>
+  <li><a href="function.oci-field-size.html">oci_field_size</a></li>
+  <li><a href="function.oci-field-type-raw.html">oci_field_type_raw</a></li>
+  <li><a href="function.oci-field-type.html">oci_field_type</a></li>
+  <li><a href="function.oci-free-descriptor.html">oci_free_descriptor</a></li>
+  <li><a href="function.oci-free-statement.html">oci_free_statement</a></li>
+  <li><a href="function.oci-get-implicit-resultset.html">oci_get_implicit_resultset</a></li>
+  <li><a href="function.oci-internal-debug.html">oci_internal_debug</a></li>
+  <li><a href="function.oci-lob-copy.html">oci_lob_copy</a></li>
+  <li><a href="function.oci-lob-is-equal.html">oci_lob_is_equal</a></li>
+  <li><a href="function.oci-new-collection.html">oci_new_collection</a></li>
+  <li><a href="function.oci-new-connect.html">oci_new_connect</a></li>
+  <li><a href="function.oci-new-cursor.html">oci_new_cursor</a></li>
+  <li><a href="function.oci-new-descriptor.html">oci_new_descriptor</a></li>
+  <li><a href="function.oci-num-fields.html">oci_num_fields</a></li>
+  <li><a href="function.oci-num-rows.html">oci_num_rows</a></li>
+  <li><a href="function.oci-parse.html">oci_parse</a></li>
+  <li><a href="function.oci-password-change.html">oci_password_change</a></li>
+  <li><a href="function.oci-pconnect.html">oci_pconnect</a></li>
+  <li><a href="function.oci-result.html">oci_result</a></li>
+  <li><a href="function.oci-rollback.html">oci_rollback</a></li>
+  <li><a href="function.oci-server-version.html">oci_server_version</a></li>
+  <li><a href="function.oci-set-action.html">oci_set_action</a></li>
+  <li><a href="function.oci-set-client-identifier.html">oci_set_client_identifier</a></li>
+  <li><a href="function.oci-set-client-info.html">oci_set_client_info</a></li>
+  <li><a href="function.oci-set-edition.html">oci_set_edition</a></li>
+  <li><a href="function.oci-set-module-name.html">oci_set_module_name</a></li>
+  <li><a href="function.oci-set-prefetch.html">oci_set_prefetch</a></li>
+  <li><a href="function.oci-statement-type.html">oci_statement_type</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.oci-execute.html">oci_execute</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.oci-fetch-array.html">oci_fetch_array</a></div>
+                <div class="up"><a href="ref.oci8.html">OCI8 Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.oci-fetch-all" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">oci_fetch_all</h1>
+  <p class="refpurpose">Holt alle Reihen der Ergebnisdaten in ein Array</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.oci-fetch-all-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname">oci_fetch_all</span>
+    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$statement</code></span>
+   , <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$output</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$skip</code><span class="initializer"> = 0</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$maxrows</code><span class="initializer"> = -1</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code><span class="initializer"> = 0</span></span>
+  ]]] )</div>
+
+  <p class="para rdfs-comment">
+   Holt alle Reihen eines Ergebnisses in einem benutzerdefinierten Array.
+  </p>
+  <p class="para">Für Details zur vom OCI8-Treiber durchgeführten
+Umsetzung von Datentypen siehe die <a href="oci8.datatypes.html" class="link">vom
+Treiber unterstützen Datentypen</a>.</p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.oci-fetch-all-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">statement</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ein Zeiger auf eine gültige OCI-Anweisung.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">output</code></dt>
+
+     <dd>
+
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: <span class="simpara">Diese Funktion setzt NULL-Felder
+auf den PHP Wert-<strong><code>NULL</code></strong>.</span></p></blockquote>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">skip</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Anzahl der zu ignorierenden Anfangszeilen beim Holen des Ergebnisses
+       (Standardwert ist 0, um mit der ersten Zeile zu beginnen).
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">maxrows</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Anzahl der zu lesenden Zeilen ab der <code class="parameter">skip</code>ten Zeile
+       (Standard ist -1, um alle Zeilen zu holen).
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">flags</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Parameter <code class="parameter">flags</code> kann eine beliebige
+       Kombination aus dem folgenden Konstanten sein:
+       <ul class="simplelist">
+        <li class="member">
+         <strong><code>OCI_FETCHSTATEMENT_BY_ROW</code></strong>
+        </li>
+        <li class="member">
+         <strong><code>OCI_FETCHSTATEMENT_BY_COLUMN</code></strong> (Standardwert)
+        </li>
+        <li class="member">
+         <strong><code>OCI_NUM</code></strong>
+        </li>
+        <li class="member">
+         <strong><code>OCI_ASSOC</code></strong>
+        </li>
+       </ul>
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.oci-fetch-all-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Liefert die Anzahl der abgerufenen Zeilen oder <strong><code>FALSE</code></strong> bei einem Fehler.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.oci-fetch-all-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-2188">
+    <p><strong>Beispiel #1 <span class="function">oci_fetch_all</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;oci_fetch_all&nbsp;example&nbsp;mbritton&nbsp;at&nbsp;verinet&nbsp;dot&nbsp;com&nbsp;(990624)&nbsp;*/<br /><br /></span><span style="color: #0000BB">$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"scott"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"tiger"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_parse</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"select&nbsp;*&nbsp;from&nbsp;emp"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">oci_execute</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$nrows&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_fetch_all</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$results</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$nrows&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;table&nbsp;border=\"1\"&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;tr&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$results&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$val</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;th&gt;</span><span style="color: #0000BB">$key</span><span style="color: #DD0000">&lt;/th&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;/tr&gt;\n"</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">$nrows</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;tr&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$results&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;td&gt;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #0000BB">$i</span><span style="color: #007700">]</span><span style="color: #DD0000">&lt;/td&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;/tr&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;/table&gt;\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Keine&nbsp;Daten&nbsp;gefunden&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />}<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$nrows</span><span style="color: #DD0000">&nbsp;Einträge&nbsp;selektiert&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">oci_free_statement</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">oci_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.oci-fetch-all-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    In der PHP-Versionen vor 5.0.0 muss man <span class="function">ocifetchstatement</span>
+    benutzen. Den Namen kann man immer noch nutzen. Er wurde als Alias für
+    <span class="function">oci_fetch_all</span> für die Abwärtskompatibilität
+    erhalten. Dieses ist allerdings veraltet und wird nicht empfohlen.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

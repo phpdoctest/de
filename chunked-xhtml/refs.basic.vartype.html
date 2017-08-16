@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Variablen- und typbezogene Erweiterungen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li><a href="refs.utilspec.audio.html">Manipulation von Audioformaten</a></li>
+  <li><a href="refs.remote.auth.html">Authentifizierungsdienste</a></li>
+  <li><a href="refs.utilspec.cmdline.html">Eingabezeilenspezifische Erweiterungen</a></li>
+  <li><a href="refs.compression.html">Erweiterungen zur Datenkompression und Archivierung</a></li>
+  <li><a href="refs.creditcard.html">Kreditkartendaten-Verarbeitung</a></li>
+  <li><a href="refs.crypto.html">Kryptografische Erweiterungen</a></li>
+  <li><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li><a href="refs.calendar.html">Datums- und zeitrelevante Erweiterungen</a></li>
+  <li><a href="refs.fileprocess.file.html">Dateisystemrelevante Erweiterungen</a></li>
+  <li><a href="refs.international.html">Unterst&uuml;tzung menschlicher Sprache und Zeichenkodierung</a></li>
+  <li><a href="refs.utilspec.image.html">Bildverarbeitung und -generierung</a></li>
+  <li><a href="refs.remote.mail.html">E-Mail-relevante Erweiterungen</a></li>
+  <li><a href="refs.math.html">Mathematische Erweiterungen</a></li>
+  <li><a href="refs.utilspec.nontext.html">Non-Text MIME-Ausgaben</a></li>
+  <li><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li><a href="refs.search.html">Suchmaschinenerweiterungen</a></li>
+  <li><a href="refs.utilspec.server.html">Serverspezifische Erweiterungen</a></li>
+  <li><a href="refs.basic.session.html">Session-Erweiterungen</a></li>
+  <li><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li class="active"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li><a href="refs.webservice.html">Web Services</a></li>
+  <li><a href="refs.utilspec.windows.html">Windowsbasierte Erweiterungen</a></li>
+  <li><a href="refs.xml.html">XML-Manipulation</a></li>
+  <li><a href="refs.ui.html">GUI Erweiterungen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="changelog.strings.html">Changelog</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="book.array.html">Arrays</a></div>
+                <div class="up"><a href="funcref.html">Funktionsreferenz</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="refs.basic.vartype" class="set">
+   <h1>Variablen- und typbezogene Erweiterungen</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="book.array.html">Arrays</a><ul class="chunklist chunklist_title">
+<li><a href="intro.array.html">Einf&uuml;hrung</a></li>
+<li><a href="array.setup.html">Installation/Konfiguration</a></li>
+<li><a href="array.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="array.sorting.html">Sorting Arrays</a></li>
+<li><a href="ref.array.html">Array Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.classobj.html">Klassen/Objekte</a> — Klassen- und Objektinformationen<ul class="chunklist chunklist_title">
+<li><a href="intro.classobj.html">Einf&uuml;hrung</a></li>
+<li><a href="classobj.setup.html">Installation/Konfiguration</a></li>
+<li><a href="classobj.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="classobj.examples.html">Beispiele</a></li>
+<li><a href="ref.classobj.html">Klassen- und Objekt-Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.classkit.html">Classkit</a><ul class="chunklist chunklist_title">
+<li><a href="intro.classkit.html">Einf&uuml;hrung</a></li>
+<li><a href="classkit.setup.html">Installation/Konfiguration</a></li>
+<li><a href="classkit.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.classkit.html">Classkit Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.ctype.html">Ctype</a> — Zeichentyppr&uuml;fung<ul class="chunklist chunklist_title">
+<li><a href="intro.ctype.html">Einf&uuml;hrung</a></li>
+<li><a href="ctype.setup.html">Installation/Konfiguration</a></li>
+<li><a href="ctype.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.ctype.html">Ctype Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.ds.html">Data Structures</a><ul class="chunklist chunklist_title">
+<li><a href="intro.ds.html">Einf&uuml;hrung</a></li>
+<li><a href="ds.setup.html">Installation/Konfiguration</a></li>
+<li><a href="ds.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ds.examples.html">Beispiele</a></li>
+<li><a href="class.ds-collection.html">Collection</a> — The Collection interface</li>
+<li><a href="class.ds-hashable.html">Hashable</a> — The Hashable interface</li>
+<li><a href="class.ds-sequence.html">Sequence</a> — The Sequence interface</li>
+<li><a href="class.ds-vector.html">Vector</a> — The Vector class</li>
+<li><a href="class.ds-deque.html">Deque</a> — The Deque class</li>
+<li><a href="class.ds-map.html">Map</a> — The Map class</li>
+<li><a href="class.ds-pair.html">Pair</a> — The Pair class</li>
+<li><a href="class.ds-set.html">Set</a> — The Set class</li>
+<li><a href="class.ds-stack.html">Stack</a> — The Stack class</li>
+<li><a href="class.ds-queue.html">Queue</a> — The Queue class</li>
+<li><a href="class.ds-priorityqueue.html">PriorityQueue</a> — The PriorityQueue class</li>
+</ul>
+</li>
+<li><a href="book.filter.html">Filter</a> — Datenfilterung<ul class="chunklist chunklist_title">
+<li><a href="intro.filter.html">Einf&uuml;hrung</a></li>
+<li><a href="filter.setup.html">Installation/Konfiguration</a></li>
+<li><a href="filter.filters.html">Types of filters</a></li>
+<li><a href="filter.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="filter.examples.html">Beispiele</a></li>
+<li><a href="ref.filter.html">Filter-Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.funchand.html">Function Handling</a><ul class="chunklist chunklist_title">
+<li><a href="intro.funchand.html">Einf&uuml;hrung</a></li>
+<li><a href="funchand.setup.html">Installation/Konfiguration</a></li>
+<li><a href="funchand.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.funchand.html">Function handling Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.quickhash.html">Quickhash</a> — Quickhash<ul class="chunklist chunklist_title">
+<li><a href="intro.quickhash.html">Einf&uuml;hrung</a></li>
+<li><a href="quickhash.setup.html">Installation/Konfiguration</a></li>
+<li><a href="quickhash.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="quickhash.examples.html">Beispiele</a></li>
+<li><a href="class.quickhashintset.html">QuickHashIntSet</a> — The QuickHashIntSet class</li>
+<li><a href="class.quickhashinthash.html">QuickHashIntHash</a> — The QuickHashIntHash class</li>
+<li><a href="class.quickhashstringinthash.html">QuickHashStringIntHash</a> — The QuickHashStringIntHash class</li>
+<li><a href="class.quickhashintstringhash.html">QuickHashIntStringHash</a> — The QuickHashIntStringHash class</li>
+</ul>
+</li>
+<li><a href="book.reflection.html">Reflection</a> — Reflection<ul class="chunklist chunklist_title">
+<li><a href="intro.reflection.html">Einf&uuml;hrung</a></li>
+<li><a href="reflection.setup.html">Installation/Konfiguration</a></li>
+<li><a href="reflection.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="reflection.examples.html">Beispiele</a></li>
+<li><a href="reflection.extending.html">Extending</a></li>
+<li><a href="class.reflection.html">Reflection</a> — The Reflection class</li>
+<li><a href="class.reflectionclass.html">ReflectionClass</a> — The ReflectionClass class</li>
+<li><a href="class.reflectionzendextension.html">ReflectionZendExtension</a> — The ReflectionZendExtension class</li>
+<li><a href="class.reflectionextension.html">ReflectionExtension</a> — The ReflectionExtension class</li>
+<li><a href="class.reflectionfunction.html">ReflectionFunction</a> — The ReflectionFunction class</li>
+<li><a href="class.reflectionfunctionabstract.html">ReflectionFunctionAbstract</a> — The ReflectionFunctionAbstract class</li>
+<li><a href="class.reflectionmethod.html">ReflectionMethod</a> — The ReflectionMethod class</li>
+<li><a href="class.reflectionobject.html">ReflectionObject</a> — The ReflectionObject class</li>
+<li><a href="class.reflectionparameter.html">ReflectionParameter</a> — The ReflectionParameter class</li>
+<li><a href="class.reflectionproperty.html">ReflectionProperty</a> — The ReflectionProperty class</li>
+<li><a href="class.reflectiontype.html">ReflectionType</a> — The ReflectionType class</li>
+<li><a href="class.reflectiongenerator.html">ReflectionGenerator</a> — The ReflectionGenerator class</li>
+<li><a href="class.reflector.html">Reflector</a> — The Reflector interface</li>
+<li><a href="class.reflectionexception.html">ReflectionException</a> — The ReflectionException class</li>
+</ul>
+</li>
+<li><a href="book.var.html">Variablenbehandlung</a><ul class="chunklist chunklist_title">
+<li><a href="intro.var.html">Einf&uuml;hrung</a></li>
+<li><a href="var.setup.html">Installation/Konfiguration</a></li>
+<li><a href="var.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.var.html">Funktionen zur Behandlung von Variablen</a></li>
+</ul>
+</li>
+</ul>
+
+   
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+   
+
+
+
+
+ 
+
+
+
+   
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

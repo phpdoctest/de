@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Regeln f&uuml;r Namensaufl&ouml;sung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.namespaces.html">Namespaces</a></li>
+  <li><a href="language.namespaces.rationale.html">&Uuml;bersicht &uuml;ber Namespaces</a></li>
+  <li><a href="language.namespaces.definition.html">Namespaces definieren</a></li>
+  <li><a href="language.namespaces.nested.html">Unter-Namespaces deklarieren</a></li>
+  <li><a href="language.namespaces.definitionmultiple.html">Mehrere Namespaces in der selben Datei definieren</a></li>
+  <li><a href="language.namespaces.basics.html">Namespaces verwenden: Grundlagen</a></li>
+  <li><a href="language.namespaces.dynamic.html">Namespaces und dynamische Sprachfeatures</a></li>
+  <li><a href="language.namespaces.nsconstants.html">Namespace-Schl&uuml;sselwort und __NAMESPACE__-Konstante</a></li>
+  <li><a href="language.namespaces.importing.html">Namespaces verwenden: Aliase/Importieren</a></li>
+  <li><a href="language.namespaces.global.html">Globaler Namensraum</a></li>
+  <li><a href="language.namespaces.fallback.html">Namespaces verwenden: R&uuml;ckgriff auf globale Funktion/Konstante</a></li>
+  <li class="active"><a href="language.namespaces.rules.html">Regeln f&uuml;r Namensaufl&ouml;sung</a></li>
+  <li><a href="language.namespaces.faq.html">FAQ: Dinge, die Sie &uuml;ber Namespaces wissen sollten</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.namespaces.fallback.html">Namespaces verwenden: R&uuml;ckgriff auf globale Funktion/Konstante</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.namespaces.faq.html">FAQ: Dinge, die Sie &uuml;ber Namespaces wissen sollten</a></div>
+                <div class="up"><a href="language.namespaces.html">Namespaces</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.namespaces.rules" class="sect1">
+  <h2 class="title">Regeln für Namensauflösung</h2>
+  
+  <p class="para">
+   Hier einige wichtige Definitionen für die Zwecke der Namensauflösungsregeln:
+   <dl>
+
+    <strong class="title">Namespace-Namen-Definitionen</strong>
+    
+     <dt>
+Unqualifizierter Name</dt>
+
+     <dd>
+
+      <p class="para">
+       Dies ist ein Bezeichner ohne einen Namespaceseparator, z.B. <em>Foo</em>
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+Qualifizierter Name</dt>
+
+     <dd>
+
+      <p class="para">
+       Dies ist ein Bezeichner mit einem Namespaceseparator, z.B. <em>Foo\Bar</em>
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+Vollständig qualifizierter Name</dt>
+
+     <dd>
+
+      <p class="para">
+       Dies ist ein Bezeichner mit einem Namespaceseparator, der mit einem
+       Namespaceseparator beginnt, z.B. <em>\Foo\Bar</em>. Der 
+       Namespace <em>namespace\Foo</em> ist ebenfalls ein 
+       vollständig qualifizierter Name.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+  <p class="para">
+   Namen werden gemäß den folgenden Regeln aufgelöst:
+   <ol type="1">
+    <li class="listitem">
+     <span class="simpara">
+      Aufrufe von vollständig qualifizierten Funktionen, Klassen oder Konstanten
+      werden zur Kompilierungszeit aufgelöst. <em>new \A\B</em> wird
+      z.B. zur Klasse <em>A\B</em> aufgelöst.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      Alle unqualifizierten und qualifizierten Namen (nicht vollständig
+      qualifizierte Namen) werden gemäß den aktuellen Importen zur Kompilierungszeit
+      übersetzt. Wenn zum Beispiel der namespace <em>A\B\C</em> als
+      <em>C</em> importiert wurde, so wird ein Aufruf von
+      <em>C\D\e()</em> zu <em>A\B\C\D\e()</em> übersetzt.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      Innerhalb eines Namespace wird allen qualifizierten Namen, die noch nicht
+      gemäß den Importregeln übersetzt wurden, der aktuelle Namespace vorangestellt.
+      Wenn z.B. <em>C\D\e()</em> innerhalb des Namespace <em>A\B</em>
+      aufgerufen wird, so wird dies zu <em>A\B\C\D\e()</em> übersetzt.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      Unqualifizierte Klassennamen werden zur Kompilierungszeit gemäß der aktuellen
+      Importregeln (vollständige Namen ersetzt durch kurze Aliasnamen) übersetzt.
+      Z.B. wenn der Namespace <em>A\B\C</em> als C importiert wurde,
+      so wird <em>new C()</em> zu <em>new A\B\C()</em>
+      übersetzt.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      Innerhalb eines Namespace (z.B. <em>A\B</em>) werden Aufrufe von
+      unqualifizierten Funktionen zur Laufzeit aufgelöst. Der Aufruf der Funktion
+      <em>foo()</em> wird wie folgt aufgelöst:
+     </span>
+     <ol type="1">
+      <li class="listitem">
+       <span class="simpara">
+        Zuerst wird nach der Funktion im aktuellen Namespace gesucht:
+        <em>A\B\foo()</em>.
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        Es wird versucht, die Funktion <em>foo()</em> im
+        <em class="emphasis">globalen</em> Namensraum zu finden.
+       </span>
+      </li>
+     </ol>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      Innerhalb eines Namespace (z.B. <em>A\B</em>) werden Aufrufe
+      von unqualifizierten oder qualifizierten Klassennamen (nicht vollständig
+      qualifizierte Klassennamen) zur Laufzeit aufgelöst. Der Aufruf von
+      <em>new C()</em> oder <em>new D\E()</em> wird
+      wir folgt aufgelöst.
+      Für <em>new C()</em>:
+     </span>
+     <ol type="1">
+      <li class="listitem">
+       <span class="simpara">
+        Zuerst wird nach der Klasse im aktuellen Namespace gesucht:
+        <em>A\B\C</em>.
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        Es wird versucht, die Klasse <em>A\B\C</em> mittels Autoload zu laden.
+       </span>
+      </li>
+     </ol>
+     <span class="simpara">
+      Für <em>new D\E()</em>:
+     </span>
+     <ol type="1">
+      <li class="listitem">
+       <span class="simpara">
+        Es wird nach der Klasse gesucht, indem der aktuelle Namespace
+        vorangestellt wird:
+        <em>A\B\D\E</em>.
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        Es wird versucht, die Klasse <em>A\B\D\E</em> mittels
+        Autoload zu laden.
+       </span>
+      </li>
+     </ol>
+     <span class="simpara">
+      Um auf eine globale Klasse im globalen Namespace zuzugreifen,
+      muss deren vollständig qualifizierter Name <em>new \C()</em>
+      verwendet werden.
+     </span>
+    </li>
+   </ol>
+  </p>
+  <div class="example" id="example-270">
+   <p><strong>Beispiel #1 Illustration der Namensauflösung</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">A</span><span style="color: #007700">;<br />use&nbsp;</span><span style="color: #0000BB">B</span><span style="color: #007700">\</span><span style="color: #0000BB">D</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">\</span><span style="color: #0000BB">E&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">F</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Funktionsaufrufe<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;versucht&nbsp;zuerst&nbsp;die&nbsp;Funktion&nbsp;"foo"&nbsp;im&nbsp;Namespace&nbsp;"A"&nbsp;aufzurufen<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;danach&nbsp;wird&nbsp;die&nbsp;globale&nbsp;Funktion&nbsp;"foo"&nbsp;aufgerufen<br /><br /></span><span style="color: #007700">\</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Funktion&nbsp;"foo"&nbsp;im&nbsp;globalen&nbsp;Namensraum&nbsp;auf<br /><br /></span><span style="color: #0000BB">my</span><span style="color: #007700">\</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Funktion&nbsp;"foo"&nbsp;im&nbsp;Namespace&nbsp;"A\my"&nbsp;auf<br /><br /></span><span style="color: #0000BB">F</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;versucht&nbsp;zuerst&nbsp;die&nbsp;Funktion&nbsp;"F"&nbsp;im&nbsp;Namespace&nbsp;"A"&nbsp;aufzurufen,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;danach&nbsp;wird&nbsp;die&nbsp;globale&nbsp;Funktion&nbsp;"F"&nbsp;aufgerufen<br /><br />//&nbsp;Klassenreferenzen<br /><br /></span><span style="color: #007700">new&nbsp;</span><span style="color: #0000BB">B</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;"B"&nbsp;im&nbsp;Namespace&nbsp;"A"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;wenn&nbsp;diese&nbsp;Klasse&nbsp;nicht&nbsp;bekannt&nbsp;ist,&nbsp;so&nbsp;wird&nbsp;versucht&nbsp;per<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;Autoload&nbsp;die&nbsp;Klasse&nbsp;"A\B"&nbsp;zu&nbsp;laden<br /><br /></span><span style="color: #007700">new&nbsp;</span><span style="color: #0000BB">D</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;gemäß&nbsp;den&nbsp;Importregeln&nbsp;wird&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;"D"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;aus&nbsp;dem&nbsp;Namenspace&nbsp;"B"&nbsp;erzeugt<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;wenn&nbsp;diese&nbsp;Klasse&nbsp;nicht&nbsp;bekannt&nbsp;ist,&nbsp;so&nbsp;wird&nbsp;versucht&nbsp;per<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;Autoload&nbsp;die&nbsp;Klasse&nbsp;"B\D"&nbsp;zu&nbsp;laden<br /><br /></span><span style="color: #007700">new&nbsp;</span><span style="color: #0000BB">F</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;gemäß&nbsp;den&nbsp;Importregeln&nbsp;wird&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;"E"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;aus&nbsp;dem&nbsp;Namespace&nbsp;"C"&nbsp;erzeugt<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;wenn&nbsp;diese&nbsp;Klasse&nbsp;nicht&nbsp;bekannt&nbsp;ist,&nbsp;so&nbsp;wird&nbsp;versucht&nbsp;per<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;Autoload&nbsp;die&nbsp;Klasse&nbsp;"C\E"&nbsp;zu&nbsp;laden<br /><br /></span><span style="color: #007700">new&nbsp;\</span><span style="color: #0000BB">B</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;"B"&nbsp;aus&nbsp;dem&nbsp;globalen&nbsp;Namensraum<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;wenn&nbsp;diese&nbsp;Klasse&nbsp;nicht&nbsp;bekannt&nbsp;ist,&nbsp;so&nbsp;wird&nbsp;versucht&nbsp;per<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;Autoload&nbsp;die&nbsp;Klasse&nbsp;"B"&nbsp;zu&nbsp;laden<br /><br /></span><span style="color: #007700">new&nbsp;\</span><span style="color: #0000BB">D</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;"D"&nbsp;aus&nbsp;dem&nbsp;globalen&nbsp;Namensraum<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;wenn&nbsp;diese&nbsp;Klasse&nbsp;nicht&nbsp;bekannt&nbsp;ist,&nbsp;so&nbsp;wird&nbsp;versucht&nbsp;per<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;Autoload&nbsp;die&nbsp;Klasse&nbsp;"D"&nbsp;zu&nbsp;laden<br /><br /></span><span style="color: #007700">new&nbsp;\</span><span style="color: #0000BB">F</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;"F"&nbsp;aus&nbsp;dem&nbsp;globalen&nbsp;Namensraum<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;wenn&nbsp;diese&nbsp;Klasse&nbsp;nicht&nbsp;bekannt&nbsp;ist,&nbsp;so&nbsp;wird&nbsp;versucht&nbsp;per<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;Autoload&nbsp;die&nbsp;Klasse&nbsp;"F"&nbsp;zu&nbsp;laden<br /><br />//&nbsp;statische&nbsp;Methoden&nbsp;und&nbsp;Funktionen&nbsp;mit&nbsp;Namespace&nbsp;aus&nbsp;anderen&nbsp;Namespaces<br /><br /></span><span style="color: #0000BB">B</span><span style="color: #007700">\</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Funktion&nbsp;"foo"&nbsp;aus&nbsp;dem&nbsp;Namensraum&nbsp;"A\B"&nbsp;auf<br /><br /></span><span style="color: #0000BB">B</span><span style="color: #007700">::</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Methode&nbsp;"foo"&nbsp;der&nbsp;Klasse&nbsp;"B"&nbsp;im&nbsp;Namensraum&nbsp;"A"&nbsp;auf<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;wenn&nbsp;die&nbsp;Klasse&nbsp;"A\B"&nbsp;nicht&nbsp;bekannt&nbsp;ist,&nbsp;so&nbsp;wird&nbsp;versucht<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;die&nbsp;Klasse&nbsp;"A\B"&nbsp;mittels&nbsp;Autoload&nbsp;zu&nbsp;laden<br /><br /></span><span style="color: #0000BB">D</span><span style="color: #007700">::</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;gemäß&nbsp;den&nbsp;Importregeln&nbsp;die&nbsp;Methode&nbsp;"foo"&nbsp;der&nbsp;Klasse&nbsp;"D"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;im&nbsp;Namensraum&nbsp;"B"&nbsp;auf<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;wenn&nbsp;die&nbsp;Klasse&nbsp;"B\D"&nbsp;nicht&nbsp;bekannt&nbsp;ist,&nbsp;so&nbsp;wird&nbsp;versucht<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;die&nbsp;Klasse&nbsp;"B\D"&nbsp;mittels&nbsp;Autoload&nbsp;zu&nbsp;laden<br /><br /></span><span style="color: #007700">\</span><span style="color: #0000BB">B</span><span style="color: #007700">\</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Funktion&nbsp;"foo"&nbsp;im&nbsp;Namespace&nbsp;"B"&nbsp;auf<br /><br /></span><span style="color: #007700">\</span><span style="color: #0000BB">B</span><span style="color: #007700">::</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Methode&nbsp;"foo"&nbsp;der&nbsp;Klasse&nbsp;"B"&nbsp;im<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;globalen&nbsp;Namensraum&nbsp;auf<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;wenn&nbsp;die&nbsp;Klasse&nbsp;"B"&nbsp;nicht&nbsp;bekannt&nbsp;ist,&nbsp;so&nbsp;wird&nbsp;versucht<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;die&nbsp;Klasse&nbsp;"B"&nbsp;mittels&nbsp;Autoload&nbsp;zu&nbsp;laden<br /><br />//&nbsp;statische&nbsp;Methoden&nbsp;und&nbsp;Funktionen&nbsp;mit&nbsp;Namespace&nbsp;aus&nbsp;den&nbsp;gleichen&nbsp;Namespaces<br /><br /></span><span style="color: #0000BB">A</span><span style="color: #007700">\</span><span style="color: #0000BB">B</span><span style="color: #007700">::</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Methode&nbsp;"foo"&nbsp;der&nbsp;Klasse&nbsp;"B"&nbsp;aus&nbsp;dem&nbsp;Namespace&nbsp;"A\A"&nbsp;auf<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;wenn&nbsp;die&nbsp;Klasse&nbsp;"A\A\B"&nbsp;nicht&nbsp;bekannt&nbsp;ist,&nbsp;so&nbsp;wird<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;versucht&nbsp;die&nbsp;Klasse&nbsp;"A\A\B"&nbsp;mittels&nbsp;Autoload&nbsp;zu&nbsp;laden<br /><br /></span><span style="color: #007700">\</span><span style="color: #0000BB">A</span><span style="color: #007700">\</span><span style="color: #0000BB">B</span><span style="color: #007700">::</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Methode&nbsp;"foo"&nbsp;der&nbsp;Klasse&nbsp;"B"&nbsp;aus&nbsp;dem&nbsp;Namespace&nbsp;"A"&nbsp;auf<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;wenn&nbsp;die&nbsp;Klasse&nbsp;"A\B"&nbsp;nicht&nbsp;bekannt&nbsp;ist,&nbsp;so&nbsp;wird<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;versucht&nbsp;die&nbsp;Klasse&nbsp;"A\B"&nbsp;mittels&nbsp;Autoload&nbsp;zu&nbsp;laden<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

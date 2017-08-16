@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Installation</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.abstract.html">Abstraktionsebenen</a></li>
+  <li class="header up"><a href="book.dba.html">DBA</a></li>
+  <li class="header up"><a href="dba.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="dba.requirements.html">Anforderungen</a></li>
+  <li class="active"><a href="dba.installation.html">Installation</a></li>
+  <li><a href="dba.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="dba.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="dba.requirements.html">Anforderungen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="dba.configuration.html">Laufzeit-Konfiguration</a></div>
+                <div class="up"><a href="dba.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="dba.installation" class="section">
+ <h2 class="title">Installation</h2>
+ <p class="para">
+  Durch die Verwendung der Konfigurationsoption <strong class="option configure">--enable-dba=shared</strong>
+ wird ein dynamisch ladbares
+  Modul erstellt, mit dem PHP eine grundlegende Unterstützung von
+  dbm-style-Datenbanken bietet. Es muss außerdem die Unterstützung für
+  mindestens einen der folgenden Handler hinzugefügt werden, indem der
+  configure-Schalter <strong class="option configure">--with-XXXX</strong>
+ im
+  PHP-Konfigurationsaufruf angegegeben wird.
+ </p>
+ <div class="warning"><strong class="warning">Warnung</strong>
+  <p class="para">
+   Nachdem PHP konfiguriert und kompiliert wurde, muss in der Kommandozeile
+   der folgende Test ausgeführt werden:
+   <em>php run-tests.php ext/dba</em>. Damit zeigt sich, ob die
+   Kombination der Handler funktioniert. Am problematischsten sind
+   <em>dbm</em> und <em>ndbm</em>, die mit vielen
+   Installationen kollidieren. Das liegt daran, dass diese Bibliotheken auf
+   einigen Systemen Bestandteil von mehr als einer anderen Bibliothek sind.
+   Der Konfigurationstest verhindert nur die Konfiguration fehlerhafter
+   einzelner Handler, aber nicht die Konfiguration fehlerhafter Kombinationen.
+  </p>
+ </div>
+ <p class="para">
+  <table class="doctable table">
+   <caption><strong>Unterstützte DBA-Handler</strong></caption>
+   
+    <thead>
+     <tr>
+      <th>Handler</th>
+      <th>Configure-Schalter</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td><em>dbm</em></td>
+      <td>
+       <p class="para">
+        Fügen Sie <strong class="option configure">--with-dbm[=DIR]</strong>
+ hinzu, um
+        die Unterstützung für dbm zu aktivieren.
+        <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+         <p class="para">
+          dbm ist für gewöhnlich ein Wrapper, der häufig zu Fehlern führt. Das
+          bedeutet, dass Sie dbm nur benutzen sollten, wenn Sie sicher sind,
+          dass er funktioniert und wenn Sie dieses Format wirklich benötigen.
+         </p>
+        </p></blockquote>
+       </p>
+      </td>
+     </tr>
+
+
+     <tr>
+      <td><em>ndbm</em></td>
+      <td>
+       <p class="para">
+        Fügen Sie <strong class="option configure">--with-ndbm[=DIR]</strong>
+ hinzu,
+        um die Unterstützung für ndbm zu aktivieren.
+        <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+         <p class="para">
+          ndbm ist für gewöhnlich ein Wrapper, der häufig zu Fehlern führt.
+          Das bedeutet, dass Sie ndbm nur benutzen sollten, wenn Sie sicher
+          sind, dass er funktioniert und wenn Sie dieses Format wirklich
+          benötigen.
+         </p>
+        </p></blockquote>
+       </p>
+      </td>
+     </tr>
+
+
+     <tr>
+      <td><em>gdbm</em></td>
+      <td>
+       Fügen Sie <strong class="option configure">--with-gdbm[=DIR]</strong>
+ hinzu, um
+       die Unterstützung für gdbm zu aktivieren.
+      </td>
+     </tr>
+
+
+     <tr>
+      <td><em>db2</em></td>
+      <td>
+       <p class="para">
+        Fügen Sie <strong class="option configure">--with-db2[=DIR]</strong>
+ hinzu, um
+        die Unterstützung für Oracle Berkeley DB 2 zu aktivieren.
+        <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+         <p class="para">
+          db2 kollidiert mit db3 und db4.
+         </p>
+        </p></blockquote>
+       </p>
+      </td>
+     </tr>
+
+
+     <tr>
+      <td><em>db3</em></td>
+      <td>
+       <p class="para">
+        Fügen Sie <strong class="option configure">--with-db3[=DIR]</strong>
+ hinzu, um
+        die Unterstützung für Oracle Berkeley DB 3 zu aktivieren.
+        <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+         <p class="para">
+          db3 kollidiert mit db2 und db4.
+         </p>
+        </p></blockquote>
+       </p>
+      </td>
+     </tr>
+
+
+     <tr>
+      <td><em>db4</em></td>
+      <td>
+       <p class="para">
+        Fügen Sie <strong class="option configure">--with-db4[=DIR]</strong>
+ hinzu, um
+        die Unterstützung für Oracle Berkeley DB 4 oder 5 zu aktivieren.
+        <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+         <p class="para">
+          db4 kollidiert mit db2 und db3.
+         </p>
+        </p></blockquote>
+        <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+         <p class="para">
+          Die db4-Option wurde in PHP 4.3.2 hinzugefügt. In früheren
+          PHP-Versionen muss <strong class="option configure">--with-db3=DIR</strong>
+
+          verwendet werden, wobei DIR der Pfad zur db4-Bibliothek ist. Es ist
+          nicht möglich, db ab Version 4.1 mit PHP vor Version 4.3.0 zu
+          verwenden. Darüber hinaus können die db-Bibliotheken von Version
+          4.1 bis 4.1.24 mit keiner Version von PHP verwendet werden.
+         </p>
+         <p class="para">
+          Die Unterstützung für BDB 5 wurde in PHP 5.3.3 hinzugefügt.
+         </p>
+        </p></blockquote>
+       </p>
+      </td>
+     </tr>
+
+
+     <tr>
+      <td><em>cdb</em></td>
+      <td>
+       <p class="para">
+        Fügen Sie <strong class="option configure">--with-cdb[=DIR]</strong>
+ hinzu, um
+        die Unterstützung für cdb zu aktivieren.
+        <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+         <p class="para">
+          Ab PHP 4.3.0 kann DIR weggelassen werden um die in PHP enthaltene
+          cdb-Bibliothek zu verwenden. Diese fügt den cdb_make-Handler hinzu,
+          mit dem es möglich ist, cdb-Dateien zu erzeugen und über den
+          Datenstrom von PHP auf cdb-Dateien im Netzwerk zuzugreifen.
+         </p>
+        </p></blockquote>
+       </p>
+      </td>
+     </tr>
+
+
+     <tr>
+      <td><em>flatfile</em></td>
+      <td>
+       <p class="para">
+        Fügen Sie <strong class="option configure">--with-flatfile</strong>
+ hinzu, um
+        die Unterstützung für flatfile zu aktivieren.
+        <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+         <p class="para">
+          Dies wurde in PHP 4.3.0 für die Kompatibilität mit der veralteten
+          <em>dbm</em>-Erweiterung hinzugefügt. Verwenden Sie diesen
+          Handler nur dann, wenn Sie keine der Bibliotheken installieren
+          können, die von anderen Handlern benötigt werden und den in PHP
+          enthaltenen cdb-Handler nicht verwenden können.
+         </p>
+        </p></blockquote>
+       </p>
+      </td>
+     </tr>
+
+
+     <tr>
+      <td><em>inifile</em></td>
+      <td>
+       <p class="para">
+        Fügen Sie <strong class="option configure">--with-inifile</strong>
+ hinzu, um
+        die Unterstützung für <em>inifile</em> zu aktivieren.
+        <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+         <p class="para">
+          Dies wurde in PHP 5.0.0 hinzugefügt und ermöglicht es,
+          <var class="filename">.ini</var>-Dateien im Microsoft-Stil (wie z.B. die
+          <var class="filename">php.ini</var>) zu lesen und zu schreiben.
+         </p>
+        </p></blockquote>
+       </p>
+      </td>
+     </tr>
+
+
+     <tr>
+      <td><em>qdbm</em></td>
+      <td>
+       <p class="para">
+        Fügen Sie <strong class="option configure">--with-qdbm[=DIR]</strong>
+ hinzu,
+        um die Unterstützung für qdbm zu aktivieren.
+        <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+         <p class="para">
+          qdbm kollidiert mit dbm und gdbm.
+         </p>
+        </p></blockquote>
+        <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+         <p class="para">
+          Dies wurde in PHP 5.0.0 hinzugefügt. Die qdbm-Bibliothek kann bei
+          <a href="http://fallabs.com/qdbm/index.html" class="link external">&raquo;&nbsp;http://fallabs.com/qdbm/index.html</a> heruntergeladen werden.
+         </p>
+        </p></blockquote>
+       </p>
+      </td>
+     </tr>
+
+
+    </tbody>
+   
+  </table>
+
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Bis PHP 4.3.0 können Sie sowohl db2- als auch db3-Handler hinzufügen, aber
+    nur einer von beiden kann intern verwendet werden. Das bedeutet, dass Sie
+    nicht beide Datei-Formate haben können. Ab PHP 5.0.0 wird bei der
+    Konfiguration eine entsprechende Überprüfung durchgeführt, die eine
+    derartige Fehlkonfiguration verhindert.
+   </p>
+  </p></blockquote>
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

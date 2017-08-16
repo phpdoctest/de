@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Verbindungen zu SQLite-Datenbanken aufbauen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.abstract.html">Abstraktionsebenen</a></li>
+  <li class="header up"><a href="book.pdo.html">PDO</a></li>
+  <li class="header up"><a href="pdo.drivers.html">PDO-Treiber</a></li>
+  <li class="header up"><a href="ref.pdo-sqlite.html">SQLite (PDO)</a></li>
+  <li class="active"><a href="ref.pdo-sqlite.connection.html">PDO_SQLITE DSN</a></li>
+  <li><a href="pdo.sqlitecreateaggregate.html">PDO::sqliteCreateAggregate</a></li>
+  <li><a href="pdo.sqlitecreatecollation.html">PDO::sqliteCreateCollation</a></li>
+  <li><a href="pdo.sqlitecreatefunction.html">PDO::sqliteCreateFunction</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="ref.pdo-sqlite.html">SQLite (PDO)</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="pdo.sqlitecreateaggregate.html">PDO::sqliteCreateAggregate</a></div>
+                <div class="up"><a href="ref.pdo-sqlite.html">SQLite (PDO)</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="ref.pdo-sqlite.connection" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">PDO_SQLITE DSN</h1>
+    <p class="refpurpose">Verbindungen zu SQLite-Datenbanken aufbauen</p>
+   </div>
+
+   <div class="refsect1 description" id="refsect1-ref.pdo-sqlite.connection-description">
+    <h3 class="title">Beschreibung</h3>
+    <p class="para">
+     Der PDO_SQLITE-Data Source Name (DSN) setzt sich aus den folgenden
+     Elementen zusammen:
+     <dl>
+
+      
+       <dt>
+DSN-Präfix (SQLite 3)</dt>
+
+       <dd>
+
+        <p class="para">
+         Das DSN-Präfix ist <strong class="userinput"><code>sqlite:</code></strong>.
+         <ul class="itemizedlist">
+          <li class="listitem">
+           <p class="para">
+            Um eine Datenbank auf dem Datenträger anzusprechen, wird ihr
+            absolute Pfad an das DSN-Präfix angehängt.
+           </p>
+          </li>
+          <li class="listitem">
+           <p class="para">
+            Um eine Datenbank im Speicher zu erzeugen, wird
+            <em>:memory:</em> an das DSN-Präfix angefügt.
+           </p>
+          </li>
+         </ul>
+        </p>
+       </dd>
+
+      
+      
+       <dt>
+DSN-Präfix (SQLite 2)</dt>
+
+       <dd>
+
+        <p class="para">
+         Die <a href="ref.sqlite.html" class="link">SQLite</a>-Erweiterung in PHP 5.1
+         stellt einen PDO-Treiber zur Verfügung, welcher den Zugriff auf und
+         das Erstellen von SQLite2-Datenbanken unterstützt. Das versetzt Sie
+         in die Lage, auf Datenbanken zu zugreifen, die Sie mit einer
+         <a href="ref.sqlite.html" class="link">SQLite</a>-Erweiterung in früheren
+         PHP-Versionen erstellt haben.
+        </p>
+        <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+         <p class="para">
+          Der SQLite2-Treiber steht in PHP 5.1.x nur zur Verfügung, wenn Sie
+          PDO und ext/sqlite aktiviert haben. Er ist zur Zeit nicht in PECL
+          verfügbar.
+         </p>
+        </p></blockquote>
+        <p class="para">
+         Der DSN-Präfix, um eine Verbindung zu einer SQLite2-Datenbank
+         aufzubauen ist <strong class="userinput"><code>sqlite2:</code></strong>.
+         <ul class="itemizedlist">
+          <li class="listitem">
+           <p class="para">
+            Um eine Datenbank auf dem Datenträger anzusprechen, wird ihr
+            absoluter Pfad an das DSN-Präfix angehängt.
+           </p>
+          </li>
+          <li class="listitem">
+           <p class="para">
+            Um eine Datenbank im Speicher zu erzeugen, wird
+            <em>:memory:</em> an das DSN-Präfix angefügt.
+           </p>
+          </li>
+         </ul>
+        </p>
+       </dd>
+
+      
+
+     </dl>
+
+    </p>
+   </div>
+
+   <div class="refsect1 examples" id="refsect1-ref.pdo-sqlite.connection-examples">
+    <h3 class="title">Beispiele</h3>
+    <p class="para">
+     <div class="example" id="example-1056">
+      <p><strong>Beispiel #1 PDO_SQLITE DSN Beispiele</strong></p>
+      <div class="example-contents"><p>
+       Die folgenden Beispiele zeigen PDO_SQLITE DSN, die genutzt werden,
+       um Verbindungen zu SQLite-Datenbanken aufzubauen:
+       <div class="example-contents">
+<div class="cdata"><pre>
+sqlite:/opt/databases/mydb.sq3
+sqlite::memory:
+sqlite2:/opt/databases/mydb.sq2
+sqlite2::memory:
+</pre></div>
+       </div>
+
+      </p></div>
+     </div>
+    </p>
+   </div>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

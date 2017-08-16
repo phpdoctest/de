@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Neue Features</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="appendices.html">Appendices</a></li>
+  <li class="header up"><a href="migration56.html">Migration von PHP 5.5.x auf PHP 5.6.x</a></li>
+  <li><a href="migration56.incompatible.html">Nicht abw&auml;rtskompatible &Auml;nderungen</a></li>
+  <li class="active"><a href="migration56.new-features.html">Neue Features</a></li>
+  <li><a href="migration56.deprecated.html">Veraltete Features in PHP 5.6.x</a></li>
+  <li><a href="migration56.changed-functions.html">Ge&auml;nderte Funktionen</a></li>
+  <li><a href="migration56.new-functions.html">Neue Funktionen</a></li>
+  <li><a href="migration56.openssl.html">OpenSSL &Auml;nderungen in PHP 5.6.x</a></li>
+  <li><a href="migration56.extensions.html">Andere &Auml;nderungen bei Extensions</a></li>
+  <li><a href="migration56.constants.html">Neue globale Konstanten</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="migration56.incompatible.html">Nicht abw&auml;rtskompatible &Auml;nderungen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="migration56.deprecated.html">Veraltete Features in PHP 5.6.x</a></div>
+                <div class="up"><a href="migration56.html">Migration von PHP 5.5.x auf PHP 5.6.x</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="migration56.new-features" class="sect1">
+ <h2 class="title">Neue Features</h2>
+
+ <div class="sect2" id="migration56.new-features.const-scalar-exprs">
+  <h3 class="title">Ausdrücke für Konstanten</h3>
+
+  <p class="para">
+   Es ist nun möglich einen skalaren Ausdruck mit numerischen oder 
+   String-Literalen und/oder Konstanten in Kontexten zu verwenden,
+   in denen PHP bisher einen statischen Ausdruck erwartete, beispielsweise
+   Deklarationen von Konstanten und Eigenschaften und Standardwerte
+   von Parametern.
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">const&nbsp;</span><span style="color: #0000BB">EINS&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />const&nbsp;</span><span style="color: #0000BB">ZWEI&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">EINS&nbsp;</span><span style="color: #007700">*&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br /><br />class&nbsp;</span><span style="color: #0000BB">C&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;</span><span style="color: #0000BB">DREI&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ZWEI&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;</span><span style="color: #0000BB">EIN_DRITTEL&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">EINS&nbsp;</span><span style="color: #007700">/&nbsp;</span><span style="color: #0000BB">self</span><span style="color: #007700">::</span><span style="color: #0000BB">DREI</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;</span><span style="color: #0000BB">SATZ&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Der&nbsp;Wert&nbsp;von&nbsp;DREI&nbsp;ist&nbsp;'</span><span style="color: #007700">.</span><span style="color: #0000BB">self</span><span style="color: #007700">::</span><span style="color: #0000BB">DREI</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">f</span><span style="color: #007700">(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">EINS&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">self</span><span style="color: #007700">::</span><span style="color: #0000BB">DREI</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />echo&nbsp;(new&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">f</span><span style="color: #007700">().</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">::</span><span style="color: #0000BB">SATZ</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <p class="para">Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+4
+Der Wert von DREI ist 3
+</pre></div>
+   </div>
+  </div>
+
+  <p class="para">
+   Es ist nun möglich, ein konstantes <span class="type">Array</span> mit dem
+   Schlüsselwort <em>const</em> zu definieren:
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">const&nbsp;</span><span style="color: #0000BB">ARR&nbsp;</span><span style="color: #007700">=&nbsp;[</span><span style="color: #DD0000">'a'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'b'</span><span style="color: #007700">];<br /><br />echo&nbsp;</span><span style="color: #0000BB">ARR</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">];<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <p class="para">Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+a
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+ <div class="sect2" id="migration56.new-features.variadics">
+  <h3 class="title">Variadische Funktionen mit <em>...</em></h3>
+
+  <p class="para">
+   <a href="functions.arguments.html#functions.variable-arg-list" class="link">Variadische Funktionen</a>
+   können nun mit dem Operator <em>...</em> implementiert werden,
+   anstatt <span class="function">func_get_args</span> zu verwenden.
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">f</span><span style="color: #007700">(</span><span style="color: #0000BB">$req</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$opt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">,&nbsp;...</span><span style="color: #0000BB">$params</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;$params&nbsp;ist&nbsp;ein&nbsp;Array&nbsp;welches&nbsp;die&nbsp;übrigen&nbsp;Parameter&nbsp;enthält.<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">'$req:&nbsp;%d;&nbsp;$opt:&nbsp;%d;&nbsp;Anzahl&nbsp;Parameter:&nbsp;%d'</span><span style="color: #007700">.</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$req</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$opt</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">$params</span><span style="color: #007700">));<br />}<br /><br /></span><span style="color: #0000BB">f</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">f</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">f</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">f</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">f</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <p class="para">Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+$req: 1; $opt: 0; Anzahl Parameter: 0
+$req: 1; $opt: 2; Anzahl Parameter: 0
+$req: 1; $opt: 2; Anzahl Parameter: 1
+$req: 1; $opt: 2; Anzahl Parameter: 2
+$req: 1; $opt: 2; Anzahl Parameter: 3
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+ <div class="sect2" id="migration56.new-features.splat">
+  <h3 class="title">Entpacken von Argumenten mit <em>...</em></h3>
+
+  <p class="para">
+   <a href="language.types.array.html" class="link">Arrays</a> und
+   <span class="interfacename">Traversable</span>-Objekte können in eine Liste
+   von Parametern entpackt werden, indem der <em>...</em>
+   verwendet wird. Dies ist in anderen Sprachen, wie beispielsweise Ruby,
+   auch als Splat-Operator bekannt.
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$operators&nbsp;</span><span style="color: #007700">=&nbsp;[</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">];<br />echo&nbsp;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;...</span><span style="color: #0000BB">$operators</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <p class="para">Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+6
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+ <div class="sect2" id="migration56.new-features.exponentiation">
+  <h3 class="title">Potenzieren mit <em>**</em></h3>
+
+  <p class="para">
+   Der rechtsassoziative Operator <em>**</em> zum Potenzieren
+   wurde gemeinsam mit dem abkürzenden Zuweisungsoperator
+   <em>**=</em> hinzugefügt.
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"2&nbsp;**&nbsp;3&nbsp;==&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%d\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2&nbsp;</span><span style="color: #007700">**&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"2&nbsp;**&nbsp;3&nbsp;**&nbsp;2&nbsp;==&nbsp;%d\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2&nbsp;</span><span style="color: #007700">**&nbsp;</span><span style="color: #0000BB">3&nbsp;</span><span style="color: #007700">**&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">**=&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"a&nbsp;==&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%d\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  <p class="para">Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p>
+  <div class="example-contents screen">
+<div class="cdata"><pre>
+2 ** 3 ==      8
+2 ** 3 ** 2 == 512
+a ==           8
+</pre></div>
+  </div>
+  </div>
+ </div>
+
+ <div class="sect2" id="migration56.new-features.use">
+  <h3 class="title"><em>use function</em> und <em>use const</em></h3>
+
+  <p class="para">
+   Der Operator
+   <a href="language.namespaces.importing.html" class="link"><em>use</em></a> 
+   wurde um das Importieren von Funktionen und Konstanten zusätzlich zu
+   Klassen erweitert. Dies kann jeweils entsprechend durch die Konstrukte
+   <em>use function</em> oder <em>use const</em>
+   erreicht werden.
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">Name</span><span style="color: #007700">\</span><span style="color: #0000BB">Space&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;</span><span style="color: #0000BB">FOO&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">42</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">f</span><span style="color: #007700">()&nbsp;{&nbsp;echo&nbsp;</span><span style="color: #0000BB">__FUNCTION__</span><span style="color: #007700">.</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;&nbsp;}<br />}<br /><br />namespace&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;use&nbsp;const&nbsp;</span><span style="color: #0000BB">Name</span><span style="color: #007700">\</span><span style="color: #0000BB">Space</span><span style="color: #007700">\</span><span style="color: #0000BB">FOO</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;use&nbsp;function&nbsp;</span><span style="color: #0000BB">Name</span><span style="color: #007700">\</span><span style="color: #0000BB">Space</span><span style="color: #007700">\</span><span style="color: #0000BB">f</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">FOO</span><span style="color: #007700">.</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">f</span><span style="color: #007700">();<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <p class="para">Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+42
+Name\Space\f
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+ <div class="sect2" id="migration56.new-features.phpdbg">
+  <h3 class="title">phpdbg</h3>
+
+  <p class="para">
+   PHP enthält nun einen interaktiven Debugger namens phpdbg, welcher als
+   SAPI-Modul umgesetzt wurde. Weitere Informationen findet man in der
+   <a href="http://phpdbg.com/docs" class="link external">&raquo;&nbsp;phpdbg-Dokumentation</a>.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration56.new-features.default-encoding">
+  <h3 class="title">Standardzeichencodierung</h3>
+
+  <p class="para">
+   <a href="ini.core.html#ini.default-charset" class="link">default_charset</a> wird nun
+   als Standardzeichencodierung für die Funktionen 
+   <span class="function">htmlentities</span>, <span class="function">html_entity_decode</span>
+   und <span class="function">htmlspecialchars</span> herangezogen. Falls die
+   (nun veralteten) Einstellungen für die Zeichencodierung von iconv und 
+   mbstring gesetzt sind, haben diese Vorrang gegenüber default_charset
+   für die jeweilige Funktion iconv beziehungsweise mbstring.
+  </p>
+
+  <p class="para">
+   Die Standardeinstellung hierfür ist <em>UTF-8</em>.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration56.new-features.reusable-input">
+  <h3 class="title"><a href="wrappers.php.html#wrappers.php.input" class="link"><em>php://input</em></a> ist wiederverwendbar</h3>
+
+  <p class="para">
+   <a href="wrappers.php.html#wrappers.php.input" class="link"><em>php://input</em></a>
+   kann nun so oft wie nötig geöffnet und ausgelesen werden. Diese Änderung hat
+   auch zu einer erheblichen Reduktion im Speicherverbrauch bei der Verarbeitung
+   von POST-Daten geführt.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration56.new-features.large-file">
+  <h3 class="title">Große Dateiuploads</h3>
+
+  <p class="para">
+   Es werden nun auch Dateien mit einer Größe von mehr als zwei Gigabyte
+   angenommen.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration56.new-features.gmp">
+  <h3 class="title"><a href="book.gmp.html" class="link">GMP</a> unterstützt Operatorüberladung</h3>
+
+  <p class="para">
+   <a href="book.gmp.html" class="link">GMP</a>-Objekte unterstützen nun 
+   Operatorüberladung und das Casten auf skalare Typen. Dies erlaubt
+   besser lesbaren Code bei Verwendung von GMP:
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gmp_init</span><span style="color: #007700">(</span><span style="color: #0000BB">42</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gmp_init</span><span style="color: #007700">(</span><span style="color: #0000BB">17</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Code&nbsp;vor&nbsp;5.6:<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">gmp_add</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">gmp_add</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">17</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">gmp_add</span><span style="color: #007700">(</span><span style="color: #0000BB">42</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;Neuer&nbsp;Code:<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">17</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">42&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+ <div class="sect2" id="migration56.new-features.hash-equals">
+  <h3 class="title"><span class="function">hash_equals</span> für Stringvergleiche mit Schutz gegen Rechenzeitangriffe</h3>
+
+  <p class="para">
+   Die Funktion <span class="function">hash_equals</span> wurde hinzugefügt, welche
+   zwei Zeichenketten in konstanter Zeit vergleicht. Dies sollte verwendet
+   werden, um Rechenzeitangriffe zu verhindern, beispielsweise wenn 
+   <span class="function">crypt</span>-Passworthashes geprüft werden (unter der
+   Annahme, dass <span class="function">password_hash</span> und
+   <span class="function">password_verify</span> nicht verwendet werden können, 
+   welche gegen Rechenzeitangriffe nicht anfällig sind).
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$erwartet&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">crypt</span><span style="color: #007700">(</span><span style="color: #DD0000">'12345'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'$2a$07$benutzeeinenlangenstringalssalt$'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$korrekt&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">crypt</span><span style="color: #007700">(</span><span style="color: #DD0000">'12345'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'$2a$07$benutzeeinenlangenstringalssalt$'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$inkorrekt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">crypt</span><span style="color: #007700">(</span><span style="color: #DD0000">'1234'</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #DD0000">'$2a$07$benutzeeinenlangenstringalssalt$'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">hash_equals</span><span style="color: #007700">(</span><span style="color: #0000BB">$erwartet</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$korrekt</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">hash_equals</span><span style="color: #007700">(</span><span style="color: #0000BB">$erwartet</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$inkorrekt</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <p class="para">Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+bool(true)
+bool(false)
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+ <div class="sect2" id="migration56.new-features.debuginfo">
+  <h3 class="title"><em>__debugInfo()</em></h3>
+
+  <p class="para">
+   Die magische Methode 
+   <a href="language.oop5.magic.html#language.oop5.magic.debuginfo" class="link">__debugInfo()</a>
+   wurde hinzugefügt, welche es Objekten erlaubt die Eigenschaften und
+   Werte zu bestimmen, welche bei Verwendung von 
+   <span class="function">var_dump</span> ausgegeben werden.
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">C&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$prop</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">(</span><span style="color: #0000BB">$val</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prop&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$val</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__debugInfo</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'propQuadrat'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prop&nbsp;</span><span style="color: #007700">**&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;];<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">(</span><span style="color: #0000BB">42</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <p class="para">Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+object(C)#1 (1) {
+  [&quot;propQuadrat&quot;]=&gt;
+  int(1764)
+}
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+ <div class="sect2" id="migration56.new-features.gost">
+  <h3 class="title">gost-crypto Hashalgorithmus</h3>
+
+  <p class="para">
+   Der Hashalgorithmus <em>gost-crypto</em> wurde hinzugefügt. 
+   Dieser implementiert die GOST-Hash-Funktion unter Verwendung der
+   CryptoPro S-box Tabellen, wie diese in 
+   <a href="http://www.faqs.org/rfcs/rfc4357" class="link external">&raquo;&nbsp;RFC 4357, Abschnitt 11.2</a>
+   spezifiziert sind.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration56.new-features.openssl">
+  <h3 class="title">SSL/TLS-Verbesserungen</h3>
+
+  <p class="para">
+   Eine große Zahl an Verbesserungen an der SSL/TLS-Unterstützung in PHP wurden
+   mit PHP 5.6 vorgenommen. Dies umfasst die 
+   <a href="migration56.incompatible.html#migration56.incompatible.peer-verification" class="link">standardmäßige Aktivierung von Peer-Verifikation</a>,
+   Unterstützung von Zertifikat-Fingerabdrucksprüfung, Verhinderung von
+   TLS-Renegotiation-Attacken und viele neue
+   <a href="context.ssl.html" class="link">SSL Kontextoptionen</a>, welche eine
+   feiner granulare Kontrolle über Protokoll- und Verifikationseinstellungen
+   bei Verwendung von verschlüsselten Streams erlauben. 
+  </p>
+
+  <p class="para">
+   Diese Änderungen werden im Abschnitt 
+   <a href="migration56.openssl.html" class="link">OpenSSL Änderungen in PHP 5.6.x</a>
+   detaillierter beschrieben.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration56.new-features.postgresql">
+  <h3 class="title">Unterstützung für <a href="book.pgsql.html" class="link">pgsql</a> async</h3>
+
+  <p class="para">
+   Die Erweiterung <a href="book.pgsql.html" class="link">pgsql</a> unterstützt
+   nun asynchrone Verbindungen und Abfragen, womit nicht blockierendes
+   Verhalten bei der Interaktion mit PostgreSQL-Datenbanken ermöglicht
+   wird. Asynchrone Verbindungen können mittels der Konstante
+   <strong><code>PGSQL_CONNECT_ASYNC</code></strong> aufgebaut werden und die 
+   neuen Funktionen <span class="function">pg_connect_poll</span>, 
+   <span class="function">pg_socket</span>, <span class="function">pg_consume_input</span>
+   und <span class="function">pg_flush</span> behandeln asynchrone Verbindungen
+   und Abfragen.
+  </p>
+ </div>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

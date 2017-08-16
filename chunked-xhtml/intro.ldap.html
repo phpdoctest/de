@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Einf&uuml;hrung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li class="header up"><a href="book.ldap.html">LDAP</a></li>
+  <li class="active"><a href="intro.ldap.html">Einf&uuml;hrung</a></li>
+  <li><a href="ldap.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="ldap.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="ldap.using.html">Using the PHP LDAP calls</a></li>
+  <li><a href="ldap.examples.html">Beispiele</a></li>
+  <li><a href="ref.ldap.html">LDAP Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="book.ldap.html">LDAP</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ldap.setup.html">Installation/Konfiguration</a></div>
+                <div class="up"><a href="book.ldap.html">LDAP</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="intro.ldap" class="preface">
+  <h1 class="title">Einführung</h1>
+  <p class="para">
+   LDAP steht für Lightweight Directory Access Protocol und ist
+   ein Protokoll um auf &quot;Directory Servers&quot; - Verzeichnis-
+   Server - zuzugreifen.
+   Das Verzeichnis ist dabei eine spezielle Art einer Datenbank,
+   das Informationen in einer Baumstruktur bereithält.
+  </p>
+  <p class="para">
+   Das Konzept ist dabei ähnlich der Verzeichnisstruktur Ihrer
+   Festplatte, mit der Ausnahme, dass in diesem Zusammenhang
+   das Wurzelverzeichnis &quot;Die Welt&quot; ist und die
+   Unterverzeichnisse der ersten Ebene &quot;Länder&quot; abbilden.
+   Die weiteren Verzeichnisse unterhalb der Länderebene enthalten
+   Einträge für Firmen, Organisationen oder Städte. Noch tiefer
+   geschachtelt stehen Verzeichniseinträge für Personen und
+   vielleicht für Ausstattung oder Dokumente.
+  </p>
+  <p class="para">
+   Um auf eine Datei in einem Unterverzeichnis auf Ihrer
+   Festplatte zu verweisen, könnten Sie eine Schreibweise wie
+   folgt verwenden
+   </p>
+  <pre class="literallayout">
+  /usr/local/meine_daten/doku
+  </pre>
+  <p class="para">
+   Die Schrägstriche markieren jeden Teil in diesem Verweis und
+   die Sequenz wird von links nach rechts gelesen.
+  </p>
+  <p class="para">
+   Das entsprechende Gegenstück zu einer voll qualifizierten
+   Dateireferenz ist in LDAP der Eindeutige Name
+   (&quot;distinguished name&quot;), der Einfachheit halber als &quot;dn&quot;
+   bezeichnet.
+   Ein Beispiel für einen solchen dn könnte sein
+  </p>
+  <pre class="literallayout">
+  cn=Hans Mustermann,ou=Buchhaltung,o=Meine Firma,c=DE
+  </pre>
+  <p class="para">
+   Das Komma markiert jeden Teil in diesem Verweis und die
+   Sequenz wird von rechts nach links gelesen.
+   Diesen dn würden Sie wie folgt lesen:
+  </p>
+  <pre class="literallayout">
+  Land = DE
+  Organisation (organisation) = Meine Firma
+  Organisationseinheit (organisationalUnit) = Buchhaltung
+  Einfacher Name (commonName) = Hans Mustermann
+  </pre>
+  <p class="para">
+   In der gleichen Weise, in der es keine allgemeinverbindlichen
+   Regeln gibt, wie Sie die Verzeichnisstruktur Ihrer Festplatte
+   organsieren, kann der Verwalter eines Verzeichnis-Servers jede
+   beliebige Struktur implementieren, die für den Einsatzzweck
+   sinnvoll ist.
+   Die Botschaft ist folgende: Sie können keinen Code schreiben
+   um auf einen Verzeichnis-Server zuzugreifen, ohne etwas über
+   dessen Struktur zu wissen. Genauso wenig können Sie eine
+   Datenbank nutzen ohne Kenntnis darüber, was in derselben
+   vorhanden ist.
+  </p>
+  <p class="para">
+   Weitere nützliche Informationen zu LDAP finden Sie unter
+  </p>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <p class="para">
+     <a href="https://wiki.mozilla.org/Directory" class="link external">&raquo;&nbsp;Mozilla</a>
+    </p>
+   </li>
+   <li class="listitem">
+    <p class="para">
+     <a href="http://www.openldap.org/" class="link external">&raquo;&nbsp;OpenLDAP Project</a>
+    </p>
+   </li>
+  </ul>
+
+  <p class="para">
+   Das Netscape SDK enthält einen hilfreichen
+   <a href="https://wiki.mozilla.org/Mozilla_LDAP_SDK_Programmer%27s_Guide" class="link external">&raquo;&nbsp;Programmer´s Guide</a> im
+   HTML Format.
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

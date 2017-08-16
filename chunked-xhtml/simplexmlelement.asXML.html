@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Gibt einen wohlgeformten XML String zur&uuml;ck, der auf einem
+   SimpleXML-Element basiert</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.xml.html">XML-Manipulation</a></li>
+  <li class="header up"><a href="book.simplexml.html">SimpleXML</a></li>
+  <li class="header up"><a href="class.simplexmlelement.html">SimpleXMLElement</a></li>
+  <li><a href="simplexmlelement.addAttribute.html">SimpleXMLElement::addAttribute</a></li>
+  <li><a href="simplexmlelement.addChild.html">SimpleXMLElement::addChild</a></li>
+  <li class="active"><a href="simplexmlelement.asXML.html">SimpleXMLElement::asXML</a></li>
+  <li><a href="simplexmlelement.attributes.html">SimpleXMLElement::attributes</a></li>
+  <li><a href="simplexmlelement.children.html">SimpleXMLElement::children</a></li>
+  <li><a href="simplexmlelement.construct.html">SimpleXMLElement::__construct</a></li>
+  <li><a href="simplexmlelement.count.html">SimpleXMLElement::count</a></li>
+  <li><a href="simplexmlelement.getDocNamespaces.html">SimpleXMLElement::getDocNamespaces</a></li>
+  <li><a href="simplexmlelement.getName.html">SimpleXMLElement::getName</a></li>
+  <li><a href="simplexmlelement.getNamespaces.html">SimpleXMLElement::getNamespaces</a></li>
+  <li><a href="simplexmlelement.registerXPathNamespace.html">SimpleXMLElement::registerXPathNamespace</a></li>
+  <li><a href="simplexmlelement.savexml.html">SimpleXMLElement::saveXML</a></li>
+  <li><a href="simplexmlelement.tostring.html">SimpleXMLElement::__toString</a></li>
+  <li><a href="simplexmlelement.xpath.html">SimpleXMLElement::xpath</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="simplexmlelement.addChild.html">SimpleXMLElement::addChild</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="simplexmlelement.attributes.html">SimpleXMLElement::attributes</a></div>
+                <div class="up"><a href="class.simplexmlelement.html">SimpleXMLElement</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="simplexmlelement.asXML" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">SimpleXMLElement::asXML</h1>
+  <p class="refpurpose">Gibt einen wohlgeformten XML String zurück, der auf einem
+   SimpleXML-Element basiert</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-simplexmlelement.asXML-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="classsynopsis">
+   <div class="ooclass"><strong class="classname">SimpleXMLElement</strong></div>
+   <div class="methodsynopsis dc-description">
+    <span class="type">mixed</span> <span class="methodname">asXML</span>
+     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+   ] )</div>
+
+  </div>
+  <p class="para">
+   Die <em>asXML</em> Methode formatiert den Inhalt des Elternobjekts
+   als XML Version 1.0.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-simplexmlelement.asXML-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">filename</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Sofern angegeben, schreibt die Funktion die Daten in das File anstatt
+       sie direkt zurück zu geben.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-simplexmlelement.asXML-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Ist der Parameter <code class="parameter">filename</code> nicht angegeben, gibt die
+   Funktion einen <span class="type">String</span> bei erfolgreicher Umwandlung oder <strong><code>FALSE</code></strong>
+   bei einem Fehler zurück. Ist der Parameter angegeben, wird <strong><code>TRUE</code></strong> zurückgegeben,
+   wenn die Datei erfolgreich erstellt werden konnte; ansonsten ist der
+   Rückgabewert <strong><code>FALSE</code></strong>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-simplexmlelement.asXML-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-6231">
+    <p><strong>Beispiel #1 XML erstellen</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$string&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;XML<br /></span><span style="color: #DD0000">&lt;a&gt;<br />&nbsp;&lt;b&gt;<br />&nbsp;&nbsp;&lt;c&gt;text&lt;/c&gt;<br />&nbsp;&nbsp;&lt;c&gt;zeugs&lt;/c&gt;<br />&nbsp;&lt;/b&gt;<br />&nbsp;&lt;d&gt;<br />&nbsp;&nbsp;&lt;c&gt;code&lt;/c&gt;<br />&nbsp;&lt;/d&gt;<br />&lt;/a&gt;<br /></span><span style="color: #007700">XML;<br /><br /></span><span style="color: #0000BB">$xml&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SimpleXMLElement</span><span style="color: #007700">(</span><span style="color: #0000BB">$string</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">$xml</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">asXML</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;&lt;?xml&nbsp;...&nbsp;&lt;a&gt;&lt;b&gt;&lt;c&gt;text&lt;/c&gt;&lt;c&gt;zeugs&lt;/c&gt;&nbsp;...<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <em>asXML</em> lässt sich ebenfalls auf Xpath-Ergebnisse anwenden:
+   <div class="example" id="example-6232">
+    <p><strong>Beispiel #2 Anwendung von asXML() auf
+      <span class="methodname">SimpleXMLElement::xpath</span>-Ergebnisse</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Fortsetzung&nbsp;des&nbsp;obigen&nbsp;Beispiels<br /><br />/*&nbsp;Suche&nbsp;nach&nbsp;&lt;a&gt;&lt;b&gt;&lt;c&gt;&nbsp;*/<br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$xml</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">xpath</span><span style="color: #007700">(</span><span style="color: #DD0000">'/a/b/c'</span><span style="color: #007700">);<br /><br />while(list(&nbsp;,&nbsp;</span><span style="color: #0000BB">$node</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">each</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">asXML</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;&lt;c&gt;text&lt;/c&gt;&nbsp;and&nbsp;&lt;c&gt;zeugs&lt;/c&gt;<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

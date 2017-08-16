@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Wie man eine Funktionsdefinition (Prototyp) liest</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="appendices.html">Appendices</a></li>
+  <li class="header up"><a href="about.html">&Uuml;ber das Handbuch</a></li>
+  <li><a href="about.formats.html">Formate</a></li>
+  <li><a href="about.notes.html">&Uuml;ber die Kommentare (User Notes)</a></li>
+  <li class="active"><a href="about.prototypes.html">Wie man eine Funktionsdefinition (Prototyp) liest</a></li>
+  <li><a href="about.phpversions.html">In diesem Handbuch beschriebene PHP-Versionen</a></li>
+  <li><a href="about.more.html">Mehr Informationen &uuml;ber PHP finden</a></li>
+  <li><a href="about.howtohelp.html">Wie man helfen kann, die Dokumentation zu verbessern</a></li>
+  <li><a href="about.generate.html">Wie wir die Formate generieren</a></li>
+  <li><a href="about.translations.html">&Uuml;bersetzungen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="about.notes.html">&Uuml;ber die Kommentare (User Notes)</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="about.phpversions.html">In diesem Handbuch beschriebene PHP-Versionen</a></div>
+                <div class="up"><a href="about.html">&Uuml;ber das Handbuch</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="about.prototypes" class="sect1">
+   <h2 class="title">Wie man eine Funktionsdefinition (Prototyp) liest</h2>
+   <p class="para">
+    Jede Funktion im Handbuch ist für schnelles Nachschlagen dokumentiert. Zu
+    wissen, wie man diesen Text liest und versteht, wird es viel einfacher machen,
+    PHP zu lernen. Statt sich auf Beispiele und Auschneiden und Einfügen zu verlassen
+    sollte jeder wissen, wie man eine Funktionsdefinition (Prototyp) liest.
+    Lassen Sie uns anfangen:
+   </p>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <strong>
+     Voraussetzung: Grundlegendes Verständnis der <a href="language.types.html" class="link">Typen</a>
+    </strong><br />
+    <p class="para">
+     Obwohl PHP eine schwach typisierte Sprache ist, ist es wichtig, ein
+     grundlegendes Verständnis von <a href="language.types.html" class="link">Typen</a>
+     zu besitzen, da sie eine wichtige Bedeutung haben.
+    </p>
+   </p></blockquote>
+   <p class="para">
+    Funktionsdefinitionen sagen uns, welcher Typ von Werten <a href="functions.returning-values.html" class="link">zurückgegeben wird</a>.
+    Lassen Sie uns die Definition von <span class="function">strlen</span> als unser
+    erstes Beispiel nehmen:
+   </p>
+   <p class="para">
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+strlen
+
+(PHP 4, PHP 5)
+strlen -- Ermitteln der String-Länge
+
+Beschreibung
+int strlen ( string $string )
+
+Gibt die Länge der übergebenen Zeichenkette zurück.
+</pre></div>
+    </div>
+   </p>
+   <p class="para">
+    <table class="doctable table">
+     <caption><strong>Erklärung einer Funktionsdefinition</strong></caption>
+      
+       <thead>
+        <tr>
+         <th>Teil</th>
+         <th>Beschreibung</th>
+        </tr>
+
+       </thead>
+
+       <tbody class="tbody">
+        <tr>
+         <td>
+          strlen
+         </td>
+         <td>
+          Der Name der Funktion.
+         </td>
+        </tr>
+
+        <tr>
+         <td>
+          (PHP 4, PHP 5)
+         </td>
+         <td>
+          strlen() gab es in allen Versionen von PHP 4 und PHP 5
+         </td>
+        </tr>
+
+        <tr>
+         <td>
+          int
+         </td>
+         <td>
+           Type des Wertes, den diese Funktion zurückgibt, welche hier ein 
+           <span class="type">integer</span> ist (d.h. die Länge einer Zeichenkette in Zahlen
+           gemessen).
+         </td>
+        </tr>
+
+        <tr>
+         <td>
+          ( string $string )
+         </td>
+         <td>
+          Der erste (und in diesem Fall einzige) Parameter (Argument) dieser
+          Funktion trägt den Namen <code class="parameter">string</code> und ist ein
+          <span class="type">String</span>.
+         </td>
+        </tr>
+
+       </tbody>
+      
+     </table>
+
+    </p>
+    <p class="para">
+     Wir könnten die oben angegebene Funktionsdefinition auf eine allgemeine
+     Art umschreiben:
+    </p>
+    <p class="para">
+     <div class="example-contents screen">
+<div class="cdata"><pre>
+      Rückgabetyp    Funktionsname    ( Parametertyp   Parametername )
+</pre></div>
+     </div>
+    </p>
+    <p class="para">
+     Viele Funktionen akzeptieren mehrere Parameter, z.B. <span class="function">in_array</span>.
+     Ihr Prototyp sieht wie folgt aus:
+    </p>
+    <p class="para">
+     <div class="example-contents screen">    
+<div class="cdata"><pre>
+      bool in_array ( mixed $needle, array $haystack [, bool $strict = FALSE])
+</pre></div>
+     </div>
+    </p>
+    <p class="para">
+     Was bedeutet das? in_array() liefert einen <a href="language.types.boolean.html" class="link">boolean</a> Wert zurück, <strong><code>TRUE</code></strong> im
+     Erfolgsfall (falls <code class="parameter">needle</code> in <code class="parameter">haystack</code>
+     gefunden wurde)Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben. (falls <code class="parameter">needle</code>
+     nicht in <code class="parameter">haystack</code> gefunden wurde). Der erste
+     Parameter heißt <code class="parameter">needle</code> und kann viele verschiedene
+      <a href="language.types.html" class="link">Typen</a> annehmen, weshalb wir ihn 
+     &quot;<em class="emphasis">mixed</em>&quot; nennen. Diese mixed <code class="parameter">needle</code>
+     (wonach wir suchen) kann entweder ein skalarer Wert sein (string, integer
+     oder <a href="language.types.float.html" class="link">float</a>) oder ein
+     <a href="language.types.array.html" class="link">array</a>.
+     <code class="parameter">haystack</code> (das Array das wir durchsuchen) ist der
+     zweite Parameter. Der dritte, <em class="emphasis">optionale</em> Parameter wird
+     <code class="parameter">strict</code> genannt. Alle optionalen Parameter werden
+     in <em class="emphasis">[</em> Klammern <em class="emphasis">]</em> dargestellt.
+     Das Handbuch erklärt, dass der Parameter <code class="parameter">strict</code>
+     den Standardwert <strong><code>FALSE</code></strong> hat. Schauen Sie auf die Handbuchseite der
+     jeweiligen Funktion, um nachzulesen, wie sie funktionieren.
+    </p>
+    <p class="para">
+     Zusätzlich erlaubt das &amp; (Kaufmanns-Und) Symbol, das einem Funktionsparameter
+     vorangestellt wird, den Parameter als <a href="language.references.pass.html" class="link">Referenz</a>
+     zu übergeben, wie hier zu sehen:
+    </p>
+    <p class="para">
+     <div class="example-contents screen">
+<div class="cdata"><pre>
+       int preg_match ( string $pattern , string $subject [, array &amp;$matches
+      [, int $flags = 0 [, int $offset = 0 ]]] )
+</pre></div>
+     </div>
+    </p>
+    <p class="para">
+     Diesem Beispiel kann entnommen werden, dass der dritte optionale Parameter
+     <code class="parameter">&amp;$matches</code> als Referenz übergeben wird.
+    </p>
+    <p class="para">
+     Es gibt auch Funktionen mit komplexeren PHP Versionsangaben. Nehmen wir
+     <span class="function">html_entity_decode</span> als Beispiel:
+    </p>
+    <p class="para">
+     <div class="example-contents screen">    
+<div class="cdata"><pre>
+(PHP 4 &gt;= 4.3.0, PHP 5)
+</pre></div>
+     </div>
+    </p>
+    <p class="para">
+     Das heißt die Funktion ist nur  
+     in PHP Versionen ab PHP 4.3.0 verfügbar.
+    </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

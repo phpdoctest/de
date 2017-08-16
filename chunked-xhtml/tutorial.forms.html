@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Formulare verarbeiten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="getting-started.html">Einf&uuml;hrung</a></li>
+  <li class="header up"><a href="tutorial.html">Ein kleines Tutorial</a></li>
+  <li><a href="tutorial.requirements.html">Was brauche ich?</a></li>
+  <li><a href="tutorial.firstpage.html">Ihre erste PHP-erweiterte Seite</a></li>
+  <li><a href="tutorial.useful.html">Etwas n&uuml;tzliches</a></li>
+  <li class="active"><a href="tutorial.forms.html">Formulare verarbeiten</a></li>
+  <li><a href="tutorial.oldcode.html">Alten Code mit neuen PHP-Versionen benutzen</a></li>
+  <li><a href="tutorial.whatsnext.html">Und weiter?</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="tutorial.useful.html">Etwas n&uuml;tzliches</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="tutorial.oldcode.html">Alten Code mit neuen PHP-Versionen benutzen</a></div>
+                <div class="up"><a href="tutorial.html">Ein kleines Tutorial</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="tutorial.forms" class="section">
+   <h2 class="title">Formulare verarbeiten</h2>
+   <p class="para">
+    Eine der mächtigsten Funktionen von PHP ist die Art, wie HTML-Formulare
+    verarbeitet werden. Sie sollten wissen, dass jedes Element eines Formulars
+    automatisch in Ihren PHP-Skripts verfügbar ist. Bitte lesen Sie die Seite
+    <a href="language.variables.external.html" class="link">Variablen aus externen Quellen</a>
+    für weitere Informationen und Beispiele über das Benutzen von Formularen
+    mit PHP. Hier ist ein Beispiel-HTML-Formular:
+   </p>
+   <p class="para">
+    <div class="example" id="example-7">
+     <p><strong>Beispiel #1 Ein einfaches HTML-Formular</strong></p>
+     <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;form action=&quot;action.php&quot; method=&quot;post&quot;&gt;
+ &lt;p&gt;Ihr Name: &lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt;&lt;/p&gt;
+ &lt;p&gt;Ihr Alter: &lt;input type=&quot;text&quot; name=&quot;alter&quot; /&gt;&lt;/p&gt;
+ &lt;p&gt;&lt;input type=&quot;submit&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</pre>
+</div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    An diesem Formular ist nichts Besonderes. Es ist ein normales
+    HTML-Formular ohne irgendwelche speziellen Tags. Wenn der Benutzer
+    das Formular ausfüllt und den Submit-Button anklickt, wird die
+    Seite <var class="filename">action.php</var> aufgerufen. Diese Datei
+    könnte so aussehen:
+   </p>
+   <p class="para">
+    <div class="example" id="example-8">
+     <p><strong>Beispiel #2 Daten des Formulars ausgeben</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+Hallo&nbsp;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">htmlspecialchars</span><span style="color: #007700">(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'name'</span><span style="color: #007700">]);&nbsp;</span><span style="color: #0000BB">?&gt;</span>.<br />Sie&nbsp;sind&nbsp;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;(int)</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'alter'</span><span style="color: #007700">];&nbsp;</span><span style="color: #0000BB">?&gt;</span>&nbsp;Jahre&nbsp;alt.</span>
+</code></div>
+     </div>
+
+     <div class="example-contents"><p>
+      Die Ausgabe des Skripts könnte dann so aussehen:
+     </p></div>
+     <div class="example-contents screen">
+<div class="cdata"><pre>
+Hallo Joe. Sie sind 22 Jahre alt.
+</pre></div>
+     </div>
+    </div>
+   </p>
+   <p class="para">
+    Abgesehen von dem <span class="function">htmlspecialchars</span>-Aufruf
+    und dem <em>(int)</em> Cast sollte einfach zu verstehen
+    sein, was hier geschieht. <span class="function">htmlspecialchars</span>
+    stellt sicher, dass die Zeichen, die in HTML eine spezielle Bedeutung
+    haben, ordentlich codiert werden, sodass niemand HTML Tags oder
+    Javascript-Code in Ihre Seite einschmuggeln kann. Da wir wissen,
+    dass das &quot;alter&quot; Feld eine Zahl enthalten soll, 
+    <a href="language.types.type-juggling.html#language.types.typecasting" class="link">konvertieren</a>
+    wir es in einen <span class="type">integer</span> Wert, wodurch automatisch
+    überflüssige Zeichen entfernt werden. Sie können diese Aufgabe
+    auch PHP überlassen, indem Sie die
+    <a href="ref.filter.html" class="link">Filter</a> Extension benutzen.
+    Die Variablen <var class="varname">$_POST[&#039;name&#039;]</var> und
+    <var class="varname">$_POST[&#039;alter&#039;]</var> werden für Sie automatisch
+    von PHP gesetzt. Weiter oben haben wir das superglobale Array
+    <var class="varname">$_SERVER</var> eingeführt, jetzt benutzen wir hier
+    das - ebenfalls superglobale - Array <var class="varname">$_POST</var>, welches alle
+    POST-Daten enthält. Beachten Sie, dass die im Formular verwendete
+    <em class="emphasis">Methode</em> POST ist. Hätten wir
+    <em class="emphasis">GET</em> verwendet, wären die Daten unseres
+    Formulars stattdessen im superglobalen Array <var class="varname">$_GET</var> verfügbar.
+    Sie können auch das superglobale Array <var class="varname">$_REQUEST</var> benutzen,
+    wenn die Quelle der Daten keine Rolle spielt. Dieses Array enthält
+    die GET-, POST- und COOKIE-Daten.
+   </p>
+   <p class="para">
+    Sie können ebenfalls die Eingaben von XForms in PHP verarbeiten, auch
+    wenn Ihnen die von PHP unterstützten HTML-Formulare bisher gut
+    gereicht haben. Auch wenn die Arbeit mit XForms nichts für Anfänger
+    ist, sind Sie vielleicht trotzdem daran interessant. In unserem
+    Features-Kapitel finden Sie eine <a href="features.xforms.html" class="link">kurze Einführung</a> in die Verarbeitung
+    von XForms-Daten.
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

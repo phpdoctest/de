@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Mcrypt Chiffren</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.crypto.html">Kryptografische Erweiterungen</a></li>
+  <li class="header up"><a href="book.mcrypt.html">Mcrypt</a></li>
+  <li><a href="intro.mcrypt.html">Einf&uuml;hrung</a></li>
+  <li><a href="mcrypt.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="mcrypt.constants.html">Vordefinierte Konstanten</a></li>
+  <li class="active"><a href="mcrypt.ciphers.html">Mcrypt Chiffren</a></li>
+  <li><a href="mcrypt.examples.html">Beispiele</a></li>
+  <li><a href="ref.mcrypt.html">Mcrypt Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="mcrypt.constants.html">Vordefinierte Konstanten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="mcrypt.examples.html">Beispiele</a></div>
+                <div class="up"><a href="book.mcrypt.html">Mcrypt</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="mcrypt.ciphers" class="appendix">
+ <h1>Mcrypt Chiffren</h1>
+ <p class="para">
+  Hier ist eine Liste der Chiffren, die aktuell von der mcrypt-Erweiterung unterstützt
+  werden. Für eine komplette Liste der unterstützten Chiffren siehe die Definitionen am
+  Ende der Datei <var class="filename">mcrypt.h</var>. Im allgemeinen gilt für die
+  mcrypt-2.2.x API, dass auf die Chiffre mit MCRYPT_[chiffrename] zugegriffen werden kann.
+  Diese Konstanten funktionieren ebenfalls mit der libmcrypt-2.4.x und libmcrypt-2.5.x API,
+  jedoch ist es möglich, den Namen der Chiffre als String mit einem Aufruf der Funktion
+  <span class="function">mcrypt_module_open</span> anzugeben.
+  <ul class="itemizedlist">
+   <li class="listitem"><span class="simpara">MCRYPT_3DES</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_ARCFOUR_IV (nur libmcrypt &gt; 2.4.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_ARCFOUR (nur libmcrypt &gt; 2.4.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_BLOWFISH</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_CAST_128</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_CAST_256</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_CRYPT</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_DES</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_DES_COMPAT (nur libmcrypt 2.2.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_ENIGMA (nur libmcrypt &gt; 2.4.x, Aliase für MCRYPT_CRYPT)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_GOST</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_IDEA (nicht frei)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_LOKI97 (nur libmcrypt &gt; 2.4.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_MARS (nur libmcrypt &gt; 2.4.x, nicht frei)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_PANAMA (nur libmcrypt &gt; 2.4.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_RIJNDAEL_128 (nur libmcrypt &gt; 2.4.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_RIJNDAEL_192 (nur libmcrypt &gt; 2.4.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_RIJNDAEL_256 (nur libmcrypt &gt; 2.4.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_RC2</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_RC4 (nur libmcrypt 2.2.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_RC6 (nur libmcrypt &gt; 2.4.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_RC6_128 (nur libmcrypt 2.2.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_RC6_192 (nur libmcrypt 2.2.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_RC6_256 (nur libmcrypt 2.2.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_SAFER64</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_SAFER128</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_SAFERPLUS (nur libmcrypt &gt; 2.4.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_SERPENT(nur libmcrypt &gt; 2.4.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_SERPENT_128 (nur libmcrypt 2.2.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_SERPENT_192 (nur libmcrypt 2.2.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_SERPENT_256 (nur libmcrypt 2.2.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_SKIPJACK (nur libmcrypt &gt; 2.4.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_TEAN (nur libmcrypt 2.2.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_THREEWAY</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_TRIPLEDES (nur libmcrypt &gt; 2.4.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_TWOFISH (für ältere mcrypt 2.x Versionen, oder mcrypt &gt; 2.4.x )</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_TWOFISH128 (TWOFISHxxx sind verfügbar in neueren 2.x Versionen, aber nicht in den 2.4.x Versionen)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_TWOFISH192</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_TWOFISH256</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_WAKE (nur libmcrypt &gt; 2.4.x)</span></li>
+   <li class="listitem"><span class="simpara">MCRYPT_XTEA (nur libmcrypt &gt; 2.4.x)</span></li>
+  </ul>
+ </p>
+ <p class="para">
+  Sie müssen (im <strong><code>CFB</code></strong> und <strong><code>OFB</code></strong> Modus)
+  oder können (im <strong><code>CBC</code></strong> Modus) die jeweiligen Chiffrierfunktionen mit einem
+  Initialierungs-Vektor versorgen (initialization vector, IV). Der IV muss einmalig und
+  sowohl für die Verschlüsselung als auch für die Entschlüsselung gleich sein.
+  Bei Daten, die verschlüsselt gespeichert werden, können Sie die Ausgabe einer
+  Funktion des Indexes verwenden, unter welcher die Daten gespeichert werden (z.B. der MD5-Hash des Dateinamens).
+  Alternativ können die den IV zusammen mit den verschlüsselten Daten übermitteln
+  (siehe Kapitel 9.3 aus Applied Cryptography by Schneier (ISBN 0-471-11709-9) für eine Diskussion zu diesem Thema).
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

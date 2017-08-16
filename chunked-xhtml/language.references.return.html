@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Referenzen zur&uuml;ckgeben</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.references.html">Referenzen in PHP</a></li>
+  <li><a href="language.references.whatare.html">Was Referenzen sind</a></li>
+  <li><a href="language.references.whatdo.html">Was Referenzen leisten</a></li>
+  <li><a href="language.references.arent.html">Was Referenzen nicht sind</a></li>
+  <li><a href="language.references.pass.html">Parameter&uuml;bergabe per Referenz</a></li>
+  <li class="active"><a href="language.references.return.html">Referenzen zur&uuml;ckgeben</a></li>
+  <li><a href="language.references.unset.html">Referenzen aufheben</a></li>
+  <li><a href="language.references.spot.html">Referenzen entdecken</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.references.pass.html">Parameter&uuml;bergabe per Referenz</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.references.unset.html">Referenzen aufheben</a></div>
+                <div class="up"><a href="language.references.html">Referenzen in PHP</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.references.return" class="sect1">
+   <h2 class="title">Referenzen zurückgeben</h2>
+   <p class="para">
+    Das Zurückgeben von Ergebnissen per Referenz aus Funktionen
+    heraus kann manchmal recht nützlich sein, um herauszufinden, an welche
+    Variable eine Referenz gebunden werden soll. Man sollte diese Funktionalität
+    <em class="emphasis">nicht</em> aus Performancegründen benutzen, der Kern
+    ist intelligent genug, um dies selbst zu optimieren. Man sollte Referenzen
+    nur dann zurückgeben, wenn man sinnvolle technische Gründe hat. Hierbei
+    ist folgende Syntax zu beachten:
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">42</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;&amp;</span><span style="color: #0000BB">getValue</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">value</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$myValue&nbsp;</span><span style="color: #007700">=&nbsp;&amp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getValue</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;$myValue&nbsp;ist&nbsp;eine&nbsp;&nbsp;Referenz&nbsp;zu&nbsp;to&nbsp;$obj-&gt;value,&nbsp;mit&nbsp;dem&nbsp;Wert&nbsp;42.<br /></span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">value&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$myValue</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Zeigt&nbsp;den&nbsp;neuen&nbsp;Wert&nbsp;von&nbsp;$obj-&gt;value,&nbsp;also&nbsp;2.<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+    In diesem Beispiel wird also die Eigenschaft des von
+    <var class="varname">getValue</var> gelieferten Objektes gesetzt, nicht die der Kopie,
+    wie es der Fall wäre, wenn die Funktion <var class="varname">getValue</var>
+    ihr Ergebnis nicht per Referenz liefern würde.
+   </p>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <span class="simpara">
+     Im Gegensatz zur Parameterübergabe per Referenz ist bei der
+     Rückgabe mittels Referenz an beiden Stellen die Angabe des
+     <em>&amp;</em> notwendig. Dies verdeutlicht, dass Sie eine
+     Referenz und nicht wie gewöhnlich eine Kopie zurückgeben. Ebenfalls wird
+     verdeutlicht, dass für <var class="varname">$myValue</var> im Gegensatz zur
+     normalen Zuweisung ein Referencebinding durchgeführt wird.
+    </span>
+   </p></blockquote>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <span class="simpara">
+     Wenn man versucht, eine Referenz aus einer Funktion mit der Syntax
+     <em>return ($this-&gt;value);</em> zurückzugeben, wird das
+     <em class="emphasis">nicht</em> funktionieren, weil man versucht, das
+     Ergebnis eines <em class="emphasis">Ausdrucks</em> zurückzugeben und nicht
+     eine Variable per Referenz. Man kann nur Variablen per Referenz aus
+     einer Funktion zurückgeben - sonst nichts.
+     Seit PHP 4.4.0 und PHP 5.1.0 wird ein <strong><code>E_NOTICE</code></strong>-Fehler
+     erzeugt, wenn versucht wird, einen dynamischen Ausdruck oder das Ergebnis
+     eines <em>new</em> zurückzugeben.
+    </span>
+   </p></blockquote>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

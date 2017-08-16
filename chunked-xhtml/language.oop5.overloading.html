@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: &Uuml;berladung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.oop5.html">Klassen und Objekte</a></li>
+  <li><a href="oop5.intro.html">Einf&uuml;hrung</a></li>
+  <li><a href="language.oop5.basic.html">Die Grundlagen</a></li>
+  <li><a href="language.oop5.properties.html">Eigenschaften</a></li>
+  <li><a href="language.oop5.constants.html">Klassenkonstanten</a></li>
+  <li><a href="language.oop5.autoload.html">Autoloading</a></li>
+  <li><a href="language.oop5.decon.html">Konstruktoren und Destruktoren</a></li>
+  <li><a href="language.oop5.visibility.html">Sichtbarkeit</a></li>
+  <li><a href="language.oop5.inheritance.html">Objekt-Vererbung</a></li>
+  <li><a href="language.oop5.paamayim-nekudotayim.html">G&uuml;ltigkeitsbereichsoperator (::)</a></li>
+  <li><a href="language.oop5.static.html">Static-Schl&uuml;sselwort</a></li>
+  <li><a href="language.oop5.abstract.html">Klassenabstraktion</a></li>
+  <li><a href="language.oop5.interfaces.html">Interfaces</a></li>
+  <li><a href="language.oop5.traits.html">Traits</a></li>
+  <li><a href="language.oop5.anonymous.html">Anonyme Klassen</a></li>
+  <li class="active"><a href="language.oop5.overloading.html">&Uuml;berladung</a></li>
+  <li><a href="language.oop5.iterations.html">Objektiteration</a></li>
+  <li><a href="language.oop5.magic.html">Magische Methoden</a></li>
+  <li><a href="language.oop5.final.html">Final-Schl&uuml;sselwort</a></li>
+  <li><a href="language.oop5.cloning.html">Objekte klonen</a></li>
+  <li><a href="language.oop5.object-comparison.html">Objekte vergleichen</a></li>
+  <li><a href="language.oop5.typehinting.html">Type-Hints</a></li>
+  <li><a href="language.oop5.late-static-bindings.html">Sp&auml;te statische Bindung</a></li>
+  <li><a href="language.oop5.references.html">Objekte und Referenzen</a></li>
+  <li><a href="language.oop5.serialization.html">Serialisierung von Objekten</a></li>
+  <li><a href="language.oop5.changelog.html">OOP-Changelog</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.oop5.anonymous.html">Anonyme Klassen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.oop5.iterations.html">Objektiteration</a></div>
+                <div class="up"><a href="language.oop5.html">Klassen und Objekte</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.oop5.overloading" class="sect1">
+  <h2 class="title">Überladung</h2>
+
+  <p class="para">
+   Überladung bietet in PHP Möglichkeiten, um dynamisch
+   Eigenschaften und Methoden zu <q class="quote">erzeugen</q>.
+   Diese dynamisch erzeugten Entitäten werden unter
+   Zuhilfenahme von magischen Methoden verarbeitet,
+   die man in einer Klasse zu verschiedenen Aktivitäten
+   definieren kann.
+  </p>
+
+  <p class="para">
+   Die Überladungsmethoden werden aufgerufen, wenn mit
+   Eigenschaften oder Methoden interagiert wird, die entweder
+   nicht deklariert wurden oder im aktuellen Geltungsbereich
+   nicht <a href="language.oop5.visibility.html" class="link">sichtbar</a>
+   sind. Im Rest dieses Abschnitts werden die Begriffe
+   <q class="quote">unzugreifbare Eigenschaft</q> und
+   <q class="quote">unzugreifbare Methode</q> verwendet, um auf die
+   Kombination von Deklaration und Sichtbarkeit zu verweisen.
+  </p>
+
+  <p class="para">
+   Alle Überladungsmethoden müssen als <em>public</em>
+   definiert sein.
+  </p>
+
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Keiner der Parameter dieser magischen Methoden kann
+    <a href="functions.arguments.html#functions.arguments.by-reference" class="link">als
+    Referenz</a> übergeben werden.
+   </p>
+  </p></blockquote>
+
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Die Interpretation von <q class="quote">Überladung</q> weicht
+    von den meisten objektorientierten Programmiersprachen
+    ab. Traditionell bezeichnet Überladung die Möglichkeit
+    mehrere Methoden mit gleichem Namen aber unterschiedlichen
+    Anzahlen und Typen von Parametern zu definieren.
+   </p>
+  </p></blockquote>
+
+
+  <div class="sect2" id="language.oop5.overloading.changelog">
+   <h3 class="title">Changelog</h3>
+   <p class="para">
+    <table class="doctable informaltable">
+     
+      <thead>
+       <tr>
+        <th>Version</th>
+        <th>Beschreibung</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr>
+        <td>5.3.0</td>
+        <td>
+         <a href="language.oop5.overloading.html#object.callstatic" class="link">__callStatic</a> hinzugefügt.
+         Eine Warnung wurde hinzugefügt, um die Sichtbarkeit
+         public und nicht statische Deklaration zu erzwingen.
+        </td>
+       </tr>
+
+       <tr>
+        <td>5.1.0</td>
+        <td>
+         <a href="language.oop5.overloading.html#object.isset" class="link">__isset</a> und 
+         <a href="language.oop5.overloading.html#object.unset" class="link">__unset</a> hinzugefügt.
+         Unterstützung von <a href="language.oop5.overloading.html#object.get" class="link">__get()</a> zum Überladen 
+         von privaten Eigenschaften hinzugefügt.
+        </td>
+       </tr>
+
+       <tr>
+        <td>5.0.0</td>
+        <td>
+         <a href="language.oop5.overloading.html#object.get" class="link">__get()</a> hinzugefügt.
+        </td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
+  </div>
+
+
+  <div class="sect2" id="language.oop5.overloading.members">
+   <h3 class="title">Überladung von Eigenschaften</h3>
+
+   <div class="methodsynopsis dc-description" id="object.set">
+    <span class="modifier">public</span> <span class="type">void</span> <span class="methodname">__set</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+    , <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$value</code></span>
+    )</div>
+
+   <div class="methodsynopsis dc-description" id="object.get">
+    <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname">__get</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+    )</div>
+
+   <div class="methodsynopsis dc-description" id="object.isset">
+    <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname">__isset</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+    )</div>
+
+   <div class="methodsynopsis dc-description" id="object.unset">
+    <span class="modifier">public</span> <span class="type">void</span> <span class="methodname">__unset</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+    )</div>
+
+
+   <p class="para">
+    <a href="language.oop5.overloading.html#object.set" class="link">__set</a> wird aufgerufen, wenn Daten in unzugreifbare
+    Eigenschaften geschrieben werden sollen.
+   </p>
+
+   <p class="para">
+    <a href="language.oop5.overloading.html#object.get" class="link">__get</a> wird verwendet, um Daten aus unzugreifbaren
+    Eigenschaften zu lesen.
+   </p>
+
+   <p class="para">
+    <a href="language.oop5.overloading.html#object.isset" class="link">__isset</a> wird aufgerufen, indem 
+    <span class="function">isset</span> oder <span class="function">empty</span>
+    auf unzugreifbare Eigenschaften angewendet wird.
+   </p>
+
+   <p class="para">
+    <a href="language.oop5.overloading.html#object.unset" class="link">__unset</a> wird aufgerufen, wenn
+    <span class="function">unset</span> für unzugreifbaren Eigenschaften 
+    aufgerufen wird.
+   </p>
+
+   <p class="para">
+    Der Parameter <var class="varname">$name</var> beinhaltet den Namen
+    der Eigenschaft, mit der interagiert wird. Der Parameter
+    <var class="varname">$value</var> der Funktion <a href="language.oop5.overloading.html#object.set" class="link">__set</a>
+    spezifiziert den Wert den die Eigenschaft <var class="varname">$name</var>
+    annehmen soll.
+   </p>
+
+   <p class="para">
+    Überladung von Eigenschaften funktioniert nur im Kontext von
+    Objekten. Diese magischen Methoden werden nicht aus einem
+    statischen Kontext aufgerufen. Diese Methoden sollten daher
+    nicht als <a href="language.oop5.static.html" class="link">static</a>
+    deklariert werden. Seit PHP 5.3.0 wird eine Warnung ausgegeben,
+    wenn eine dieser magischen Überladungsmethoden als
+    <em>static</em> deklariert ist.
+   </p>
+
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Der Rückgabewert von <a href="language.oop5.overloading.html#object.set" class="link">__set</a> wird, aufgrund
+     der Behandlung des Zuweisungsoperators in PHP, ignoriert.
+     Aus ähnlichen Gründen wird <a href="language.oop5.overloading.html#object.get" class="link">__get</a> nicht
+     aufgerufen, wenn man Zuweisungen in etwa wie folgt verkettet:
+     <em><div class="cdata"><pre> $a = $obj-&gt;b = 8; </pre></div></em>
+    </p>
+   </p></blockquote>
+
+   <div class="example" id="example-227">
+    <p><strong>Beispiel #1 
+     Überladung von Eigenschaften mit den Methoden 
+     <a href="language.oop5.overloading.html#object.get" class="link">__get</a>, <a href="language.oop5.overloading.html#object.set" class="link">__set</a>, 
+     <a href="language.oop5.overloading.html#object.isset" class="link">__isset</a> und <a href="language.oop5.overloading.html#object.unset" class="link">__unset</a>
+    </strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">EigenschaftTest&nbsp;<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**&nbsp;&nbsp;Speicherplatz&nbsp;für&nbsp;überladene&nbsp;Daten.&nbsp;&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">private&nbsp;</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**&nbsp;&nbsp;Überladung&nbsp;wird&nbsp;nicht&nbsp;bei&nbsp;deklarierten&nbsp;Eigenschaften&nbsp;benutzt.&nbsp;&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;</span><span style="color: #0000BB">$declared&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**&nbsp;&nbsp;Überladung&nbsp;wird&nbsp;nur&nbsp;von&nbsp;außerhalb&nbsp;der&nbsp;Klasse&nbsp;angewendet.&nbsp;&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">private&nbsp;</span><span style="color: #0000BB">$hidden&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__set</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Setze&nbsp;'</span><span style="color: #0000BB">$name</span><span style="color: #DD0000">'&nbsp;auf&nbsp;'</span><span style="color: #0000BB">$value</span><span style="color: #DD0000">'\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">data</span><span style="color: #007700">[</span><span style="color: #0000BB">$name</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__get</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">)&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Lese&nbsp;'</span><span style="color: #0000BB">$name</span><span style="color: #DD0000">'\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">array_key_exists</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">data</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">data</span><span style="color: #007700">[</span><span style="color: #0000BB">$name</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$trace&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">debug_backtrace</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">trigger_error</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'Undefinierte&nbsp;Eigenschaft&nbsp;für&nbsp;__get():&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'&nbsp;in&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$trace</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">][</span><span style="color: #DD0000">'file'</span><span style="color: #007700">]&nbsp;.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'&nbsp;Zeile&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$trace</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">][</span><span style="color: #DD0000">'line'</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">E_USER_NOTICE</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**&nbsp;Seit&nbsp;PHP&nbsp;5.1.0&nbsp;&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">__isset</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">)&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Ist&nbsp;'</span><span style="color: #0000BB">$name</span><span style="color: #DD0000">'&nbsp;gesetzt?\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;isset(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">data</span><span style="color: #007700">[</span><span style="color: #0000BB">$name</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**&nbsp;Seit&nbsp;PHP&nbsp;5.1.0&nbsp;&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">__unset</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Lösche&nbsp;'</span><span style="color: #0000BB">$name</span><span style="color: #DD0000">'\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unset(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">data</span><span style="color: #007700">[</span><span style="color: #0000BB">$name</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**&nbsp;&nbsp;Keine&nbsp;magische&nbsp;Methode,&nbsp;nur&nbsp;beispielhaft&nbsp;hier.&nbsp;&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">getHidden</span><span style="color: #007700">()&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">hidden</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /><br />echo&nbsp;</span><span style="color: #DD0000">"&lt;pre&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">EigenschaftTest</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">a&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(isset(</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">a</span><span style="color: #007700">));<br />unset(</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">a</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(isset(</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">a</span><span style="color: #007700">));<br />echo&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">declared&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n\n"</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Wir&nbsp;experimentieren&nbsp;nun&nbsp;mit&nbsp;der&nbsp;private-Eigenschaft&nbsp;'hidden':\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Private&nbsp;ist&nbsp;innerhalb&nbsp;der&nbsp;Klasse&nbsp;sichtbar,&nbsp;also&nbsp;wird&nbsp;__get()&nbsp;nicht&nbsp;benutzt...\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getHidden</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Private&nbsp;nicht&nbsp;sichtbar&nbsp;von&nbsp;außerhalb&nbsp;der&nbsp;Klasse,&nbsp;also&nbsp;wird&nbsp;__get()&nbsp;benutzt...\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">hidden&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Setze &#039;a&#039; auf &#039;1&#039;
+Lese &#039;a&#039;
+1
+
+Ist &#039;a&#039; gesetzt?
+bool(true)
+Lösche &#039;a&#039;
+Ist &#039;a&#039; gesetzt?
+bool(false)
+
+1
+
+Wir experimentieren nun mit der private-Eigenschaft &#039;hidden&#039;:
+Private ist innerhalb der Klasse sichtbar, also wird __get() nicht benutzt...
+2
+Private nicht sichtbar von außerhalb der Klasse, also wird __get() benutzt...
+Lese &#039;hidden&#039;
+
+
+Notice:  Undefinierte Eigenschaft für __get(): hidden in &lt;file&gt; Zeile 70 in &lt;file&gt; on line 29
+</pre></div>
+    </div>
+
+   </div>
+  </div>
+
+  <div class="sect2" id="language.oop5.overloading.methods">
+   <h3 class="title">Überladung von Methoden</h3>
+
+   <div class="methodsynopsis dc-description" id="object.call">
+    <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname">__call</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+    , <span class="methodparam"><span class="type">array</span> <code class="parameter">$arguments</code></span>
+    )</div>
+
+   <div class="methodsynopsis dc-description" id="object.callstatic">
+    <span class="modifier">public static</span> <span class="type">mixed</span> <span class="methodname">__callStatic</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+    , <span class="methodparam"><span class="type">array</span> <code class="parameter">$arguments</code></span>
+    )</div>
+
+
+   <p class="para">
+    <a href="language.oop5.overloading.html#object.call" class="link">__call</a> wird aufgerufen, wenn eine unzugreifbare
+    Methode in einem Objekt aufgerufen wird.
+   </p>
+
+   <p class="para">
+    <a href="language.oop5.overloading.html#object.callstatic" class="link">__callStatic</a> wird aufgerufen, wenn eine
+    unzugreifbare Methode in einem statischen Kontext aufgerufen wird.
+   </p>
+
+   <p class="para">
+    Der Parameter <var class="varname">$name</var> ist der Name der aufgerufenen
+    Methode. Der Parameter <var class="varname">$arguments</var> beinhaltet ein
+    Array mit den Parametern, die der Methode <var class="varname">$name</var>
+    übergeben wurden.
+   </p>
+
+   <div class="example" id="example-228">
+    <p><strong>Beispiel #2 
+     Überladung von Methoden mit den methoden <a href="language.oop5.overloading.html#object.call" class="link">__call</a>
+     und <a href="language.oop5.overloading.html#object.callstatic" class="link">__callStatic</a>
+    </strong></p>
+    <div class="example-contents">
+  <div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">MethodenTest&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__call</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$arguments</span><span style="color: #007700">)&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Achtung:&nbsp;Der&nbsp;Wert&nbsp;von&nbsp;$name&nbsp;beachtet&nbsp;die&nbsp;Groß-/Kleinschreibung<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Rufe&nbsp;die&nbsp;Objektmethode&nbsp;'</span><span style="color: #0000BB">$name</span><span style="color: #DD0000">'&nbsp;"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">implode</span><span style="color: #007700">(</span><span style="color: #DD0000">',&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$arguments</span><span style="color: #007700">).&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**&nbsp;&nbsp;Seit&nbsp;PHP&nbsp;5.3.0&nbsp;&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">__callStatic</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$arguments</span><span style="color: #007700">)&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Achtung:&nbsp;Der&nbsp;Wert&nbsp;von&nbsp;$name&nbsp;beachtet&nbsp;die&nbsp;Groß-/Kleinschreibung<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Rufe&nbsp;die&nbsp;statische&nbsp;Methode&nbsp;'</span><span style="color: #0000BB">$name</span><span style="color: #DD0000">'&nbsp;"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">implode</span><span style="color: #007700">(</span><span style="color: #DD0000">',&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$arguments</span><span style="color: #007700">).&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MethodenTest</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">runTest</span><span style="color: #007700">(</span><span style="color: #DD0000">'eines&nbsp;Objektes&nbsp;auf'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">MethodTest</span><span style="color: #007700">::</span><span style="color: #0000BB">runTest</span><span style="color: #007700">(</span><span style="color: #DD0000">'aus&nbsp;statischem&nbsp;Kontext&nbsp;auf'</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Seit&nbsp;PHP&nbsp;5.3.0<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Rufe die Objektmethode &#039;runTest&#039; eines Objektes auf
+Rufe die statische Methode &#039;runTest&#039; aus statischem Kontext auf
+</pre></div>
+    </div>
+   </div>
+
+  </div>
+
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

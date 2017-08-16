@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: CURL</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li><a href="book.chdb.html">chdb</a></li>
+  <li class="active"><a href="book.curl.html">cURL</a></li>
+  <li><a href="book.event.html">Event</a></li>
+  <li><a href="book.fam.html">FAM</a></li>
+  <li><a href="book.ftp.html">FTP</a></li>
+  <li><a href="book.gearman.html">Gearman</a></li>
+  <li><a href="book.net-gopher.html">Gopher</a></li>
+  <li><a href="book.gupnp.html">Gupnp</a></li>
+  <li><a href="book.hwapi.html">Hyperwave API</a></li>
+  <li><a href="book.ldap.html">LDAP</a></li>
+  <li><a href="book.memcache.html">Memcache</a></li>
+  <li><a href="book.memcached.html">Memcached</a></li>
+  <li><a href="book.mqseries.html">mqseries</a></li>
+  <li><a href="book.network.html">Network</a></li>
+  <li><a href="book.rrd.html">RRD</a></li>
+  <li><a href="book.sam.html">SAM</a></li>
+  <li><a href="book.snmp.html">SNMP</a></li>
+  <li><a href="book.sockets.html">Sockets</a></li>
+  <li><a href="book.ssh2.html">SSH2</a></li>
+  <li><a href="book.stomp.html">Stomp</a></li>
+  <li><a href="book.svm.html">SVM</a></li>
+  <li><a href="book.svn.html">SVN</a></li>
+  <li><a href="book.tcpwrap.html">TCP</a></li>
+  <li><a href="book.varnish.html">Varnish</a></li>
+  <li><a href="book.yaz.html">YAZ</a></li>
+  <li><a href="book.nis.html">YP/NIS</a></li>
+  <li><a href="book.zmq.html">0MQ messaging</a></li>
+  <li><a href="book.zookeeper.html">ZooKeeper</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.chdb-create.html">chdb_create</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.curl.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.remote.other.html">Sonstige Dienste</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.curl" class="book">
+ 
+ <h1>CURL</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.curl.html">Einf&uuml;hrung</a></li>
+<li><a href="curl.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="curl.requirements.html">Anforderungen</a></li>
+<li><a href="curl.installation.html">Installation</a></li>
+<li><a href="curl.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="curl.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="curl.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="curl.examples.html">Beispiele</a><ul class="chunklist chunklist_title">
+<li><a href="curl.examples-basic.html">Grundlegende Nutzung</a></li>
+</ul>
+</li>
+<li><a href="ref.curl.html">cURL Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.curl-close.html">curl_close</a> — Eine cURL-Session beenden</li>
+<li><a href="function.curl-copy-handle.html">curl_copy_handle</a> — Kopieren eines cURL-Handles inklusiver aller Voreinstellungen</li>
+<li><a href="function.curl-errno.html">curl_errno</a> — Gibt die letzte Fehlernummer zur&uuml;ck</li>
+<li><a href="function.curl-error.html">curl_error</a> — Gibt einen String zur&uuml;ck, der den letzten Fehler der aktuellen Session enth&auml;lt</li>
+<li><a href="function.curl-escape.html">curl_escape</a> — URL-kodiert den angegebenen String</li>
+<li><a href="function.curl-exec.html">curl_exec</a> — Eine cURL-Session ausf&uuml;hren</li>
+<li><a href="function.curl-file-create.html">curl_file_create</a> — Erstellt ein CURLFile-Objekt</li>
+<li><a href="function.curl-getinfo.html">curl_getinfo</a> — Informationen zu einem bestimmten Transfer abfragen</li>
+<li><a href="function.curl-init.html">curl_init</a> — Eine cURL-Session initialisieren</li>
+<li><a href="function.curl-multi-add-handle.html">curl_multi_add_handle</a> — F&uuml;gt ein regul&auml;res cURL-Handle einem cURL-Multi-Handle hinzu</li>
+<li><a href="function.curl-multi-close.html">curl_multi_close</a> — Eine Gruppe von cURL-Handlern schlie&szlig;en</li>
+<li><a href="function.curl-multi-exec.html">curl_multi_exec</a> — F&uuml;hrt die Unter-Verbindungen des cURL-Handles aus</li>
+<li><a href="function.curl-multi-getcontent.html">curl_multi_getcontent</a> — Den Inhalt des cURL-Handles zur&uuml;ckgeben, falls CURLOPT_RETURNTRANSFER gesetzt ist</li>
+<li><a href="function.curl-multi-info-read.html">curl_multi_info_read</a> — Informationen &uuml;ber die aktuellen Transfers abrufen</li>
+<li><a href="function.curl-multi-init.html">curl_multi_init</a> — Gibt einen cURL-Multi-Handle zur&uuml;ck</li>
+<li><a href="function.curl-multi-remove-handle.html">curl_multi_remove_handle</a> — Einen Multi-Handle von einer Menge aus cURL-Handles entfernen</li>
+<li><a href="function.curl-multi-select.html">curl_multi_select</a> — Alle Sockets abfragen, die mit der cURL Erweiterung assoziiert sind und ausgew&auml;hlt werden k&ouml;nnen</li>
+<li><a href="function.curl-multi-setopt.html">curl_multi_setopt</a> — Setz eine Option f&uuml;r das cURL multi-Handle</li>
+<li><a href="function.curl-multi-strerror.html">curl_multi_strerror</a> — Gibt einen den Fehler beschreibenden String zur&uuml;ck</li>
+<li><a href="function.curl-pause.html">curl_pause</a> — Pausiert und setzt eine Verbindung fort</li>
+<li><a href="function.curl-reset.html">curl_reset</a> — Reset all options of a libcurl session handle</li>
+<li><a href="function.curl-setopt-array.html">curl_setopt_array</a> — Mehrere Optionen f&uuml;r einen cURL-Transfer setzen</li>
+<li><a href="function.curl-setopt.html">curl_setopt</a> — Eine Option f&uuml;r einen cURL Transfer setzen</li>
+<li><a href="function.curl-share-close.html">curl_share_close</a> — Close a cURL share handle</li>
+<li><a href="function.curl-share-init.html">curl_share_init</a> — Initialize a cURL share handle</li>
+<li><a href="function.curl-share-setopt.html">curl_share_setopt</a> — Set an option for a cURL share handle.</li>
+<li><a href="function.curl-strerror.html">curl_strerror</a> — Return string describing the given error code</li>
+<li><a href="function.curl-unescape.html">curl_unescape</a> — Decodes the given URL encoded string</li>
+<li><a href="function.curl-version.html">curl_version</a> — Gibt die cURL-Version zur&uuml;ck</li>
+</ul>
+</li>
+<li><a href="class.curlfile.html">CURLFile</a> — Die CURLFile Klasse<ul class="chunklist chunklist_title">
+<li><a href="curlfile.construct.html">CURLFile::__construct</a> — Erstellt ein CURLFile Objekt</li>
+<li><a href="curlfile.getfilename.html">CURLFile::getFilename</a> — Ermittelt den Dateinamen</li>
+<li><a href="curlfile.getmimetype.html">CURLFile::getMimeType</a> — Ermittelt den Mime-Typ</li>
+<li><a href="curlfile.getpostfilename.html">CURLFile::getPostFilename</a> — Ermittelt den Dateinamen f&uuml;r POST</li>
+<li><a href="curlfile.setmimetype.html">CURLFile::setMimeType</a> — Setzt den Mime-Typ fest</li>
+<li><a href="curlfile.setpostfilename.html">CURLFile::setPostFilename</a> — Setzt den Dateinamen f&uuml;r POST fest</li>
+<li><a href="curlfile.wakeup.html">CURLFile::__wakeup</a> — Benutzerausf&uuml;hrung</li>
+</ul>
+</li>
+</ul>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+ <h1 class="title">Die CURLFile Klasse</h1>
+ 
+
+ <div class="partintro">
+
+
+  <div class="section" id="curlfile.intro">
+   <h2 class="title">Einführung</h2>
+   <p class="para">
+    <span class="classname">CURLFile</span> sollte benutzt werden um eine Datei mit
+    <strong><code>CURLOPT_POSTFIELDS</code></strong> hochzuladen.
+   </p>
+  </div>
+
+
+  <div class="section" id="curlfile.synopsis">
+   <h2 class="title">Klassenbeschreibung</h2>
+
+
+   <div class="classsynopsis">
+    <div class="ooclass"><strong class="classname">CURLFile</strong></div>
+
+
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+       class <strong class="classname">CURLFile</strong>
+     </span>
+     {</div>
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Eigenschaften */</div>
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <var class="varname">$name</var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <var class="varname">$mime</var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <var class="varname">$postname</var>
+    ;</div>
+
+
+    
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methoden */</div>
+    <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span>  <span class="methodname">__construct</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$mimetype</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$postname</code></span>
+  ]] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname">getFilename</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname">getMimeType</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname">getPostFilename</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname">setMimeType</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$mime</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname">setPostFilename</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$postname</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname">__wakeup</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+   }</div>
+
+
+  </div>
+
+  
+
+  <div class="section" id="curlfile.props">
+   <h2 class="title">Eigenschaften</h2>
+   <dl>
+
+    
+     <dt id="curlfile.props.name"><var class="varname">name</var></dt>
+
+     <dd>
+
+      <p class="para">Der Name der hochzuladenden Datei.</p>
+     </dd>
+
+    
+    
+     <dt id="curlfile.props.mime"><var class="varname">mime</var></dt>
+
+     <dd>
+
+      <p class="para">Der MIME-Typ der Datei (Vorgabe ist <em>application/octet-stream</em>).</p>
+     </dd>
+
+    
+    
+     <dt id="curlfile.props.postname"><var class="varname">postname</var></dt>
+
+     <dd>
+
+      <p class="para">Der Name der Datei in den Upload-Daten (Vorgabe ist die <var class="varname">name</var> Eigenschaft).</p>
+     </dd>
+
+    
+   </dl>
+
+  </div>
+
+
+  <div class="section" id="curlfile.seealso">
+   <h2 class="title">Siehe auch</h2>
+   <p class="para">
+    <ul class="simplelist">
+     <li class="member">
+      <span class="function">curl_setopt</span>
+     </li>
+    </ul>
+   </p>
+  </div>
+
+ </div>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

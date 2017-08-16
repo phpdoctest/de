@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Konstanten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.crypto.html">Kryptografische Erweiterungen</a></li>
+  <li class="header up"><a href="book.mcrypt.html">Mcrypt</a></li>
+  <li><a href="intro.mcrypt.html">Einf&uuml;hrung</a></li>
+  <li><a href="mcrypt.setup.html">Installation/Konfiguration</a></li>
+  <li class="active"><a href="mcrypt.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="mcrypt.ciphers.html">Mcrypt Chiffren</a></li>
+  <li><a href="mcrypt.examples.html">Beispiele</a></li>
+  <li><a href="ref.mcrypt.html">Mcrypt Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="mcrypt.resources.html">Ressource-Typen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="mcrypt.ciphers.html">Mcrypt Chiffren</a></div>
+                <div class="up"><a href="book.mcrypt.html">Mcrypt</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="mcrypt.constants" class="appendix">
+ <h1>Vordefinierte Konstanten</h1>
+ <p class="simpara">Folgende Konstanten werden von dieser
+Erweiterung definiert und stehen nur zur Verfügung, wenn die Erweiterung entweder
+statisch in PHP kompiliert oder dynamisch zur Laufzeit geladen
+wurde.</p>
+ <p class="para">
+  Mcrypt kann in vier Blockchiffriermodi arbeiten(<em>CBC</em>,
+  <em>OFB</em>, <em>CFB</em> und
+  <em>ECB</em>). Wenn verknüpft mit libmcrypt-2.4.x oder höher,
+  können die Funktionen auch in den Blockchiffriermodi <em>nOFB</em>
+  und <em>STREAM</em> arbeiten. Unten finden Sie eine Liste mit allen unterstützten
+  Verschlüsselungsmodi zusammen mit den für die Verschlüsselung definierten Konstanten.
+  Für eine vollständige Referenz und Diskussionen siehe Applied Cryptography by Schneier (ISBN 0-471-11709-9).
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <strong><code>MCRYPT_MODE_ECB</code></strong> (<em>electronic
+     codebook</em>) ist geeignet für zufällige Daten, wie z.B. andere Schlüssel zu verschlüsseln.
+     Da die Daten dort sehr klein und zufällig sind, haben die Nachteile von ECB eine positive negative Wirkung.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <strong><code>MCRYPT_MODE_CBC</code></strong> (<em>cipher block
+     chaining</em>) ist besonders für die Verschlüsselung von Dateien geeignet,
+     wo die Sicherheit über <em>ECB</em> deutlich erhöht wird.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <strong><code>MCRYPT_MODE_CFB</code></strong> (<em>cipher
+     feedback</em>) ist der Beste Modus zur Verschlüsselung von Byte-Streams, wo die Bytes
+     einzeln verschlüsselt werden müssen.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <strong><code>MCRYPT_MODE_OFB</code></strong> (<em>output feedback, in
+     8bit</em>) ist mit <em>CFB</em> vergleichbar, aber kann in Anwendungen verwendet werden, 
+     in denen die Verbreitung von Fehlern nicht toleriert werden kann. Da es unsicher ist (es arbeitet im 8Bit Modus) ist es nicht zu empfehlen, diesen Modus zu verwenden.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <strong><code>MCRYPT_MODE_NOFB</code></strong> (<em>output feedback,
+     in nbit</em>) ist mit OFB vergleichbar, aber es ist sicherer, da es in der Blockgröße des Algorithmus arbeitet.
+    </span>
+   </li> 
+   <li class="listitem">
+    <span class="simpara">
+     <strong><code>MCRYPT_MODE_STREAM</code></strong> ist ein extra Modus zum Einbinden einiger Stream-Algorithmen wie
+     <em>&quot;WAKE&quot;</em> oder <em>&quot;RC4&quot;</em>.
+    </span>
+   </li> 
+  </ul>
+ </p>
+
+ <p class="para">
+  Some other mode and random device constants:
+  <dl>
+
+   
+    <dt id="constant.mcrypt-encrypt">
+     <strong><code>MCRYPT_ENCRYPT</code></strong> 
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.mcrypt-decrypt">
+     <strong><code>MCRYPT_DECRYPT</code></strong> 
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.mcrypt-dev-random">
+     <strong><code>MCRYPT_DEV_RANDOM</code></strong> 
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.mcrypt-dev-urandom">
+     <strong><code>MCRYPT_DEV_URANDOM</code></strong> 
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.mcrypt-rand">
+     <strong><code>MCRYPT_RAND</code></strong> 
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+  </dl>
+
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

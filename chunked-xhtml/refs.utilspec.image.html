@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Bildverarbeitung und -generierung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li><a href="refs.utilspec.audio.html">Manipulation von Audioformaten</a></li>
+  <li><a href="refs.remote.auth.html">Authentifizierungsdienste</a></li>
+  <li><a href="refs.utilspec.cmdline.html">Eingabezeilenspezifische Erweiterungen</a></li>
+  <li><a href="refs.compression.html">Erweiterungen zur Datenkompression und Archivierung</a></li>
+  <li><a href="refs.creditcard.html">Kreditkartendaten-Verarbeitung</a></li>
+  <li><a href="refs.crypto.html">Kryptografische Erweiterungen</a></li>
+  <li><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li><a href="refs.calendar.html">Datums- und zeitrelevante Erweiterungen</a></li>
+  <li><a href="refs.fileprocess.file.html">Dateisystemrelevante Erweiterungen</a></li>
+  <li><a href="refs.international.html">Unterst&uuml;tzung menschlicher Sprache und Zeichenkodierung</a></li>
+  <li class="active"><a href="refs.utilspec.image.html">Bildverarbeitung und -generierung</a></li>
+  <li><a href="refs.remote.mail.html">E-Mail-relevante Erweiterungen</a></li>
+  <li><a href="refs.math.html">Mathematische Erweiterungen</a></li>
+  <li><a href="refs.utilspec.nontext.html">Non-Text MIME-Ausgaben</a></li>
+  <li><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li><a href="refs.search.html">Suchmaschinenerweiterungen</a></li>
+  <li><a href="refs.utilspec.server.html">Serverspezifische Erweiterungen</a></li>
+  <li><a href="refs.basic.session.html">Session-Erweiterungen</a></li>
+  <li><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li><a href="refs.webservice.html">Web Services</a></li>
+  <li><a href="refs.utilspec.windows.html">Windowsbasierte Erweiterungen</a></li>
+  <li><a href="refs.xml.html">XML-Manipulation</a></li>
+  <li><a href="refs.ui.html">GUI Erweiterungen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.recode.html">recode</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="book.cairo.html">Cairo</a></div>
+                <div class="up"><a href="funcref.html">Funktionsreferenz</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="refs.utilspec.image" class="set">
+   <h1>Bildverarbeitung und -generierung</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="book.cairo.html">Cairo</a> — Cairo<ul class="chunklist chunklist_title">
+<li><a href="intro.cairo.html">Einf&uuml;hrung</a></li>
+<li><a href="cairo.setup.html">Installation/Konfiguration</a></li>
+<li><a href="cairo.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="cairo.examples.html">Beispiele</a></li>
+<li><a href="ref.cairo.html">Cairo Funktionen</a></li>
+<li><a href="class.cairo.html">Cairo</a> — The Cairo class</li>
+<li><a href="class.cairocontext.html">CairoContext</a> — The CairoContext class</li>
+<li><a href="class.cairoexception.html">CairoException</a> — The CairoException class</li>
+<li><a href="class.cairostatus.html">CairoStatus</a> — The CairoStatus class</li>
+<li><a href="class.cairosurface.html">CairoSurface</a> — The CairoSurface class</li>
+<li><a href="class.cairosvgsurface.html">CairoSvgSurface</a> — Svg Surface Backend</li>
+<li><a href="class.cairoimagesurface.html">CairoImageSurface</a> — The CairoImageSurface class</li>
+<li><a href="class.cairopdfsurface.html">CairoPdfSurface</a> — The CairoPdfSurface class</li>
+<li><a href="class.cairopssurface.html">CairoPsSurface</a> — The CairoPsSurface class</li>
+<li><a href="class.cairosurfacetype.html">CairoSurfaceType</a> — The CairoSurfaceType class</li>
+<li><a href="class.cairofontface.html">CairoFontFace</a> — The CairoFontFace class</li>
+<li><a href="class.cairofontoptions.html">CairoFontOptions</a> — The CairoFontOptions class</li>
+<li><a href="class.cairofontslant.html">CairoFontSlant</a> — The CairoFontSlant class</li>
+<li><a href="class.cairofonttype.html">CairoFontType</a> — The CairoFontType class</li>
+<li><a href="class.cairofontweight.html">CairoFontWeight</a> — The CairoFontWeight class</li>
+<li><a href="class.cairoscaledfont.html">CairoScaledFont</a> — The CairoScaledFont class</li>
+<li><a href="class.cairotoyfontface.html">CairoToyFontFace</a> — The CairoToyFontFace class</li>
+<li><a href="class.cairopatterntype.html">CairoPatternType</a> — The CairoPatternType class</li>
+<li><a href="class.cairopattern.html">CairoPattern</a> — The CairoPattern class</li>
+<li><a href="class.cairogradientpattern.html">CairoGradientPattern</a> — The CairoGradientPattern class</li>
+<li><a href="class.cairosolidpattern.html">CairoSolidPattern</a> — The CairoSolidPattern class</li>
+<li><a href="class.cairosurfacepattern.html">CairoSurfacePattern</a> — The CairoSurfacePattern class</li>
+<li><a href="class.cairolineargradient.html">CairoLinearGradient</a> — The CairoLinearGradient class</li>
+<li><a href="class.cairoradialgradient.html">CairoRadialGradient</a> — The CairoRadialGradient class</li>
+<li><a href="class.cairoantialias.html">CairoAntialias</a> — The CairoAntialias class</li>
+<li><a href="class.cairocontent.html">CairoContent</a> — The CairoContent class</li>
+<li><a href="class.cairoextend.html">CairoExtend</a> — The CairoExtend class</li>
+<li><a href="class.cairoformat.html">CairoFormat</a> — The CairoFormat class</li>
+<li><a href="class.cairofillrule.html">CairoFillRule</a> — The CairoFillRule class</li>
+<li><a href="class.cairofilter.html">CairoFilter</a> — The CairoFilter class</li>
+<li><a href="class.cairohintmetrics.html">CairoHintMetrics</a> — The CairoHintMetrics class</li>
+<li><a href="class.cairohintstyle.html">CairoHintStyle</a> — The CairoHintStyle class</li>
+<li><a href="class.cairolinecap.html">CairoLineCap</a> — The CairoLineCap class</li>
+<li><a href="class.cairolinejoin.html">CairoLineJoin</a> — The CairoLineJoin class</li>
+<li><a href="class.cairomatrix.html">CairoMatrix</a> — The CairoMatrix class</li>
+<li><a href="class.cairooperator.html">CairoOperator</a> — The CairoOperator class</li>
+<li><a href="class.cairopath.html">CairoPath</a> — The CairoPath class</li>
+<li><a href="class.cairopslevel.html">CairoPsLevel</a> — The CairoPsLevel class</li>
+<li><a href="class.cairosubpixelorder.html">CairoSubpixelOrder</a> — The CairoSubpixelOrder class</li>
+<li><a href="class.cairosvgversion.html">CairoSvgVersion</a> — The CairoSvgVersion class</li>
+</ul>
+</li>
+<li><a href="book.exif.html">Exif</a> — Exchangable Image Information (EXIF)<ul class="chunklist chunklist_title">
+<li><a href="intro.exif.html">Einf&uuml;hrung</a></li>
+<li><a href="exif.setup.html">Installation/Konfiguration</a></li>
+<li><a href="exif.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.exif.html">Exif-Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.image.html">GD</a> — Bildbearbeitung und GD<ul class="chunklist chunklist_title">
+<li><a href="intro.image.html">Einf&uuml;hrung</a></li>
+<li><a href="image.setup.html">Installation/Konfiguration</a></li>
+<li><a href="image.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="image.examples.html">Beispiele</a></li>
+<li><a href="ref.image.html">GD- und Image-Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.gmagick.html">Gmagick</a> — Gmagick<ul class="chunklist chunklist_title">
+<li><a href="intro.gmagick.html">Einf&uuml;hrung</a></li>
+<li><a href="gmagick.setup.html">Installation/Konfiguration</a></li>
+<li><a href="gmagick.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="gmagick.examples.html">Beispiele</a></li>
+<li><a href="class.gmagick.html">Gmagick</a> — The Gmagick class</li>
+<li><a href="class.gmagickdraw.html">GmagickDraw</a> — The GmagickDraw class</li>
+<li><a href="class.gmagickpixel.html">GmagickPixel</a> — The GmagickPixel class</li>
+</ul>
+</li>
+<li><a href="book.imagick.html">ImageMagick</a> — Image Processing (ImageMagick)<ul class="chunklist chunklist_title">
+<li><a href="intro.imagick.html">Einf&uuml;hrung</a></li>
+<li><a href="imagick.setup.html">Installation/Konfiguration</a></li>
+<li><a href="imagick.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="imagick.examples.html">Beispiele</a></li>
+<li><a href="class.imagick.html">Imagick</a> — The Imagick class</li>
+<li><a href="class.imagickdraw.html">ImagickDraw</a> — The ImagickDraw class</li>
+<li><a href="class.imagickpixel.html">ImagickPixel</a> — The ImagickPixel class</li>
+<li><a href="class.imagickpixeliterator.html">ImagickPixelIterator</a> — The ImagickPixelIterator class</li>
+<li><a href="class.imagickkernel.html">ImagickKernel</a> — The ImagickKernel class</li>
+</ul>
+</li>
+</ul>
+
+   
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+   
+
+
+ 
+
+
+
+
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

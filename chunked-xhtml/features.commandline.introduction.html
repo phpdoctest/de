@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Introduction</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="features.html">Features</a></li>
+  <li class="header up"><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></li>
+  <li class="active"><a href="features.commandline.introduction.html">Introduction</a></li>
+  <li><a href="features.commandline.differences.html">Unterschiede zu anderen SAPIs</a></li>
+  <li><a href="features.commandline.options.html">Optionen</a></li>
+  <li><a href="features.commandline.usage.html">Nutzung</a></li>
+  <li><a href="features.commandline.io-streams.html">I/O Streams</a></li>
+  <li><a href="features.commandline.interactive.html">Interaktiver Modus</a></li>
+  <li><a href="features.commandline.webserver.html">Eingebauter Webserver</a></li>
+  <li><a href="features.commandline.ini.html">INI Einstellungen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="features.commandline.differences.html">Unterschiede zu anderen SAPIs</a></div>
+                <div class="up"><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="features.commandline.introduction" class="section">
+  <h2 class="title">Introduction</h2>
+  
+  <p class="para">
+   Das Hauptaugenmerk der
+   <acronym class="acronym">CLI</acronym> <acronym class="acronym">SAPI</acronym> ist die Entwicklung von Kommandozeilenapplikationen.
+   Es gibt einige Unterschiede zwischen der <acronym class="acronym">CLI</acronym> <acronym class="acronym">SAPI</acronym> und anderen <acronym class="acronym">SAPI</acronym>s,
+   welche in diesem Kapitel beschrieben werden. Es ist erwähnenswert, dass <acronym class="acronym">CLI</acronym> und
+   <acronym class="acronym">CGI</acronym> verschiedene <acronym class="acronym">SAPI</acronym>s sind, auch wenn sie
+   viele Verhaltensweisen teilen.
+  </p>
+  
+  <p class="para">
+   Die <acronym class="acronym">CLI</acronym> <acronym class="acronym">SAPI</acronym> ist standardmäßig durch die <strong class="option configure">--enable-cli</strong>
+
+   Option aktiviert, kann jedoch durch Angabe der <strong class="option configure">--disable-cli</strong>
+
+   Option im <strong class="command">./configure</strong> Skript deaktiviert werden.
+  </p>
+  
+  <p class="para">
+   Der Name, der Pfad und das Vorhandensein der <acronym class="acronym">CLI</acronym>/<acronym class="acronym">CGI</acronym> Binaries hängt
+   davon ab wie PHP auf dem System installiert wurde. Standarmäßig werden nach dem Aufruf von
+   <strong class="command">make</strong> sowohl <acronym class="acronym">CGI</acronym> als auch <acronym class="acronym">CLI</acronym> kompiliert und als
+   <var class="filename">sapi/cgi/php-cgi</var> beziehungsweise <var class="filename">sapi/cli/php</var>
+   in Ihrem PHP-Quellcodeverzeichnis gespeichert. Sie werden bemerken, dass beide
+   <var class="filename">php</var> heissen. Was während <strong class="command">make install</strong> passiert,
+   hängt davon ab wie PHP konfiguriert wurde. Wenn eine Modul-<acronym class="acronym">SAPI</acronym>
+   während der Konfiguration gewählt wurde, wie etwa apxs, oder die
+   <strong class="option configure">--disable-cgi</strong>
+ Option genutzt wurde, wird die <acronym class="acronym">CLI</acronym> während
+   <strong class="command">make install</strong> nach <var class="filename">{PREFIX}/bin/php</var> kopiert. Andernfalls
+   wird das <acronym class="acronym">CGI</acronym> Binary dorthin kopiert. Also wird, wenn beispielsweise
+   <strong class="option configure">--with--apxs</strong>
+ in Ihrem configure-Kommando angegeben ist,
+   wird die <acronym class="acronym">CLI</acronym> während <strong class="command">make install</strong> nach <var class="filename">{PREFIX}/bin/php</var>
+   kopiert. Wenn Sie die Installation des <acronym class="acronym">CGI</acronym> Binaries überschreiben wollen,
+   benutzen Sie <strong class="command">make install-cli</strong> nach <strong class="command">make install</strong>.
+   Alternativ können Sie <strong class="option configure">--disable-cgi</strong>
+ in Ihrem configure-Kommando
+   angeben.
+  </p>
+  
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Weil sowohl <strong class="option configure">--enable-cli</strong>
+ als auch <strong class="option configure">
+    --enable-cgi</strong>
+ standardmäßig eingeschaltet sind,
+    muss <strong class="option configure">--enable-cli</strong>
+ in Ihrem configure-Kommando
+    nicht zwingend bedeuten, dass die <acronym class="acronym">CLI</acronym> während
+    <strong class="command">make install</strong> nach
+    <var class="filename">{PREFIX}/bin/php</var> kopiert wird.
+   </p>
+  </p></blockquote>
+  
+  <p class="para">
+   Seit PHP 5 wird auf Windows das <acronym class="acronym">CLI</acronym> Binary im Hauptordner als
+   <var class="filename">php.exe</var> ausgeliefert. Die <acronym class="acronym">CGI</acronym> Version
+   wird als <var class="filename">php-cgi.exe</var> bereitgestellt. Zusätzlich
+   wird <var class="filename">php-win.exe</var> ausgeliefert, wenn PHP mit
+   <strong class="option configure">--enable-cli-win32</strong>
+ konfiguriert wurde. Dieses
+   Binary verhält sich genauso wie die <acronym class="acronym">CLI</acronym> Version, bis auf die Tatsache,
+   dass sie nichts ausgibt und somit keine Konsole zur Verfügung stellt.
+  </p>
+  
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <strong>Welche SAPI habe ich?</strong><br />
+   <p class="para">
+    Auf der Kommandozeile wird Ihnen die Eingabe von <strong class="command">php -v</strong>
+    verraten, ob Sie <var class="filename">php</var> als <acronym class="acronym">CGI</acronym> oder <acronym class="acronym">CLI</acronym>
+    einsetzen. Sehen Sie sich auch die Funktion <span class="function">php_sapi_name</span>
+    und die Konstante <strong><code>PHP_SAPI</code></strong> an.
+   </p>
+  </p></blockquote>
+  
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Eine UNIX <em>man</em> Seite ist durch eingabe von
+    <strong class="command">man php</strong> in der Kommandozeile verfügbar.
+   </p>
+  </p></blockquote>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

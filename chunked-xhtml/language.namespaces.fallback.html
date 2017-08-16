@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Namespaces verwenden: R&uuml;ckgriff auf globale Funktion/Konstante</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.namespaces.html">Namespaces</a></li>
+  <li><a href="language.namespaces.rationale.html">&Uuml;bersicht &uuml;ber Namespaces</a></li>
+  <li><a href="language.namespaces.definition.html">Namespaces definieren</a></li>
+  <li><a href="language.namespaces.nested.html">Unter-Namespaces deklarieren</a></li>
+  <li><a href="language.namespaces.definitionmultiple.html">Mehrere Namespaces in der selben Datei definieren</a></li>
+  <li><a href="language.namespaces.basics.html">Namespaces verwenden: Grundlagen</a></li>
+  <li><a href="language.namespaces.dynamic.html">Namespaces und dynamische Sprachfeatures</a></li>
+  <li><a href="language.namespaces.nsconstants.html">Namespace-Schl&uuml;sselwort und __NAMESPACE__-Konstante</a></li>
+  <li><a href="language.namespaces.importing.html">Namespaces verwenden: Aliase/Importieren</a></li>
+  <li><a href="language.namespaces.global.html">Globaler Namensraum</a></li>
+  <li class="active"><a href="language.namespaces.fallback.html">Namespaces verwenden: R&uuml;ckgriff auf globale Funktion/Konstante</a></li>
+  <li><a href="language.namespaces.rules.html">Regeln f&uuml;r Namensaufl&ouml;sung</a></li>
+  <li><a href="language.namespaces.faq.html">FAQ: Dinge, die Sie &uuml;ber Namespaces wissen sollten</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.namespaces.global.html">Globaler Namensraum</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.namespaces.rules.html">Regeln f&uuml;r Namensaufl&ouml;sung</a></div>
+                <div class="up"><a href="language.namespaces.html">Namespaces</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.namespaces.fallback" class="sect1">
+  <h2 class="title">Namespaces verwenden: Rückgriff auf globale Funktion/Konstante</h2>
+  
+  <p class="para">
+   Wenn PHP innerhalb eines Namespace auf einen unqualifizierten Namen
+   für einen Klassen-, Funktions- oder Konstantennamen trifft, so werden diese
+   mit unterschiedlichen Prioritäten aufgelöst. Klassennamen werden immer
+   auf den aktuellen Namespace aufgelöst. Um also auf interne Klassen oder
+   Benutzerklassen ohne Namespace zuzugreifen, muss man diese mit ihrem
+   vollständig qualifizierten Namen ansprechen:
+   <div class="example" id="example-268">
+    <p><strong>Beispiel #1 Zugriff auf globale Klasse innerhalb eines Namespace</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">A</span><span style="color: #007700">\</span><span style="color: #0000BB">B</span><span style="color: #007700">\</span><span style="color: #0000BB">C</span><span style="color: #007700">;<br />class&nbsp;</span><span style="color: #0000BB">Exception&nbsp;</span><span style="color: #007700">extends&nbsp;\</span><span style="color: #0000BB">Exception&nbsp;</span><span style="color: #007700">{}<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Exception</span><span style="color: #007700">(</span><span style="color: #DD0000">'hi'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;$a&nbsp;ist&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;A\B\C\Exception<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;\</span><span style="color: #0000BB">Exception</span><span style="color: #007700">(</span><span style="color: #DD0000">'hi'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;$b&nbsp;ist&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;Exception<br /><br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">ArrayObject</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;fatal&nbsp;error,&nbsp;die&nbsp;Klasse&nbsp;A\B\C\ArrayObject&nbsp;konnte<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;nicht&nbsp;gefunden&nbsp;werden<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   Für Funktionen und Konstanten wird PHP auf globale Funktionen oder
+   Konstanten zurückgreifen, wenn eine Funktion oder Konstante im
+   Namespace nicht existiert.
+   <div class="example" id="example-269">
+    <p><strong>Beispiel #2 Rückgriff auf globale Funktionen/Konstanten innerhalb eines Namespace</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">A</span><span style="color: #007700">\</span><span style="color: #0000BB">B</span><span style="color: #007700">\</span><span style="color: #0000BB">C</span><span style="color: #007700">;<br /><br />const&nbsp;</span><span style="color: #0000BB">E_ERROR&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">45</span><span style="color: #007700">;<br />function&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;\</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">)&nbsp;-&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />}<br /><br />echo&nbsp;</span><span style="color: #0000BB">E_ERROR</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;"45"&nbsp;aus<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">INI_ALL</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;"7"&nbsp;aus&nbsp;-&nbsp;Rückgriff&nbsp;auf&nbsp;globale&nbsp;INI_ALL<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #DD0000">'hi'</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;"1"&nbsp;aus<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">is_array</span><span style="color: #007700">(</span><span style="color: #DD0000">'hi'</span><span style="color: #007700">))&nbsp;{&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;"ist&nbsp;kein&nbsp;Array"&nbsp;aus<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"ist&nbsp;Array\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"ist&nbsp;kein&nbsp;Array\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

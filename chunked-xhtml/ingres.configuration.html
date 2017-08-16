@@ -1,0 +1,506 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Laufzeit-Konfiguration</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.ingres.html">Ingres</a></li>
+  <li class="header up"><a href="ingres.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="ingres.requirements.html">Anforderungen</a></li>
+  <li><a href="ingres.installation.html">Installation</a></li>
+  <li class="active"><a href="ingres.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="ingres.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="ingres.installation.html">Installation</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ingres.resources.html">Ressource-Typen</a></div>
+                <div class="up"><a href="ingres.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="ingres.configuration" class="section">
+ <h2 class="title">Laufzeit-Konfiguration</h2>
+ <p class="simpara">Das Verhalten dieser Funktionen wird
+durch Einstellungen in der <var class="filename">php.ini</var> beeinflusst.</p>
+ <p class="para">
+ <table class="doctable table">
+  <caption><strong>Ingres-Konfigurationsoptionen</strong></caption>
+  
+   <thead>
+    <tr>
+     <th>Name</th>
+     <th>Standard</th>
+     <th>Veränderbar</th>
+     <th>Changelog</th>
+    </tr>
+
+   </thead>
+
+   <tbody class="tbody">
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.allow-persistent" class="link">ingres.allow_persistent</a></td>
+     <td>&quot;1&quot;</td>
+     <td>PHP_INI_SYSTEM</td>
+     <td>Verfügbar seit Ingres 1.0.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.array-index-start" class="link">ingres.array_index_start</a></td>
+     <td>&quot;1&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>Verfügbar seit Ingres 1.4.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.auto" class="link">ingres.auto</a></td>
+     <td>&quot;1&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>Verfügbar seit Ingres 2.0.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.blob-segment-length" class="link">ingres.blob_segment_length</a></td>
+     <td>&quot;4096&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>Verfügbar seit Ingres 1.2.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.cursor-mode" class="link">ingres.cursor_mode</a></td>
+     <td>&quot;0&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>Verfügbar seit Ingres 1.1.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.default-database" class="link">ingres.default_database</a></td>
+     <td>NULL</td>
+     <td>PHP_INI_ALL</td>
+     <td>Verfügbar seit Ingres 1.0.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.default-password" class="link">ingres.default_password</a></td>
+     <td>NULL</td>
+     <td>PHP_INI_ALL</td>
+     <td>Verfügbar seit Ingres 1.0.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.default-user" class="link">ingres.default_user</a></td>
+     <td>NULL</td>
+     <td>PHP_INI_ALL</td>
+     <td>Verfügbar seit Ingres 1.0.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.describe" class="link">ingres.describe</a></td>
+     <td>1</td>
+     <td>PHP_INI_ALL</td>
+     <td>Verfügbar seit Ingres 2.1.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.fetch-buffer-size" class="link">ingres.fetch_buffer_size</a></td>
+     <td>100</td>
+     <td>PHP_INI_ALL</td>
+     <td>Verfügbar seit Ingres 2.1.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.max-links" class="link">ingres.max_links</a></td>
+     <td>&quot;-1&quot;</td>
+     <td>PHP_INI_SYSTEM</td>
+     <td>Verfügbar seit Ingres 1.0.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.max-persistent" class="link">ingres.max_persistent</a></td>
+     <td>&quot;-1&quot;</td>
+     <td>PHP_INI_SYSTEM</td>
+     <td>Verfügbar seit Ingres 1.0.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.reuse-connection" class="link">ingres.reuse_connection</a></td>
+     <td>&quot;1&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>Verfügbar seit Ingres ingres 2.0.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.scrollable" class="link">ingres.scrollable</a></td>
+     <td>&quot;1&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>Verfügbar seit Ingres 2.0.0.</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.trace" class="link">ingres.trace</a></td>
+     <td>&quot;0&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>Verfügbar seit Ingres 2.0.0.</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.trace-connect" class="link">ingres.trace_connect</a></td>
+     <td>&quot;0&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>Verfügbar seit Ingres 1.2.1.</td>
+    </tr>
+
+    <tr>
+     <td><a href="ingres.configuration.html#ini.ingres.utf8" class="link">ingres.utf8</a></td>
+     <td>&quot;1&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>Verfügbar seit Ingres 2.0.0.</td>
+    </tr>
+
+   </tbody>
+  
+ </table>
+
+ Weitere Details und die Definitionen der
+PHP_INI_*-Konstanten finden Sie im <a href="configuration.changes.modes.html" class="xref">Wo Konfigurationseinstellungen gesetzt werden k&ouml;nnen</a>.
+ </p>
+
+ <p class="para">Hier eine kurze Erklärung der
+Konfigurationsoptionen:</p>
+
+ <p class="para">
+  <dl>
+
+    
+    <dt id="ini.ingres.allow-persistent">
+     <code class="parameter">ingres.allow_persistent</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Bestimmt, ob
+      <a href="features.persistent-connections.html" class="link">persistente Verbindungen</a>
+      zu Ingres erlaubt sind.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.array-index-start">
+     <code class="parameter">ingres.array_index_start</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Bestimmt den Startwert der Integer-Schlüssel der Arrays, die von
+      <span class="function">ingres_fetch_array</span> und <span class="function">ingres_fetch_row</span>
+      zurückgegeben werden. Standardmäßig ist <code class="parameter">ingres.array_index_start</code> 1. Um die Ingres-Erweiterung
+      zu anderen Datenbankerweiterungen kompatibel zu machen, sollten Sie diesen Wert
+      auf 0 setzen.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.auto">
+     <code class="parameter">ingres.auto</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Schaltet die autocommit-Emulation ein oder aus. Wenn autocommit aktiviert ist,
+      sind mehrere geöffnete Cursor in Ingres nicht möglich. Wenn diese Option
+      aktiviert ist, wird autocommit vom Treiber emuliert.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.blob-segment-length">
+     <code class="parameter">ingres.blob_segment_length</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Bestimmt die Größe des Speichers in Bytes, der zum Lesen von Blob-Daten verwendet wird.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.cursor-mode">
+     <code class="parameter">ingres.cursor_mode</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Bestimmt, in welchem Modus ein Cursor mit ingres_prepare() geöffnet wird.
+      Gültige Werte sind <strong><code>INGRES_CURSOR_UPDATE</code></strong> und <strong><code>INGRES_CURSOR_READONLY</code></strong>.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.default-database">
+     <code class="parameter">ingres.default_database</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Bestimmt den Namen der zu öffnenden Datenbank, wenn kein Datenbankname bei
+      einem Verbindungsaufbau angegeben wird. Diese Option kann im <a href="ini.core.html#ini.sql.safe-mode" class="link">SQL safe mode</a>
+      nicht verwendet werden.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.default-password">
+     <code class="parameter">ingres.default_password</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Bestimmt, mit welchem Passwort eine Verbindung geöffnet wird, wenn kein anderes
+      angegeben wurde. Diese Option kann im <a href="ini.core.html#ini.sql.safe-mode" class="link">SQL safe mode</a> nicht verwendet werden.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.default-user">
+     <code class="parameter">ingres.default_user</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Bestimmt, mit welchem Benutzernamen eine Verbindung geöffnet wird, wenn kein
+      anderer angegeben wurde. Diese Option kann im <a href="ini.core.html#ini.sql.safe-mode" class="link">SQL safe mode</a> nicht verwendet werden.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.describe">
+     <code class="parameter">ingres.describe</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Aktiviert die Verwendung von <em>DESCRIBE INPUT</em>, um die erwarteten Datentypen für
+      parametrisierte Abfragen zu ermitteln. Dies ist seit Ingres 9.1.0 und später
+      möglich. Wenn diese Option deaktiviert ist, müssen die Datentypen von
+      parametrisierten Abfragen von Hand ermittelt werden. Dazu setzt man den
+      Parameter <a href="function.ingres-query.html#function.ingres-query.types" class="link">types</a> in der
+      Funktion <span class="function">ingres_query</span>.
+     </p>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <p class="para">
+       Die Option mittels <span class="function">ingres_query</span> zu aktivieren, verursacht zusätzlichen
+       Kommunikationsoverhead zwischen dieser Erweiterung und dem Datenbankserver.
+       Das zusätzliche Datenvolumen bei der Übertragungs können Sie mit <span class="function">ingres_prepare</span>
+       und <span class="function">ingres_execute</span> reduzieren.
+      </p>
+     </p></blockquote>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.fetch-buffer-size">
+     <code class="parameter">ingres.fetch_buffer_size</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Bestimmt die Anzahl der Zeilen, die <span class="function">ingres_fetch_array</span>,
+      <span class="function">ingres_fetch_object</span> und <span class="function">ingres_fetch_row</span>
+      in einer einzigen Leseoperation versuchen soll zu holen.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.max-links">
+     <code class="parameter">ingres.max_links</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Bestimmt die maximale Anzahl von Ingres-Datenbanksitzungen, die pro Prozess
+      oder Thread zulässig sind. Diese Anzahl der Sitzungen sollte die Anzahl der
+      innerhalb von Ingres definierten maximal zulässigen Sitzungen nicht übersteigen.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.max-persistent">
+     <code class="parameter">ingres.max_persistent</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Bestimmt die Anzahl der maximal zulässigen persistenten Ingres-Verbindungen
+      pro Prozess oder Thread. Diese Anzahl sollte die Anzahl der innerhalb von Ingres
+      definierten maximal zulässigen Sitzungen nicht übersteigen.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.reuse-connection">
+     <code class="parameter">ingres.reuse_connection</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Bestehende aktive Verbindungen werden wiederverwendet, wenn zur selben Datenbank
+      und mit demselben Benutzernamen verbunden wird.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.scrollable">
+     <code class="parameter">ingres.scrollable</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Schaltet die Unterstützung für scrollbare Cursor ein. Wenn CLOB- oder
+      BLOB-Daten geholt werden, sollte diese Optiion auf <strong><code>FALSE</code></strong> gesetzt sein.
+      Verfügbar seit Ingres 9.2.0 und höher.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.trace">
+     <code class="parameter">ingres.trace</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Schaltet eine einfache Ablaufverfolgung mittels <strong><code>E_NOTICE</code></strong> Nachrichten ein.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.trace-connect">
+     <code class="parameter">ingres.trace_connect</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Gibt <strong><code>E_NOTICE</code></strong> Nachrichten während Aufrufen von <span class="function">ingres_connect</span> oder
+      <span class="function">ingres_pconnect</span> aus.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.ingres.utf8">
+     <code class="parameter">ingres.utf8</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Es wird angenommen, dass Zeichenketten, die in Spalten des Typs National
+      Character eingefügt werden (<em>NVARCHAR</em> or <em>NCHAR</em>) die Kodierung UTF8 verwenden
+      und deshalb für den Server nach UTF16 konvertiert werden.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </p>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

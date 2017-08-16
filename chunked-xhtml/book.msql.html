@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: mSQL</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li><a href="book.cubrid.html">CUBRID</a></li>
+  <li><a href="book.dbplus.html">DB++</a></li>
+  <li><a href="book.dbase.html">dBase</a></li>
+  <li><a href="book.filepro.html">filePro</a></li>
+  <li><a href="book.ibase.html">Firebird/InterBase</a></li>
+  <li><a href="book.fbsql.html">FrontBase</a></li>
+  <li><a href="book.ibm-db2.html">IBM DB2</a></li>
+  <li><a href="book.ifx.html">Informix</a></li>
+  <li><a href="book.ingres.html">Ingres</a></li>
+  <li><a href="book.maxdb.html">MaxDB</a></li>
+  <li><a href="book.mongo.html">Mongo</a></li>
+  <li><a href="set.mongodb.html">MongoDB</a></li>
+  <li class="active"><a href="book.msql.html">mSQL</a></li>
+  <li><a href="book.mssql.html">Mssql</a></li>
+  <li><a href="set.mysqlinfo.html">MySQL</a></li>
+  <li><a href="book.oci8.html">OCI8</a></li>
+  <li><a href="book.paradox.html">Paradox</a></li>
+  <li><a href="book.pgsql.html">PostgreSQL</a></li>
+  <li><a href="book.sqlite.html">SQLite</a></li>
+  <li><a href="book.sqlite3.html">SQLite3</a></li>
+  <li><a href="book.sqlsrv.html">SQLSRV</a></li>
+  <li><a href="book.sybase.html">Sybase</a></li>
+  <li><a href="book.tokyo-tyrant.html">tokyo_tyrant</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="mongodb-driver-writeexception.getwriteresult.html">MongoDB\Driver\Exception\WriteException::getWriteResult</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.msql.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.msql" class="book">
+ 
+ <h1>mSQL</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.msql.html">Einf&uuml;hrung</a></li>
+<li><a href="msql.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="msql.requirements.html">Anforderungen</a></li>
+<li><a href="msql.installation.html">Installation</a></li>
+<li><a href="msql.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="msql.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="msql.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="msql.examples.html">Beispiele</a><ul class="chunklist chunklist_title">
+<li><a href="msql.examples-basic.html">Grundlegende Nutzung</a></li>
+</ul>
+</li>
+<li><a href="ref.msql.html">mSQL-Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.msql-affected-rows.html">msql_affected_rows</a> — Gibt die Anzahl der betroffenen Datens&auml;tze zur&uuml;ck</li>
+<li><a href="function.msql-close.html">msql_close</a> — Schlie&szlig;t eine mSQL-Verbindung</li>
+<li><a href="function.msql-connect.html">msql_connect</a> — &Ouml;ffnet eine mSQL-Verbindung</li>
+<li><a href="function.msql-create-db.html">msql_create_db</a> — Erzeugt eine mSQL Datenbank</li>
+<li><a href="function.msql-createdb.html">msql_createdb</a> — Alias von msql_create_db</li>
+<li><a href="function.msql-data-seek.html">msql_data_seek</a> — Bewegt den internen Datensatzzeiger</li>
+<li><a href="function.msql-db-query.html">msql_db_query</a> — Sendet eine mSQL Abfrage an den Server</li>
+<li><a href="function.msql-dbname.html">msql_dbname</a> — Alias von msql_result</li>
+<li><a href="function.msql-drop-db.html">msql_drop_db</a> — L&ouml;scht eine mSQL Datenbank</li>
+<li><a href="function.msql-error.html">msql_error</a> — Gibt die letzte mSQL-Fehlermeldung zur&uuml;ck</li>
+<li><a href="function.msql-fetch-array.html">msql_fetch_array</a> — Holt eine Zeile als Array</li>
+<li><a href="function.msql-fetch-field.html">msql_fetch_field</a> — Gibt Feldinformationen in einem Objekt zur&uuml;ck</li>
+<li><a href="function.msql-fetch-object.html">msql_fetch_object</a> — Holt eine Zeile als Objekt</li>
+<li><a href="function.msql-fetch-row.html">msql_fetch_row</a> — Holt eine Zeile als numerisches Array</li>
+<li><a href="function.msql-field-flags.html">msql_field_flags</a> — Gibt alle Flags f&uuml;r das angegebene Feld zur&uuml;ck</li>
+<li><a href="function.msql-field-len.html">msql_field_len</a> — Gibt die L&auml;nge des angegebenen Feldes zur&uuml;ck</li>
+<li><a href="function.msql-field-name.html">msql_field_name</a> — Gibt den Feldnamen des bezeichneten Feldes zur&uuml;ck</li>
+<li><a href="function.msql-field-seek.html">msql_field_seek</a> — Setzt den internen Feld-Zeiger auf den angegebenen Feldindex</li>
+<li><a href="function.msql-field-table.html">msql_field_table</a> — Gibt den Tabellennamen f&uuml;r ein Feld zur&uuml;ck</li>
+<li><a href="function.msql-field-type.html">msql_field_type</a> — Gibt den Datentyp des angegebenen Feldes zur&uuml;ck</li>
+<li><a href="function.msql-fieldflags.html">msql_fieldflags</a> — Alias f&uuml;r msql_field_flags</li>
+<li><a href="function.msql-fieldlen.html">msql_fieldlen</a> — Alias f&uuml;r msql_field_len</li>
+<li><a href="function.msql-fieldname.html">msql_fieldname</a> — Alias f&uuml;r msql_field_name</li>
+<li><a href="function.msql-fieldtable.html">msql_fieldtable</a> — Alias f&uuml;r msql_field_table</li>
+<li><a href="function.msql-fieldtype.html">msql_fieldtype</a> — Alias f&uuml;r msql_field_type</li>
+<li><a href="function.msql-free-result.html">msql_free_result</a> — Gibt den durch Ergebnisse belegten Speicher frei</li>
+<li><a href="function.msql-list-dbs.html">msql_list_dbs</a> — Listet alle mSQL Datenbanken auf dem Server auf</li>
+<li><a href="function.msql-list-fields.html">msql_list_fields</a> — Listet alle Felder einer Tabelle auf</li>
+<li><a href="function.msql-list-tables.html">msql_list_tables</a> — Listet alle Tabellen einer mSQL-Datenbank auf</li>
+<li><a href="function.msql-num-fields.html">msql_num_fields</a> — Gibt die Anzahl der Felder in einem Abfrageergebnis zur&uuml;ck</li>
+<li><a href="function.msql-num-rows.html">msql_num_rows</a> — Gibt die Anzahl der Zeilen in einem Abfrageergebnis zur&uuml;ck</li>
+<li><a href="function.msql-numfields.html">msql_numfields</a> — Alias f&uuml;r msql_num_fields</li>
+<li><a href="function.msql-numrows.html">msql_numrows</a> — Alias f&uuml;r msql_num_rows</li>
+<li><a href="function.msql-pconnect.html">msql_pconnect</a> — &Ouml;ffnet eine persistente mSQL-Verbindung</li>
+<li><a href="function.msql-query.html">msql_query</a> — Schickt eine mSQL-Abfrage zum Server</li>
+<li><a href="function.msql-regcase.html">msql_regcase</a> — Alias f&uuml;r sql_regcase</li>
+<li><a href="function.msql-result.html">msql_result</a> — Holt den Wert eines einzelnen Feldes</li>
+<li><a href="function.msql-select-db.html">msql_select_db</a> — W&auml;hlt eine mSQL Datenbank aus</li>
+<li><a href="function.msql-tablename.html">msql_tablename</a> — Alias f&uuml;r msql_result</li>
+<li><a href="function.msql.html">msql</a> — Alias f&uuml;r msql_db_query</li>
+</ul>
+</li>
+</ul>
+
+
+ 
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

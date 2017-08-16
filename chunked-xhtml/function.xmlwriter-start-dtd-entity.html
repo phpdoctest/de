@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: DTD-Entit&auml;t beginnen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.xml.html">XML-Manipulation</a></li>
+  <li class="header up"><a href="book.xmlwriter.html">XMLWriter</a></li>
+  <li class="header up"><a href="ref.xmlwriter.html">XMLWriter Funktionen</a></li>
+  <li><a href="function.xmlwriter-end-attribute.html">XMLWriter::endAttribute</a></li>
+  <li><a href="function.xmlwriter-end-cdata.html">XMLWriter::endCData</a></li>
+  <li><a href="function.xmlwriter-end-comment.html">XMLWriter::endComment</a></li>
+  <li><a href="function.xmlwriter-end-document.html">XMLWriter::endDocument</a></li>
+  <li><a href="function.xmlwriter-end-dtd-attlist.html">XMLWriter::endDTDAttlist</a></li>
+  <li><a href="function.xmlwriter-end-dtd-element.html">XMLWriter::endDTDElement</a></li>
+  <li><a href="function.xmlwriter-end-dtd-entity.html">XMLWriter::endDTDEntity</a></li>
+  <li><a href="function.xmlwriter-end-dtd.html">XMLWriter-&gt;endDTD</a></li>
+  <li><a href="function.xmlwriter-end-element.html">XMLWriter-&gt;endElement</a></li>
+  <li><a href="function.xmlwriter-end-pi.html">XMLWriter-&gt;endPI</a></li>
+  <li><a href="function.xmlwriter-flush.html">XMLWriter-&gt;flush</a></li>
+  <li><a href="function.xmlwriter-full-end-element.html">XMLWriter-&gt;fullEndElement</a></li>
+  <li><a href="function.xmlwriter-open-memory.html">XMLWriter::openMemory</a></li>
+  <li><a href="function.xmlwriter-open-uri.html">XMLWriter-&gt;openURI</a></li>
+  <li><a href="function.xmlwriter-output-memory.html">XMLWriter-&gt;outputMemory</a></li>
+  <li><a href="function.xmlwriter-set-indent-string.html">XMLWriter-&gt;setIndentString</a></li>
+  <li><a href="function.xmlwriter-set-indent.html">XMLWriter-&gt;setIndent</a></li>
+  <li><a href="function.xmlwriter-start-attribute-ns.html">XMLWriter-&gt;startAttributeNS</a></li>
+  <li><a href="function.xmlwriter-start-attribute.html">XMLWriter-&gt;startAttribute</a></li>
+  <li><a href="function.xmlwriter-start-cdata.html">XMLWriter-&gt;startCData</a></li>
+  <li><a href="function.xmlwriter-start-comment.html">XMLWriter-&gt;startComment</a></li>
+  <li><a href="function.xmlwriter-start-document.html">XMLWriter-&gt;startDocument</a></li>
+  <li><a href="function.xmlwriter-start-dtd-attlist.html">XMLWriter-&gt;startDTDAttlist</a></li>
+  <li><a href="function.xmlwriter-start-dtd-element.html">XMLWriter-&gt;startDTDElement</a></li>
+  <li class="active"><a href="function.xmlwriter-start-dtd-entity.html">XMLWriter-&gt;startDTDEntity</a></li>
+  <li><a href="function.xmlwriter-start-dtd.html">XMLWriter-&gt;startDTD</a></li>
+  <li><a href="function.xmlwriter-start-element-ns.html">XMLWriter-&gt;startElementNS</a></li>
+  <li><a href="function.xmlwriter-start-element.html">XMLWriter-&gt;startElement</a></li>
+  <li><a href="function.xmlwriter-start-pi.html">XMLWriter-&gt;startPI</a></li>
+  <li><a href="function.xmlwriter-text.html">XMLWriter-&gt;text</a></li>
+  <li><a href="function.xmlwriter-write-attribute-ns.html">XMLWriter-&gt;writeAttributeNS</a></li>
+  <li><a href="function.xmlwriter-write-attribute.html">XMLWriter-&gt;writeAttribute</a></li>
+  <li><a href="function.xmlwriter-write-cdata.html">XMLWriter-&gt;writeCData</a></li>
+  <li><a href="function.xmlwriter-write-comment.html">XMLWriter-&gt;writeComment</a></li>
+  <li><a href="function.xmlwriter-write-dtd-attlist.html">XMLWriter-&gt;writeDTDAttlist</a></li>
+  <li><a href="function.xmlwriter-write-dtd-element.html">XMLWriter-&gt;writeDTDElement</a></li>
+  <li><a href="function.xmlwriter-write-dtd-entity.html">XMLWriter-&gt;writeDTDEntity</a></li>
+  <li><a href="function.xmlwriter-write-dtd.html">XMLWriter-&gt;writeDTD</a></li>
+  <li><a href="function.xmlwriter-write-element-ns.html">XMLWriter-&gt;writeElementNS</a></li>
+  <li><a href="function.xmlwriter-write-element.html">XMLWriter-&gt;writeElement</a></li>
+  <li><a href="function.xmlwriter-write-pi.html">XMLWriter-&gt;writePI</a></li>
+  <li><a href="function.xmlwriter-write-raw.html">XMLWriter-&gt;writeRaw</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.xmlwriter-start-dtd-element.html">XMLWriter-&gt;startDTDElement</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.xmlwriter-start-dtd.html">XMLWriter-&gt;startDTD</a></div>
+                <div class="up"><a href="ref.xmlwriter.html">XMLWriter Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.xmlwriter-start-dtd-entity" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">XMLWriter-&gt;startDTDEntity</h1>
+  <h1 class="refname">xmlwriter_start_dtd_entity</h1>
+  <p class="refpurpose">DTD-Entität beginnen</p>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.xmlwriter-start-dtd-entity-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">Objektorientierter Stil</p>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">XMLWriter::startDTDEntity</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+   , <span class="methodparam"><span class="type">bool</span> <code class="parameter">$isparam</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">Prozeduraler Stil</p>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">xmlwriter_start_dtd_entity</span>
+    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$xmlwriter</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+   , <span class="methodparam"><span class="type">bool</span> <code class="parameter">$isparam</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Beginnt eine DTD-Entität.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.xmlwriter-start-dtd-entity-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    <dt>
+<code class="parameter">
+xmlwriter</code></dt>
+<dd>
+<p class="para">Nur für prozedurale Aufrufe.
+Die XMLWriter-<span class="type">resource</span>, die bearbeitet werden soll. Diese
+Ressource wird von Aufrufen von <span class="function">xmlwriter_open_uri</span>
+oder <span class="function">xmlwriter_open_memory</span>
+geliefert.</p></dd>
+
+    
+     <dt>
+<code class="parameter">name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Name der Entität.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">isparam</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.xmlwriter-start-dtd-entity-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.xmlwriter-start-dtd-entity-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"> <span class="methodname">XMLWriter::endDTDEntity</span></li>
+    <li class="member"> <span class="methodname">XMLWriter::writeDTDEntity</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

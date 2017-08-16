@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Einf&uuml;hrung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li class="header up"><a href="book.filter.html">Filter</a></li>
+  <li class="active"><a href="intro.filter.html">Einf&uuml;hrung</a></li>
+  <li><a href="filter.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="filter.filters.html">Types of filters</a></li>
+  <li><a href="filter.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="filter.examples.html">Beispiele</a></li>
+  <li><a href="ref.filter.html">Filter-Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="book.filter.html">Filter</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="filter.setup.html">Installation/Konfiguration</a></div>
+                <div class="up"><a href="book.filter.html">Filter</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="intro.filter" class="preface">
+  <h1 class="title">Einführung</h1>
+  <p class="para">
+   Diese Erweiterung filtert Daten, indem sie diese entweder validiert oder
+   säubert. Dies ist besonders nützlich, wenn die Datenquelle unbekannte
+   (oder fremde) Daten enthält, wie eine Eingabe vom Nutzer. Zum Beispiel
+   können diese Daten aus einem HTML-Formular stammen.
+  </p>
+  <p class="para">
+   Es gibt zwei Haupttypen der Filterung:
+   <em class="emphasis">Validierung</em> und <em class="emphasis">Säuberung</em>.
+  </p>
+  <p class="para">
+   <a href="filter.filters.validate.html" class="link">Validierung</a> wird genutzt,
+   um zu prüfen, ob die Daten gewisse Bedingungen erfüllen. Zum Beispiel
+   führt die Angabe von <strong><code>FILTER_VALIDATE_EMAIL</code></strong> dazu,
+   dass entschieden wird, ob die Daten eine gültige E-Mail-Adresse bilden,
+   aber es wird keine Änderung an den Daten selbst vorgenommen.
+  </p>
+  <p class="para">
+   <a href="filter.filters.sanitize.html" class="link">Säuberung</a> wird die Daten
+   säubern, indem es sie so verändert, dass unerwünschte Zeichen entfernt
+   werden. Zum Beispiel führt die Angabe von
+   <strong><code>FILTER_SANITIZE_EMAIL</code></strong> dazu, dass Zeichen entfernt
+   werden, die nicht in einer E-Mail-Adresse enthalten sein sollten. Das bedeutet,
+   dass die Daten nicht validiert werden.
+  </p>
+  <p class="para">
+   <em class="emphasis">Flags</em> werden optional sowohl bei der Validierung
+   als auch bei der Säuberung genutzt, um das Verhalten an Ihre Anforderungen
+   anzupassen. Zum Beispiel führt die Angabe von
+   <strong><code>FILTER_FLAG_PATH_REQUIRED</code></strong> bei der Filterung eines
+   <acronym class="acronym">URL</acronym> dazu, dass ein Pfad (wie <em>/foo</em> 
+   in <em>http://example.org/foo</em>) erzwungen wird.
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

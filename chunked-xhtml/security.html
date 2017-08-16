@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Sicherheit</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li><a href="copyright.html">Copyright</a></li>
+  <li><a href="manual.html">PHP-Handbuch</a></li>
+  <li><a href="getting-started.html">Einf&uuml;hrung</a></li>
+  <li><a href="install.html">Installation und Konfiguration</a></li>
+  <li><a href="langref.html">Sprachreferenz</a></li>
+  <li class="active"><a href="security.html">Sicherheit</a></li>
+  <li><a href="features.html">Features</a></li>
+  <li><a href="funcref.html">Funktionsreferenz</a></li>
+  <li><a href="internals2.html">PHP im Kern: Das Entwicklerhandbuch f&uuml;r die Zend Engine</a></li>
+  <li><a href="faq.html">FAQ</a></li>
+  <li><a href="appendices.html">Appendices</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="wrappers.expect.html">expect://</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="security.intro.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="index.html">PHP-Handbuch</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="security" class="book">
+  <h1>Sicherheit</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="security.intro.html">Einf&uuml;hrung</a></li>
+<li><a href="security.general.html">Allgemeine &Uuml;berlegungen</a></li>
+<li><a href="security.cgi-bin.html">Installiert als CGI-Version</a><ul class="chunklist chunklist_title">
+<li><a href="security.cgi-bin.attacks.html">M&ouml;gliche Angriffe</a></li>
+<li><a href="security.cgi-bin.default.html">Fall 1: Nur &ouml;ffentliche Dateien vorhanden</a></li>
+<li><a href="security.cgi-bin.force-redirect.html">Fall 2: --enable-force-cgi-redirect benutzen</a></li>
+<li><a href="security.cgi-bin.doc-root.html">Fall 3: doc_root oder user_dir festlegen</a></li>
+<li><a href="security.cgi-bin.shell.html">Fall 4: PHP-Parser au&szlig;erhalb des Webverzeichnisbaums</a></li>
+</ul>
+</li>
+<li><a href="security.apache.html">Verwendung als Apache-Modul</a></li>
+<li><a href="security.sessions.html">Session Security</a></li>
+<li><a href="security.filesystem.html">Dateisystem - Sicherheit</a><ul class="chunklist chunklist_title">
+<li><a href="security.filesystem.nullbytes.html">Probleme im Zusammenhang mit Nullbytes</a></li>
+</ul>
+</li>
+<li><a href="security.database.html">Datenbank - Sicherheit</a><ul class="chunklist chunklist_title">
+<li><a href="security.database.design.html">Datenbanken designen</a></li>
+<li><a href="security.database.connection.html">Zur Datenbank verbinden</a></li>
+<li><a href="security.database.storage.html">Verschl&uuml;sseltes Speichermodell</a></li>
+<li><a href="security.database.sql-injection.html">SQL Injection</a></li>
+</ul>
+</li>
+<li><a href="security.errors.html">Fehlerbehandlung</a></li>
+<li><a href="security.globals.html">Using Register Globals</a></li>
+<li><a href="security.variables.html">Vom Nutzer &uuml;bermittelte Daten</a></li>
+<li><a href="security.magicquotes.html">Magic Quotes</a><ul class="chunklist chunklist_title">
+<li><a href="security.magicquotes.what.html">What are Magic Quotes</a></li>
+<li><a href="security.magicquotes.why.html">Why did we use Magic Quotes</a></li>
+<li><a href="security.magicquotes.whynot.html">Why not to use Magic Quotes</a></li>
+<li><a href="security.magicquotes.disabling.html">Disabling Magic Quotes</a></li>
+</ul>
+</li>
+<li><a href="security.hiding.html">PHP verstecken</a></li>
+<li><a href="security.current.html">Aktuell bleiben</a></li>
+</ul>
+
+  
+
+
+
+ 
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+ 
+
+
+
+
+  
+
+ 
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

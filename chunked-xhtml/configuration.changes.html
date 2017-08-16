@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Wie man Konfigurationseinstellungen &auml;ndert</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="install.html">Installation und Konfiguration</a></li>
+  <li class="header up"><a href="configuration.html">Laufzeiteinstellungen</a></li>
+  <li><a href="configuration.file.html">Die Konfigurationsdatei</a></li>
+  <li><a href="configuration.file.per-user.html">.user.ini-Dateien</a></li>
+  <li><a href="configuration.changes.modes.html">Wo Konfigurationseinstellungen gesetzt werden k&ouml;nnen</a></li>
+  <li class="active"><a href="configuration.changes.html">Wie man Konfigurationseinstellungen &auml;ndert</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="configuration.changes.modes.html">Wo Konfigurationseinstellungen gesetzt werden k&ouml;nnen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="langref.html">Sprachreferenz</a></div>
+                <div class="up"><a href="configuration.html">Laufzeiteinstellungen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="configuration.changes" class="sect1">
+   <h2 class="title">Wie man Konfigurationseinstellungen ändert</h2>
+   
+   <div class="sect2" id="configuration.changes.apache">
+    <h3 class="title">PHP läuft als Apachemodul</h3>
+    <p class="simpara">
+     Wenn man PHP als Apachemodul verwendet, kann man die
+     Konfigurationseinstellungen mittels Direktiven in den Apache-Konfigurationsdateien
+     (z.B. <var class="filename">httpd.conf</var>) und <var class="filename">.htaccess</var>-Dateien
+     ändern. Dafür benötigt man &quot;AllowOverride Options&quot;- oder
+     &quot;AllowOverride All&quot;-Privilegien.
+    </p>
+    
+    <p class="para">
+     Es gibt verschiedene Apachedirektiven, die es erlauben,
+     die PHP-Konfiguration aus den Apache-Konfigurationsdateien heraus zu
+     ändern. Für eine Liste von Direktiven, die als
+     <strong><code>PHP_INI_ALL</code></strong>, <strong><code>PHP_INI_PERDIR</code></strong>,
+     oder <strong><code>PHP_INI_SYSTEM</code></strong> definiert sind, werfen Sie einen
+     Blick auf den Anhang
+     <a href="ini.list.html" class="link">Liste von php.ini Einstellungen</a>.
+    </p>
+    
+    <p class="para">
+     <dl>
+
+      
+       <dt>
+
+        <code class="systemitem systemitem">php_value</code>
+        <code class="parameter">Name</code>
+        <code class="parameter">Wert</code>
+       </dt>
+
+       <dd>
+
+        <p class="para">
+         Setzt den Wert der angegebenen Direktive.
+         Kann nur für Direktiven mit den Typen <strong><code>PHP_INI_ALL</code></strong>
+         und <strong><code>PHP_INI_PERDIR</code></strong> verwendet werden. Um einen
+         vorher gesetzten Wert zu löschen, verwenden Sie
+         <em>none</em> als Wert.
+        </p>
+        <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+         <span class="simpara">
+          Verwenden Sie <code class="systemitem systemitem">php_value</code>
+          nicht, um boolesche Werte zu setzen.
+          <code class="systemitem systemitem">php_flag</code> (siehe unten)
+          sollte stattdessen verwendet werden.
+         </span>
+        </p></blockquote>
+       </dd>
+
+      
+      
+       <dt>
+
+        <code class="systemitem systemitem">php_flag</code>
+        <code class="parameter">Name</code>
+        <code class="parameter">on|off</code>
+       </dt>
+
+       <dd>
+
+        <p class="para">
+         Setzt eine boolesche Konfigurationsdirektive.
+         Kann nur für Direktiven mit den Typen <strong><code>PHP_INI_ALL</code></strong>
+         und <strong><code>PHP_INI_PERDIR</code></strong> verwendet werden.
+        </p>
+       </dd>
+
+      
+      
+       <dt>
+
+        <code class="systemitem systemitem">php_admin_value</code>
+        <code class="parameter">Name</code>
+        <code class="parameter">Wert</code>
+       </dt>
+
+       <dd>
+
+        <p class="para">
+         Setzt den Wert der angegebenen Direktive.
+         Dies kann <em class="emphasis">nicht</em> in <var class="filename">.htaccess</var>-Dateien verwendet
+         werden.
+         Jeder Direktiventyp, der mit <code class="systemitem systemitem">
+         php_admin_value</code> gesetzt wird, kann nicht durch
+         <var class="filename">.htaccess</var>-Direktiven oder mit <span class="function">ini_set</span>
+         überschrieben werden.
+         Um einen vorher gesetzten Wert zu löschen, verwenden Sie
+         <em>none</em> als Wert.
+        </p>
+       </dd>
+
+      
+      
+       <dt>
+
+        <code class="systemitem systemitem">php_admin_flag</code>
+        <code class="parameter">Name</code>
+        <code class="parameter">on|off</code>
+       </dt>
+
+       <dd>
+
+        <p class="para">
+         Setzt eine boolesche Konfigurationsdirektive.
+         Dies kann <em class="emphasis">nicht</em> in <var class="filename">.htaccess</var>-Dateien verwendet
+         werden.
+         Jeder Direktiventyp, der mit <code class="systemitem systemitem">php_admin_value</code>
+         gesetzt wird, kann nicht durch <var class="filename">.htaccess</var>-Direktiven oder
+         <span class="function">ini_set</span> überschrieben werden.
+        </p>
+       </dd>
+
+      
+     </dl>
+
+    </p>
+    <p class="para">
+     <div class="example" id="example-81">
+      <p><strong>Beispiel #1 Apache-Konfigurationsbeispiel</strong></p>
+      <div class="example-contents">
+<div class="inicode"><pre class="inicode">&lt;IfModule mod_php5.c&gt;
+  php_value include_path &quot;.:/usr/local/lib/php&quot;
+  php_admin_flag engine on
+&lt;/IfModule&gt;
+&lt;IfModule mod_php4.c&gt;
+  php_value include_path &quot;.:/usr/local/lib/php&quot;
+  php_admin_flag engine on
+&lt;/IfModule&gt;</pre>
+</div>
+      </div>
+
+     </div>
+    </p>
+    <div class="caution"><strong class="caution">Achtung</strong>
+     <p class="para">
+      PHP-Konstanten existieren nicht außerhalb von PHP. So kann man z.B. in
+      der <var class="filename">httpd.conf</var> nicht PHP-Konstanten wie <strong><code>E_ALL</code></strong>
+      oder <strong><code>E_NOTICE</code></strong> verwenden, um den Wert der
+      <a href="errorfunc.configuration.html#ini.error-reporting" class="link">error_reporting</a>-Direktive
+      zu ändern, da diese keine Bedeutung haben und als <em class="emphasis">0</em>
+      ausgewertet werden. Verwenden Sie stattdessen die zugehörigen
+      Bitmasken-Werte direkt. Diese Konstanten können in der <var class="filename">php.ini</var>
+      verwendet werden.
+     </p>
+    </div>
+   </div>
+   
+   <div class="sect2" id="configuration.changes.windows">
+    <h3 class="title">Die PHP-Konfiguration mit der Windows Registry ändern</h3>
+    <p class="simpara">
+     Wenn Sie PHP unter Windows einsetzen, können Sie die
+     Konfigurationseinstellungen für jedes einzelne Verzeichnis mit der
+     Windows-Registry anpassen. Die Werte der Konfiguration werden unterhalb
+     des Registrierungsschlüssels
+     <em>HKLM\SOFTWARE\PHP\Per Directory Values</em> in den zum
+     Verzeichnisnamen passenden Unterschlüssel gespeichert.Zum Beispiel
+     würden Werte für das Verzeichnis <em>c:\inetpub\wwwroot</em>
+     im Registrierungsschlüssel <em>HKLM\SOFTWARE\PHP\Per Directory
+     Values\c\inetpub\wwwroot</em> gespeichert werden. Die
+     Einstellungen für dieses Verzeichnis wären für alle Skripte aktiv,
+     die in diesem Verzeichnis oder einem seiner Unterverzeichnisse laufen.
+     Die Werte in diesem Schlüssel sollten den Namen eine PHP-
+     Konfigurationsdirektive und einen Zeichenkettenwert haben.
+     Konstenten in den Werten werden nicht ausgewertet. Es können jedoch
+     nur Werte, die in <strong><code>PHP_INI_USER</code></strong> änderbar sind,
+     auf diese Weise gesetzt werden, nicht als
+     <strong><code>PHP_INI_PERDIR</code></strong> deklarierte Werte.
+    </p>
+   </div>
+   
+   <div class="sect2" id="configuration.changes.other">
+    <h3 class="title">Andere Zugänge zu PHP</h3>
+    <p class="para">
+     Egal wie Sie PHP betreiben, Sie können bestimmte Werte zur Laufzeit
+     Ihrer Skripte mittels <span class="function">ini_set</span> setzen. Werfen Sie
+     dazu einen Blick auf die Dokumentation von <span class="function">ini_set</span>.
+    </p>
+    <p class="para">
+     Wenn Sie an einer kompletten Liste von Konfigurationseinstellungen Ihres
+     Systems inklusive deren aktuellen Werten interessiert sind, können Sie
+     die Funktion <span class="function">phpinfo</span> ausführen und die daraus
+     resultierende Seite betrachten. Sie können auf die Werte einzelner
+     Konfigurationsdirektiven zur Laufzeit mittels
+     <span class="function">ini_get</span> oder <span class="function">get_cfg_var</span>
+     zugreifen.
+    </p>
+   </div>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

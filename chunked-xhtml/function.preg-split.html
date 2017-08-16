@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Zerlegt eine Zeichenkette anhand eines regul&auml;ren Ausdrucks</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li class="header up"><a href="book.pcre.html">PCRE</a></li>
+  <li class="header up"><a href="ref.pcre.html">PCRE-Funktionen</a></li>
+  <li><a href="function.preg-filter.html">preg_filter</a></li>
+  <li><a href="function.preg-grep.html">preg_grep</a></li>
+  <li><a href="function.preg-last-error.html">preg_last_error</a></li>
+  <li><a href="function.preg-match-all.html">preg_match_all</a></li>
+  <li><a href="function.preg-match.html">preg_match</a></li>
+  <li><a href="function.preg-quote.html">preg_quote</a></li>
+  <li><a href="function.preg-replace-callback-array.html">preg_replace_callback_array</a></li>
+  <li><a href="function.preg-replace-callback.html">preg_replace_callback</a></li>
+  <li><a href="function.preg-replace.html">preg_replace</a></li>
+  <li class="active"><a href="function.preg-split.html">preg_split</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.preg-replace.html">preg_replace</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="book.regex.html">POSIX Regex</a></div>
+                <div class="up"><a href="ref.pcre.html">PCRE-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.preg-split" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">preg_split</h1>
+  <p class="refpurpose">Zerlegt eine Zeichenkette anhand eines regulären Ausdrucks</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.preg-split-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname">preg_split</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$subject</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$limit</code><span class="initializer"> = -1</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code><span class="initializer"> = 0</span></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   Zerlegt die angegebene Zeichenkette anhand eines regulären Ausdrucks.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.preg-split-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">pattern</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Ausdruck, nach dem gesucht werden soll, als Zeichenkette.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">subject</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die zu zerlegende Zeichenkette.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">limit</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Falls angegeben, werden maximal <code class="parameter">limit</code>
+       Teilzeichenketten zurückgegeben, wobei der Rest der Zeichenkette in der
+       letzten Teilzeichenkette abgelegt wird. Ein
+       <code class="parameter">limit</code> von -1, 0 oder <strong><code>NULL</code></strong> bedeutet &quot;kein Limit&quot;
+       und wie es in PHP Standard ist, kann <strong><code>NULL</code></strong> verwendet werden um den
+       Parameter <code class="parameter">flags</code> zu überspringen.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">flags</code></dt>
+
+     <dd>
+
+      <p class="para">
+       <code class="parameter">flags</code> kann jede Kombination der folgenden Flags
+       sein (verknüpft mit dem bitweisen <em>|</em> Operator):
+       <dl>
+
+        
+         <dt>
+<strong><code>PREG_SPLIT_NO_EMPTY</code></strong></dt>
+
+         <dd>
+
+          <span class="simpara">
+           Falls dieses Flag gesetzt ist, werden von
+           <span class="function">preg_split</span> nur die Teile zurückgegeben, die
+           nicht leer sind.
+          </span>
+         </dd>
+
+        
+        
+         <dt>
+<strong><code>PREG_SPLIT_DELIM_CAPTURE</code></strong></dt>
+
+         <dd>
+
+          <span class="simpara">
+           Falls dieses Flag gesetzt ist, werden auch die eingeklammerten
+           Ausdrücke des Trennsymbol-Suchmusters erfasst und zurückgegeben.
+          </span>
+         </dd>
+
+        
+        
+         <dt>
+<strong><code>PREG_SPLIT_OFFSET_CAPTURE</code></strong></dt>
+
+         <dd>
+
+          <p class="para">
+           Falls dieses Flag gesetzt ist, wird mit jeder gefundenen
+           Übereinstimmung der dazugehörige Versatz in der Zeichenkette
+           zurückgegeben. Beachten Sie, dass dies die Rückgabewerte in einem
+           Array dahingehend ändert, dass jedes Element ein Array ist, das aus
+           der übereinstimmenden Zeichenkette als Element <em>0</em>
+           und deren Stelle in <code class="parameter">subject</code> als Element
+           <em>1</em> besteht.
+          </p>
+         </dd>
+
+        
+       </dl>
+
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.preg-split-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt ein Array zurück, bestehend aus Teilzeichenketten der Zeichenkette
+   <code class="parameter">subject</code>, die an den auf das Suchmuster
+   <code class="parameter">pattern</code> passenden Stellen zerlegt wurde.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.preg-split-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-5299">
+    <p><strong>Beispiel #1 
+     <span class="function">preg_split</span> Beispiel: Eine Zeichenkette in ihre
+     Bestandteile zerlegen
+    </strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;zerlegt&nbsp;die&nbsp;Zeichenkette&nbsp;an&nbsp;Stellen&nbsp;mit&nbsp;beliebiger&nbsp;Anzahl&nbsp;von<br />//&nbsp;Kommata&nbsp;oder&nbsp;Leerzeichen,&nbsp;die&nbsp;"&nbsp;",&nbsp;\r,&nbsp;\t,&nbsp;\n&nbsp;und&nbsp;\f&nbsp;umfassen<br /></span><span style="color: #0000BB">$schluesselwoerter&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_split</span><span style="color: #007700">(</span><span style="color: #DD0000">"/[\s,]+/"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"hypertext&nbsp;language,&nbsp;programming"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$schluesselwoerter</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [0] =&gt; hypertext
+    [1] =&gt; language
+    [2] =&gt; programming
+)
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-5300">
+    <p><strong>Beispiel #2 Eine Zeichenkette in einzelne Zeichen zerlegen</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'string'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$zeichen&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_split</span><span style="color: #007700">(</span><span style="color: #DD0000">'//'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PREG_SPLIT_NO_EMPTY</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$zeichen</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [0] =&gt; s
+    [1] =&gt; t
+    [2] =&gt; r
+    [3] =&gt; i
+    [4] =&gt; n
+    [5] =&gt; g
+)
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-5301">
+    <p><strong>Beispiel #3 
+     Eine Zeichenkette in Übereinstimmungen mit dem Suchmuster und deren
+     Versatz zerlegen
+    </strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'hypertext&nbsp;language&nbsp;programming'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$zeichen&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_split</span><span style="color: #007700">(</span><span style="color: #DD0000">'/&nbsp;/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PREG_SPLIT_OFFSET_CAPTURE</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$zeichen</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [0] =&gt; Array
+        (
+            [0] =&gt; hypertext
+            [1] =&gt; 0
+        )
+
+    [1] =&gt; Array
+        (
+            [0] =&gt; language
+            [1] =&gt; 10
+        )
+
+    [2] =&gt; Array
+        (
+            [0] =&gt; programming
+            [1] =&gt; 19
+        )
+
+)
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.preg-split-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <div class="tip"><strong class="tip">Tipp</strong>
+   <p class="para">
+    Falls Sie die Leistung regulärer Ausdrücke nicht benötigen, können Sie
+    stattdessen schnellere (wenngleich einfachere) Alternativen wie
+    <span class="function">explode</span> oder <span class="function">str_split</span>
+    verwenden.
+   </p>
+  </div>
+  <div class="tip"><strong class="tip">Tipp</strong>
+   <p class="para">
+    Falls keine Übereinstimmungen gefunden wurden, wird ein Array mit nur
+    einem Element zurückgegeben, das die übergebene Zeichenkette enthält.
+   </p>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.preg-split-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><a href="pcre.pattern.html" class="link">PCRE-Suchmuster</a></li>
+    <li class="member"><span class="function">preg_quote</span></li>
+    <li class="member"><span class="function">implode</span></li>
+    <li class="member"><span class="function">preg_match</span></li>
+    <li class="member"><span class="function">preg_match_all</span></li>
+    <li class="member"><span class="function">preg_replace</span></li>
+    <li class="member"><span class="function">preg_last_error</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: PHP verstecken</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="security.html">Sicherheit</a></li>
+  <li><a href="security.intro.html">Einf&uuml;hrung</a></li>
+  <li><a href="security.general.html">Allgemeine &Uuml;berlegungen</a></li>
+  <li><a href="security.cgi-bin.html">Installiert als CGI-Version</a></li>
+  <li><a href="security.apache.html">Verwendung als Apache-Modul</a></li>
+  <li><a href="security.sessions.html">Session Security</a></li>
+  <li><a href="security.filesystem.html">Dateisystem - Sicherheit</a></li>
+  <li><a href="security.database.html">Datenbank - Sicherheit</a></li>
+  <li><a href="security.errors.html">Fehlerbehandlung</a></li>
+  <li><a href="security.globals.html">Using Register Globals</a></li>
+  <li><a href="security.variables.html">Vom Nutzer &uuml;bermittelte Daten</a></li>
+  <li><a href="security.magicquotes.html">Magic Quotes</a></li>
+  <li class="active"><a href="security.hiding.html">PHP verstecken</a></li>
+  <li><a href="security.current.html">Aktuell bleiben</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="security.magicquotes.disabling.html">Disabling Magic Quotes</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="security.current.html">Aktuell bleiben</a></div>
+                <div class="up"><a href="security.html">Sicherheit</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="security.hiding" class="chapter">
+<h1>PHP verstecken</h1>
+ <p class="para">
+  Generell ist Sicherheit durch Unklarheit eine der schwächsten Formen von
+  Sicherheit. Aber in manchen Fällen ist ein klein wenig mehr an zusätzlicher
+  Sicherheit wünschenswert.
+ </p>
+ <p class="para">
+  Ein paar einfache Techniken helfen, <acronym class="acronym">PHP</acronym> zu verstecken, um
+  nach Schwächen in Ihrem System suchende Angreifer unter Umständen langsamer
+  zu machen. Wenn Sie in Ihrer <var class="filename">php.ini</var> expose_php auf <em>off</em>
+  setzen, reduzieren Sie damit die zur Verfügung stehenden Informationen.
+ </p>
+ <p class="para">
+  Eine andere Taktik ist, den Webserver wie z.B. Apache entweder mittels
+  einer <var class="filename">.htaccess</var>-Direktive oder in der Apache-Konfigurationsdatei selbst
+  so einzustellen, dass dieser verschiedene Dateitypen durch
+  <acronym class="acronym">PHP</acronym> parst. So können Sie irreführende Dateierweiterungen
+  verwenden:
+  <div class="example" id="example-367">
+   <p><strong>Beispiel #1 PHP als andere Sprache ausgeben</strong></p>
+   <div class="example-contents">
+<div class="apache-confcode"><pre class="apache-confcode"># Lasse PHP-Code wie andere Arten von Code aussehen
+AddType application/x-httpd-php .asp .py .pl</pre>
+</div>
+   </div>
+
+  </div>
+  Oder komplett unklar machen:
+  <div class="example" id="example-368">
+   <p><strong>Beispiel #2 Verwenden von unbekannten Typen für PHP-Dateierweiterungen</strong></p>
+   <div class="example-contents">
+<div class="apache-confcode"><pre class="apache-confcode"># Lasse PHP Code wie unbekannte Typen aussehen
+AddType application/x-httpd-php .bop .foo .133t</pre>
+</div>
+   </div>
+
+  </div>
+  Oder verstecken Sie ihn als <acronym class="acronym">HTML</acronym>-Code, was einen leichten
+  Performanceverlust bedeutet, da so alle <acronym class="acronym">HTML</acronym>-Dateien durch
+  die <acronym class="acronym">PHP</acronym>-Engine geparst werden:
+  <div class="example" id="example-369">
+   <p><strong>Beispiel #3 Verwenden von <acronym class="acronym">HTML</acronym>-Typen für
+    PHP-Dateierweiterungen</strong></p>
+   <div class="example-contents">
+<div class="apache-confcode"><pre class="apache-confcode"># Lasse PHP-Code wie HTML aussehen
+AddType application/x-httpd-php .htm .html</pre>
+</div>
+   </div>
+
+  </div>
+  Um dies effektiv arbeiten zu lassen, müssen Sie Ihre
+  <acronym class="acronym">PHP</acronym>-Dateien nach den obigen Dateierweiterungen umbenennen.
+  Obwohl dies eine Form der Sicherheit durch Verhüllung ist, ist es eine
+  geringfügige präventive Maßnahme mit nur wenigen Nachteilen.
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

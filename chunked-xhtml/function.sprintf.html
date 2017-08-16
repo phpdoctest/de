@@ -1,0 +1,645 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Gibt einen formatierten String zur&uuml;ck</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li class="header up"><a href="book.strings.html">Zeichenketten</a></li>
+  <li class="header up"><a href="ref.strings.html">String-Funktionen</a></li>
+  <li><a href="function.addcslashes.html">addcslashes</a></li>
+  <li><a href="function.addslashes.html">addslashes</a></li>
+  <li><a href="function.bin2hex.html">bin2hex</a></li>
+  <li><a href="function.chop.html">chop</a></li>
+  <li><a href="function.chr.html">chr</a></li>
+  <li><a href="function.chunk-split.html">chunk_split</a></li>
+  <li><a href="function.convert-cyr-string.html">convert_cyr_string</a></li>
+  <li><a href="function.convert-uudecode.html">convert_uudecode</a></li>
+  <li><a href="function.convert-uuencode.html">convert_uuencode</a></li>
+  <li><a href="function.count-chars.html">count_chars</a></li>
+  <li><a href="function.crc32.html">crc32</a></li>
+  <li><a href="function.crypt.html">crypt</a></li>
+  <li><a href="function.echo.html">echo</a></li>
+  <li><a href="function.explode.html">explode</a></li>
+  <li><a href="function.fprintf.html">fprintf</a></li>
+  <li><a href="function.get-html-translation-table.html">get_html_translation_table</a></li>
+  <li><a href="function.hebrev.html">hebrev</a></li>
+  <li><a href="function.hebrevc.html">hebrevc</a></li>
+  <li><a href="function.hex2bin.html">hex2bin</a></li>
+  <li><a href="function.html-entity-decode.html">html_entity_decode</a></li>
+  <li><a href="function.htmlentities.html">htmlentities</a></li>
+  <li><a href="function.htmlspecialchars-decode.html">htmlspecialchars_decode</a></li>
+  <li><a href="function.htmlspecialchars.html">htmlspecialchars</a></li>
+  <li><a href="function.implode.html">implode</a></li>
+  <li><a href="function.join.html">join</a></li>
+  <li><a href="function.lcfirst.html">lcfirst</a></li>
+  <li><a href="function.levenshtein.html">levenshtein</a></li>
+  <li><a href="function.localeconv.html">localeconv</a></li>
+  <li><a href="function.ltrim.html">ltrim</a></li>
+  <li><a href="function.md5-file.html">md5_file</a></li>
+  <li><a href="function.md5.html">md5</a></li>
+  <li><a href="function.metaphone.html">metaphone</a></li>
+  <li><a href="function.money-format.html">money_format</a></li>
+  <li><a href="function.nl-langinfo.html">nl_langinfo</a></li>
+  <li><a href="function.nl2br.html">nl2br</a></li>
+  <li><a href="function.number-format.html">number_format</a></li>
+  <li><a href="function.ord.html">ord</a></li>
+  <li><a href="function.parse-str.html">parse_str</a></li>
+  <li><a href="function.print.html">print</a></li>
+  <li><a href="function.printf.html">printf</a></li>
+  <li><a href="function.quoted-printable-decode.html">quoted_printable_decode</a></li>
+  <li><a href="function.quoted-printable-encode.html">quoted_printable_encode</a></li>
+  <li><a href="function.quotemeta.html">quotemeta</a></li>
+  <li><a href="function.rtrim.html">rtrim</a></li>
+  <li><a href="function.setlocale.html">setlocale</a></li>
+  <li><a href="function.sha1-file.html">sha1_file</a></li>
+  <li><a href="function.sha1.html">sha1</a></li>
+  <li><a href="function.similar-text.html">similar_text</a></li>
+  <li><a href="function.soundex.html">soundex</a></li>
+  <li class="active"><a href="function.sprintf.html">sprintf</a></li>
+  <li><a href="function.sscanf.html">sscanf</a></li>
+  <li><a href="function.str-getcsv.html">str_getcsv</a></li>
+  <li><a href="function.str-ireplace.html">str_ireplace</a></li>
+  <li><a href="function.str-pad.html">str_pad</a></li>
+  <li><a href="function.str-repeat.html">str_repeat</a></li>
+  <li><a href="function.str-replace.html">str_replace</a></li>
+  <li><a href="function.str-rot13.html">str_rot13</a></li>
+  <li><a href="function.str-shuffle.html">str_shuffle</a></li>
+  <li><a href="function.str-split.html">str_split</a></li>
+  <li><a href="function.str-word-count.html">str_word_count</a></li>
+  <li><a href="function.strcasecmp.html">strcasecmp</a></li>
+  <li><a href="function.strchr.html">strchr</a></li>
+  <li><a href="function.strcmp.html">strcmp</a></li>
+  <li><a href="function.strcoll.html">strcoll</a></li>
+  <li><a href="function.strcspn.html">strcspn</a></li>
+  <li><a href="function.strip-tags.html">strip_tags</a></li>
+  <li><a href="function.stripcslashes.html">stripcslashes</a></li>
+  <li><a href="function.stripos.html">stripos</a></li>
+  <li><a href="function.stripslashes.html">stripslashes</a></li>
+  <li><a href="function.stristr.html">stristr</a></li>
+  <li><a href="function.strlen.html">strlen</a></li>
+  <li><a href="function.strnatcasecmp.html">strnatcasecmp</a></li>
+  <li><a href="function.strnatcmp.html">strnatcmp</a></li>
+  <li><a href="function.strncasecmp.html">strncasecmp</a></li>
+  <li><a href="function.strncmp.html">strncmp</a></li>
+  <li><a href="function.strpbrk.html">strpbrk</a></li>
+  <li><a href="function.strpos.html">strpos</a></li>
+  <li><a href="function.strrchr.html">strrchr</a></li>
+  <li><a href="function.strrev.html">strrev</a></li>
+  <li><a href="function.strripos.html">strripos</a></li>
+  <li><a href="function.strrpos.html">strrpos</a></li>
+  <li><a href="function.strspn.html">strspn</a></li>
+  <li><a href="function.strstr.html">strstr</a></li>
+  <li><a href="function.strtok.html">strtok</a></li>
+  <li><a href="function.strtolower.html">strtolower</a></li>
+  <li><a href="function.strtoupper.html">strtoupper</a></li>
+  <li><a href="function.strtr.html">strtr</a></li>
+  <li><a href="function.substr-compare.html">substr_compare</a></li>
+  <li><a href="function.substr-count.html">substr_count</a></li>
+  <li><a href="function.substr-replace.html">substr_replace</a></li>
+  <li><a href="function.substr.html">substr</a></li>
+  <li><a href="function.trim.html">trim</a></li>
+  <li><a href="function.ucfirst.html">ucfirst</a></li>
+  <li><a href="function.ucwords.html">ucwords</a></li>
+  <li><a href="function.vfprintf.html">vfprintf</a></li>
+  <li><a href="function.vprintf.html">vprintf</a></li>
+  <li><a href="function.vsprintf.html">vsprintf</a></li>
+  <li><a href="function.wordwrap.html">wordwrap</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.soundex.html">soundex</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.sscanf.html">sscanf</a></div>
+                <div class="up"><a href="ref.strings.html">String-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.sprintf" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">sprintf</h1>
+  <p class="refpurpose">Gibt einen formatierten String zurück</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.sprintf-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname">sprintf</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$format</code></span>
+   [, <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$args</code></span>
+   [, <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$...</code></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   Gibt eine anhand des Formatierungs-Strings <code class="parameter">format</code>
+   gebildete Zeichenkette zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.sprintf-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">format</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Formatierungs-String wird aus null oder mehreren Anweisungen
+       gebildet: Gewöhnliche Zeichen (außer <em>%</em>), die direkt in
+       das Ergebnis übertragen werden, und
+       <em class="emphasis">Umsetzungs-Anweisungen</em>. Jede dieser Anweisungen holt
+       sich als Resultat ihre eigenen Parameter. Diese Anweisungen gelten sowohl
+       für die <span class="function">sprintf</span>- als auch für die
+       <span class="function">printf</span>-Funktion.
+      </p>
+      <p class="para">
+       Jede der Formatierungs-Anweisungen besteht aus einem
+       Prozent-Zeichen (<em>%</em>), gefolgt von einem oder mehrereren
+       der folgenden Elemente:
+       <ol type="1">
+        <li class="listitem">
+         <span class="simpara">
+          Eine optionale <em class="emphasis">Vorzeichenangabe</em>, die die
+          Verwendung eines Vorzeichens (- oder +) vor einer Zahl erzwingt.
+          Standardmäßig wird nur das - Zeichen vor negativen Zahlen verwendet.
+          Die Vorzeichenangabe erzwingt, dass positive Zahlen ein + Zeichen
+          vorangestellt bekommen, und wurde mit PHP 4.3.0 eingeführt.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          Ein optionales <em class="emphasis">Füllzeichen</em>, das festlegt, mit
+          welchem Zeichen ein String bis zum Erreichen einer bestimmten Länge
+          aufgefüllt wird. Dies kann ein Leerzeichen oder eine
+          <em>0</em> (das Null-Zeichen) sein. Standardmäßig wird
+          mit dem Leerzeichen gefüllt. Andere Füllzeichen können durch
+          Voranstellen eines einfachen Anführungszeichens (<em>&#039;</em>)
+          definiert werden. Beachten Sie die nachstehenden Beispiele.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          Eine optionale Angabe der <em class="emphasis">Ausrichtung</em>, die
+          bestimmt, ob das Ergebnis rechts- oder linksbündig ausgerichtet werden
+          soll. Das Standardverhalten ist rechtsbündige Ausrichtung, ein
+          <em>-</em>-Zeichen an dieser Stelle lässt den Text
+          linksbündig erscheinen.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          Eine optionale Zahl für die <em class="emphasis">Längenangabe</em>,
+          welche die mindestens zurückzugebende Anzahl Zeichen spezifiziert.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          Eine optionale <em class="emphasis">Genauigkeitsangabe</em> in der Form
+          eines Punktes (<em>.</em>) gefolgt von einem optionalen Dezimalstring. Dieser
+          drückt aus, wieviele Dezimalstellen für Fließkommazahlen ausgegeben
+          werden sollten. Wenn Sie diese Angabe auf einen String anwenden,
+          fungiert sie als Grenzpunkt, der die maximale Zeichenzahl der
+          ausgegebenen Zeichenkette bestimmt. Zusätzlich kann optional das
+          Zeichen, das zum Auffüllen einer Zahl verwendet werden soll, zwischen
+          dem Punkt und der Ziffer angegeben werden.
+         </span>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          Eine <em class="emphasis">Typangabe</em>, welche den Typ enthält,
+          als der das jeweils übergebene Argument angesehen werden soll.
+          Mögliche Angaben sind:
+          <ul class="simplelist">
+           <li class="member">
+            <em>%</em> - ein Prozentzeichen. Es ist kein
+            Argument erforderlich.
+           </li>
+           <li class="member">
+            <em>b</em> - das Argument wird als Integer
+            angesehen und als Binär-Wert ausgegeben.
+           </li>
+           <li class="member">
+            <em>c</em> - das Argument wird als Integer
+            angesehen, und das entsprechende ASCII-Zeichen wird
+            ausgegeben.
+           </li>
+           <li class="member">
+            <em>d</em> - das Argument wird als Integer
+            angesehen und als vorzeichenbehafteter Dezimalwert
+            (signed integer) ausgegeben.
+           </li>
+           <li class="member">
+            <em>e</em> - das Argument wird als wissenschaftliche
+            Notation betrachtet (z.B. 1.2e+2). Die Genauigkeitsangabe steht
+            seit PHP 5.2.1 für die Anzahl der Dezimalstellen. In früheren
+            PHP-Versionen wurde sie als signifikante Stelle betrachtet (eine
+            Stelle weniger).
+           </li>
+           <li class="member">
+            <em>E</em> - wie <em>%e</em>, mit dem Unterschied,
+            dass ein großes E verwendet wird (z.B. 1.2E+2).
+           </li>
+           <li class="member">
+            <em>f</em> - das Argument wird als float angesehen und
+            entsprechend der Einstellungen in den locales als Fließkommazahl
+            ausgegeben.
+           </li>
+           <li class="member">
+            <em>F</em> - das Argument wird als float angesehen und
+            unabhängig von den Einstellungen in den locales als Fließkommazahl
+            ausgegeben.
+            Verfügbar ab PHP 4.3.10 und PHP 5.0.3.
+           </li>
+           <li class="member">
+            <em>g</em> - das Kürzere von <em>%e</em> und
+            <em>%f</em>.
+           </li>
+           <li class="member">
+            <em>G</em> - das Kürzere von <em>%E</em> und
+            <em>%f</em>.
+           </li>
+           <li class="member">
+            <em>o</em> - das Argument wird als Integer
+            angesehen und als Oktalzahl ausgegeben.
+           </li>
+           <li class="member">
+            <em>s</em> - das Argument wird als String angesehen
+            und auch als solcher ausgegeben.
+           </li>
+           <li class="member">
+            <em>u</em> - das Argument wird als Integer
+            angesehen und ein positiver vorzeichenloser Dezimalwert (unsigned
+            integer) ausgegeben.
+           </li>
+           <li class="member">
+            <em>x</em> - das Argument wird als Integer
+            angesehen und als Hexadezimalwert ausgegeben (mit
+            Kleinbuchstaben).
+           </li>
+           <li class="member">
+            <em>X</em> - das Argument wird als Integer
+            angesehen und als Hexadezimalwert ausgegeben (mit
+            Großbuchstaben).
+           </li>
+          </ul>
+         </p>
+        </li>
+       </ol>
+      </p>
+      <p class="para">
+       Variablen werden in einen für die Typangabe passenden Typ konvertiert:
+       <table id="sprintf.coercion" class="doctable table">
+        <caption><strong>Typ-Behandlung</strong></caption>
+        
+         <thead>
+          <tr>
+           <th>Typ</th>
+           <th>Typangaben</th>
+          </tr>
+
+         </thead>
+
+         <tbody class="tbody">
+          <tr>
+           <td><em>string</em></td>
+           <td><em>s</em></td>
+          </tr>
+
+          <tr>
+           <td><em>integer</em></td>
+           <td>
+            <em>d</em>,
+            <em>u</em>,
+            <em>c</em>,
+            <em>o</em>,
+            <em>x</em>,
+            <em>X</em>,
+            <em>b</em>
+           </td>
+          </tr>
+
+          <tr>
+           <td><em>double</em></td>
+           <td>
+            <em>g</em>,
+            <em>G</em>,
+            <em>e</em>,
+            <em>E</em>,
+            <em>f</em>,
+            <em>F</em>
+           </td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
+      </p>
+      <div class="warning"><strong class="warning">Warnung</strong>
+       <p class="para">
+        Der Versuch der Verwendung einer Kombination von Stringtyp- und
+        Längenangaben bei Zeichensätzen, die mehr als ein Byte pro Zeichen
+        benötigen, kann zu unerwarteten Ergebnissen führen
+       </p>
+      </div>
+      <p class="para">
+       Der Formatstring unterstützt nummerierte Argumente und kann daher auch
+       ihre Position bestimmen (argument numbering/swapping). Hier ein Beispiel:
+       <div class="example" id="example-5360">
+        <p><strong>Beispiel #1 Argumente tauschen</strong></p>
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$anzahl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$ort&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Baum'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$format&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Es&nbsp;sind&nbsp;%d&nbsp;Affen&nbsp;auf&nbsp;dem&nbsp;%s'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #0000BB">$format</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$anzahl</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ort</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
+       Dies wird &quot;Es sind 5 Affen auf dem Baum&quot; ausgeben. Aber nehmen
+       wir einmal an, dass wir den Formatstring in einer separaten Datei
+       erstellen, da wir ihn internationalisieren wollen und deshalb wie
+       folgt umschreiben:
+       <div class="example" id="example-5361">
+        <p><strong>Beispiel #2 Argumente tauschen</strong></p>
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$format&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Der&nbsp;%s&nbsp;enthält&nbsp;%d&nbsp;Affen'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #0000BB">$format</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$anzahl</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ort</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
+       Nun haben wir ein Problem. Die Reihenfolge der Platzhalter im
+       Formatstrings entspricht nicht mehr der Reihenfolge der Argumente im
+       Code. Wir würden gern den Code belassen wie er ist und einfach im
+       Formatstring angeben, welche Argumenten welchen Platzhaltern entsprechen.
+       Wir würden dann den Formatstring wie folgt schreiben:
+       <div class="example" id="example-5362">
+        <p><strong>Beispiel #3 Argumente tauschen</strong></p>
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$format&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Der&nbsp;%2$s&nbsp;enthält&nbsp;%1$d&nbsp;Affen'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #0000BB">$format</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$anzahl</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ort</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
+       Ein weiterer Vorteil ist, dass wir nun die Platzhalter wiederholen
+       können, ohne mehr Argumente im Code hinzufügen zu müssen. Zum Beispiel:
+       <div class="example" id="example-5363">
+        <p><strong>Beispiel #4 Argumente tauschen</strong></p>
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$format&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Der&nbsp;%2$s&nbsp;enthält&nbsp;%1$d&nbsp;Affen.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%1$d&nbsp;Affen&nbsp;sind&nbsp;ziemlich&nbsp;viel&nbsp;für&nbsp;einen&nbsp;%2$s.'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #0000BB">$format</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$anzahl</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ort</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
+       Wenn Argumenttausch verwendet wird muss die <em>n$</em>
+       <em class="emphasis">Positionsangabe</em>
+       direkt nach dem Prozentzeichen (<em>%</em>) folgen, vor
+       jeglichen anderen Angaben, wie im Beispiel unten zu sehen ist.
+       <div class="example" id="example-5364">
+        <p><strong>Beispiel #5 Angabe von Füllzeichen</strong></p>
+        <div class="example-contents">
+         <div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%'.9d\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">123</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%'.09d\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">123</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+        <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+        <div class="example-contents screen">
+         <div class="cdata"><pre>
+......123
+000000123
+</pre></div>
+        </div>
+       </div>
+       <div class="example" id="example-5365">
+        <p><strong>Beispiel #6 Positionstausch mit weiteren Spezifikatoren</strong></p>
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$format</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Der&nbsp;%2$s&nbsp;enthält&nbsp;%1$04d&nbsp;Affen'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #0000BB">$format</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$anzahl</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ort</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+        <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+        <div class="example-contents screen">
+<div class="cdata"><pre>
+Der Baum enthält 0005 Affen.
+</pre></div>
+        </div>
+       </div>
+      </p>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+        Der Versuch der Verwendung einer Positionsangabe, die größer als
+        <strong><code>PHP_INT_MAX</code></strong> ist, hat zur Folge, dass
+        <span class="function">sprintf</span> Warnungen erzeugt.
+       </p>
+      </p></blockquote>
+      <div class="warning"><strong class="warning">Warnung</strong>
+       <p class="para">
+        Die <em>c</em>-Typangabe ignoriert Füllzeichen und Längenangabe
+       </p>
+      </div>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">args</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">...</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.sprintf-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt eine an Hand des Formatierungs-Strings <code class="parameter">format</code>
+   gebildete Zeichenkette zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.sprintf-examples">
+  <h3 class="title">Beispiele</h3>
+  <div class="example" id="example-5366">
+   <p><strong>Beispiel #7 <span class="function">printf</span>: Verschiedene Beispiele</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$n&nbsp;</span><span style="color: #007700">=&nbsp;&nbsp;</span><span style="color: #0000BB">43951789</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$u&nbsp;</span><span style="color: #007700">=&nbsp;-</span><span style="color: #0000BB">43951789</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">65</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;ASCII&nbsp;65&nbsp;is&nbsp;'A'<br /><br />//&nbsp;Beachten&nbsp;Sie&nbsp;das&nbsp;doppelte&nbsp;%%,&nbsp;dies&nbsp;gibt&nbsp;ein&nbsp;'%'-Zeichen&nbsp;aus<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%b&nbsp;=&nbsp;'%b'\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Binärdarstellung<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%c&nbsp;=&nbsp;'%c'\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;print&nbsp;the&nbsp;ascii&nbsp;character,&nbsp;same&nbsp;as&nbsp;chr()&nbsp;function<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%d&nbsp;=&nbsp;'%d'\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Standard-Integerdarstellung<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%e&nbsp;=&nbsp;'%e'\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Wissenschaftliche&nbsp;Notation<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%u&nbsp;=&nbsp;'%u'\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;vorzeichenlose&nbsp;Integerdarstellung&nbsp;einer&nbsp;positiven&nbsp;Zahl<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%u&nbsp;=&nbsp;'%u'\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$u</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;vorzeichenlose&nbsp;Integerdarstellung&nbsp;einer&nbsp;negativen&nbsp;Zahl<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%f&nbsp;=&nbsp;'%f'\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Fließkommazahldarstellung<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%o&nbsp;=&nbsp;'%o'\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Oktaldarstellung<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%s&nbsp;=&nbsp;'%s'\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Stringdarstellung<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%x&nbsp;=&nbsp;'%x'\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Hexadezimaldarstellung&nbsp;(Kleinbuchstaben)<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%X&nbsp;=&nbsp;'%X'\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Hexadezimaldarstellung&nbsp;(Großbuchstaben)<br /><br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%+d&nbsp;=&nbsp;'%+d'\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Vorzeichenangabe&nbsp;für&nbsp;positive&nbsp;Integerzahlen<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%+d&nbsp;=&nbsp;'%+d'\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$u</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Vorzeichenangabe&nbsp;für&nbsp;negative&nbsp;Integerzahlen<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+%b = &#039;10100111101010011010101101&#039;
+%c = &#039;A&#039;
+%d = &#039;43951789&#039;
+%e = &#039;4.39518e+7&#039;
+%u = &#039;43951789&#039;
+%u = &#039;4251015507&#039;
+%f = &#039;43951789.000000&#039;
+%o = &#039;247523255&#039;
+%s = &#039;43951789&#039;
+%x = &#039;29ea6ad&#039;
+%X = &#039;29EA6AD&#039;
+%+d = &#039;+43951789&#039;
+%+d = &#039;-43951789&#039;
+</pre></div>
+   </div>
+  </div>
+  <div class="example" id="example-5367">
+   <p><strong>Beispiel #8 <span class="function">printf</span>: Stringformatierung</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$s&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'monkey'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$t&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'many&nbsp;monkeys'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%s]\n"</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$s</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;normale&nbsp;rechtsbündige&nbsp;Ausgabe<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%10s]\n"</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$s</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;rechtsbündige&nbsp;Ausgabe,&nbsp;mit&nbsp;Leerzeichen&nbsp;aufgefüllt<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%-10s]\n"</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$s</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;linksbündige&nbsp;Ausgabe,&nbsp;mit&nbsp;Leerzeichen&nbsp;aufgefüllt<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%010s]\n"</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$s</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;auffüllen&nbsp;mit&nbsp;Nullen&nbsp;funktioniert&nbsp;auch&nbsp;bei&nbsp;Strings<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%'#10s]\n"</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">$s</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Verwendung&nbsp;des&nbsp;benutzerdefinierten&nbsp;Auffüllzeichens&nbsp;'#'<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%10.10s]\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$t</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;linksbündige&nbsp;Ausgabe&nbsp;mit&nbsp;abschneiden&nbsp;überflüssiger<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Buchstaben&nbsp;nach&nbsp;der&nbsp;zehnten&nbsp;Stelle<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+[monkey]
+[    monkey]
+[monkey    ]
+[0000monkey]
+[####monkey]
+[many monke]
+</pre></div>
+   </div>
+  </div>
+  <div class="example" id="example-5368">
+   <p><strong>Beispiel #9 <span class="function">sprintf</span>: Mit Nullen aufgefüllte Integer</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$isodate&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%04d-%02d-%02d"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$year</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$month</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$day</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+  <div class="example" id="example-5369">
+   <p><strong>Beispiel #10 <span class="function">sprintf</span>: Währungsformatierung</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$money1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">68.75</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$money2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">54.35</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$money&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$money1&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$money2</span><span style="color: #007700">;<br /></span><span style="color: #FF8000">//&nbsp;echo&nbsp;$money&nbsp;gibt&nbsp;"123.1"&nbsp;aus<br /></span><span style="color: #0000BB">$formatted&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%01.2f"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$money</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;echo&nbsp;$formatted&nbsp;gibt&nbsp;"123.10"&nbsp;aus<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+  <div class="example" id="example-5370">
+   <p><strong>Beispiel #11 <span class="function">sprintf</span>: Wissenschaftliche Notation</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$number&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">362525200</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%.3e"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$number</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Ausgabe&nbsp;3.625e+8<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.sprintf-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">printf</span></li>
+    <li class="member"><span class="function">sscanf</span></li>
+    <li class="member"><span class="function">fscanf</span></li>
+    <li class="member"><span class="function">vsprintf</span></li>
+    <li class="member"><span class="function">number_format</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

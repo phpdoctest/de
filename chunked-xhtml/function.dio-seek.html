@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Setzt den Dateizeiger</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.file.html">Dateisystemrelevante Erweiterungen</a></li>
+  <li class="header up"><a href="book.dio.html">Direct-IO</a></li>
+  <li class="header up"><a href="ref.dio.html">Direct-IO-Funktionen</a></li>
+  <li><a href="function.dio-close.html">dio_close</a></li>
+  <li><a href="function.dio-fcntl.html">dio_fcntl</a></li>
+  <li><a href="function.dio-open.html">dio_open</a></li>
+  <li><a href="function.dio-read.html">dio_read</a></li>
+  <li class="active"><a href="function.dio-seek.html">dio_seek</a></li>
+  <li><a href="function.dio-stat.html">dio_stat</a></li>
+  <li><a href="function.dio-tcsetattr.html">dio_tcsetattr</a></li>
+  <li><a href="function.dio-truncate.html">dio_truncate</a></li>
+  <li><a href="function.dio-write.html">dio_write</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.dio-read.html">dio_read</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.dio-stat.html">dio_stat</a></div>
+                <div class="up"><a href="ref.dio.html">Direct-IO-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.dio-seek" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">dio_seek</h1>
+  <p class="refpurpose">Setzt den Dateizeiger</p>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.dio-seek-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname">dio_seek</span>
+    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$fd</code></span>
+   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$pos</code></span>
+   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$whence</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Die Funktion <span class="function">dio_seek</span> setzt den Dateizeiger
+   der Datei <code class="parameter">fd</code>.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.dio-seek-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">fd</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der von <span class="function">dio_open</span> zurückgegebene Dateideskriptor.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">pos</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die neue Position.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">whence</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Gibt an, wie die Position <code class="parameter">pos</code>
+       interpretiert werden soll:
+       <ul class="itemizedlist">
+        <li class="listitem">
+         <p class="para">
+          <strong><code>SEEK_SET</code></strong> - gibt an, dass
+          <code class="parameter">pos</code> die Position vom Anfang der Datei ist
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <strong><code>SEEK_CUR</code></strong> - gibt an, dass
+          <code class="parameter">pos</code> die Position relativ von der
+          momentanen Dateizeigerposition ist.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <strong><code>SEEK_END</code></strong> - gibt an, dass
+          <code class="parameter">pos</code> die
+          Position relativ zum Dateiende ist. Eine negative Zahl setzt
+          den Dateizeiger innerhalb der Datei, ein positiver Wert
+          bewirkt, dass die Datei vom Ende bis zur neuen Position mit
+          Nullen aufgefüllt wird.
+         </p>
+        </li>
+       </ul>
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.dio-seek-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.dio-seek-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-2533">
+    <p><strong>Beispiel #1 Positionieren in einer Datei</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$fd&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dio_open</span><span style="color: #007700">(</span><span style="color: #DD0000">'/dev/ttyS0'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">O_RDWR</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">dio_seek</span><span style="color: #007700">(</span><span style="color: #0000BB">$fd</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SEEK_SET</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;Position&nbsp;ist&nbsp;jetzt&nbsp;beim&nbsp;10.&nbsp;Zeichen&nbsp;vom&nbsp;Anfang&nbsp;der&nbsp;Datei<br /><br /></span><span style="color: #0000BB">dio_seek</span><span style="color: #007700">(</span><span style="color: #0000BB">$fd</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SEEK_CUR</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;Position&nbsp;ist&nbsp;jetzt&nbsp;beim&nbsp;8.&nbsp;Zeichen&nbsp;vom&nbsp;Anfang&nbsp;der&nbsp;Datei<br /><br /></span><span style="color: #0000BB">dio_seek</span><span style="color: #007700">(</span><span style="color: #0000BB">$fd</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SEEK_END</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;Position&nbsp;ist&nbsp;jetzt&nbsp;beim&nbsp;5.&nbsp;Zeichen&nbsp;vom&nbsp;Ende&nbsp;der&nbsp;Datei<br /><br /></span><span style="color: #0000BB">dio_seek</span><span style="color: #007700">(</span><span style="color: #0000BB">$fd</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SEEK_END</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;Position&nbsp;ist&nbsp;jetzt&nbsp;beim&nbsp;10.&nbsp;Zeichen&nbsp;hinter&nbsp;dem&nbsp;Ende&nbsp;der&nbsp;Datei.<br />//&nbsp;Die&nbsp;10&nbsp;Zeichen&nbsp;zwischen&nbsp;dem&nbsp;Ende&nbsp;der&nbsp;Datei&nbsp;und&nbsp;der&nbsp;aktuellen&nbsp;Position<br />//&nbsp;werden&nbsp;mit&nbsp;Nullen&nbsp;gefüllt.<br /><br /></span><span style="color: #0000BB">dio_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$fd</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Beispiele</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.crypto.html">Kryptografische Erweiterungen</a></li>
+  <li class="header up"><a href="book.crack.html">Crack</a></li>
+  <li><a href="intro.crack.html">Einf&uuml;hrung</a></li>
+  <li><a href="crack.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="crack.constants.html">Vordefinierte Konstanten</a></li>
+  <li class="active"><a href="crack.examples.html">Beispiele</a></li>
+  <li><a href="ref.crack.html">Crack Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="crack.constants.html">Vordefinierte Konstanten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ref.crack.html">Crack Funktionen</a></div>
+                <div class="up"><a href="book.crack.html">Crack</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="crack.examples" class="appendix">
+ <h1>Beispiele</h1>
+ <p class="para">
+  Diese Beispiel zeigt, wie ein CrackLib Wörterbuch geöffnet wird,
+  ein übergebenes Passwort überprüft wird und Diagnosemeldungen
+  ausgewertet werden. Anschließend wird das Wörterbuch wieder
+  geschlossen.
+  <div class="example" id="example-885">
+   <p><strong>Beispiel #1 CrackLib Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Öffne&nbsp;das&nbsp;CrackLib&nbsp;Wörterbuch<br /></span><span style="color: #0000BB">$dictionary&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">crack_opendict</span><span style="color: #007700">(</span><span style="color: #DD0000">'/usr/local/lib/pw_dict'</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">'Kann&nbsp;das&nbsp;CrackLib&nbsp;Wörterbuch&nbsp;nicht&nbsp;öffnen'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Führe&nbsp;eine&nbsp;Überprüfung&nbsp;des&nbsp;Passworts&nbsp;durch<br /></span><span style="color: #0000BB">$check&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">crack_check</span><span style="color: #007700">(</span><span style="color: #0000BB">$dictionary</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'gx9A2s0x'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Empfange&nbsp;Rückmeldungen<br /></span><span style="color: #0000BB">$diag&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">crack_getlastmessage</span><span style="color: #007700">();<br />echo&nbsp;</span><span style="color: #0000BB">$diag</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;'starkes&nbsp;Passwort'<br /><br />//&nbsp;Schliesse&nbsp;das&nbsp;Wörterbuch<br /></span><span style="color: #0000BB">crack_closedict</span><span style="color: #007700">(</span><span style="color: #0000BB">$dictionary</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+  </div>
+ </p>
+ <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+  <p class="para">
+   Wenn <span class="function">crack_check</span> <strong><code>TRUE</code></strong> zurückliefert, wird
+   <span class="function">crack_getlastmessage</span>
+   <em>&#039;strong password&#039;</em> zurückliefern.
+  </p>
+ </p></blockquote>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

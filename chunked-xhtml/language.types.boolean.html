@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Booleans</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.types.html">Typen</a></li>
+  <li><a href="language.types.intro.html">Einf&uuml;hrung</a></li>
+  <li class="active"><a href="language.types.boolean.html">Booleans</a></li>
+  <li><a href="language.types.integer.html">Integers</a></li>
+  <li><a href="language.types.float.html">Floating point numbers</a></li>
+  <li><a href="language.types.string.html">Strings</a></li>
+  <li><a href="language.types.array.html">Arrays</a></li>
+  <li><a href="language.types.object.html">Objekte</a></li>
+  <li><a href="language.types.resource.html">Ressourcen</a></li>
+  <li><a href="language.types.null.html">NULL</a></li>
+  <li><a href="language.types.callable.html">Callbacks / Callables</a></li>
+  <li><a href="language.pseudo-types.html">Pseudo-types and variables used in this documentation</a></li>
+  <li><a href="language.types.type-juggling.html">Type Juggling</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.types.intro.html">Einf&uuml;hrung</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.types.integer.html">Integers</a></div>
+                <div class="up"><a href="language.types.html">Typen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.types.boolean" class="sect1">
+ <h2 class="title">Booleans</h2>
+
+ <p class="simpara">
+  Dies ist der einfachste Typ. Ein <span class="type">boolean</span> Ausdruck ist
+  ein Wahrheitswert der entweder <strong><code>TRUE</code></strong> (wahr) oder <strong><code>FALSE</code></strong> (falsch)
+  sein kann.
+ </p>
+
+ <div class="sect2" id="language.types.boolean.syntax">
+  <h3 class="title">Syntax</h3>
+  <p class="para">
+   Ein <span class="type">boolean</span> Wert wird über die Konstanten
+   <strong><code>TRUE</code></strong> und <strong><code>FALSE</code></strong> spezifiziert, Groß- und Kleinschreibung
+   ist dabei nicht von Bedeutung.
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">True</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;weist&nbsp;$foo&nbsp;den&nbsp;Wert&nbsp;TRUE&nbsp;zu<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+  <p class="para">
+   Normalerweise wird ein <span class="type">boolean</span> von einem
+   <a href="language.operators.html" class="link">Operator</a> zurückgegeben
+   und an eine <a href="language.control-structures.html" class="link">Kontrollstruktur</a> weitergegeben.
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;==&nbsp;ist&nbsp;ein&nbsp;Operator&nbsp;der&nbsp;auf&nbsp;Gleichheit&nbsp;prüft<br />//&nbsp;und&nbsp;ein&nbsp;boolean&nbsp;Ergebnis&nbsp;zurückgibt<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$action&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">"show_version"</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Die&nbsp;Version&nbsp;ist&nbsp;1.23"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;die&nbsp;Angabe&nbsp;von&nbsp;'==&nbsp;TRUE'&nbsp;ist&nbsp;nicht&nbsp;nötig...<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$show_separators&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">TRUE</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;hr&gt;\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;...&nbsp;weil&nbsp;folgendes&nbsp;*genau*&nbsp;die&nbsp;selbe&nbsp;Bedeutung&nbsp;hat:<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$show_separators</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;hr&gt;\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+ <div class="sect2" id="language.types.boolean.casting">
+  <h3 class="title">Converting to boolean</h3>
+
+  <p class="simpara">
+   Um einen Wert explizit zu <span class="type">boolean</span> zu konvertieren, wird
+   <em>(bool)</em> oder <em>(boolean)</em> zum casten verwendet. 
+   Dies ist jedoch in den meisten Fällen nicht  nötig, da ein Wert automatisch konvertiert wird wenn eine Funktion oder Kontrollstruktur ein
+   <span class="type">boolean</span> Argument verlangt.
+  </p>
+
+  <p class="simpara">
+   Siehe auch <a href="language.types.type-juggling.html" class="link">Typumwandlungen</a>.
+  </p>
+
+  <p class="para">
+   Bei der Konvertierung zum Typ <span class="type">boolean</span> gelten die folgenden
+   Werte als <strong><code>FALSE</code></strong>:
+  </p>
+
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <a href="language.types.boolean.html" class="link">boolean</a> <strong><code>FALSE</code></strong> selbst
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <a href="language.types.integer.html" class="link">integer</a> 0 (zero)
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <a href="language.types.float.html" class="link">float</a> 0.0 (zero)
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Der leere <a href="language.types.string.html" class="link">string</a>, und der
+     <a href="language.types.string.html" class="link">string</a> &quot;0&quot;
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Ein <a href="language.types.array.html" class="link">array</a> ohne Elemente
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Ein <a href="language.types.object.html" class="link">object</a> ohne
+     Eigenschaftsvariablen (nur PHP 4)
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Der spezielle Typ <a href="language.types.null.html" class="link">NULL</a>
+     (inklusive nicht gesetzter Variablen)
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <a href="ref.simplexml.html" class="link">SimpleXML</a> Objekte die
+     aus leeren Tags erzeugt wurden.
+    </span>
+   </li>
+  </ul>
+
+  <p class="para">
+   Jeder andere Wert wird als <strong><code>TRUE</code></strong> angenommen (inklusive
+   jeglicher
+   <a href="language.types.resource.html" class="link">resource</a>
+   Werte).
+  </p>
+
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="simpara">
+    <em>-1</em> gilt als <strong><code>TRUE</code></strong> wie jeder
+    andere Integerwert ungleich 0 (egal ob positiv
+    oder negativ)!
+   </p>
+  </div>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">((bool)&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(false)<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">((bool)&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(true)<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">((bool)&nbsp;-</span><span style="color: #0000BB">2</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(true)<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">((bool)&nbsp;</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(true)<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">((bool)&nbsp;</span><span style="color: #0000BB">2.3e5</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(true)<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">((bool)&nbsp;array(</span><span style="color: #0000BB">12</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(true)<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">((bool)&nbsp;array());&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(false)<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">((bool)&nbsp;</span><span style="color: #DD0000">"false"</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(true)<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+ </div>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

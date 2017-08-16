@@ -1,0 +1,2182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Variablen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li><a href="language.basic-syntax.html">Grundlagen der Syntax</a></li>
+  <li><a href="language.types.html">Typen</a></li>
+  <li><a href="language.variables.html">Variablen</a></li>
+  <li><a href="language.constants.html">Konstanten</a></li>
+  <li><a href="language.expressions.html">Ausdr&uuml;cke</a></li>
+  <li><a href="language.operators.html">Operatoren</a></li>
+  <li><a href="language.control-structures.html">Kontrollstrukturen</a></li>
+  <li><a href="language.functions.html">Funktionen</a></li>
+  <li><a href="language.oop5.html">Klassen und Objekte</a></li>
+  <li><a href="language.namespaces.html">Namespaces</a></li>
+  <li><a href="language.errors.html">Fehler</a></li>
+  <li><a href="language.exceptions.html">Ausnahmebehandlung (Exception-Handling)</a></li>
+  <li><a href="language.generators.html">Generatoren</a></li>
+  <li><a href="language.references.html">Referenzen in PHP</a></li>
+  <li class="active"><a href="reserved.variables.html">Vordefinierte Variablen</a></li>
+  <li><a href="reserved.exceptions.html">Vordefinierte Exceptions</a></li>
+  <li><a href="reserved.interfaces.html">Vordefinierte Interfaces und Klassen</a></li>
+  <li><a href="context.html">Kontextoptionen und -parameter</a></li>
+  <li><a href="wrappers.html">Unterst&uuml;tzte Protokolle und Wrapper</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.references.spot.html">Referenzen entdecken</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.variables.superglobals.html">Superglobals</a></div>
+                <div class="up"><a href="langref.html">Sprachreferenz</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="reserved.variables" class="reference">
+ <h1 class="title">Vordefinierte Variablen</h1>
+
+ <div class="partintro">
+
+  <p class="para">
+   PHP unterstützt eine größere Anzahl vordefinierter Variablen in allen
+   Skripten. Die Variablen repräsentieren die gesamte Spannweite von
+   <a href="language.variables.external.html" class="link">externen Variablen</a> über
+   built-in-Umgebungsvariablen, letzte Fehlermeldungen bis zu empfangenen
+   Headern.
+  </p>
+
+  <p class="para">
+   Lesen Sie ebenfalls die den FAQ-Abschnitt &quot;<a href="faq.using.html#faq.register-globals" class="link">Wie wirkt sich register_globals auf
+   meine Skripte aus?</a>&quot;
+  </p>
+
+ </div>
+
+ 
+
+
+
+
+ <div class="refnamediv">
+  <h1 class="refname">Superglobals</h1>
+  <p class="refpurpose">Superglobals sind Built-in-Variablen, die immer in allen
+   Gültigkeitsbereichen verfügbar sind</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-reserved.variables-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">
+   Etliche vordefinierte Variablen in PHP sind sogenannte &quot;Superglobals&quot;, das
+   bedeutet, sie sind in allen Gültigkeitsbereichen (s.g. Scopes) eines Skripts
+   verfügbar. Daher gibt es keinen Grund, <strong class="command">global $variable;</strong> zu
+   verwenden, um auf sie innerhalb einer Funktion oder Methode zuzugreifen.
+  </p>
+  <p class="para">
+   Diese Superglobals sind:
+   <ul class="simplelist">
+    <li class="member"><var class="varname">$GLOBALS</var></li>
+    <li class="member"><var class="varname">$_SERVER</var></li>
+    <li class="member"><var class="varname">$_GET</var></li>
+    <li class="member"><var class="varname">$_POST</var></li>
+    <li class="member"><var class="varname">$_FILES</var></li>
+    <li class="member"><var class="varname">$_COOKIE</var></li>
+    <li class="member"><var class="varname">$_SESSION</var></li>
+    <li class="member"><var class="varname">$_REQUEST</var></li>
+    <li class="member"><var class="varname">$_ENV</var></li>
+   </ul>
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-reserved.variables-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>4.1.0</td>
+       <td>
+        Superglobals wurden in PHP eingeführt.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-reserved.variables-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <strong>Verfügbarkeit der Variablen</strong><br />
+   <p class="para">
+    Standardmäßig sind alle Superglobals verfügbar, allerdings haben einige
+    Einstellung in PHP Einfluss auf ihre Verfügbarkeit. Für weitere Informationen
+    lesen Sie bitte die Dokumentation zu
+    <a href="ini.core.html#ini.variables-order" class="link">variables_order</a>.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <strong>Abwicklung mit register_globals</strong><br />
+   <p class="para">
+    Sollte die nicht mehr empfohlene Direktive <a href="ini.core.html#ini.register-globals" class="link">register_globals</a> auf
+    <em>on</em> gesetzt sein, werden die davon betroffenen Variablen
+    ebenfalls im globalen Gültigkeitsbereich des Skripts sichtbar. So existiert
+    zum Beispiel <var class="varname">$_POST[&#039;foo&#039;]</var> gleichzeitig als
+    <var class="varname">$foo</var>.
+   </p>
+   <p class="para">
+    Wenn Sie mehr über das Thema wissen wollen, werfen Sie am besten einen
+    Blick in die FAQ &quot;<a href="faq.using.html#faq.register-globals" class="link">Wie wirkt sich
+    register_globals auf meine Skripte aus?</a>&quot;
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <strong>Variable Variablen</strong><br />
+   <p class="para">
+    Superglobals können nicht als <a href="language.variables.variable.html" class="link">variable Variablen</a>
+    innerhalb von Funktionen oder Klassenmethoden verwendet werden.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-reserved.variables-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><a href="language.variables.scope.html" class="link">Gültigkeit von Variablen</a></li>
+    <li class="member">The <a href="ini.core.html#ini.variables-order" class="link">variables_order</a>-Direktive</li>
+    <li class="member"><a href="book.filter.html" class="link">Die Filter-Erweiterung</a></li>
+   </ul>
+  </p>
+ </div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <div class="refnamediv">
+  <h1 class="refname">$GLOBALS</h1>
+  <p class="refpurpose">Referenziert alle Variablen, die im globalen Gültigkeitsbereich
+   vorhanden sind</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-reserved.variables-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">
+   Ein assoziatives <span class="type">Array</span>, das Referenzen auf alle Variablen enthält,
+   die derzeit im globalen Gültigkeitsbereich (Scope) des Skripts bekannt sind.
+   Die Namen der jeweiligen Variablen sind die Schlüsselwerte, um auf den Inhalt
+   der jeweils referenzierten Variablen zuzugreifen.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-reserved.variables-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="variable.globals.basic">
+    <p><strong>Beispiel #1 <var class="varname">$GLOBALS</var>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"local&nbsp;variable"</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'$foo&nbsp;in&nbsp;global&nbsp;scope:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$GLOBALS</span><span style="color: #007700">[</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'$foo&nbsp;in&nbsp;current&nbsp;scope:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Example&nbsp;content"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">test</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+$foo in global scope: Example content
+$foo in current scope: local variable
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-reserved.variables-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Dies ist eine &#039;Superglobale&#039;
+oder automatisch globale Variable. Dies bedeutet, dass sie innerhalb
+des Skripts in jedem Geltungsbereich sichtbar ist. Es ist nicht
+nötig, sie mit <strong class="command">global $variable</strong> bekannt zu
+machen, um aus Funktionen oder Methoden darauf zuzugreifen.</p>
+</p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <strong>Verfügbarkeit der Variablen</strong><br />
+   <p class="para">
+    Im Gegensatz zu allen anderen <a href="language.variables.superglobals.html" class="link">Superglobals</a> ist
+    <var class="varname">$GLOBALS</var> notwendigerweise immer in PHP verfügbar.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <div class="refnamediv">
+  <h1 class="refname">$_SERVER</h1>
+  <h1 class="refname">$HTTP_SERVER_VARS [entfernt]</h1>
+  <p class="refpurpose">Informationen über Server und Ausführungsumgebung</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-reserved.variables-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">
+   <var class="varname">$_SERVER</var> ist ein Array, das Informationen wie Header,
+   Pfade und die verschiedenen Wege, das Skript anzusprechen beinhaltet. Die Einträge in
+   diesem Array werden vom Webserver erstellt. Es gibt keine Garantie dafür,
+   dass jeder Webserver alle möglichen Einträge unterstützt - Server können
+   einige weglassen oder andere Einträge unterstützen, die hier nicht aufgeführt
+   sind. Das meint, die meisten der Variablen werden in der<a href="http://www.faqs.org/rfcs/rfc3875" class="link external">&raquo;&nbsp;CGI 1.1-Spezifikation</a> ausgewiesen, daher
+   sollten Sie diese als von Ihrem Webserver unterstützt erwarten können.
+  </p>
+
+  <p class="simpara">
+   Vor PHP 5.4.0 enthielt <var class="varname">$HTTP_SERVER_VARS</var> anfangs die selben Informationen,
+   war aber kein <a href="language.variables.superglobals.html" class="link">Superglobal</a>. (Beachten Sie,
+   dass <var class="varname">$HTTP_SERVER_VARS</var> und <var class="varname">$_SERVER</var>
+   unterschiedliche Variablen waren und von PHP daher entsprechend behandelt
+   wurden.)
+  </p>
+ </div>
+
+
+ <div class="refsect1 indices" id="refsect1-reserved.variables-indices">
+  <h3 class="title">Indizes</h3>
+  <p class="simpara">
+   Es kann sein, dass Sie die folgenden Elemente in <var class="varname">$_SERVER</var>
+   vorfinden. Beachten Sie, dass einige davon, sofern vorhanden, nur verfügbar
+   sind oder einen sinnvollen Wert haben, wenn PHP auf der <a href="features.commandline.html" class="link">Kommandozeile</a> läuft.
+  </p>
+
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+&#039;<var class="varname">PHP_SELF</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Der Dateiname des aktuell ausgeführten Skripts, relativ zum Document Root.
+       Beispielsweise enthält <var class="varname">$_SERVER[&#039;PHP_SELF&#039;]</var> in einem
+       Skript, das über die Adresse
+       <var class="filename">http://example.com/foo/bar.php</var> aufgerufen wird,
+       den Wert <var class="filename">/foo/bar.php</var>. Die Konstante <a href="language.constants.predefined.html" class="link">__FILE__</a> enthält den
+       vollständigen Pfad und Dateinamen der aktuellen (z.B. via include
+       eingebundenen) Datei.
+      </span>
+      <span class="simpara">
+       Läuft PHP als Kommandozeilenprogramm, enthält diese Variable seit PHP
+       4.3.0 den Namen des Skripts. Davor war die Variable nicht verfügbar.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<a href="reserved.variables.argv.html" class="link">argv</a>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Array der an das Skript übergebenen Argumente. Wenn das Skript auf der
+       Kommandozeile ausgeführt wird, erhalten Sie auf diesem Weg einen an die
+       Sprache C angelehnten Zugriff auf die Kommandozeilenparameter. Wird
+       das Skript via GET aufgerufen, enthält die Variable den Querystring.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<a href="reserved.variables.argc.html" class="link">argc</a>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Enthält die Anzahl der per Kommandozeile an das Skript übergebenen
+       Parameter (sofern das Skript auf der Kommandozeile ausgeführt wird).
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">GATEWAY_INTERFACE</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Enthält die Version der vom Server verwendete CGI-Spezifikation, z. B.
+       &#039;<em>CGI/1.1</em>&#039;.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">SERVER_ADDR</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Die IP-Adresse des Servers, auf dem das aktuelle Skript ausgeführt wird.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">SERVER_NAME</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Der Hostname des Servers, auf dem das aktuelle Skript ausgeführt wird.
+       Wenn das Skript auf einem Virtuellen Host läuft, wird dieser Wert vom
+       Virtuellen Host bestimmt.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">SERVER_SOFTWARE</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Identifikation der verwendeten Server-Software, die bei einer Antwort auf
+       den eingegangenen Request verwendet wird.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">SERVER_PROTOCOL</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Name und Versionsnummer des verwendeten Übertragungsprotokolls, mittels
+       dessen die aktuelle Seite aufgerufen wurde, z. B.
+       &#039;<em>HTTP/1.0</em>&#039;.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">REQUEST_METHOD</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Enthält die für den Zugriff auf die Seite verwendete Requestmethode, z. B.
+       &#039;<em>GET</em>&#039;, &#039;<em>HEAD</em>&#039;,
+       &#039;<em>POST</em>&#039; oder &#039;<em>PUT</em>&#039;.
+      </span>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+        Ist die Requestmethode <em>HEAD</em>, wird ein PHP-Skript
+        beendet, nachdem die Header gesendet wurden (sofern
+        Ausgaben ohne die Verwendung des Ausgabepuffers (output buffering)
+        erzeugt werden).
+       </p>
+      </p></blockquote>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">REQUEST_TIME</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Der Timestamp des Zeitpunkts, an dem der Request eintraf. Verfügbar seit
+       PHP 5.1.0.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">REQUEST_TIME_FLOAT</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Der Timestamp des Zeitpunkts, an dem der Request eintraf, in
+       Mikrosekunden-Genauigkeit. Verfügbar seit PHP 5.4.0.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">QUERY_STRING</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Sofern vorhanden, der Querystring, mittels dessen auf die Seite
+       zugegriffen wurde.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">DOCUMENT_ROOT</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Das Document Root-Verzeichnis, unter dem das aktuelle Skript ausgeführt
+       wird, so wie es in der Konfiguration des Servers festgelegt wurde.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">HTTP_ACCEPT</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Enthält den Inhalt des <em>Accept:</em>-Headers des aktuellen
+       Requests, sofern ein solcher gesendet wurde.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">HTTP_ACCEPT_CHARSET</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Enthält den Inhalt des <em>Accept-Charset:</em>-Headers des
+       aktuellen Requests, sofern ein solcher gesendet wurde. Beispiel:
+       &#039;<em>iso-8859-1,*,utf-8</em>&#039;.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">HTTP_ACCEPT_ENCODING</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Enthält den Inhalt des <em>Accept-Encoding:</em>-Headers des
+       aktuellen Requests, sofern ein solcher gesendet wurde. Beispiel:
+       &#039;<em>gzip</em>&#039;.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">HTTP_ACCEPT_LANGUAGE</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Enthält den Inhalt des <em>Accept-Language:</em>-Headers des
+       aktuellen Requests, sofern ein solcher gesendet wurde. Beispiel:
+       &#039;<em>en</em>&#039;.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">HTTP_CONNECTION</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Enthält den Inhalt des <em>Connection:</em>-Headers des
+       aktuellen Requests, sofern ein solcher gesendet wurde. Beispiel:
+       &#039;<em>Keep-Alive</em>&#039;.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">HTTP_HOST</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Enthält den Inhalt des <em>Host:</em>-Headers des
+       aktuellen Requests, sofern ein solcher gesendet wurde.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">HTTP_REFERER</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Sofern vorhanden, die Adresse der Seite, auf der der Benutzer einen Link
+       auf die aktuell aufgerufene Seite angeklickt hat. Dieser Wert wird vom
+       Browser des Benutzers gesetzt. Nicht alle Programme unterstützen diesen
+       Wert, manche offerieren als Feature sogar die Möglichkeit, den Wert von
+       <var class="varname">HTTP_REFERER</var> selbst zu bestimmen. Kurz, Sie können
+       diesem Wert nicht wirklich vertrauen.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">HTTP_USER_AGENT</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Enthält den Inhalt des <em>User-Agent:</em>-Headers des
+       aktuellen Requests, sofern ein solcher gesendet wurde. Dies ist eine
+       Zeichenkette, die das für den Zugriff auf die Seite verwendete Programm
+       anzeigt. Ein typisches Beispiel ist <span class="computeroutput">Mozilla/4.5 [en]
+       (X11; U; Linux 2.2.9 i586)</span>. Sie können diesen Wert unter
+       anderem mittels der Funktion <span class="function">get_browser</span> dafür
+       nutzen, den Inhalt Ihrer Seite auf die Möglichkeiten des jeweiligen
+       Browsers zuzuschneiden.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">HTTPS</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Wird auf einen nicht-leeren Wert gesetzt, wenn das Skript via HTTPS
+       aufgerufen wurde.
+      </span>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <span class="simpara">
+        Beachten Sie bei der Verwendung von ISAPI unter IIS, dass der Wert
+        auf <em>off</em> gesetzt wird, wenn der Request nicht mittels
+        HTTPS erfolgte.
+       </span>
+      </p></blockquote>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">REMOTE_ADDR</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Die IP-Adresse, von der aus der Benutzer die aktuelle Seite ansieht.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">REMOTE_HOST</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Der Name des Hosts, von dem aus der Benutzer die aktulle Seite ansieht.
+       Der Auflösung der IP-Adresse (Reverse DNS Lookup) basiert auf der
+       <var class="varname">REMOTE_ADDR</var> des Benutzers.
+      </span>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <span class="simpara">
+        Ihr Webserver muss darauf konfiguriert sein, diese Variable zu erzeugen.
+        Im Apache benötigen Sie dazu zum Beispiel die Direktive
+        <em>HostnameLookups On</em> innerhalb der <var class="filename">httpd.conf</var>. Lesen
+        Sie dazu auch die Beschreibung der Funktion
+        <span class="function">gethostbyaddr</span>.
+       </span>
+      </p></blockquote>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">REMOTE_PORT</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Der vom Rechner des Benutzers verwendete Port, um mit dem Webserver
+       zu kommunizieren.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">REMOTE_USER</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+        Der beglaubigte Benutzer.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">REDIRECT_REMOTE_USER</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+        Der beglaubigte Benutzer, falls der Request intern weiter geleitet wurde.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">SCRIPT_FILENAME</var>&#039;</dt>
+
+     <dd>
+
+      <p class="para">
+       Der absolute Pfad des aktuell ausgeführten Skripts.
+       <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+        <p class="para">
+         Wenn ein Skript als CLI mit einem relativen Pfad wie
+         <var class="filename">file.php</var> oder <var class="filename">../file.php</var>
+         ausgeführt wird, enthält <var class="varname">$_SERVER[&#039;SCRIPT_FILENAME&#039;]</var>
+         den vom Benutzer angegebenen relativen Pfad.
+        </p>
+       </p></blockquote>
+      </p>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">SERVER_ADMIN</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Der Wert, der für die SERVER_ADMIN-Direktive (für Apache) im
+       Konfigurationsfile des Webservers eingestellt wurde. Wenn das Skript
+       auf einem Virtuellen Host läuft, wird der für diesen Virtuellen Host
+       definierte Wert verwendet.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">SERVER_PORT</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Der Port, der auf dem Server vom Webserver für die Kommunikation genutzt
+       wird. In einer Standardumgebung ist dies &#039;<em>80</em>&#039;; wenn
+       Sie beispielsweise SSL verwenden, wird dieser Wert auf den Port geändert,
+       über den Sie Ihre verschlüsselte HTTP-Kommunikation abwickeln.
+      </span>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <span class="simpara">
+        Unter Apache 2 müssen Sie <em>UseCanonicalName = On</em> sowie
+        <em>UseCanonicalPhysicalPort = On</em> setzen, um den physikalischen
+        (wirklichen) Port zu erhalten; andernfalls kann dieser Wert gefälscht
+        werden, und gibt dann den physikalischen Port Wert zurück, oder nicht.
+        Es ist nicht sicher, sich auf diesen Wert in sicherheitsabhängigen
+        Umfeldern zu verlassen.
+       </span>
+      </p></blockquote>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">SERVER_SIGNATURE</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Ein String, der die Version der verwendeten Serversoftware und den Namen
+       des Virtuellen Hosts enthält, der, sofern die Option auf dem Server
+       aktiviert ist, an die servergenerierte Seiten angefügt wird.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">PATH_TRANSLATED</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Auf dem Dateisystem (nicht dem Document Root!) basierender Pfad zum
+       aktuellen Skript, nachdem der Server ein Virtual-to-Real-Mapping
+       durchgeführt hat.
+      </span>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <span class="simpara">
+        Seit PHP 4.3.2  wird <var class="envar">PATH_TRANSLATED</var> nicht länger implizit
+        unter der Apache 2 <acronym class="acronym">SAPI</acronym> gesetzt, im Gegensatz zur
+        Situation unter Apache 1, bei dem diese Variable automatisch auf den
+        Wert von <var class="envar">SCRIPT_FILENAME</var> gesetzt wird, sofern Apache
+        nicht selbst einen Wert einfügt. Diese Änderung entspricht dem in der
+        <acronym class="acronym">CGI</acronym>-Spezifikation beschriebenen Verhalten, nach dem
+        <var class="envar">PATH_TRANSLATED</var> nur dann gesetzt sein sollte, wenn
+        <var class="envar">PAT_INFO</var> definiert ist.
+       </span>
+       <span class="simpara">
+        Apache 2-Benutzer können die Direktive <em>AcceptPathInfo =
+        On</em> in der <var class="filename">httpd.conf</var> verwenden, um
+        einen Wert für <var class="envar">PATH_INFO</var> zu definieren.
+       </span>
+      </p></blockquote>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">SCRIPT_NAME</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Enthält den Pfad zum aktuellen Skript. Dies ist nützlich für Seiten, die
+       auf sich selbst verweisen sollen. Die Konstante <a href="language.constants.predefined.html" class="link">__FILE__</a> enthält den
+       vollständigen Pfad und Dateinamen der aktuellen (z.B. via include
+       eingebundenen) Datei.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">REQUEST_URI</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Der URI, der angegeben wurde, um auf die aktuelle Seite zuzugreifen,
+       beispielsweise &#039;<em>/index.html</em>&#039;.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">PHP_AUTH_DIGEST</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Wenn Digest HTTP Authentication verwendet wird, wird diese Variable mit
+       dem Inhalt des vom Client gesendeten &#039;Authorization&#039;-Headers gefüllt,
+       welchen Sie für eine adäquate Validierung nutzen sollten.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">PHP_AUTH_USER</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Wenn HTTP authentication verwendet wird, wird diese Variable mit dem
+       vom Benutzer angegebenen Usernamen gefüllt.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">PHP_AUTH_PW</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Wenn HTTP authentication verwendet wird, wird diese Variable mit dem
+       vom Benutzer angegebenen Passwort gefüllt.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">AUTH_TYPE</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Wenn HTTP authentication verwendet wird, wird diese Variable mit dem
+       verwendeten HTTP-Authentifizierungsmechanismus gefüllt.
+      </span>
+     </dd>
+
+    
+
+    
+     <dt>
+&#039;<var class="varname">PATH_INFO</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Enthält, sofern vorhanden, den Teil des Pfadnamens hinter dem Namen
+       des PHP-Skripts, aber vor dem Query-String.
+       Wenn zum Beispiel das aktuelle Skript mittels dem URL
+       <var class="filename">http://www.example.com/php/path_info.php/some/stuff?foo=bar</var>
+       aufgerufen wird, würde <var class="varname">$_SERVER[&#039;PATH_INFO&#039;]</var>
+       <em>/some/stuff</em> enthalten.
+      </span>
+     </dd>
+
+    
+    
+     <dt>
+&#039;<var class="varname">ORIG_PATH_INFO</var>&#039;</dt>
+
+     <dd>
+
+      <span class="simpara">
+       Originalversion von &#039;<var class="varname">PATH_INFO</var>&#039; vor der
+       Verarbeitung durch PHP.
+      </span>
+     </dd>
+
+    
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-reserved.variables-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.4.0</td>
+       <td>
+        <var class="varname">$HTTP_SERVER_VARS</var> ist nicht mehr verfügbar, da die
+        Registrierung von langen Arrays entfernt wurde.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        Die Direktive <a href="ini.core.html#ini.register-long-arrays" class="link">register_long_arrays</a>,
+        die <var class="varname">$HTTP_SERVER_VARS</var> verfügbar gemacht hat, wurde
+        missbilligt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>4.1.0</td>
+       <td>
+        Einführung von <var class="varname">$_SERVER</var> als Ablösung der bis dahin
+        existierenden <var class="varname">$HTTP_SERVER_VARS</var>.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-reserved.variables-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="variable.server.basic">
+    <p><strong>Beispiel #2 <var class="varname">$_SERVER</var>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'SERVER_NAME'</span><span style="color: #007700">];<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+www.example.com
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-reserved.variables-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Dies ist eine &#039;Superglobale&#039;
+oder automatisch globale Variable. Dies bedeutet, dass sie innerhalb
+des Skripts in jedem Geltungsbereich sichtbar ist. Es ist nicht
+nötig, sie mit <strong class="command">global $variable</strong> bekannt zu
+machen, um aus Funktionen oder Methoden darauf zuzugreifen.</p>
+</p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-reserved.variables-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><a href="book.filter.html" class="link">Die Filter-Erweiterung</a></li>
+   </ul>
+  </p>
+ </div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <div class="refnamediv">
+  <h1 class="refname">$_GET</h1>
+  <h1 class="refname">$HTTP_GET_VARS [veraltet, nicht empfohlen]</h1>
+  <p class="refpurpose">HTTP GET-Variablen</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-reserved.variables-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">
+   Ein assoziatives <span class="type">Array</span> von Variablen, die dem aktuellen Skript
+   mittels der URL-Parameter übergeben werden.
+  </p>
+  <p class="simpara">
+   <var class="varname">$HTTP_GET_VARS</var> enthält anfangs die selben Informationen,
+   ist aber kein <a href="language.variables.superglobals.html" class="link">Superglobal</a>. (Beachten Sie,
+   dass <var class="varname">$HTTP_GET_VARS</var> und <var class="varname">$_GET</var>
+   unterschiedliche Variablen sind und von PHP daher entsprechend behandelt
+   werden.)
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-reserved.variables-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>4.1.0</td>
+       <td>
+        Einführung von <var class="varname">$_GET</var> als Ablösung des bis dahin
+        existierenden <var class="varname">$HTTP_GET_VARS</var>.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-reserved.variables-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="variable.get.basic">
+    <p><strong>Beispiel #3 <var class="varname">$_GET</var>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'Hallo&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">htmlspecialchars</span><span style="color: #007700">(</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">"name"</span><span style="color: #007700">])&nbsp;.&nbsp;</span><span style="color: #DD0000">'!'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Angenommen, der Benutzer gab ein http://example.com/?name=Hannes
+    </p></div>
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Hallo Hannes!
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-reserved.variables-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Dies ist eine &#039;Superglobale&#039;
+oder automatisch globale Variable. Dies bedeutet, dass sie innerhalb
+des Skripts in jedem Geltungsbereich sichtbar ist. Es ist nicht
+nötig, sie mit <strong class="command">global $variable</strong> bekannt zu
+machen, um aus Funktionen oder Methoden darauf zuzugreifen.</p>
+</p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Die GET-Variablen werden automatisch mit <span class="function">urldecode</span> behandelt.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-reserved.variables-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><a href="language.variables.external.html" class="link">Behandlung externer Variablen</a></li>
+    <li class="member"><a href="book.filter.html" class="link">Die Filter-Erweiterung</a></li>
+   </ul>
+  </p>
+ </div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <div class="refnamediv">
+  <h1 class="refname">$_POST</h1>
+  <h1 class="refname">$HTTP_POST_VARS [veraltet, nicht empfohlen]</h1>
+  <p class="refpurpose">HTTP POST-Variablen</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-reserved.variables-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">
+   Ein assoziatives <span class="type">Array</span> von Variablen, die dem aktuellen Skript
+   mittels der HTTP POST-Methode übergeben werden, wenn
+   <em>application/x-www-form-urlencoded</em> oder
+   <em>multipart/form-data</em> als HTTP Content-Type für die Anfrage
+   verwendet wurde.
+  </p>
+
+  <p class="simpara">
+   <var class="varname">$HTTP_POST_VARS</var> enthält anfangs die selben Informationen,
+   ist aber kein <a href="language.variables.superglobals.html" class="link">Superglobal</a>. (Beachten Sie,
+   dass <var class="varname">$HTTP_POST_VARS</var> und <var class="varname">$_POST</var>
+   unterschiedliche Variablen sind und von PHP daher entsprechend behandelt
+   werden.)
+  </p>
+
+ </div>
+
+
+
+ <div class="refsect1 changelog" id="refsect1-reserved.variables-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>4.1.0</td>
+       <td>
+        Einführung von <var class="varname">$_POST</var> als Ablösung des bis dahin
+        existierenden <var class="varname">$HTTP_POST_VARS</var>.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-reserved.variables-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="variable.post.basic">
+    <p><strong>Beispiel #4 <var class="varname">$_POST</var>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'Hello&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">htmlspecialchars</span><span style="color: #007700">(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">"name"</span><span style="color: #007700">])&nbsp;.&nbsp;</span><span style="color: #DD0000">'!'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Angenommen, der User POSTete name=Hannes
+    </p></div>
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Hello Hannes!
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-reserved.variables-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Dies ist eine &#039;Superglobale&#039;
+oder automatisch globale Variable. Dies bedeutet, dass sie innerhalb
+des Skripts in jedem Geltungsbereich sichtbar ist. Es ist nicht
+nötig, sie mit <strong class="command">global $variable</strong> bekannt zu
+machen, um aus Funktionen oder Methoden darauf zuzugreifen.</p>
+</p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-reserved.variables-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><a href="language.variables.external.html" class="link">Behandlung externer Variablen</a></li>
+    <li class="member"><a href="book.filter.html" class="link">Die Filter-Erweiterung</a></li>
+   </ul>
+  </p>
+ </div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <div class="refnamediv">
+  <h1 class="refname">$_FILES</h1>
+  <h1 class="refname">$HTTP_POST_FILES [veraltet, nicht empfohlen]</h1>
+  <p class="refpurpose">HTTP Dateiupload-Variablen</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-reserved.variables-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">
+   Ein assoziatives <span class="type">Array</span> von Elementen, die vom aktuellen Skript
+   via HTTP POST-Methode hochgeladen werden.
+  </p>
+
+  <p class="simpara">
+   <var class="varname">$HTTP_FILES_VARS</var> enthält anfangs die selben Informationen,
+   ist aber kein <a href="language.variables.superglobals.html" class="link">Superglobal</a>. (Beachten Sie,
+   dass <var class="varname">$HTTP_FILES_VARS</var> und <var class="varname">$_FILES</var>
+   unterschiedliche Variablen sind und von PHP daher entsprechend behandelt
+   werden.)
+  </p>
+
+ </div>
+
+
+
+ <div class="refsect1 changelog" id="refsect1-reserved.variables-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>4.1.0</td>
+       <td>
+        Einführung von <var class="varname">$_FILES</var> als Ablösung des bis dahin
+        existierenden <var class="varname">$HTTP_FILES_VARS</var>.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-reserved.variables-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Dies ist eine &#039;Superglobale&#039;
+oder automatisch globale Variable. Dies bedeutet, dass sie innerhalb
+des Skripts in jedem Geltungsbereich sichtbar ist. Es ist nicht
+nötig, sie mit <strong class="command">global $variable</strong> bekannt zu
+machen, um aus Funktionen oder Methoden darauf zuzugreifen.</p>
+</p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-reserved.variables-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">move_uploaded_file</span></li>
+    <li class="member"><a href="features.file-upload.html" class="link">Behandlung von Dateiuploads</a></li>
+   </ul>
+  </p>
+ </div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <div class="refnamediv">
+  <h1 class="refname">$_REQUEST</h1>
+  <p class="refpurpose">HTTP Request-Variablen</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-reserved.variables-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">
+   Ein assoziatives <span class="type">Array</span>, das standardmäßig den Inhalt von
+   <var class="varname">$_GET</var>,
+   <var class="varname">$_POST</var> und
+   <var class="varname">$_COOKIE</var> enthält.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-reserved.variables-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        <a href="ini.core.html#ini.request-order" class="link">request_order</a> eingeführt.
+        Die Direktive wirkt sich auf den Inhalt von <var class="varname">$_REQUEST</var>
+        aus.
+       </td>
+      </tr>
+
+      <tr>
+       <td>4.3.0</td>
+       <td>
+        <var class="varname">$_FILES</var>-Informationen aus
+        <var class="varname">$_REQUEST</var> entfernt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>4.1.0</td>
+       <td>
+        <var class="varname">$_REQUEST</var> eingeführt.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-reserved.variables-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Dies ist eine &#039;Superglobale&#039;
+oder automatisch globale Variable. Dies bedeutet, dass sie innerhalb
+des Skripts in jedem Geltungsbereich sichtbar ist. Es ist nicht
+nötig, sie mit <strong class="command">global $variable</strong> bekannt zu
+machen, um aus Funktionen oder Methoden darauf zuzugreifen.</p>
+</p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Wenn das Skript auf der <a href="features.commandline.html" class="link">Kommandozeile</a> ausgeführt wird, enthält
+    die Variable <em class="emphasis">nicht</em> den Inhalt von <a href="reserved.variables.argv.html" class="link">argv</a> und <a href="reserved.variables.argc.html" class="link">argc</a>; diese finden sich im
+    <span class="type">Array</span> <var class="varname">$_SERVER</var>.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Die Variablen in <var class="varname">$_REQUEST</var> werden dem Skript mittels der
+    GET-, POST- und COOKIE-Inputmechanismen zur Verfügung gestellt. Daher kann
+    der Inhalt durch einen entfernten Benutzer modifiziert worden sein und
+    ist daher als nicht vertrauenswürdig zu betrachten. Das Vorhandensein und
+    die Reihenfolge des Variableninhalts in diesem Array wird entsprechend der
+    PHP-Konfigurationsdirektive <a href="ini.core.html#ini.variables-order" class="link">variables_order</a> bestimmt.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-reserved.variables-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <ul class="simplelist">
+   <li class="member"><span class="function">import_request_variables</span></li>
+    <li class="member"><a href="language.variables.external.html" class="link">Behandlung externer Variablen</a></li>
+    <li class="member"><a href="book.filter.html" class="link">Die Filter-Erweiterung</a></li>
+  </ul>
+ </div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <div class="refnamediv">
+  <h1 class="refname">$_SESSION</h1>
+  <h1 class="refname">$HTTP_SESSION_VARS [veraltet, nicht empfohlen]</h1>
+  <p class="refpurpose">Sessionvariablen</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-reserved.variables-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">
+   Ein assoziatives Array, das die Sessionvariablen enthält und dem aktuellen
+   Skript zur Verfügung stellt. Lesen Sie den Abschnitt <a href="ref.session.html" class="link">Sessionfunktionen</a> der Dokumentation, um weitere
+   Informationen zur Verwendung zu erhalten.
+  </p>
+
+  <p class="simpara">
+   <var class="varname">$HTTP_SESSION_VARS</var> enthält anfangs die selben Informationen,
+   ist aber kein <a href="language.variables.superglobals.html" class="link">Superglobal</a>. (Beachten Sie,
+   dass <var class="varname">$HTTP_SESSION_VARS</var> und <var class="varname">$_SESSION</var>
+   unterschiedliche Variablen sind und von PHP daher entsprechend behandelt
+   werden.)
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-reserved.variables-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>4.1.0</td>
+       <td>
+        Einführung von <var class="varname">$_SESSION</var> als Ablösung der bis dahin
+        existierenden <var class="varname">$HTTP_SESSION_VARS</var>.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-reserved.variables-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Dies ist eine &#039;Superglobale&#039;
+oder automatisch globale Variable. Dies bedeutet, dass sie innerhalb
+des Skripts in jedem Geltungsbereich sichtbar ist. Es ist nicht
+nötig, sie mit <strong class="command">global $variable</strong> bekannt zu
+machen, um aus Funktionen oder Methoden darauf zuzugreifen.</p>
+</p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-reserved.variables-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">session_start</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <div class="refnamediv">
+  <h1 class="refname">$_ENV</h1>
+  <h1 class="refname">$HTTP_ENV_VARS [veraltet, nicht empfohlen]</h1>
+  <p class="refpurpose">Umgebungsvariablen</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-reserved.variables-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">
+   Ein assoziatives <span class="type">Array</span> von Variablen, die dem aktuellen Skript
+   mittels der Environment-Methode übergeben werden.
+  </p>
+
+  <p class="simpara">
+   Die Variablen werden aus der Laufzeitumgebung, unter der der PHP-Parser läuft,
+   in PHPs globalen Namespace importiert. Die meisten Werte werden von der Shell,
+   unter der PHP läuft, unterstützt, da es aber die unterschiedlichsten Systeme
+   mit unterschiedlichsten Shells gibt, ist es unmöglich, eine definitive
+   Liste aller verfügbaren Werte zu erstellen. Bitte konsultieren Sie die
+   Dokumentation Ihrer Shell, um eine Liste aller definierten Umgebungsvariablen
+   zu erhalten.
+  </p>
+
+  <p class="simpara">
+   Andere Umgebungsvariablen enthalten die CGI-Variablen, die unabhängig davon
+   eingefügt werden, ob PHP als Servermodul oder CGI-Prozess läuft.
+  </p>
+
+  <p class="simpara">
+   <var class="varname">$HTTP_ENV_VARS</var> enthält anfangs die selben Informationen,
+   ist aber kein <a href="language.variables.superglobals.html" class="link">Superglobal</a>. (Beachten Sie,
+   dass <var class="varname">$HTTP_ENV_VARS</var> und <var class="varname">$_ENV</var>
+   unterschiedliche Variablen sind und von PHP daher entsprechend behandelt
+   werden.)
+  </p>
+
+ </div>
+
+
+
+ <div class="refsect1 changelog" id="refsect1-reserved.variables-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>4.1.0</td>
+       <td>
+        Einführung von <var class="varname">$_ENV</var> als Ablösung des bis dahin
+        existierenden <var class="varname">$HTTP_ENV_VARS</var>.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-reserved.variables-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="variable.env.basic">
+    <p><strong>Beispiel #5 <var class="varname">$_ENV</var>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'My&nbsp;username&nbsp;is&nbsp;'&nbsp;</span><span style="color: #007700">.</span><span style="color: #0000BB">$_ENV</span><span style="color: #007700">[</span><span style="color: #DD0000">"USER"</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">'!'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Angenommen &quot;bjori&quot; führt das Skript aus
+    </p></div>
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+My username is bjori!
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-reserved.variables-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Dies ist eine &#039;Superglobale&#039;
+oder automatisch globale Variable. Dies bedeutet, dass sie innerhalb
+des Skripts in jedem Geltungsbereich sichtbar ist. Es ist nicht
+nötig, sie mit <strong class="command">global $variable</strong> bekannt zu
+machen, um aus Funktionen oder Methoden darauf zuzugreifen.</p>
+</p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-reserved.variables-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">getenv</span></li>
+    <li class="member"><a href="book.filter.html" class="link">Die Filter-Erweiterung</a></li>
+   </ul>
+  </p>
+ </div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <div class="refnamediv">
+  <h1 class="refname">$_COOKIE</h1>
+  <h1 class="refname">$HTTP_COOKIE_VARS [veraltet, nicht empfohlen]</h1>
+  <p class="refpurpose">HTTP Cookies</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-reserved.variables-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">
+   Ein assoziatives <span class="type">Array</span> von Variablen, die dem aktuellen Skript
+   mittels HTTP-Cookies übergeben werden.
+  </p>
+
+  <p class="simpara">
+   <var class="varname">$HTTP_COOKIE_VARS</var> enthält anfangs die selben Informationen,
+   ist aber kein <a href="language.variables.superglobals.html" class="link">Superglobal</a>. (Beachten Sie,
+   dass <var class="varname">$HTTP_COOKIE_VARS</var> und <var class="varname">$_COOKIE</var>
+   unterschiedliche Variablen sind und von PHP daher entsprechend behandelt
+   werden.)
+  </p>
+
+ </div>
+
+
+
+ <div class="refsect1 changelog" id="refsect1-reserved.variables-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>4.1.0</td>
+       <td>
+        Einführung von <var class="varname">$_COOKIE</var> als Ablösung des bis dahin
+        existierenden <var class="varname">$HTTP_COOKIE_VARS</var>.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-reserved.variables-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="variable.cookie.basic">
+    <p><strong>Beispiel #6 <var class="varname">$_COOKIE</var>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'Hello&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">htmlspecialchars</span><span style="color: #007700">(</span><span style="color: #0000BB">$_COOKIE</span><span style="color: #007700">[</span><span style="color: #DD0000">"name"</span><span style="color: #007700">])&nbsp;.&nbsp;</span><span style="color: #DD0000">'!'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Angenommen der Cookie &quot;name&quot; wurde bereits früher gesetzt:
+    </p></div>
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Hello Hannes!
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-reserved.variables-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Dies ist eine &#039;Superglobale&#039;
+oder automatisch globale Variable. Dies bedeutet, dass sie innerhalb
+des Skripts in jedem Geltungsbereich sichtbar ist. Es ist nicht
+nötig, sie mit <strong class="command">global $variable</strong> bekannt zu
+machen, um aus Funktionen oder Methoden darauf zuzugreifen.</p>
+</p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-reserved.variables-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">setcookie</span></li>
+    <li class="member"><a href="language.variables.external.html" class="link">Behandlung externer Variablen</a></li>
+    <li class="member"><a href="book.filter.html" class="link">Die Filter-Erweiterung</a></li>
+   </ul>
+  </p>
+ </div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <div class="refnamediv">
+  <h1 class="refname">$php_errormsg</h1>
+  <p class="refpurpose">Die vorangegangene Fehlermeldung</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-reserved.variables-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">
+   <var class="varname">$php_errormsg</var> ist eine Variable, die den Text der letzten
+   von PHP generierten Fehlermeldung enthält. Die Variable ist nur innerhalb
+   des Gültigkeitsbereichs (Scopes) verfügbar, in dem der Fehler auftrat, und
+   auch nur, wenn die Konfigurationsoption <a href="errorfunc.configuration.html#ini.track-errors" class="link">track_errors</a> eingeschaltet wurde
+   (standardmäßig aus).
+  </p>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="simpara">
+    Wird ein benutzerdefinierter Errorhandler (<span class="function">set_error_handler</span>)
+    verwendet, wird <var class="varname">$php_errormsg</var> nur dann gesetzt, wenn der
+    Errorhandler <strong><code>FALSE</code></strong> zurückgibt.
+   </p>
+  </div>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-reserved.variables-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="variable.phperrormsg.basic">
+    <p><strong>Beispiel #7 <var class="varname">$php_errormsg</var>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">@</span><span style="color: #0000BB">strpos</span><span style="color: #007700">();<br />echo&nbsp;</span><span style="color: #0000BB">$php_errormsg</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Wrong parameter count for strpos()
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <div class="refnamediv">
+  <h1 class="refname">$HTTP_RAW_POST_DATA</h1>
+  <p class="refpurpose">Raw POST-Daten</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-reserved.variables-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="warning"><strong class="warning">Warnung</strong><p class="simpara">Diese Funktion ist 
+seit PHP 5.6.0 <em class="emphasis">DEPRECATED</em> (veraltet). Sich auf diese Funktion zu verlassen
+ist in keiner Weise empfehlenswert.</p></div>
+  <p class="para">
+   <var class="varname">$HTTP_RAW_POST_DATA</var> enthält die originalen (raw)
+   POST-Daten. Lesen Sie auch <a href="ini.core.html#ini.always-populate-raw-post-data" class="link">always_populate_raw_post_data</a>.
+  </p>
+  <p class="para">
+   Im Allgemeinen sollte
+   <a href="wrappers.php.html#wrappers.php.input" class="link"><em>php://input</em></a>
+   anstelle von <var class="varname">$HTTP_RAW_POST_DATA</var> verwendet werden.
+  </p>
+ </div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <div class="refnamediv">
+  <h1 class="refname">$http_response_header</h1>
+  <p class="refpurpose">HTTP Response-Header</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-reserved.variables-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">
+   Das <var class="varname">$http_response_header</var>-<span class="type">Array</span> ist
+   vergleichbar mit der Funktion <span class="function">get_headers</span>. Bei der
+   Verwendung eines <a href="wrappers.http.html" class="link">HTTP-Wrappers</a> enthält
+   <var class="varname">$http_response_header</var> die HTTP Response-Header.
+   <var class="varname">$http_response_header</var> wird im
+   <a href="language.variables.scope.html" class="link">lokalen Variablengeltungsbereich</a> erstellt.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-reserved.variables-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="variable.httpresponseheader.basic">
+    <p><strong>Beispiel #8 <var class="varname">$http_response_header</var>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">get_contents</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://example.com"</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$http_response_header</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">get_contents</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$http_response_header</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+array(9) {
+  [0]=&gt;
+  string(15) &quot;HTTP/1.1 200 OK&quot;
+  [1]=&gt;
+  string(35) &quot;Date: Sat, 12 Apr 2008 17:30:38 GMT&quot;
+  [2]=&gt;
+  string(29) &quot;Server: Apache/2.2.3 (CentOS)&quot;
+  [3]=&gt;
+  string(44) &quot;Last-Modified: Tue, 15 Nov 2005 13:24:10 GMT&quot;
+  [4]=&gt;
+  string(27) &quot;ETag: &quot;280100-1b6-80bfd280&quot;&quot;
+  [5]=&gt;
+  string(20) &quot;Accept-Ranges: bytes&quot;
+  [6]=&gt;
+  string(19) &quot;Content-Length: 438&quot;
+  [7]=&gt;
+  string(17) &quot;Connection: close&quot;
+  [8]=&gt;
+  string(38) &quot;Content-Type: text/html; charset=UTF-8&quot;
+}
+NULL
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <div class="refnamediv">
+  <h1 class="refname">$argc</h1>
+  <p class="refpurpose">Die Anzahl der an das Skript übergebenen Argumente</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-reserved.variables-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">
+   Enthält die Anzahl der an das aktuelle Skript übergebenen Argumente, wenn das
+   Skript auf der <a href="features.commandline.html" class="link">Kommandozeile</a> läuft.
+  </p>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    Der Dateiname des Skripts ist immer das erste an das Skript übergebene
+    Argument, damit ist der kleinstmögliche Wert von <var class="varname">$argc</var>
+    <em>1</em>.
+   </span>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    Diese Variable ist nicht verfügbar, wenn <a href="ini.core.html#ini.register-argc-argv" class="link">register_argc_argv</a> ausgeschaltet ist.
+   </span>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-reserved.variables-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="variable.argc.basic">
+    <p><strong>Beispiel #9 <var class="varname">$argc</var>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$argc</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Wenn das Beispiel so aufgerufen wird: php script.php arg1 arg2 arg3
+    </p></div>
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+int(4)
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <div class="refnamediv">
+  <h1 class="refname">$argv</h1>
+  <p class="refpurpose">Array der an das Skript übergebenen Argumente</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-reserved.variables-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">
+   Enthält ein <span class="type">Array</span> aller an das Skript übergebenen Argumente,
+   wenn dies auf der <a href="features.commandline.html" class="link">Kommandozeile</a>
+   ausgeführt wird.
+  </p>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    Das erste Argument <var class="varname">$argv[0]</var> ist immer der Name der zum
+    Aufrufen des Skripts genutzt wurde.
+   </span>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    Diese Variable ist nicht verfügbar, wenn <a href="ini.core.html#ini.register-argc-argv" class="link">register_argc_argv</a> ausgeschaltet ist.
+   </span>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-reserved.variables-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="variable.argv.basic">
+    <p><strong>Beispiel #10 <var class="varname">$argv</var>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$argv</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Wenn das Beispiel so aufgerufen wird: php script.php arg1 arg2 arg3
+    </p></div>
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+array(4) {
+  [0]=&gt;
+  string(10) &quot;script.php&quot;
+  [1]=&gt;
+  string(4) &quot;arg1&quot;
+  [2]=&gt;
+  string(4) &quot;arg2&quot;
+  [3]=&gt;
+  string(4) &quot;arg3&quot;
+}
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 seealso" id="refsect1-reserved.variables-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">getopt</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+
+
+
+
+
+
+<strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_reference">
+<li><a href="language.variables.superglobals.html">Superglobals</a> — Superglobals sind Built-in-Variablen, die immer in allen
+   G&uuml;ltigkeitsbereichen verf&uuml;gbar sind</li>
+<li><a href="reserved.variables.globals.html">$GLOBALS</a> — Referenziert alle Variablen, die im globalen G&uuml;ltigkeitsbereich
+   vorhanden sind</li>
+<li><a href="reserved.variables.server.html">$_SERVER</a> — Informationen &uuml;ber Server und Ausf&uuml;hrungsumgebung</li>
+<li><a href="reserved.variables.get.html">$_GET</a> — HTTP GET-Variablen</li>
+<li><a href="reserved.variables.post.html">$_POST</a> — HTTP POST-Variablen</li>
+<li><a href="reserved.variables.files.html">$_FILES</a> — HTTP Dateiupload-Variablen</li>
+<li><a href="reserved.variables.request.html">$_REQUEST</a> — HTTP Request-Variablen</li>
+<li><a href="reserved.variables.session.html">$_SESSION</a> — Sessionvariablen</li>
+<li><a href="reserved.variables.environment.html">$_ENV</a> — Umgebungsvariablen</li>
+<li><a href="reserved.variables.cookies.html">$_COOKIE</a> — HTTP Cookies</li>
+<li><a href="reserved.variables.phperrormsg.html">$php_errormsg</a> — Die vorangegangene Fehlermeldung</li>
+<li><a href="reserved.variables.httprawpostdata.html">$HTTP_RAW_POST_DATA</a> — Raw POST-Daten</li>
+<li><a href="reserved.variables.httpresponseheader.html">$http_response_header</a> — HTTP Response-Header</li>
+<li><a href="reserved.variables.argc.html">$argc</a> — Die Anzahl der an das Skript &uuml;bergebenen Argumente</li>
+<li><a href="reserved.variables.argv.html">$argv</a> — Array der an das Skript &uuml;bergebenen Argumente</li>
+</ul>
+</ol>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

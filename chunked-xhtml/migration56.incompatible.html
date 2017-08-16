@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Nicht abw&auml;rtskompatible &Auml;nderungen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="appendices.html">Appendices</a></li>
+  <li class="header up"><a href="migration56.html">Migration von PHP 5.5.x auf PHP 5.6.x</a></li>
+  <li class="active"><a href="migration56.incompatible.html">Nicht abw&auml;rtskompatible &Auml;nderungen</a></li>
+  <li><a href="migration56.new-features.html">Neue Features</a></li>
+  <li><a href="migration56.deprecated.html">Veraltete Features in PHP 5.6.x</a></li>
+  <li><a href="migration56.changed-functions.html">Ge&auml;nderte Funktionen</a></li>
+  <li><a href="migration56.new-functions.html">Neue Funktionen</a></li>
+  <li><a href="migration56.openssl.html">OpenSSL &Auml;nderungen in PHP 5.6.x</a></li>
+  <li><a href="migration56.extensions.html">Andere &Auml;nderungen bei Extensions</a></li>
+  <li><a href="migration56.constants.html">Neue globale Konstanten</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="migration56.html">Migration von PHP 5.5.x auf PHP 5.6.x</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="migration56.new-features.html">Neue Features</a></div>
+                <div class="up"><a href="migration56.html">Migration von PHP 5.5.x auf PHP 5.6.x</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="migration56.incompatible" class="sect1">
+ <h2 class="title">Nicht abwärtskompatible Änderungen</h2>
+ <p class="simpara">
+  Obwohl der meiste bestehende PHP 5 Code ohne Änderungen funktionieren sollte
+  beachten Sie bitte ein paar Änderungen, die nicht abwärtskompatibel sind:
+ </p>
+
+ <div class="sect2" id="migration56.incompatible.array-keys">
+  <h3 class="title">Array-Schlüssel werden nicht überschrieben, wenn ein Array mittels Array-Literal als Eigenschaft einer Klasse definiert wird</h3>
+
+  <p class="para">
+   Bisher konnten Elemente von Arrays, welche als Klasseneigenschaften mit 
+   expliziten und impliziten Schlüsseln definiert waren, überschrieben werden, wenn 
+   ein expliziter Schlüssel gleich mit einem sequenziellen impliziten Schlüssel war.
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">C&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;</span><span style="color: #0000BB">ONE&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">self</span><span style="color: #007700">::</span><span style="color: #0000BB">ONE&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'quux'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;];<br />}<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">((new&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">array</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <p class="para">Das oben gezeigte Beispiel erzeugt folgende Ausgabe mit PHP 5.5:</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+array(2) {
+  [0]=&gt;
+  string(3) &quot;bar&quot;
+  [1]=&gt;
+  string(4) &quot;quux&quot;
+}
+
+</pre></div>
+   </div>
+   <p class="para">Das oben gezeigte Beispiel erzeugt folgende Ausgabe mit PHP 5.6:</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+array(3) {
+  [1]=&gt;
+  string(3) &quot;foo&quot;
+  [2]=&gt;
+  string(3) &quot;bar&quot;
+  [3]=&gt;
+  string(4) &quot;quux&quot;
+}
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+ <div class="sect2" id="migration56.incompatible.json-decode">
+  <h3 class="title">Strenge von <span class="function">json_decode</span></h3>
+
+  <p class="para">
+   <span class="function">json_decode</span> weist nun nicht vollständig in
+   Kleinbuchstaben geschriebene Varianten von <em>true</em>, 
+   <em>false</em> und <em>null</em> gemäß der
+   JSON-Spezifikation zurück und setzt 
+   <span class="function">json_last_error</span> dem entsprechend. Bisher wurden
+   auch Eingaben die nur aus einem dieser Werte bestanden mit
+   Großbuchstaben akzeptiert.
+  </p>
+
+  <p class="para">
+   Diese Änderung hat nur Einfluss auf Fälle in denen ungültiges JSON an
+   <span class="function">json_decode</span> übergeben wurde. Gültiges JSON ist
+   davon nicht betroffen und wird weiterhin normal verarbeitet.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration56.incompatible.peer-verification">
+  <h3 class="title">Stream Wrapper verifizieren nun standardmäßig Zertifikate und Hostnamen bei Verwendung von SSL/TLS</h3>
+
+  
+   <p class="para">
+    Alle verschlüsselten Clientstreams verifizieren nun standardmäßig den 
+    Kommunikationspartner. Standardmäßig wird dafür das Standard-CA-Bundle
+    von OpenSSL zur Verifikation des Peer-Zertifikates herangezogen. In
+    den meisten Fällen sind keine Änderungen notwendig, um mit Servern
+    mit gültigen SSL-Zertifikaten zu kommunizieren, da Distributoren
+    üblicherweise OpenSSL mit vertrauenswürdigen CA-Bundles konfigurieren.
+   </p>
+
+   <p class="para">
+    Das Standard-CA-Bundle kann global durch eine Änderung der 
+    konfigurationseinstellungen openssl.cafile oder openssl.capath
+    überschrieben werden, oder für einzelne Requests durch die
+    Verwendung der Kontextoptionen
+    <a href="context.ssl.html#context.ssl.cafile" class="link"><code class="parameter">cafile</code></a> oder
+    <a href="context.ssl.html#context.ssl.capath" class="link"><code class="parameter">capath</code></a>.
+   </p>
+
+   <p class="para">
+    Obwohl dies generell nicht empfehlenswert ist, kann die Verifikation
+    der Peer-Zertifikate für einzelne Requests ausgeschaltet werden, indem
+    die Kontextoption
+    <a href="context.ssl.html#context.ssl.verify-peer" class="link"><code class="parameter">verify_peer</code></a>
+    auf <strong><code>FALSE</code></strong> gesetzt wird. Die Verifikation des Peer-Namen kann durch
+    das Setzen von
+    <code class="parameter">verify_peer_name</code>
+    
+    auf <strong><code>FALSE</code></strong> ausgeschaltet werden.
+   </p>
+
+ </div>
+
+ <div class="sect2" id="migration56.incompatible.gmp">
+  <h3 class="title"><a href="book.gmp.html" class="link">GMP</a>-Ressourcen sind nun Objekte</h3>
+
+  <p class="para">
+   <a href="book.gmp.html" class="link">GMP</a>-Ressourcen sind nun Objekte. Die funktionale
+   API der GMP-Erweiterung hat sich nicht geändert und Code sollte ohne Änderungen
+   funktionieren, es sei denn dieser prüft explizit auf eine Ressource mittels
+   <span class="function">is_resource</span> oder Ähnlichem. 
+  </p>
+ </div>
+
+ <div class="sect2" id="migration56.incompatible.mcrypt">
+  <h3 class="title"><a href="book.mcrypt.html" class="link">Mcrypt</a>-Funktionen benötigen nun gültige Schlüssel und IVs</h3>
+
+  <p class="para">
+   <span class="function">mcrypt_encrypt</span>, <span class="function">mcrypt_decrypt</span>,
+   <span class="function">mcrypt_cbc</span>, <span class="function">mcrypt_cfb</span>,
+   <span class="function">mcrypt_ecb</span>, <span class="function">mcrypt_generic</span> und
+   <span class="function">mcrypt_ofb</span> akzeptieren nicht länger Schlüssel oder IVs 
+   mit falscher Länge und Blockschlüssel die IVs benötigen schlagen nun fehl, wenn
+   kein IV übergeben wurde.
+  </p>
+ </div>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Gibt eine Meldung aus und beendet das aktuelle Skript</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li class="header up"><a href="book.misc.html">Misc.</a></li>
+  <li class="header up"><a href="ref.misc.html">Sonstige Funktionen</a></li>
+  <li><a href="function.connection-aborted.html">connection_aborted</a></li>
+  <li><a href="function.connection-status.html">connection_status</a></li>
+  <li><a href="function.constant.html">constant</a></li>
+  <li><a href="function.define.html">define</a></li>
+  <li><a href="function.defined.html">defined</a></li>
+  <li><a href="function.die.html">die</a></li>
+  <li><a href="function.eval.html">eval</a></li>
+  <li class="active"><a href="function.exit.html">exit</a></li>
+  <li><a href="function.get-browser.html">get_browser</a></li>
+  <li><a href="function.halt-compiler.html">__halt_compiler</a></li>
+  <li><a href="function.highlight-file.html">highlight_file</a></li>
+  <li><a href="function.highlight-string.html">highlight_string</a></li>
+  <li><a href="function.ignore-user-abort.html">ignore_user_abort</a></li>
+  <li><a href="function.pack.html">pack</a></li>
+  <li><a href="function.php-check-syntax.html">php_check_syntax</a></li>
+  <li><a href="function.php-strip-whitespace.html">php_strip_whitespace</a></li>
+  <li><a href="function.show-source.html">show_source</a></li>
+  <li><a href="function.sleep.html">sleep</a></li>
+  <li><a href="function.sys-getloadavg.html">sys_getloadavg</a></li>
+  <li><a href="function.time-nanosleep.html">time_nanosleep</a></li>
+  <li><a href="function.time-sleep-until.html">time_sleep_until</a></li>
+  <li><a href="function.uniqid.html">uniqid</a></li>
+  <li><a href="function.unpack.html">unpack</a></li>
+  <li><a href="function.usleep.html">usleep</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.eval.html">eval</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.get-browser.html">get_browser</a></div>
+                <div class="up"><a href="ref.misc.html">Sonstige Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.exit" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">exit</h1>
+  <p class="refpurpose">Gibt eine Meldung aus und beendet das aktuelle Skript</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.exit-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname">exit</span>
+    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$status</code></span>
+  ] )</div>
+
+  <div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname">exit</span>
+    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$status</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Beendet die Ausführung des Skripts.
+   <a href="function.register-shutdown-function.html" class="link">Shutdown Funktionen</a>
+   und <a href="language.oop5.decon.html#language.oop5.decon.destructor" class="link">Objekt Destruktoren</a>
+   werden immer ausgeführt, auch wenn <span class="function">exit</span> aufgerufen wurde.
+  </p>
+  <p class="para">
+   <em>exit</em> ist ein Sprachkonstrukt und kann ohne Klammern
+   aufgerufen werden, wenn kein <code class="parameter">status</code> übergeben wird.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.exit-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">status</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Falls <code class="parameter">status</code> eine Zeichenkette ist, gibt diese
+       Funktion beim Beenden den <code class="parameter">status</code> aus.
+      </p>
+      <p class="para">
+       Falls <code class="parameter">status</code> eine <span class="type">Ganzzahl</span> ist,
+       wird dieser Wert als Exit-Status verwendet anstatt ausgegeben zu werden.
+       Ein Exit-Status sollte im Bereich von 0 bis 254 liegen, weil der Exit-Status
+       255 von PHP reserviert ist und deshalb nicht benutzt werden sollte. Der Status 0
+       wird verwendet, um ein Programm erfolgreich zu beenden.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.exit-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Es wird kein Wert zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.exit-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4261">
+    <p><strong>Beispiel #1 <em>exit</em>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$dateiname&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'/pfad/zur/datei'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$datei&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$dateiname</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r'</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;exit(</span><span style="color: #DD0000">"kann&nbsp;Datei&nbsp;</span><span style="color: #0000BB">$dateiname</span><span style="color: #DD0000">&nbsp;nicht&nbsp;öffnen"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-4262">
+    <p><strong>Beispiel #2 <em>exit</em>-Status-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;das&nbsp;Programm&nbsp;normal&nbsp;beenden<br /></span><span style="color: #007700">exit;<br />exit();<br />exit(</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;das&nbsp;Programm&nbsp;mit&nbsp;einem&nbsp;Fehlercode&nbsp;beenden<br /></span><span style="color: #007700">exit(</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />exit(</span><span style="color: #0000BB">0376</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;oktal<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-4263">
+    <p><strong>Beispiel #3 Shutdown Funktionen und Destruktoren werden trotzdem aufgerufen</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Foo<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__destruct</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Destruktor:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">__METHOD__&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'()'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />function&nbsp;</span><span style="color: #0000BB">shutdown</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Shutdown&nbsp;Funktion:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">__FUNCTION__&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'()'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">register_shutdown_function</span><span style="color: #007700">(</span><span style="color: #DD0000">'shutdown'</span><span style="color: #007700">);<br /><br />exit();<br />echo&nbsp;</span><span style="color: #DD0000">'Das&nbsp;hier&nbsp;wird&nbsp;nicht&nbsp;mehr&nbsp;ausgegeben&nbsp;werden.'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+ <div class="cdata"><pre>
+ Shutdown Funktion: shutdown()
+ Destruktor: Foo::__destruct()
+ </pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.exit-notes">
+  <h3 class="title">Anmerkungen</h3>
+
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <span class="simpara">Da dies ein Sprachkonstrukt
+und keine Funktion ist, können Sie dieses nicht mit
+<a href="functions.variable-functions.html" class="link">Variablenfunktionen</a>
+verwenden.</span></p></blockquote>
+
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Dieses Sprachkonstrukt entspricht <span class="function">die</span>.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.exit-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">register_shutdown_function</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

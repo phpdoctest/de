@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Referenzen entdecken</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.references.html">Referenzen in PHP</a></li>
+  <li><a href="language.references.whatare.html">Was Referenzen sind</a></li>
+  <li><a href="language.references.whatdo.html">Was Referenzen leisten</a></li>
+  <li><a href="language.references.arent.html">Was Referenzen nicht sind</a></li>
+  <li><a href="language.references.pass.html">Parameter&uuml;bergabe per Referenz</a></li>
+  <li><a href="language.references.return.html">Referenzen zur&uuml;ckgeben</a></li>
+  <li><a href="language.references.unset.html">Referenzen aufheben</a></li>
+  <li class="active"><a href="language.references.spot.html">Referenzen entdecken</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.references.unset.html">Referenzen aufheben</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="reserved.variables.html">Vordefinierte Variablen</a></div>
+                <div class="up"><a href="language.references.html">Referenzen in PHP</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.references.spot" class="sect1">
+   <h2 class="title">Referenzen entdecken</h2>
+   <p class="simpara">
+    Viele Sprachelemente von PHP sind intern mit der Benutzung von Referenzen
+    implementiert, daher gilt alles bisher gesagte auch für diese
+    Konstrukte:
+   </p>
+
+   <div class="sect2" id="references.global">
+    <h3 class="title"><em>global</em> References</h3>
+    <p class="para">
+     Die Verwendung von <strong class="command">global $var</strong> erzeugt im aktuellen
+     Gültigkeitsbereich eine Referenz auf die globale Variable <var class="varname">$var</var>,
+     sie ist also äquivalent zu folgendem:
+     <div class="informalexample">
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$var&nbsp;</span><span style="color: #007700">=&amp;&nbsp;</span><span style="color: #0000BB">$GLOBALS</span><span style="color: #007700">[</span><span style="color: #DD0000">"var"</span><span style="color: #007700">];<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+    <p class="simpara">
+     Dies hat zur Folge, dass das Anwenden von unset() auf <var class="varname">$var</var>
+     keinen Einfluss auf die globale Variable hat.
+    </p>
+   </div>
+
+   <div class="sect2" id="references.this">
+    <h3 class="title"><em>$this</em></h3>
+    <p class="simpara">
+     In einer Objektmethode ist <var class="varname">$this</var> immer eine Referenz
+     auf die aufrufende Objektinstanz.
+    </p>
+   </div>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

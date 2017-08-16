@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Konstanten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li><a href="language.basic-syntax.html">Grundlagen der Syntax</a></li>
+  <li><a href="language.types.html">Typen</a></li>
+  <li><a href="language.variables.html">Variablen</a></li>
+  <li class="active"><a href="language.constants.html">Konstanten</a></li>
+  <li><a href="language.expressions.html">Ausdr&uuml;cke</a></li>
+  <li><a href="language.operators.html">Operatoren</a></li>
+  <li><a href="language.control-structures.html">Kontrollstrukturen</a></li>
+  <li><a href="language.functions.html">Funktionen</a></li>
+  <li><a href="language.oop5.html">Klassen und Objekte</a></li>
+  <li><a href="language.namespaces.html">Namespaces</a></li>
+  <li><a href="language.errors.html">Fehler</a></li>
+  <li><a href="language.exceptions.html">Ausnahmebehandlung (Exception-Handling)</a></li>
+  <li><a href="language.generators.html">Generatoren</a></li>
+  <li><a href="language.references.html">Referenzen in PHP</a></li>
+  <li><a href="reserved.variables.html">Vordefinierte Variablen</a></li>
+  <li><a href="reserved.exceptions.html">Vordefinierte Exceptions</a></li>
+  <li><a href="reserved.interfaces.html">Vordefinierte Interfaces und Klassen</a></li>
+  <li><a href="context.html">Kontextoptionen und -parameter</a></li>
+  <li><a href="wrappers.html">Unterst&uuml;tzte Protokolle und Wrapper</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.variables.external.html">Variablen aus externen Quellen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.constants.syntax.html">Syntax</a></div>
+                <div class="up"><a href="langref.html">Sprachreferenz</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.constants" class="chapter">
+  <h1>Konstanten</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="language.constants.syntax.html">Syntax</a></li>
+<li><a href="language.constants.predefined.html">Magische Konstanten</a></li>
+</ul>
+
+
+  <p class="simpara">
+   Eine Konstante ist ein Bezeichner (Name) für einen einfachen Wert. Wie der
+   Name bereits nahelegt, kann der Wert einer Konstanten zur Laufzeit des
+   Skripts nicht verändert werden (ausgenommen die <a href="language.constants.predefined.html" class="link">Magischen Konstanten</a>, die aber
+   keine wirklichen Konstanten sind.) Eine Konstante unterscheidet standardmäßig
+   zwischen Groß- und Kleinschreinbung (case-sensitive). Nach gängiger
+   Konvention werden Konstanten immer in Großbuchstaben geschrieben.
+  </p>
+  <p class="para">
+   Der Name einer Konstanten folgt den gleichen Regeln wie alle anderen
+   Bezeichner in PHP. Ein gültiger Name beginnt mit einem Buchstaben oder einem
+   Unterstrich, gefolgt von beliebig vielen Buchstaben, Ziffern oder
+   Unterstrichen. Als regulärer Ausdruck könnte das so beschrieben werden:
+   <em>[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*</em>
+  </p>
+  <div class="tip"><strong class="tip">Tipp</strong><p class="simpara">Siehe auch <a href="userlandnaming.html" class="xref">Userland Naming Guide</a>.</p></div>
+  <p class="para">
+   <div class="example" id="example-121">
+    <p><strong>Beispiel #1 Gültige und ungültige Namen für Konstanten</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;Gueltige&nbsp;Namen&nbsp;fuer&nbsp;Konstanten<br /></span><span style="color: #0000BB">define</span><span style="color: #007700">(</span><span style="color: #DD0000">"FOO"</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"irgendwas"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">define</span><span style="color: #007700">(</span><span style="color: #DD0000">"FOO2"</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"etwas&nbsp;anderes"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">define</span><span style="color: #007700">(</span><span style="color: #DD0000">"FOO_BAR"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"irgendwas&nbsp;ganz&nbsp;anderes"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Ungueltige&nbsp;Namen&nbsp;fuer&nbsp;Konstanten<br /></span><span style="color: #0000BB">define</span><span style="color: #007700">(</span><span style="color: #DD0000">"2FOO"</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"irgendwas"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Folgendes&nbsp;ist&nbsp;korrekt,&nbsp;sollte&nbsp;aber&nbsp;vermieden&nbsp;werden:<br />//&nbsp;PHP&nbsp;koennte&nbsp;eines&nbsp;Tages&nbsp;eine&nbsp;Magische&nbsp;Konstante&nbsp;unterstuetzen<br />//&nbsp;die&nbsp;Ihr&nbsp;Skript&nbsp;nicht&nbsp;mehr&nbsp;wie&nbsp;gewuenscht&nbsp;funktionieren&nbsp;laesst<br /></span><span style="color: #0000BB">define</span><span style="color: #007700">(</span><span style="color: #DD0000">"__FOO__"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"irgendwas"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    Für unsere Zwecke ist ein Buchstabe a-z, A-Z und die ASCII-Zeichen
+    von 127 bis 255 (0x7f-0xff).
+   </span>
+  </p></blockquote>
+
+  <p class="simpara">
+   Wie bei <a href="language.variables.predefined.html" class="link">superglobals</a> ist der Gültigkeitsbereich einer Konstanten
+   global. Unabhängig vom Gültigkeitsbereich können Sie in Ihrem Skript überall
+   auf eine Konstante zugreifen. Für mehr Information zum Gültigkeitsbereich
+   lesen Sie bitte den Abschnitt über den <a href="language.variables.scope.html" class="link">Geltungsbereich von Variablen</a>.
+  </p>
+
+  
+
+  
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

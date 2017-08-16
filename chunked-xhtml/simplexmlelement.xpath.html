@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: F&uuml;hrt ein XPath Query auf XML-Daten aus</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.xml.html">XML-Manipulation</a></li>
+  <li class="header up"><a href="book.simplexml.html">SimpleXML</a></li>
+  <li class="header up"><a href="class.simplexmlelement.html">SimpleXMLElement</a></li>
+  <li><a href="simplexmlelement.addAttribute.html">SimpleXMLElement::addAttribute</a></li>
+  <li><a href="simplexmlelement.addChild.html">SimpleXMLElement::addChild</a></li>
+  <li><a href="simplexmlelement.asXML.html">SimpleXMLElement::asXML</a></li>
+  <li><a href="simplexmlelement.attributes.html">SimpleXMLElement::attributes</a></li>
+  <li><a href="simplexmlelement.children.html">SimpleXMLElement::children</a></li>
+  <li><a href="simplexmlelement.construct.html">SimpleXMLElement::__construct</a></li>
+  <li><a href="simplexmlelement.count.html">SimpleXMLElement::count</a></li>
+  <li><a href="simplexmlelement.getDocNamespaces.html">SimpleXMLElement::getDocNamespaces</a></li>
+  <li><a href="simplexmlelement.getName.html">SimpleXMLElement::getName</a></li>
+  <li><a href="simplexmlelement.getNamespaces.html">SimpleXMLElement::getNamespaces</a></li>
+  <li><a href="simplexmlelement.registerXPathNamespace.html">SimpleXMLElement::registerXPathNamespace</a></li>
+  <li><a href="simplexmlelement.savexml.html">SimpleXMLElement::saveXML</a></li>
+  <li><a href="simplexmlelement.tostring.html">SimpleXMLElement::__toString</a></li>
+  <li class="active"><a href="simplexmlelement.xpath.html">SimpleXMLElement::xpath</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="simplexmlelement.tostring.html">SimpleXMLElement::__toString</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="class.simplexmliterator.html">SimpleXMLIterator</a></div>
+                <div class="up"><a href="class.simplexmlelement.html">SimpleXMLElement</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="simplexmlelement.xpath" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">SimpleXMLElement::xpath</h1>
+  <p class="refpurpose">Führt ein XPath Query auf XML-Daten aus</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-simplexmlelement.xpath-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="classsynopsis">
+   <div class="ooclass"><strong class="classname">SimpleXMLElement</strong></div>
+   <div class="methodsynopsis dc-description">
+    <span class="type">array</span> <span class="methodname">xpath</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
+    )</div>
+
+  </div>
+  <p class="para">
+   Die <em>xpath</em>-Methode durchsucht den SimpleXML-Knoten nach
+   Kind-Elementen, die der <acronym class="acronym">XPath</acronym>
+   <code class="parameter">path</code>-Anfrage entsprechen.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-simplexmlelement.xpath-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">path</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Eine XPath Pfad-Anfrage
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-simplexmlelement.xpath-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Die Funktion gibt ein <span class="type">Array</span> von SimpleXMLElement-Objekten oder
+   im Fehlerfall <strong><code>FALSE</code></strong> zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-simplexmlelement.xpath-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-6244">
+    <p><strong>Beispiel #1 Xpath</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$string&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;XML<br /></span><span style="color: #DD0000">&lt;a&gt;<br />&nbsp;&lt;b&gt;<br />&nbsp;&nbsp;&lt;c&gt;text&lt;/c&gt;<br />&nbsp;&nbsp;&lt;c&gt;zeugs&lt;/c&gt;<br />&nbsp;&lt;/b&gt;<br />&nbsp;&lt;d&gt;<br />&nbsp;&nbsp;&lt;c&gt;code&lt;/c&gt;<br />&nbsp;&lt;/d&gt;<br />&lt;/a&gt;<br /></span><span style="color: #007700">XML;<br /><br /></span><span style="color: #0000BB">$xml&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SimpleXMLElement</span><span style="color: #007700">(</span><span style="color: #0000BB">$string</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Suche&nbsp;nach&nbsp;&lt;a&gt;&lt;b&gt;&lt;c&gt;&nbsp;*/<br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$xml</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">xpath</span><span style="color: #007700">(</span><span style="color: #DD0000">'/a/b/c'</span><span style="color: #007700">);<br /><br />while(list(&nbsp;,&nbsp;</span><span style="color: #0000BB">$node</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">each</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'/a/b/c:&nbsp;'</span><span style="color: #007700">,</span><span style="color: #0000BB">$node</span><span style="color: #007700">,</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">/*&nbsp;Relative&nbsp;Pfade&nbsp;funktionieren&nbsp;ebenfalls&nbsp;...&nbsp;*/<br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$xml</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">xpath</span><span style="color: #007700">(</span><span style="color: #DD0000">'b/c'</span><span style="color: #007700">);<br /><br />while(list(&nbsp;,&nbsp;</span><span style="color: #0000BB">$node</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">each</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'b/c:&nbsp;'</span><span style="color: #007700">,</span><span style="color: #0000BB">$node</span><span style="color: #007700">,</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+/a/b/c: text
+/a/b/c: zeugs
+b/c: text
+b/c: zeugs
+</pre></div>
+    </div>
+    <div class="example-contents"><p>
+     Beachten Sie, dass beide Ergebnisse gleich sind.
+    </p></div>
+   </div>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

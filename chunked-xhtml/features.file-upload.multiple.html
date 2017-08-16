@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Upload mehrerer Dateien</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="features.html">Features</a></li>
+  <li class="header up"><a href="features.file-upload.html">Steuerung von Dateiuploads</a></li>
+  <li><a href="features.file-upload.post-method.html">Dateiuploads mit POST</a></li>
+  <li><a href="features.file-upload.errors.html">Fehlermeldungen erkl&auml;rt</a></li>
+  <li><a href="features.file-upload.common-pitfalls.html">H&auml;ufige Probleme</a></li>
+  <li class="active"><a href="features.file-upload.multiple.html">Upload mehrerer Dateien</a></li>
+  <li><a href="features.file-upload.put-method.html">PUT-Unterst&uuml;tzung</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="features.file-upload.common-pitfalls.html">H&auml;ufige Probleme</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="features.file-upload.put-method.html">PUT-Unterst&uuml;tzung</a></div>
+                <div class="up"><a href="features.file-upload.html">Steuerung von Dateiuploads</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="features.file-upload.multiple" class="sect1">
+   <h2 class="title">Upload mehrerer Dateien</h2>
+   <p class="simpara">
+    Mehrere Dateien können hochgeladen werden, indem Sie verschiedene
+    Namen <em>name</em> für <em>input</em> verwenden.
+   </p>
+   <p class="simpara">
+    Es ist ebenfalls möglich, mehrere Dateien simultan hochzuladen, und
+    die Informationen automatisch in Arrays zu erhalten. Um dies zu tun,
+    verwenden Sie in dem HTML Formular die gleiche Array-Sende-Syntax
+    wie bei Auswahllisten mit Mehrfachauswahl und Checkboxen:
+   </p>
+   <p class="para">
+    <div class="example" id="example-378">
+     <p><strong>Beispiel #1 Upload mehrerer Dateien</strong></p>
+     <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;form action=&quot;file-upload.php&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
+  Send these files:&lt;br&gt;
+  &lt;input name=&quot;userfile[]&quot; type=&quot;file&quot;&gt;&lt;br&gt;
+  &lt;input name=&quot;userfile[]&quot; type=&quot;file&quot;&gt;&lt;br&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Send files&quot;&gt;
+&lt;/form&gt;</pre>
+</div>
+     </div>
+
+    </div>
+   </p>
+   <p class="simpara">
+    Wenn das obige Formular übermittelt ist, werden die Arrays
+    <var class="varname">$_FILES[&#039;userfile&#039;]</var>,
+    <var class="varname">$_FILES[&#039;userfile&#039;][&#039;name&#039;]</var> und
+    <var class="varname">$_FILES[&#039;userfile&#039;][&#039;size&#039;]</var>
+    initialisiert (wie auch in <var class="varname">$HTTP_POST_FILES</var>
+    vor PHP Version 4.1.0.).
+    Ist <a href="ini.core.html#ini.register-globals" class="link">register_globals</a> 
+    aktiviert, werden auch
+    globale Variablen für die hochgeladenen Dateien initialisiert.
+    Jedes von ihnen ist ein numerisch indiziertes Array mit den
+    entsprechenden Werten für die hochgeladenen Dateien.
+   </p>
+   <p class="simpara">
+    Nehmen wir zum Beispiel an, dass die Dateinamen
+    <var class="filename">/home/test/review.html</var> und
+    <var class="filename">/home/test/xwp.out</var> übermittelt wurden.
+    In diesem Fall würde
+    <var class="varname">$_FILES[&#039;userfile&#039;][&#039;name&#039;][0]</var>
+    <var class="filename">review.html</var> enthalten, und
+    <var class="varname">$_FILES[&#039;userfile&#039;][&#039;name&#039;][1]</var>
+    hätte den Wert <var class="filename">xwp.out</var>. Genauso würde
+    <var class="varname">$_FILES[&#039;userfile&#039;][&#039;size&#039;][0]</var> die
+    Dateigröße von <var class="filename">review.html</var> enthalten, usw.
+   </p>
+   <p class="simpara">
+    <var class="varname">$_FILES[&#039;userfile&#039;][&#039;name&#039;][0]</var>,
+    <var class="varname">$_FILES[&#039;userfile&#039;][&#039;tmp_name&#039;][0]</var>,
+    <var class="varname">$_FILES[&#039;userfile&#039;][&#039;size&#039;][0]</var> und
+    <var class="varname">$_FILES[&#039;userfile&#039;][&#039;type&#039;][0]</var> sind
+    ebenfalls gesetzt.
+   </p>
+   <div class="warning"><strong class="warning">Warnung</strong>
+    <p class="simpara">
+     Seit PHP 5.2.12 setzt die Option <a href="ini.core.html#ini.max-file-uploads" class="link">max_file_uploads</a> ein Limit auf die Anzahl der Dateien, welche in
+     einem Request hochgeladen werden können. Sie müssen sicherstellen, dass
+     ihr Formular nicht erlaubt mehr Dateien hochzuladen als dieses Limit.
+    </p>
+   </div>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Liste der php.ini-Abschnitte</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="appendices.html">Appendices</a></li>
+  <li class="header up"><a href="ini.html">php.ini Richtlinien</a></li>
+  <li><a href="ini.list.html">Liste der php.ini-Direktiven</a></li>
+  <li class="active"><a href="ini.sections.html">Liste der php.ini-Abschnitte</a></li>
+  <li><a href="ini.core.html">Beschreibung der php.ini-Direktiven des Sprachkerns</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="ini.list.html">Liste der php.ini-Direktiven</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ini.core.html">Beschreibung der php.ini-Direktiven des Sprachkerns</a></div>
+                <div class="up"><a href="ini.html">php.ini Richtlinien</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="ini.sections" class="section">
+ <h2 class="title">Liste der <var class="filename">php.ini</var>-Abschnitte</h2>
+ <p class="para">
+  Diese Liste beinhaltet die <var class="filename">php.ini</var> Abschnitte die Sie für die
+  Konfiguration auf Basis des Host- oder Pfadnames nutzen können.
+  Diese Abschnitte sind optional.
+ </p>
+ <p class="para">
+  Die Abschnitte selbst beeinflussen PHP nicht direkt. Sie werden
+  genutzt um andere <var class="filename">php.ini</var> Direktiven zu gruppieren und sie für
+  einen bestimmten Host- oder Pfadnamen anzuwenden.
+ </p>
+ <p class="para">
+  Diese Abschnitte werden nur benutzt, wenn PHP über CGI/FastCGI operiert,
+  und können <a href="ini.core.html#ini.extension" class="link">extension</a> und <a href="ini.core.html#ini.zend-extension" class="link">zend_extension</a> nicht setzen.
+ </p>
+ <p class="para">
+  <table class="doctable table">
+   <caption><strong>Abschnitte</strong></caption>
+   
+    <thead>
+     <tr>
+      <th>Name</th>
+      <th>Veränderbar</th>
+      <th>Changelog</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td><a href="ini.sections.html#ini.per-host" class="link">[HOST=]</a></td>
+      <td>PHP_INI_SYSTEM</td>
+      <td>Hinzugefügt in PHP 5.3.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="ini.sections.html#ini.per-path" class="link">[PATH=]</a></td>
+      <td>PHP_INI_SYSTEM</td>
+      <td>Hinzugefügt in PHP 5.3.0.</td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+ </p>
+ 
+ <p class="para">Hier eine kurze Erklärung der
+Konfigurationsoptionen:</p>
+ 
+ <p class="para">
+  <dl>
+
+   
+    <dt id="ini.per-host">
+     <code class="parameter">[HOST=&lt;host&gt;]</code>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Dieser Abschnitt gestattet die Definition einer Gruppe von
+      <var class="filename">php.ini</var> Direktiven die für einen bestimmten Host Anwendung
+      finden sollen.
+     </p>
+     <p class="para">
+      <div class="example" id="example-6342">
+       <p><strong>Beispiel #1 Aktiviere volle Fehlerausgaben im Browser für die dev. Domain</strong></p>
+       <div class="example-contents">
+<div class="php.inicode"><pre class="php.inicode">[HOST=dev.site.com]
+error_reporting = E_ALL
+display_errors = On</pre>
+</div>
+        </div>
+
+       </div>
+      </p>
+     </dd>
+
+    
+    
+    
+     <dt id="ini.per-path">
+      <code class="parameter">[PATH=&lt;path&gt;]</code>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       Dieser Abschnitt gestattet die Definition einer Gruppe von
+       <var class="filename">php.ini</var> Direktiven die für einen bestimmten Pfad Anwendung
+       finden sollen.
+      </p>
+      <p class="para">
+       <div class="example" id="example-6343">
+        <p><strong>Beispiel #2 Binde für ein zu sicherndes Verzeichnis ein Sicherheitsscript hinzu</strong></p>
+        <div class="example-contents">
+<div class="php.inicode"><pre class="php.inicode">[PATH=/home/site/public/secure]
+auto_prepend_file=security.php</pre>
+</div>
+        </div>
+
+       </div>
+      </p>
+     </dd>
+
+    
+    
+   </dl>
+
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Gibt die Warnungen und Fehler zur&uuml;ck</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.calendar.html">Datums- und zeitrelevante Erweiterungen</a></li>
+  <li class="header up"><a href="book.datetime.html">Datum/Uhrzeit</a></li>
+  <li class="header up"><a href="class.datetime.html">DateTime</a></li>
+  <li><a href="datetime.add.html">DateTime::add</a></li>
+  <li><a href="datetime.construct.html">DateTime::__construct</a></li>
+  <li><a href="datetime.createfromformat.html">DateTime::createFromFormat</a></li>
+  <li class="active"><a href="datetime.getlasterrors.html">DateTime::getLastErrors</a></li>
+  <li><a href="datetime.modify.html">DateTime::modify</a></li>
+  <li><a href="datetime.set-state.html">DateTime::__set_state</a></li>
+  <li><a href="datetime.setdate.html">DateTime::setDate</a></li>
+  <li><a href="datetime.setisodate.html">DateTime::setISODate</a></li>
+  <li><a href="datetime.settime.html">DateTime::setTime</a></li>
+  <li><a href="datetime.settimestamp.html">DateTime::setTimestamp</a></li>
+  <li><a href="datetime.settimezone.html">DateTime::setTimezone</a></li>
+  <li><a href="datetime.sub.html">DateTime::sub</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="datetime.createfromformat.html">DateTime::createFromFormat</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="datetime.modify.html">DateTime::modify</a></div>
+                <div class="up"><a href="class.datetime.html">DateTime</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="datetime.getlasterrors" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">DateTime::getLastErrors</h1>
+  <h1 class="refname">date_get_last_errors</h1>
+  <p class="refpurpose">Gibt die Warnungen und Fehler zurück</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-datetime.getlasterrors-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">Objektorientierter Stil</p>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">array</span> <span class="methodname">DateTime::getLastErrors</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+  <p class="para rdfs-comment">Prozeduraler Stil</p>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname">date_get_last_errors</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Gibt ein Array mit Warnungen und Fehlern zurück, die bei der Analyse eines
+   Datums/Zeit-Strings gefunden wurden.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-datetime.getlasterrors-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">Diese Funktion hat keine Parameter.</p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-datetime.getlasterrors-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt ein Array mit Warnungen und Fehlern zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-datetime.getlasterrors-examples">
+  <h3 class="title">Beispiele</h3>
+  <div class="example" id="example-2454">
+   <p><strong>Beispiel #1 <span class="function">DateTime::getLastErrors</span> Beispiel</strong></p>
+   <div class="example-contents"><p>Objektorientierter Stil</p></div>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">try&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$date&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">(</span><span style="color: #DD0000">'asdfasdf'</span><span style="color: #007700">);<br />}&nbsp;catch&nbsp;(</span><span style="color: #0000BB">Exception&nbsp;$e</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Nur&nbsp;zu&nbsp;Demonstrationszwecken...<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">::</span><span style="color: #0000BB">getLastErrors</span><span style="color: #007700">());<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Die&nbsp;wahre&nbsp;objektorientierte&nbsp;Weise,&nbsp;um&nbsp;dies&nbsp;zu&nbsp;tun&nbsp;ist<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;echo&nbsp;$e-&gt;getMessage();<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>Prozeduraler Stil</p></div>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$date&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">date_create</span><span style="color: #007700">(</span><span style="color: #DD0000">'asdfasdf'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">date_get_last_errors</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>Die
+obigen Bespiele erzeugen folgende Ausgabe:</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+   [warning_count] =&gt; 1
+   [warnings] =&gt; Array
+       (
+           [6] =&gt; Double timezone specification
+       )
+
+   [error_count] =&gt; 1
+   [errors] =&gt; Array
+       (
+           [0] =&gt; The timezone could not be found in the database
+       )
+
+)
+</pre></div>
+   </div>
+   <div class="example-contents"><p>
+    Die Indizes 6 und 0 in der Ausgabe des obigen Beispiels beziehen sich auf
+    den Buchstaben in dem String bei dem der Fehler auftrat.
+   </p></div>
+  </div>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

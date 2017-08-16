@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: L&ouml;scht den Ausgabe-Puffer und deaktiviert die
+     Ausgabe-Pufferung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li class="header up"><a href="book.outcontrol.html">Ausgabekontrolle</a></li>
+  <li class="header up"><a href="ref.outcontrol.html">Output-Control-Funktionen</a></li>
+  <li><a href="function.flush.html">flush</a></li>
+  <li><a href="function.ob-clean.html">ob_clean</a></li>
+  <li class="active"><a href="function.ob-end-clean.html">ob_end_clean</a></li>
+  <li><a href="function.ob-end-flush.html">ob_end_flush</a></li>
+  <li><a href="function.ob-flush.html">ob_flush</a></li>
+  <li><a href="function.ob-get-clean.html">ob_get_clean</a></li>
+  <li><a href="function.ob-get-contents.html">ob_get_contents</a></li>
+  <li><a href="function.ob-get-flush.html">ob_get_flush</a></li>
+  <li><a href="function.ob-get-length.html">ob_get_length</a></li>
+  <li><a href="function.ob-get-level.html">ob_get_level</a></li>
+  <li><a href="function.ob-get-status.html">ob_get_status</a></li>
+  <li><a href="function.ob-gzhandler.html">ob_gzhandler</a></li>
+  <li><a href="function.ob-implicit-flush.html">ob_implicit_flush</a></li>
+  <li><a href="function.ob-list-handlers.html">ob_list_handlers</a></li>
+  <li><a href="function.ob-start.html">ob_start</a></li>
+  <li><a href="function.output-add-rewrite-var.html">output_add_rewrite_var</a></li>
+  <li><a href="function.output-reset-rewrite-vars.html">output_reset_rewrite_vars</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.ob-clean.html">ob_clean</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.ob-end-flush.html">ob_end_flush</a></div>
+                <div class="up"><a href="ref.outcontrol.html">Output-Control-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.ob-end-clean" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">ob_end_clean</h1>
+    <p class="refpurpose">
+     Löscht den Ausgabe-Puffer und deaktiviert die
+     Ausgabe-Pufferung
+    </p>
+   </div>
+   <div class="refsect1 description" id="refsect1-function.ob-end-clean-description">
+    <h3 class="title">Beschreibung</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="type">bool</span> <span class="methodname">ob_end_clean</span>
+       ( <span class="methodparam">void</span>
+      )</div>
+
+    <p class="para rdfs-comment">
+     Der Inhalt des Ausgabepuffers (sofern vorhanden) wird verworfen
+     und der Ausgabepuffer (aber nur dieser) wird deaktiviert. Falls sie mit dem
+     Puffer-Inhalt weiter arbeiten möchten, müssen sie diesen erst per
+     <span class="function">ob_get_contents</span> zwischen speichern bevor sie
+     <span class="function">ob_end_clean</span> aufrufen, da dadurch der Puffer
+     geleert wird.
+    </p>
+    <p class="para">
+     Der Ausgabepuffer muss durch <span class="function">ob_start</span> mit den <a href="outcontrol.constants.html#constant.php-output-handler-cleanable" class="link">PHP_OUTPUT_HANDLER_CLEANABLE</a>
+     und <a href="outcontrol.constants.html#constant.php-output-handler-removable" class="link">PHP_OUTPUT_HANDLER_REMOVABLE</a>
+     Flags aktiviert werden. Andernfalls funktioniert
+     <span class="function">ob_end_clean</span> nicht.
+    </p>
+   </div>
+
+   <div class="refsect1 returnvalues" id="refsect1-function.ob-end-clean-returnvalues">
+    <h3 class="title">Rückgabewerte</h3>    
+    <p class="para">
+     Die Funktion gibt <strong><code>TRUE</code></strong> zurück wenn ein Ausgabepuffer entfernt
+     wurde, <strong><code>FALSE</code></strong> wenn kein aktiver Puffer vorhanden war oder der 
+     aktuelle Puffer nicht deaktiviert werden konnte (dies ist bei
+     speziellen Puffern möglich).
+    </p>
+   </div>
+
+  
+   <div class="refsect1 errors" id="refsect1-function.ob-end-clean-errors">
+    <h3 class="title">Fehler/Exceptions</h3>
+    <p class="para">
+     Im Fehlerfall generiert die Funktion eine <strong><code>E_NOTICE</code></strong>
+     Meldung.
+    </p>
+   </div>
+
+  
+   <div class="refsect1 examples" id="refsect1-function.ob-end-clean-examples">
+    <h3 class="title">Beispiele</h3>
+      <p class="para">
+       Das folgende Beispiel zeigt einen einfachen Weg um alle aktiven
+       Ausgabepuffer zu entfernen:
+      </p>
+       <p class="para">
+     <div class="example" id="example-498">
+      <p><strong>Beispiel #1 <span class="function">ob_end_clean</span> Beispiel</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />ob_start</span><span style="color: #007700">();<br />echo&nbsp;</span><span style="color: #DD0000">'Text&nbsp;der&nbsp;nicht&nbsp;ausgegeben&nbsp;wird.'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">ob_end_clean</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+   </div>
+
+   <div class="refsect1 seealso" id="refsect1-function.ob-end-clean-seealso">
+    <h3 class="title">Siehe auch</h3>
+    <p class="para">
+     <ul class="simplelist">
+      <li class="member"><span class="function">ob_start</span></li>
+      <li class="member"><span class="function">ob_get_contents</span></li>
+      <li class="member"><span class="function">ob_flush</span></li>
+     </ul>
+    </p>
+   </div>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

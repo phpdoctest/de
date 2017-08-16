@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: M&ouml;gliche Angriffe</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="security.html">Sicherheit</a></li>
+  <li class="header up"><a href="security.cgi-bin.html">Installiert als CGI-Version</a></li>
+  <li class="active"><a href="security.cgi-bin.attacks.html">M&ouml;gliche Angriffe</a></li>
+  <li><a href="security.cgi-bin.default.html">Fall 1: Nur &ouml;ffentliche Dateien vorhanden</a></li>
+  <li><a href="security.cgi-bin.force-redirect.html">Fall 2: --enable-force-cgi-redirect benutzen</a></li>
+  <li><a href="security.cgi-bin.doc-root.html">Fall 3: doc_root oder user_dir festlegen</a></li>
+  <li><a href="security.cgi-bin.shell.html">Fall 4: PHP-Parser au&szlig;erhalb des Webverzeichnisbaums</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="security.cgi-bin.html">Installiert als CGI-Version</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="security.cgi-bin.default.html">Fall 1: Nur &ouml;ffentliche Dateien vorhanden</a></div>
+                <div class="up"><a href="security.cgi-bin.html">Installiert als CGI-Version</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="security.cgi-bin.attacks" class="sect1">
+    <h2 class="title">Mögliche Angriffe</h2>
+    <p class="simpara">
+     PHP als <acronym class="acronym">CGI</acronym>-Version zu nutzen, ist eine Möglichkeit
+     für Installationen, bei denen aus irgendwelchen Gründen kein Modul in
+     die Serversoftware eingebunden werden soll (wie beim Apache) oder für
+     Systeme, bei denen verschiedene <acronym class="acronym">CGI</acronym>-Wrapper genutzt
+     werden sollen, um sichere chroot- und setuid-Umgebungen für Skripte zu schaffen.
+     Bei dieser Konfiguration wird das ausführbare PHP-Binary üblicherweise
+     im cgi-bin-Verzeichnis des Webservers installiert.
+     CERT-Advisory <a href="http://www.cert.org/advisories/CA-1996-11.html" class="link external">&raquo;&nbsp;CA-96.11</a>
+     spricht sich gegen die Platzierung von Interpretern im cgi-bin-Verzeichnis
+     aus. Obwohl das PHP-Binary als eigenständiger Interpreter
+     verwendet werden kann, wurde PHP so entwickelt, um den durch diese
+     Konfiguration möglich werdenden Angriffe vorzubeugen:
+    </p>
+    <ul class="itemizedlist">
+     <li class="listitem">
+      <span class="simpara">
+       Zugriff auf Systemdateien: <var class="filename">http://my.host/cgi-bin/php?/etc/passwd</var>
+      </span>
+      <span class="simpara">
+       Die auf ein Fragezeichen (?) folgende Abfrageinformation in einer
+       URL wird durch das CGI-Interface als Kommandozeilenargument an den
+       Interpreter weitergereicht. In der Kommandozeile wird üblicherweise
+       die im ersten Argument angegebene Datei von Interpretern geöffnet
+       und ausgeführt.
+      </span>
+      <span class="simpara">
+       Beim Aufruf als CGI-Binary verweigert PHP die Interpretation der
+       Kommandozeilenargumente.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       Zugriff auf beliebige Web-Dokumente auf dem Server: <var class="filename">http://my.host/cgi-bin/php/secret/doc.html</var>
+      </span>
+      <span class="simpara">
+       Der Teil der URL-Pfadinformation nach dem Namen der PHP Binärdatei,
+       <var class="filename">/secret/doc.html</var>, wird im
+       Allgemeinen benutzt, um den Namen der Datei zu übergeben,
+       die durch das <acronym class="acronym">CGI</acronym>-Programm geöffnet und
+       interpretiert werden soll.
+       Normalerweise werden einige Einträge in der Konfigurationsdatei
+       des Webservers benutzt (Apache: Action), um Aufrufe von Dokumenten
+       wie <var class="filename">http://my.host/secret/script.php</var>
+       an den PHP-Interpreter umzuleiten. Bei dieser Konfiguration
+       überprüft der Webserver zuerst die Zugriffsrechte im Verzeichnis
+       <var class="filename">/secret</var> und erstellt anschließend
+       den umgeleiteten Aufruf <var class="filename">http://my.host/cgi-bin/php/secret/script.php</var>.
+       Unglücklicherweise wird, wenn der Aufruf bereits in dieser Form
+       geschieht, vom Webserver keine Zugriffsüberprüfung der Datei
+       <var class="filename">/secret/script.php</var>, sondern
+       lediglich der Datei <var class="filename">/cgi-bin/php</var>
+       vorgenommen. So ist
+       jeder Benutzer, der auf <var class="filename">/cgi-bin/php</var>
+       zugreifen darf, in der Lage, sich zu jedem geschützten Dokument
+       auf dem Webserver Zugriff zu verschaffen.
+      </span>
+      <span class="simpara">
+       Bei PHP können beim Kompilieren die Konfigurationsdirektiven <a href="ini.core.html#ini.cgi.force-redirect" class="link">cgi.force_redirect</a>,
+       <a href="ini.core.html#ini.doc-root" class="link">doc_root</a> und <a href="ini.core.html#ini.user-dir" class="link">user_dir</a>
+       benutzt werden, um diesen Angriff zu verhindern, falls
+       der Verzeichnisbaum des Servers Verzeichnisse mit
+       Zugriffsbeschränkungen beinhaltet.
+       Ausführliche Informationen über die verschiedenen Kombinationen
+       sind weiter unten beschrieben.
+      </span>
+     </li>
+    </ul>
+   </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

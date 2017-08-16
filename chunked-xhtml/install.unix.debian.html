@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Debian GNU/Linux-Installationshinweise</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="install.html">Installation und Konfiguration</a></li>
+  <li class="header up"><a href="install.unix.html">Installation auf Unix-Systemen</a></li>
+  <li><a href="install.unix.apache.html">Apache 1.3.x auf Unix-Systemen</a></li>
+  <li><a href="install.unix.apache2.html">Apache 2.x auf Unixsystemen</a></li>
+  <li><a href="install.unix.nginx.html">Nginx 1.4.x auf Unix Systemen</a></li>
+  <li><a href="install.unix.lighttpd-14.html">Lighttpd 1.4 auf Unix systems</a></li>
+  <li><a href="install.unix.sun.html">Sun, iPlanet and Netscape servers on Sun Solaris</a></li>
+  <li><a href="install.unix.commandline.html">CGI und Kommandozeilen Setups</a></li>
+  <li><a href="install.unix.hpux.html">HP-UX spezifische Installationsnotizen</a></li>
+  <li><a href="install.unix.openbsd.html">OpenBSD installation notes</a></li>
+  <li><a href="install.unix.solaris.html">Solaris specific installation tips</a></li>
+  <li class="active"><a href="install.unix.debian.html">Debian GNU/Linux-Installationshinweise</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="install.unix.solaris.html">Solaris specific installation tips</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="install.macosx.html">Installation unter Mac OS X</a></div>
+                <div class="up"><a href="install.unix.html">Installation auf Unix-Systemen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="install.unix.debian" class="sect1">
+ <h2 class="title">Debian GNU/Linux-Installationshinweise</h2>
+ <p class="para">
+  Dieser Abschnitt beinhaltet Hinweise und Tipps für die Installation
+  von PHP unter <a href="http://www.debian.org/" class="link external">&raquo;&nbsp;Debian GNU/Linux</a>.
+ </p>
+ <div class="warning"><strong class="warning">Warnung</strong>
+  <p class="para">
+   Nicht offizielle Pakete von Drittanbietern werden hier nicht unterstützt.
+   Alle Bugs sollten an das Debian-Team gemeldet werden, außer falls sie
+   mit den letzten Paketen von unserer <a href="http://www.php.net/downloads.php" class="link external">&raquo;&nbsp;Download-Seite</a> reproduzierbar sind.
+  </p>
+ </div>
+ <p class="para">
+  Auch wenn die Anweisungen zum Kompilieren von PHP unter Unix auch für
+  Debian gelten, enthält diese Handbuchseite spezielle Informationen
+  für weitere Optionen, wie z.B. über die Nutzung der
+  <em>apt-get</em>- oder <em>aptitude</em>-Kommandos.
+  Diese Handbuchseite nutzt beide Kommandos synonym.
+ </p>
+ <div class="sect2" id="install.unix.debian.apt">
+  <h3 class="title">APT verwenden</h3>
+   <p class="simpara">
+    Beachten Sie zunächst, dass andere verwandte Pakete wie
+    <em>libapache2-mod-php5</em> (zur Integration mit Apache 2)
+    oder <em>php-pear</em> (für PEAR) existieren.
+   </p>
+   <p class="simpara">
+    Außerdem sollten Sie vor der Installation eines Pakets sicherstellen,
+    dass die Paketliste auf dem aktuellen Stand ist. Üblicherweise kann dies
+    durch das Kommando <strong class="command">apt-get update</strong> erledigt werden.
+   </p>
+   <div class="example" id="install.unix.debian.apt.example">
+    <p><strong>Beispiel #1 Debian-Installations-Beispiel mit Apache 2</strong></p>
+    <div class="example-contents">
+<div class="shellcode"><pre class="shellcode"># apt-get install php5-common libapache2-mod-php5 php5-cli</pre>
+</div>
+    </div>
+
+   </div>
+   <p class="simpara">
+    APT wird automatisch das PHP-5-Modul für Apache 2 sowie alle seine
+    Abhängigkeiten installieren und danach aktivieren. Damit die Änderungen
+    in Kraft treten, muss Apache neu gestart werden. Zum Beispiel:
+   </p>
+   <div class="example" id="install.unix.debian.apt.example2">
+    <p><strong>Beispiel #2 Stoppen und Starten von Apache nach der Installation von PHP</strong></p>
+    <div class="example-contents">
+<div class="shellcode"><pre class="shellcode"># /etc/init.d/apache2 stop
+# /etc/init.d/apache2 start</pre>
+</div>
+    </div>
+
+   </div>
+ </div>
+ <div class="sect2" id="install.unix.debian.config">
+  <h3 class="title">Bessere Kontrolle über die Konfiguration</h3>
+   <p class="simpara">
+    Im letzten Abschnitt wurde PHP nur mit den Basismodulen installiert. In
+    den meisten Fällen werden Sie weitere Module wie
+    <a href="book.mysql.html" class="link">MySQL</a>,
+    <a href="book.curl.html" class="link">cURL</a> oder
+    <a href="book.image.html" class="link">GD</a> benötigen. Auch diese Module können
+    mit dem <em>apt-get</em>-Kommando installiert werden.
+   </p>
+   <div class="example" id="install.unix.debian.config.example">
+    <p><strong>Beispiel #3 Methoden zur Anzeige weiterer PHP-5-Pakete</strong></p>
+    <div class="example-contents">
+<div class="shellcode"><pre class="shellcode"># apt-cache search php5
+# aptitude search php5
+# aptitude search php5 |grep -i mysql</pre>
+</div>
+    </div>
+
+   </div>
+   <p class="simpara">
+    Diese Beispiel werden eine große Zahl von Paketen, inklusive spezieller
+    PHP-Pakete wie php5-cgi, php5-cli und php5-dev, anzeigen. Entscheiden Sie,
+    welche Sie benötigen und installieren Sie diese wie jedes andere Paket
+    entweder mit <em>apt-get</em> oder <em>aptitude</em>.
+    Weil Debian Abhängigkeiten prüft, wird es Sie ggf. fragen, um MySQL
+    und cURL zu installieren:
+   </p>
+   <div class="example" id="install.unix.debian.config.example2">
+    <p><strong>Beispiel #4 PHP mit MySQL und cURL installieren</strong></p>
+    <div class="example-contents">
+<div class="shellcode"><pre class="shellcode"># apt-get install php5-mysql php5-curl</pre>
+</div>
+    </div>
+
+   </div>
+   <p class="simpara">
+    APT wird automatisch die passenden Zeilen zu Ihren verschiedenen
+    mit der <var class="filename">php.ini</var> verwandten Dateien hinzufügen, wie z.B.
+    <var class="filename">/etc/php5/apache2/php.ini</var>,
+    <var class="filename">/etc/php5/conf.d/pdo.ini</var> etc. Abhängig von
+    der Erweiterung wird es Einträge ähnlich wie
+    <em>extension=foo.so</em> hinzufügen. Das Neustarten des
+    Web-Server (z.B. Apache) ist erforderlich, damit die Änderungen
+    sich auswirken.
+   </p>
+ </div>
+ <div class="sect2" id="install.unix.debian.faq">
+  <h3 class="title">Bekannte Probleme</h3>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     Wenn die PHP-Skripte nicht vom Web-Server geparst werden, ist es
+     wahrscheinlich, dass PHP nicht zur Konfigurationsdatei des Web-Servers
+     hinzugefügt wurde. Unter Debian ist dies meist
+     <var class="filename">/etc/apache2/apache2.conf</var> (oder ähnlich). Im
+     Debian-Handbuch finden Sie weitere Details hierzu.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Falls eine Erweiterung anscheinend installiert wurde, aber die Funktionen
+     nicht definiert sind, müssen Sie sicherstellen, dass die entsprechede
+     INI-Datei geladen wurde und/oder dass der Web-Server nach der Installation
+     neu gestartet wurde.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Es gibt zwei grundlegende Kommandos für die Installation von Paketen
+     unter Debian (und anderen Linux-Varianten): <em>apt-get</em>
+     und <em>aptitude</em>. Die Erläuterung der feinen Unterschiede
+     zwischen diesen Kommandos liegt außerhalb dessen, was dieses Handbuch
+     umfasst.
+    </span>
+   </li>
+  </ul>
+ </div>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

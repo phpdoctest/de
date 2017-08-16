@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Variablenbehandlung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li><a href="book.array.html">Arrays</a></li>
+  <li><a href="book.classobj.html">Klassen/Objekte</a></li>
+  <li><a href="book.classkit.html">Classkit</a></li>
+  <li><a href="book.ctype.html">Ctype</a></li>
+  <li><a href="book.ds.html">Data Structures</a></li>
+  <li><a href="book.filter.html">Filter</a></li>
+  <li><a href="book.funchand.html">Function Handling</a></li>
+  <li><a href="book.quickhash.html">Quickhash</a></li>
+  <li><a href="book.reflection.html">Reflection</a></li>
+  <li class="active"><a href="book.var.html">Variablenbehandlung</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="class.reflectionexception.html">ReflectionException</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.var.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.var" class="book">
+ 
+ <h1>Variablenbehandlung</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.var.html">Einf&uuml;hrung</a></li>
+<li><a href="var.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="var.requirements.html">Anforderungen</a></li>
+<li><a href="var.installation.html">Installation</a></li>
+<li><a href="var.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="var.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="var.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.var.html">Funktionen zur Behandlung von Variablen</a><ul class="chunklist chunklist_title">
+<li><a href="function.boolval.html">boolval</a> — Get the boolean value of a variable</li>
+<li><a href="function.debug-zval-dump.html">debug_zval_dump</a> — Dumps a string representation of an internal zend value to output</li>
+<li><a href="function.doubleval.html">doubleval</a> — Alias von floatval</li>
+<li><a href="function.empty.html">empty</a> — Pr&uuml;ft, ob eine Variable einen Wert enth&auml;lt</li>
+<li><a href="function.floatval.html">floatval</a> — Konvertiert einen Wert nach float</li>
+<li><a href="function.get-defined-vars.html">get_defined_vars</a> — Gibt ein Array aller definierten Variablen zur&uuml;ck</li>
+<li><a href="function.get-resource-type.html">get_resource_type</a> — Liefert den Typ einer Resource</li>
+<li><a href="function.gettype.html">gettype</a> — Liefert den Datentyp einer Variablen</li>
+<li><a href="function.import-request-variables.html">import_request_variables</a> — Import GET/POST/Cookie variables into the global scope</li>
+<li><a href="function.intval.html">intval</a> — Konvertiert einen Wert nach integer</li>
+<li><a href="function.is-array.html">is_array</a> — Pr&uuml;ft, ob die Variable ein Array ist</li>
+<li><a href="function.is-bool.html">is_bool</a> — Pr&uuml;ft, ob eine Variable vom Typ boolean ist</li>
+<li><a href="function.is-callable.html">is_callable</a> — Pr&uuml;ft ob der Inhalt einer Variable als Funktion aufgerufen werden kann</li>
+<li><a href="function.is-double.html">is_double</a> — Alias von is_float</li>
+<li><a href="function.is-float.html">is_float</a> — Pr&uuml;ft, ob eine Variable vom Typ float ist</li>
+<li><a href="function.is-int.html">is_int</a> — Pr&uuml;ft, ob eine Variable vom Typ int ist</li>
+<li><a href="function.is-integer.html">is_integer</a> — Alias von is_int</li>
+<li><a href="function.is-iterable.html">is_iterable</a> — Verify that the contents of a variable is an iterable value</li>
+<li><a href="function.is-long.html">is_long</a> — Alias von is_int</li>
+<li><a href="function.is-null.html">is_null</a> — Pr&uuml;ft ob eine Variable NULL enth&auml;lt</li>
+<li><a href="function.is-numeric.html">is_numeric</a> — Pr&uuml;ft, ob eine Variable eine Zahl oder ein numerischer String ist</li>
+<li><a href="function.is-object.html">is_object</a> — Pr&uuml;ft, ob eine Variable vom Typ object ist</li>
+<li><a href="function.is-real.html">is_real</a> — Alias von is_float</li>
+<li><a href="function.is-resource.html">is_resource</a> — Pr&uuml;ft, ob eine Variable vom Typ resource ist</li>
+<li><a href="function.is-scalar.html">is_scalar</a> — Pr&uuml;ft ob eine Variable skalar ist</li>
+<li><a href="function.is-string.html">is_string</a> — Pr&uuml;ft, ob Variable vom Typ string ist</li>
+<li><a href="function.isset.html">isset</a> — Pr&uuml;ft, ob eine Variable existiert und ob sie nicht NULL ist</li>
+<li><a href="function.print-r.html">print_r</a> — Gibt Variablen-Informationen in lesbarer Form aus</li>
+<li><a href="function.serialize.html">serialize</a> — Erzeugt eine speicherbare Repr&auml;sentation eines Wertes.</li>
+<li><a href="function.settype.html">settype</a> — Legt den Typ einer Variablen fest</li>
+<li><a href="function.strval.html">strval</a> — Ermittelt die String-Repr&auml;sentation einer Variable</li>
+<li><a href="function.unserialize.html">unserialize</a> — Erzeugt aus einem gespeicherten Datenformat einen Wert in PHP</li>
+<li><a href="function.unset.html">unset</a> — L&ouml;schen einer angegebenen Variablen</li>
+<li><a href="function.var-dump.html">var_dump</a> — Gibt alle Informationen zu einer Variablen aus</li>
+<li><a href="function.var-export.html">var_export</a> — Gibt den Inhalt einer Variablen als parsbaren PHP-Code zur&uuml;ck</li>
+</ul>
+</li>
+</ul>
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Liefert die bei einer Abfrage gefundenen Daten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.mssql.html">Mssql</a></li>
+  <li class="header up"><a href="ref.mssql.html">Mssql-Funktionen</a></li>
+  <li><a href="function.mssql-bind.html">mssql_bind</a></li>
+  <li><a href="function.mssql-close.html">mssql_close</a></li>
+  <li><a href="function.mssql-connect.html">mssql_connect</a></li>
+  <li><a href="function.mssql-data-seek.html">mssql_data_seek</a></li>
+  <li><a href="function.mssql-execute.html">mssql_execute</a></li>
+  <li><a href="function.mssql-fetch-array.html">mssql_fetch_array</a></li>
+  <li><a href="function.mssql-fetch-assoc.html">mssql_fetch_assoc</a></li>
+  <li><a href="function.mssql-fetch-batch.html">mssql_fetch_batch</a></li>
+  <li><a href="function.mssql-fetch-field.html">mssql_fetch_field</a></li>
+  <li><a href="function.mssql-fetch-object.html">mssql_fetch_object</a></li>
+  <li><a href="function.mssql-fetch-row.html">mssql_fetch_row</a></li>
+  <li><a href="function.mssql-field-length.html">mssql_field_length</a></li>
+  <li><a href="function.mssql-field-name.html">mssql_field_name</a></li>
+  <li><a href="function.mssql-field-seek.html">mssql_field_seek</a></li>
+  <li><a href="function.mssql-field-type.html">mssql_field_type</a></li>
+  <li><a href="function.mssql-free-result.html">mssql_free_result</a></li>
+  <li><a href="function.mssql-free-statement.html">mssql_free_statement</a></li>
+  <li><a href="function.mssql-get-last-message.html">mssql_get_last_message</a></li>
+  <li><a href="function.mssql-guid-string.html">mssql_guid_string</a></li>
+  <li><a href="function.mssql-init.html">mssql_init</a></li>
+  <li><a href="function.mssql-min-error-severity.html">mssql_min_error_severity</a></li>
+  <li><a href="function.mssql-min-message-severity.html">mssql_min_message_severity</a></li>
+  <li><a href="function.mssql-next-result.html">mssql_next_result</a></li>
+  <li><a href="function.mssql-num-fields.html">mssql_num_fields</a></li>
+  <li><a href="function.mssql-num-rows.html">mssql_num_rows</a></li>
+  <li><a href="function.mssql-pconnect.html">mssql_pconnect</a></li>
+  <li><a href="function.mssql-query.html">mssql_query</a></li>
+  <li class="active"><a href="function.mssql-result.html">mssql_result</a></li>
+  <li><a href="function.mssql-rows-affected.html">mssql_rows_affected</a></li>
+  <li><a href="function.mssql-select-db.html">mssql_select_db</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-query.html">mssql_query</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.mssql-rows-affected.html">mssql_rows_affected</a></div>
+                <div class="up"><a href="ref.mssql.html">Mssql-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.mssql-result" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">mssql_result</h1>
+  <p class="refpurpose">Liefert die bei einer Abfrage gefundenen Daten</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.mssql-result-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname">mssql_result</span>
+    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
+   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$row</code></span>
+   , <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$field</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">mssql_result</span> gibt den Inhalt einer Zelle des
+   angegebenen MS SQL Ergebnisdatensatzes zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.mssql-result-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">result</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Bezeichner des Ergebnisses, das ausgewertet wird. Dieses Ergebnis
+       stammt von einem Aufruf von <span class="function">mssql_query</span>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">row</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Nummer des Datensatzes
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">field</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Kann der Feld-Offset, der Feldname oder vom Format
+       tabellenname.feldname sein. Wurde ein Alias angegeben (&#039;select foo as
+       bar from...&#039;), wird statt des Feldnamens dieser Alias verwendet.
+      </p>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+        Die Angabe eines numerischen Offsets als Argument
+        <code class="parameter">field</code> ist viel schneller, als die Angabe von
+        <em>Feldname</em> oder des Arguments
+        <em>tabellenname.feldname</em>.
+       </p>
+      </p></blockquote>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.mssql-result-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt den Inhalt der angegebenen Zelle zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.mssql-result-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-1753">
+    <p><strong>Beispiel #1 <span class="function">mssql_result</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Eine&nbsp;select-Anfrage&nbsp;an&nbsp;MSSQL&nbsp;senden<br /></span><span style="color: #0000BB">$anfrage&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_query</span><span style="color: #007700">(</span><span style="color: #DD0000">'SELECT&nbsp;[username]&nbsp;FROM&nbsp;[php].[dbo].[userlist]'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Prüfen,&nbsp;ob&nbsp;Datensätze&nbsp;gefunden&nbsp;wurden<br /></span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">mssql_num_rows</span><span style="color: #007700">(</span><span style="color: #0000BB">$anfrage</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Keine&nbsp;Datensätze&nbsp;gefunden'</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">mssql_num_rows</span><span style="color: #007700">(</span><span style="color: #0000BB">$anfrage</span><span style="color: #007700">);&nbsp;++</span><span style="color: #0000BB">$i</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">mssql_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$anfrage</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'username'</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Den&nbsp;Ergebnisspeicher&nbsp;freigeben<br /></span><span style="color: #0000BB">mssql_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$anfrage</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Kalle
+Felipe
+Emil
+Ross
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-1754">
+    <p><strong>Beispiel #2 Die schnellere Alternative zu obigem Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Eine&nbsp;select-Anfrage&nbsp;an&nbsp;MSSQL&nbsp;senden<br /></span><span style="color: #0000BB">$anfrage&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_query</span><span style="color: #007700">(</span><span style="color: #DD0000">'SELECT&nbsp;[username]&nbsp;FROM&nbsp;[php].[dbo].[userlist]'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Prüfen,&nbsp;ob&nbsp;Datensätze&nbsp;gefunden&nbsp;wurden<br /></span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">mssql_num_rows</span><span style="color: #007700">(</span><span style="color: #0000BB">$anfrage</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Keine&nbsp;Datensätze&nbsp;gefunden'</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(</span><span style="color: #0000BB">$datensatz&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_fetch_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$anfrage</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$datensatz</span><span style="color: #007700">[</span><span style="color: #DD0000">'username'</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Den&nbsp;Ergebnisspeicher&nbsp;freigeben<br /></span><span style="color: #0000BB">mssql_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$anfrage</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.mssql-result-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Wenn Sie mit einer großen Anzahl von Ergebnisdatensätzen arbeiten, sollten
+    Sie in Erwägung ziehen, eine der Funktionen zu verwenden, die komplette
+    Datensätze liefern (siehe unten). Diese Funktionen sind VIEL schneller als
+    <span class="function">mssql_result</span>, weil sie bei einem Funktionsaufruf den
+    Inhalt mehrerer Datenzellen liefern.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.mssql-result-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   Empfohlene leistungsfähige Alternativen:
+   <ul class="simplelist">
+    <li class="member"><span class="function">mssql_fetch_row</span></li>
+    <li class="member"><span class="function">mssql_fetch_array</span></li>
+    <li class="member"><span class="function">mssql_fetch_assoc</span></li>
+    <li class="member"><span class="function">mssql_fetch_object</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

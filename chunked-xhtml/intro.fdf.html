@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Einf&uuml;hrung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.utilspec.nontext.html">Non-Text MIME-Ausgaben</a></li>
+  <li class="header up"><a href="book.fdf.html">FDF</a></li>
+  <li class="active"><a href="intro.fdf.html">Einf&uuml;hrung</a></li>
+  <li><a href="fdf.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="fdf.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="fdf.examples.html">Beispiele</a></li>
+  <li><a href="ref.fdf.html">FDF</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="book.fdf.html">FDF</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="fdf.setup.html">Installation/Konfiguration</a></div>
+                <div class="up"><a href="book.fdf.html">FDF</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="intro.fdf" class="preface">
+  <h1 class="title">Einführung</h1>
+  <p class="simpara">
+   Forms Data Format (FDF) ist ein Format zur Verarbeitung von
+   Formularen innerhalb von PDF Dokumenten.  Weiterführende
+   Informationen zu FDF und dessen Verwendung sind unter <a href="http://www.adobe.com/devnet/acrobat/fdftoolkit.html" class="link external">&raquo;&nbsp;http://www.adobe.com/devnet/acrobat/fdftoolkit.html</a> zu finden.
+  </p>
+  <p class="simpara">
+   Der Ansatz den FDF verfolgt, ist vergleichbar mit dem üblicher
+   HTML Formulare.  Die wesentlichen Unterschiede liegen in der
+   Übertragung der Daten nach Absenden des Formulars (dies ist das
+   eigentliche Form Data Format), sowie in dem Format des Dokuments
+   welches das Formular enthält(PDF).  Die Verarbeitung der FDF Daten
+   ist eine der Möglichkeiten, die die FDF Funktionen bereitstellen.
+   Darüber hinaus kann man beispielsweise innerhalb eines vorhandenen
+   PDF Formulars die Input Felder dynamisch mit Daten füllen, ohne
+   das Formular selbst zu verändern.  Hierzu erzeugt man das FDF
+   Dokument (<span class="function">fdf_create</span>), setzt die Werte der
+   jeweiligen Input Felder (<span class="function">fdf_set_value</span>) und
+   verbindet es mit dem jeweiligen PDF Formular
+   (<span class="function">fdf_set_file</span>).  Nachdem man das FDF
+   Dokument, mit dem passenden MimeType
+   <em>application/vnd.fdf</em> versehen, ausgegeben hat,
+   erkennt das Acrobat Reader PlugIn des Browsers den MimeType und
+   füllt das Zielformular mit den Daten des FDF Dokuments.   
+  </p>
+
+  <p class="simpara">
+   Betrachtet man ein FDF Dokument mit einem Text Editor, findet sich
+   dort ein Katalog-Objekt <em>FDF</em>. Dieses Objekt kann
+   mehrere Einträge der Art <em>Fields</em>,
+   <em>F</em>, <em>Status</em> etc..
+   enthalten. Die gebräuchlichsten Einträge sind
+   <em>Fields</em>, welches zu einer Anzahl von Input
+   Feldern verweist, sowie <em>F</em> das den Dateinamen
+   des zugehörigen PDF Dokuments enthält. Diese Einträge finden sich
+   in der FDF Dokumentation unter /F-Key oder /Status-Key.
+   Modifikationen dieser Einträge werden mit Hilfe der Funktionen
+   <span class="function">fdf_set_file</span> und
+   <span class="function">fdf_set_status</span> vorgenommen.  Felder werden
+   u.a. mit <span class="function">fdf_set_value</span>,
+   <span class="function">fdf_set_opt</span> modifiziert.   
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

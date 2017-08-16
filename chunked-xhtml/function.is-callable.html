@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Pr&uuml;ft ob der Inhalt einer Variable als Funktion aufgerufen werden kann</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li class="header up"><a href="book.var.html">Variablenbehandlung</a></li>
+  <li class="header up"><a href="ref.var.html">Funktionen zur Behandlung von Variablen</a></li>
+  <li><a href="function.boolval.html">boolval</a></li>
+  <li><a href="function.debug-zval-dump.html">debug_zval_dump</a></li>
+  <li><a href="function.doubleval.html">doubleval</a></li>
+  <li><a href="function.empty.html">empty</a></li>
+  <li><a href="function.floatval.html">floatval</a></li>
+  <li><a href="function.get-defined-vars.html">get_defined_vars</a></li>
+  <li><a href="function.get-resource-type.html">get_resource_type</a></li>
+  <li><a href="function.gettype.html">gettype</a></li>
+  <li><a href="function.import-request-variables.html">import_request_variables</a></li>
+  <li><a href="function.intval.html">intval</a></li>
+  <li><a href="function.is-array.html">is_array</a></li>
+  <li><a href="function.is-bool.html">is_bool</a></li>
+  <li class="active"><a href="function.is-callable.html">is_callable</a></li>
+  <li><a href="function.is-double.html">is_double</a></li>
+  <li><a href="function.is-float.html">is_float</a></li>
+  <li><a href="function.is-int.html">is_int</a></li>
+  <li><a href="function.is-integer.html">is_integer</a></li>
+  <li><a href="function.is-iterable.html">is_iterable</a></li>
+  <li><a href="function.is-long.html">is_long</a></li>
+  <li><a href="function.is-null.html">is_null</a></li>
+  <li><a href="function.is-numeric.html">is_numeric</a></li>
+  <li><a href="function.is-object.html">is_object</a></li>
+  <li><a href="function.is-real.html">is_real</a></li>
+  <li><a href="function.is-resource.html">is_resource</a></li>
+  <li><a href="function.is-scalar.html">is_scalar</a></li>
+  <li><a href="function.is-string.html">is_string</a></li>
+  <li><a href="function.isset.html">isset</a></li>
+  <li><a href="function.print-r.html">print_r</a></li>
+  <li><a href="function.serialize.html">serialize</a></li>
+  <li><a href="function.settype.html">settype</a></li>
+  <li><a href="function.strval.html">strval</a></li>
+  <li><a href="function.unserialize.html">unserialize</a></li>
+  <li><a href="function.unset.html">unset</a></li>
+  <li><a href="function.var-dump.html">var_dump</a></li>
+  <li><a href="function.var-export.html">var_export</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.is-bool.html">is_bool</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.is-double.html">is_double</a></div>
+                <div class="up"><a href="ref.var.html">Funktionen zur Behandlung von Variablen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.is-callable" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">is_callable</h1>
+  <p class="refpurpose">
+   Prüft ob der Inhalt einer Variable als Funktion aufgerufen werden kann
+  </p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.is-callable-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">is_callable</span>
+    ( <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$var</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$syntax_only</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$callable_name</code></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   Prüft ob der Inhalt einer Variable als Funktion aufgerufen werden kann.
+   Es wird geprüft ob eine einfache Variable den Namen einer gültigen 
+   Funktion enthält, oder ob in einem Array ein gültig codierter
+   Objekt- und Funktionsname enthalten ist.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.is-callable-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">var</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Kann entweder der Name einer Funktion als String oder ein Objekt
+       und der Name einer seiner Methoden als Array in der Form
+       <div class="example-contents screen">array($SomeObject, &#039;MethodName&#039;)</div> sein.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">syntax_only</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Wenn dieser Parameter auf <strong><code>TRUE</code></strong> gesetzt wird, so prüft die
+       Funktion nur ob <code class="parameter">var</code> möglicherweise eine
+       Funktion oder Methode enthält. Einfache Variablen werden nur 
+       zurückgewiesen wenn sie keinen String enthalten. Arrays werden
+       auf die richtige Struktur geprüft, d.g. dass das Array zwei 
+       Elemente hat von denen der erste ein Objekt oder String und 
+       der zweite ein String ist.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">callable_name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Hier wird der &quot;aufrufbare Name&quot; abgelegt. Für das obige Beispiel
+       ist dies &quot;someClass::someMethod&quot;. Beachten Sie, dass dies keine
+       statische Methode ist, auch wenn die Syntax das nahelegt. 
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.is-callable-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Liefet <strong><code>TRUE</code></strong> wenn <code class="parameter">var</code> aufrufbar is, 
+   sonst <strong><code>FALSE</code></strong>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.is-callable-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-6012">
+    <p><strong>Beispiel #1 <span class="function">is_callable</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Wie&nbsp;man&nbsp;prüft&nbsp;ob&nbsp;eine&nbsp;Variable&nbsp;als&nbsp;Funktion&nbsp;aufgerufen&nbsp;werden&nbsp;kann<br /><br />//<br />//&nbsp;&nbsp;Einfache&nbsp;Variable&nbsp;die&nbsp;eine&nbsp;Funktion&nbsp;enthält<br />//<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">someFunction</span><span style="color: #007700">()&nbsp;<br />{<br />}<br /><br /></span><span style="color: #0000BB">$functionVariable&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'someFunction'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">is_callable</span><span style="color: #007700">(</span><span style="color: #0000BB">$functionVariable</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$callable_name</span><span style="color: #007700">));&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(true)<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$callable_name</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;someFunction<br /><br />//<br />//&nbsp;&nbsp;Array&nbsp;das&nbsp;eine&nbsp;Methode&nbsp;enthält<br />//<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">someClass&nbsp;</span><span style="color: #007700">{<br /><br />&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">someMethod</span><span style="color: #007700">()&nbsp;<br />&nbsp;&nbsp;{<br />&nbsp;&nbsp;}<br /><br />}<br /><br /></span><span style="color: #0000BB">$anObject&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">someClass</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$methodVariable&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">$anObject</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'someMethod'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">is_callable</span><span style="color: #007700">(</span><span style="color: #0000BB">$methodVariable</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$callable_name</span><span style="color: #007700">));&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;&nbsp;bool(true)<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$callable_name</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;&nbsp;someClass::someMethod<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>   
+  </p>   
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.is-callable-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">function_exists</span></li>
+    <li class="member"><span class="function">method_exists</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

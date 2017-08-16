@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Urspr&uuml;ngliche MySQL API</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="set.mysqlinfo.html">MySQL</a></li>
+  <li><a href="mysql.html">Overview of the MySQL PHP drivers</a></li>
+  <li><a href="book.mysqli.html">Mysqli</a></li>
+  <li class="active"><a href="book.mysql.html">MySQL (Original)</a></li>
+  <li><a href="book.mysqlnd.html">Mysqlnd</a></li>
+  <li><a href="book.mysqlnd-ms.html">mysqlnd_ms</a></li>
+  <li><a href="book.mysqlnd-qc.html">mysqlnd_qc</a></li>
+  <li><a href="book.mysqlnd-uh.html">mysqlnd_uh</a></li>
+  <li><a href="book.mysqlnd-mux.html">mysqlnd_mux</a></li>
+  <li><a href="book.mysqlnd-memcache.html">mysqlnd_memcache</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="changelog.mysqli.html">Changelog</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.mysql.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="set.mysqlinfo.html">MySQL</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.mysql" class="book">
+ 
+ <h1>Ursprüngliche MySQL API</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.mysql.html">Einf&uuml;hrung</a></li>
+<li><a href="mysql.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="mysql.requirements.html">Anforderungen</a></li>
+<li><a href="mysql.installation.html">Installation</a></li>
+<li><a href="mysql.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="mysql.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="changelog.mysql.html">Changelog</a></li>
+<li><a href="mysql.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="mysql.examples.html">Beispiele</a><ul class="chunklist chunklist_title">
+<li><a href="mysql.examples-basic.html">MySQL Extension &Uuml;bersichtsbeispiel</a></li>
+</ul>
+</li>
+<li><a href="ref.mysql.html">MySQL Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.mysql-affected-rows.html">mysql_affected_rows</a> — Liefert die Anzahl betroffener Datens&auml;tze einer vorhergehenden
+   MySQL Operation</li>
+<li><a href="function.mysql-client-encoding.html">mysql_client_encoding</a> — Liefert den Namen des Zeichensatzes</li>
+<li><a href="function.mysql-close.html">mysql_close</a> — Schlie&szlig;t eine Verbindung zu MySQL</li>
+<li><a href="function.mysql-connect.html">mysql_connect</a> — &Ouml;ffnet eine Verbindung zu einem MySQL-Server</li>
+<li><a href="function.mysql-create-db.html">mysql_create_db</a> — Anlegen einer MySQL-Datenbank</li>
+<li><a href="function.mysql-data-seek.html">mysql_data_seek</a> — Bewegt den internen Ergebnis-Zeiger</li>
+<li><a href="function.mysql-db-name.html">mysql_db_name</a> — Liefert Schema Namen vom Aufruf von mysql_list_dbs</li>
+<li><a href="function.mysql-db-query.html">mysql_db_query</a> — Selektiert ein Schema und f&uuml;hrt in ihm Anfrage aus</li>
+<li><a href="function.mysql-drop-db.html">mysql_drop_db</a> — L&ouml;schen eines Schemas</li>
+<li><a href="function.mysql-errno.html">mysql_errno</a> — Liefert die Nummer einer Fehlermeldung einer zuvor ausgef&uuml;hrten MySQL Operation</li>
+<li><a href="function.mysql-error.html">mysql_error</a> — Liefert den Fehlertext der zuvor ausgef&uuml;hrten MySQL Operation</li>
+<li><a href="function.mysql-escape-string.html">mysql_escape_string</a> — Maskiert einen String zur Benutzung in einer MySQL Abfrage</li>
+<li><a href="function.mysql-fetch-array.html">mysql_fetch_array</a> — Liefert einen Datensatz als assoziatives Array, als numerisches Array oder beides</li>
+<li><a href="function.mysql-fetch-assoc.html">mysql_fetch_assoc</a> — Liefert einen Datensatz als assoziatives Array</li>
+<li><a href="function.mysql-fetch-field.html">mysql_fetch_field</a> — Liefert ein Objekt mit Feldinformationen aus einem Anfrageergebnis</li>
+<li><a href="function.mysql-fetch-lengths.html">mysql_fetch_lengths</a> — Liefert die L&auml;nge eines jeden Feldes in einem Ergebnis</li>
+<li><a href="function.mysql-fetch-object.html">mysql_fetch_object</a> — Liefert eine Ergebniszeile als Objekt</li>
+<li><a href="function.mysql-fetch-row.html">mysql_fetch_row</a> — Liefert einen Datensatz als indiziertes Array</li>
+<li><a href="function.mysql-field-flags.html">mysql_field_flags</a> — Liefert die Flags des spezifizierten Feldes in einem Anfrageergebnis</li>
+<li><a href="function.mysql-field-len.html">mysql_field_len</a> — Liefert die L&auml;nge des angegebenen Feldes</li>
+<li><a href="function.mysql-field-name.html">mysql_field_name</a> — Liefert den Namen eines Feldes in einem Ergebnis</li>
+<li><a href="function.mysql-field-seek.html">mysql_field_seek</a> — Setzt den Ergebniszeiger auf ein bestimmtes Feldoffset</li>
+<li><a href="function.mysql-field-table.html">mysql_field_table</a> — Liefert den Namen der Tabelle, die das genannte Feld enth&auml;lt</li>
+<li><a href="function.mysql-field-type.html">mysql_field_type</a> — Liefert den Typ des spezifizierten Feldes in einem Ergebnis</li>
+<li><a href="function.mysql-free-result.html">mysql_free_result</a> — Gibt belegten Speicher wieder frei</li>
+<li><a href="function.mysql-get-client-info.html">mysql_get_client_info</a> — Liefert MySQL Clientinformationen</li>
+<li><a href="function.mysql-get-host-info.html">mysql_get_host_info</a> — Liefert MySQL Host Informationen</li>
+<li><a href="function.mysql-get-proto-info.html">mysql_get_proto_info</a> — Liefert MySQL Protokollinformationen</li>
+<li><a href="function.mysql-get-server-info.html">mysql_get_server_info</a> — Liefert MySQL Server Informationen</li>
+<li><a href="function.mysql-info.html">mysql_info</a> — Liefert Informationen &uuml;ber die zuletzt ausgef&uuml;hrte Anfrage zur&uuml;ck</li>
+<li><a href="function.mysql-insert-id.html">mysql_insert_id</a> — Liefert die ID, die in der vorherigen Abfrage erzeugt wurde</li>
+<li><a href="function.mysql-list-dbs.html">mysql_list_dbs</a> — Auflistung der verf&uuml;gbaren Datenbanken (Schemata) auf einem MySQL Server</li>
+<li><a href="function.mysql-list-fields.html">mysql_list_fields</a> — Listet MySQL Tabellenfelder auf</li>
+<li><a href="function.mysql-list-processes.html">mysql_list_processes</a> — Zeigt die MySQL Prozesse an</li>
+<li><a href="function.mysql-list-tables.html">mysql_list_tables</a> — Listet Tabellen in einer MySQL Datenbank auf</li>
+<li><a href="function.mysql-num-fields.html">mysql_num_fields</a> — Liefert die Anzahl der Felder in einem Ergebnis</li>
+<li><a href="function.mysql-num-rows.html">mysql_num_rows</a> — Liefert die Anzahl der Zeilen im Ergebnis</li>
+<li><a href="function.mysql-pconnect.html">mysql_pconnect</a> — &Ouml;ffnet eine persistente Verbindung zum MySQL Server</li>
+<li><a href="function.mysql-ping.html">mysql_ping</a> — Ping a server connection or reconnect if there is no connection</li>
+<li><a href="function.mysql-query.html">mysql_query</a> — Sendet eine Anfrage an MySQL</li>
+<li><a href="function.mysql-real-escape-string.html">mysql_real_escape_string</a> — Maskiert spezielle Zeichen innerhalb eines Strings f&uuml;r die
+   Verwendung in einer SQL-Anweisung</li>
+<li><a href="function.mysql-result.html">mysql_result</a> — Liefert Ergebnis</li>
+<li><a href="function.mysql-select-db.html">mysql_select_db</a> — Auswahl einer MySQL Datenbank</li>
+<li><a href="function.mysql-set-charset.html">mysql_set_charset</a> — Setzt den Verbindungszeichensatz</li>
+<li><a href="function.mysql-stat.html">mysql_stat</a> — Zeigt den momentanen Serverstatus an</li>
+<li><a href="function.mysql-tablename.html">mysql_tablename</a> — Liefert den Namen einer Tabelle</li>
+<li><a href="function.mysql-thread-id.html">mysql_thread_id</a> — Zeigt die aktuelle Thread ID an</li>
+<li><a href="function.mysql-unbuffered-query.html">mysql_unbuffered_query</a> — Sendet eine SQL Anfrage an MySQL, ohne Ergebniszeilen abzuholen und zu puffern</li>
+</ul>
+</li>
+</ul>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

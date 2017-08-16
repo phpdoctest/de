@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Ruft eine SOAP-Funktion auf</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.webservice.html">Web Services</a></li>
+  <li class="header up"><a href="book.soap.html">SOAP</a></li>
+  <li class="header up"><a href="class.soapclient.html">SoapClient</a></li>
+  <li><a href="soapclient.call.html">SoapClient::__call</a></li>
+  <li><a href="soapclient.construct.html">SoapClient::__construct</a></li>
+  <li><a href="soapclient.dorequest.html">SoapClient::__doRequest</a></li>
+  <li><a href="soapclient.getfunctions.html">SoapClient::__getFunctions</a></li>
+  <li><a href="soapclient.getlastrequest.html">SoapClient::__getLastRequest</a></li>
+  <li><a href="soapclient.getlastrequestheaders.html">SoapClient::__getLastRequestHeaders</a></li>
+  <li><a href="soapclient.getlastresponse.html">SoapClient::__getLastResponse</a></li>
+  <li><a href="soapclient.getlastresponseheaders.html">SoapClient::__getLastResponseHeaders</a></li>
+  <li><a href="soapclient.gettypes.html">SoapClient::__getTypes</a></li>
+  <li><a href="soapclient.setcookie.html">SoapClient::__setCookie</a></li>
+  <li><a href="soapclient.setlocation.html">SoapClient::__setLocation</a></li>
+  <li><a href="soapclient.setsoapheaders.html">SoapClient::__setSoapHeaders</a></li>
+  <li class="active"><a href="soapclient.soapcall.html">SoapClient::__soapCall</a></li>
+  <li><a href="soapclient.soapclient.html">SoapClient::SoapClient</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="soapclient.setsoapheaders.html">SoapClient::__setSoapHeaders</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="soapclient.soapclient.html">SoapClient::SoapClient</a></div>
+                <div class="up"><a href="class.soapclient.html">SoapClient</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="soapclient.soapcall" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">SoapClient::__soapCall</h1>
+  <p class="refpurpose">Ruft eine SOAP-Funktion auf</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-soapclient.soapcall-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname">SoapClient::__soapCall</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$function_name</code></span>
+   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$arguments</code></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code></span>
+   [, <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$input_headers</code></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$output_headers</code></span>
+  ]]] )</div>
+
+  <p class="para rdfs-comment">
+   Es handelt sich um eine low-level-API-Funktion, um einen SOAP-Aufruf
+   durchzuführen. Normalerweise können im WSDL-Modus SOAP-Funktionen als
+   Methoden des <span class="classname">SoapClient</span>-Objekts aufgerufen werden.
+   Diese Methode ist im nicht-WSDL-Modus nützlich, wenn die
+   <em>soapaction</em> unbekannt ist, die <em>uri</em>
+   vom Standard abweicht oder wenn SOAP-Header gesendet und/oder empfangen
+   werden.
+  </p>
+  <p class="para">
+   Im Fehlerfall kann der Aufruf einer SOAP-Funktion PHP veranlassen, eine
+   Exception zu werfen oder ein <span class="classname">SoapFault</span>-Objekt
+   zurückzugeben, wenn Exceptions deaktiviert wurden. Um zu prüfen, ob der
+   Funktionsaufruf eine SoapFault-Exception nicht abgefangen hat, sollte die
+   Rückgabe mit <span class="function">is_soap_fault</span> überprüft werden.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-soapclient.soapcall-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">function_name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Name der aufzurufenden SOAP-Funktion.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">arguments</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ein Array aus Argumenten, die an die Funktion übergeben werden sollen.
+       Dies kann entweder ein sortiertes oder ein assoziatives Array sein.
+       Es ist zu beachten, dass die meisten SOAP Server die Angabe von
+       Parameternamen erfordern, so dass in diesen Fällen ein assoziatives Array
+       verwendet werden muss.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">options</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ein assoziatives Array von Optionen, die an den Client übergeben werden
+       sollen.
+      </p>
+      <p class="para">
+       Die Option <em>location</em> enthält den URL des angesprochenen
+       Webservices.
+      </p>
+      <p class="para">
+       Die Option <em>uri</em> enthält den Zielnamensraum des
+       SOAP-Services.
+      </p>
+      <p class="para">
+       Die Option <em>soapaction</em> ist die aufzurufende Aktion.
+      </p>
+    </dd>
+
+    
+    
+     <dt>
+<code class="parameter">input_headers</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ein Array von mit dem SOAP-Request zu sendenden Headern.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">output_headers</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Sofern vorhanden, wird dieses Array mit den Headern des SOAP-Response
+       gefüllt.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-soapclient.soapcall-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   SOAP-Funktionen können einen oder mehrere Werte zurückgeben. Wenn nur ein
+   Wert von der SOAP-Funktion zurückgegeben wurde, entspricht der Rückgabewert
+   von <em>__soapCall</em> einem primitiven Datentyp (z.B. integer,
+   string etc). Wenn mehrere Werte zurückgegeben werden, gibt
+   <em>__soapCall</em> ein assoziatives Array mit benannten
+   Parametern zurück.
+  </p>
+  <p class="para">
+   Wenn das SoapClient-Objekt mit <em>exceptions</em>=<strong><code>FALSE</code></strong> erstellt
+   wurde, wird bei einem Fehler ein SoapFault-Objekt zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-soapclient.soapcall-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-6077">
+    <p><strong>Beispiel #1 <span class="function">SoapClient::__soapCall</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$client&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SoapClient</span><span style="color: #007700">(</span><span style="color: #DD0000">"ein.wsdl"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$client</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">EineFunktion</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$client</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">__soapCall</span><span style="color: #007700">(</span><span style="color: #DD0000">"EineFunktion"</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$client</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">__soapCall</span><span style="color: #007700">(</span><span style="color: #DD0000">"EineFunktion"</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new&nbsp;</span><span style="color: #0000BB">SoapHeader</span><span style="color: #007700">(),&nbsp;</span><span style="color: #0000BB">$output_headers</span><span style="color: #007700">);<br /><br /><br /></span><span style="color: #0000BB">$client&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SoapClient</span><span style="color: #007700">(</span><span style="color: #0000BB">null</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">'location'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"http://localhost/soap.php"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'uri'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"http://test-uri/"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$client</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">EineFunktion</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$client</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">__soapCall</span><span style="color: #007700">(</span><span style="color: #DD0000">"EineFunktion"</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$client</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">__soapCall</span><span style="color: #007700">(</span><span style="color: #DD0000">"EineFunktion"</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(</span><span style="color: #DD0000">'soapaction'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'some_action'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'uri'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'some_uri'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-soapclient.soapcall-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"> <span class="methodname">SoapClient::SoapClient</span></li>
+    <li class="member"> <span class="methodname">SoapParam::SoapParam</span></li>
+    <li class="member"> <span class="methodname">SoapVar::SoapVar</span></li>
+    <li class="member"> <span class="methodname">SoapHeader::SoapHeader</span></li>
+    <li class="member"> <span class="methodname">SoapFault::SoapFault</span></li>
+    <li class="member"><span class="function">is_soap_fault</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

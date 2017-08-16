@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Listet Dateien und Verzeichnisse innerhalb eines angegebenen
+   Pfades auf</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.file.html">Dateisystemrelevante Erweiterungen</a></li>
+  <li class="header up"><a href="book.dir.html">Verzeichnis-Funktionen</a></li>
+  <li class="header up"><a href="ref.dir.html">Verzeichnis-Funktionen</a></li>
+  <li><a href="function.chdir.html">chdir</a></li>
+  <li><a href="function.chroot.html">chroot</a></li>
+  <li><a href="function.closedir.html">closedir</a></li>
+  <li><a href="function.dir.html">dir</a></li>
+  <li><a href="function.getcwd.html">getcwd</a></li>
+  <li><a href="function.opendir.html">opendir</a></li>
+  <li><a href="function.readdir.html">readdir</a></li>
+  <li><a href="function.rewinddir.html">rewinddir</a></li>
+  <li class="active"><a href="function.scandir.html">scandir</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.rewinddir.html">rewinddir</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="book.fileinfo.html">Fileinfo</a></div>
+                <div class="up"><a href="ref.dir.html">Verzeichnis-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.scandir" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">scandir</h1>
+  <p class="refpurpose">Listet Dateien und Verzeichnisse innerhalb eines angegebenen
+   Pfades auf</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.scandir-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname">scandir</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$directory</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$sorting_order</code><span class="initializer"> = SCANDIR_SORT_ASCENDING</span></span>
+   [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$context</code></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   Gibt ein <span class="type">Array</span> aus Dateien und Verzeichnissen des aktuellen
+   <code class="parameter">directory</code> wieder.
+  </p>
+
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.scandir-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">directory</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Das zu untersuchende Verzeichnis.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">sorting_order</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Standardmäßig ist die Sortierreihenfolge alphabetisch in aufsteigender
+       Reihenfolge. Wenn der optionale Parameter <code class="parameter">sorting_order</code>
+       auf <strong><code>SCANDIR_SORT_DESCENDING</code></strong> gesetzt wird, ist die Sortierreihenfolge
+       alphabetisch absteigend. Wenn er auf <strong><code>SCANDIR_SORT_NONE</code></strong> gesetzt wird,
+       ist das Ergebnis unsortiert.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">context</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Für die Beschreibung des <code class="parameter">context</code>-Parameters
+       konsultieren Sie bitte das Kapitel <a href="ref.stream.html" class="link">Streams</a>
+       des Manuals.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.scandir-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg ein <span class="type">Array</span> von Dateinamen zurück, im Fehlerfall
+   <strong><code>FALSE</code></strong>. Wenn <code class="parameter">directory</code> kein Verzeichnis ist, wird
+   der boolsche Wert <strong><code>FALSE</code></strong> zurück gegeben und ein Fehler vom Type
+   <strong><code>E_WARNING</code></strong> erzeugt.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.scandir-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.4.0</td>
+       <td>
+        <code class="parameter">sorting_order</code>
+        <a href="dir.constants.html" class="link">Konstanten</a> wurden hinzugefügt.
+        Jeder Wert ungleich 0 bewirkte absteigende Reihenfolge in vorherigen
+        Versionen. Also verwenden Sie <em>0</em> für aufsteigende
+        und <em>1</em> für absteigende Reihenfolge für alle PHP
+        Versionen. Eine Möglichkeit für das
+        <strong><code>SCANDIR_SORT_NONE</code></strong>
+        Verhalten gab es vor PHP 5.4.0 nicht.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.scandir-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-2543">
+    <p><strong>Beispiel #1 Ein einfaches <span class="function">scandir</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$dir&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'/tmp'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$files1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">scandir</span><span style="color: #007700">(</span><span style="color: #0000BB">$dir</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$files2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">scandir</span><span style="color: #007700">(</span><span style="color: #0000BB">$dir</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$files1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$files2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [0] =&gt; .
+    [1] =&gt; ..
+    [2] =&gt; bar.php
+    [3] =&gt; foo.txt
+    [4] =&gt; somedir
+)
+Array
+(
+    [0] =&gt; somedir
+    [1] =&gt; foo.txt
+    [2] =&gt; bar.php
+    [3] =&gt; ..
+    [4] =&gt; .
+)
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-2544">
+    <p><strong>Beispiel #2 PHP 4-Alternativen zu <span class="function">scandir</span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$dir&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"/tmp"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$dh&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">opendir</span><span style="color: #007700">(</span><span style="color: #0000BB">$dir</span><span style="color: #007700">);<br />while&nbsp;(</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">!==&nbsp;(</span><span style="color: #0000BB">$filename&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">readdir</span><span style="color: #007700">(</span><span style="color: #0000BB">$dh</span><span style="color: #007700">)))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$files</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">$filename</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">sort</span><span style="color: #007700">(</span><span style="color: #0000BB">$files</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$files</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">rsort</span><span style="color: #007700">(</span><span style="color: #0000BB">$files</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$files</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [0] =&gt; .
+    [1] =&gt; ..
+    [2] =&gt; bar.php
+    [3] =&gt; foo.txt
+    [4] =&gt; somedir
+)
+Array
+(
+    [0] =&gt; somedir
+    [1] =&gt; foo.txt
+    [2] =&gt; bar.php
+    [3] =&gt; ..
+    [4] =&gt; .
+)
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.scandir-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <div class="tip"><strong class="tip">Tipp</strong><p class="simpara">Mit dieser Funktion können Sie eine
+URL als Dateinamen verwenden, falls Sie <a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">
+fopen wrappers</a> ermöglicht haben. Mehr Details dazu, wie Sie den
+Dateinamen angeben müssen finden Sie bei <span class="function">fopen</span>. Eine Liste der unterstützten URL Protokolle,
+die Fähigkeiten der verschiedenen Wrapper, Hinweise zu deren Verwendung und Informationen zu den eventuell vorhandenen
+vordefinierten Variablen finden Sie unter
+<a href="wrappers.html" class="xref">Unterst&uuml;tzte Protokolle und Wrapper</a>.</p></div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.scandir-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">opendir</span></li>
+    <li class="member"><span class="function">readdir</span></li>
+    <li class="member"><span class="function">glob</span></li>
+    <li class="member"><span class="function">is_dir</span></li>
+    <li class="member"><span class="function">sort</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

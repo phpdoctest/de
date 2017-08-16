@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Regul&auml;re Ausdr&uuml;cke (Perl-kompatibel)</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li><a href="book.bbcode.html">BBCode</a></li>
+  <li class="active"><a href="book.pcre.html">PCRE</a></li>
+  <li><a href="book.regex.html">POSIX Regex</a></li>
+  <li><a href="book.ssdeep.html">ssdeep</a></li>
+  <li><a href="book.strings.html">Zeichenketten</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.bbcode-set-flags.html">bbcode_set_flags</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.pcre.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.basic.text.html">Textverarbeitung</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.pcre" class="book">
+ 
+ <h1>Reguläre Ausdrücke (Perl-kompatibel)</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.pcre.html">Einf&uuml;hrung</a></li>
+<li><a href="pcre.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="pcre.requirements.html">Anforderungen</a></li>
+<li><a href="pcre.installation.html">Installation</a></li>
+<li><a href="pcre.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="pcre.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="pcre.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="pcre.examples.html">Beispiele</a></li>
+<li><a href="pcre.pattern.html">PCRE-Suchmuster</a><ul class="chunklist chunklist_title">
+<li><a href="reference.pcre.pattern.syntax.html">PCRE regex syntax</a> — Pattern Syntax</li>
+<li><a href="reference.pcre.pattern.modifiers.html">M&ouml;gliche Modifikatoren in RegEx-Suchmustern</a> — Suchmuster-Modifikatoren</li>
+<li><a href="reference.pcre.pattern.differences.html">Differences From Perl</a> — Perl Differences</li>
+<li><a href="reference.pcre.pattern.posix.html">Differences from POSIX regex</a></li>
+</ul>
+</li>
+<li><a href="ref.pcre.html">PCRE-Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.preg-filter.html">preg_filter</a> — Sucht und ersetzt mit regul&auml;ren Ausdr&uuml;cken</li>
+<li><a href="function.preg-grep.html">preg_grep</a> — Liefert Array-Elemente, die auf ein Suchmuster passen</li>
+<li><a href="function.preg-last-error.html">preg_last_error</a> — Liefert den Fehlercode der letzten PCRE RegEx-Auswertung</li>
+<li><a href="function.preg-match-all.html">preg_match_all</a> — F&uuml;hrt eine umfassende Suche nach &Uuml;bereinstimmungen mit regul&auml;rem Ausdruck durch</li>
+<li><a href="function.preg-match.html">preg_match</a> — F&uuml;hrt eine Suche mit einem regul&auml;ren Ausdruck durch</li>
+<li><a href="function.preg-quote.html">preg_quote</a> — Maskiert Zeichen regul&auml;rer Ausdr&uuml;cke</li>
+<li><a href="function.preg-replace-callback-array.html">preg_replace_callback_array</a> — Perform a regular expression search and replace using callbacks</li>
+<li><a href="function.preg-replace-callback.html">preg_replace_callback</a> — Sucht und ersetzt mit regul&auml;ren Ausdr&uuml;cken unter Verwendung eines Callbacks</li>
+<li><a href="function.preg-replace.html">preg_replace</a> — Sucht und ersetzt mit regul&auml;ren Ausdr&uuml;cken</li>
+<li><a href="function.preg-split.html">preg_split</a> — Zerlegt eine Zeichenkette anhand eines regul&auml;ren Ausdrucks</li>
+</ul>
+</li>
+</ul>
+
+ 
+
+ 
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

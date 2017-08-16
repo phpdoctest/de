@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Ausf&uuml;hren von PHP-Dateien</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="features.html">Features</a></li>
+  <li class="header up"><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></li>
+  <li><a href="features.commandline.introduction.html">Introduction</a></li>
+  <li><a href="features.commandline.differences.html">Unterschiede zu anderen SAPIs</a></li>
+  <li><a href="features.commandline.options.html">Optionen</a></li>
+  <li class="active"><a href="features.commandline.usage.html">Nutzung</a></li>
+  <li><a href="features.commandline.io-streams.html">I/O Streams</a></li>
+  <li><a href="features.commandline.interactive.html">Interaktiver Modus</a></li>
+  <li><a href="features.commandline.webserver.html">Eingebauter Webserver</a></li>
+  <li><a href="features.commandline.ini.html">INI Einstellungen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="features.commandline.options.html">Optionen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="features.commandline.io-streams.html">I/O Streams</a></div>
+                <div class="up"><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="features.commandline.usage" class="section">
+  <h2 class="title">Ausführen von PHP-Dateien</h2>
+  
+  
+  <p class="para">
+   Es gibt drei verschiedene Wege PHP Code in der <acronym class="acronym">CLI</acronym> <acronym class="acronym">SAPI</acronym> auszuführen:
+   <ol type="1">
+    <li class="listitem">
+     <p class="para">
+      PHP mitteilen, eine bestimmte Datei auszuführen.
+     </p>
+     <div class="informalexample">
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+php my_script.php
+
+php -f my_script.php
+</pre></div>
+      </div>
+     </div>
+     <p class="para">
+      Beide Wege (ob sie die Option <strong class="option unknown">-f</strong>
+ benutzen oder nicht)
+      führen die Datei <var class="filename">my_script.php</var> aus. Es gibt keine
+      Einschränkungen darauf welche Dateien ausgeführt werden können; beispielsweise
+      muss ihr PHP-Skript nicht auf <em>.php</em> enden.
+     </p>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <p class="para">
+       Wenn Sie Argumente an das Skript übergeben wollen, müssen Sie als erstes
+       Argument <em>--</em> übergeben, wenn Sie die <strong class="option unknown">-f</strong>
+ Option benutzen.
+      </p>
+     </p></blockquote>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      Den auszuführenden PHP-Code direkt auf der Kommandozeile angeben.
+     </p>
+     <div class="informalexample">
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+$ php -r &#039;print_r(get_defined_constants());&#039;
+</pre></div>
+      </div>
+     </div>
+     <p class="para">
+      Es muss besonders Acht auf die Ersetzung von Kommandozeilenvariablen und
+      Benutzung von Anführungszeichen gegeben werden.
+     </p>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <p class="para">
+       Achten Sie darauf, dass sie keine PHP tags übergeben. Die Option <strong class="option unknown">-r</strong>
+
+       benötigt diese nicht und wirft einen Parser-Fehler falls sie dennoch benutzt werden.
+      </p>
+     </p></blockquote>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      Eingabe des PHP-Codes über die Standardeingabe
+      (<em>stdin</em>).
+     </p>
+     <p class="para">
+      Dies eröffnet die Möglichkeit PHP dynamisch zu generieren und anschließend
+      an die Binary zu übergeben, wie in diesem (ausgedachten) Beispiel dargestellt:
+     </p>
+     <div class="informalexample">
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+$ some_application | some_filter | php | sort -u &gt; final_output.txt
+</pre></div>
+      </div>
+     </div>
+    </li>
+   </ol>
+   Die drei Möglichkeiten zur Codeausführung können nicht kombiniert werden.
+  </p>
+  
+  <p class="para">
+   Wie jede Kommandozeilenanwendung nimmt das PHP-Binary etliche Argumente entgegen,
+   aber auch das PHP-Skript kann Argumente entgegennehmen. Die Anzahl der Argumente,
+   die an ein Skript übergeben werden können, ist nicht von PHP beschränkt
+   (aber die Kommandozeilenumgebung hat ein bestimmtes Größenlimit für die Anzahl
+   der Argumente, die übergeben werden können; normalerweise werden Sie dieses Limit
+   nicht erreichen). Die Argumente, die dem Skript übergeben werden, sind in dem
+   globalen Array <var class="varname">$argv</var> gespeichert. Der erste Index (Null)
+   enthält immer den Skriptnamen. Wenn der Code mittels der <strong class="option unknown">-r</strong>
+
+   Option ausgeführt wurde, ist der Wert von <var class="varname">$argv[0]</var> ein
+   Bindestrich (<em>-</em>). Selbiges gilt für Code, welcher über
+   <em>STDIN</em> ausgeführt wird.
+  </p>
+  
+  <p class="para">
+   Die zweite registrierte globale Variable ist <var class="varname">$argc</var>,
+   welche die Anzahl der Elemente im <var class="varname">$argv</var> Array enthält
+   (<em class="emphasis">nicht</em> die Anzahl Argumente, die dem
+   Skript übergeben wurden).
+  </p>
+  
+  <p class="para">
+   Solange die Argumente, welche dem Skript übergeben werden, nicht mit dem
+   Zeichen <em>-</em> beginnen, gibt es nichts besonderes zu beachten.
+   Ein Argument, welches mit <em>-</em> beginnt zu übergeben, wird
+   jedoch Probleme bereiten, da PHP denkt, dass es das Argument selbst verarbeiten
+   muss. Nutzen Sie das Argument-Trennzeichen <em>--</em>, um dies zu
+   vermeiden. Nachdem dieses Trennzeichen von PHP geparst wurde, wird jedes folgende
+   Argument unangetastet an das Skript weitergereicht.
+  </p>
+  
+  <div class="informalexample">
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+# Dies führt nicht den angegebenen Code aus, sondern zeigt die Optionen von PHP an
+$ php -r &#039;var_dump($argv);&#039; -h
+Usage: php [options] [-f] &lt;file&gt; [args...]
+[...]
+
+# Dies übergibt das Argument &#039;-h&#039; an Ihr Skript und zeigt die Optionen von PHP nicht an
+$ php -r &#039;var_dump($argv);&#039; -- -h
+array(2) {
+  [0]=&gt;
+  string(1) &quot;-&quot;
+  [1]=&gt;
+  string(2) &quot;-h&quot;
+}
+</pre></div>
+   </div>
+  </div>
+  
+  <p class="para">
+   Es gibt auf Unix-Systemen jedoch einen weiteren Weg, um PHP für
+   Kommandozeilenskripte zu benutzen. Sie können ein Skript erstellen,
+   in dem die erste Zeile mit <em>#!/usr/bin/php</em> beginnt.
+   Nachfolgend können Sie normalen PHP-Code innerhalb der PHP-Start- und
+   -End-Tags benutzen. Sobald Sie die Datei ausführbar gemacht haben
+   (beispielsweise mittels <strong class="command">chmod +x test</strong>), kann Ihr Skript
+   wie ein normales Kommandozeilen- oder Perl-Skript gestartet werden.
+  </p>
+  
+  <div class="example" id="example-394">
+   <p><strong>Beispiel #1 PHP als Shellskript ausführen</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+#!/usr/bin/php<br /><span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$argv</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>
+    Angenommen, die Datei heißt <var class="filename">test</var> und befindet
+    sich im aktuellen Verzeichnis, dann können wir nun folgendes tun:
+   </p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+$ chmod +x test
+$ ./test -h -- foo
+array(4) {
+  [0]=&gt;
+  string(6) &quot;./test&quot;
+  [1]=&gt;
+  string(2) &quot;-h&quot;
+  [2]=&gt;
+  string(2) &quot;--&quot;
+  [3]=&gt;
+  string(3) &quot;foo&quot;
+}
+</pre></div>
+   </div>
+  </div>
+  
+  <p class="para">
+   Wie Sie sehen können, müssen Sie sich in diesem Fall um nichts weiter
+   kümmern, wenn Sie Ihrem Skript Paramater, die mit <em>-</em>
+   beginnen, übergeben.
+  </p>
+  
+  <p class="para">
+   Die ausführbare PHP-Datei kann benutzt werden, um PHP-Skripte vollkommen
+   unabhängig von einem Webserver auszuführen. Auf Unix-Systemen, sollte die
+   spezielle <em>#!</em> (&quot;shebang&quot;) erste Zeile zu PHP-Skripten
+   hinzugefügt werden, damit das System automatisch herausfinden kann, welches
+   Programm zur Ausführung der Datei genutzt werden soll. Auf einem Windows-System
+   können Sie <var class="filename">php.exe</var> mit der Doppelklick-Option von
+   <em>.php</em>-Dateien verknüpfen. Sie können auch eine Batchdatei
+   erstellen, um das Skript von PHP ausführen zu lassen. Die erste Zeile, die dem
+   Skript hinzugefügt wird, damit es unter UNIX läuft, stört unter Windows nicht,
+   so dass Sie auf diese Weise problemlos plattformübergreifende Programme schreiben
+   können. Sie finden anschließend ein einfaches Beispiel, wie man ein Kommandozeilenprogramm
+   in PHP schreibt.
+  </p>
+  
+  <p class="para">
+   <div class="example" id="example-395">
+    <p><strong>Beispiel #2 Ein Skript, das von der Kommandozeile aus ausgeführt werden soll (script.php)</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+#!/usr/bin/php<br /><span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$argc&nbsp;</span><span style="color: #007700">!=&nbsp;</span><span style="color: #0000BB">2&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">in_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$argv</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">],&nbsp;array(</span><span style="color: #DD0000">'--help'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'-help'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'-h'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'-?'</span><span style="color: #007700">)))&nbsp;{<br /></span><span style="color: #0000BB">?&gt;<br /></span><br />Das&nbsp;ist&nbsp;ein&nbsp;Kommandozeilenprogramm&nbsp;in&nbsp;PHP&nbsp;mit&nbsp;einer&nbsp;Option.<br /><br />&nbsp;&nbsp;Benutzung:<br />&nbsp;&nbsp;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$argv</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">];&nbsp;</span><span style="color: #0000BB">?&gt;</span>&nbsp;&lt;option&gt;<br /><br />&nbsp;&nbsp;&lt;option&gt;&nbsp;kann&nbsp;ein&nbsp;Wort&nbsp;sein,&nbsp;das&nbsp;Sie&nbsp;gerne<br />&nbsp;&nbsp;ausgeben&nbsp;möchten.&nbsp;Mit&nbsp;den&nbsp;Optionen&nbsp;--help,<br />&nbsp;&nbsp;-help,&nbsp;-h&nbsp;oder&nbsp;-?&nbsp;bekommen&nbsp;Sie&nbsp;diese&nbsp;Hilfe.<br /><br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$argv</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  
+  <p class="para">
+   In dem oben beschriebenen Skript haben wir die erste Zeile dazu benutzt
+   anzugeben, dass die Datei von PHP ausgeführt werden soll. Wir arbeiten hier
+   mit einer <acronym class="acronym">CLI</acronym>-Version, deswegen werden keine <acronym class="acronym">HTTP</acronym>-Header ausgegeben.
+  </p>
+  
+  <p class="para">
+   In dem obigen Programm wird zuerst überprüft, dass das notwendige Argument
+   angeben ist (zuzugülich dem Skriptnamen, welcher auch gezählt wird). Wenn nicht,
+   oder wenn das Argument <strong class="option unknown">--help</strong>
+, <strong class="option unknown">-help</strong>
+,
+   <strong class="option unknown">-h</strong>
+ oder <strong class="option unknown">-?</strong>
+ was, wird eine Hilfe-Nachricht
+   ausgegeben, welche <var class="varname">$argv[0]</var> nutzt, um den genutzten Skript-Namen
+   auszugeben. Andernfalls wird das Argument ausgegeben, genauso wie es übergeben wurde.
+  </p>
+  
+  <p class="para">
+   Wenn Sie das obige Skript unter UNIX laufen lassen wollen, müssen Sie
+   es zuerst ausführbar machen, und es danach einfach als <strong class="command">script.php
+   GebeDasHierAus</strong> oder <strong class="command">script.php -h</strong> aufrufen.
+   Unter Windows können Sie zu diesem Zweck eine Batchdatei erstellen:
+  </p>
+  
+  <p class="para">
+   <div class="example" id="example-396">
+    <p><strong>Beispiel #3 Batchdatei zur Ausführung eines Kommandozeilen-Skripts in PHP (script.bat)</strong></p>
+    <div class="example-contents">
+<div class="shellcode"><pre class="shellcode">@echo OFF
+&quot;C:\php\php.exe&quot; script.php %*</pre>
+</div>
+    </div>
+
+   </div>
+  </p>
+  
+  <p class="para">
+   Angenommen, Sie haben das Programm <var class="filename">script.php</var> genannt
+   und die <acronym class="acronym">CLI</acronym> <var class="filename">php.exe</var> hat den Pfad <var class="filename">C:\php\php.exe</var>
+   so wird diese Batchdatei es mit allen übergebenen Argumenten aufrufen:
+   <strong class="command">script.bat GebeDasHierAus</strong> oder <strong class="command">script.bat -h</strong>.
+  </p>
+  
+  <p class="para">
+   Siehe auch die <a href="ref.readline.html" class="link">Readline</a>-Erweiterung für
+   weitere Funktionen, um Kommandozeilenanwendungen zu verbessern.
+  </p>
+  
+  <p class="para">
+   Auf Windows kann PHP so konfiguiert werden, dass auch ausgeführt wird, wenn
+   weder <var class="filename">C:\php\php.exe</var> angegeben wird, noch die
+   <em>.php</em> Dateierweiterung genutzt wird. Siehe dazu die
+   Dokumentation zur <a href="install.windows.legacy.index.html#install.windows.legacy.commandline" class="link">PHP Kommandozeile
+   auf Microsoft Windows</a>.
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

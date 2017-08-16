@@ -1,0 +1,506 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Importiert Variablen eines Arrays in die aktuelle Symboltabelle</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li class="header up"><a href="book.array.html">Arrays</a></li>
+  <li class="header up"><a href="ref.array.html">Array Funktionen</a></li>
+  <li><a href="function.array-change-key-case.html">array_change_key_case</a></li>
+  <li><a href="function.array-chunk.html">array_chunk</a></li>
+  <li><a href="function.array-column.html">array_column</a></li>
+  <li><a href="function.array-combine.html">array_combine</a></li>
+  <li><a href="function.array-count-values.html">array_count_values</a></li>
+  <li><a href="function.array-diff-assoc.html">array_diff_assoc</a></li>
+  <li><a href="function.array-diff-key.html">array_diff_key</a></li>
+  <li><a href="function.array-diff-uassoc.html">array_diff_uassoc</a></li>
+  <li><a href="function.array-diff-ukey.html">array_diff_ukey</a></li>
+  <li><a href="function.array-diff.html">array_diff</a></li>
+  <li><a href="function.array-fill-keys.html">array_fill_keys</a></li>
+  <li><a href="function.array-fill.html">array_fill</a></li>
+  <li><a href="function.array-filter.html">array_filter</a></li>
+  <li><a href="function.array-flip.html">array_flip</a></li>
+  <li><a href="function.array-intersect-assoc.html">array_intersect_assoc</a></li>
+  <li><a href="function.array-intersect-key.html">array_intersect_key</a></li>
+  <li><a href="function.array-intersect-uassoc.html">array_intersect_uassoc</a></li>
+  <li><a href="function.array-intersect-ukey.html">array_intersect_ukey</a></li>
+  <li><a href="function.array-intersect.html">array_intersect</a></li>
+  <li><a href="function.array-key-exists.html">array_key_exists</a></li>
+  <li><a href="function.array-keys.html">array_keys</a></li>
+  <li><a href="function.array-map.html">array_map</a></li>
+  <li><a href="function.array-merge-recursive.html">array_merge_recursive</a></li>
+  <li><a href="function.array-merge.html">array_merge</a></li>
+  <li><a href="function.array-multisort.html">array_multisort</a></li>
+  <li><a href="function.array-pad.html">array_pad</a></li>
+  <li><a href="function.array-pop.html">array_pop</a></li>
+  <li><a href="function.array-product.html">array_product</a></li>
+  <li><a href="function.array-push.html">array_push</a></li>
+  <li><a href="function.array-rand.html">array_rand</a></li>
+  <li><a href="function.array-reduce.html">array_reduce</a></li>
+  <li><a href="function.array-replace-recursive.html">array_replace_recursive</a></li>
+  <li><a href="function.array-replace.html">array_replace</a></li>
+  <li><a href="function.array-reverse.html">array_reverse</a></li>
+  <li><a href="function.array-search.html">array_search</a></li>
+  <li><a href="function.array-shift.html">array_shift</a></li>
+  <li><a href="function.array-slice.html">array_slice</a></li>
+  <li><a href="function.array-splice.html">array_splice</a></li>
+  <li><a href="function.array-sum.html">array_sum</a></li>
+  <li><a href="function.array-udiff-assoc.html">array_udiff_assoc</a></li>
+  <li><a href="function.array-udiff-uassoc.html">array_udiff_uassoc</a></li>
+  <li><a href="function.array-udiff.html">array_udiff</a></li>
+  <li><a href="function.array-uintersect-assoc.html">array_uintersect_assoc</a></li>
+  <li><a href="function.array-uintersect-uassoc.html">array_uintersect_uassoc</a></li>
+  <li><a href="function.array-uintersect.html">array_uintersect</a></li>
+  <li><a href="function.array-unique.html">array_unique</a></li>
+  <li><a href="function.array-unshift.html">array_unshift</a></li>
+  <li><a href="function.array-values.html">array_values</a></li>
+  <li><a href="function.array-walk-recursive.html">array_walk_recursive</a></li>
+  <li><a href="function.array-walk.html">array_walk</a></li>
+  <li><a href="function.array.html">array</a></li>
+  <li><a href="function.arsort.html">arsort</a></li>
+  <li><a href="function.asort.html">asort</a></li>
+  <li><a href="function.compact.html">compact</a></li>
+  <li><a href="function.count.html">count</a></li>
+  <li><a href="function.current.html">current</a></li>
+  <li><a href="function.each.html">each</a></li>
+  <li><a href="function.end.html">end</a></li>
+  <li class="active"><a href="function.extract.html">extract</a></li>
+  <li><a href="function.in-array.html">in_array</a></li>
+  <li><a href="function.key-exists.html">key_exists</a></li>
+  <li><a href="function.key.html">key</a></li>
+  <li><a href="function.krsort.html">krsort</a></li>
+  <li><a href="function.ksort.html">ksort</a></li>
+  <li><a href="function.list.html">list</a></li>
+  <li><a href="function.natcasesort.html">natcasesort</a></li>
+  <li><a href="function.natsort.html">natsort</a></li>
+  <li><a href="function.next.html">next</a></li>
+  <li><a href="function.pos.html">pos</a></li>
+  <li><a href="function.prev.html">prev</a></li>
+  <li><a href="function.range.html">range</a></li>
+  <li><a href="function.reset.html">reset</a></li>
+  <li><a href="function.rsort.html">rsort</a></li>
+  <li><a href="function.shuffle.html">shuffle</a></li>
+  <li><a href="function.sizeof.html">sizeof</a></li>
+  <li><a href="function.sort.html">sort</a></li>
+  <li><a href="function.uasort.html">uasort</a></li>
+  <li><a href="function.uksort.html">uksort</a></li>
+  <li><a href="function.usort.html">usort</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.end.html">end</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.in-array.html">in_array</a></div>
+                <div class="up"><a href="ref.array.html">Array Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.extract" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">extract</h1>
+  <p class="refpurpose">Importiert Variablen eines Arrays in die aktuelle Symboltabelle</p>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.extract-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname">extract</span>
+    ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$array</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code><span class="initializer"> = EXTR_OVERWRITE</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$prefix</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   Diese Funktion wird verwendet, um Variablen eines Arrays in die
+   aktuelle Symboltabelle zu importieren.
+  </p>
+  <p class="para">
+   Prüft jeden Schlüssel, ob dieser einen gültigen Variablennamen
+   ergibt, und auch auf eventuelle Kollisionen mit existierenden
+   Variablen in der Symboltabelle.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.extract-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">array</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ein assoziatives Array. Die Funktion behandelt Schlüssel als
+       Variablennamen und Werte als Variablenwerte. Für jedes Paar
+       Schlüssel/Wert wird - abhängig von den Parametern
+       <code class="parameter">flags</code> und
+       <code class="parameter">prefix</code> - eine Variable in der aktuellen
+       Symboltabelle eingetragen.
+      </p>
+      <p class="para">
+       Sie müssen ein assoziatives Array verwenden, da ein numerisch
+       indiziertes Array zu keinem Ergebnis führen wird, außer Sie
+       benutzen <strong><code>EXTR_PREFIX_ALL</code></strong> oder
+       <strong><code>EXTR_PREFIX_INVALID</code></strong>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">flags</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Art, wie ungültige/numerische Schlüssel und Kollisionen behandelt
+       werden, wird durch <code class="parameter">flags</code> bestimmt. Die
+       folgenden Werte sind erlaubt:
+       <dl>
+
+        
+         <dt>
+<strong><code>EXTR_OVERWRITE</code></strong></dt>
+
+         <dd>
+
+          <span class="simpara">
+           Im Falle einer Kollision wird die existierende Variable
+           überschrieben.
+          </span>
+         </dd>
+
+        
+        
+         <dt>
+<strong><code>EXTR_SKIP</code></strong></dt>
+
+         <dd>
+
+          <span class="simpara">
+           Im Falle einer Kollision wird die existierende Variable
+           nicht überschrieben.
+          </span>
+         </dd>
+
+        
+        
+         <dt>
+<strong><code>EXTR_PREFIX_SAME</code></strong></dt>
+
+         <dd>
+
+          <span class="simpara">Im Falle einer Kollision wird dem Variablennamen
+          <code class="parameter">prefix</code> vorangestellt.
+          </span>
+         </dd>
+
+        
+        
+         <dt>
+<strong><code>EXTR_PREFIX_ALL</code></strong></dt>
+
+         <dd>
+
+          <span class="simpara">
+           Allen Variablennamen wird <code class="parameter">prefix</code>
+           vorangestellt.
+          </span>
+         </dd>
+
+        
+        
+         <dt>
+<strong><code>EXTR_PREFIX_INVALID</code></strong></dt>
+
+         <dd>
+
+          <span class="simpara">
+           Nur ungültigen/numerischen Variablennamen wird
+           <code class="parameter">prefix</code> vorangestellt.
+          </span>
+         </dd>
+
+        
+        
+         <dt>
+<strong><code>EXTR_IF_EXISTS</code></strong></dt>
+
+         <dd>
+
+          <span class="simpara">
+           Überschreibt die Variable nur, wenn sie bereits in der aktuellen
+           Symboltabelle existiert, sonst geschieht nichts. Dies ist dann
+           hilfreich, wenn Sie eine Liste mit gültigen Variablen definieren,
+           und dann z.B. nur jene Variablen extrahieren, welche Sie aus
+           <var class="varname">$_REQUEST</var> definiert haben.
+          </span>
+         </dd>
+
+        
+        
+         <dt>
+<strong><code>EXTR_PREFIX_IF_EXISTS</code></strong></dt>
+
+         <dd>
+
+          <span class="simpara">
+           Erstellt nur Variablennamen mit Präfix, wenn die Version ohne
+           Präfix der selben Variable in der aktuellen Symboltabelle
+           existiert.
+          </span>
+         </dd>
+
+        
+        
+         <dt>
+<strong><code>EXTR_REFS</code></strong></dt>
+
+         <dd>
+
+          <span class="simpara">
+           Extrahiert Variablen als Referenzen. Das heißt, dass die Werte der
+           importierten Variablen noch immer auf die Werte des Parameters
+           <code class="parameter">array</code> referenzieren. Sie können diesen
+           Flag alleine oder auch in Kombination mit einem anderen Flag verwenden,
+           indem Sie Oder-Verknüpfungen im <code class="parameter">flags</code>
+           erstellen.
+          </span>
+         </dd>
+
+        
+       </dl>
+
+      </p>
+      <p class="para">
+       Ist <code class="parameter">flags</code> nicht spezifiziert, so wird
+       <strong><code>EXTR_OVERWRITE</code></strong> angenommen.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">prefix</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Beachten Sie, dass <code class="parameter">prefix</code> nur dann nötig ist,
+       wenn <code class="parameter">flags</code> <strong><code>EXTR_PREFIX_SAME</code></strong>,
+       <strong><code>EXTR_PREFIX_ALL</code></strong>, <strong><code>EXTR_PREFIX_INVALID</code></strong>
+       or <strong><code>EXTR_PREFIX_IF_EXISTS</code></strong> ist. Ist das Resultat trotz
+       Präfix kein gültiger Variablenname, wird es nicht in die Symboltabelle
+       importiert. Präfixe werden automatisch mit einem Unterstrich vom Schlüssel
+       des Arrays getrennt.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.extract-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   <span class="function">extract</span> gibt die Anzahl erfolgreich in die
+   Symboltabelle importierter Variablen zurück.
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.extract-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-5516">
+    <p><strong>Beispiel #1 <span class="function">extract</span>-Beispiel</strong></p>
+    <div class="example-contents"><p>
+     Eine mögliche Verwendung für <span class="function">extract</span> ist der Import
+     der Variablen in einem von <span class="function">wddx_deserialize</span> gelieferten
+     assoziativen Array in die Symboltabelle.
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;Annahme:&nbsp;$var_array&nbsp;ist&nbsp;ein&nbsp;von&nbsp;wddx_deserialize<br />&nbsp;&nbsp;&nbsp;zurückgegebenes&nbsp;Array&nbsp;*/<br /><br /></span><span style="color: #0000BB">$groesse&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"groß"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$var_array&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"farbe"&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"blau"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"groesse"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"mittel"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"form"&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"Kugel"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">extract</span><span style="color: #007700">(</span><span style="color: #0000BB">$var_array</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">EXTR_PREFIX_SAME</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"wddx"</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$farbe</span><span style="color: #DD0000">,&nbsp;</span><span style="color: #0000BB">$groesse</span><span style="color: #DD0000">,&nbsp;</span><span style="color: #0000BB">$form</span><span style="color: #DD0000">,&nbsp;</span><span style="color: #0000BB">$wddx_groesse</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+blau, groß, Kugel, mittel
+</pre></div>
+    </div>
+    <div class="example-contents"><p>
+     <var class="varname">$groesse</var> wurde nicht überschrieben, da wir
+     <strong><code>EXTR_PREFIX_SAME</code></strong> spezifiziert haben, was im Anlegen
+     von <var class="varname">$wddx_groesse</var> endete. Wäre <strong><code>EXTR_SKIP</code></strong>
+     spezifiziert worden, dann wäre <var class="varname">$wddx_groesse</var> nicht angelegt worden.
+     <strong><code>EXTR_OVERWRITE</code></strong> hätte <var class="varname">$groesse</var> mit dem
+     Wert &quot;mittel&quot; überschrieben, und <strong><code>EXTR_PREFIX_ALL</code></strong> hätte
+     die neuen Variablen <var class="varname">$wddx_farbe</var>,
+     <var class="varname">$wddx_groesse</var>, und <var class="varname">$wddx_form</var> angelegt.
+    </p></div>
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 notes" id="refsect1-function.extract-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="para">
+    Verwenden Sie <span class="function">extract</span> nicht für nicht
+    vertrauenswürdige Daten wie Benutzereingaben (d.h.
+    <var class="varname">$_GET</var>, <var class="varname">$_FILES</var>, ...). Wenn
+    Sie dies tun, z.B. weil Sie vorübergehend alten Code, der sich auf
+    <a href="security.globals.html" class="link">register_globals</a> verließ,
+    ausführen wollen, so stellen Sie sicher, dass Sie
+    einen nicht-überschreibenden <code class="parameter">flags</code>-Wert
+    wie <strong><code>EXTR_SKIP</code></strong> verwenden und seien Sie sich
+    bewusst, dass Sie die Daten in der selben Reihenfolge importieren
+    sollen, die in <a href="ini.core.html#ini.variables-order" class="link">variables_order</a>
+    in der <a href="ini.html" class="link"><var class="filename">php.ini</var></a> angegeben wurde.
+   </p>
+  </div>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Wenn Sie immer noch <a href="security.globals.html" class="link">register_globals</a>
+    aktiviert haben, und Sie <span class="function">extract</span> auf
+    <var class="varname">$_FILES</var> anwenden und Sie 
+    <strong><code>EXTR_SKIP</code></strong> angeben, könnten Sie über das
+    Ergebnis überrascht sein.
+   </p>
+   <div class="warning"><strong class="warning">Warnung</strong>
+    <p class="para">
+     Dies ist keine empfohlene Vorgehensweise; es ist nur der Vollständigkeit
+     halber hier dokumentiert. Die Nutzung von
+     <a href="security.globals.html" class="link">register_globals</a> wird nicht
+     mehr empfohlen und das Aufrufen von <span class="function">extract</span>
+     auf nicht vertrauenswürdigen Daten wie <var class="varname">$_FILES</var> ist,
+     wie oben beschrieben, ein potenzielles Sicherheitsrisiko. Wenn Sie
+     auf dieses Ergebnis stoßen, bedeutet das, dass Sie mindestens zwei
+     schlechte Codierungs-Praktiken benutzen.
+    </p>
+   </div>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;Annahmen:&nbsp;$testfile&nbsp;ist&nbsp;der&nbsp;Name&nbsp;einer&nbsp;hochgeladenen&nbsp;Datei,<br />&nbsp;&nbsp;&nbsp;register_globals&nbsp;ist&nbsp;aktiviert&nbsp;*/<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$testfile</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">extract</span><span style="color: #007700">(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">EXTR_SKIP</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$testfile</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$testfile</span><span style="color: #007700">[</span><span style="color: #DD0000">'tmp_name'</span><span style="color: #007700">]);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <span class="simpara">
+    Sie werden wahrscheinlich folgende Ausgabe erwarten:
+   </span>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+string(14) &quot;/tmp/phpgCCPX8&quot;
+array(5) {
+  [&quot;name&quot;]=&gt;
+  string(10) &quot;somefile.txt&quot;
+  [&quot;type&quot;]=&gt;
+  string(24) &quot;application/octet-stream&quot;
+  [&quot;tmp_name&quot;]=&gt;
+  string(14) &quot;/tmp/phpgCCPX8&quot;
+  [&quot;error&quot;]=&gt;
+  int(0)
+  [&quot;size&quot;]=&gt;
+  int(4208)
+}
+string(14) &quot;/tmp/phpgCCPX8&quot;
+</pre></div>
+   </div>
+   <span class="simpara">
+    Stattdessen erhalten Sie aber eine Ausgabe wie diese:
+   </span>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+string(14) &quot;/tmp/phpgCCPX8&quot;
+string(14) &quot;/tmp/phpgCCPX8&quot;
+string(1) &quot;/&quot;
+</pre></div>
+   </div>
+   <p class="para">
+    Dies liegt daran, dass aufgrund der Aktivierung von
+    <a href="security.globals.html" class="link">register_globals</a>
+    <var class="varname">$testfile</var> bereits im globalen Scope existiert,
+    wenn <span class="function">extract</span> aufgerufen wird. Da
+    <strong><code>EXTR_SKIP</code></strong> angegeben wurde, wird
+    <var class="varname">$testfile</var> nicht mit den Inhalten des
+    <strong><code>$_FILES</code></strong>-Arrays überschrieben und somit bleibt
+    <var class="varname">$testfile</var> ein String.
+    Da auf <a href="language.types.string.html#language.types.string.substr" class="link">Strings über die
+    Array-Syntax zugegriffen werden kann</a> und der nicht-numerische
+    String <em>tmp_name</em> als <em>0</em> interpretiert
+    wird, versteht PHP <var class="varname">$testfile[&#039;tmp_name&#039;]</var>
+    als <var class="varname">$testfile[0]</var>.
+   </p>
+  </p></blockquote>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.extract-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">compact</span></li>
+    <li class="member"><span class="function">list</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

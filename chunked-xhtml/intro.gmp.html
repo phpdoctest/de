@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Einf&uuml;hrung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.math.html">Mathematische Erweiterungen</a></li>
+  <li class="header up"><a href="book.gmp.html">GMP</a></li>
+  <li class="active"><a href="intro.gmp.html">Einf&uuml;hrung</a></li>
+  <li><a href="gmp.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="gmp.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="gmp.examples.html">Beispiele</a></li>
+  <li><a href="ref.gmp.html">GMP Funktionen</a></li>
+  <li><a href="class.gmp.html">GMP</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="book.gmp.html">GMP</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="gmp.setup.html">Installation/Konfiguration</a></div>
+                <div class="up"><a href="book.gmp.html">GMP</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="intro.gmp" class="preface">
+  <h1 class="title">Einführung</h1>
+  <p class="simpara">
+   Die Funktionen erlauben das Arbeiten mit beliebig großen Integern unter Verwendung der GNU
+   <acronym class="acronym">MP</acronym>-Bibliothek.
+  </p>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Die meisten GMP-Funktionen akzeptieren GMP-Zahlen als Argumente. Diese
+    werden in dieser Dokumentation als <span class="classname">GMP</span> Objekte
+    dargestellt; allerdings ist zu beachten, dass vor PHP 5.6 GMP Zahlen als
+    <span class="type">resource</span> repräsentiert wurden. Die meisten der Funktionen
+    akzeptieren außerdem numerische Angaben und Strings als Argumente, sofern
+    es möglich ist, diese in in Zahlen umzuwandeln. Weiterhin wird geprüft,
+    ob es eine performantere Funktion gibt, die mit den Argumenten (nur Integerwerte) arbeiten
+    kann, und sofern vorhanden diese auch verwendet.
+    Lesen Sie dazu auch die Dokumentation zu
+    <span class="function">gmp_init</span>.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Von PHP 5.6 an können
+    <a href="language.operators.arithmetic.html" class="link">arithmetische</a>,
+    <a href="language.operators.bitwise.html" class="link">Bit-</a> und
+    <a href="language.operators.comparison.html" class="link">Vergleichs-</a>Operatoren
+    mit den <span class="classname">GMP</span> Objekten, die von
+    <span class="function">gmp_init</span> und anderen GMP Funktionen zurückgegeben
+    werden, verwenden werden.
+   </p>
+  </p></blockquote>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="simpara">
+    Große Ganzzahlen müssen als Strings angegeben werden; andernfalls wird PHP eine
+    Konvertierung zu Gleitkommazahlen erzwingen, was in einem Genauigkeitsverlust resultiert.
+  </p>
+  </div>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    Die Extension ist für Windowsplattformen seit PHP 5.1.0 verfügbar.
+   </span>
+  </p></blockquote>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

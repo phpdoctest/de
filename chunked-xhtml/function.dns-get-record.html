@@ -1,0 +1,656 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Den DNS Resource Record f&uuml;r einen gegebenen Hostname finden.</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li class="header up"><a href="book.network.html">Network</a></li>
+  <li class="header up"><a href="ref.network.html">Netzwerk-Funktionen</a></li>
+  <li><a href="function.checkdnsrr.html">checkdnsrr</a></li>
+  <li><a href="function.closelog.html">closelog</a></li>
+  <li><a href="function.define-syslog-variables.html">define_syslog_variables</a></li>
+  <li><a href="function.dns-check-record.html">dns_check_record</a></li>
+  <li><a href="function.dns-get-mx.html">dns_get_mx</a></li>
+  <li class="active"><a href="function.dns-get-record.html">dns_get_record</a></li>
+  <li><a href="function.fsockopen.html">fsockopen</a></li>
+  <li><a href="function.gethostbyaddr.html">gethostbyaddr</a></li>
+  <li><a href="function.gethostbyname.html">gethostbyname</a></li>
+  <li><a href="function.gethostbynamel.html">gethostbynamel</a></li>
+  <li><a href="function.gethostname.html">gethostname</a></li>
+  <li><a href="function.getmxrr.html">getmxrr</a></li>
+  <li><a href="function.getprotobyname.html">getprotobyname</a></li>
+  <li><a href="function.getprotobynumber.html">getprotobynumber</a></li>
+  <li><a href="function.getservbyname.html">getservbyname</a></li>
+  <li><a href="function.getservbyport.html">getservbyport</a></li>
+  <li><a href="function.header-register-callback.html">header_register_callback</a></li>
+  <li><a href="function.header-remove.html">header_remove</a></li>
+  <li><a href="function.header.html">header</a></li>
+  <li><a href="function.headers-list.html">headers_list</a></li>
+  <li><a href="function.headers-sent.html">headers_sent</a></li>
+  <li><a href="function.http-response-code.html">http_response_code</a></li>
+  <li><a href="function.inet-ntop.html">inet_ntop</a></li>
+  <li><a href="function.inet-pton.html">inet_pton</a></li>
+  <li><a href="function.ip2long.html">ip2long</a></li>
+  <li><a href="function.long2ip.html">long2ip</a></li>
+  <li><a href="function.openlog.html">openlog</a></li>
+  <li><a href="function.pfsockopen.html">pfsockopen</a></li>
+  <li><a href="function.setcookie.html">setcookie</a></li>
+  <li><a href="function.setrawcookie.html">setrawcookie</a></li>
+  <li><a href="function.socket-get-status.html">socket_get_status</a></li>
+  <li><a href="function.socket-set-blocking.html">socket_set_blocking</a></li>
+  <li><a href="function.socket-set-timeout.html">socket_set_timeout</a></li>
+  <li><a href="function.syslog.html">syslog</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.dns-get-mx.html">dns_get_mx</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.fsockopen.html">fsockopen</a></div>
+                <div class="up"><a href="ref.network.html">Netzwerk-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.dns-get-record" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">dns_get_record</h1>
+  <p class="refpurpose">Den DNS Resource Record für einen gegebenen Hostname finden.</p>
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.dns-get-record-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname">dns_get_record</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$hostname</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$type</code><span class="initializer"> = DNS_ANY</span></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$authns</code></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$addtl</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter reference">&$raw</code><span class="initializer"> = false</span></span>
+  ]]]] )</div>
+
+  <p class="para rdfs-comment">
+   Fragt einen Resource Record für den übergebenen 
+   <code class="parameter">hostname</code> ab.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.dns-get-record-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">hostname</code></dt>
+
+     <dd>
+
+      <p class="para">
+       <code class="parameter">hostname</code> sollte ein valider Hostname wie z.B.
+       &quot;<em>www.example.com</em>&quot;. sein. Reverse lookups sind mit der
+       <em>in-addr.arpa</em> möglich, jedoch
+       sollte für diesen Fall <span class="function">gethostbyaddr</span> genutzt werden.
+      </p>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+        Gemäß dem DNS-Standard werden E-Mail Adressen in der Form <em>user.host</em> (zum Beispiel: 
+        <em>hostmaster.example.com</em> statt <em>hostmaster@example.com</em>) zurückgegeben.
+        Darum ist es wichtig diesen Wert zu überprüfen und ihn gegebenenfalls mit Funktionen wie z.B. 
+        <span class="function">mail</span> anzupassen.
+       </p>
+      </p></blockquote>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">type</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Standardmäßig sucht <span class="function">dns_get_record</span> nach jedem Resource Record
+       für den <code class="parameter">hostname</code>. 
+       Um die Anfrage zu spezialisieren muss <code class="parameter">type</code>
+       gegeben sein. Dieser Paramter kann einen der folgenden Werte annehmen:
+       <strong><code>DNS_A</code></strong>, <strong><code>DNS_CNAME</code></strong>,
+       <strong><code>DNS_HINFO</code></strong>, <strong><code>DNS_MX</code></strong>,
+       <strong><code>DNS_NS</code></strong>, <strong><code>DNS_PTR</code></strong>,
+       <strong><code>DNS_SOA</code></strong>, <strong><code>DNS_TXT</code></strong>,
+       <strong><code>DNS_AAAA</code></strong>, <strong><code>DNS_SRV</code></strong>,
+       <strong><code>DNS_NAPTR</code></strong>, <strong><code>DNS_A6</code></strong>,
+       <strong><code>DNS_ALL</code></strong> or <strong><code>DNS_ANY</code></strong>.
+      </p>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+        Durch Eigenheiten in der Performance von libresolv auf verschiedenen Plattformen
+        kann es passieren, dass <strong><code>DNS_ANY</code></strong> nicht alle Records zurückgibt.
+        <strong><code>DNS_ALL</code></strong>, auch wenn es langsamer ist, arbeite für diesen Fall zuverlässiger.
+       </p>
+      </p></blockquote>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">authns</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Passed by reference. Wird, wenn es übergeben wird, mit den Records für die
+       <em class="emphasis">Autoritativen Nameserver</em> gefüllt.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">addtl</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Passed by reference. Wird, wenn es übergeben, mit
+       <em class="emphasis">zusätzlichen Records</em> gefüllt.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">raw</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Im raw Modus wird nur nach dem übergeben Typ gefragt statt durch jeden Typ zu gehen.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.dns-get-record-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Diese Funktion gibt ein Array an assioziativen Arrays zurück
+   Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.. Jedes Assoziative Array enthält
+   <em class="emphasis">mindestens</em> die folgenden Keys:
+   <table class="doctable table">
+    <caption><strong>Grundlegende DNS Attribute</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Attribut</th>
+       <th>Bedeutung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>host</td>
+       <td>
+        Der Host im DNS Namespace auf den sich die restlichen Werte in dem assoziativen Array beziehen..
+       </td>
+      </tr>
+
+      <tr>
+       <td>class</td>
+       <td>
+        <span class="function">dns_get_record</span> gibt nur Internet class Records zurück wodurch dieser Paramater immer
+        <em>IN</em> zurückgibt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>type</td>
+       <td>
+        String in dem der Record Typ hinterlegt ist. Zusätliche Attribute sind abhängig vom Typ ebenfalls in dem Array enthalten. 
+        Siehe untere Tabelle
+       </td>
+      </tr>
+
+      <tr>
+       <td>ttl</td>
+       <td>
+        <em>&quot;Time To Live&quot;</em> die für dieses Record noch verbleibt.
+        . <em class="emphasis">nicht</em> identisch mit der originalen ttl des Records sondern die originale ttl abzüglich der Zeit,
+        die vergangen ist seit der autorative Nameserver die Anfrage erhalten hat.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+  <p class="para">
+   <table class="doctable table">
+    <caption><strong>Andere Keys im assoziativen Array abhängig von &#039;type&#039;</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Type</th>
+       <th>Extra Spalte</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><em>A</em></td>
+       <td>
+        <em>ip</em>: Eine IPv4 Addresse in dotted decimal Notation.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>MX</em></td>
+       <td>
+        <em>pri</em>: Priorität des MX Records. Niedriegere Zahlen bedeuten eine höhere Priorität.
+        <em>target</em>: FQDN des MX Records. 
+        Siehe auch: <span class="function">dns_get_mx</span>.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>CNAME</em></td>
+       <td>
+        <em>target</em>: FQDN des Ziels auf das dieses Alias zeigt.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>NS</em></td>
+       <td>
+        <em>target</em>: FQDN des Nameservers, der der autorative Nameserver für dieses Zone ist.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>PTR</em></td>
+       <td>
+        <em>target</em>: Stelle im DNS namespace auf den dieser Record zeigt.
+       </td>
+      </tr>
+
+       <tr>
+       <td><em>TXT</em></td>
+       <td>
+        <em>txt</em>: Beliebieger String der diesem Record zugeordnet ist.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>HINFO</em></td>
+       <td>
+        <em>cpu</em>: IANA Nummer für die CPU des Hosts, der durch dieses Record referenziert wird.
+        <em>os</em>: IANA Nummer für das Betriebssystem des Hosts, der durch dieses Record referenziert wird.
+        Siehe IANAs <a href="http://www.iana.org/assignments/operating-system-names" class="link external">&raquo;&nbsp;<em>Operating System
+        Names</em></a> für die Bedeutung dieses Records.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>SOA</em></td>
+       <td>
+        <em>mname</em>: FQND für den Host von dem dieses Records kommen.
+        <em>rname</em>: E-Mail Adress für den Administrator dieser Domain.
+        <em>serial</em>: Aufsteigende Nummer für die Revision der angefragen Domain.
+        <em>refresh</em>: Aktualisierungsintervall den die sekundären Nameserver nutzen sollten, 
+        wenn sie ihre gespiegelten Kopien der Zone aktualisieren wollen.
+        <em>retry</em>: Zeit die nach einem fehlerhaften Versuch gewartet werden soll.
+        <em>expire</em>: Maximale Zeit, die ein sekundärer Nameserver Kopien der Zone behalten soll. Wird nach jedem erfolgreichen Refresh neu gezählt.
+        <em>minimum-ttl</em>: Anzahl der Sekunden, die eine Anfrage im Cache behalten wird. 
+        Kann von individuellen Resource Records überschrieben werden
+        resource records.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>AAAA</em></td>
+       <td>
+        <em>ipv6</em>: IPv6 Addresse
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>A6</em>(PHP &gt;= 5.1.0)</td>
+       <td>
+        <em>masklen</em>: Anzahl der Bits, die von dem durch <code class="parameter">chain</code> vorgegeben Ziel geerbt werden.
+        <em>ipv6</em>: Adresse mit dem dieser spezielle Record zusammengeführt wird.
+        <code class="parameter">chain</code>.
+        <em>chain</em>: Übergeordneter Record mit dem
+        <code class="parameter">ipv6</code> Daten zusammengeführt werden.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>SRV</em></td>
+       <td>
+        <em>pri</em>: (Priorität) Niedrigere Zahlen bedeuten höhrere Priorität.
+        <em>weight</em>: Gewicht um die Chance jedes 
+        <code class="parameter">targets</code> zu beeinflussen. Bsp: Ziel A: 3, Ziel B: 2. Ziel A wird im Mittel in 60% der Fälle gewählt.
+        <em>target</em> and <em>port</em>: Hostname und Port unter dem der Service erreicht werden kann.
+        Für weitere Information siehe: <a href="http://www.faqs.org/rfcs/rfc2782" class="link external">&raquo;&nbsp;RFC 2782</a>
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>NAPTR</em></td>
+       <td>
+         <em>order</em> and <em>pref</em>: Gleichweritg zu 
+        <code class="parameter">pri</code> and <code class="parameter">weight</code> oben.
+        <em>flags</em>, <em>services</em>, <em>regex</em>,
+        und <em>replacement</em>: Parameter wie in
+        <a href="http://www.faqs.org/rfcs/rfc2915" class="link external">&raquo;&nbsp;RFC 2915</a> definiert.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.dns-get-record-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.4.0</td>
+       <td>
+        <code class="parameter">raw</code> Parameter hinzugefügt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.0</td>
+       <td>
+         Diese Funktion ist jetzt auf Windows Plattformen verfügbar.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        Bis zu diesesm Release wurde bei gegebenem <code class="parameter">authns</code> Parameter
+        auch der <code class="parameter">addtl</code> Parameter benötigt
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.dns-get-record-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4920">
+    <p><strong>Beispiel #1 Benutzung von <span class="function">dns_get_record</span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dns_get_record</span><span style="color: #007700">(</span><span style="color: #DD0000">"php.net"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [0] =&gt; Array
+        (
+            [host] =&gt; php.net
+            [type] =&gt; MX
+            [pri] =&gt; 5
+            [target] =&gt; pair2.php.net
+            [class] =&gt; IN
+            [ttl] =&gt; 6765
+        )
+
+    [1] =&gt; Array
+        (
+            [host] =&gt; php.net
+            [type] =&gt; A
+            [ip] =&gt; 64.246.30.37
+            [class] =&gt; IN
+            [ttl] =&gt; 8125
+        )
+
+)
+</pre></div>
+    </div>
+   </div>
+   <div class="example" id="example-4921">
+    <p><strong>Beispiel #2 Benutzung von <span class="function">dns_get_record</span> und DNS_ANY</strong></p>
+    <div class="example-contents"><p>
+     Da man häufig auch die IP des Mailservers für einen MX Record benötigt gibt <span class="function">dns_get_record</span>
+     auch ein Array in <code class="parameter">addtl</code> in dem die zugehörigen Records zu finden sind. 
+     Ebenso wird <code class="parameter">authns</code> mit einer Liste der autorativen Nameserver zurückgegeben.
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Request&nbsp;"ANY"&nbsp;record&nbsp;for&nbsp;php.net,<br />&nbsp;&nbsp;&nbsp;and&nbsp;create&nbsp;$authns&nbsp;and&nbsp;$addtl&nbsp;arrays<br />&nbsp;&nbsp;&nbsp;containing&nbsp;list&nbsp;of&nbsp;name&nbsp;servers&nbsp;and<br />&nbsp;&nbsp;&nbsp;any&nbsp;additional&nbsp;records&nbsp;which&nbsp;go&nbsp;with<br />&nbsp;&nbsp;&nbsp;them&nbsp;*/<br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dns_get_record</span><span style="color: #007700">(</span><span style="color: #DD0000">"php.net"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">DNS_ANY</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$authns</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$addtl</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Result&nbsp;=&nbsp;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Auth&nbsp;NS&nbsp;=&nbsp;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$authns</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Additional&nbsp;=&nbsp;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$addtl</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Result = Array
+(
+    [0] =&gt; Array
+        (
+            [host] =&gt; php.net
+            [type] =&gt; MX
+            [pri] =&gt; 5
+            [target] =&gt; pair2.php.net
+            [class] =&gt; IN
+            [ttl] =&gt; 6765
+        )
+
+    [1] =&gt; Array
+        (
+            [host] =&gt; php.net
+            [type] =&gt; A
+            [ip] =&gt; 64.246.30.37
+            [class] =&gt; IN
+            [ttl] =&gt; 8125
+        )
+
+)
+Auth NS = Array
+(
+    [0] =&gt; Array
+        (
+            [host] =&gt; php.net
+            [type] =&gt; NS
+            [target] =&gt; remote1.easydns.com
+            [class] =&gt; IN
+            [ttl] =&gt; 10722
+        )
+
+    [1] =&gt; Array
+        (
+            [host] =&gt; php.net
+            [type] =&gt; NS
+            [target] =&gt; remote2.easydns.com
+            [class] =&gt; IN
+            [ttl] =&gt; 10722
+        )
+
+    [2] =&gt; Array
+        (
+            [host] =&gt; php.net
+            [type] =&gt; NS
+            [target] =&gt; ns1.easydns.com
+            [class] =&gt; IN
+            [ttl] =&gt; 10722
+        )
+
+    [3] =&gt; Array
+        (
+            [host] =&gt; php.net
+            [type] =&gt; NS
+            [target] =&gt; ns2.easydns.com
+            [class] =&gt; IN
+            [ttl] =&gt; 10722
+        )
+
+)
+Additional = Array
+(
+    [0] =&gt; Array
+        (
+            [host] =&gt; pair2.php.net
+            [type] =&gt; A
+            [ip] =&gt; 216.92.131.5
+            [class] =&gt; IN
+            [ttl] =&gt; 6766
+        )
+
+    [1] =&gt; Array
+        (
+            [host] =&gt; remote1.easydns.com
+            [type] =&gt; A
+            [ip] =&gt; 64.39.29.212
+            [class] =&gt; IN
+            [ttl] =&gt; 100384
+        )
+
+    [2] =&gt; Array
+        (
+            [host] =&gt; remote2.easydns.com
+            [type] =&gt; A
+            [ip] =&gt; 212.100.224.80
+            [class] =&gt; IN
+            [ttl] =&gt; 81241
+        )
+
+    [3] =&gt; Array
+        (
+            [host] =&gt; ns1.easydns.com
+            [type] =&gt; A
+            [ip] =&gt; 216.220.40.243
+            [class] =&gt; IN
+            [ttl] =&gt; 81241
+        )
+
+    [4] =&gt; Array
+        (
+            [host] =&gt; ns2.easydns.com
+            [type] =&gt; A
+            [ip] =&gt; 216.220.40.244
+            [class] =&gt; IN
+            [ttl] =&gt; 81241
+        )
+
+)
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.dns-get-record-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Für die Kompatibilität auf einigen Betriebsystemem mit Versionen vor PHP 5.3.0 kann
+    die <a href="http://pear.php.net/" class="link external">&raquo;&nbsp;PEAR</a> Klasse
+    <a href="http://pear.php.net/package/Net_DNS" class="link external">&raquo;&nbsp;Net_DNS</a> benutzt werden.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.dns-get-record-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">dns_get_mx</span></li>
+    <li class="member"><span class="function">dns_check_record</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

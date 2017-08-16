@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Erstellt eine neue fileinfo Ressource</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.file.html">Dateisystemrelevante Erweiterungen</a></li>
+  <li class="header up"><a href="book.fileinfo.html">Fileinfo</a></li>
+  <li class="header up"><a href="ref.fileinfo.html">Fileinfo Funktionen</a></li>
+  <li><a href="function.finfo-buffer.html">finfo_buffer</a></li>
+  <li><a href="function.finfo-close.html">finfo_close</a></li>
+  <li><a href="function.finfo-file.html">finfo_file</a></li>
+  <li class="active"><a href="function.finfo-open.html">finfo_open</a></li>
+  <li><a href="function.finfo-set-flags.html">finfo_set_flags</a></li>
+  <li><a href="function.mime-content-type.html">mime_content_type</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.finfo-file.html">finfo_file</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.finfo-set-flags.html">finfo_set_flags</a></div>
+                <div class="up"><a href="ref.fileinfo.html">Fileinfo Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.finfo-open" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">finfo_open</h1>
+  <h1 class="refname">finfo::__construct</h1>
+  <p class="refpurpose">Erstellt eine neue fileinfo Ressource</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.finfo-open-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">Prozeduraler Stil</p>
+  <div class="methodsynopsis dc-description">
+   <span class="type">resource</span> <span class="methodname">finfo_open</span>
+    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = FILEINFO_NONE</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$magic_file</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">Objektorientierter Stil (constructor):</p>
+  <div class="constructorsynopsis dc-description">
+   <span class="modifier">public</span>  <span class="methodname">finfo::__construct</span>
+    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = FILEINFO_NONE</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$magic_file</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   Diese Funktion öffnet eine magische Datenbank und gibt ihre Ressource zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.finfo-open-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">options</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Eine oder eine Trennung verschiedener <a href="fileinfo.constants.html" class="link">Fileinfo-
+       Konstanten</a>
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">magic_file</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Name einer magischen Datenbankdatei, gewöhnlich ungefähr so:
+       <var class="filename">/path/to/magic.mime</var>.
+       Falls nicht spezifiziert, wird die <em>MAGIC</em>-Umgebungsvariable
+       verwendet. Falls die Umgebungsvariable nicht gesetzt ist, wird die PHP-eigene
+       magische Datenbank benutzt.
+      </p>
+      <p class="para">
+       Übergibt <strong><code>NULL</code></strong> oder eine leere Zeichenfolge gleichbedeutend mit dem Standardwert.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.finfo-open-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg eine magische Datenbank-Ressource zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.finfo-open-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="para">
+    Das Format der erwarteten magischen Datenbankressource änderte sich in
+    PHP 5.3.11 und 5.4.1.
+    Infolge dessen wurde die interne magische Datenbank aufgerüstet.
+    Dieser Code ist am effektivsten, wenn eine externe Datenbank benutzt wird:
+    Das Lesen aus einer älteren magischen Datenbank wird nun fehlschlagen.
+    Auch einige Textdarstellungen der MIME-Typen wurden geändert.
+    Für PHP würde zum Beispiel &quot;PHP script, ASCII text&quot; statt &quot;PHP script text&quot;
+    zurück gegeben.
+   </p>
+  </div>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Das Benutzen der eingebundenen magischen Datenbank wird generell empfohlen
+    (<code class="parameter">magic_file</code> und die <em>MAGIC</em>-
+    Umgebungsvariable nicht gesetzt), sofern keine benutzerdefinierte 
+    magische Datenbank benötigt wird.
+   </p>
+  </p></blockquote>
+ </div>
+
+ 
+ <div class="refsect1 examples" id="refsect1-function.finfo-open-examples">
+  <h3 class="title">Beispiele</h3>
+  <div class="example" id="example-2547">
+   <p><strong>Beispiel #1 Objektorientierter Stil</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*<br />&nbsp;Setup&nbsp;für&nbsp;die&nbsp;Rückgabe&nbsp;von&nbsp;MIME-Typ&nbsp;und&nbsp;Encoding<br />&nbsp;unter&nbsp;Verwendung&nbsp;der&nbsp;angegebenen&nbsp;Datenbank&nbsp;/usr/share/misc/magic<br />&nbsp;*/<br /></span><span style="color: #0000BB">$finfo&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">finfo</span><span style="color: #007700">(</span><span style="color: #0000BB">FILEINFO_MIME</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"/usr/share/misc/magic"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Pfad&nbsp;zu&nbsp;einer&nbsp;Datei&nbsp;*/<br /></span><span style="color: #0000BB">$filename&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"/usr/local/something.txt"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*<br />&nbsp;Ermittelt&nbsp;den&nbsp;MIME-Typ&nbsp;der&nbsp;Datei,&nbsp;beispielsweise<br />&nbsp;text/plain;&nbsp;charset=us-ascii<br />&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$finfo</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">file</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+  </div>
+
+  </div>
+  <div class="example" id="example-2548">
+   <p><strong>Beispiel #2 Prozeduraler Stil</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*<br />&nbsp;Setup&nbsp;für&nbsp;die&nbsp;Rückgabe&nbsp;von&nbsp;MIME-Typ&nbsp;und&nbsp;Encoding<br />&nbsp;unter&nbsp;Verwendung&nbsp;der&nbsp;angegebenen&nbsp;Datenbank&nbsp;/usr/share/misc/magic<br />&nbsp;*/<br /></span><span style="color: #0000BB">$finfo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">finfo_open</span><span style="color: #007700">(</span><span style="color: #0000BB">FILEINFO_MIME</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"/usr/share/misc/magic"</span><span style="color: #007700">);<br /><br />if&nbsp;(!</span><span style="color: #0000BB">$finfo</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Öffnen&nbsp;der&nbsp;fileinfo-Datenbank&nbsp;fehlgeschlagen"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;exit();<br />}<br /><br /></span><span style="color: #FF8000">/*&nbsp;Pfad&nbsp;zu&nbsp;einer&nbsp;Datei&nbsp;*/<br /></span><span style="color: #0000BB">$filename&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"/usr/local/something.txt"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*<br />&nbsp;Ermittelt&nbsp;den&nbsp;MIME-Typ&nbsp;der&nbsp;Datei,&nbsp;beispielsweise<br />&nbsp;text/plain;&nbsp;charset=us-ascii<br />&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">finfo_file</span><span style="color: #007700">(</span><span style="color: #0000BB">$finfo</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$filename</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Verbindung&nbsp;schließen&nbsp;*/<br /></span><span style="color: #0000BB">finfo_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$finfo</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+  <p class="para">Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p>
+  <div class="example-contents screen">
+<div class="cdata"><pre>
+text/plain; charset=us-ascii
+</pre></div>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.finfo-open-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">finfo_close</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

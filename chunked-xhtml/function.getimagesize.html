@@ -1,0 +1,508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Ermittelt die Gr&ouml;&szlig;e einer Grafik</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.utilspec.image.html">Bildverarbeitung und -generierung</a></li>
+  <li class="header up"><a href="book.image.html">GD</a></li>
+  <li class="header up"><a href="ref.image.html">GD- und Image-Funktionen</a></li>
+  <li><a href="function.gd-info.html">gd_info</a></li>
+  <li class="active"><a href="function.getimagesize.html">getimagesize</a></li>
+  <li><a href="function.getimagesizefromstring.html">getimagesizefromstring</a></li>
+  <li><a href="function.image-type-to-extension.html">image_type_to_extension</a></li>
+  <li><a href="function.image-type-to-mime-type.html">image_type_to_mime_type</a></li>
+  <li><a href="function.image2wbmp.html">image2wbmp</a></li>
+  <li><a href="function.imageaffine.html">imageaffine</a></li>
+  <li><a href="function.imageaffinematrixconcat.html">imageaffinematrixconcat</a></li>
+  <li><a href="function.imageaffinematrixget.html">imageaffinematrixget</a></li>
+  <li><a href="function.imagealphablending.html">imagealphablending</a></li>
+  <li><a href="function.imageantialias.html">imageantialias</a></li>
+  <li><a href="function.imagearc.html">imagearc</a></li>
+  <li><a href="function.imagebmp.html">imagebmp</a></li>
+  <li><a href="function.imagechar.html">imagechar</a></li>
+  <li><a href="function.imagecharup.html">imagecharup</a></li>
+  <li><a href="function.imagecolorallocate.html">imagecolorallocate</a></li>
+  <li><a href="function.imagecolorallocatealpha.html">imagecolorallocatealpha</a></li>
+  <li><a href="function.imagecolorat.html">imagecolorat</a></li>
+  <li><a href="function.imagecolorclosest.html">imagecolorclosest</a></li>
+  <li><a href="function.imagecolorclosestalpha.html">imagecolorclosestalpha</a></li>
+  <li><a href="function.imagecolorclosesthwb.html">imagecolorclosesthwb</a></li>
+  <li><a href="function.imagecolordeallocate.html">imagecolordeallocate</a></li>
+  <li><a href="function.imagecolorexact.html">imagecolorexact</a></li>
+  <li><a href="function.imagecolorexactalpha.html">imagecolorexactalpha</a></li>
+  <li><a href="function.imagecolormatch.html">imagecolormatch</a></li>
+  <li><a href="function.imagecolorresolve.html">imagecolorresolve</a></li>
+  <li><a href="function.imagecolorresolvealpha.html">imagecolorresolvealpha</a></li>
+  <li><a href="function.imagecolorset.html">imagecolorset</a></li>
+  <li><a href="function.imagecolorsforindex.html">imagecolorsforindex</a></li>
+  <li><a href="function.imagecolorstotal.html">imagecolorstotal</a></li>
+  <li><a href="function.imagecolortransparent.html">imagecolortransparent</a></li>
+  <li><a href="function.imageconvolution.html">imageconvolution</a></li>
+  <li><a href="function.imagecopy.html">imagecopy</a></li>
+  <li><a href="function.imagecopymerge.html">imagecopymerge</a></li>
+  <li><a href="function.imagecopymergegray.html">imagecopymergegray</a></li>
+  <li><a href="function.imagecopyresampled.html">imagecopyresampled</a></li>
+  <li><a href="function.imagecopyresized.html">imagecopyresized</a></li>
+  <li><a href="function.imagecreate.html">imagecreate</a></li>
+  <li><a href="function.imagecreatefrombmp.html">imagecreatefrombmp</a></li>
+  <li><a href="function.imagecreatefromgd2.html">imagecreatefromgd2</a></li>
+  <li><a href="function.imagecreatefromgd2part.html">imagecreatefromgd2part</a></li>
+  <li><a href="function.imagecreatefromgd.html">imagecreatefromgd</a></li>
+  <li><a href="function.imagecreatefromgif.html">imagecreatefromgif</a></li>
+  <li><a href="function.imagecreatefromjpeg.html">imagecreatefromjpeg</a></li>
+  <li><a href="function.imagecreatefrompng.html">imagecreatefrompng</a></li>
+  <li><a href="function.imagecreatefromstring.html">imagecreatefromstring</a></li>
+  <li><a href="function.imagecreatefromwbmp.html">imagecreatefromwbmp</a></li>
+  <li><a href="function.imagecreatefromwebp.html">imagecreatefromwebp</a></li>
+  <li><a href="function.imagecreatefromxbm.html">imagecreatefromxbm</a></li>
+  <li><a href="function.imagecreatefromxpm.html">imagecreatefromxpm</a></li>
+  <li><a href="function.imagecreatetruecolor.html">imagecreatetruecolor</a></li>
+  <li><a href="function.imagecrop.html">imagecrop</a></li>
+  <li><a href="function.imagecropauto.html">imagecropauto</a></li>
+  <li><a href="function.imagedashedline.html">imagedashedline</a></li>
+  <li><a href="function.imagedestroy.html">imagedestroy</a></li>
+  <li><a href="function.imageellipse.html">imageellipse</a></li>
+  <li><a href="function.imagefill.html">imagefill</a></li>
+  <li><a href="function.imagefilledarc.html">imagefilledarc</a></li>
+  <li><a href="function.imagefilledellipse.html">imagefilledellipse</a></li>
+  <li><a href="function.imagefilledpolygon.html">imagefilledpolygon</a></li>
+  <li><a href="function.imagefilledrectangle.html">imagefilledrectangle</a></li>
+  <li><a href="function.imagefilltoborder.html">imagefilltoborder</a></li>
+  <li><a href="function.imagefilter.html">imagefilter</a></li>
+  <li><a href="function.imageflip.html">imageflip</a></li>
+  <li><a href="function.imagefontheight.html">imagefontheight</a></li>
+  <li><a href="function.imagefontwidth.html">imagefontwidth</a></li>
+  <li><a href="function.imageftbbox.html">imageftbbox</a></li>
+  <li><a href="function.imagefttext.html">imagefttext</a></li>
+  <li><a href="function.imagegammacorrect.html">imagegammacorrect</a></li>
+  <li><a href="function.imagegd2.html">imagegd2</a></li>
+  <li><a href="function.imagegd.html">imagegd</a></li>
+  <li><a href="function.imagegetclip.html">imagegetclip</a></li>
+  <li><a href="function.imagegif.html">imagegif</a></li>
+  <li><a href="function.imagegrabscreen.html">imagegrabscreen</a></li>
+  <li><a href="function.imagegrabwindow.html">imagegrabwindow</a></li>
+  <li><a href="function.imageinterlace.html">imageinterlace</a></li>
+  <li><a href="function.imageistruecolor.html">imageistruecolor</a></li>
+  <li><a href="function.imagejpeg.html">imagejpeg</a></li>
+  <li><a href="function.imagelayereffect.html">imagelayereffect</a></li>
+  <li><a href="function.imageline.html">imageline</a></li>
+  <li><a href="function.imageloadfont.html">imageloadfont</a></li>
+  <li><a href="function.imageopenpolygon.html">imageopenpolygon</a></li>
+  <li><a href="function.imagepalettecopy.html">imagepalettecopy</a></li>
+  <li><a href="function.imagepalettetotruecolor.html">imagepalettetotruecolor</a></li>
+  <li><a href="function.imagepng.html">imagepng</a></li>
+  <li><a href="function.imagepolygon.html">imagepolygon</a></li>
+  <li><a href="function.imagepsbbox.html">imagepsbbox</a></li>
+  <li><a href="function.imagepsencodefont.html">imagepsencodefont</a></li>
+  <li><a href="function.imagepsextendfont.html">imagepsextendfont</a></li>
+  <li><a href="function.imagepsfreefont.html">imagepsfreefont</a></li>
+  <li><a href="function.imagepsloadfont.html">imagepsloadfont</a></li>
+  <li><a href="function.imagepsslantfont.html">imagepsslantfont</a></li>
+  <li><a href="function.imagepstext.html">imagepstext</a></li>
+  <li><a href="function.imagerectangle.html">imagerectangle</a></li>
+  <li><a href="function.imageresolution.html">imageresolution</a></li>
+  <li><a href="function.imagerotate.html">imagerotate</a></li>
+  <li><a href="function.imagesavealpha.html">imagesavealpha</a></li>
+  <li><a href="function.imagescale.html">imagescale</a></li>
+  <li><a href="function.imagesetbrush.html">imagesetbrush</a></li>
+  <li><a href="function.imagesetclip.html">imagesetclip</a></li>
+  <li><a href="function.imagesetinterpolation.html">imagesetinterpolation</a></li>
+  <li><a href="function.imagesetpixel.html">imagesetpixel</a></li>
+  <li><a href="function.imagesetstyle.html">imagesetstyle</a></li>
+  <li><a href="function.imagesetthickness.html">imagesetthickness</a></li>
+  <li><a href="function.imagesettile.html">imagesettile</a></li>
+  <li><a href="function.imagestring.html">imagestring</a></li>
+  <li><a href="function.imagestringup.html">imagestringup</a></li>
+  <li><a href="function.imagesx.html">imagesx</a></li>
+  <li><a href="function.imagesy.html">imagesy</a></li>
+  <li><a href="function.imagetruecolortopalette.html">imagetruecolortopalette</a></li>
+  <li><a href="function.imagettfbbox.html">imagettfbbox</a></li>
+  <li><a href="function.imagettftext.html">imagettftext</a></li>
+  <li><a href="function.imagetypes.html">imagetypes</a></li>
+  <li><a href="function.imagewbmp.html">imagewbmp</a></li>
+  <li><a href="function.imagewebp.html">imagewebp</a></li>
+  <li><a href="function.imagexbm.html">imagexbm</a></li>
+  <li><a href="function.iptcembed.html">iptcembed</a></li>
+  <li><a href="function.iptcparse.html">iptcparse</a></li>
+  <li><a href="function.jpeg2wbmp.html">jpeg2wbmp</a></li>
+  <li><a href="function.png2wbmp.html">png2wbmp</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.gd-info.html">gd_info</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.getimagesizefromstring.html">getimagesizefromstring</a></div>
+                <div class="up"><a href="ref.image.html">GD- und Image-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.getimagesize" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">getimagesize</h1>
+  <p class="refpurpose">Ermittelt die Größe einer Grafik</p>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.getimagesize-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname">getimagesize</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$imageinfo</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Die Funktion <span class="function">getimagesize</span> ermittelt die Dimensionen der  
+   übergebenen Grafik-Datei, sofern das Format unterstützt wird, und gibt diese zusammen mit dem Dateityp und einem
+   String aus <em>Breite</em> und <em>Höhe</em> zurück, der
+   innerhalb eines regulären <acronym class="acronym">HTML</acronym> <code class="tag">IMG</code>-Tags verwendet
+   werden kann. Außerdem wird der entsprechende <acronym class="acronym">HTTP</acronym>
+   Content-Type zurückgegeben.
+  </p>
+  <p class="para">
+   <span class="function">getimagesize</span> kann im Parameter <code class="parameter">imageinfo</code>
+   weitere Informationen liefern.
+  </p>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    Beachten Sie, dass JPC und JP2 aus Komponenten mit verschiedener Farbtiefe bestehen
+    können. In diesem Fall entspricht der Wert für &quot;bits&quot; dem höchsten gefundenen
+    Wert.
+    Des Weiteren können JP2-Dateien mehrere JPEG 2000 Codestreams enthalten. In 
+    diesem Fall gibt <span class="function">getimagesize</span> die Werte des
+    ersten gefundenen Codestreams zurück.
+   </span>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    Informationen über Icons werden für das Icon mit der höchsten Bitrate
+    ermittelt.
+   </span>
+  </p></blockquote>
+ </div>
+
+ 
+ <div class="refsect1 parameters" id="refsect1-function.getimagesize-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">filename</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die zu überprüfende Datei. Dabei kann es sich um eine lokale Datei oder, 
+       eine entsprechende Konfiguration vorausgesetzt, um eine entfernte Datei
+       handeln, die über einen unterstützten Stream gelesen wird. 
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">imageinfo</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Dieser optionale Parameter erlaubt es, erweiterte Informationen aus der
+       Datei zu ermitteln. Momentan werden die verschiedenen <acronym class="acronym">JPG</acronym>
+       APP Markierungen als assoziatives Array zurückgegeben. Diese Markierungen 
+       werden von einigen Programmen verwendet um Textinformationen in Grafiken
+       zu speichern.
+       Gebräuchlich ist die Einbettung von <acronym class="acronym">IPTC</acronym>
+       <a href="http://www.iptc.org/" class="link external">&raquo;&nbsp;http://www.iptc.org/</a> Informationen in die
+       APP13-Markierung. Sie können <span class="function">iptcparse</span> benutzen,
+       um die binäre APP13-Markierung in ein lesbares Format zu übertragen.
+       </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 returnvalues" id="refsect1-function.getimagesize-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt ein Array mit bis zu sieben Elementen zurück. Nicht alle Bildtypen
+   enthalten die Elemente <em>channels</em> und <em>bits</em>.
+  </p>
+  <p class="para">
+   Index 0 und 1 enthalten Breite respektive Höhe der Grafik.
+  </p>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Einige Formate enthalten keine oder mehrere Grafiken. In diesen Fällen ist 
+    <span class="function">getimagesize</span> möglicherweise nicht in der Lage, die
+    Dimensionen zu ermitteln; der Rückgabewert für Breite und Höhe ist in
+    diesen Fällen 0.
+   </p>
+  </p></blockquote>
+  <p class="para">
+   Index 2 ist eine der <a href="image.constants.html" class="link">IMAGETYPE_XXX-Konstanten</a> 
+   entsprechend des Typs der Grafik.
+  </p>
+  <p class="para">
+   Index 3 ist eine Zeichenkette mit dem Attributen Breite und Höhe in der Form
+   <em>height=&quot;yyy&quot; width=&quot;xxx&quot;</em> zur Verwendung in einem 
+   <acronym class="acronym">IMG</acronym>-Tag.
+  </p>
+  <p class="para">
+   <em>mime</em> entspricht dem MIME-Typ der Grafik. Diese Information
+   kann zur Auslieferung von Grafiken mit dem entsprechenden HTTP 
+   <em>Content-type</em>-Header dienen.
+   <div class="example" id="example-3433">
+    <p><strong>Beispiel #1 getimagesize() und MIME-Typ</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"rb"</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$size&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">$fp</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Content-type:&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$size</span><span style="color: #007700">[</span><span style="color: #DD0000">'mime'</span><span style="color: #007700">]}</span><span style="color: #DD0000">"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fpassthru</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Fehler<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <em>channels</em> hat für RGB-Grafiken den Wert 3, für CMYK den
+   Wert 4.
+  </p>
+  <p class="para">
+   <em>bits</em> entspricht der Anzahl der Bits pro Farbe. 
+  </p>
+  <p class="para">
+   Für einige Bildformate kann die Angebe von <em>channels</em> und
+   <em>bits</em> irreführend sein. Beispielsweise nutzt <acronym class="acronym">GIF</acronym>
+   immer drei Kanäle pro Pixel, aber die Anzahl der Bits pro Pixel kann 
+   für ein animiertes <acronym class="acronym">GIF</acronym> mit einer globalen Farbtabelle
+   nicht errechnet werden.
+  </p>
+  <p class="para">
+   Gibt im Falle eines Fehlers <strong><code>FALSE</code></strong> zurück.
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 errors" id="refsect1-function.getimagesize-errors">
+  <h3 class="title">Fehler/Exceptions</h3>
+  <p class="para">
+   Wenn ein Zugriff auf die mit <code class="parameter">filename</code> angegebene
+   Grafik nicht möglich ist, wird <span class="function">getimagesize</span> einen 
+   Fehler der Stufe <strong><code>E_WARNING</code></strong> generieren. 
+   Bei einem Lesefehler wird <span class="function">getimagesize</span> einen Fehler 
+   der Stufe <strong><code>E_NOTICE</code></strong> hervorrufen.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.getimagesize-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.1.0</td>
+       <td>
+        Unterstützung für WebP hinzugefügt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        Unterstützung für Icons hinzugefügt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.2.3</td>
+       <td>
+        Lesefehler erzeugen eine <strong><code>E_NOTICE</code></strong> statt einer
+        <strong><code>E_WARNING</code></strong>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>4.3.2</td>
+       <td>
+        Unterstützung für <acronym class="acronym">JPC</acronym>, <acronym class="acronym">JP2</acronym>,
+        <acronym class="acronym">JPX</acronym>, <acronym class="acronym">JB2</acronym>, <acronym class="acronym">XBM</acronym>
+        und <acronym class="acronym">WBMP</acronym> wurde hinzugefügt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>4.3.2</td>
+       <td>
+        Der Parameter <code class="parameter">imageinfo</code> unterstützt JPEG2000
+       </td>
+      </tr>
+
+      <tr>
+       <td>4.3.0</td>
+       <td>
+        <em>bits</em> und <em>channels</em> sind auch für 
+        andere Grafik-Formate verfügbar
+       </td>
+      </tr>
+
+      <tr>
+       <td>4.3.0</td>
+       <td>
+        Unterstützung für <acronym class="acronym">SWC</acronym> wurde hinzugefügt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>4.2.0</td>
+       <td>
+        Unterstützung für <acronym class="acronym">TIFF</acronym> wurde hinzugefügt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>4.0.6</td>
+       <td>
+        Unterstützung für <acronym class="acronym">BMP</acronym> und <acronym class="acronym">PSD</acronym>
+        wurde hinzugefügt.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 examples" id="refsect1-function.getimagesize-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-3434">
+    <p><strong>Beispiel #2 <span class="function">getimagesize</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">list(</span><span style="color: #0000BB">$width</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$height</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$type</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$attr</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"img/flag.jpg"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"&lt;img&nbsp;src=\"img/flag.jpg\"&nbsp;</span><span style="color: #0000BB">$attr</span><span style="color: #DD0000">&nbsp;alt=\"getimagesize()&nbsp;example\"&nbsp;/&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <div class="example" id="example-3435">
+    <p><strong>Beispiel #3 getimagesize (URL)</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/gifs/logo.gif"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;if&nbsp;the&nbsp;file&nbsp;name&nbsp;has&nbsp;space&nbsp;in&nbsp;it,&nbsp;encode&nbsp;it&nbsp;properly<br /></span><span style="color: #0000BB">$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/gifs/lo%20go.gif"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <div class="example" id="example-3436">
+    <p><strong>Beispiel #4 getimagesize() mit Rückgabe von IPTC</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"testimg.jpg"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">);<br />if&nbsp;(isset(</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">"APP13"</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$iptc&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">iptcparse</span><span style="color: #007700">(</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">"APP13"</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$iptc</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 notes" id="refsect1-function.getimagesize-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Diese Funktion benötigt die GD-Bibliothek nicht.</p></p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Diese Funktion erwartet, dass <code class="parameter">filename</code> eine gültige Bilddatei ist.
+    Wird eine Datei angegeben, die kein Bild enthält, kann sie fälschlicherweise als Bild erkannt
+    werden, und die Funktion wird erfolgreich ausgeführt.
+   </p>
+   <p class="para">
+    <span class="function">getimagesize</span> sollte nicht verwendet werden, um zu überprüfen,
+    ob eine gegebene Datei ein Bild enthält. Statt dessen sollte eine für diesen Zweck entwickelte
+    Lösung wie die <a href="book.fileinfo.html" class="link">Fileinfo</a>-Extension verwendet werden.
+   </p>
+  </p></blockquote>
+ </div>
+
+ 
+ <div class="refsect1 seealso" id="refsect1-function.getimagesize-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">image_type_to_mime_type</span></li>
+    <li class="member"><span class="function">exif_imagetype</span></li>
+    <li class="member"><span class="function">exif_read_data</span></li>
+    <li class="member"><span class="function">exif_thumbnail</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Liest alle content-Attribute der Meta-Tags einer Datei aus und
+     gibt ein Array zur&uuml;ck</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li class="header up"><a href="book.url.html">URLs</a></li>
+  <li class="header up"><a href="ref.url.html">URL Funktionen</a></li>
+  <li><a href="function.base64-decode.html">base64_decode</a></li>
+  <li><a href="function.base64-encode.html">base64_encode</a></li>
+  <li><a href="function.get-headers.html">get_headers</a></li>
+  <li class="active"><a href="function.get-meta-tags.html">get_meta_tags</a></li>
+  <li><a href="function.http-build-query.html">http_build_query</a></li>
+  <li><a href="function.parse-url.html">parse_url</a></li>
+  <li><a href="function.rawurldecode.html">rawurldecode</a></li>
+  <li><a href="function.rawurlencode.html">rawurlencode</a></li>
+  <li><a href="function.urldecode.html">urldecode</a></li>
+  <li><a href="function.urlencode.html">urlencode</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.get-headers.html">get_headers</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.http-build-query.html">http_build_query</a></div>
+                <div class="up"><a href="ref.url.html">URL Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.get-meta-tags" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">get_meta_tags</h1>
+  <p class="refpurpose">Liest alle content-Attribute der Meta-Tags einer Datei aus und
+     gibt ein Array zurück</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.get-meta-tags-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname">get_meta_tags</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$use_include_path</code><span class="initializer"> = false</span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Öffnet <code class="parameter">filename</code> und untersucht die Datei Zeile für
+   Zeile auf das Vorkommen von &lt;meta&gt;-Tags. Das Parsen wird beim ersten
+   Auftreten von <em>&lt;/head&gt;</em> beendet.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.get-meta-tags-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">filename</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Pfad zur HTML-Datei im Stringformat. Die Datei kann lokal oder als
+       ein <acronym class="acronym">URL</acronym> vorliegen.
+      </p>
+      <p class="para">
+       <div class="example" id="example-4573">
+        <p><strong>Beispiel #1 Was <span class="function">get_meta_tags</span> parst</strong></p>
+        <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;meta name=&quot;author&quot; content=&quot;name&quot;&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;php documentation&quot;&gt;
+&lt;meta name=&quot;DESCRIPTION&quot; content=&quot;a php manual&quot;&gt;
+&lt;meta name=&quot;geo.position&quot; content=&quot;49.33;-86.59&quot;&gt;
+&lt;/head&gt; &lt;!-- parsing stops here --&gt;</pre>
+</div>
+        </div>
+
+       </div>
+       (Geben Sie auf die Zeilenenden acht - PHP verwendet eine native Funktion,
+       um den Input zu parsen, daher werden Mac-Dateien auf einem Unix-System
+       zu Fehlern führen.)
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">use_include_path</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ist <code class="parameter">use_include_path</code> auf <strong><code>TRUE</code></strong> gesetzt, wird PHP
+       immer versuchen, die gesuchte Datei innerhalb des
+       Standard-Include-Pfades, wie er via <a href="ini.core.html#ini.include-path" class="link">include_path</a>-Direktive angegeben ist,
+       zu finden. Diese angabe wird nur für lokale Dateien nicht jedoch für URLs
+       verwendet.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.get-meta-tags-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt ein Array mit allen geparsten Metatags zurück.
+  </p>
+  <p class="para">
+   Der Wert des name-Attributs wird dabei zum Schlüssel, der Wert des
+   content-Attributs wird der Wert des zurückgegebenen Arrays, so dass Sie
+   einfach die Standard-Arrayfunktionen verwenden können, um durch das gesamte
+   Array zu traversieren oder auf einzelne Werte davon zuzugreifen.
+   Sonderzeichen im Wert des name-Attributs werden mit &#039;_&#039; ersetzt, alle anderen
+   Zeichen werden in Kleinbuchstaben konvertiert. Haben zwei Metatags den
+   gleichen Namen, wird nur der letzte zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.get-meta-tags-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4574">
+    <p><strong>Beispiel #2 Was <span class="function">get_meta_tags</span> zurückgibt</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Angenommen&nbsp;die&nbsp;genannten&nbsp;Tags&nbsp;stuenden&nbsp;auf&nbsp;www.example.com<br /></span><span style="color: #0000BB">$tags&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_meta_tags</span><span style="color: #007700">(</span><span style="color: #DD0000">'http://www.example.com/'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Beachten&nbsp;Sie,&nbsp;dass&nbsp;alle&nbsp;Keys&nbsp;kleingeschrieben&nbsp;werden<br />//&nbsp;und&nbsp;dass&nbsp;.&nbsp;im&nbsp;Schluessel&nbsp;durch&nbsp;_&nbsp;ersetzt&nbsp;wird.<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$tags</span><span style="color: #007700">[</span><span style="color: #DD0000">'author'</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;name<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$tags</span><span style="color: #007700">[</span><span style="color: #DD0000">'keywords'</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;php&nbsp;documentation<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$tags</span><span style="color: #007700">[</span><span style="color: #DD0000">'description'</span><span style="color: #007700">];&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;a&nbsp;php&nbsp;manual<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$tags</span><span style="color: #007700">[</span><span style="color: #DD0000">'geo_position'</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;49.33;-86.59<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.get-meta-tags-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Nur Meta-Tags mit name-Attributen werden geparst. Anführungszeichen sind
+    nicht erforderlich.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.get-meta-tags-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">htmlentities</span></li>
+    <li class="member"><span class="function">urlencode</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

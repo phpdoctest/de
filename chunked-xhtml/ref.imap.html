@@ -1,0 +1,730 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: IMAP Funktionen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.mail.html">E-Mail-relevante Erweiterungen</a></li>
+  <li class="header up"><a href="book.imap.html">IMAP</a></li>
+  <li><a href="intro.imap.html">Einf&uuml;hrung</a></li>
+  <li><a href="imap.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="imap.constants.html">Vordefinierte Konstanten</a></li>
+  <li class="active"><a href="ref.imap.html">IMAP Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="imap.constants.html">Vordefinierte Konstanten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.imap-8bit.html">imap_8bit</a></div>
+                <div class="up"><a href="book.imap.html">IMAP</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="ref.imap" class="reference">
+  <h1 class="title">IMAP Funktionen</h1>
+
+  <div class="partintro">
+   <h1 class="title">Siehe auch</h1>
+   <p class="para">
+    Dieses Dokument kann nicht alle von den enthaltenen Funktionen
+    berührten Themenbereiche im Detail beschreiben. Weitergehende
+    Informationen finden Sie in der Dokumentation zum c-client
+    Sourcecode (<var class="filename">docs/internal.txt</var>) und in den
+    folgenden RFC-Standarddokumenten:
+    <ul class="itemizedlist">
+     <li class="listitem">
+      <span class="simpara">
+       <a href="http://www.faqs.org/rfcs/rfc2821" class="link external">&raquo;&nbsp;RFC2821</a>: Simple Mail
+       Transfer Protocol (SMTP).
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       <a href="http://www.faqs.org/rfcs/rfc2822" class="link external">&raquo;&nbsp;RFC2822</a>: Standard for
+       ARPA internet text messages.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       <a href="http://www.faqs.org/rfcs/rfc2060" class="link external">&raquo;&nbsp;RFC2060</a>: Internet
+       Message Access Protocol (IMAP) Version 4rev1. 
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       <a href="http://www.faqs.org/rfcs/rfc1939" class="link external">&raquo;&nbsp;RFC1939</a>:  Post
+       Office Protocol Version 3 (POP3).
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       <a href="http://www.faqs.org/rfcs/rfc977" class="link external">&raquo;&nbsp;RFC977</a>: Network News
+       Transfer Protocol (NNTP).
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       <a href="http://www.faqs.org/rfcs/rfc2076" class="link external">&raquo;&nbsp;RFC2076</a>: Common
+       Internet Message Headers.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       <a href="http://www.faqs.org/rfcs/rfc2045" class="link external">&raquo;&nbsp;RFC2045</a> , <a href="http://www.faqs.org/rfcs/rfc2046" class="link external">&raquo;&nbsp;RFC2046</a> , <a href="http://www.faqs.org/rfcs/rfc2047" class="link external">&raquo;&nbsp;RFC2047</a> , <a href="http://www.faqs.org/rfcs/rfc2048" class="link external">&raquo;&nbsp;RFC2048</a> &amp; <a href="http://www.faqs.org/rfcs/rfc2049" class="link external">&raquo;&nbsp;RFC2049</a>: Multipurpose
+       Internet Mail Extensions (MIME).
+      </span>
+     </li>
+    </ul> 
+    Einen detailierten Überblick der relevanten Themen
+    bieten auch die Bücher
+    <a href="http://www.oreilly.com/catalog/progintemail/noframes.html" class="link external">&raquo;&nbsp;Programming Internet Email</a>
+    von David Wood und <a href="http://oreilly.com/catalog/9780596000127/" class="link external">&raquo;&nbsp;Managing
+    IMAP</a> von Dianna Mullet &amp; Kevin Mullet.
+   </p>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+ <strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_reference">
+<li><a href="function.imap-8bit.html">imap_8bit</a> — Konvertiert einen 8bit String in einen quoted-printable String</li>
+<li><a href="function.imap-alerts.html">imap_alerts</a> — Liefert alle aufgetretenen IMAP Alarmnachrichten</li>
+<li><a href="function.imap-append.html">imap_append</a> — String als Nachricht in einem Postfach ablegen</li>
+<li><a href="function.imap-base64.html">imap_base64</a> — Dekodiert Base-64 kodierten Text</li>
+<li><a href="function.imap-binary.html">imap_binary</a> — Konvertiert einen 8 Bit String in einen Base64 codierten String</li>
+<li><a href="function.imap-body.html">imap_body</a> — Liefert den K&ouml;rper einer Nachricht</li>
+<li><a href="function.imap-bodystruct.html">imap_bodystruct</a> — Liefert die Struktur eines bestimmten Nachrichtenteils</li>
+<li><a href="function.imap-check.html">imap_check</a> — Informationen zum aktuellen Postfach</li>
+<li><a href="function.imap-clearflag-full.html">imap_clearflag_full</a> — L&ouml;scht Flags einer Nachricht</li>
+<li><a href="function.imap-close.html">imap_close</a> — Schlie&szlig;t einen IMAP Stream</li>
+<li><a href="function.imap-create.html">imap_create</a> — Alias von imap_createmailbox</li>
+<li><a href="function.imap-createmailbox.html">imap_createmailbox</a> — Anlegen eines neuen Postfachs</li>
+<li><a href="function.imap-delete.html">imap_delete</a> — Nachrichten im aktuellen Postfach zur L&ouml;schung markieren</li>
+<li><a href="function.imap-deletemailbox.html">imap_deletemailbox</a> — L&ouml;scht ein Postfach</li>
+<li><a href="function.imap-errors.html">imap_errors</a> — Diese Funktion liefert alle bisher aufgetretenen Fehlermeldungen</li>
+<li><a href="function.imap-expunge.html">imap_expunge</a> — L&ouml;scht alle zum L&ouml;schen markierte Nachrichten</li>
+<li><a href="function.imap-fetch-overview.html">imap_fetch_overview</a> — Liefert einen Auszug aus den Kopfdaten von Nachrichten</li>
+<li><a href="function.imap-fetchbody.html">imap_fetchbody</a> — Liefert einen bestimmten Abschnitt aus dem K&ouml;rper einer Nachricht</li>
+<li><a href="function.imap-fetchheader.html">imap_fetchheader</a> — Liefert den Kopf einer Nachricht</li>
+<li><a href="function.imap-fetchmime.html">imap_fetchmime</a> — Fetch MIME headers for a particular section of the message</li>
+<li><a href="function.imap-fetchstructure.html">imap_fetchstructure</a> — Ermittelt die Struktur einer Nachricht</li>
+<li><a href="function.imap-fetchtext.html">imap_fetchtext</a> — Alias von imap_body</li>
+<li><a href="function.imap-gc.html">imap_gc</a> — Leert den IMAP Cache</li>
+<li><a href="function.imap-get-quota.html">imap_get_quota</a> — Liefert Quota-Beschr&auml;nkungen und Nutzungsstatistik der Postf&auml;cher</li>
+<li><a href="function.imap-get-quotaroot.html">imap_get_quotaroot</a> — Liefert die Quota-Beschr&auml;nkungen f&uuml;r ein Benutzerpostfach</li>
+<li><a href="function.imap-getacl.html">imap_getacl</a> — Liste der Zugriffsrechte f&uuml;r ein Postfach bestimmen</li>
+<li><a href="function.imap-getmailboxes.html">imap_getmailboxes</a> — Liefert detailierte Informationen zu allen verf&uuml;gbaren Postf&auml;chern</li>
+<li><a href="function.imap-getsubscribed.html">imap_getsubscribed</a> — Liste aller abonnierten Postf&auml;cher</li>
+<li><a href="function.imap-header.html">imap_header</a> — Alias von imap_headerinfo</li>
+<li><a href="function.imap-headerinfo.html">imap_headerinfo</a> — Liest die Kopfdaten einer Nachricht</li>
+<li><a href="function.imap-headers.html">imap_headers</a> — Liefert eine Zusammenfassung aller Nachrichtenk&ouml;pfe eines Postfachs</li>
+<li><a href="function.imap-last-error.html">imap_last_error</a> — Liefert die letzte IMAP-Fehlermeldung f&uuml;r dieses Script</li>
+<li><a href="function.imap-list.html">imap_list</a> — Liste der Postf&auml;cher lesen</li>
+<li><a href="function.imap-listmailbox.html">imap_listmailbox</a> — Alias von imap_list</li>
+<li><a href="function.imap-listscan.html">imap_listscan</a> — Listet Postf&auml;cher nach Suchkriterien</li>
+<li><a href="function.imap-listsubscribed.html">imap_listsubscribed</a> — Alias von imap_lsub</li>
+<li><a href="function.imap-lsub.html">imap_lsub</a> — Liste aller abonierten Postf&auml;cher</li>
+<li><a href="function.imap-mail-compose.html">imap_mail_compose</a> — Erzeugt eine MIME-Nachricht aus Kopf- und Nachrichtenelementen</li>
+<li><a href="function.imap-mail-copy.html">imap_mail_copy</a> — Kopiert Nachrichten in ein Postfach</li>
+<li><a href="function.imap-mail-move.html">imap_mail_move</a> — Verschiebt Nachrichten in ein anderes Postfach</li>
+<li><a href="function.imap-mail.html">imap_mail</a> — Sendet eine Email Nachricht</li>
+<li><a href="function.imap-mailboxmsginfo.html">imap_mailboxmsginfo</a> — Informationen zum aktuellen Postfach</li>
+<li><a href="function.imap-mime-header-decode.html">imap_mime_header_decode</a> — Dekodiert MIME-codierte Headerzeilen</li>
+<li><a href="function.imap-msgno.html">imap_msgno</a> — Liefert die Nachrichtennummer f&uuml;r eine gegebene UID</li>
+<li><a href="function.imap-num-msg.html">imap_num_msg</a> — Anzahl der Nachrichten im aktuellen Postfach</li>
+<li><a href="function.imap-num-recent.html">imap_num_recent</a> — Nummer der k&uuml;rzlich eingetroffenen Nachrichten</li>
+<li><a href="function.imap-open.html">imap_open</a> — &Ouml;ffnet eine Verbindung zu einem Mailserver-Postfach</li>
+<li><a href="function.imap-ping.html">imap_ping</a> — Pr&uuml;ft einen IMAP-Stream auf Funktionalit&auml;t</li>
+<li><a href="function.imap-qprint.html">imap_qprint</a> — Konvertiert einen quoted-printable kodierten String in einen 8 Bit String</li>
+<li><a href="function.imap-rename.html">imap_rename</a> — Alias von imap_renamemailbox</li>
+<li><a href="function.imap-renamemailbox.html">imap_renamemailbox</a> — &Auml;ndert den Namen eines Postfachs</li>
+<li><a href="function.imap-reopen.html">imap_reopen</a> — Wechselt das aktuelle Postfach der Verbindung</li>
+<li><a href="function.imap-rfc822-parse-adrlist.html">imap_rfc822_parse_adrlist</a> — Zerlegt einen Mailadressstring</li>
+<li><a href="function.imap-rfc822-parse-headers.html">imap_rfc822_parse_headers</a> — Email-Kopfzeilen aus einem String auslesen</li>
+<li><a href="function.imap-rfc822-write-address.html">imap_rfc822_write_address</a> — Bildet aus Realnamen, Postfach und Server eine korrekt formatierte Mail-Adresse</li>
+<li><a href="function.imap-savebody.html">imap_savebody</a> — Speichert einen bestimmten Body-Abschnitt einer Nachricht als Datei</li>
+<li><a href="function.imap-scan.html">imap_scan</a> — Alias von imap_listscan</li>
+<li><a href="function.imap-scanmailbox.html">imap_scanmailbox</a> — Alias von imap_listscan</li>
+<li><a href="function.imap-search.html">imap_search</a> — Liefert ein Array von Nachrichten die den gegebenen Suchkriterien entsprechen</li>
+<li><a href="function.imap-set-quota.html">imap_set_quota</a> — Setzt die Mengenbeschr&auml;nkung f&uuml;r ein Postfach</li>
+<li><a href="function.imap-setacl.html">imap_setacl</a> — Setzen der ACL f&uuml;r ein Postfach</li>
+<li><a href="function.imap-setflag-full.html">imap_setflag_full</a> — Setzt Nachrichtenflags</li>
+<li><a href="function.imap-sort.html">imap_sort</a> — Sortiert Nachrichten eines Postfachs</li>
+<li><a href="function.imap-status.html">imap_status</a> — Liefert Statusinformationen zum angegebenen Postfach</li>
+<li><a href="function.imap-subscribe.html">imap_subscribe</a> — Abbonieren eines Postfachs</li>
+<li><a href="function.imap-thread.html">imap_thread</a> — Liefert einen Baum zusammenh&auml;ngender Nachrichten</li>
+<li><a href="function.imap-timeout.html">imap_timeout</a> — Imap Timeout setzen oder lesen</li>
+<li><a href="function.imap-uid.html">imap_uid</a> — Liefert die UID f&uuml;r die gegebene Nachrichtennummer</li>
+<li><a href="function.imap-undelete.html">imap_undelete</a> — Nimmt eine bereits gesetzte L&ouml;schmarkierung einer Nachricht zur&uuml;ck</li>
+<li><a href="function.imap-unsubscribe.html">imap_unsubscribe</a> — Abonnement eines Postfachs beenden</li>
+<li><a href="function.imap-utf7-decode.html">imap_utf7_decode</a> — Dekodiert einem String im modifizierten UTF-7-Format</li>
+<li><a href="function.imap-utf7-encode.html">imap_utf7_encode</a> — Kodiert ISO-8859-1 Text im modifizieren UTF-7-Format</li>
+<li><a href="function.imap-utf8.html">imap_utf8</a> — Konvertiert Text zu UTF8</li>
+</ul>
+</ol>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

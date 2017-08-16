@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Ermittelt die F&auml;higkeiten des Browsers eines Benutzers</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li class="header up"><a href="book.misc.html">Misc.</a></li>
+  <li class="header up"><a href="ref.misc.html">Sonstige Funktionen</a></li>
+  <li><a href="function.connection-aborted.html">connection_aborted</a></li>
+  <li><a href="function.connection-status.html">connection_status</a></li>
+  <li><a href="function.constant.html">constant</a></li>
+  <li><a href="function.define.html">define</a></li>
+  <li><a href="function.defined.html">defined</a></li>
+  <li><a href="function.die.html">die</a></li>
+  <li><a href="function.eval.html">eval</a></li>
+  <li><a href="function.exit.html">exit</a></li>
+  <li class="active"><a href="function.get-browser.html">get_browser</a></li>
+  <li><a href="function.halt-compiler.html">__halt_compiler</a></li>
+  <li><a href="function.highlight-file.html">highlight_file</a></li>
+  <li><a href="function.highlight-string.html">highlight_string</a></li>
+  <li><a href="function.ignore-user-abort.html">ignore_user_abort</a></li>
+  <li><a href="function.pack.html">pack</a></li>
+  <li><a href="function.php-check-syntax.html">php_check_syntax</a></li>
+  <li><a href="function.php-strip-whitespace.html">php_strip_whitespace</a></li>
+  <li><a href="function.show-source.html">show_source</a></li>
+  <li><a href="function.sleep.html">sleep</a></li>
+  <li><a href="function.sys-getloadavg.html">sys_getloadavg</a></li>
+  <li><a href="function.time-nanosleep.html">time_nanosleep</a></li>
+  <li><a href="function.time-sleep-until.html">time_sleep_until</a></li>
+  <li><a href="function.uniqid.html">uniqid</a></li>
+  <li><a href="function.unpack.html">unpack</a></li>
+  <li><a href="function.usleep.html">usleep</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.exit.html">exit</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.halt-compiler.html">__halt_compiler</a></div>
+                <div class="up"><a href="ref.misc.html">Sonstige Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.get-browser" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">get_browser</h1>
+  <p class="refpurpose">Ermittelt die Fähigkeiten des Browsers eines Benutzers</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.get-browser-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname">get_browser</span>
+    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$user_agent</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$return_array</code><span class="initializer"> = false</span></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   Diese Funktion versucht die Fähigkeiten des Browsers des Benutzers zu
+   ermitteln, indem sie die Informationen über den Browser aus der Datei
+   <var class="filename">browscap.ini</var> ausliest.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.get-browser-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">user_agent</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der User-Agent, der analysiert werden soll. Per Voreinstellung wird der
+       Wert des HTTP User-Agent-Headers verwendet, jedoch können Sie das
+       ändern, d.h. Informationen über einen anderen Browser nachschlagen,
+       indem Sie diesen Parameter übegeben.
+      </p>
+      <p class="para">
+       Dieser Parameter kann mit einem <strong><code>NULL</code></strong>-Wert umgangen werden.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">return_array</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Falls dieser Parameter auf <strong><code>TRUE</code></strong> gesetzt wird, gibt die Funktion
+       statt eines <span class="type">Objekts</span> ein <span class="type">Array</span> zurück.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.get-browser-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Die Informationen werden in einem Objekt oder Array zurückgegeben, das
+   verschiedene Datenelemente enthält. Dazu gehören z.B. die Haupt- und
+   Unterversions-Nummer und Kennung des Browsers sowie <strong><code>TRUE</code></strong>/<strong><code>FALSE</code></strong>-Werte
+   für dessen Fähigkeiten, wie z.B. Frames, JavaScript, Cookies usw.
+  </p>
+  <p class="para">
+   Der Wert von <em>cookies</em> sagt nur etwas darüber aus, ob der
+   Browser an sich in der Lage ist Cookies anzunehmen, und nicht darüber, ob
+   der Benutzer die Annahme von Cookies aktiviert hat. Die einzige
+   Möglichkeit zu testen, ob Cookies akzeptiert werden, besteht darin, mittels
+   <span class="function">setcookie</span> ein Cookie zu setzen, die Seite neu zu laden
+   und dessen Wert zu überprüfen.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.get-browser-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4264">
+    <p><strong>Beispiel #1 Auflistung aller Informationen über den Browser des Benutzers</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'HTTP_USER_AGENT'</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$browser&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_browser</span><span style="color: #007700">(</span><span style="color: #0000BB">null</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$browser</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7) Gecko/20040803 Firefox/0.9.3
+
+Array
+(
+    [browser_name_regex] =&gt; ^mozilla/5\.0 (windows; .; windows nt 5\.1; .*rv:.*) gecko/.* firefox/0\.9.*$
+    [browser_name_pattern] =&gt; Mozilla/5.0 (Windows; ?; Windows NT 5.1; *rv:*) Gecko/* Firefox/0.9*
+    [parent] =&gt; Firefox 0.9
+    [platform] =&gt; WinXP
+    [browser] =&gt; Firefox
+    [version] =&gt; 0.9
+    [majorver] =&gt; 0
+    [minorver] =&gt; 9
+    [cssversion] =&gt; 2
+    [frames] =&gt; 1
+    [iframes] =&gt; 1
+    [tables] =&gt; 1
+    [cookies] =&gt; 1
+    [backgroundsounds] =&gt;
+    [vbscript] =&gt;
+    [javascript] =&gt; 1
+    [javaapplets] =&gt; 1
+    [activexcontrols] =&gt;
+    [cdf] =&gt;
+    [aol] =&gt;
+    [beta] =&gt; 1
+    [win16] =&gt;
+    [crawler] =&gt;
+    [stripper] =&gt;
+    [wap] =&gt;
+    [netclr] =&gt;
+)
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.get-browser-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Damit es richtig funktioniert, muss die <a href="misc.configuration.html#ini.browscap" class="link">browscap</a>-Einstellung Ihrer <var class="filename">php.ini</var> auf die
+    richtige <var class="filename">browscap.ini</var>-Datei Ihres Systems zeigen.
+   </p>
+   <p class="para">
+    <var class="filename">browscap.ini</var> ist nicht Bestandteil von PHP, aber eine
+    aktuelle <a href="http://browscap.org/" class="link external">&raquo;&nbsp;php_browscap.ini</a> bekommen Sie
+    hier.
+   </p>
+   <p class="para">
+    Da die <var class="filename">browscap.ini</var> Informationen zu vielen Browsern
+    enthält, obliegt es dem Skript-Schreiber, diese Datei auf dem Laufenden zu
+    halten. Das Format dieser Datei sollte selbsterklärend sein.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

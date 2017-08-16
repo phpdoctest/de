@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Suche im LDAP Baum</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li class="header up"><a href="book.ldap.html">LDAP</a></li>
+  <li class="header up"><a href="ref.ldap.html">LDAP Funktionen</a></li>
+  <li><a href="function.ldap-8859-to-t61.html">ldap_8859_to_t61</a></li>
+  <li><a href="function.ldap-add.html">ldap_add</a></li>
+  <li><a href="function.ldap-bind.html">ldap_bind</a></li>
+  <li><a href="function.ldap-close.html">ldap_close</a></li>
+  <li><a href="function.ldap-compare.html">ldap_compare</a></li>
+  <li><a href="function.ldap-connect.html">ldap_connect</a></li>
+  <li><a href="function.ldap-control-paged-result-response.html">ldap_control_paged_result_response</a></li>
+  <li><a href="function.ldap-control-paged-result.html">ldap_control_paged_result</a></li>
+  <li><a href="function.ldap-count-entries.html">ldap_count_entries</a></li>
+  <li><a href="function.ldap-delete.html">ldap_delete</a></li>
+  <li><a href="function.ldap-dn2ufn.html">ldap_dn2ufn</a></li>
+  <li><a href="function.ldap-err2str.html">ldap_err2str</a></li>
+  <li><a href="function.ldap-errno.html">ldap_errno</a></li>
+  <li><a href="function.ldap-error.html">ldap_error</a></li>
+  <li><a href="function.ldap-escape.html">ldap_escape</a></li>
+  <li><a href="function.ldap-explode-dn.html">ldap_explode_dn</a></li>
+  <li><a href="function.ldap-first-attribute.html">ldap_first_attribute</a></li>
+  <li><a href="function.ldap-first-entry.html">ldap_first_entry</a></li>
+  <li><a href="function.ldap-first-reference.html">ldap_first_reference</a></li>
+  <li><a href="function.ldap-free-result.html">ldap_free_result</a></li>
+  <li><a href="function.ldap-get-attributes.html">ldap_get_attributes</a></li>
+  <li><a href="function.ldap-get-dn.html">ldap_get_dn</a></li>
+  <li><a href="function.ldap-get-entries.html">ldap_get_entries</a></li>
+  <li><a href="function.ldap-get-option.html">ldap_get_option</a></li>
+  <li><a href="function.ldap-get-values-len.html">ldap_get_values_len</a></li>
+  <li><a href="function.ldap-get-values.html">ldap_get_values</a></li>
+  <li><a href="function.ldap-list.html">ldap_list</a></li>
+  <li><a href="function.ldap-mod-add.html">ldap_mod_add</a></li>
+  <li><a href="function.ldap-mod-del.html">ldap_mod_del</a></li>
+  <li><a href="function.ldap-mod-replace.html">ldap_mod_replace</a></li>
+  <li><a href="function.ldap-modify-batch.html">ldap_modify_batch</a></li>
+  <li><a href="function.ldap-modify.html">ldap_modify</a></li>
+  <li><a href="function.ldap-next-attribute.html">ldap_next_attribute</a></li>
+  <li><a href="function.ldap-next-entry.html">ldap_next_entry</a></li>
+  <li><a href="function.ldap-next-reference.html">ldap_next_reference</a></li>
+  <li><a href="function.ldap-parse-reference.html">ldap_parse_reference</a></li>
+  <li><a href="function.ldap-parse-result.html">ldap_parse_result</a></li>
+  <li><a href="function.ldap-read.html">ldap_read</a></li>
+  <li><a href="function.ldap-rename.html">ldap_rename</a></li>
+  <li><a href="function.ldap-sasl-bind.html">ldap_sasl_bind</a></li>
+  <li class="active"><a href="function.ldap-search.html">ldap_search</a></li>
+  <li><a href="function.ldap-set-option.html">ldap_set_option</a></li>
+  <li><a href="function.ldap-set-rebind-proc.html">ldap_set_rebind_proc</a></li>
+  <li><a href="function.ldap-sort.html">ldap_sort</a></li>
+  <li><a href="function.ldap-start-tls.html">ldap_start_tls</a></li>
+  <li><a href="function.ldap-t61-to-8859.html">ldap_t61_to_8859</a></li>
+  <li><a href="function.ldap-unbind.html">ldap_unbind</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.ldap-sasl-bind.html">ldap_sasl_bind</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.ldap-set-option.html">ldap_set_option</a></div>
+                <div class="up"><a href="ref.ldap.html">LDAP Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.ldap-search" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">ldap_search</h1>
+    <p class="refpurpose">Suche im LDAP Baum</p>
+   </div>
+   <div class="refsect1 unknown-changeloh" id="refsect1-function.ldap-search-unknown-changeloh">
+    <h3 class="title">Beschreibung</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="type">resource</span> <span class="methodname">ldap_search</span>
+       ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$Verbindungs-Kennung</code></span>
+      , <span class="methodparam"><span class="type">string</span> <code class="parameter">$base_dn</code></span>
+      , <span class="methodparam"><span class="type">string</span> <code class="parameter">$filter</code></span>
+      [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$merkmale</code></span>
+      [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$nur_werte</code></span>
+      [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$größenbegrenzung</code></span>
+      [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$zeitbegrenzung</code></span>
+      [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$deref</code></span>
+     ]]]]] )</div>
+
+    <p class="para rdfs-comment">
+     Rückgabewert: eine Such-Ergebnis-Kennung im Erfolgsfall, <strong><code>FALSE</code></strong>
+     im Fehlerfall.
+    </p>
+    <p class="para">
+     Die <span class="function">ldap_search</span> Funktion führt die Suche für
+     einen gegebenen Filter im Verzeichnis mit der Reichweite von
+     LDAP_SCOPE_SUBTREE durch. Das ist äquivalent zu einer Suche im
+     ganzen Verzeichnis.<code class="parameter">base_dn</code> legt den Basis
+     DN für das Verzeichnis fest.
+    </p>
+    <p class="para">
+     Der optionale vierte Parameter kann benutzt werden, um die
+     Rückgabewerte des Servers so einzuschränken, dass nur die
+     tatsächlich benötigten Merkmale und ihre zugehörigen Werte in der
+     Ergebnismenge enthalten sind. Dieses Vorgehen ist um einiges
+     effizienter als die standardmäßige Vorgehensweise (diese liefert
+     alle Merkmale und alle zugehörigen Werte). Aus diesem Grund ist
+     die Angabe des vierten Parameters als gute Praxis zu empfehlen.
+    </p>
+    <p class="para">
+     Der vierte Parameter ist ein Standard PHP Array aus Strings der
+     benötigten Merkmale, z.B. array(&quot;mail&quot;,&quot;sn&quot;,&quot;cn&quot;). Beachten Sie,
+     dass der &quot;dn&quot; immer zurückgeliefert wird, ohne Rücksicht darauf,
+     welche Merkmalstypen angefragt wurden.
+    </p>
+    <p class="para">
+     Beachten Sie weiterhin, dass manche Verzeichnis-Server so
+     konfiguriert sind, dass sie nicht mehr als eine vorbestimmte
+     Anzahl an Einträgen zurückliefern. Sollte dies der Fall sein,
+     zeigt Ihnen der Server an, dass nur eine Teilmenge des
+     Ergebnisses zurückgeliefert wurde. Diesen Hinweis erhalten Sie
+     auch, wenn Sie den sechsten Parameter
+     <code class="parameter">größenbegrenzung</code> mit angegeben hatten, um
+     die Anzahl der angefragten Einträge einzuschränken.
+    </p>
+    <p class="para">
+     Der fünfte Parameter <code class="parameter">nur_werte</code> sollte auf
+     1 gesetzt werden, wenn Sie nur Merkmalstypen erhalten möchten.
+     Wenn der Wert auf 0 steht, erhalten Sie sowohl Merkmalstypen als
+     auch Merkmalswerte. Das ist das Standard Verhalten.
+    </p>
+    <p class="para">
+     Mit dem sechsten Parameter
+     <code class="parameter">größenbegrenzung</code> ist es möglich, die
+     Anzahl der Einträge, die Sie erhalten, zu begrenzen.
+     Wenn Sie diesen Wert auf 0 setzen, bedeutet dies keine
+     Beschränkung der Ergegnismenge.
+     ANMERKUNG: Dieser Parameter kann eine serverseitig gesetzte
+     Beschränkung NICHT überschreiben. Sie haben nur die Möglichkeit
+     die Beschränkung noch weiter herabzusetzen.
+    </p>
+    <p class="para">
+     Der siebte Parameter <code class="parameter">zeitbegrenzung</code> legt
+     die Zahl in Sekunden fest, die auf die Suche verwendet wird.
+     Wenn Sie diesen Wert auf 0 setzen, bedeutet dies keine
+     Beschränkung der Zeit.
+     ANMERKUNG: Dieser Parameter kann eine serverseitig gesetzte
+     Zeitbegrenzung NICHT überschreiben. Sie haben nur die
+     Möglichkeit die Beschränkung noch weiter herabzusetzen.
+    </p>
+    <p class="para">
+     Der achte Parameter <code class="parameter">deref</code> gibt an, wie
+     Aliase während einer Suche behandelt werden.
+     Wert kann einer der folgenden sein:
+     <ul class="itemizedlist">
+     <li class="listitem">
+      <span class="simpara">
+       LDAP_DEREF_NEVER - (Standard) Aliase werden nie aufgelöst.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       LDAP_DEREF_SEARCHING - Aliase sollen während der Suche
+       aufgelöst werden, aber nicht dann, wenn das Basisobjekt der
+       Suche ermittelt wird.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       LDAP_DEREF_FINDING - Aliase sollen aufgelöst werden, wenn das
+       Basisobjekt ermiitelt wird, aber nicht während der Suche.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       LDAP_DEREF_ALWAYS - Aliase sollen immer aufgelöst werden.
+      </span>
+     </li>
+     </ul>
+    </p>
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <p class="para">
+      Diese optionalen Parameter wurden in 4.0.2 hinzugefügt:
+      <code class="parameter">nur_werte</code>,
+      <code class="parameter">größenbegrenzung</code>,
+      <code class="parameter">zeitbegrenzung</code>,
+      <code class="parameter">deref</code>.
+     </p>
+    </p></blockquote>
+    <p class="para">
+     Der Suchfilter kann einfach oder kompliziert sein, wenn sie
+     boolsche Operatoren in dem Format verwenden, wie in der LDAP
+     Dokumentation beschrieben (siehe <a href="https://wiki.mozilla.org/Mozilla_LDAP_SDK_Programmer%27s_Guide/Searching_the_Directory_With_LDAP_C_SDK" class="link external">&raquo;&nbsp;
+     Netscape Directory SDK</a> für die vollständige Information
+     über Filter).
+    </p>
+    <p class="para">
+     Das untenstehende Beispiel liefert die Organisationseinheit, den
+     Familiennamen, den Vornamen und die Email-Addresse aller Personen
+     in &quot;Meine Firma&quot; deren Familien- oder Vorname die Zeichenkette
+     $person enhält. In diesem Beispiel wird ein boolscher Filter
+     verwendet, um den Server zu veranlassen, nach Informationen in
+     mehr als einem Merkmal zu suchen.
+
+     <div class="example" id="example-4852">
+      <p><strong>Beispiel #1 LDAP Suche</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+//&nbsp;$ds&nbsp;gültige&nbsp;Verbindungs-Kennung&nbsp;für&nbsp;einen&nbsp;Verzeichnis-Server<br /><br />//&nbsp;$person&nbsp;ein&nbsp;Teil&nbsp;oder&nbsp;der&nbsp;vollständige&nbsp;Name&nbsp;einer&nbsp;Person,&nbsp;z.B.&nbsp;"Jo"<br /><br />$dn&nbsp;=&nbsp;"o=Meine&nbsp;Firma,&nbsp;c=DE";<br />$filter="(|(sn=$person*)(vorname=$person*))";<br />$justthese&nbsp;=&nbsp;array(&nbsp;"ou",&nbsp;"sn",&nbsp;"vorname",&nbsp;"mail");<br /><br />$sr=ldap_search($ds,&nbsp;$dn,&nbsp;$filter,&nbsp;$justthese);<br /><br />$info&nbsp;=&nbsp;ldap_get_entries($ds,&nbsp;$sr);<br /><br />print&nbsp;$info["count"]."&nbsp;gefundene&nbsp;Einträge&lt;p&gt;";</span>
+</code></div>
+</div>
+
+      </div>
+    </p>
+    <p class="para">
+     Seit der Version 4.0.5 ist es außerdem möglich parallele Suchen
+     durchzuführen. Um dies zu verwirklichen benutzen Sie als erstes
+     Argument einen Array von Verbindungs-Kennungen, statt einer
+     einzelnen Verbindungs-Kennung. Falls Sie nicht den gleichen Basis
+     DN und den gleichen Filter für alle Suchen verwenden möchten,
+     können Sie ebenso einen Array von Basis DNs und/oder einen Array
+     von Filtern benutzen. Diese Arrays müssen die gleiche Größe wie
+     das Array der Verbindungs-Kennungen haben, da die ersten Einträge
+     der Arrays für eine Suche verwendet werden, die zweiten Einträge
+     für eine andere Suche und so weiter. Wenn Sie parallel suchen
+     erhalten Sie ein Array von Such-Ergebnis-Kennungen, außer im Fall
+     eines Fehlers, dann liefert der  Eintrag zur entsprechenden Suche
+     <strong><code>FALSE</code></strong> zurück. Das entspricht ganz genau dem Wert der
+     normalerweise zurückgeliefert wird, außer dass Sie immer eine
+     Ergebnis-Kennung erhalten, wenn Sie eine Suche durchgeführt
+     haben. Es treten einige seltene Fälle auf, wo eine normale Suche
+     <strong><code>FALSE</code></strong> zurückgibt, während die parallele Suche eine Kennung
+     zurückliefert.
+    </p>
+   </div>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

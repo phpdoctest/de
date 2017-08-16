@@ -1,0 +1,789 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Konstanten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li class="header up"><a href="book.filter.html">Filter</a></li>
+  <li><a href="intro.filter.html">Einf&uuml;hrung</a></li>
+  <li><a href="filter.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="filter.filters.html">Types of filters</a></li>
+  <li class="active"><a href="filter.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="filter.examples.html">Beispiele</a></li>
+  <li><a href="ref.filter.html">Filter-Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="filter.filters.flags.html">Filter flags</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="filter.examples.html">Beispiele</a></div>
+                <div class="up"><a href="book.filter.html">Filter</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="filter.constants" class="appendix">
+ <h1>Vordefinierte Konstanten</h1>
+ <p class="simpara">Folgende Konstanten werden von dieser
+Erweiterung definiert und stehen nur zur Verfügung, wenn die Erweiterung entweder
+statisch in PHP kompiliert oder dynamisch zur Laufzeit geladen
+wurde.</p>
+ <dl>
+
+  
+   <dt id="constant.input-post">
+    <strong><code>INPUT_POST</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <a href="reserved.variables.post.html" class="link">POST</a>-Variablen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.input-get">
+    <strong><code>INPUT_GET</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <a href="reserved.variables.get.html" class="link">GET</a>-Variablen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.input-cookie">
+    <strong><code>INPUT_COOKIE</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <a href="reserved.variables.cookies.html" class="link">COOKIE</a>-Variablen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.input-env">
+    <strong><code>INPUT_ENV</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <a href="reserved.variables.environment.html" class="link">ENV</a>-Variablen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.input-server">
+    <strong><code>INPUT_SERVER</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <a href="reserved.variables.server.html" class="link">SERVER</a>-Variablen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.input-session">
+    <strong><code>INPUT_SESSION</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <a href="reserved.variables.session.html" class="link">SESSION</a>-Variablen.
+    (noch nicht implementiert)
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.input-request">
+    <strong><code>INPUT_REQUEST</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <a href="reserved.variables.request.html" class="link">REQUEST</a>-Variablen.
+    (noch nicht implementiert)
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-none">
+    <strong><code>FILTER_FLAG_NONE</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Keine Flags.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-require-scalar">
+    <strong><code>FILTER_REQUIRE_SCALAR</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Flag fordert skalare Werte als Eingabe.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-require-array">
+    <strong><code>FILTER_REQUIRE_ARRAY</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Fordert ein Array als Eingabe.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-force-array">
+    <strong><code>FILTER_FORCE_ARRAY</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Gibt immer ein Array zurück.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-null-on-failure">
+    <strong><code>FILTER_NULL_ON_FAILURE</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     NULL anstelle von FALSE bei Fehlern verwenden.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-validate-int">
+    <strong><code>FILTER_VALIDATE_INT</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;int&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-validate-boolean">
+    <strong><code>FILTER_VALIDATE_BOOLEAN</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;boolean&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-validate-float">
+    <strong><code>FILTER_VALIDATE_FLOAT</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;float&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-validate-regexp">
+    <strong><code>FILTER_VALIDATE_REGEXP</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;validate_regexp&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-validate-url">
+    <strong><code>FILTER_VALIDATE_URL</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;validate_url&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-validate-email">
+    <strong><code>FILTER_VALIDATE_EMAIL</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;validate_email&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-validate-ip">
+    <strong><code>FILTER_VALIDATE_IP</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;validate_ip&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-validate-mac">
+    <strong><code>FILTER_VALIDATE_MAC</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;validate_mac_address&quot;-Filters.
+     (Verfügbar ab PHP 5.5.0)
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-default">
+    <strong><code>FILTER_DEFAULT</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+    ID des Standard-Filters (&quot;string&quot;). Das ist gleichwertig zu
+    <strong><code>FILTER_UNSAFE_RAW</code></strong>.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-unsafe-raw">
+    <strong><code>FILTER_UNSAFE_RAW</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;unsafe_raw&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-sanitize-string">
+    <strong><code>FILTER_SANITIZE_STRING</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;string&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-sanitize-stripped">
+    <strong><code>FILTER_SANITIZE_STRIPPED</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;stripped&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-sanitize-encoded">
+    <strong><code>FILTER_SANITIZE_ENCODED</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;encoded&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-sanitize-special-chars">
+    <strong><code>FILTER_SANITIZE_SPECIAL_CHARS</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;special_chars&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-sanitize-email">
+    <strong><code>FILTER_SANITIZE_EMAIL</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;email&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-sanitize-url">
+    <strong><code>FILTER_SANITIZE_URL</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;url&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-sanitize-number-int">
+    <strong><code>FILTER_SANITIZE_NUMBER_INT</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;number_int&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-sanitize-number-float">
+    <strong><code>FILTER_SANITIZE_NUMBER_FLOAT</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;number_float&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-sanitize-magic-quotes">
+    <strong><code>FILTER_SANITIZE_MAGIC_QUOTES</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;magic_quotes&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-callback">
+    <strong><code>FILTER_CALLBACK</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ID des &quot;callback&quot;-Filters.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-allow-octal">
+    <strong><code>FILTER_FLAG_ALLOW_OCTAL</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Oktale Notation (<em>0[0-7]+</em>) im &quot;int&quot;-Filter erlauben.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-allow-hex">
+    <strong><code>FILTER_FLAG_ALLOW_HEX</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Hexadezimale Notation (<em>0x[0-9a-fA-F]+</em>) im &quot;int&quot;-Filter erlauben.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-strip-low">
+    <strong><code>FILTER_FLAG_STRIP_LOW</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Zeichen mit einem ASCII-Wert kleiner 32 entfernen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-strip-high">
+    <strong><code>FILTER_FLAG_STRIP_HIGH</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Zeichen mit einem ASCII-Wert größer 127 entfernen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-encode-low">
+    <strong><code>FILTER_FLAG_ENCODE_LOW</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Zeichen mit einem ASCII-Wert kleiner 32 kodieren.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-encode-high">
+    <strong><code>FILTER_FLAG_ENCODE_HIGH</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Zeichen mit einem ASCII-Wert größer 127 kodieren.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-encode-amp">
+    <strong><code>FILTER_FLAG_ENCODE_AMP</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <em>&amp;</em> kodieren.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-no-encode-quotes">
+    <strong><code>FILTER_FLAG_NO_ENCODE_QUOTES</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <em>&#039;</em> und <em>&quot;</em> nicht kodieren.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-empty-string-null">
+    <strong><code>FILTER_FLAG_EMPTY_STRING_NULL</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     (Aktuell ohne Verwendung.)
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-allow-fraction">
+    <strong><code>FILTER_FLAG_ALLOW_FRACTION</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Brüche im &quot;number_float&quot;-Filter erlauben.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-allow-thousand">
+    <strong><code>FILTER_FLAG_ALLOW_THOUSAND</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Tausender-Trenner (<em>,</em>) im &quot;number_float&quot;-Filter erlauben.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-allow-scientific">
+    <strong><code>FILTER_FLAG_ALLOW_SCIENTIFIC</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Exponentialschreibweise (<em>e</em>, <em>E</em>) im
+     &quot;number_float&quot;-Filter erlauben.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-path-required">
+    <strong><code>FILTER_FLAG_PATH_REQUIRED</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Fordert Pfad im &quot;validate_url&quot;-Filter.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-query-required">
+    <strong><code>FILTER_FLAG_QUERY_REQUIRED</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Fordert Abfrage im &quot;validate_url&quot;-Filter.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-ipv4">
+    <strong><code>FILTER_FLAG_IPV4</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Nur IPv4-Adressen im &quot;validate_ip&quot;-Filter erlauben.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-ipv6">
+    <strong><code>FILTER_FLAG_IPV6</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Nur IPv6-Adressen im &quot;validate_ip&quot;-Filter erlauben.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-no-res-range">
+    <strong><code>FILTER_FLAG_NO_RES_RANGE</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Reservierte Adressen im &quot;validate_ip&quot;-Filter verweigern.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.filter-flag-no-priv-range">
+    <strong><code>FILTER_FLAG_NO_PRIV_RANGE</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Private Adressen im &quot;validate_ip&quot;-Filter verweigern.
+    </span>
+   </dd>
+
+  
+ </dl>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

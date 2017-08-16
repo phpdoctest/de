@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: else</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.control-structures.html">Kontrollstrukturen</a></li>
+  <li><a href="control-structures.intro.html">Einf&uuml;hrung</a></li>
+  <li><a href="control-structures.if.html">if</a></li>
+  <li class="active"><a href="control-structures.else.html">else</a></li>
+  <li><a href="control-structures.elseif.html">elseif/else if</a></li>
+  <li><a href="control-structures.alternative-syntax.html">Alternative Syntax f&uuml;r Kontrollstrukturen</a></li>
+  <li><a href="control-structures.while.html">while</a></li>
+  <li><a href="control-structures.do.while.html">do-while</a></li>
+  <li><a href="control-structures.for.html">for</a></li>
+  <li><a href="control-structures.foreach.html">foreach</a></li>
+  <li><a href="control-structures.break.html">break</a></li>
+  <li><a href="control-structures.continue.html">continue</a></li>
+  <li><a href="control-structures.switch.html">switch</a></li>
+  <li><a href="control-structures.declare.html">declare</a></li>
+  <li><a href="function.return.html">return</a></li>
+  <li><a href="function.require.html">require</a></li>
+  <li><a href="function.include.html">include</a></li>
+  <li><a href="function.require-once.html">require_once</a></li>
+  <li><a href="function.include-once.html">include_once</a></li>
+  <li><a href="control-structures.goto.html">goto</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="control-structures.if.html">if</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="control-structures.elseif.html">elseif/else if</a></div>
+                <div class="up"><a href="language.control-structures.html">Kontrollstrukturen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="control-structures.else" class="sect1">
+ <h2 class="title"><em>else</em></h2>
+ 
+ <p class="para">
+  Oft will man eine Anweisung ausführen, wenn eine bestimmte
+  Bedingung erfüllt ist, und eine andere Anweisung, wenn dies
+  nicht der Fall ist. Dies ist der Einsatzzweck von 
+  <em>else</em>.
+  <em>else</em> erweitert eine <em>if</em>-Anweisung um eine weitere Anweisung, die dann ausgeführt werden
+  soll, wenn der Ausdruck in der <em>if</em>-Anweisung
+  zu <strong><code>FALSE</code></strong> ausgewertet wird. Der folgende Programmcode würde
+  z.B. <span class="computeroutput">a ist größer als b</span>
+  ausgeben, wenn <var class="varname">$a</var> größer als <var class="varname">b</var>
+  ist, ansonsten <span class="computeroutput">a ist NICHT größer als 
+  b</span>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"a&nbsp;ist&nbsp;größer&nbsp;als&nbsp;b"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"a&nbsp;ist&nbsp;NICHT&nbsp;größer&nbsp;als&nbsp;b"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+  Die <em>else</em> Anweisung wird nur dann ausgeführt
+  wenn der <em>if</em> Ausdruck und alle etwaigen 
+  <em>elseif</em> als <strong><code>FALSE</code></strong> ausgewertet
+  wurden (siehe auch <a href="control-structures.elseif.html" class="link">elseif</a>).
+
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

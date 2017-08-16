@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Laufzeit-Konfiguration</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li class="header up"><a href="book.memcache.html">Memcache</a></li>
+  <li class="header up"><a href="memcache.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="memcache.requirements.html">Anforderungen</a></li>
+  <li><a href="memcache.installation.html">Installation</a></li>
+  <li class="active"><a href="memcache.ini.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="memcache.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="memcache.installation.html">Installation</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="memcache.resources.html">Ressource-Typen</a></div>
+                <div class="up"><a href="memcache.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="memcache.ini" class="section">
+ <h2 class="title">Laufzeit-Konfiguration</h2>
+ <p class="simpara">Das Verhalten dieser Funktionen wird
+durch Einstellungen in der <var class="filename">php.ini</var> beeinflusst.</p>
+ <p class="para">
+  <table class="doctable table">
+   <caption><strong>Memcache Konfiguration</strong></caption>
+   
+    <thead>
+     <tr>
+      <th>Name</th>
+      <th>Standard</th>
+      <th>Veränderbar</th>
+      <th>Changelog</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td><a href="memcache.ini.html#ini.memcache.allow-failover" class="link">memcache.allow_failover</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit Memcache 2.0.2.</td>
+     </tr>
+
+     <tr>
+      <td><a href="memcache.ini.html#ini.memcache.max-failover-attempts" class="link">memcache.max_failover_attempts</a></td>
+      <td>&quot;20&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit Memcache 2.1.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="memcache.ini.html#ini.memcache.chunk-size" class="link">memcache.chunk_size</a></td>
+      <td>&quot;8192&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit Memcache 2.0.2.</td>
+     </tr>
+
+     <tr>
+      <td><a href="memcache.ini.html#ini.memcache.default-port" class="link">memcache.default_port</a></td>
+      <td>&quot;11211&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit Memcache 2.0.2.</td>
+     </tr>
+
+     <tr>
+      <td><a href="memcache.ini.html#ini.memcache.hash-strategy" class="link">memcache.hash_strategy</a></td>
+      <td>&quot;standard&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit Memcache 2.2.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="memcache.ini.html#ini.memcache.hash-function" class="link">memcache.hash_function</a></td>
+      <td>&quot;crc32&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit Memcache 2.2.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.save-handler" class="link">session.save_handler</a></td>
+      <td>&quot;files&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit Memcache 2.1.2</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.save-path" class="link">session.save_path</a></td>
+      <td>&quot;&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Unterstützt seit Memcache 2.1.2</td>
+     </tr>
+
+     <tr>
+      <td><a href="memcache.ini.html#ini.memcache.protocol" class="link">memcache.protocol</a></td>
+      <td>ascii</td>
+      <td>&gt;PHP_INI_ALL</td>
+      <td>Unterstützt seit Memcache 3.0.0</td>
+     </tr>
+
+     <tr>
+      <td><a href="memcache.ini.html#ini.memcache.redundancy" class="link">memcache.redundancy</a></td>
+      <td>1</td>
+      <td>&gt;PHP_INI_ALL</td>
+      <td>Unterstützt seit Memcache 3.0.0</td>
+     </tr>
+
+     <tr>
+      <td><a href="memcache.ini.html#ini.memcache.session-redundancy" class="link">memcache.session_redundancy</a></td>
+      <td>2</td>
+      <td>&gt;PHP_INI_ALL</td>
+      <td>Unterstützt seit Memcache 3.0.0</td>
+     </tr>
+
+     <tr>
+      <td><a href="memcache.ini.html#ini.memcache.compress-threshold" class="link">memcache.compress_threshold</a></td>
+      <td>20000</td>
+      <td>&gt;PHP_INI_ALL</td>
+      <td>Unterstützt seit Memcache 3.0.3</td>
+     </tr>
+
+     <tr>
+      <td><a href="memcache.ini.html#ini.memcache.lock-timeout" class="link">memcache.lock_timeout</a></td>
+      <td>15</td>
+      <td>&gt;PHP_INI_ALL</td>
+      <td>Unterstützt seit Memcache 3.0.4</td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+  Weitere Details und die Definitionen der
+PHP_INI_*-Konstanten finden Sie im <a href="configuration.changes.modes.html" class="xref">Wo Konfigurationseinstellungen gesetzt werden k&ouml;nnen</a>.
+ </p>
+
+<p class="para">Hier eine kurze Erklärung der
+Konfigurationsoptionen:</p>
+
+<p class="para">
+ <dl>
+
+  
+  
+   <dt id="ini.memcache.allow-failover">
+    <code class="parameter">memcache.allow_failover</code>
+    <span class="type">boolean</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Bestimmt, ob bei einem Fehler auf andere Server ausgewichen werden soll.
+    </p>
+   </dd>
+
+  
+  
+  
+   <dt id="ini.memcache.max-failover-attempts">
+    <code class="parameter">memcache.max_failover_attempts</code>
+    <span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Gibt an, wie viele Server angefragt werden sollen,
+     um Daten zu lesen oder schreiben.
+     Diese Einstellung wird nur verwendet, wenn
+     memcache.allow_failover aktiviert wurde.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.memcache.chunk-size">
+    <code class="parameter">memcache.chunk_size</code>
+    <span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Daten werden in Blöcken dieser Größe (in Bytes) übertragen.
+     Eine geringere Größe bedeutet mehr Schreiboperationen auf die
+     Netzwerkressourcen.
+    </p>
+   </dd>
+
+  
+  
+  
+   <dt id="ini.memcache.default-port">
+    <code class="parameter">memcache.default_port</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Der Standard-Port, welcher für den Verbindungsaufbau
+     verwendet wird, sofern kein anderer Port angegeben wurde.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.memcache.hash-strategy">
+    <code class="parameter">memcache.hash_strategy</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Bestimmt die Strategie, die verwendet wird, um Schlüssel auf dem Server abzubilden.
+     Der Wert <em>consistent</em> steht für konsistentes Hashing. Dies bedeutet,
+     dass Server jederzeit zum Server-Pool hinzugefügt oder entfernt werden können, ohne
+     die Schlüssel erneut zuzuweisen.
+     Der Wert <em>standard</em> hingegen verwendet die alte Hash-Strategie, welche
+     diese Vorgehensweise nicht unterstützt.
+    </p>
+   </dd>
+
+  
+  
+  
+   <dt id="ini.memcache.hash-function">
+    <code class="parameter">memcache.hash_function</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Bestimmt die Hash-Funktion, die für die Verteilung der Schlüssel auf die Server verwendet wird.
+     Mögliche Werte sind <em>crc32</em> für den CRC32-Hash-Algorithmus oder
+     <em>fnv</em> für die Verwendung von FNV-1a.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.memcache.session-handler">
+    <code class="parameter">session.save_handler</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Um Memcache als Sessionhandler zu verwenden, muss dieser
+     Wert auf <em>memcache</em> gesetzt werden.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.memcache.save-path">
+    <code class="parameter">session.save_path</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Eine Komma-separierte Liste von Server-URLs, die für die Speicherung von Sessions verwendet wird.
+     Z.B. <em>&quot;tcp://host1:11211, tcp://host2:11211&quot;</em>.
+    </p>
+    <p class="para">
+     Jede URL kann die gleichen Parameter enthalten, die auch für <span class="function">Memcache::addServer</span>
+     verwendet werden können. Z.B.
+     <em>&quot;tcp://host1:11211?persistent=1&amp;weight=1&amp;timeout=1&amp;retry_interval=15&quot;</em>
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.memcache.protocol">
+    <code class="parameter">memcache.protocol</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.memcache.redundancy">
+    <code class="parameter">memcache.redundancy</code>
+    <span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Memcache erlaubt es, Schlüssel redundant (also auf mehreren Servern) zu speichern.
+     Ein Redundanz-Wert von 2 bedeutet also, dass jeder Schlüssel auf 2 verschiedenen Servern gespeichert wird.
+     Im Falle eines Ausfalls eines Servers, sind die Daten somit weiterhin auf einem anderen Server verfügbar.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.memcache.session-redundancy">
+    <code class="parameter">memcache.session_redundancy</code>
+    <span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Wird Memcache als Sessionhandler verwendet, so kann hier das Redundanz-Level für die Sessions eingestellt werden.
+     Ähnlich wie bei memcache.redundancy werden hier die Session-Daten redundant auf mehreren Servern gespeichert.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.memcache.compress-threshold">
+    <code class="parameter">memcache.compress_threshold</code>
+    <span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.memcache.lock-timeout">
+    <code class="parameter">memcache.lock_timeout</code>
+    <span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     
+    </p>
+   </dd>
+
+  
+
+ </dl>
+
+</p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

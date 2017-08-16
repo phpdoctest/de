@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Beendet einen Apacheprozess nach der Anfrage</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.utilspec.server.html">Serverspezifische Erweiterungen</a></li>
+  <li class="header up"><a href="book.apache.html">Apache</a></li>
+  <li class="header up"><a href="ref.apache.html">Apache Funktionen</a></li>
+  <li class="active"><a href="function.apache-child-terminate.html">apache_child_terminate</a></li>
+  <li><a href="function.apache-get-modules.html">apache_get_modules</a></li>
+  <li><a href="function.apache-get-version.html">apache_get_version</a></li>
+  <li><a href="function.apache-getenv.html">apache_getenv</a></li>
+  <li><a href="function.apache-lookup-uri.html">apache_lookup_uri</a></li>
+  <li><a href="function.apache-note.html">apache_note</a></li>
+  <li><a href="function.apache-request-headers.html">apache_request_headers</a></li>
+  <li><a href="function.apache-reset-timeout.html">apache_reset_timeout</a></li>
+  <li><a href="function.apache-response-headers.html">apache_response_headers</a></li>
+  <li><a href="function.apache-setenv.html">apache_setenv</a></li>
+  <li><a href="function.getallheaders.html">getallheaders</a></li>
+  <li><a href="function.virtual.html">virtual</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="ref.apache.html">Apache Funktionen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.apache-get-modules.html">apache_get_modules</a></div>
+                <div class="up"><a href="ref.apache.html">Apache Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.apache-child-terminate" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">apache_child_terminate</h1>
+  <p class="refpurpose">Beendet einen Apacheprozess nach der Anfrage</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.apache-child-terminate-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">apache_child_terminate</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">apache_child_terminate</span> registriert den Apacheprozess,
+   der die aktuelle PHP-Anfrage ausführt, um ihn nach vollständiger Beendigung
+   des PHP-Prozesses zu terminieren. Die Funktion kann verwendet werden, um
+   einen Prozess zu terminieren, nachdem ein Skript mit hohem Speicherverbrauch
+   gelaufen ist, der normalerweise nur intern wieder freigegeben wird, aber
+   nicht wieder für das Betriebsystem freigegeben wird.
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.apache-child-terminate-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt <strong><code>TRUE</code></strong> zurück, wenn PHP als Modul unter Apache 1 läuft, die Apacheversion
+   nicht multithreaded läuft und die PHP-Direktive <a href="apache.configuration.html#ini.child-terminate" class="link">child_terminate</a> eingeschaltet ist
+   (diese ist standardmäßig ausgeschaltet). Wenn diese Bedingungen nicht
+   zutreffen, wird <strong><code>FALSE</code></strong> zurückgegeben und ein Fehler vom Typ
+   <strong><code>E_WARNING</code></strong> generiert.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.apache-child-terminate-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.4.0</td>
+       <td>
+        Diese Funktion wurde unter FastCGI verfügbar. Vorher wurde sie nur
+        unterstützt, wenn PHP als Apache Modul installiert war.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.apache-child-terminate-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <span class="simpara">Diese Funktion ist auf
+Windows-Plattformen nicht implementiert.</span></p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.apache-child-terminate-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">exit</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

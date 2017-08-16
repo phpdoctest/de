@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Prepared Statements und Stored Procedures</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.abstract.html">Abstraktionsebenen</a></li>
+  <li class="header up"><a href="book.pdo.html">PDO</a></li>
+  <li><a href="intro.pdo.html">Einf&uuml;hrung</a></li>
+  <li><a href="pdo.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="pdo.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="pdo.connections.html">Verbindungen und Verbindungsmanagement</a></li>
+  <li><a href="pdo.transactions.html">Transaktionen und auto-commit</a></li>
+  <li class="active"><a href="pdo.prepared-statements.html">Prepared Statements und Stored Procedures</a></li>
+  <li><a href="pdo.error-handling.html">Fehler und Fehlerbehandlung</a></li>
+  <li><a href="pdo.lobs.html">Large Objects (LOBs)</a></li>
+  <li><a href="class.pdo.html">PDO</a></li>
+  <li><a href="class.pdostatement.html">PDOStatement</a></li>
+  <li><a href="class.pdoexception.html">PDOException</a></li>
+  <li><a href="pdo.drivers.html">PDO-Treiber</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="pdo.transactions.html">Transaktionen und auto-commit</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="pdo.error-handling.html">Fehler und Fehlerbehandlung</a></div>
+                <div class="up"><a href="book.pdo.html">PDO</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="pdo.prepared-statements" class="chapter">
+ <h1>Prepared Statements und Stored Procedures</h1>
+ <p class="para">
+  Viele der ausgereifteren Datenbanken unterstützen das Konzept der Prepared
+  Statements. Was ist das? Man kann sie sich als eine Art von kompiliertem
+  Template für SQL das eine Anwendung ausführen will vorstellen, 
+  das durch variable Parameter angepasst werden
+  kann. Prepared Statements haben zwei wichtige Vorteile:
+ </p>
+ <ul class="itemizedlist">
+  <li class="listitem">
+   <span class="simpara">
+    Die Abfrage muss nur einmal geparst (oder vorbereitet) werden, kann dann
+    aber mehrere Male mit denselben oder anderen Parametern ausgeführt werden.
+    Wenn die Abfrage vorbereitet wird, kann die Datenbank ihre Vorgehensweise
+    zur Ausführung der Abfrage analysieren, kompilieren und optimieren. Für
+    komplexe Abfragen kann dieser Vorgang genug Zeit benötigen, dass es eine
+    Anwendung merklich verlangsamt, wenn dieselbe Abfrage oft mit
+    verschiedenen Parametern wiederholt wird. Mit einem Prepared Statement
+    vermeidet die Anwendung den Zyklus der Analyse/Kompilierung/Optimierung.
+    Kurz gesagt benötigen Prepared Statements weniger Ressourcen und laufen
+    deswegen schneller.
+   </span>
+  </li>
+  <li class="listitem">
+   <span class="simpara">
+    Die Parameter für Prepared Statements müssen nicht maskiert werden. Der
+    Treiber übernimmt das automatisch. Wenn eine Anwendung ausschließlich
+    Prepared Statements benutzt, kann sich der Entwickler sicher sein, dass keine
+    SQL-Injection auftreten wird. (Wenn aber trotzdem andere Teile der
+    Abfrage aus nicht zuverlässigen Eingaben generiert werden, ist dies
+    immer noch möglich.)
+   </span>
+  </li>
+ </ul>
+ <p class="para">
+  Prepared Statements sind so nützlich, dass sie das einzige Feature sind, das
+  PDO auch für Treiber emulieren wird, die diese nicht unterstützen. Das
+  garantiert, dass eine Anwendung unabhängig von den Möglichkeiten der 
+  Datenbank dieselbe Art des Datenzugriffs nutzen können.
+ </p>
+ <p class="para">
+  <div class="example" id="example-970">
+   <p><strong>Beispiel #1 Wiederholte Inserts mit Prepared Statements</strong></p>
+   <div class="example-contents"><p>
+    Dieses Beispiel führt eine INSERT-Abfrage durch, in der ein
+    <em>name</em> und ein <em>value</em> für die
+    benannten Platzhalter eingesetzt werden.
+   </p></div>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #DD0000">"INSERT&nbsp;INTO&nbsp;REGISTRY&nbsp;(name,&nbsp;value)&nbsp;VALUES&nbsp;(:name,&nbsp;:value)"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #DD0000">':name'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #DD0000">':value'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;eine&nbsp;Zeile&nbsp;einfügen<br /></span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'one'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;eine&nbsp;weitere&nbsp;Zeile&nbsp;mit&nbsp;anderen&nbsp;Werten&nbsp;einfügen<br /></span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'two'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="para">
+  <div class="example" id="example-971">
+   <p><strong>Beispiel #2 Wiederholte Inserts mit Prepared Statements</strong></p>
+   <div class="example-contents"><p>
+    Dieses Beispiel führt eine INSERT-Abfrage durch, in der ein
+    <em>name</em> und ein <em>value</em> für die
+    positionsabhängigen <em>?</em>-Platzhalter eingesetzt werden.
+   </p></div>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #DD0000">"INSERT&nbsp;INTO&nbsp;REGISTRY&nbsp;(name,&nbsp;value)&nbsp;VALUES&nbsp;(?,&nbsp;?)"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;eine&nbsp;Zeile&nbsp;einfügen<br /></span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'one'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;eine&nbsp;weitere&nbsp;Zeile&nbsp;mit&nbsp;anderen&nbsp;Werten&nbsp;einfügen<br /></span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'two'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="para">
+  <div class="example" id="example-972">
+   <p><strong>Beispiel #3 Abfragen von Daten mit Prepared Statements</strong></p>
+   <div class="example-contents"><p>
+    Dieses Beispiel ruft Daten basierend auf einem Schlüsselwert ab, der von
+    einem Formular geliefert wird. Die Benutzereingabe wird automatisch
+    maskiert, deswegen gibt es kein Risiko eines SQL-Injection-Angriffs.
+   </p></div>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;*&nbsp;FROM&nbsp;REGISTRY&nbsp;where&nbsp;name&nbsp;=&nbsp;?"</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">(array(</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'name'</span><span style="color: #007700">])))&nbsp;{<br />&nbsp;&nbsp;while&nbsp;(</span><span style="color: #0000BB">$row&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fetch</span><span style="color: #007700">())&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$row</span><span style="color: #007700">);<br />&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="para">
+  Wenn es der Datenbanktreiber unterstützt, kann eine Anwendung auch Parameter für die
+  Ausgabe einführen, ähnlich der Eingabe. Ausgabeparameter werden typischerweise
+  benutzt, um Werte von Stored Procedures abzurufen. Ausgabeparameter sind
+  etwas komplexer in der Verwendung als Eingabeparameter, weil die Entwickler wissen
+  muss, wie groß ein gegebener Parameter sein könnte, wenn sie ihn einführen.
+  Wenn der Wert sich als größer herausstellt als die vorgeschlagene Größe,
+  wird eine Fehlermeldung erzeugt.
+ </p>
+
+ <p class="para">
+  <div class="example" id="example-973">
+   <p><strong>Beispiel #4 Eine Stored Procedure mit einem Ausgabeparameter aufrufen</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #DD0000">"CALL&nbsp;sp_returns_string(?)"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$return_value</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">PARAM_STR</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4000</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Aufruf&nbsp;der&nbsp;Stored&nbsp;Procedure<br /></span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br />print&nbsp;</span><span style="color: #DD0000">"Rückgabewert&nbsp;der&nbsp;Stored&nbsp;Procedure:&nbsp;</span><span style="color: #0000BB">$return_value</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+
+ <p class="para">
+  Entwickler können auch Parameter angeben, die Werte für Eingabe und Ausgabe
+  enthalten. Die Syntax ist ähnlich den Ausgabeparametern. In diesem nächsten
+  Beispiel wird die Zeichenkette &#039;hallo&#039; der Stored Procedure übergeben. Wenn
+  diese etwas zurückgibt, wird &#039;hallo&#039; durch den Rückgabewert der Stored
+  Procedure ersetzt.
+ </p>
+
+ <p class="para">
+  <div class="example" id="example-974">
+   <p><strong>Beispiel #5 Eine Stored Procedure mit einem Eingabe-/Ausgabe-Parameter
+    aufrufen</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #DD0000">"CALL&nbsp;sp_takes_string_returns_string(?)"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'hallo'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">PARAM_STR</span><span style="color: #007700">|</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">PARAM_INPUT_OUTPUT</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4000</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Aufruf&nbsp;der&nbsp;Stored&nbsp;Procedure<br /></span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br />print&nbsp;</span><span style="color: #DD0000">"Rückgabewert&nbsp;der&nbsp;Stored&nbsp;Procedure:&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="para">
+  <div class="example" id="example-975">
+   <p><strong>Beispiel #6 Ungültige Verwendung von Platzhaltern</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;*&nbsp;FROM&nbsp;REGISTRY&nbsp;where&nbsp;name&nbsp;LIKE&nbsp;'%?%'"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">(array(</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'name'</span><span style="color: #007700">]));<br /><br /></span><span style="color: #FF8000">//&nbsp;Platzhalter&nbsp;müssen&nbsp;anstelle&nbsp;des&nbsp;ganzen&nbsp;Wertes&nbsp;verwendet&nbsp;werden<br /></span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;*&nbsp;FROM&nbsp;REGISTRY&nbsp;where&nbsp;name&nbsp;LIKE&nbsp;?"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"%</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #0000BB">name</span><span style="color: #007700">]</span><span style="color: #DD0000">%"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

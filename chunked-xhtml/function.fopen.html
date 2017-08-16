@@ -1,0 +1,601 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: &Ouml;ffnet eine Datei oder URL</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.file.html">Dateisystemrelevante Erweiterungen</a></li>
+  <li class="header up"><a href="book.filesystem.html">Dateisystem</a></li>
+  <li class="header up"><a href="ref.filesystem.html">Dateisystem</a></li>
+  <li><a href="function.basename.html">basename</a></li>
+  <li><a href="function.chgrp.html">chgrp</a></li>
+  <li><a href="function.chmod.html">chmod</a></li>
+  <li><a href="function.chown.html">chown</a></li>
+  <li><a href="function.clearstatcache.html">clearstatcache</a></li>
+  <li><a href="function.copy.html">copy</a></li>
+  <li><a href="function.delete.html">delete</a></li>
+  <li><a href="function.dirname.html">dirname</a></li>
+  <li><a href="function.disk-free-space.html">disk_free_space</a></li>
+  <li><a href="function.disk-total-space.html">disk_total_space</a></li>
+  <li><a href="function.diskfreespace.html">diskfreespace</a></li>
+  <li><a href="function.fclose.html">fclose</a></li>
+  <li><a href="function.feof.html">feof</a></li>
+  <li><a href="function.fflush.html">fflush</a></li>
+  <li><a href="function.fgetc.html">fgetc</a></li>
+  <li><a href="function.fgetcsv.html">fgetcsv</a></li>
+  <li><a href="function.fgets.html">fgets</a></li>
+  <li><a href="function.fgetss.html">fgetss</a></li>
+  <li><a href="function.file-exists.html">file_exists</a></li>
+  <li><a href="function.file-get-contents.html">file_get_contents</a></li>
+  <li><a href="function.file-put-contents.html">file_put_contents</a></li>
+  <li><a href="function.file.html">file</a></li>
+  <li><a href="function.fileatime.html">fileatime</a></li>
+  <li><a href="function.filectime.html">filectime</a></li>
+  <li><a href="function.filegroup.html">filegroup</a></li>
+  <li><a href="function.fileinode.html">fileinode</a></li>
+  <li><a href="function.filemtime.html">filemtime</a></li>
+  <li><a href="function.fileowner.html">fileowner</a></li>
+  <li><a href="function.fileperms.html">fileperms</a></li>
+  <li><a href="function.filesize.html">filesize</a></li>
+  <li><a href="function.filetype.html">filetype</a></li>
+  <li><a href="function.flock.html">flock</a></li>
+  <li><a href="function.fnmatch.html">fnmatch</a></li>
+  <li class="active"><a href="function.fopen.html">fopen</a></li>
+  <li><a href="function.fpassthru.html">fpassthru</a></li>
+  <li><a href="function.fputcsv.html">fputcsv</a></li>
+  <li><a href="function.fputs.html">fputs</a></li>
+  <li><a href="function.fread.html">fread</a></li>
+  <li><a href="function.fscanf.html">fscanf</a></li>
+  <li><a href="function.fseek.html">fseek</a></li>
+  <li><a href="function.fstat.html">fstat</a></li>
+  <li><a href="function.ftell.html">ftell</a></li>
+  <li><a href="function.ftruncate.html">ftruncate</a></li>
+  <li><a href="function.fwrite.html">fwrite</a></li>
+  <li><a href="function.glob.html">glob</a></li>
+  <li><a href="function.is-dir.html">is_dir</a></li>
+  <li><a href="function.is-executable.html">is_executable</a></li>
+  <li><a href="function.is-file.html">is_file</a></li>
+  <li><a href="function.is-link.html">is_link</a></li>
+  <li><a href="function.is-readable.html">is_readable</a></li>
+  <li><a href="function.is-uploaded-file.html">is_uploaded_file</a></li>
+  <li><a href="function.is-writable.html">is_writable</a></li>
+  <li><a href="function.is-writeable.html">is_writeable</a></li>
+  <li><a href="function.lchgrp.html">lchgrp</a></li>
+  <li><a href="function.lchown.html">lchown</a></li>
+  <li><a href="function.link.html">link</a></li>
+  <li><a href="function.linkinfo.html">linkinfo</a></li>
+  <li><a href="function.lstat.html">lstat</a></li>
+  <li><a href="function.mkdir.html">mkdir</a></li>
+  <li><a href="function.move-uploaded-file.html">move_uploaded_file</a></li>
+  <li><a href="function.parse-ini-file.html">parse_ini_file</a></li>
+  <li><a href="function.parse-ini-string.html">parse_ini_string</a></li>
+  <li><a href="function.pathinfo.html">pathinfo</a></li>
+  <li><a href="function.pclose.html">pclose</a></li>
+  <li><a href="function.popen.html">popen</a></li>
+  <li><a href="function.readfile.html">readfile</a></li>
+  <li><a href="function.readlink.html">readlink</a></li>
+  <li><a href="function.realpath-cache-get.html">realpath_cache_get</a></li>
+  <li><a href="function.realpath-cache-size.html">realpath_cache_size</a></li>
+  <li><a href="function.realpath.html">realpath</a></li>
+  <li><a href="function.rename.html">rename</a></li>
+  <li><a href="function.rewind.html">rewind</a></li>
+  <li><a href="function.rmdir.html">rmdir</a></li>
+  <li><a href="function.set-file-buffer.html">set_file_buffer</a></li>
+  <li><a href="function.stat.html">stat</a></li>
+  <li><a href="function.symlink.html">symlink</a></li>
+  <li><a href="function.tempnam.html">tempnam</a></li>
+  <li><a href="function.tmpfile.html">tmpfile</a></li>
+  <li><a href="function.touch.html">touch</a></li>
+  <li><a href="function.umask.html">umask</a></li>
+  <li><a href="function.unlink.html">unlink</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.fnmatch.html">fnmatch</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.fpassthru.html">fpassthru</a></div>
+                <div class="up"><a href="ref.filesystem.html">Dateisystem</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.fopen" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">fopen</h1>
+  <p class="refpurpose">Öffnet eine Datei oder URL</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.fopen-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">resource</span> <span class="methodname">fopen</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$mode</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$use_include_path</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$context</code></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">fopen</span> bindet eine benannte Ressource, die durch
+   <code class="parameter">filename</code> spezifiziert wurde, an einen Stream.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.fopen-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">filename</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Hat <code class="parameter">filename</code> die Form &quot;schema://...&quot;
+       wird angenommen, dass es sich hier um einen URL handelt und PHP sucht
+       nach einem Protokollhandler (auch als Wrapper bekannt) für dieses
+       Schema. Sind keine Wrapper für dieses Protokoll registriert, gibt
+       PHP als Hilfe zum Verfolgen potentieller Probleme in Ihrem Skript
+       einen Hinweis aus und setzt dann weiter fort, als wenn
+       <code class="parameter">filename</code> eine reguläre Datei spezifiziert.
+      </p>
+      <p class="para">
+       Ist PHP zu dem Schluss gekommen, dass <code class="parameter">filename</code>
+       eine lokale Datei spezifiziert, wird es versuchen, einen Stream
+       an dieser Datei zu öffnen. Die Datei muss für PHP zugreifbar sein,
+       weshalb Sie sicherstellen müssen, dass die Dateirechte diesen
+       Zugriff ermöglichen. Wenn Sie <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">Safe Mode</a> oder
+       <a href="ini.core.html#ini.open-basedir" class="link">open_basedir</a> aktiviert haben,
+       können weitere Einschränkungen zutreffen.
+      </p>
+      <p class="para">
+       Kam PHP zum Schluss, dass es sich bei <code class="parameter">filename</code>
+       um ein registriertes Protokoll handelt, und ist dieses Protokoll
+       als ein Netzwerk URL registriert, prüft PHP, ob
+       <a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">allow_url_fopen</a> aktiviert
+       ist. Ist es nicht aktiviert, gibt PHP eine Warnung aus, und der
+       Aufruf von fopen wird scheitern.
+      </p>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+        Die Liste der unterstützten Protokolle können Sie unter
+        <a href="wrappers.html" class="xref">Unterst&uuml;tzte Protokolle und Wrapper</a> finden. Einige Protokolle (auch als
+        <em>Wrapper</em> bezeichnet)
+        unterstützen <em>context</em> und/oder <var class="filename">php.ini</var> Optionen.
+        Beziehen sie sich auf die jeweilige Seite für das genutzte Potokoll,
+        um eine Liste der Optionen, die gesetzt werden können, zu erhalten.
+        (z.B. <var class="filename">php.ini</var> Wert <em>user_agent</em> genutzt vom
+        <em>http</em> Wrapper).
+       </p>
+      </p></blockquote>
+      <p class="para">
+       Achten sie darauf, unter Windows alle Backslash-Zeichen, die in Pfaden
+       genutzt werden, zu maskieren oder nutzen sie Schrägstriche (Slash).
+       <div class="informalexample">
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"c:\\verzeichnis\\ressource.txt"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">mode</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der <code class="parameter">mode</code> Parameter spezifiziert den Zugriffstyp,
+       den sie auf den Stream anfordern. Es kann einer der folgenden sein:
+       <table class="doctable table">
+        <caption><strong>
+         Eine Liste der möglichen Modi von <span class="function">fopen</span> mittels
+         <code class="parameter">mode</code>
+        </strong></caption>
+        
+         <thead>
+          <tr>
+           <th><code class="parameter">mode</code></th>
+           <th>Beschreibung</th>
+          </tr>
+
+         </thead>
+
+         <tbody class="tbody">
+          <tr>
+           <td><em>&#039;r&#039;</em></td>
+           <td>
+            Nur zum Lesen geöffnet; platziere Dateizeiger auf Dateianfang.
+           </td>
+          </tr>
+
+          <tr>
+           <td><em>&#039;r+&#039;</em></td>
+           <td>
+            Zum Lesen und Schreiben geöffnet; platziere Dateizeiger auf
+            Dateianfang.
+           </td>
+          </tr>
+
+          <tr>
+           <td><em>&#039;w&#039;</em></td>
+           <td>
+            Nur zum Schreiben geöffnet; platziere Dateizeiger auf Dateianfang
+            und kürze die Datei auf eine Länge von 0. Existiert die Datei
+            nicht, versuche, diese zu erzeugen.
+           </td>
+          </tr>
+
+          <tr>
+           <td><em>&#039;w+&#039;</em></td>
+           <td>
+            Zum Schreiben und Lesen geöffnet; platziere Dateizeiger auf
+            Dateianfang und kürze die Datei auf eine Länge von 0. Existiert
+            die Datei nicht, versuche, diese zu erzeugen.
+           </td>
+          </tr>
+
+          <tr>
+           <td><em>&#039;a&#039;</em></td>
+           <td>
+            Nur zum Schreiben geöffnet; platziere Dateizeiger auf Dateiende.
+            Existiert die Datei nicht, versuche, diese zu erzeugen.
+            In diesem Modus ist <span class="function">fseek</span> wirkungslos; beim Schreiben wird immer angehängt.
+           </td>
+          </tr>
+
+          <tr>
+           <td><em>&#039;a+&#039;</em></td>
+           <td>
+            Zum Schreiben und Lesen geöffnet; platziere Dateizeiger auf
+            Dateiende. Existiert die Datei nicht, versuche, diese zu erzeugen.
+            In diesem Modus wirkt sich <span class="function">fseek</span> nur auf die
+            Leseposition aus; beim Schreiben wird immer angehängt.
+           </td>
+          </tr>
+
+          <tr>
+           <td><em>&#039;x&#039;</em></td>
+           <td>
+            Erzeuge und Öffne nur zum Schreiben; platziere Dateizeiger auf
+            Dateianfang. Falls die Datei schon existiert, wird der
+            <span class="function">fopen</span> Aufruf fehlschlagen durch Rückgabe von
+            <strong><code>FALSE</code></strong> und dem Auslösen eines Fehlers der Stufe
+            <strong><code>E_WARNING</code></strong>. Existiert die Datei nicht,
+            versuche, diese zu erzeugen. Dies ist zur Angabe der
+            <em>O_EXCL|O_CREAT</em> Flags für den darunterliegenden
+            <em>open(2)</em> System Aufruf äquivalent.
+           </td>
+          </tr>
+
+          <tr>
+           <td><em>&#039;x+&#039;</em></td>
+           <td>
+            Erzeuge und Öffne zum Schreiben und Lesen; ansonsten ist das
+            Verhalten gleich wie bei <em>&#039;x&#039;</em>.
+           </td>
+          </tr>
+
+          <tr>
+           <td><em>&#039;c&#039;</em></td>
+           <td>
+            Öffne Datei nur zum Schreiben. Wenn die Datei nicht existiert,
+            wird diese erzeugt. Wenn sie existiert, wird sie weder gekürzt (im
+            Gegensatz zu <em>&#039;w&#039;</em>), noch schlägt der Aufruf
+            dieser Funktion fehl (wie dies mit <em>&#039;x&#039;</em> der Fall
+            ist). Der Dateizeiger wird auf den Dateianfang platziert. Dies
+            kann nützlich sein, wenn man eine &quot;beratende&quot; (kooperative) Sperre
+            erhalten möchte (siehe <span class="function">flock</span>) bevor man
+            versucht, die Datei zu ändern, da die Nutzung
+            von <em>&#039;w&#039;</em> die Datei kürzen könnte, bevor die
+            Sperre erhalten wurde (falls Kürzen gewünscht ist, kann
+            <span class="function">ftruncate</span> genutzt werden, nachdem die Sperre
+            angefragt wurde).
+           </td>
+          </tr>
+
+          <tr>
+           <td><em>&#039;c+&#039;</em></td>
+           <td>
+            Öffne Datei zum Lesen und Schreiben; ansonsten ist das
+            Verhalten gleich wie bei <em>&#039;c&#039;</em>.
+           </td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
+      </p>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+        Verschiedene Betriebssysteme haben unterschiedliche Konventionen für das Zeilenende.
+        Wenn Sie eine Textdatei schreiben und einen
+        Zeilenumbruch einfügen möchten, müssen Sie das/die korrekte(n)
+        Zeilenendszeichen für Ihr Betriebssystem nutzen. Unix-basierte
+        Systeme nutzen <em>\n</em> als Zeilenendszeichen, Windows-basierte
+        Systeme nutzen <em>\r\n</em> als Zeilenendszeichen
+        und Macintosh-basierte Systeme nutzen <em>\r</em> als
+        Zeilenendszeichen.
+       </p>
+       <p class="para">
+        Wenn Sie die falschen Zeilenendszeichen beim Schreiben Ihrer Dateien
+        nutzen, kann es sein, dass andere Anwendungen, die diese Dateien
+        öffnen, &quot;seltsam aussehen&quot;.
+       </p>
+       <p class="para">
+        Windows bietet einen Text-Mode translations Flag
+        (<em>&#039;t&#039;</em>) an, der transparent <em>\n</em> zu
+        <em>\r\n</em> übersetzt, wenn mit der Datei gearbeitet wird.
+        Andererseits können sie auch <em>&#039;b&#039;</em> nutzen, um
+        Binärmode zu erzwingen, der ihre Daten nicht übersetzt. Um diese Flags
+        zu nutzen, geben sie entweder <em>&#039;b&#039;</em>
+        oder <em>&#039;t&#039;</em> als das letzte Zeichen des
+        <code class="parameter">mode</code> Parameters an.
+       </p>
+       <p class="para">
+        Der Standard Übersetzungsmodus hängt von der SAPI und der PHP Version
+        ab, die sie nutzen, daher ist es empfehlenswert, immer den passenden
+        Flag aus Portabilitätsgründen anzugeben. Sie
+        sollten <em>&#039;t&#039;</em> Modus nutzen, wenn sie mit Textdateien
+        arbeiten und sie nutzen <em>\n</em> um die Zeilenenden im
+        Skript zu begrenzen, erwarten aber, dass ihre Dateien mit Anwendungen
+        wie etwa Notepad lesbar sind. Ansonsten sollten
+        sie <em>&#039;b&#039;</em> nutzen.
+       </p>
+       <p class="para">
+        Wenn sie beim Arbeiten mit binären Dateien nicht das &#039;b&#039; Flag angeben,
+        können sie seltsame Probleme mit ihren Daten erleben, einschließlich
+        zerstörter Bild Dateien und merkwürdiger Probleme mit
+        <em>\r\n</em> Zeichen.
+       </p>
+      </p></blockquote>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+        Aus Portabilitätsgründen wird dringend empfohlen, dass sie immer das
+        &#039;b&#039; Flag nutzen, wenn sie Dateien mit <span class="function">fopen</span>
+        öffnen.
+       </p>
+      </p></blockquote>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+        Außerdem wird aus Gründen der Portabilität dringend empfohlen, dass
+        sie Code umschreiben, der den <em>&#039;t&#039;</em> Modus nutzt oder
+        sich darauf verlässt, so dass die korrekten Zeilenendungen und der
+        <em>&#039;b&#039;</em> Modus stattdessen genutzt werden.
+       </p>
+      </p></blockquote>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">use_include_path</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der optionale dritte Parameter <code class="parameter">use_include_path</code>
+       kann auf &#039;1&#039; oder <strong><code>TRUE</code></strong> gesetzt werden, wenn sie wollen, dass nach der
+       Datei auch im <a href="ini.core.html#ini.include-path" class="link">include_path</a>
+       gesucht wird.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">context</code></dt>
+
+     <dd>
+
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: <span class="simpara">Die Kontext-Unterstützung gibt
+es seit PHP 5.0.0. Eine Beschreibung von <em>Kontexten</em> finden
+Sie unter <a href="book.stream.html" class="xref">Streams</a>.</span></p></blockquote>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.fopen-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg eine Dateizeiger Ressource zurück oder <strong><code>FALSE</code></strong> bei Fehlern.
+  </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-function.fopen-errors">
+  <h3 class="title">Fehler/Exceptions</h3>
+  <p class="para">
+   Wenn das Öffnen fehlschlägt, wird ein Fehler der Stufe
+   <strong><code>E_WARNING</code></strong> erzeugt. Sie können <a href="language.operators.errorcontrol.html" class="link">@</a> um diese Warnung zu
+   unterdrücken.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.fopen-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.2.6</td>
+       <td>
+        Die <em>&#039;c&#039;</em> und <em>&#039;c+&#039;</em> Optionen wurde
+        hinzugefügt
+       </td>
+      </tr>
+
+      <tr>
+       <td>4.3.2</td>
+       <td>
+        Die <em>&#039;x&#039;</em> und <em>&#039;x+&#039;</em> Optionen wurden
+        hinzugefügt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.2.6</td>
+       <td>
+        Die <em>&#039;c&#039;</em> und <em>&#039;c+&#039;</em> Optionen wurden
+        hinzugefügt.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.fopen-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-2587">
+    <p><strong>Beispiel #1 <span class="function">fopen</span> Beispiele</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/home/rasmus/file.txt"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/home/rasmus/file.gif"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"wb"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"ftp://user:password@example.com/somefile.txt"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"w"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.fopen-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <div class="warning"><strong class="warning">Warnung</strong><p class="para">Bei SSL-Verbindungen zusammen
+mit Microsoft IIS hält sich dieser Webserver nicht an das Protokoll und
+schließt die Verbindung ohne ein <em>close_notify</em> zu senden.
+PHP quittiert dieses Fehlverhalten mit &quot;SSL: Fatal Protocol Error&quot;, wenn das
+Ende der Daten erreicht ist. Eine mögliche Lösung besteht darin, den Level von
+<a href="errorfunc.configuration.html#ini.error-reporting" class="link">error_reporting</a> herabzusetzten und
+Warnings auszuschließen. PHP kann fehlerhafte IIS-Serversoftware
+erkennen, wenn Sie einen Stream mit dem <em>https://</em>-Wrapper öffnen,
+und unterdrückt die Warnung für Sie. Falls Sie <span class="function">fsockopen</span>
+benutzen, um einen <em>ssl://</em>-Socket zu öffnen, müssen Sie selbst
+dafür Sorge tragen, die Warnung zu erkennen und diese zu unterdrücken.</p>
+</div>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <span class="simpara">Wenn <a href="features.safe-mode.html" class="link">Safe Mode</a> aktiviert ist überprüft PHP, ob
+das Arbeitsverzeichnis, die gleiche UID (Eigentümer) hat wie das Skript
+selbst.</span></p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Wenn sie Probleme beim Lesen und Schreiben von Dateien haben und sie nutzen
+    die Server Modul Version von PHP, denken sie daran, sicherzustellen, dass
+    die Dateien und Verzeichnisse, die sie nutzen, für den Server Prozess
+    zugänglich sind.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Diese Funktion kann ebenfalls gelingen, wenn <code class="parameter">filename</code>
+    ein Verzeichnis ist. Im Zweifelsfall sollte vor dem Aufruf von
+    <span class="function">fopen</span> mit <span class="function">is_dir</span> geprüft werden,
+    ob <code class="parameter">filename</code> eine Datei oder ein Verzeichnis ist.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.fopen-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><a href="wrappers.html" class="xref">Unterst&uuml;tzte Protokolle und Wrapper</a></li>
+    <li class="member"><span class="function">fclose</span></li>
+    <li class="member"><span class="function">fgets</span></li>
+    <li class="member"><span class="function">fread</span></li>
+    <li class="member"><span class="function">fwrite</span></li>
+    <li class="member"><span class="function">fsockopen</span></li>
+    <li class="member"><span class="function">file</span></li>
+    <li class="member"><span class="function">file_exists</span></li>
+    <li class="member"><span class="function">is_readable</span></li>
+    <li class="member"><span class="function">stream_set_timeout</span></li>
+    <li class="member"><span class="function">popen</span></li>
+    <li class="member"><span class="function">stream_context_create</span></li>
+    <li class="member"><span class="function">umask</span></li>
+    <li class="member"><span class="classname">SplFileObject</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

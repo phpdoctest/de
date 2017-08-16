@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Unter-Namespaces deklarieren</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.namespaces.html">Namespaces</a></li>
+  <li><a href="language.namespaces.rationale.html">&Uuml;bersicht &uuml;ber Namespaces</a></li>
+  <li><a href="language.namespaces.definition.html">Namespaces definieren</a></li>
+  <li class="active"><a href="language.namespaces.nested.html">Unter-Namespaces deklarieren</a></li>
+  <li><a href="language.namespaces.definitionmultiple.html">Mehrere Namespaces in der selben Datei definieren</a></li>
+  <li><a href="language.namespaces.basics.html">Namespaces verwenden: Grundlagen</a></li>
+  <li><a href="language.namespaces.dynamic.html">Namespaces und dynamische Sprachfeatures</a></li>
+  <li><a href="language.namespaces.nsconstants.html">Namespace-Schl&uuml;sselwort und __NAMESPACE__-Konstante</a></li>
+  <li><a href="language.namespaces.importing.html">Namespaces verwenden: Aliase/Importieren</a></li>
+  <li><a href="language.namespaces.global.html">Globaler Namensraum</a></li>
+  <li><a href="language.namespaces.fallback.html">Namespaces verwenden: R&uuml;ckgriff auf globale Funktion/Konstante</a></li>
+  <li><a href="language.namespaces.rules.html">Regeln f&uuml;r Namensaufl&ouml;sung</a></li>
+  <li><a href="language.namespaces.faq.html">FAQ: Dinge, die Sie &uuml;ber Namespaces wissen sollten</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.namespaces.definition.html">Namespaces definieren</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.namespaces.definitionmultiple.html">Mehrere Namespaces in der selben Datei definieren</a></div>
+                <div class="up"><a href="language.namespaces.html">Namespaces</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.namespaces.nested" class="sect1">
+  <h2 class="title">Unter-Namespaces deklarieren</h2>
+  
+  <p class="para">
+   Ähnlich wie Verzeichnisse und Dateien hat ein PHP-Namespace auch die
+   Möglichkeit, eine Hierarchie von Namespacenamen zu beinhalten. Ein Namespace
+   kann also mit Unterebenen definiert werden:
+   <div class="example" id="example-249">
+    <p><strong>Beispiel #1 Einen einzelnen Namespace mit einer Hierarchie deklarieren</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">MyProject</span><span style="color: #007700">\</span><span style="color: #0000BB">Sub</span><span style="color: #007700">\</span><span style="color: #0000BB">Level</span><span style="color: #007700">;<br /><br />const&nbsp;</span><span style="color: #0000BB">CONNECT_OK&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />class&nbsp;</span><span style="color: #0000BB">Connection&nbsp;</span><span style="color: #007700">{&nbsp;</span><span style="color: #FF8000">/*&nbsp;...&nbsp;*/&nbsp;</span><span style="color: #007700">}<br />function&nbsp;</span><span style="color: #0000BB">connect</span><span style="color: #007700">()&nbsp;{&nbsp;</span><span style="color: #FF8000">/*&nbsp;...&nbsp;*/&nbsp;&nbsp;</span><span style="color: #007700">}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   Das obige Beispiel erzeugt eine Konstante <em>MyProject\Sub\Level\CONNECT_OK</em>,
+   die Klasse <em>MyProject\Sub\Level\Connection</em> und die Funktion
+   <em>MyProject\Sub\Level\connect</em>.
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

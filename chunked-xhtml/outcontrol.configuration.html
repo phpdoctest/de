@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Laufzeit-Konfiguration</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li class="header up"><a href="book.outcontrol.html">Ausgabekontrolle</a></li>
+  <li class="header up"><a href="outcontrol.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="outcontrol.requirements.html">Anforderungen</a></li>
+  <li><a href="outcontrol.installation.html">Installation</a></li>
+  <li class="active"><a href="outcontrol.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="outcontrol.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="outcontrol.installation.html">Installation</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="outcontrol.resources.html">Ressource-Typen</a></div>
+                <div class="up"><a href="outcontrol.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="outcontrol.configuration" class="section">
+ <h2 class="title">Laufzeit-Konfiguration</h2>
+ <p class="simpara">Das Verhalten dieser Funktionen wird
+durch Einstellungen in der <var class="filename">php.ini</var> beeinflusst.</p>
+ <p class="para">
+  <table class="doctable table">
+   <caption><strong>Output-Control-Konfigurationsoptionen</strong></caption>
+   
+    <thead>
+     <tr>
+      <th>Name</th>
+      <th>Standard</th>
+      <th>Veränderbar</th>
+      <th>Changelog</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+    <tr>
+     <td><a href="outcontrol.configuration.html#ini.output-buffering" class="link">output_buffering</a></td>
+     <td>&quot;0&quot;</td>
+     <td>PHP_INI_PERDIR</td>
+     <td class="empty">&nbsp;</td>
+    </tr>
+
+    <tr>
+     <td><a href="outcontrol.configuration.html#ini.output-handler" class="link">output_handler</a></td>
+     <td>NULL</td>
+     <td>PHP_INI_PERDIR</td>
+     <td>Verfügbar seit 4.0.4.</td>
+    </tr>
+
+    <tr>
+     <td><a href="outcontrol.configuration.html#ini.implicit-flush" class="link">implicit_flush</a></td>
+     <td>&quot;0&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>PHP_INI_PERDIR in PHP &lt;= 4.2.3.</td>
+    </tr>
+
+    <tr>
+     <td><a href="outcontrol.configuration.html#ini.url-rewriter.tags" class="link">url_rewriter.tags</a></td>
+     <td>&quot;a=href,area=href,frame=src,form=,fieldset=&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>
+      Verfügbar seit PHP 4.0.4. Vor PHP 7.1.0 wurde dies für das trans sid
+      rewrite der Session verwendet. Von PHP 7.1.0 an wird es nur noch von
+     <span class="function">output_add_rewrite_var</span> verwendet.
+    </td>
+    </tr>
+
+    <tr>
+     <td><a href="outcontrol.configuration.html#ini.url-rewriter.hosts" class="link">url_rewriter.hosts</a></td>
+     <td><em>$_SERVER[&#039;HTTP_HOST&#039;]</em> wird als Voreinstellung verwendet.</td>
+     <td>PHP_INI_ALL</td>
+     <td>Verfügbar seit PHP 7.1.0</td>
+    </tr>
+
+    </tbody>
+   
+  </table>
+
+   Weitere Details und die Definitionen der
+PHP_INI_*-Konstanten finden Sie im <a href="configuration.changes.modes.html" class="xref">Wo Konfigurationseinstellungen gesetzt werden k&ouml;nnen</a>.
+ </p>
+
+ <p class="para">Hier eine kurze Erklärung der
+Konfigurationsoptionen:</p>
+
+ <p class="para">
+ <dl>
+
+  
+   <dt id="ini.output-buffering">
+    <code class="parameter">output_buffering</code>
+    <span class="type">boolean</span>/<span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Sie können Output Buffering für alle Scripte aktivieren, indem Sie
+     diesen Wert auf &#039;On&#039; setzen. Wenn Sie die Größe des Buffers auf
+     limitieren wollen, so können Sie die maximale Größe in Bytes an
+     Stelle von &#039;On&#039; angeben (z.B. output_buffering=4096).
+     Ab PHP 4.3.5 ist dieser Wert für den PHP-CLI-Kommandozeileninterpreter
+     grundsätzlich &#039;Off&#039;.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.output-handler">
+    <code class="parameter">output_handler</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Sie können die Ausgaben Ihres Scriptes an eine Funktion weiterleiten.
+     Wenn sie z.B. <span class="function">mb_output_handler</span> als output_handler
+     setzen, so wird das Character-Encoding transparent in das spezifizierte
+     Encoding umgewandelt. Das Setzen einer output_handle- Funktion aktiviert
+     das Output Buffering automatisch.
+    </p>
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <p class="para">
+      Sie können <span class="function">mb_output_handler</span> nicht
+      gleichzeitig mit <span class="function">ob_iconv_handler</span> und
+      <span class="function">ob_gzhandler</span> nicht gleichzeitig mit
+      <a href="zlib.configuration.html#ini.zlib.output-compression" class="link">zlib.output_compression</a>.
+      benutzen.
+     </p>
+    </p></blockquote>
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <p class="para">
+      Es können nur eingebaute PHP-Funktionen angegeben werden,
+      benutzerdefinierte Funktionen können mit Hilfe der
+      <span class="function">ob_start</span>-Funktion genutzt werden.
+     </p>
+    </p></blockquote>
+   </dd>
+
+  
+
+  
+   <dt id="ini.implicit-flush">
+    <code class="parameter">implicit_flush</code>
+    <span class="type">boolean</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Diese Option ist standardmäßig deaktiviert. Wenn Sie implicit_flush
+     aktivieren, so wird PHP angewiesen, nach jedem Output-Block automatisch
+     den Output-Layer zu leeren. Dies ist äquivalent zu
+     <span class="function">flush</span>-Aufrufen nach jedem <span class="function">echo</span>-
+     oder <span class="function">print</span>-Aufruf und nach jedem
+     <em>HTML</em>-Block.
+    </p>
+    <p class="para">
+     In Webanwendungen hat diese Option massive Performanceauswirkungen
+     und sollte wenn überhaupt dann nur zu Debuggingzwecken aktiviert
+     werden. Im <em>PHP-CLI</em>-Kommandozeileninterpreter
+     dagegen ist diese Option standardmäßig aktiviert.
+    </p>
+    <p class="para">
+     Siehe auch <span class="function">ob_implicit_flush</span>.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.url-rewriter.tags">
+    <code class="parameter">url_rewriter.tags</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <em>url_rewriter.tags</em> gibt an welche HTML-Tags durch
+     <span class="function">output_add_rewrite_var</span> umgeschrieben werden.
+     Die Voreinstellung ist
+     <em>a=href,area=href,frame=src,input=src,form=</em>
+    </span>
+    <span class="simpara">
+     <em>form</em> ist ein besonderes Tag.
+     <em>&lt;input hidden=&quot;session_id&quot; name=&quot;session_name&quot;&gt;</em>
+     wird als Form-Variable hinzugefügt.
+    </span>
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <span class="simpara">
+      Vor PHP 7.1.0 wurde <a href="outcontrol.configuration.html#ini.url-rewriter.tags" class="link">url_rewriter.tags</a>
+      verwendet, um <a href="session.configuration.html#ini.session.trans-sid-tags" class="link">session.trans_sid_tags</a> anzugeben.
+      Seit PHP 7.1.0 wird <em>fieldset</em> nicht länger als besonderes Tag angesehen.
+     </span>
+    </p></blockquote>
+   </dd>
+
+  
+
+  
+   <dt id="ini.url-rewriter.hosts">
+    <code class="parameter">url_rewriter.hosts</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <em>url_rewriter.hosts</em> specifies which hosts are
+     rewritten to include <span class="function">output_add_rewrite_var</span> values.
+     Defaults to <em>$_SERVER[&#039;HTTP_HOST&#039;]</em>. Multiple hosts
+     can be specified by &quot;,&quot;, no space is allowed between hosts. e.g.
+     <em>php.net,wiki.php.net,bugs.php.net</em>
+    </span>
+   </dd>
+
+  
+
+ </dl>
+
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

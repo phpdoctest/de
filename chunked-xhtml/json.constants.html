@@ -1,0 +1,431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Konstanten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li class="header up"><a href="book.json.html">JSON</a></li>
+  <li><a href="intro.json.html">Einf&uuml;hrung</a></li>
+  <li><a href="json.setup.html">Installation/Konfiguration</a></li>
+  <li class="active"><a href="json.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="class.jsonserializable.html">JsonSerializable</a></li>
+  <li><a href="ref.json.html">JSON-Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="json.resources.html">Ressource-Typen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="class.jsonserializable.html">JsonSerializable</a></div>
+                <div class="up"><a href="book.json.html">JSON</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="json.constants" class="appendix">
+ <h1>Vordefinierte Konstanten</h1>
+ <p class="simpara">Folgende Konstanten werden von dieser
+Erweiterung definiert und stehen nur zur Verfügung, wenn die Erweiterung entweder
+statisch in PHP kompiliert oder dynamisch zur Laufzeit geladen
+wurde.</p>
+ <p class="para">
+  Die folgenden Konstanten geben den Typ des Fehlers an, der von
+  <span class="function">json_last_error</span> zurückgegeben wurde.
+ </p>
+ <dl>
+
+  
+   <dt id="constant.json-error-none">
+    <strong><code>JSON_ERROR_NONE</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Kein Fehler aufgetreten.
+     Verfügbar seit PHP 5.3.0.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-error-depth">
+    <strong><code>JSON_ERROR_DEPTH</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Die maximale Stacktiefe wurde überschritten.
+     Verfügbar seit PHP 5.3.0.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-error-state-mismatch">
+    <strong><code>JSON_ERROR_STATE_MISMATCH</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Tritt ein bei Unterlauf oder State-Mismatch.
+     Verfügbar seit PHP 5.3.0.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-error-ctrl-char">
+    <strong><code>JSON_ERROR_CTRL_CHAR</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Steuerzeichenfehler, möglicherweise unkorrekt kodiert.
+     Verfügbar seit PHP 5.3.0.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-error-syntax">
+    <strong><code>JSON_ERROR_SYNTAX</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Syntaxfehler.
+     Verfügbar seit PHP 5.3.0.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-error-utf8">
+    <strong><code>JSON_ERROR_UTF8</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Ungültige UTF-8 Zeichen, eventuall falsch kodiert.
+     Verfügbar seit PHP 5.3.3.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-error-recursion">
+    <strong><code>JSON_ERROR_RECURSION</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Das an <span class="function">json_encode</span> übergebene Objekt oder Array
+     enthält rekursive Referenzen und kann nicht kodiert werden. Wenn
+     die <strong><code>JSON_PARTIAL_OUTPUT_ON_ERROR</code></strong> Option übergeben
+     wurde, wird <strong><code>NULL</code></strong> an Stelle der rekursiven Referenz kodiert.
+    </p>
+    <p class="para">
+     Diese Konstante ist verfügbar seit PHP 5.5.0.
+    </p>
+   </dd>
+
+  
+  
+   <dt id="constant.json-error-inf-or-nan">
+    <strong><code>JSON_ERROR_INF_OR_NAN</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Der an <span class="function">json_encode</span> übergebene Wert enthält entweder
+     <a href="language.types.float.html#language.types.float.nan" class="link"><strong><code>NAN</code></strong></a>
+     oder <a href="function.is-infinite.html" class="link"><strong><code>INF</code></strong></a>.
+     Wenn die <strong><code>JSON_PARTIAL_OUTPUT_ON_ERROR</code></strong> Option übergeben
+     wurde, wird <em>0</em> an Stelle dieser speziellen Zahlen kodiert.
+    </p>
+    <p class="para">
+     Diese Konstante ist verfügbar seit PHP 5.5.0.
+    </p>
+   </dd>
+
+  
+  
+   <dt id="constant.json-error-unsupported-type">
+    <strong><code>JSON_ERROR_UNSUPPORTED_TYPE</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Der an <span class="function">json_encode</span> übergebene Wert enthält einen
+     nicht unterstützten Typ, beispielweise <span class="type">resource</span>.
+     Wenn die <strong><code>JSON_PARTIAL_OUTPUT_ON_ERROR</code></strong> Option übergeben
+     wurde, wird <strong><code>NULL</code></strong> an Stelle des nicht unterstützten Wertes kodiert.
+    </p>
+    <p class="para">
+     Diese Konstante ist verfügbar seit PHP 5.5.0.
+    </p>
+   </dd>
+
+  
+ </dl>
+
+
+ <p class="para">
+  Die folgenden Konstanten können kombiniert (verodert) werden, 
+  um Optionen für <span class="function">json_encode</span> zu bilden.
+ </p>
+ <dl>
+
+  
+   <dt id="constant.json-hex-tag">
+    <strong><code>JSON_HEX_TAG</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Alle &lt; und &gt; werden zu \u003C und \u003E konvertiert.
+     Verfügbar seit PHP 5.3.0.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-hex-amp">
+    <strong><code>JSON_HEX_AMP</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Alle &amp;s werden zu \u0026 konvertiert.
+     Verfügbar seit PHP 5.3.0.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-hex-apos">
+    <strong><code>JSON_HEX_APOS</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Alle &#039; werden zu \u0027 konvertiert.
+     Verfügbar seit PHP 5.3.0.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-hex-quot">
+    <strong><code>JSON_HEX_QUOT</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Alle &quot; werden zu \u0022 konvertiert.
+     Verfügbar seit PHP 5.3.0.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-force-object">
+    <strong><code>JSON_FORCE_OBJECT</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Gibt ein Objekt statt einem Array aus, wenn ein nichtassoziatives
+     Array verwendet wird. Besonders nützlich, wenn der Empfänger der Ausgabe
+     ein Objekt erwartet und das Array leer ist.
+     Verfügbar seit PHP 5.3.0.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-numeric-check">
+    <strong><code>JSON_NUMERIC_CHECK</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Kodiert numerische Zeichenketten als Zahlen.
+     Verfügbar seit PHP 5.3.3.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-bigint-as-string">
+    <strong><code>JSON_BIGINT_AS_STRING</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Kodiert große Zahlen als ihre originale Zeichenkette.
+     Verfügbar seit PHP 5.4.0.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-pretty-print">
+    <strong><code>JSON_PRETTY_PRINT</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Nutzt Whitespace um die zurückgegebenen Daten zu formatieren.
+     Verfügbar seit PHP 5.4.0.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-unescaped-slashes">
+    <strong><code>JSON_UNESCAPED_SLASHES</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Escape <em>/</em> nicht.
+     Verfügbar seit PHP 5.4.0.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-unescaped-unicode">
+    <strong><code>JSON_UNESCAPED_UNICODE</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Kodiere Unicode Zeichen, welche aus mehreren Bytes bestehen, direkt
+     (standardmäßig werden \uXXXX Escapes genutzt).
+     Verfügbar seit PHP 5.4.0.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-partial-output-on-error">
+    <strong><code>JSON_PARTIAL_OUTPUT_ON_ERROR</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Ersetze einige unkodierbare Werte anstatt fehlzuschlagen.
+     Verfügbar seit PHP 5.5.0.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.json-preserve-zero-fraction">
+    <strong><code>JSON_PRESERVE_ZERO_FRACTION</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Stellt sicher, dass <span class="type">float</span> Werte immer als Fließkomma-Werte
+     kodiert werden. Verfügbar seit PHP 5.6.6.
+    </span>
+   </dd>
+
+  
+ </dl>
+
+ 
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

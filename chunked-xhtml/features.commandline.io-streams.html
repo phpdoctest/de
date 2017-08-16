@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Ein- und Ausgabestreams</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="features.html">Features</a></li>
+  <li class="header up"><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></li>
+  <li><a href="features.commandline.introduction.html">Introduction</a></li>
+  <li><a href="features.commandline.differences.html">Unterschiede zu anderen SAPIs</a></li>
+  <li><a href="features.commandline.options.html">Optionen</a></li>
+  <li><a href="features.commandline.usage.html">Nutzung</a></li>
+  <li class="active"><a href="features.commandline.io-streams.html">I/O Streams</a></li>
+  <li><a href="features.commandline.interactive.html">Interaktiver Modus</a></li>
+  <li><a href="features.commandline.webserver.html">Eingebauter Webserver</a></li>
+  <li><a href="features.commandline.ini.html">INI Einstellungen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="features.commandline.usage.html">Nutzung</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="features.commandline.interactive.html">Interaktiver Modus</a></div>
+                <div class="up"><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="features.commandline.io-streams" class="section">
+  <h2 class="title">Ein- und Ausgabestreams</h2>
+  
+  
+  <p class="para">
+   Die <acronym class="acronym">CLI</acronym> <acronym class="acronym">SAPI</acronym> definiert einige Konstanten für Ein- und Ausgabestreams,
+   um das Erstellen von Kommandozeilenanwendungen zu erleichtern.
+  </p>
+  
+  <p class="para">
+   <table class="doctable table">
+    <caption><strong>CLI-spezifische Konstanten</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Konstante</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><strong><code>STDIN</code></strong></td>
+       <td>
+        <p class="para">
+         Ein schon geöffneter Stream auf <em>stdin</em>.
+         Dies erspart das Öffnen mit
+         <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$stdin&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'php://stdin'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+         </div>
+
+         Wenn sie einzelne Zeilen von <em>stdin</em> lesen wollen, können Sie
+         folgendes Code-Fragment benutzen:
+         <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$line&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">trim</span><span style="color: #007700">(</span><span style="color: #0000BB">fgets</span><span style="color: #007700">(</span><span style="color: #0000BB">STDIN</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//&nbsp;liest&nbsp;eine&nbsp;Zeile&nbsp;von&nbsp;STDIN<br /></span><span style="color: #0000BB">fscanf</span><span style="color: #007700">(</span><span style="color: #0000BB">STDIN</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"%d\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$number</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;liest&nbsp;eine&nbsp;Zahl&nbsp;von&nbsp;STDIN<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+         </div>
+
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td><strong><code>STDOUT</code></strong></td>
+       <td>
+        <p class="para">
+         Ein schon geöffneter Stream auf <em>stdout</em>.
+         Das erspart das Öffnen mit
+         <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$stdout&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'php://stdout'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'w'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+         </div>
+
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td><strong><code>STDERR</code></strong></td>
+       <td>
+        <p class="para">
+         Ein schon geöffneter Stream auf <em>stderr</em>.
+         Das erspart das Öffnen mit
+         <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$stderr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'php://stderr'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'w'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+         </div>
+
+        </p>
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+  
+  <p class="para">
+   Angesichts des oben genannten, brauchen Sie beispielsweise nicht
+   selbst einen Stream für <em>stderr</em> öffnen, sondern
+   können einfach die Konstante anstelle der Ressource benutzen:
+   <div class="example-contents">
+<div class="shellcode"><pre class="shellcode">php -r &#039;fwrite(STDERR, &quot;stderr\n&quot;);&#039;</pre>
+</div>
+   </div>
+
+   Sie brauchen diese Streams nicht explizit schließen, weil sie
+   automatisch von PHP geschlossen werden, wenn Ihr Skript endet.
+  </p>
+  
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Diese Konstanten sind nicht verfügbar, wenn ein PHP Skript von
+    <em>stdin</em> eingelesen wird.
+   </p>
+  </p></blockquote>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

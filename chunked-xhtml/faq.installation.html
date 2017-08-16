@@ -1,0 +1,842 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Installation</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="faq.html">FAQ</a></li>
+  <li><a href="faq.general.html">Allgemeine Informationen</a></li>
+  <li><a href="faq.mailinglist.html">Mailing-Listen</a></li>
+  <li><a href="faq.obtaining.html">PHP beziehen</a></li>
+  <li><a href="faq.databases.html">PHP und Datenbanken</a></li>
+  <li class="active"><a href="faq.installation.html">Installation</a></li>
+  <li><a href="faq.build.html">Probleme bei der Kompilierung</a></li>
+  <li><a href="faq.using.html">PHP benutzen</a></li>
+  <li><a href="faq.passwords.html">Password Hashing</a></li>
+  <li><a href="faq.html.html">PHP und HTML</a></li>
+  <li><a href="faq.com.html">PHP und COM</a></li>
+  <li><a href="faq.misc.html">Verschiedene Fragen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="faq.databases.html">PHP und Datenbanken</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="faq.build.html">Probleme bei der Kompilierung</a></div>
+                <div class="up"><a href="faq.html">FAQ</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="faq.installation" class="chapter">
+  <h1>Installation</h1>
+  
+
+  <p class="para">
+   In diesem Abschnitt geht es um übliche Fragen zur Installation von PHP. PHP
+   gibt es für fast jedes Betriebssystem (außer vielleicht für Mac OS vor OS
+   X)
+   und fast jeden Webserver.
+  </p>
+  <p class="para">
+   Um PHP zu installieren, folgen Sie bitte den Anweisungen im <a href="install.html" class="xref">Installation und Konfiguration</a>.
+  </p>
+
+  <div class="qandaset"><ol class="qandaset_questions"><li><a href="#faq.installation.apache2">
+     
+      Warum sollte ich Apache2 mit threaded MPM nicht in einer
+      Produktionsumgebung verwenden?
+     
+    </a></li><li><a href="#faq.installation.phpini">
+     
+      Unix/Windows: Wo sollte sich meine php.ini befinden?
+     
+    </a></li><li><a href="#faq.installation.nodata">
+     
+      Unix: I habe PHP installiert, aber jedesmal, wenn ich eine Seite
+      aufrufe, bekomme ich die Meldung &#039;Document Contains No Data&#039;! Woran
+      liegt das?
+     
+    </a></li><li><a href="#faq.installation.processing">
+     
+      Unix: Ich habe PHP mit RPM-Paketen installiert, aber Apache verarbeitet
+      die PHP-Seiten nicht. Was ist da los?
+     
+    </a></li><li><a href="#faq.installation.frontpage">
+     
+      Unix: Ich habe Apache mit dem FrontPage-Erweiterungs-Patch versehen und
+      pl&ouml;tzlich funktioniert PHP nicht mehr. Ist PHP zur FrontPage-Erweiterung
+      f&uuml;r Apache inkompatibel?
+     
+    </a></li><li><a href="#faq.installation.blankscreen">
+     
+      Unix/Windows: Ich habe PHP installiert, aber wenn ich versuche, mit
+      meinem Browser ein PHP-Script aufzurufen, erhalte ich eine leere Seite.
+     
+    </a></li><li><a href="#faq.installation.500error">
+     
+      Unix/Windows: Ich habe PHP installiert, aber wenn ich versuche, mit
+      meinem Browser ein PHP-Script aufzurufen, erhalte ich vom Server einen
+      500 Fehler.
+     
+    </a></li><li><a href="#faq.installation.undefinedsyms">
+     
+      Manche Betriebssysteme: Ich habe PHP ohne Fehlermeldungen installiert,
+      aber wenn ich versuche, Apache zu starten, erhalte ich Fehler wegen
+      undefinierter Symbole:
+            
+[mybox:user /src/php5] root# apachectl configtest
+ apachectl: /usr/local/apache/bin/httpd Undefined symbols:
+  _compress
+  _uncompress
+      
+     
+    </a></li><li><a href="#faq.installation.cgierror">
+     
+      Windows: Ich habe PHP installiert, aber wenn ich versuche, mit meinem
+      Browser ein PHP-Script aufzurufen, erhalte ich die Fehlermeldung:
+      
+
+cgi error:
+ The specified CGI application misbehaved by not
+ returning a complete set of HTTP headers.
+ The headers it did return are:
+
+      
+     
+    </a></li><li><a href="#faq.installation.phpandiis">
+     
+      Windows: Ich habe alle Anweisungen befolgt, aber ich erreiche keine
+      Zusammenarbeit zwischen PHP und den IIS.
+     
+    </a></li><li><a href="#faq.installation.forceredirect">
+     
+       Wenn Ich PHP mit IIS, PWS, OmniHTTPD oder Xitami als CGI laufen lasse,
+       bekomme ich die folgende Fehlermeldung: Security Alert! PHP
+       CGI cannot be accessed directly..
+     
+    </a></li><li><a href="#faq.installation.findphpini">
+     
+      Wie kann ich herausfinden, ob meine php.ini gefunden und gelesen wird?
+      Anscheinend ist das nicht der Fall, weil meine &Auml;nderungen nicht
+      &uuml;bernommen werden.
+     
+    </a></li><li><a href="#faq.installation.addtopath">
+     
+      Wie f&uuml;ge ich unter Windows mein PHP-Verzeichnis zu PATH
+      hinzu?
+     
+    </a></li><li><a href="#faq.installation.phprc">
+     
+      Wie mache ich unter Windows die Datei php.ini f&uuml;r PHP verf&uuml;gbar?
+     
+    </a></li><li><a href="#faq.installation.apache.multiviews">
+     
+      Ist es m&ouml;glich, die Apache Content-Negotiation (MultiViews Option) mit
+      PHP zu verwenden?
+     
+    </a></li><li><a href="#faq.installation.requestmethods">
+     
+      Ist PHP auf die Bearbeitung von Anfragen mit der GET- und POST-Methode
+      beschr&auml;nkt?
+     
+    </a></li></ol></div>
+   <dl class="qandaentry" id="faq.installation.apache2">
+    <dt><strong>
+     
+      Warum sollte ich Apache2 mit threaded MPM nicht in einer
+      Produktionsumgebung verwenden?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      PHP ist Klebstoff. Es ist der Klebstoff, der verwendet wird, um coole
+      Web-Anwendungen zu erstellen indem er dutzende von Bibliotheken von
+      Drittanbietern zusammenklebt und sie über eine intuitiv und einfach
+      erlernbare Schnittstelle als zusammenhängende Einheit erscheinen lässt.
+      Die Flexibilität und die Mächtigkeit von PHP sind auf die Stabilität und
+      Robustheit der zugrunde liegenden Plattform angewiesen. Es braucht ein
+      funktionierendes Betriebssystem, einen funktionierenden Webserver und
+      funktionierende Bibliotheken Dritter, um zusammen zu kleben. Wenn eines
+      davon nicht mehr funktioniert, braucht PHP Wege, um die Probleme
+      erkennen und schnell beheben zu können. Wenn Sie das zugrunde liegende
+      Gerüst dadurch komplexer machen, dass Sie keine völlig voneinander
+      getrennten Ausführungsthreads und Speichersegmente und keine starke
+      Sandbox für jede einzelne Anfrage haben, lassen Sie weitere
+      Schwachstellen ins System von PHP einfließen.
+     </p>
+     <p class="para">
+      Falls Sie threaded MPM benutzen wollen, sollten Sie nach einer
+      FastCGI-Konfiguration schauen, in der PHP in seinem eigenen
+      Speicherbereich läuft.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.installation.phpini">
+    <dt><strong>
+     
+      Unix/Windows: Wo sollte sich meine <var class="filename">php.ini</var> befinden?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Unter Unix sollte sie standardmäßig in
+      <var class="filename">/usr/local/lib</var> sein, was
+      <var class="filename">&lt;install-path&gt;/lib</var> ist. Die Meisten werden
+      das beim Übersetzen mit der Option <a href="configure.about.html#configure.with-config-file-path" class="link">--with-config-file-path</a>
+      ändern wollen. Sie können das, z.B. mit
+      <div class="example-contents"><div class="shellcode"><pre class="shellcode">--with-config-file-path=/etc</pre>
+</div></div>
+
+      festlegen. Dann kopieren Sie die
+      <var class="filename">php.ini-development</var> der Distribution nach
+      <var class="filename">/etc/php.ini</var> und editieren sie, um alle gewünschten
+      lokalen Änderungen vorzunehmen.
+     </p>
+      <div class="example-contents"><div class="shellcode"><pre class="shellcode">--with-config-file-scan-dir=PATH</pre>
+</div></div>
+
+     <p class="para">
+      Unter Windows ist der standardmäßige Pfad für die <var class="filename">php.ini</var> das
+      Windows-Verzeichnis. Falls die den Apache Webserver verwenden, wird die
+      <var class="filename">php.ini</var> zuerst im Apache-Installationsverzeichnis, z.B.
+      <var class="filename">c:\program files\apache group\apache</var>, gesucht.
+      Dadurch können Sie auf dem selben Rechner verschiedene
+      <var class="filename">php.ini</var>-Dateien für verschiedene Apache-Versionen haben.
+     </p>
+     <p class="para">
+      Siehe auch das Kapitel über die <a href="configuration.file.html" class="link">Konfigurationsdatei</a>.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.installation.nodata">
+    <dt><strong>
+     
+      Unix: I habe PHP installiert, aber jedesmal, wenn ich eine Seite
+      aufrufe, bekomme ich die Meldung &#039;Document Contains No Data&#039;! Woran
+      liegt das?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Das bedeutet wahrscheinlich, dass PHP irgend ein Problem hat und einen
+      Core Dump (Speicherauszug) erzeugt. Schauen Sie in der Fehler-Logdatei
+      Ihres Servers nach, ob das der Fall ist und versuchen Sie dann das
+      Problem mit einem kleinen Test-Script zu reproduzieren. Falls Sie sich
+      mit &#039;gdb&#039; auskennen, ist es für die Entwickler beim Lokalisieren des
+      Problems sehr hilfreich, wenn Sie Ihrem Fehlerbericht einen Backtrace
+      hinzufügen. Falls Sie PHP als Apache-Modul verwenden, können Sie in etwa
+      Folgendes versuchen:
+      <ul class="itemizedlist">
+       <li class="listitem">
+        <p class="para">
+         Stoppen Sie Ihre httpd-Prozesse
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         gdb httpd
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Stoppen Sie Ihre httpd-Prozesse
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         &gt; run -X -f /pfad/zur/httpd.conf
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Rufen Sie mit Ihrem Browser die URL auf, die das Problem verursacht
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         &gt; run -X -f /path/to/httpd.conf
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         gdb sollte Sie jetzt darüber in Kenntnis setzen, falls Sie einen Core
+         Dump bekommen
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Geben Sie ein: bt
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Sie sollten Ihren Backtrace in Ihren Fehlerbericht einfügen und
+         diesen unter <a href="http://bugs.php.net/" class="link external">&raquo;&nbsp;http://bugs.php.net/</a>
+         abgeben.
+        </p>
+       </li>
+      </ul>
+     </p>
+     <p class="para">
+      Falls Sie in Ihrem Script Funktionen regulärer Ausdrücke
+      (<span class="function">preg_match</span> und Freunde) verwenden, sollten Sie
+      sicherstellen, dass Sie PHP und Apache mit dem selben Programmpaket für
+      reguläre Ausdrücke übersetzt haben. Mit PHP und Apache 1.3.x sollte das
+      automatisch der Fall sein.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.installation.processing">
+    <dt><strong>
+     
+      Unix: Ich habe PHP mit RPM-Paketen installiert, aber Apache verarbeitet
+      die PHP-Seiten nicht. Was ist da los?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Unter der Annahme, dass Sie sowohl Apache als auch PHP mit RPM-Paketen
+      installiert haben, müssen Sie einige oder alle der folgenden Zeilen in
+      die Datei <var class="filename">httpd.conf</var> einfügen oder die Kommentarzeichen davor
+      entfernen:
+      <div class="example-contents">
+<div class="apache-confcode"><pre class="apache-confcode"># Extra Modules
+AddModule mod_php.c
+AddModule mod_perl.c
+
+# Extra Modules
+LoadModule php_module         modules/mod_php.so
+LoadModule php5_module        modules/libphp5.so
+LoadModule perl_module        modules/libperl.so</pre>
+</div>
+      </div>
+
+      Und fügen Sie
+      <div class="example-contents">
+<div class="apache-confcode"><pre class="apache-confcode">AddType application/x-httpd-php .php</pre>
+</div>
+      </div>
+
+      ... in die globalen Eigenschaften oder in die Eigenschaften der
+      VirtualDomain, für die Sie PHP-Unterstützung benötigen, ein.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.installation.frontpage">
+    <dt><strong>
+     
+      Unix: Ich habe Apache mit dem FrontPage-Erweiterungs-Patch versehen und
+      plötzlich funktioniert PHP nicht mehr. Ist PHP zur FrontPage-Erweiterung
+      für Apache inkompatibel?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Nein, PHP funktioniert bestens mit der FrontPage-Erweiterung. Das
+      Problem liegt darin, dass der FrontPage-Patch mehrere Apache-Strukturen
+      verändert, auf die sich PHP verlässt. Eine Neuübersetzung von PHP
+      (mittels &#039;make clean ; make&#039;), nachdem der Patch angewandt wurde, löst
+      das Problem.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.installation.blankscreen">
+    <dt><strong>
+     
+      Unix/Windows: Ich habe PHP installiert, aber wenn ich versuche, mit
+      meinem Browser ein PHP-Script aufzurufen, erhalte ich eine leere Seite.
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Wenn Sie sich im Browser den Quelltext der Seite anschauen, werden Sie
+      vermutlich den Quellcode Ihres PHP-Scripts sehen können. Das bedeutet,
+      dass der Webserver das Script nicht zur Interpretation an PHP übergeben
+      hat. Mit Ihrer Server-Konfiguration ist etwas nicht in Ordnung -
+      überprüfen Sie Ihre Server-Konfiguration nochmal genau anhand der
+      PHP-Installationsanleitung.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.installation.500error">
+    <dt><strong>
+     
+      Unix/Windows: Ich habe PHP installiert, aber wenn ich versuche, mit
+      meinem Browser ein PHP-Script aufzurufen, erhalte ich vom Server einen
+      500 Fehler.
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Beim Versuch des Servers PHP zu starten ist etwas schiefgegangen.
+      Wechseln Sie auf der Kommandozeile (in der Eingabeaufforderung) in das
+      Verzeichnis, das die ausführbare PHP-Datei (unter Windows
+      <var class="filename">php.exe</var>) enthält und lassen Sie
+      <strong class="command">php -i</strong> laufen, um eine sinnvolle Fehlermeldung zu
+      bekommen. Falls PHP irgendwelche Probleme bei der Ausführung hat, werden
+      entsprechende Fehlermeldungen ausgegeben, die Ihnen Hinweise darauf
+      liefern, was zu tun ist. Falls sich der Bildschirm mit HTML-Quelltext
+      füllt (die Ausgabe der Funktion <span class="function">phpinfo</span>),
+      funktioniert PHP und Ihr Problem könnte mit Ihrer Server-Konfiguration
+      zusammenhängen, die Sie dann nochmal genau überprüfen sollten.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.installation.undefinedsyms">
+    <dt><strong>
+     
+      Manche Betriebssysteme: Ich habe PHP ohne Fehlermeldungen installiert,
+      aber wenn ich versuche, Apache zu starten, erhalte ich Fehler wegen
+      undefinierter Symbole:
+            <div class="example-contents"><div class="shellcode"><pre class="shellcode">[mybox:user /src/php5] root# apachectl configtest
+ apachectl: /usr/local/apache/bin/httpd Undefined symbols:
+  _compress
+  _uncompress</pre>
+</div></div>
+
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Das hat nichts mit PHP zu tun, sondern mit den
+      MySQL-Client-Bibliotheken. Manche benötigen <strong class="option configure">--with-zlib</strong>
+, manche nicht. Auf diese Frage
+      wird in den MySQL FAQ eingegangen.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.installation.cgierror">
+    <dt><strong>
+     
+      Windows: Ich habe PHP installiert, aber wenn ich versuche, mit meinem
+      Browser ein PHP-Script aufzurufen, erhalte ich die Fehlermeldung:
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+cgi error:
+ The specified CGI application misbehaved by not
+ returning a complete set of HTTP headers.
+ The headers it did return are:
+</pre></div>
+      </div>
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Diese Fehlermeldung bedeutet, dass PHP daran gescheitert ist, überhaupt
+      irgendwas auszugeben. Wechseln Sie auf der Kommandozeile (in der
+      Eingabeaufforderung) in das Verzeichnis, das die ausführbare PHP-Datei
+      (unter Windows <var class="filename">php.exe</var>) enthält und lassen Sie
+      <strong class="command">php -i</strong> laufen, um eine sinnvolle Fehlermeldung zu
+      bekommen. Falls PHP irgendwelche Probleme bei der Ausführung hat, werden
+      entsprechende Fehlermeldungen ausgegeben, die Ihnen Hinweise darauf
+      liefern, was zu tun ist. Falls sich der Bildschirm mit HTML-Quelltext
+      füllt (die Ausgabe der Funktion <span class="function">phpinfo</span>),
+      funktioniert PHP.
+     </p>
+     <p class="para">
+      Funktioniert PHP erst mal auf der Kommandozeile, versuchen Sie nochmal,
+      das Script mit dem Browser aufzurufen. Falls das immer noch misslingt,
+      könnte das eine der folgenden Ursachen haben:
+     </p>
+     <ul class="itemizedlist">
+      <li class="listitem">
+       <span class="simpara">
+        Die Zugriffsberechtigungen Ihres PHP-Scripts, Ihrer
+        <var class="filename">php.exe</var>, <var class="filename">php5ts.dll</var>,
+        <var class="filename">php.ini</var> oder irgendeiner PHP-Erweiterung die Sie versuchen
+        zu laden, sind für den anonymen Internetbenutzer
+        <em>ISUR_&lt;machinename&gt;</em> nicht ausreichend.
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        Die Scriptdatei existiert nicht (oder ist vielleicht, bezogen auf Ihr
+        Web-Wurzelverzeichnis, nicht da, wo Sie denken). Beachten Sie, dass
+        Sie beim IIS diesen Fehler aufspüren können, wenn Sie im Internet
+        Services Manager beim Einstellen der script mappings die Option &#039;check
+        file exists&#039; ankreuzen. Falls dann eine Scriptdatei nicht existiert
+        gibt der Server stattdessen einen 404 Fehler zurück. Das hat außerdem
+        den zusätzlichen Vorteil, dass der IIS die erforderlichen
+        Authentisierungen an Ihrem Script auf Grundlage der
+        NTLanMan-Berechtigungen für Sie durchführt.
+       </span>
+      </li>
+     </ul>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.installation.phpandiis">
+    <dt><strong>
+     
+      Windows: Ich habe alle Anweisungen befolgt, aber ich erreiche keine
+      Zusammenarbeit zwischen PHP und den IIS.
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Stellen Sie sicher, dass jeder Benutzer, der ein PHP-Script ausführt,
+      die Berechtigung hat <var class="filename">php.exe</var> auzuführen! Der IIS
+      verwendet den Benutzer anonymous, der bei der Installation des IIS
+      hinzugefügt wird. Dieser Benutzer benötigt die entsprechenden
+      Berechtigungen für <var class="filename">php.exe</var>. Außerdem benötigt auch
+      jeder angemeldete Benutzer die Berechtigung <var class="filename">php.exe</var>
+      auszuführen. Dem IIS4 müssen Sie mitteilen, dass PHP eine Script-Engine
+      ist. Lesen Sie auch <a href="faq.installation.html#faq.installation.forceredirect" class="link">diese
+      FAQ</a>.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.installation.forceredirect">
+    <dt><strong>
+     
+       Wenn Ich PHP mit IIS, PWS, OmniHTTPD oder Xitami als CGI laufen lasse,
+       bekomme ich die folgende Fehlermeldung: <em>Security Alert! PHP
+       CGI cannot be accessed directly.</em>.
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Sie müssen die <a href="ini.core.html#ini.cgi.force-redirect" class="link">
+      cgi.force_redirect</a>-Anweisung auf <em>0</em> setzen.
+      Weil diese Anweisung standardmäßig auf <em>1</em> gesetzt ist,
+      müssen Sie darauf achten, dass sie nicht mit einem <em>;</em>
+      auskommentiert ist. Wie alle Anweisungen wird auch diese in der
+      <var class="filename">php.ini</var> gesetzt.
+     </p>
+     <p class="para">
+      Wegen des standardmäßigen Werts von <em>1</em> ist es äußerst
+      wichtig sicherzustellen, dass die richtige <var class="filename">php.ini</var> gelesen wird. Lesen
+      Sie für Einzelheiten <a href="faq.installation.html#faq.installation.findphpini" class="link">diese
+      FAQ</a>.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.installation.findphpini">
+    <dt><strong>
+     
+      Wie kann ich herausfinden, ob meine <var class="filename">php.ini</var> gefunden und gelesen wird?
+      Anscheinend ist das nicht der Fall, weil meine Änderungen nicht
+      übernommen werden.
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Rufen Sie <span class="function">phpinfo</span> auf, um zu überprüfen, ob Ihre
+      <var class="filename">php.ini</var> von PHP gelesen wird. Fast ganz oben gibt es einen Punkt
+      namens <em>Configuration File (php.ini)</em>. Dort können Sie
+      feststellen, wo PHP nach der <var class="filename">php.ini</var> sucht und ob sie gelesen wird
+      oder nicht. Falls es dort nur einen Verzeichnis<var class="envar">PFAD</var> gibt,
+      wird sie nicht gelesen und Sie sollten Ihre <var class="filename">php.ini</var> in dieses
+      Verzeichnis legen. Falls der Pfad die <var class="filename">php.ini</var> beinhaltet, dann wird
+      sie auch gelesen.
+     </p>
+     <p class="para">
+      Wenn Ihre <var class="filename">php.ini</var> gelesen wird und Sie PHP als Modul benutzen, müssen
+      Sie Ihren Webserver neu starten, nachdem Sie Änderungen an der <var class="filename">php.ini</var>
+      vorgenommen haben.
+     </p>
+     <p class="para">
+      Siehe auch <span class="function">php_ini_loaded_file</span>.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.installation.addtopath">
+    <dt><strong>
+     
+      Wie füge ich unter Windows mein PHP-Verzeichnis zu <var class="envar">PATH</var>
+      hinzu?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Unter Windows 7, XP, Vista, 2008, 2012 und höher:
+      <ul class="itemizedlist">
+       <li class="listitem">
+        <p class="para">
+         Gehen Sie in die Systemsteuerung und öffnen Sie das System-Icon
+         (Start → Systemsteuerung)
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Gehen Sie zum Register &#039;Erweitert&#039;
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Klicken Sie auf den Button &#039;Umgebungsvariablen&#039;
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Schauen Sie in das Fenster &#039;Systemvariablen&#039;
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Suchen Sie nach dem Pfad-Eintrag PATH (Sie müssen evtl. blättern um
+         ihn zu finden)
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Doppelklicken Sie auf den Pfad-Eintrag
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Geben Sie Ihr PHP-Verzeichnis mit vorangestelltem &#039;;&#039; am Ende ein
+         (z.B. <em>;C:\php</em>)
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Drücken Sie auf OK
+        </p>
+       </li>
+      </ul>
+     </p>
+     <p class="para">
+      Unter Windows 98/Me müssen Sie die Datei
+      <var class="filename">autoexec.bat</var> editieren:
+      <ul class="itemizedlist">
+       <li class="listitem">
+        <p class="para">
+         Öffnen Sie den Editor (Start → Ausführen und notepad eingeben)
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Öffnen Sie die Datei <var class="filename">C:\autoexec.bat</var>
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Finden Sie die Zeile mit PATH=C:\WINDOWS;C:\WINDOWS\COMMAND;..... und
+         fügen Sie <em>;C:\php</em> am Ende der Zeile hinzu
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Speichern Sie die Datei und starten Sie Ihren Computer neu
+        </p>
+       </li>
+      </ul>
+     </p>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <span class="simpara">
+       Führen Sie einen Neustart durch, nachdem Sie die obigen Schritte
+       befolgt haben, um sicher zu stellen, dass die
+       <var class="envar">PATH</var>-Änderungen übernommen werden.
+      </span>
+     </p></blockquote>
+     <p class="para">
+      Das PHP Handbuch hat früher empfohlen, Dateien ins
+      Windows-Systemverzeichnis zu kopieren, weil sich dieses Verzeichnis
+      (<var class="filename">C:\Windows</var>, <var class="filename">C:\WINNT</var>, etc.)
+      standardmäßig im Pfad (<var class="envar">PATH</var>) des Systems befindet.
+      Dateien ins Windows-Systemverzeichnis zu kopieren könnte Probleme
+      verursachen und es wird schon lange davon abgeraten.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.installation.phprc">
+    <dt><strong>
+     
+      Wie mache ich unter Windows die Datei <var class="filename">php.ini</var> für PHP verfügbar?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Es gibt mehrere Möglichkeiten, das zu erreichen. Falls Sie Apache
+      benutzen, lesen Sie die für die jeweilige Installation bestimmte
+      Anleitung (<a href="install.windows.legacy.index.html#install.windows.legacy.apache1" class="link">Apache 1</a>,
+      <a href="install.windows.legacy.index.html#install.windows.legacy.apache2" class="link">Apache 2</a>). Andernfalls
+      müssen Sie die Umgebungsvariable <var class="varname">PHPRC</var> setzen:
+     </p>
+     <p class="para">
+      Unter Windows NT, 2000, XP und 2003:
+      <ul class="itemizedlist">
+       <li class="listitem">
+        <p class="para">
+         Gehen Sie in die Systemsteuerung und öffnen Sie das System-Icon
+         (Start → Einstellungen → Systemsteuerung  → System oder
+         bei Windows XP/2003 einfach Start → Systemsteuerung → System)
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Gehen Sie zum Register &#039;Erweitert&#039;
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Klicken Sie auf den Button &#039;Umgebungsvariablen&#039;
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Schauen Sie in das Fenster &#039;Systemvariablen&#039;
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Klicken Sie auf &#039;Neu&#039; und geben Sie &#039;PHPRC&#039; als Name für die Variable
+         ein und als Wert für die Variable das Verzeichnis, in dem sich die
+         <var class="filename">php.ini</var> befindet (z.B. <em>C:\php</em>)
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Drücken Sie auf OK und starten Sie Ihren Computer neu
+        </p>
+       </li>
+      </ul>
+     </p>
+     <p class="para">
+      Unter Windows 98/Me müssen Sie die Datei
+      <var class="filename">autoexec.bat</var> editieren:
+      <ul class="itemizedlist">
+       <li class="listitem">
+        <p class="para">
+         Öffnen Sie den Editor (Start → Ausführen und notepad eingeben)
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Öffnen Sie die Datei <var class="filename">C:\autoexec.bat</var>
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Fügen Sie am Ende der Datei eine neue Zeile ein: <em>set
+         PHPRC=C:\php</em> (ersetzen Sie <em>C:\php</em> mit
+         dem Verzeichnis, in dem sich die <var class="filename">php.ini</var> befindet). Bitte beachten
+         Sie, dass der Pfad keine Leerzeichen enthalten darf. Falls Sie PHP
+         zum Beispiel in <var class="filename">C:\Program Files\PHP</var> installiert
+         haben, müssen Sie stattdessen <var class="filename">C:\PROGRA~1\PHP</var>
+         eingeben.
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         Speichern Sie die Datei und starten Sie Ihren Computer neu
+        </p>
+       </li>
+      </ul>
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.installation.apache.multiviews">
+    <dt><strong>
+     
+      Ist es möglich, die Apache Content-Negotiation (MultiViews Option) mit
+      PHP zu verwenden?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      If links to PHP files include extension, everything works perfect. This
+      FAQ is only for the case when links to PHP files don&#039;t include extension
+      and you want to use content negotiation to choose PHP files from URL
+      with no extension. In this case, replace the line <em>AddType
+      application/x-httpd-php .php</em> with:
+      <div class="example-contents">
+<div class="apache-confcode"><pre class="apache-confcode">AddHandler php5-script php
+AddType text/html php</pre>
+</div>
+      </div>
+
+      This solution doesn&#039;t work for Apache 1 as PHP module doesn&#039;t catch
+      <em>php-script</em>.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.installation.requestmethods">
+    <dt><strong>
+     
+      Ist PHP auf die Bearbeitung von Anfragen mit der GET- und POST-Methode
+      beschränkt?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Nein, es ist möglich, jede Anfragemethode zu bearbeiten, z.B. auch
+      CONNECT. Ein korrekter Antwortstatus kann mit
+      <span class="function">header</span> gesendet werden. Falls nur die Methoden GET
+      und POST bearbeitet werden sollen, kann das mit dieser
+      Apache-Konfiguration erreicht werden:
+      <div class="example-contents">
+<div class="apache-confcode"><pre class="apache-confcode">&lt;LimitExcept GET POST&gt;
+Deny from all
+&lt;/LimitExcept&gt;</pre>
+</div>
+      </div>
+
+     </p>
+    </dd>
+   </dl>
+  
+
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

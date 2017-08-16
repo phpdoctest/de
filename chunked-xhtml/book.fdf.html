@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Forms Data Format Funktionen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.utilspec.nontext.html">Non-Text MIME-Ausgaben</a></li>
+  <li class="active"><a href="book.fdf.html">FDF</a></li>
+  <li><a href="book.gnupg.html">GnuPG</a></li>
+  <li><a href="book.haru.html">haru</a></li>
+  <li><a href="book.ming.html">Ming</a></li>
+  <li><a href="book.pdf.html">PDF</a></li>
+  <li><a href="book.ps.html">PS</a></li>
+  <li><a href="book.rpmreader.html">RPM Reader</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="refs.utilspec.nontext.html">Non-Text MIME-Ausgaben</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.fdf.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.utilspec.nontext.html">Non-Text MIME-Ausgaben</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.fdf" class="book">
+ 
+ <h1>Forms Data Format Funktionen</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.fdf.html">Einf&uuml;hrung</a></li>
+<li><a href="fdf.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="fdf.requirements.html">Anforderungen</a></li>
+<li><a href="fdf.installation.html">Installation</a></li>
+<li><a href="fdf.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="fdf.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="fdf.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="fdf.examples.html">Beispiele</a></li>
+<li><a href="ref.fdf.html">FDF</a> — FDF Funktionen<ul class="chunklist chunklist_title">
+<li><a href="function.fdf-add-doc-javascript.html">fdf_add_doc_javascript</a> — F&uuml;gt JavaScript Code in ein FDF Dokument ein.</li>
+<li><a href="function.fdf-add-template.html">fdf_add_template</a> — F&uuml;gt dem FDF Dokument ein Template hinzu</li>
+<li><a href="function.fdf-close.html">fdf_close</a> — Schlie&szlig;t ein FDF Dokument</li>
+<li><a href="function.fdf-create.html">fdf_create</a> — Erzeugt ein neues FDF Dokument</li>
+<li><a href="function.fdf-enum-values.html">fdf_enum_values</a> — Ruft f&uuml;r jeden Dokumentwert eine benutzerdefinierte Funktion auf</li>
+<li><a href="function.fdf-errno.html">fdf_errno</a> — Gibt den Fehlercode der letzten FDF Operation zur&uuml;ck</li>
+<li><a href="function.fdf-error.html">fdf_error</a> — Gibt die Beschrebung eines Fehlercodes zur&uuml;ck</li>
+<li><a href="function.fdf-get-ap.html">fdf_get_ap</a> — Get the appearance of a field</li>
+<li><a href="function.fdf-get-attachment.html">fdf_get_attachment</a> — Extracts uploaded file embedded in the FDF</li>
+<li><a href="function.fdf-get-encoding.html">fdf_get_encoding</a> — Liefert den Wert des /Encoding Schl&uuml;ssels</li>
+<li><a href="function.fdf-get-file.html">fdf_get_file</a> — Gibt den Wert des /F Schl&uuml;ssels zur&uuml;ck</li>
+<li><a href="function.fdf-get-flags.html">fdf_get_flags</a> — Ermittelt die Flags eines Feldes</li>
+<li><a href="function.fdf-get-opt.html">fdf_get_opt</a> — Liefert einen Wert aus dem Optionsarray eines Feldes</li>
+<li><a href="function.fdf-get-status.html">fdf_get_status</a> — Gibt den Wert des /STATUS Schl&uuml;ssels zur&uuml;ck</li>
+<li><a href="function.fdf-get-value.html">fdf_get_value</a> — Gibt den Wert eines Feldes zur&uuml;ck</li>
+<li><a href="function.fdf-get-version.html">fdf_get_version</a> — Liefert die Versionsnummer einer FDF Datei oder des APIs</li>
+<li><a href="function.fdf-header.html">fdf_header</a> — Setzt FDF-spezifische Header</li>
+<li><a href="function.fdf-next-field-name.html">fdf_next_field_name</a> — Gibt den Namen des n&auml;chsten Feldes zur&uuml;ck</li>
+<li><a href="function.fdf-open-string.html">fdf_open_string</a> — Read a FDF document from a string</li>
+<li><a href="function.fdf-open.html">fdf_open</a> — &Ouml;ffnet ein FDF Dokument</li>
+<li><a href="function.fdf-remove-item.html">fdf_remove_item</a> — Sets target frame for form</li>
+<li><a href="function.fdf-save-string.html">fdf_save_string</a> — Returns the FDF document as a string</li>
+<li><a href="function.fdf-save.html">fdf_save</a> — Speichern eines FDF Dokuments</li>
+<li><a href="function.fdf-set-ap.html">fdf_set_ap</a> — Legt das Aussehen eines Feldes fest</li>
+<li><a href="function.fdf-set-encoding.html">fdf_set_encoding</a> — Legt die FDF Zeichenkodierung fest</li>
+<li><a href="function.fdf-set-file.html">fdf_set_file</a> — Definiert ein PDF-Dokument, das FDF-Daten anzeigen soll</li>
+<li><a href="function.fdf-set-flags.html">fdf_set_flags</a> — Setzt Flags eines Feldes</li>
+<li><a href="function.fdf-set-javascript-action.html">fdf_set_javascript_action</a> — Weist einem Feld eine JavaScript Aktion zu</li>
+<li><a href="function.fdf-set-on-import-javascript.html">fdf_set_on_import_javascript</a> — Adds javascript code to be executed when Acrobat opens the FDF</li>
+<li><a href="function.fdf-set-opt.html">fdf_set_opt</a> — Legt eine Option eines Feldes fest</li>
+<li><a href="function.fdf-set-status.html">fdf_set_status</a> — Setzt den Wert des /STATUS Schl&uuml;ssels</li>
+<li><a href="function.fdf-set-submit-form-action.html">fdf_set_submit_form_action</a> — Setzt eine Submit-Form-Aktion f&uuml;r ein Feld</li>
+<li><a href="function.fdf-set-target-frame.html">fdf_set_target_frame</a> — Set target frame for form display</li>
+<li><a href="function.fdf-set-value.html">fdf_set_value</a> — Legt den Wert eines Feldes fest</li>
+<li><a href="function.fdf-set-version.html">fdf_set_version</a> — Sets version number for a FDF file</li>
+</ul>
+</li>
+</ul>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Erzeugt eine benutzerdefinierte Fehlermeldung/Warnung/Benachrichtigung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li class="header up"><a href="book.errorfunc.html">Fehlerbehandlung</a></li>
+  <li class="header up"><a href="ref.errorfunc.html">Fehlerbehandlungsfunktionen</a></li>
+  <li><a href="function.debug-backtrace.html">debug_backtrace</a></li>
+  <li><a href="function.debug-print-backtrace.html">debug_print_backtrace</a></li>
+  <li><a href="function.error-clear-last.html">error_clear_last</a></li>
+  <li><a href="function.error-get-last.html">error_get_last</a></li>
+  <li><a href="function.error-log.html">error_log</a></li>
+  <li><a href="function.error-reporting.html">error_reporting</a></li>
+  <li><a href="function.restore-error-handler.html">restore_error_handler</a></li>
+  <li><a href="function.restore-exception-handler.html">restore_exception_handler</a></li>
+  <li><a href="function.set-error-handler.html">set_error_handler</a></li>
+  <li><a href="function.set-exception-handler.html">set_exception_handler</a></li>
+  <li class="active"><a href="function.trigger-error.html">trigger_error</a></li>
+  <li><a href="function.user-error.html">user_error</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.set-exception-handler.html">set_exception_handler</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.user-error.html">user_error</a></div>
+                <div class="up"><a href="ref.errorfunc.html">Fehlerbehandlungsfunktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.trigger-error" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">trigger_error</h1>
+  <p class="refpurpose">
+   Erzeugt eine benutzerdefinierte Fehlermeldung/Warnung/Benachrichtigung
+  </p>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.trigger-error-description">
+  <h3 class="title">Beschreibung</h3>
+   <div class="methodsynopsis dc-description">
+    <span class="type">bool</span> <span class="methodname">trigger_error</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$error_msg</code></span>
+    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$error_type</code><span class="initializer"> = E_USER_NOTICE</span></span>
+   ] )</div>
+
+  <p class="para rdfs-comment">
+   Mit dieser Funktion kann der Benutzer Bedingungen festlegen, die
+   Fehler auslösen, entweder in Verbindung mit der standardmässigen
+   Fehlerbehandlung oder einer benutzerdefinierten Routine, die als
+   neue Fehlerbehandlungsfunktion gesetzt wurde  (<span class="function">set_error_handler</span>). 
+  </p>
+  <p class="para">
+   Diese Funktion ist nützlich, wenn Sie zur Laufzeit eine bestimmte
+   Rückmeldung bei einer Ausnahme brauchen.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.trigger-error-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">error_msg</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die gewünschte Fehlermeldung für diesen Fehler. Die Länge ist auf
+       1024 Bytes begrenzt, darüber hinausgehende Zeichen werden
+       abgeschnitten.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">error_type</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der gewünschte Fehlertyp für diesen Fehler. Es können nur 
+       Konstanten der E_USER Familie gewählt werden, der Vorgabewert
+       ist <strong><code>E_USER_NOTICE</code></strong>.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.trigger-error-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Die Funktion gibt <strong><code>FALSE</code></strong> zurück wenn ein falscher 
+   <code class="parameter">error_type</code> übergeben wurde,
+   sonst <strong><code>TRUE</code></strong>
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.trigger-error-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-491">
+    <p><strong>Beispiel #1 <span class="function">trigger_error</span> Beispiel</strong></p>
+    <div class="example-contents"><p>
+     Siehe auch <span class="function">set_error_handler</span> für ein 
+     ausführlicheres Beispiel.
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$divisor&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">trigger_error</span><span style="color: #007700">(</span><span style="color: #DD0000">"Kann&nbsp;nicht&nbsp;durch&nbsp;0&nbsp;teilen"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">E_USER_ERROR</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.trigger-error-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="para">
+    HTML-Entities in der <code class="parameter">error_msg</code> werden
+    nicht automatisch escaped. Wenn die Fehlermeldung in einem
+    Browser ausgegeben werden soll so sollten Sie diese in diesem
+    Fall selbst mit <span class="function">htmlentities</span> vorverarbeiten.
+   </p>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.trigger-error-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">error_reporting</span></li>
+    <li class="member"><span class="function">set_error_handler</span></li>
+    <li class="member"><span class="function">restore_error_handler</span></li>
+    <li class="member">Die <a href="errorfunc.constants.html" class="link">Error Level Konstanten</a></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

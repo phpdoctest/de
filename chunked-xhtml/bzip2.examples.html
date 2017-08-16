@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Beispiele</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.compression.html">Erweiterungen zur Datenkompression und Archivierung</a></li>
+  <li class="header up"><a href="book.bzip2.html">Bzip2</a></li>
+  <li><a href="intro.bzip2.html">Einf&uuml;hrung</a></li>
+  <li><a href="bzip2.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="bzip2.constants.html">Vordefinierte Konstanten</a></li>
+  <li class="active"><a href="bzip2.examples.html">Beispiele</a></li>
+  <li><a href="ref.bzip2.html">Bzip2 Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="bzip2.constants.html">Vordefinierte Konstanten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ref.bzip2.html">Bzip2 Funktionen</a></div>
+                <div class="up"><a href="book.bzip2.html">Bzip2</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="bzip2.examples" class="chapter">
+ <h1>Beispiele</h1>
+ <p class="para">
+  Dieses Beispiel öffnet eine temporäre Datei und schreibt einen Teststring
+  in diese, danach wird der Inhalt der Datei ausgegeben.
+ </p>
+ <div class="example" id="example-695">
+  <p><strong>Beispiel #1 Ein kleines <span class="function">bzip2</span>-Beispiel</strong></p>
+  <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$filename&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"/tmp/testfile.bz2"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Das&nbsp;ist&nbsp;ein&nbsp;Test.\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Datei&nbsp;zum&nbsp;Schreiben&nbsp;öffnen<br /></span><span style="color: #0000BB">$bz&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">bzopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"w"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Zeichenkette&nbsp;in&nbsp;Datei&nbsp;schreiben<br /></span><span style="color: #0000BB">bzwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$bz</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Datei&nbsp;schließen<br /></span><span style="color: #0000BB">bzclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$bz</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Datei&nbsp;zum&nbsp;Lesen&nbsp;öffnen<br /></span><span style="color: #0000BB">$bz&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">bzopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;10&nbsp;Zeichen&nbsp;lesen<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">bzread</span><span style="color: #007700">(</span><span style="color: #0000BB">$bz</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Ausgabe&nbsp;bis&nbsp;zum&nbsp;Dateiende&nbsp;(oder&nbsp;der&nbsp;nächsten&nbsp;1024&nbsp;Zeichen)&nbsp;und&nbsp;schließen<br />der&nbsp;Datei.&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">bzread</span><span style="color: #007700">(</span><span style="color: #0000BB">$bz</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">bzclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$bz</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+  </div>
+
+ </div>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

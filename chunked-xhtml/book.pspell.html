@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Pspell</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.international.html">Unterst&uuml;tzung menschlicher Sprache und Zeichenkodierung</a></li>
+  <li><a href="book.enchant.html">Enchant</a></li>
+  <li><a href="book.fribidi.html">FriBiDi</a></li>
+  <li><a href="book.gender.html">Gender</a></li>
+  <li><a href="book.gettext.html">Gettext</a></li>
+  <li><a href="book.iconv.html">iconv</a></li>
+  <li><a href="book.intl.html">intl</a></li>
+  <li><a href="book.mbstring.html">Multibyte String</a></li>
+  <li class="active"><a href="book.pspell.html">Pspell</a></li>
+  <li><a href="book.recode.html">Recode</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.mb-substr.html">mb_substr</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.pspell.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.international.html">Unterst&uuml;tzung menschlicher Sprache und Zeichenkodierung</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.pspell" class="book">
+ 
+  <h1>Pspell</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.pspell.html">Einf&uuml;hrung</a></li>
+<li><a href="pspell.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="pspell.requirements.html">Anforderungen</a></li>
+<li><a href="pspell.installation.html">Installation</a></li>
+<li><a href="pspell.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="pspell.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="pspell.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.pspell.html">Pspell Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.pspell-add-to-personal.html">pspell_add_to_personal</a> — F&uuml;gt der pers&ouml;nlichen Wortliste ein Wort hinzu</li>
+<li><a href="function.pspell-add-to-session.html">pspell_add_to_session</a> — F&uuml;gt der Wortliste der aktuellen Sitzung ein Wort hinzu</li>
+<li><a href="function.pspell-check.html">pspell_check</a> — &Uuml;berpr&uuml;ft ein Wort</li>
+<li><a href="function.pspell-clear-session.html">pspell_clear_session</a> — L&ouml;scht die aktuelle Sitzung</li>
+<li><a href="function.pspell-config-create.html">pspell_config_create</a> — Erzeugt eine Konfiguration zum &Ouml;ffnen eines W&ouml;rterbuchs</li>
+<li><a href="function.pspell-config-data-dir.html">pspell_config_data_dir</a> — Ort der Dateien mit den Daten f&uuml;r die Sprachen</li>
+<li><a href="function.pspell-config-dict-dir.html">pspell_config_dict_dir</a> — Ort der Haupt-Wortliste</li>
+<li><a href="function.pspell-config-ignore.html">pspell_config_ignore</a> — Ignoriert W&ouml;rter mit weniger als N Buchstaben</li>
+<li><a href="function.pspell-config-mode.html">pspell_config_mode</a> — &Auml;ndert den Modus f&uuml;r die Anzahl gelieferter Vorschl&auml;ge</li>
+<li><a href="function.pspell-config-personal.html">pspell_config_personal</a> — Legt die Datei fest, die die pers&ouml;nliche Wortliste enth&auml;lt</li>
+<li><a href="function.pspell-config-repl.html">pspell_config_repl</a> — Legt die Datei fest, welche die Ersetzen-Paare enth&auml;lt</li>
+<li><a href="function.pspell-config-runtogether.html">pspell_config_runtogether</a> — Betrachtet zusammengesetzte W&ouml;rter als g&uuml;ltige Verbindungen</li>
+<li><a href="function.pspell-config-save-repl.html">pspell_config_save_repl</a> — Bestimmt, ob Ersetzen-Paare zusammen mit der Wortliste gespeichert werden</li>
+<li><a href="function.pspell-new-config.html">pspell_new_config</a> — L&auml;dt ein neues W&ouml;rterbuch mit den Einstellungen einer angegebenen Konfiguration</li>
+<li><a href="function.pspell-new-personal.html">pspell_new_personal</a> — L&auml;dt ein neues W&ouml;rterbuch mit pers&ouml;nlicher Wortliste</li>
+<li><a href="function.pspell-new.html">pspell_new</a> — L&auml;dt ein neues W&ouml;rterbuch</li>
+<li><a href="function.pspell-save-wordlist.html">pspell_save_wordlist</a> — Speichert die pers&ouml;nliche Wortliste in einer Datei</li>
+<li><a href="function.pspell-store-replacement.html">pspell_store_replacement</a> — Speichert das Ersetzen-Paar f&uuml;r ein Wort</li>
+<li><a href="function.pspell-suggest.html">pspell_suggest</a> — Macht Vorschl&auml;ge f&uuml;r die Schreibweise eines Wortes</li>
+</ul>
+</li>
+</ul>
+
+
+ 
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Umkodierung von Dateien entsprechend der Recode-Anweisung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.international.html">Unterst&uuml;tzung menschlicher Sprache und Zeichenkodierung</a></li>
+  <li class="header up"><a href="book.recode.html">Recode</a></li>
+  <li class="header up"><a href="ref.recode.html">Recode-Funktionen</a></li>
+  <li class="active"><a href="function.recode-file.html">recode_file</a></li>
+  <li><a href="function.recode-string.html">recode_string</a></li>
+  <li><a href="function.recode.html">recode</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="ref.recode.html">Recode-Funktionen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.recode-string.html">recode_string</a></div>
+                <div class="up"><a href="ref.recode.html">Recode-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.recode-file" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">recode_file</h1>
+  <p class="refpurpose">Umkodierung von Dateien entsprechend der Recode-Anweisung</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.recode-file-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">recode_file</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$request</code></span>
+   , <span class="methodparam"><span class="type">resource</span> <code class="parameter">$input</code></span>
+   , <span class="methodparam"><span class="type">resource</span> <code class="parameter">$output</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Umkodierung der Datei, die durch den Dateizeiger <code class="parameter">input</code>
+   referenziert wird, in die Datei <code class="parameter">output</code>, entsprechend
+   der Recode-Anweisung <code class="parameter">request</code>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.recode-file-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">request</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der gewünschte Recode-Requesttyp.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">input</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ein lokaler Dateizeiger vom Typ <span class="type">resource</span> für den
+       <code class="parameter">input</code>-Parameter.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">output</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ein lokaler Dateizeiger vom Typ <span class="type">resource</span> für den
+       <code class="parameter">output</code>-Parameter.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.recode-file-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt <strong><code>FALSE</code></strong> zurück, wenn es nicht möglich ist, die Anweisung durchzuführen,
+   andernfalls <strong><code>TRUE</code></strong>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.recode-file-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-3004">
+    <p><strong>Beispiel #1 Einfaches <span class="function">recode_file</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$input&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'input.txt'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$output&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'output.txt'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'w'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">recode_file</span><span style="color: #007700">(</span><span style="color: #DD0000">"us..flat"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.recode-file-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <p class="para">
+   Die Funktion verarbeitet derzeit keine Dateizeiger, die auf entfernte Dateien
+   zeigen (URLs). Beide Dateizeiger müssen auf lokale Dateien zeigen.
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.recode-file-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">fopen</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

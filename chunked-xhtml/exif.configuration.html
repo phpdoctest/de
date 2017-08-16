@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Laufzeit-Konfiguration</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.utilspec.image.html">Bildverarbeitung und -generierung</a></li>
+  <li class="header up"><a href="book.exif.html">Exif</a></li>
+  <li class="header up"><a href="exif.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="exif.requirements.html">Anforderungen</a></li>
+  <li><a href="exif.installation.html">Installation</a></li>
+  <li class="active"><a href="exif.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="exif.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="exif.installation.html">Installation</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="exif.resources.html">Ressource-Typen</a></div>
+                <div class="up"><a href="exif.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="exif.configuration" class="section">
+ <h2 class="title">Laufzeit-Konfiguration</h2>
+ <p class="simpara">Das Verhalten dieser Funktionen wird
+durch Einstellungen in der <var class="filename">php.ini</var> beeinflusst.</p>
+ <p class="para">
+  Exif unterstützt eine automatische Konvertierung von Unicode- und
+  JIS-kodierten Zeichen von Nutzerkommentaren, wenn das Modul
+  <a href="ref.mbstring.html" class="link">mbstring</a> verfügbar ist. Dies wird
+  gemacht, indem zuerst die spezifizierten Kommentare dekodiert werden. 
+  Das Ergebnis ist dann mit einem Zeichensatz kodiert, der mit der 
+  <em>HTTP</em>-Ausgabe übereinstimmen sollte.
+ <table class="doctable table">
+  <caption><strong>Exif-Konfigurationsoptionen</strong></caption>
+  
+   <thead>
+    <tr>
+     <th>Name</th>
+     <th>Standard</th>
+     <th>Veränderbar</th>
+     <th>Changelog</th>
+    </tr>
+
+   </thead>
+
+   <tbody class="tbody">
+    <tr>
+     <td><a href="exif.configuration.html#ini.exif.encode-unicode" class="link">exif.encode_unicode</a></td>
+     <td>&quot;ISO-8859-15&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>verfügbar seit PHP 4.3.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="exif.configuration.html#ini.exif.decode-unicode-motorola" class="link">exif.decode_unicode_motorola</a></td>
+     <td>&quot;UCS-2BE&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>verfügbar seit PHP 4.3.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="exif.configuration.html#ini.exif.decode-unicode-intel" class="link">exif.decode_unicode_intel</a></td>
+     <td>&quot;UCS-2LE&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>verfügbar seit PHP 4.3.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="exif.configuration.html#ini.exif.encode-jis" class="link">exif.encode_jis</a></td>
+     <td>&quot;&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>verfügbar seit PHP 4.3.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="exif.configuration.html#ini.exif.decode-jis-motorola" class="link">exif.decode_jis_motorola</a></td>
+     <td>&quot;JIS&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>verfügbar seit PHP 4.3.0</td>
+    </tr>
+
+    <tr>
+     <td><a href="exif.configuration.html#ini.exif.decode-jis-intel" class="link">exif.decode_jis_intel</a></td>
+     <td>&quot;JIS&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>verfügbar seit PHP 4.3.0</td>
+    </tr>
+
+    </tbody>
+   
+  </table>
+
+  Weitere Details und die Definitionen der
+PHP_INI_*-Konstanten finden Sie im <a href="configuration.changes.modes.html" class="xref">Wo Konfigurationseinstellungen gesetzt werden k&ouml;nnen</a>.
+ </p>
+ 
+ <p class="para">Hier eine kurze Erklärung der
+Konfigurationsoptionen:</p>
+ 
+ <p class="para">
+  <dl>
+
+   
+    <dt id="ini.exif.encode-unicode">
+     <code class="parameter">exif.encode_unicode</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      <em>exif.encode_unicode</em> definiert den Zeichensatz
+      für UNICODE-Nutzerkommentare. Der Standardwert ist ISO-8859-15,
+      welcher für die meisten nicht-asiatischen Länder funktionieren 
+      sollte. Der Wert darf leer sein oder muss eine Kodierung enthalten, die 
+      von mbstring unterstützt wird. Ist der Wert leer, wird die aktuelle, interne 
+      Kodierung von mbstring genutzt.
+    </p>
+    </dd>
+
+   
+   
+    <dt id="ini.exif.decode-unicode-motorola">
+     <code class="parameter">exif.decode_unicode_motorola</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      <em>exif.decode_unicode_motorola</em> definiert den internen 
+      Zeichensatz des Bildes für Unicode-kodierte Nutzerkommentare, sollte 
+      das Bild in der Motorola-Bytefolge (big-endian) sein. Dieser Wert darf 
+      nicht leer sein, sondern kann mit einer Liste von Kodierungen gefüllt 
+      werden, die von mbstring unterstützt werden. Der Standard ist UCS-2BE.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.exif.decode-unicode-intel">
+     <code class="parameter">exif.decode_unicode_intel</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      <em>exif.decode_unicode_intel</em> definiert den internen 
+      Zeichensatz des Bildes für Unicode-kodierte Nutzerkommentare, sollte 
+      das Bild in der Intel-Bytefolge (little-endian) sein. Dieser Wert darf 
+      nicht leer sein, sondern kann mit einer Liste von Kodierungen gefüllt 
+      werden, die von mbstring unterstützt werden. Der Standard ist UCS-2LE.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.exif.encode-jis">
+     <code class="parameter">exif.encode_jis</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      <em>exif.encode_jis</em> definiert den Zeichensatz, mit dem
+      JIS-Nutzerkommentare behandelt werden. Der Standard ist leer und zwingt die 
+      Funktionen daz,u die aktuelle, interne Kodierung von mbstring zu nutzen.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.exif.decode-jis-motorola">
+     <code class="parameter">exif.decode_jis_motorola</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      <em>exif.decode_jis_motorola</em> definiert den internen 
+      Zeichensatz des Bildes für JIS-kodierte Nutzerkommentare, sollte das Bild 
+      in der Motorola-Bytefolge (big-endian) sein. Dieser Wert darf nicht leer 
+      sein, sondern kann mit einer Liste von Kodierungen gefüllt werden, die von 
+      mbstring unterstützt werden. Der Standard ist JIS.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.exif.decode-jis-intel">
+     <code class="parameter">exif.decode_jis_intel</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      <em>exif.decode_jis_intel</em> definiert den internen Zeichensatz 
+      des Bildes für JIS-kodierte Nutzerkommentare, sollte das Bild in der 
+      Intel-Bytefolge (little-endian) sein. Dieser Wert darf nicht leer sein, 
+      sondern kann mit einer Liste von Kodierungen gefüllt werden, die von 
+      mbstring unterstützt werden. Der Standard ist JIS.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

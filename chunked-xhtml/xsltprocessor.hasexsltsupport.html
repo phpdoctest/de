@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Pr&uuml;ft, ob die EXSLT-Unterst&uuml;tzung aktiviert ist</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.xml.html">XML-Manipulation</a></li>
+  <li class="header up"><a href="book.xsl.html">XSL</a></li>
+  <li class="header up"><a href="class.xsltprocessor.html">XSLTProcessor</a></li>
+  <li><a href="xsltprocessor.construct.html">XSLTProcessor::__construct</a></li>
+  <li><a href="xsltprocessor.getparameter.html">XSLTProcessor::getParameter</a></li>
+  <li><a href="xsltprocessor.getsecurityprefs.html">XsltProcessor::getSecurityPrefs</a></li>
+  <li class="active"><a href="xsltprocessor.hasexsltsupport.html">XSLTProcessor::hasExsltSupport</a></li>
+  <li><a href="xsltprocessor.importstylesheet.html">XSLTProcessor::importStylesheet</a></li>
+  <li><a href="xsltprocessor.registerphpfunctions.html">XSLTProcessor::registerPHPFunctions</a></li>
+  <li><a href="xsltprocessor.removeparameter.html">XSLTProcessor::removeParameter</a></li>
+  <li><a href="xsltprocessor.setparameter.html">XSLTProcessor::setParameter</a></li>
+  <li><a href="xsltprocessor.setprofiling.html">XSLTProcessor::setProfiling</a></li>
+  <li><a href="xsltprocessor.setsecurityprefs.html">XsltProcessor::setSecurityPrefs</a></li>
+  <li><a href="xsltprocessor.transformtodoc.html">XSLTProcessor::transformToDoc</a></li>
+  <li><a href="xsltprocessor.transformtouri.html">XSLTProcessor::transformToURI</a></li>
+  <li><a href="xsltprocessor.transformtoxml.html">XSLTProcessor::transformToXML</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="xsltprocessor.getsecurityprefs.html">XsltProcessor::getSecurityPrefs</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="xsltprocessor.importstylesheet.html">XSLTProcessor::importStylesheet</a></div>
+                <div class="up"><a href="class.xsltprocessor.html">XSLTProcessor</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="xsltprocessor.hasexsltsupport" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">XSLTProcessor::hasExsltSupport</h1>
+  <p class="refpurpose">Prüft, ob die EXSLT-Unterstützung aktiviert ist</p>
+ </div>
+ <div class="refsect1 description" id="refsect1-xsltprocessor.hasexsltsupport-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span>
+    <span class="methodname">XSLTProcessor::hasExsltSupport</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Diese Methode ermittelt, ob PHP mit Unterstützung für die <a href="http://xmlsoft.org/XSLT/EXSLT/index.html" class="link external">&raquo;&nbsp;EXSLT-Bibliothek</a> kompiliert wurde.
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-xsltprocessor.hasexsltsupport-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-xsltprocessor.hasexsltsupport-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-6274">
+    <p><strong>Beispiel #1 Prüfen auf EXSLT-Unterstützung</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$proc&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">XSLTProcessor</span><span style="color: #007700">;<br />if&nbsp;(!</span><span style="color: #0000BB">$proc</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">hasExsltSupport</span><span style="color: #007700">())&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'EXSLT&nbsp;nicht&nbsp;verfügbar'</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Weitere&nbsp;Verarbeitung&nbsp;..<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>       
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

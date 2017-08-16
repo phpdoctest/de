@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: &Auml;ndert die Priorit&auml;t des aktuellen Prozesses</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li class="header up"><a href="book.exec.html">Programmausf&uuml;hrung</a></li>
+  <li class="header up"><a href="ref.exec.html">Funktionen zur Programmausf&uuml;hrung</a></li>
+  <li><a href="function.escapeshellarg.html">escapeshellarg</a></li>
+  <li><a href="function.escapeshellcmd.html">escapeshellcmd</a></li>
+  <li><a href="function.exec.html">exec</a></li>
+  <li><a href="function.passthru.html">passthru</a></li>
+  <li><a href="function.proc-close.html">proc_close</a></li>
+  <li><a href="function.proc-get-status.html">proc_get_status</a></li>
+  <li class="active"><a href="function.proc-nice.html">proc_nice</a></li>
+  <li><a href="function.proc-open.html">proc_open</a></li>
+  <li><a href="function.proc-terminate.html">proc_terminate</a></li>
+  <li><a href="function.shell-exec.html">shell_exec</a></li>
+  <li><a href="function.system.html">system</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.proc-get-status.html">proc_get_status</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.proc-open.html">proc_open</a></div>
+                <div class="up"><a href="ref.exec.html">Funktionen zur Programmausf&uuml;hrung</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.proc-nice" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">proc_nice</h1>
+  <p class="refpurpose">Ändert die Priorität des aktuellen Prozesses</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.proc-nice-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">proc_nice</span>
+    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$increment</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">proc_nice</span> ändert die Priorität des aktuellen Prozesses
+   um den in <code class="parameter">increment</code> angegebenen Betrag. Ein positives
+   <code class="parameter">increment</code> vermindert die Priorität des aktuellen
+   Prozesses, während ein negatives <code class="parameter">increment</code> die
+   Priorität erhöht.
+  </p>
+  <p class="para">
+   <span class="function">proc_nice</span> ist in keinster Weise verwandt mit
+   <span class="function">proc_open</span> und der dazugehörigen Funktionen.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.proc-nice-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">increment</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der neue Prioritätswert; dieser Wert ist plattformabhängig.
+      </p>
+      <p class="para">
+       Unter Unix bedeutet ein niedriger Wert, wie beispielsweise <em>-20</em>,
+       eine hohe Priorität, wohingegen ein positiver Wert eine niedrigere Priorität hat.
+      </p>
+      <p class="para">
+       Unter Windows hat der <code class="parameter">increment</code>-Parameter die folgende
+       Bedeutung:
+      </p>
+      <table class="doctable informaltable">
+       
+        <thead>
+         <tr>
+          <th>Prioritätsklasse</th>
+          <th>Mögliche Werte</th>
+         </tr>
+
+        </thead>
+
+        <tbody class="tbody">
+         <tr>
+          <td style="vertical-align: top;">Hoch</td>
+          <td style="vertical-align: top;">
+           <code class="parameter">increment</code> <em>&lt; -9</em>
+          </td>
+         </tr>
+
+         <tr>
+          <td style="vertical-align: top;">Höher als normal</td>
+          <td style="vertical-align: top;">
+           <code class="parameter">increment</code> <em>&lt; -4</em>
+          </td>
+         </tr>
+
+         <tr>
+          <td style="vertical-align: top;">Normal</td>
+          <td style="vertical-align: top;">
+           <code class="parameter">increment</code> <em>&lt; 5</em> &amp; 
+           <code class="parameter">increment</code> <em>&gt; -5</em>
+          </td>
+         </tr>
+
+         <tr>
+          <td style="vertical-align: top;">Niedriger als normal</td>
+          <td style="vertical-align: top;">
+           <code class="parameter">increment</code> <em>&gt; 5</em>
+          </td>
+         </tr>
+
+         <tr>
+          <td style="vertical-align: top;">Niedrig</td>
+          <td style="vertical-align: top;">
+           <code class="parameter">increment</code> <em>&gt; 9</em>
+          </td>
+         </tr>
+
+        </tbody>
+       
+      </table>
+
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.proc-nice-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+   Wenn ein Fehler auftritt, zum Beispiel weil der User keine Berechtigung hat,
+   die Priorität eines Prozesses zu ändern, wird ein Fehler der Stufe
+   <strong><code>E_WARNING</code></strong> erzeugt.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.proc-nice-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4125">
+    <p><strong>Beispiel #1 Verwendung von <span class="function">proc_open</span> um die Prozesspriorität auf hoch zu setzen</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;höchste&nbsp;Priorität<br /></span><span style="color: #0000BB">proc_nice</span><span style="color: #007700">(-</span><span style="color: #0000BB">20</span><span style="color: #007700">)<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.proc-nice-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.2.0</td>
+       <td>
+        Diese Funktion steht nun unter Windows zur Verfügung.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.proc-nice-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <strong>Verfügbarkeit</strong><br />
+   <p class="para">
+    <span class="function">proc_nice</span> existiert nur, wenn Ihr System mit &#039;nice&#039;
+    umgehen kann. &#039;nice&#039; ist verfügbar unter: SVr4, SVID EXT, AT&amp;T, X/OPEN,
+    BSD 4.3.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <strong>Nur für Windows</strong><br />
+   <p class="para">
+    <span class="function">proc_nice</span> ändert die <em class="emphasis">aktuelle</em>
+    Prozesspriorität, selbst wenn PHP mit Threadsicherheit kompiliert wurde.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

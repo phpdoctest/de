@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Einf&uuml;hrung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.utilspec.image.html">Bildverarbeitung und -generierung</a></li>
+  <li class="header up"><a href="book.image.html">GD</a></li>
+  <li class="active"><a href="intro.image.html">Einf&uuml;hrung</a></li>
+  <li><a href="image.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="image.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="image.examples.html">Beispiele</a></li>
+  <li><a href="ref.image.html">GD- und Image-Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="book.image.html">GD</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="image.setup.html">Installation/Konfiguration</a></div>
+                <div class="up"><a href="book.image.html">GD</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="intro.image" class="preface">
+  <h1 class="title">Einführung</h1>
+  <p class="para">
+   Mit PHP können Sie nicht nur HTML ausgeben, sondern auch Grafiken in
+   vielen Formaten - wie <acronym class="acronym">GIF</acronym>, <acronym class="acronym">PNG</acronym>,
+   <acronym class="acronym">JPEG</acronym>, <acronym class="acronym">WBMP</acronym> und <acronym class="acronym">xpm</acronym> - 
+   erzeugen und/oder manipulieren. Noch besser, Sie können Grafiken mit PHP 
+   direkt als Datenstrom ausgeben. Damit das funktioniert, müssen Sie PHP mit 
+   der <acronym class="acronym">GD</acronym>-Bibliothek zur Grafikbearbeitung kompilieren.
+   <acronym class="acronym">GD</acronym> und PHP benötigen, je nachdem mit welchen 
+   Grafikformaten Sie arbeiten wollen, zusätzliche Bibliotheken.
+  </p>
+  <p class="para">
+   Sie können die Grafikfunktionen in PHP auch verwenden, um die Größe von
+   <acronym class="acronym">JPEG</acronym>, <acronym class="acronym">GIF</acronym>,
+   <acronym class="acronym">PNG</acronym>, <acronym class="acronym">SWF</acronym>,
+   <acronym class="acronym">TIFF</acronym> und <acronym class="acronym">JPEG2000</acronym> Grafiken zu
+   bestimmen.
+  </p>
+  <p class="para">
+    Mittels der <a href="ref.exif.html" class="link">exif-Erweiterung</a> können sie die
+    in den Headern von <acronym class="acronym">JPEG-</acronym> und <acronym class="acronym">TIFF-</acronym>Grafiken
+    enthaltenen Informationen verarbeiten. Auf diese Weise können von Digitalkameras
+    erstellte Metadaten verarbeitet werden. Die Exif-Funktionen benötigen
+    nicht die <acronym class="acronym">GD</acronym>-Bibliothek.
+  </p>
+  
+  <p class="para">
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <span class="simpara">
+     Im Abschnitt über die Anforderungen können Sie nachlesen, wie Sie die
+     Möglichkeiten zur Grafikbearbeitung erweitern können: lesen, schreiben
+     und manipulieren von Grafiken, und auslesen von Metadaten bei Bildern
+     die mit einer Digitalkamera aufgenommen wurden. Für letzteres wird die
+     bereits erwähnte <a href="ref.exif.html" class="link">exif-Erweiterung</a> 
+     benötigt.
+    </span>
+   </p></blockquote>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <span class="simpara">
+      Für die Funktion <span class="function">getimagesize</span> wird die GD-Bibliothek 
+      nicht benötigt.
+    </span>
+   </p></blockquote>
+  </p>
+  <p class="para">
+   GD unterstützt eine Reihe von Formaten, folgend eine 
+   Liste aller von GD unterstützten Formaten und Hinweise 
+   zu Verfügbarkeit und lese/schreib Unterstützung. 
+  </p>
+  <p class="para">
+   <table class="doctable table">
+    <caption><strong>Von GD unterstützte Formate</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Format</th>
+       <th>Lesen</th>
+       <th>Schreiben</th>
+       <th>Anmerkungen</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>JPEG</td>
+       <td><strong><code>TRUE</code></strong></td>
+       <td><strong><code>TRUE</code></strong></td>
+       <td class="empty">&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td>PNG</td>
+       <td><strong><code>TRUE</code></strong></td>
+       <td><strong><code>TRUE</code></strong></td>
+       <td class="empty">&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td>GIF</td>
+       <td><strong><code>TRUE</code></strong></td>
+       <td><strong><code>TRUE</code></strong></td>
+       <td>Ab GD 2.0.28 und PHP 5.0.1 verfügbar</td>
+      </tr>
+
+      <tr>
+       <td>XBM</td>
+       <td><strong><code>TRUE</code></strong></td>
+       <td><strong><code>TRUE</code></strong></td>
+       <td class="empty">&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td>XPM</td>
+       <td><strong><code>TRUE</code></strong></td>
+       <td><strong><code>FALSE</code></strong></td>
+       <td>Lesen verfügbar unter Windows ab PHP 5.3.19.</td>
+      </tr>
+
+      <tr>
+       <td>WBMP</td>
+       <td><strong><code>TRUE</code></strong></td>
+       <td><strong><code>TRUE</code></strong></td>
+       <td class="empty">&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td>WebP</td>
+       <td><strong><code>TRUE</code></strong></td>
+       <td><strong><code>TRUE</code></strong></td>
+       <td>PHP 5.5+</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+  <p class="para">
+   Während die meisten Formate sowohl zum lesen als auch schreiben verfügbar sind, 
+   bedeutet dies nicht, dass die Unterstützung in PHP einkompiliert ist. 
+   Welche Formate dies sind, und wie PHP mit Unterstützung für diese kompiliert werden kann zeigt die Funktion <span class="function">gd_info</span>.
+   Weitere Informationen zu diesem Thema auch im Installations-Kapitel.
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

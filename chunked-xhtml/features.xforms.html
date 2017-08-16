@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Mit XForms umgehen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="features.html">Features</a></li>
+  <li><a href="features.http-auth.html">HTTP-Authentifizierung mit PHP</a></li>
+  <li><a href="features.cookies.html">Cookies</a></li>
+  <li><a href="features.sessions.html">Sessions</a></li>
+  <li class="active"><a href="features.xforms.html">Mit XForms umgehen</a></li>
+  <li><a href="features.file-upload.html">Steuerung von Dateiuploads</a></li>
+  <li><a href="features.remote-files.html">Zugriff auf entfernte Dateien</a></li>
+  <li><a href="features.connection-handling.html">Verbindungssteuerung</a></li>
+  <li><a href="features.persistent-connections.html">Persistente Datenbankverbindungen</a></li>
+  <li><a href="features.safe-mode.html">Safe Mode</a></li>
+  <li><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></li>
+  <li><a href="features.gc.html">Garbage Collection</a></li>
+  <li><a href="features.dtrace.html">DTrace Dynamic Tracing</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="features.sessions.html">Sessions</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="features.file-upload.html">Steuerung von Dateiuploads</a></div>
+                <div class="up"><a href="features.html">Features</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="features.xforms" class="chapter">
+ <h1>Mit XForms umgehen</h1>
+ <p class="para">
+  <a href="http://www.w3.org/MarkUp/Forms/" class="link external">&raquo;&nbsp;XForms</a> definieren eine Variation
+  traditioneller Webformulare, welche den Einsatz auf einer größeren Anzahl
+  von Plattformen und Browsern oder sogar in untraditionellen Medien wie PDF
+  Dokumenten erlauben.
+ </p>
+ <p class="para">
+  Der erste große Unterschied von XForms besteht darin, wie das Formular
+  zum Client gesendet wird. <a href="http://www.w3.org/MarkUp/Forms/2003/xforms-for-html-authors.html" class="link external">&raquo;&nbsp;
+  <em>XForms for HTML Authors</em></a> enthält eine detaillierte 
+  Beschreibung davon, wie man XForms erzeugt. Für den Zweck dieser Einführung 
+  beschränken wir uns auf ein einfaches Beispiel.
+ </p>
+ <div class="example" id="example-373">
+  <p><strong>Beispiel #1 Ein einfaches XForms-Suchformular</strong></p>
+  <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;h:html xmlns:h=&quot;http://www.w3.org/1999/xhtml&quot;
+        xmlns=&quot;http://www.w3.org/2002/xforms&quot;&gt;
+&lt;h:head&gt;
+ &lt;h:title&gt;Suche&lt;/h:title&gt;
+ &lt;model&gt;
+  &lt;submission action=&quot;http://example.com/search&quot;
+              method=&quot;post&quot; xml:id=&quot;s&quot;/&gt;
+ &lt;/model&gt;
+&lt;/h:head&gt;
+&lt;h:body&gt;
+ &lt;h:p&gt;
+  &lt;input ref=&quot;q&quot;&gt;&lt;label&gt;Finde&lt;/label&gt;&lt;/input&gt;
+  &lt;submit submission=&quot;s&quot;&gt;&lt;label&gt;Suche&lt;/label&gt;&lt;/submit&gt;
+ &lt;/h:p&gt;
+&lt;/h:body&gt;
+&lt;/h:html&gt;</pre>
+</div>
+  </div>
+
+ </div>
+ <p class="para">
+  Das oben angegebene Formular zeigt ein Texteingabefeld (genannt 
+  <code class="parameter">q</code>), sowie einen Absendeknopf. Wenn der Absendeknopf
+  geklickt wird, wird das Formular an die unter <em>action</em>
+  angegebene Seite gesendet.
+ </p>
+ <p class="para">
+  Hier beginnt es aus der Sicht der Webapplikation anders auszusehen. In 
+  einem normalen HTML Formular würden die Daten 
+  <em>application/x-www-form-urlencoded</em> gesendet, in der Welt
+  von XForms werden diese Informationen als <acronym class="acronym">XML</acronym>
+  formatierte Daten gesendet.
+ </p>
+ <p class="para">
+  Wenn Sie sich für die Arbeit mit XForms entscheiden, dann wollen Sie die 
+  Daten wahrscheinlich als <acronym class="acronym">XML</acronym>; in diesem Fall schauen Sie in 
+  <var class="varname">$HTTP_RAW_POST_DATA</var>, wo Sie das vom Browser erzeugte XML 
+  <acronym class="acronym">XML</acronym>-Dokument finden werden, das Sie an Ihre bevorzugte 
+  <acronym class="acronym">XSLT</acronym>-Engine oder Dokumentenparser weiterreichen können.
+ </p>
+ <p class="para">
+  Wenn Sie nicht an der Formatierung interessiert sind und Ihre Daten in die
+  traditionelle <var class="varname">$_POST</var> Variable geladen haben möchten, können
+  Sie den Browser anweisen, die Daten als 
+  <em>application/x-www-form-urlencoded</em> zu senden, indem Sie das
+  <code class="parameter">method</code> Attribut auf <em class="emphasis">urlencoded-post</em>
+  abändern.
+ </p>
+ <div class="example" id="example-374">
+  <p><strong>Beispiel #2 XForm verwenden, um <var class="varname">$_POST</var> zu bestücken</strong></p>
+  <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;h:html xmlns:h=&quot;http://www.w3.org/1999/xhtml&quot;
+        xmlns=&quot;http://www.w3.org/2002/xforms&quot;&gt;
+&lt;h:head&gt;
+ &lt;h:title&gt;Suche&lt;/h:title&gt;
+ &lt;model&gt;
+  &lt;submission action=&quot;http://example.com/search&quot;
+              method=&quot;urlencoded-post&quot; xml:id=&quot;s&quot;/&gt;
+ &lt;/model&gt;
+&lt;/h:head&gt;
+&lt;h:body&gt;
+ &lt;h:p&gt;
+  &lt;input ref=&quot;q&quot;&gt;&lt;label&gt;Finde&lt;/label&gt;&lt;/input&gt;
+  &lt;submit submission=&quot;s&quot;&gt;&lt;label&gt;Suche&lt;/label&gt;&lt;/submit&gt;
+ &lt;/h:p&gt;
+&lt;/h:body&gt;
+&lt;/h:html&gt;</pre>
+</div>
+  </div>
+
+ </div>
+ <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+  <span class="simpara">
+   Zum Zeitpunkt des Schreibens beherrschen viele Browser XForms nicht. Prüfen
+   Sie Ihre Browserversion, wenn obiges Beispiel scheitert.
+  </span>
+ </p></blockquote>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

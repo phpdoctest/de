@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Konstanten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li class="header up"><a href="book.errorfunc.html">Fehlerbehandlung</a></li>
+  <li><a href="intro.errorfunc.html">Einf&uuml;hrung</a></li>
+  <li><a href="errorfunc.setup.html">Installation/Konfiguration</a></li>
+  <li class="active"><a href="errorfunc.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="errorfunc.examples.html">Beispiele</a></li>
+  <li><a href="ref.errorfunc.html">Fehlerbehandlungsfunktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="errorfunc.resources.html">Ressource-Typen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="errorfunc.examples.html">Beispiele</a></div>
+                <div class="up"><a href="book.errorfunc.html">Fehlerbehandlung</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="errorfunc.constants" class="appendix">
+ <h1>Vordefinierte Konstanten</h1>
+ <p class="simpara">Die aufgelisteten Konstanten
+stehen immer zur Verfügung, da sie zum Grundbestand von PHP gehören.</p>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    Sie können diese Konstanten innerhalb von  <var class="filename">php.ini</var> benutzen,
+    aber nicht ausserhalb von PHP, wie etwa in der <var class="filename">httpd.conf</var>, wo
+    Sie stattdessen die Werte der Bitmasken benutzen sollten.
+   </span>
+  </p></blockquote>
+ <table id="errorfunc.constants.errorlevels" class="doctable table">
+  <caption><strong>Fehler und Meldungen</strong></caption>
+  
+   <thead>
+    <tr>
+     <th>Wert</th>
+     <th>Konstante</th>
+     <th>Beschreibung</th>
+     <th>Bemerkung</th>
+    </tr>
+
+   </thead>
+
+   <tbody class="tbody">
+    <tr id="errorfunc.constants.errorlevels.e-error">
+     <td>1</td>
+     <td>
+      <strong><code>E_ERROR</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Fatale Laufzeit-Fehler. Dies zeigt Fehler an, die nicht
+      behoben werden können. Beispielsweise Probleme bei der
+      Speicherzuweisung. Die Ausführung des Skripts wird abgebrochen.
+     </td>
+     <td class="empty">&nbsp;</td>
+    </tr>
+
+
+    <tr id="errorfunc.constants.errorlevels.e-warning">
+     <td>2</td>
+     <td>
+      <strong><code>E_WARNING</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Warnungen (keine fatalen Fehler) zur Laufzeit des Skripts.
+      Das Skript wird nicht abgebrochen.
+     </td>
+     <td class="empty">&nbsp;</td>
+    </tr>
+
+
+    <tr id="errorfunc.constants.errorlevels.e-parse">
+     <td>4</td>
+     <td>
+      <strong><code>E_PARSE</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Parser-Fehler während der Übersetzung. Parser-Fehler können
+      nur vom Parser erzeugt werden.
+     </td>
+     <td class="empty">&nbsp;</td>
+    </tr>
+
+
+    <tr id="errorfunc.constants.errorlevels.e-notice">
+     <td>8</td>
+     <td>
+      <strong><code>E_NOTICE</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Benachrichtigungen während der Laufzeit. Sie zeigen an, dass
+      im Skript irgend etwas gefunden wurde, was einen Fehler
+      verursachen könnte. Es ist aber genauso möglich, dass
+      Benachrichtigungen im ordnungsgemäßen Ablauf eines Skripts
+      ausgegeben werden.
+     </td>
+     <td class="empty">&nbsp;</td>
+    </tr>
+
+
+    <tr id="errorfunc.constants.errorlevels.e-core-error">
+     <td>16</td>
+     <td>
+      <strong><code>E_CORE_ERROR</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Fatale Fehler, die beim Starten von PHP auftreten. Diese sind
+      ähnlich wie <strong><code>E_ERROR</code></strong>, nur dass diese
+      Fehlermeldungen vom PHP-Kern erzeugt werden.
+     </td>
+     <td class="empty">&nbsp;</td>
+    </tr>
+
+
+    <tr id="errorfunc.constants.errorlevels.e-core-warning">
+     <td>32</td>
+     <td>
+      <strong><code>E_CORE_WARNING</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Warnungen (keine fatalen Fehler), die beim Starten von PHP
+      auftreten. Diese sind ähnlich wie <strong><code>E_WARNING</code></strong>,
+      nur dass diese Warnungen vom PHP-Kern erzeugt werden.
+     </td>
+     <td class="empty">&nbsp;</td>
+    </tr>
+
+
+    <tr id="errorfunc.constants.errorlevels.e-compile-error">
+     <td>64</td>
+     <td>
+      <strong><code>E_COMPILE_ERROR</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Fatale Fehler zur Übersetzungszeit. Diese sind ähnlich wie
+      <strong><code>E_ERROR</code></strong>, nur dass diese Fehlermeldungen
+      von der Zend Scripting Engine erzeugt werden.
+     </td>
+     <td class="empty">&nbsp;</td>
+    </tr>
+
+
+    <tr id="errorfunc.constants.errorlevels.e-compile-warning">
+     <td>128</td>
+     <td>
+      <strong><code>E_COMPILE_WARNING</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Warnungen zur Übersetzungszeit. Diese sind ähnlich wie
+      <strong><code>E_WARNING</code></strong>, nur dass diese Warnungen
+      von der Zend Scripting Engine erzeugt werden.
+     </td>
+     <td class="empty">&nbsp;</td>
+    </tr>
+
+
+    <tr id="errorfunc.constants.errorlevels.e-user-error">
+     <td>256</td>
+     <td>
+      <strong><code>E_USER_ERROR</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Benutzerdefinierte Fehlermeldungen. Diese sind ähnlich wie
+      <strong><code>E_ERROR</code></strong>, nur dass diese Fehlermeldungen
+      im PHP-Code mit <span class="function">trigger_error</span> erzeugt werden.
+     </td>
+     <td class="empty">&nbsp;</td>
+    </tr>
+
+
+    <tr id="errorfunc.constants.errorlevels.e-user-warning">
+     <td>512</td>
+     <td>
+      <strong><code>E_USER_WARNING</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Benutzerdefinierte Warnungen. Diese sind ähnlich wie       <strong><code>E_WARNING</code></strong>,
+      nur dass diese Warnungen im PHP-Code mit
+      <span class="function">trigger_error</span> erzeugt werden.
+     </td>
+     <td class="empty">&nbsp;</td>
+    </tr>
+
+
+    <tr id="errorfunc.constants.errorlevels.e-user-notice">
+     <td>1024</td>
+     <td>
+      <strong><code>E_USER_NOTICE</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Benutzerdefinierte Benachrichtigung. Diese sind ähnlich wie
+      <strong><code>E_NOTICE</code></strong>,
+      nur dass diese Benachrichtigungen im PHP-Code mit
+      <span class="function">trigger_error</span> erzeugt werden.
+     </td>
+     <td class="empty">&nbsp;</td>
+    </tr>
+
+
+
+    <tr id="errorfunc.constants.errorlevels.e-strict">
+     <td>2048</td>
+     <td>
+      <strong><code>E_STRICT</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Benachrichtigungen des Laufzeitsystems. Damit erhalten Sie von
+      PHP Vorschläge für Änderungen des Programmcodes, die eine
+      bestmögliche Interoperabilität und zukünftige Kompatibilität
+      Ihres Codes gewährleisten.
+     </td>
+     <td>Seit PHP 5, aber vor PHP 5.4.0 nicht in <strong><code>E_ALL</code></strong> enthalten</td>
+    </tr>
+
+
+    <tr id="errorfunc.constants.errorlevels.e-recoverable-error">
+     <td>4096</td>
+     <td>
+      <strong><code>E_RECOVERABLE_ERROR</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Abfangbarer fataler Fehler. Dies bedeutet das ein potentiell
+      gefährlicher Fehler aufgetreten ist, die Engine aber nicht in
+      einem instabilen Zustand hinterlassen hat. Wird der Fehler
+      nicht durch eine benutzerdefinierte Fehlerbehandlungsroutine
+      abgefangen (siehe auch <span class="function">set_error_handler</span>)
+      so wird die Anwendung wie bei einem <strong><code>E_ERROR</code></strong>
+      Fehler abgebrochen.
+     </td>
+     <td>Seit PHP 5.2.0</td>
+    </tr>
+
+
+    <tr id="errorfunc.constants.errorlevels.e-deprecated-error">
+     <td>8192</td>
+     <td>
+      <strong><code>E_DEPRECATED</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Notices zur Laufzeit des Programms. Aktivieren Sie diese Einstellung, um
+      Warnungen über Codebestandteile zu erhalten, die in zukünftigen
+      PHP-Versionen nicht mehr funktionieren werden.
+     </td>
+     <td>Seit PHP 5.3.0</td>
+    </tr>
+
+
+    <tr id="errorfunc.constants.errorlevels.e-user-deprecated">
+     <td>16384</td>
+     <td>
+      <strong><code>E_USER_DEPRECATED</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Benutzererzeugte Warnmeldung. Diese entspricht
+      <strong><code>E_DEPRECATED</code></strong> mit der Ausnahme, dass sie im PHP-Code
+      durch die Verwendung der Funktion <span class="function">trigger_error</span>
+      generiert wurde.
+     </td>
+     <td>Seit PHP 5.3.0</td>
+    </tr>
+
+
+    <tr id="errorfunc.constants.errorlevels.e-all">
+     <td>32767</td>
+     <td>
+      <strong><code>E_ALL</code></strong>
+      (<span class="type">integer</span>)
+     </td>
+     <td>
+      Alle Fehler und Warnungen die unterstützt werden, mit Ausnahme
+      von <strong><code>E_STRICT</code></strong> vor PHP 5.4.0.
+     </td>
+     <td>
+      32767 in PHP 5.4.x,
+      30719 in PHP 5.3.x,
+      6143 in PHP 5.2.x,
+      2047 previously
+     </td>
+    </tr>
+
+
+   </tbody>
+  
+ </table>
+
+
+ <p class="para">
+  Mit den obengennnten Werten (sowohl nummerisch als auch mit den
+  Konstanten) wird eine Bitmaske erzeugt, die festlegt, welche
+  Fehler angezeigt werden sollen. Mit den
+  <a href="language.operators.bitwise.html" class="link">Bit Operatoren</a>
+  können Sie diese Werte kombinieren oder bestimmte Fehlertypen
+  ausmaskieren. Beachten Sie, dass innerhalb von <var class="filename">php.ini</var> jedoch
+  nur &#039;|&#039;, &#039;~&#039;, &#039;!&#039;, &#039;^&#039; und &#039;&amp;&#039; verstanden wird.
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

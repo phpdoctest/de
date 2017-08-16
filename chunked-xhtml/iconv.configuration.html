@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Laufzeit-Konfiguration</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.international.html">Unterst&uuml;tzung menschlicher Sprache und Zeichenkodierung</a></li>
+  <li class="header up"><a href="book.iconv.html">iconv</a></li>
+  <li class="header up"><a href="iconv.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="iconv.requirements.html">Anforderungen</a></li>
+  <li><a href="iconv.installation.html">Installation</a></li>
+  <li class="active"><a href="iconv.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="iconv.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="iconv.installation.html">Installation</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="iconv.resources.html">Ressource-Typen</a></div>
+                <div class="up"><a href="iconv.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="iconv.configuration" class="section">
+ <h2 class="title">Laufzeit-Konfiguration</h2>
+ <p class="simpara">Das Verhalten dieser Funktionen wird
+durch Einstellungen in der <var class="filename">php.ini</var> beeinflusst.</p>
+ <p class="para">
+ <table class="doctable table">
+  <caption><strong>Iconv Konfigurationsoptionen</strong></caption>
+  
+   <thead>
+     <tr>
+      <th>Name</th>
+      <th>Standard</th>
+      <th>Veränderbar</th>
+      <th>Changelog</th>
+     </tr>
+
+   </thead>
+
+   <tbody class="tbody">
+     <tr>
+      <td><a href="iconv.configuration.html#ini.iconv.input-encoding" class="link">iconv.input_encoding</a></td>
+      <td>&quot;&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Available since PHP 4.0.5. Deprecated in PHP 5.6.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="iconv.configuration.html#ini.iconv.output-encoding" class="link">iconv.output_encoding</a></td>
+      <td>&quot;&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Available since PHP 4.0.5. Deprecated in PHP 5.6.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="iconv.configuration.html#ini.iconv.internal-encoding" class="link">iconv.internal_encoding</a></td>
+      <td>&quot;&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Available since PHP 4.0.5. Deprecated in PHP 5.6.0.</td>
+     </tr>
+
+   </tbody>
+  
+ </table>
+
+ </p>
+
+ <p class="para">Hier eine kurze Erklärung der
+Konfigurationsoptionen:</p>
+
+ <div class="warning"><strong class="warning">Warnung</strong>
+  <p class="para">
+   Some systems (like IBM AIX) use &quot;ISO8859-1&quot; instead of &quot;ISO-8859-1&quot; so this
+   value has to be used in configuration options and function parameters.
+  </p>
+ </div>
+
+ <p class="para">
+  <dl>
+
+   
+     <dt id="ini.iconv.input-encoding">
+      <code class="parameter">iconv.input_encoding</code>
+      <span class="type">string</span>
+     </dt>
+
+     <dd>
+
+      <div class="warning"><strong class="warning">Warnung</strong><p class="simpara">Diese Funktion ist 
+seit PHP 5.6.0 <em class="emphasis">DEPRECATED</em> (veraltet). Sich auf diese Funktion zu verlassen
+ist in keiner Weise empfehlenswert.</p></div>
+      <p class="para">
+       PHP 5.6 and later users should leave this empty and set
+       <a href="ini.core.html#ini.default-charset" class="link"><code class="parameter">default_charset</code></a>
+       instead.
+      </p>
+     </dd>
+
+    
+    
+     <dt id="ini.iconv.output-encoding">
+      <code class="parameter">iconv.output_encoding</code>
+      <span class="type">string</span>
+     </dt>
+
+     <dd>
+
+      <div class="warning"><strong class="warning">Warnung</strong><p class="simpara">Diese Funktion ist 
+seit PHP 5.6.0 <em class="emphasis">DEPRECATED</em> (veraltet). Sich auf diese Funktion zu verlassen
+ist in keiner Weise empfehlenswert.</p></div>
+      <p class="para">
+       PHP 5.6 and later users should leave this empty and set
+       <a href="ini.core.html#ini.default-charset" class="link"><code class="parameter">default_charset</code></a>
+       instead.
+      </p>
+     </dd>
+
+    
+    
+     <dt id="ini.iconv.internal-encoding">
+      <code class="parameter">iconv.internal_encoding</code>
+      <span class="type">string</span>
+     </dt>
+
+     <dd>
+
+      <div class="warning"><strong class="warning">Warnung</strong><p class="simpara">Diese Funktion ist 
+seit PHP 5.6.0 <em class="emphasis">DEPRECATED</em> (veraltet). Sich auf diese Funktion zu verlassen
+ist in keiner Weise empfehlenswert.</p></div>
+      <p class="para">
+       PHP 5.6 and later users should leave this empty and set
+       <a href="ini.core.html#ini.default-charset" class="link"><code class="parameter">default_charset</code></a>
+       instead.
+      </p>
+     </dd>
+
+    
+
+  </dl>
+
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

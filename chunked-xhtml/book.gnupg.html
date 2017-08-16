@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: GNU Privacy Guard</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.utilspec.nontext.html">Non-Text MIME-Ausgaben</a></li>
+  <li><a href="book.fdf.html">FDF</a></li>
+  <li class="active"><a href="book.gnupg.html">GnuPG</a></li>
+  <li><a href="book.haru.html">haru</a></li>
+  <li><a href="book.ming.html">Ming</a></li>
+  <li><a href="book.pdf.html">PDF</a></li>
+  <li><a href="book.ps.html">PS</a></li>
+  <li><a href="book.rpmreader.html">RPM Reader</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.fdf-set-version.html">fdf_set_version</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.gnupg.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.utilspec.nontext.html">Non-Text MIME-Ausgaben</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.gnupg" class="book">
+ <h1>GNU Privacy Guard</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.gnupg.html">Einf&uuml;hrung</a></li>
+<li><a href="gnupg.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="gnupg.requirements.html">Anforderungen</a></li>
+<li><a href="gnupg.installation.html">Installation</a></li>
+<li><a href="gnupg.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="gnupg.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="gnupg.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="gnupg.examples.html">Beispiele</a><ul class="chunklist chunklist_title">
+<li><a href="gnupg.examples-clearsign.html">Clearsign text</a></li>
+</ul>
+</li>
+<li><a href="ref.gnupg.html">GnuPG Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.gnupg-adddecryptkey.html">gnupg_adddecryptkey</a> — F&uuml;gt einen Schl&uuml;ssel f&uuml;r Entschl&uuml;sselung hinzu</li>
+<li><a href="function.gnupg-addencryptkey.html">gnupg_addencryptkey</a> — F&uuml;gt einen Schl&uuml;ssel zur Verschl&uuml;sselung hinzu</li>
+<li><a href="function.gnupg-addsignkey.html">gnupg_addsignkey</a> — F&uuml;gt einen Schl&uuml;ssel f&uuml;r Signierung hinzu</li>
+<li><a href="function.gnupg-cleardecryptkeys.html">gnupg_cleardecryptkeys</a> — Entfernt alle Schl&uuml;ssel, die vorher f&uuml;r Entschl&uuml;sselung hinterlegt wurden</li>
+<li><a href="function.gnupg-clearencryptkeys.html">gnupg_clearencryptkeys</a> — Entfernt alle Schl&uuml;ssel, die vorher zur Verschl&uuml;sselung hinterlegt wurden</li>
+<li><a href="function.gnupg-clearsignkeys.html">gnupg_clearsignkeys</a> — Entfernt alle Schl&uuml;ssel die vorher zur Signierung hinterlegt wurden</li>
+<li><a href="function.gnupg-decrypt.html">gnupg_decrypt</a> — Entschl&uuml;sselt einen gegebenen Text</li>
+<li><a href="function.gnupg-decryptverify.html">gnupg_decryptverify</a> — Entschl&uuml;sselt und vertifiziert einen gegebenen Text</li>
+<li><a href="function.gnupg-encrypt.html">gnupg_encrypt</a> — Verschl&uuml;sselt einen gegebenen Text</li>
+<li><a href="function.gnupg-encryptsign.html">gnupg_encryptsign</a> — Verschl&uuml;sselt und signiert einen gegebenen Text</li>
+<li><a href="function.gnupg-export.html">gnupg_export</a> — Exportiert einen Schl&uuml;ssel</li>
+<li><a href="function.gnupg-geterror.html">gnupg_geterror</a> — Gibt den Fehlertext zur&uuml;ck, wenn eine Funktion scheitert</li>
+<li><a href="function.gnupg-getprotocol.html">gnupg_getprotocol</a> — Gibt das aktuell f&uuml;r alle Operationen aktive Protokoll zur&uuml;ck</li>
+<li><a href="function.gnupg-import.html">gnupg_import</a> — Importiert einen Schl&uuml;ssel</li>
+<li><a href="function.gnupg-init.html">gnupg_init</a> — Initialisiert eine Verbindung</li>
+<li><a href="function.gnupg-keyinfo.html">gnupg_keyinfo</a> — Gibt ein Array mit Informationen &uuml;ber alle Schl&uuml;ssel zur&uuml;ck, die dem gegebenen Muster entsprechen</li>
+<li><a href="function.gnupg-setarmor.html">gnupg_setarmor</a> — Gepanzerte Ausgabe umschalten</li>
+<li><a href="function.gnupg-seterrormode.html">gnupg_seterrormode</a> — Setzt den Modus f&uuml;r error_reporting</li>
+<li><a href="function.gnupg-setsignmode.html">gnupg_setsignmode</a> — Setzt den Signierungs-Modus</li>
+<li><a href="function.gnupg-sign.html">gnupg_sign</a> — Signiert einen &uuml;bergebenen Text</li>
+<li><a href="function.gnupg-verify.html">gnupg_verify</a> — Verifiziert einen signierten Text</li>
+</ul>
+</li>
+</ul>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

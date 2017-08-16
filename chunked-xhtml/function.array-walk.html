@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Wendet eine vom Benutzer gelieferte Funktion auf jedes Element eines Arrays an</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li class="header up"><a href="book.array.html">Arrays</a></li>
+  <li class="header up"><a href="ref.array.html">Array Funktionen</a></li>
+  <li><a href="function.array-change-key-case.html">array_change_key_case</a></li>
+  <li><a href="function.array-chunk.html">array_chunk</a></li>
+  <li><a href="function.array-column.html">array_column</a></li>
+  <li><a href="function.array-combine.html">array_combine</a></li>
+  <li><a href="function.array-count-values.html">array_count_values</a></li>
+  <li><a href="function.array-diff-assoc.html">array_diff_assoc</a></li>
+  <li><a href="function.array-diff-key.html">array_diff_key</a></li>
+  <li><a href="function.array-diff-uassoc.html">array_diff_uassoc</a></li>
+  <li><a href="function.array-diff-ukey.html">array_diff_ukey</a></li>
+  <li><a href="function.array-diff.html">array_diff</a></li>
+  <li><a href="function.array-fill-keys.html">array_fill_keys</a></li>
+  <li><a href="function.array-fill.html">array_fill</a></li>
+  <li><a href="function.array-filter.html">array_filter</a></li>
+  <li><a href="function.array-flip.html">array_flip</a></li>
+  <li><a href="function.array-intersect-assoc.html">array_intersect_assoc</a></li>
+  <li><a href="function.array-intersect-key.html">array_intersect_key</a></li>
+  <li><a href="function.array-intersect-uassoc.html">array_intersect_uassoc</a></li>
+  <li><a href="function.array-intersect-ukey.html">array_intersect_ukey</a></li>
+  <li><a href="function.array-intersect.html">array_intersect</a></li>
+  <li><a href="function.array-key-exists.html">array_key_exists</a></li>
+  <li><a href="function.array-keys.html">array_keys</a></li>
+  <li><a href="function.array-map.html">array_map</a></li>
+  <li><a href="function.array-merge-recursive.html">array_merge_recursive</a></li>
+  <li><a href="function.array-merge.html">array_merge</a></li>
+  <li><a href="function.array-multisort.html">array_multisort</a></li>
+  <li><a href="function.array-pad.html">array_pad</a></li>
+  <li><a href="function.array-pop.html">array_pop</a></li>
+  <li><a href="function.array-product.html">array_product</a></li>
+  <li><a href="function.array-push.html">array_push</a></li>
+  <li><a href="function.array-rand.html">array_rand</a></li>
+  <li><a href="function.array-reduce.html">array_reduce</a></li>
+  <li><a href="function.array-replace-recursive.html">array_replace_recursive</a></li>
+  <li><a href="function.array-replace.html">array_replace</a></li>
+  <li><a href="function.array-reverse.html">array_reverse</a></li>
+  <li><a href="function.array-search.html">array_search</a></li>
+  <li><a href="function.array-shift.html">array_shift</a></li>
+  <li><a href="function.array-slice.html">array_slice</a></li>
+  <li><a href="function.array-splice.html">array_splice</a></li>
+  <li><a href="function.array-sum.html">array_sum</a></li>
+  <li><a href="function.array-udiff-assoc.html">array_udiff_assoc</a></li>
+  <li><a href="function.array-udiff-uassoc.html">array_udiff_uassoc</a></li>
+  <li><a href="function.array-udiff.html">array_udiff</a></li>
+  <li><a href="function.array-uintersect-assoc.html">array_uintersect_assoc</a></li>
+  <li><a href="function.array-uintersect-uassoc.html">array_uintersect_uassoc</a></li>
+  <li><a href="function.array-uintersect.html">array_uintersect</a></li>
+  <li><a href="function.array-unique.html">array_unique</a></li>
+  <li><a href="function.array-unshift.html">array_unshift</a></li>
+  <li><a href="function.array-values.html">array_values</a></li>
+  <li><a href="function.array-walk-recursive.html">array_walk_recursive</a></li>
+  <li class="active"><a href="function.array-walk.html">array_walk</a></li>
+  <li><a href="function.array.html">array</a></li>
+  <li><a href="function.arsort.html">arsort</a></li>
+  <li><a href="function.asort.html">asort</a></li>
+  <li><a href="function.compact.html">compact</a></li>
+  <li><a href="function.count.html">count</a></li>
+  <li><a href="function.current.html">current</a></li>
+  <li><a href="function.each.html">each</a></li>
+  <li><a href="function.end.html">end</a></li>
+  <li><a href="function.extract.html">extract</a></li>
+  <li><a href="function.in-array.html">in_array</a></li>
+  <li><a href="function.key-exists.html">key_exists</a></li>
+  <li><a href="function.key.html">key</a></li>
+  <li><a href="function.krsort.html">krsort</a></li>
+  <li><a href="function.ksort.html">ksort</a></li>
+  <li><a href="function.list.html">list</a></li>
+  <li><a href="function.natcasesort.html">natcasesort</a></li>
+  <li><a href="function.natsort.html">natsort</a></li>
+  <li><a href="function.next.html">next</a></li>
+  <li><a href="function.pos.html">pos</a></li>
+  <li><a href="function.prev.html">prev</a></li>
+  <li><a href="function.range.html">range</a></li>
+  <li><a href="function.reset.html">reset</a></li>
+  <li><a href="function.rsort.html">rsort</a></li>
+  <li><a href="function.shuffle.html">shuffle</a></li>
+  <li><a href="function.sizeof.html">sizeof</a></li>
+  <li><a href="function.sort.html">sort</a></li>
+  <li><a href="function.uasort.html">uasort</a></li>
+  <li><a href="function.uksort.html">uksort</a></li>
+  <li><a href="function.usort.html">usort</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.array-walk-recursive.html">array_walk_recursive</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.array.html">array</a></div>
+                <div class="up"><a href="ref.array.html">Array Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.array-walk" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">array_walk</h1>
+  <p class="refpurpose">Wendet eine vom Benutzer gelieferte Funktion auf jedes Element eines Arrays an</p>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.array-walk-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">array_walk</span>
+    ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$array</code></span>
+   , <span class="methodparam"><span class="type">callable</span> <code class="parameter">$callback</code></span>
+   [, <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$userdata</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+  ] )</div>
+
+  <p class="simpara">
+   Wendet die mittels <code class="parameter">callback</code> angegebene
+   Benutzerfunktion auf jedes Element von <code class="parameter">array</code>
+   an.
+  </p>
+  <p class="para">
+   <span class="function">array_walk</span> ist nicht von dem internen
+   Arrayzeiger von <code class="parameter">array</code> betroffen.
+   <span class="function">array_walk</span> geht ungeachtet der Zeigerposition
+   das gesamte Array durch.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.array-walk-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">array</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Das Eingabe-Array.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">callback</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Typischerweise akzeptiert <code class="parameter">callback</code> zwei
+       Parameter. Der Wert von <code class="parameter">array</code> wird als
+       erster übergeben, und der Schlüssel/Index als zweiter.
+      </p>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+        Wenn <code class="parameter">callback</code> direkt mit den Werten des
+        Arrays arbeiten soll, spezifizieren Sie den ersten Parameter
+        von <code class="parameter">callback</code> als <a href="language.references.html" class="link">Referenz</a>. Dann werden alle
+        Änderungen an diesen Elementen direkt in dem originalen Array
+        durchgeführt.
+       </p>
+      </p></blockquote>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+        <p class="para">
+          Viele interne Funktionen (wie z.B. <span class="function">strtolower</span>)
+          erzeugen eine Warnung, wenn mehr als die erwartete Anzahl von
+          Parametern übergeben wird; sie sind auch nicht direkt nutzbar als
+          <code class="parameter">callback</code>.
+        </p>
+      </p></blockquote>
+      <p class="para">
+       Nur die Werte von <code class="parameter">array</code> können geändert werden.
+       Die Struktur des Arrays kann nicht geändert werden, d.h. dass der
+       Programmierer keine Elemente hinzufügen oder löschen kann und dass
+       die Reihenfolge der Elemente nicht geändert werden kann. Falls die
+       Callback-Funktion diese Anforderung nicht beachtet, ist der Verhalten
+       dieser Funktion nicht definiert und auch nicht vorhersagbar.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">userdata</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Wenn der optionale Parameter <code class="parameter">userdata</code>
+       angegeben ist, wird er als dritter Parameter dem Callback
+       <code class="parameter">callback</code> übergeben.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.array-walk-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+ <div class="refsect1 errors" id="refsect1-function.array-walk-errors">
+  <h3 class="title">Fehler/Exceptions</h3>
+  <p class="para">
+   Sollte die Funktion <code class="parameter">callback</code> mehr als die
+   ihr übergebenen Parameter benötigen, wird bei jedem Aufruf von
+   <code class="parameter">callback</code> durch <span class="function">array_walk</span>
+   eine Fehlermeldung der Stufe <a href="errorfunc.constants.html" class="link">
+   E_WARNING</a> generiert.
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.array-walk-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-5502">
+    <p><strong>Beispiel #1 <span class="function">array_walk</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$fruits&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"d"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"Zitrone"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"Orange"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"b"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"Banane"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"c"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"Apfel"</span><span style="color: #007700">);<br /><br />function&nbsp;</span><span style="color: #0000BB">test_alter</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$item1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$key</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$prefix</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$item1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$prefix</span><span style="color: #DD0000">:&nbsp;</span><span style="color: #0000BB">$item1</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br />}<br /><br />function&nbsp;</span><span style="color: #0000BB">test_print</span><span style="color: #007700">(</span><span style="color: #0000BB">$item2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$key</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$key</span><span style="color: #DD0000">.&nbsp;</span><span style="color: #0000BB">$item2</span><span style="color: #DD0000">&lt;br&gt;\n"</span><span style="color: #007700">;<br />}<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Vorher&nbsp;...:\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">array_walk</span><span style="color: #007700">(</span><span style="color: #0000BB">$fruits</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'test_print'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">array_walk</span><span style="color: #007700">(</span><span style="color: #0000BB">$fruits</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'test_alter'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Frucht'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"...&nbsp;und&nbsp;nachher:\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">array_walk</span><span style="color: #007700">(</span><span style="color: #0000BB">$fruits</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'test_print'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Vorher ...:
+d. Zitrone
+a. Orange
+b. Banane
+c. Apfel
+... und nachher:
+d. Frucht: Zitrone
+a. Frucht: Orange
+b. Frucht: Banane
+c. Frucht: Apfel
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.array-walk-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">array_walk_recursive</span></li>
+    <li class="member"><span class="function">iterator_apply</span></li>
+    <li class="member"><span class="function">list</span></li>
+    <li class="member"><span class="function">each</span></li>
+    <li class="member"><span class="function">call_user_func_array</span></li>
+    <li class="member"><span class="function">array_map</span></li>
+    <li class="member">Informationen über den <a href="language.pseudo-types.html#language.types.callback" class="link">Callback</a>-Typ</li>
+    <li class="member"><a href="control-structures.foreach.html" class="link">foreach</a></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

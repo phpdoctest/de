@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Maskiert spezielle Zeichen innerhalb eines Strings f&uuml;r die
+   Verwendung in einer SQL-Anweisung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="set.mysqlinfo.html">MySQL</a></li>
+  <li class="header up"><a href="book.mysql.html">MySQL (Original)</a></li>
+  <li class="header up"><a href="ref.mysql.html">MySQL Funktionen</a></li>
+  <li><a href="function.mysql-affected-rows.html">mysql_affected_rows</a></li>
+  <li><a href="function.mysql-client-encoding.html">mysql_client_encoding</a></li>
+  <li><a href="function.mysql-close.html">mysql_close</a></li>
+  <li><a href="function.mysql-connect.html">mysql_connect</a></li>
+  <li><a href="function.mysql-create-db.html">mysql_create_db</a></li>
+  <li><a href="function.mysql-data-seek.html">mysql_data_seek</a></li>
+  <li><a href="function.mysql-db-name.html">mysql_db_name</a></li>
+  <li><a href="function.mysql-db-query.html">mysql_db_query</a></li>
+  <li><a href="function.mysql-drop-db.html">mysql_drop_db</a></li>
+  <li><a href="function.mysql-errno.html">mysql_errno</a></li>
+  <li><a href="function.mysql-error.html">mysql_error</a></li>
+  <li><a href="function.mysql-escape-string.html">mysql_escape_string</a></li>
+  <li><a href="function.mysql-fetch-array.html">mysql_fetch_array</a></li>
+  <li><a href="function.mysql-fetch-assoc.html">mysql_fetch_assoc</a></li>
+  <li><a href="function.mysql-fetch-field.html">mysql_fetch_field</a></li>
+  <li><a href="function.mysql-fetch-lengths.html">mysql_fetch_lengths</a></li>
+  <li><a href="function.mysql-fetch-object.html">mysql_fetch_object</a></li>
+  <li><a href="function.mysql-fetch-row.html">mysql_fetch_row</a></li>
+  <li><a href="function.mysql-field-flags.html">mysql_field_flags</a></li>
+  <li><a href="function.mysql-field-len.html">mysql_field_len</a></li>
+  <li><a href="function.mysql-field-name.html">mysql_field_name</a></li>
+  <li><a href="function.mysql-field-seek.html">mysql_field_seek</a></li>
+  <li><a href="function.mysql-field-table.html">mysql_field_table</a></li>
+  <li><a href="function.mysql-field-type.html">mysql_field_type</a></li>
+  <li><a href="function.mysql-free-result.html">mysql_free_result</a></li>
+  <li><a href="function.mysql-get-client-info.html">mysql_get_client_info</a></li>
+  <li><a href="function.mysql-get-host-info.html">mysql_get_host_info</a></li>
+  <li><a href="function.mysql-get-proto-info.html">mysql_get_proto_info</a></li>
+  <li><a href="function.mysql-get-server-info.html">mysql_get_server_info</a></li>
+  <li><a href="function.mysql-info.html">mysql_info</a></li>
+  <li><a href="function.mysql-insert-id.html">mysql_insert_id</a></li>
+  <li><a href="function.mysql-list-dbs.html">mysql_list_dbs</a></li>
+  <li><a href="function.mysql-list-fields.html">mysql_list_fields</a></li>
+  <li><a href="function.mysql-list-processes.html">mysql_list_processes</a></li>
+  <li><a href="function.mysql-list-tables.html">mysql_list_tables</a></li>
+  <li><a href="function.mysql-num-fields.html">mysql_num_fields</a></li>
+  <li><a href="function.mysql-num-rows.html">mysql_num_rows</a></li>
+  <li><a href="function.mysql-pconnect.html">mysql_pconnect</a></li>
+  <li><a href="function.mysql-ping.html">mysql_ping</a></li>
+  <li><a href="function.mysql-query.html">mysql_query</a></li>
+  <li class="active"><a href="function.mysql-real-escape-string.html">mysql_real_escape_string</a></li>
+  <li><a href="function.mysql-result.html">mysql_result</a></li>
+  <li><a href="function.mysql-select-db.html">mysql_select_db</a></li>
+  <li><a href="function.mysql-set-charset.html">mysql_set_charset</a></li>
+  <li><a href="function.mysql-stat.html">mysql_stat</a></li>
+  <li><a href="function.mysql-tablename.html">mysql_tablename</a></li>
+  <li><a href="function.mysql-thread-id.html">mysql_thread_id</a></li>
+  <li><a href="function.mysql-unbuffered-query.html">mysql_unbuffered_query</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-query.html">mysql_query</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.mysql-result.html">mysql_result</a></div>
+                <div class="up"><a href="ref.mysql.html">MySQL Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.mysql-real-escape-string" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">mysql_real_escape_string</h1>
+  <p class="refpurpose">Maskiert spezielle Zeichen innerhalb eines Strings für die
+   Verwendung in einer SQL-Anweisung</p>
+ </div>
+
+ <div class="refsynopsisdiv">
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="para">Diese Erweiterung ist seit PHP 5.5.0 als veraltet markiert und wurde in PHP 7.0.0 entfernt werden. Verwenden Sie stattdessen die Erweiterungen <a href="book.mysqli.html" class="link">MySQLi</a> oder <a href="ref.pdo-mysql.html" class="link">PDO_MySQL</a>.
+Weitere Informationen finden Sie im Ratgeber <a href="mysqlinfo.api.choosing.html" class="link">MySQL: Auswahl einer API</a> und den <a href="faq.databases.html#faq.databases.mysql.deprecated" class="link">zugehörigen FAQ</a>.
+Alternativen zu dieser Funktion umfassen:</p>
+   <ul class="simplelist">
+    <li class="member"><span class="function">mysqli_real_escape_string</span></li>
+    <li class="member"> <span class="methodname">PDO::quote</span></li>
+   </ul>
+  </div>
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.mysql-real-escape-string-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname">mysql_real_escape_string</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$unescaped_string</code></span>
+   [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code><span class="initializer"> = NULL</span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Maskiert spezielle Zeichen im <code class="parameter">unescaped_string</code> unter
+   Berücksichtigung des aktuellen Zeichensatzes der Verbindung, so dass das
+   Ergebnis ohne Probleme in <span class="function">mysql_query</span> verwendet werden
+   kann. Wenn Sie Binärdaten einfügen wollen, müssen Sie die Funktion auf jeden
+   Fall verwenden.
+  </p>
+  <p class="para">
+   <span class="function">mysql_real_escape_string</span> ruft die Funktion
+   mysql_real_escape_string der MySQL-Bibliothek auf, die folgende Zeichen mit
+   einem Backslash (&#039;\&#039;) versieht:
+   <em>\x00</em>, <em>\n</em>, <em>\r</em>,
+   <em>\</em>, <em>&#039;</em>, <em>&quot;</em> und
+   <em>\x1a</em>.
+  </p>
+  <p class="para">
+   Die Funktion muss immer (mit wenigen Ausnahmen) verwendet werden, um Daten
+   abzusichern, bevor sie per Query an MySQL übermittelt werden.
+  </p>
+  
+  <div class="caution"><strong class="caution">Achtung</strong>
+   <h1 class="title">Sicherheit: Der Standardzeichensatz</h1>
+   <p class="para">
+    Der Zeichensatz muss entweder auf Ebene des Servers oder mittels der
+    API-Funktion <span class="function">mysql_set_charset</span> gesetzt werden,
+    damit dieser <span class="function">mysql_real_escape_string</span>
+    beeinflusst. Sehen sie das Grundlagenkapitel zum Thema
+    <a href="mysqlinfo.concepts.charset.html" class="link">Zeichensätze</a> für
+    mehr Informationen.
+   </p>
+  </div>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.mysql-real-escape-string-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">unescaped_string</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der zu maskierende String.
+      </p>
+     </dd>
+
+    
+    <dt>
+<code class="parameter">
+Verbindungs-Kennung</code></dt>
+<dd>
+<p class="para">Die MySQL-Verbindung.
+Wird die Verbindungskennung nicht angegeben, wird die letzte durch
+<span class="function">mysql_connect</span> geöffnete Verbindung angenommen. Falls
+keine solche Verbindung gefunden wird, wird versucht, eine Verbindung
+aufzubauen, wie es beim Aufruf von <span class="function">mysql_connect</span> ohne
+Angabe von Argumenten der Fall wäre. Falls zufällig keine Verbindung gefunden
+oder aufgebaut werden kann, wird eine Warnung der Stufe
+<strong><code>E_WARNING</code></strong> erzeugt.</p></dd>
+
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.mysql-real-escape-string-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt einen maskierten String oder im Fehlerfall <strong><code>FALSE</code></strong> zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.mysql-real-escape-string-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-1950">
+    <p><strong>Beispiel #1 Einfaches <span class="function">mysql_real_escape_string</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Verbindung&nbsp;herstellen<br /></span><span style="color: #0000BB">$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'mysql_host'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_user'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_password'</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;OR&nbsp;die(</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br /><br /></span><span style="color: #FF8000">//&nbsp;Anfrage&nbsp;erstellen<br /></span><span style="color: #0000BB">$query&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;*&nbsp;FROM&nbsp;users&nbsp;WHERE&nbsp;user='%s'&nbsp;AND&nbsp;password='%s'"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mysql_real_escape_string</span><span style="color: #007700">(</span><span style="color: #0000BB">$user</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mysql_real_escape_string</span><span style="color: #007700">(</span><span style="color: #0000BB">$password</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-1951">
+    <p><strong>Beispiel #2 Ein beispielhafter SQL Injection Angriff</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Wir&nbsp;haben&nbsp;$_POST['password']&nbsp;nicht&nbsp;geprüft,&nbsp;dies&nbsp;könnte<br />//&nbsp;ein&nbsp;beliebiger&nbsp;Wert&nbsp;sein&nbsp;den&nbsp;der&nbsp;Benutzer&nbsp;will<br />//&nbsp;Zum&nbsp;Beispiel:<br /></span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'username'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'aidan'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'password'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"'&nbsp;OR&nbsp;''='"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Datenbankabfrage&nbsp;zur&nbsp;Ueberpruefung&nbsp;der&nbsp;Logindaten<br /></span><span style="color: #0000BB">$query&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"SELECT&nbsp;*&nbsp;FROM&nbsp;users&nbsp;WHERE&nbsp;user='</span><span style="color: #007700">{</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'username'</span><span style="color: #007700">]}</span><span style="color: #DD0000">'&nbsp;AND&nbsp;password='</span><span style="color: #007700">{</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'password'</span><span style="color: #007700">]}</span><span style="color: #DD0000">'"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$query</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Das&nbsp;bedeutet,&nbsp;der&nbsp;an&nbsp;MySQL&nbsp;gesendete&nbsp;Query&nbsp;wuerde&nbsp;sein:<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$query</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+     <div class="example-contents"><p>
+      Die Abfrage, die an MySQL übermittelt wird:
+     </p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+SELECT * FROM users WHERE user=&#039;aidan&#039; AND password=&#039;&#039; OR &#039;&#039;=&#039;&#039;
+</pre></div>
+    </div>
+    <div class="example-contents"><p>
+     Dies würde jedermann erlauben, sich ohne valides Passwort einzuloggen.
+    </p></div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.mysql-real-escape-string-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Sie müssen eine Verbindung zu MySQL geöffnet haben, bevor Sie
+    <span class="function">mysql_real_escape_string</span> verwenden, ansonsten erhalten
+    Sie einen Fehler vom Typ <strong><code>E_WARNING</code></strong> und der Rückgabewert
+    wird zu <strong><code>FALSE</code></strong>. Ist <code class="parameter">link_identifier</code> nicht angegeben,
+    wird die letzte MySQL-Verbindung verwendet.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Ist <a href="info.configuration.html#ini.magic-quotes-gpc" class="link">magic_quotes_gpc</a> aktiviert,
+    wenden Sie zuerst <span class="function">stripslashes</span> auf die Daten an. Das
+    Bearbeiten bereits in irgend einer Form maskierter Daten durch
+    mysql_real_escape_string führt ansonsten dazu, dass bereits Maskiertes
+    doppelt maskiert wird.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Wenn die Funktion nicht verwendet wird, um die Daten zu maskieren, ist der
+    Query anfällig für <a href="security.database.sql-injection.html" class="link">SQL
+    Injection Angriffe</a>.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    <span class="function">mysql_real_escape_string</span> maskiert weder
+    <em>%</em> noch <em>_</em>. Diese Zeichen werden in MySQL
+    als Platzhalter interpretiert, wenn sie mit <em>LIKE</em>,
+    <em>GRANT</em> oder <em>REVOKE</em> kombiniert werden.
+   </span>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.mysql-real-escape-string-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">mysql_set_charset</span></li>
+    <li class="member"><span class="function">mysql_client_encoding</span></li>
+    <li class="member"><span class="function">addslashes</span></li>
+    <li class="member"><span class="function">stripslashes</span></li>
+    <li class="member">Die <a href="info.configuration.html#ini.magic-quotes-gpc" class="link">magic_quotes_gpc</a>-Direktive</li>
+    <li class="member">Die <a href="info.configuration.html#ini.magic-quotes-runtime" class="link">magic_quotes_runtime</a>-Direktive</li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

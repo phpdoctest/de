@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: &Uuml;bersicht &uuml;ber Namespaces</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.namespaces.html">Namespaces</a></li>
+  <li class="active"><a href="language.namespaces.rationale.html">&Uuml;bersicht &uuml;ber Namespaces</a></li>
+  <li><a href="language.namespaces.definition.html">Namespaces definieren</a></li>
+  <li><a href="language.namespaces.nested.html">Unter-Namespaces deklarieren</a></li>
+  <li><a href="language.namespaces.definitionmultiple.html">Mehrere Namespaces in der selben Datei definieren</a></li>
+  <li><a href="language.namespaces.basics.html">Namespaces verwenden: Grundlagen</a></li>
+  <li><a href="language.namespaces.dynamic.html">Namespaces und dynamische Sprachfeatures</a></li>
+  <li><a href="language.namespaces.nsconstants.html">Namespace-Schl&uuml;sselwort und __NAMESPACE__-Konstante</a></li>
+  <li><a href="language.namespaces.importing.html">Namespaces verwenden: Aliase/Importieren</a></li>
+  <li><a href="language.namespaces.global.html">Globaler Namensraum</a></li>
+  <li><a href="language.namespaces.fallback.html">Namespaces verwenden: R&uuml;ckgriff auf globale Funktion/Konstante</a></li>
+  <li><a href="language.namespaces.rules.html">Regeln f&uuml;r Namensaufl&ouml;sung</a></li>
+  <li><a href="language.namespaces.faq.html">FAQ: Dinge, die Sie &uuml;ber Namespaces wissen sollten</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.namespaces.html">Namespaces</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.namespaces.definition.html">Namespaces definieren</a></div>
+                <div class="up"><a href="language.namespaces.html">Namespaces</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.namespaces.rationale" class="sect1">
+  <h2 class="title">Übersicht über Namespaces</h2>
+  
+  <p class="simpara">
+   Was sind Namespaces? Im weitesten Sinne bieten Namespaces eine Möglichkeit, verschiedene
+   Gegenstände zu kapseln. Dies kann man als abstraktes Konzept an vielen Dingen
+   beobachten. In einem Betriebssystem dienen zum Beispiel Verzeichnisse dazu, um
+   zusammengehörige Dateien zu gruppieren, und dienen als Namespace für die beinhalteten
+   Dateien. In einem konkreten Beispiel kann die Datei <em>foo.txt</em> sowohl im
+   Verzeichnis <em>/home/greg</em> als auch in <em>/home/other</em>
+   existieren, aber es können keine zwei Varianten der Datei <em>foo.txt</em>
+   im gleichen Verzeichnis existieren. Um auf die Datei <em>foo.txt</em> von
+   außerhalb des Verzeichnisses <em>/home/greg</em> zuzugreifen, muss man zusätzlich
+   dem Verzeichnisnamen den Dateinamen und ein Trennzeichen voranstellen, um
+   <em>/home/greg/foo.txt</em> zu erhalten. Das gleiche Prinzip streckt sich
+   auf Namespaces in der Programmierwelt aus.
+  </p>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.0.0</td>
+       <td>
+        Gruppierte use-Deklarationen hinzugefügt.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+  <p class="simpara">
+   In der Welt von PHP wurden Namespaces entworfen, um zwei Probleme zu lösen, auf die
+   die Autoren von Bibliotheken und Anwendungen stoßen, wenn sie wiederverwendbare
+   Codeelemente wie Klassen und Funktionen entwickeln:
+  </p>
+  <p class="para">
+   <ol type="1">
+    <li class="listitem">
+     <span class="simpara">
+      Namenskollisionen zwischen eigenem Code und internen
+      PHP-Klassen/Funktionen/Konstanten oder Klassen/Funktionen/Konstanten von
+      Drittanbietern.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      Die Möglichkeit, um einen Alias (oder einen Kurznamen) für Sehr_Lange_Namen
+      einzuführen, die angelegt wurden, um das erste Problem zu umgehen. Damit kann
+      man die Lesbarkeit des Quellcodes erhöhen.
+     </span>
+    </li>
+   </ol>
+  </p>
+  <p class="simpara">
+   PHP-Namespaces bieten eine Möglickeit, um zusammengehörige Klassen,
+   Interfaces, Funktionen und Konstanten zusammenzufassen. Dies ist ein Beispiel für
+   die Namespace-Syntax in PHP:
+  </p>
+  <div class="example" id="example-246">
+   <p><strong>Beispiel #1 Beispiel für Namespace-Syntax</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">my</span><span style="color: #007700">\</span><span style="color: #0000BB">name</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;siehe&nbsp;Abschnitt&nbsp;"Namespaces&nbsp;definieren"<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">MyClass&nbsp;</span><span style="color: #007700">{}<br />function&nbsp;</span><span style="color: #0000BB">myfunction</span><span style="color: #007700">()&nbsp;{}<br />const&nbsp;</span><span style="color: #0000BB">MYCONST&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MyClass</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;\</span><span style="color: #0000BB">my</span><span style="color: #007700">\</span><span style="color: #0000BB">name</span><span style="color: #007700">\</span><span style="color: #0000BB">MyClass</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;siehe&nbsp;Abschnitt&nbsp;"Globaler&nbsp;Namensraum"<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #DD0000">'hi'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;siehe&nbsp;Abschnitt&nbsp;"Namespaces&nbsp;verwenden:&nbsp;Rückgriff&nbsp;auf<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;globale&nbsp;Funktion/Konstante"<br /><br /></span><span style="color: #0000BB">$d&nbsp;</span><span style="color: #007700">=&nbsp;namespace\</span><span style="color: #0000BB">MYCONST</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;siehe&nbsp;Abschnitt&nbsp;"Namespace-Schlüsselwort&nbsp;und&nbsp;__NAMESPACE__-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Konstante"<br /></span><span style="color: #0000BB">$d&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">__NAMESPACE__&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'\MYCONST'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">constant</span><span style="color: #007700">(</span><span style="color: #0000BB">$d</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;siehe&nbsp;Abschnitt&nbsp;"Namespaces&nbsp;und&nbsp;dynamische&nbsp;Sprachfeatures"<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Die Namespaces <em>PHP</em> und <em>php</em>, sowie zusammengesetzte Namen,
+    die mit diesen Bezeichnungen beginnen (wie z.B. <em>PHP\Classes</em>), 
+    sind zur internen Verwendung in der Sprache reserviert und sollten im eigene Programmcode nicht
+    verwendet werden.
+   </p>
+  </p></blockquote>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

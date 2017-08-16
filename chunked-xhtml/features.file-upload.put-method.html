@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: PUT-Unterst&uuml;tzung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="features.html">Features</a></li>
+  <li class="header up"><a href="features.file-upload.html">Steuerung von Dateiuploads</a></li>
+  <li><a href="features.file-upload.post-method.html">Dateiuploads mit POST</a></li>
+  <li><a href="features.file-upload.errors.html">Fehlermeldungen erkl&auml;rt</a></li>
+  <li><a href="features.file-upload.common-pitfalls.html">H&auml;ufige Probleme</a></li>
+  <li><a href="features.file-upload.multiple.html">Upload mehrerer Dateien</a></li>
+  <li class="active"><a href="features.file-upload.put-method.html">PUT-Unterst&uuml;tzung</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="features.file-upload.multiple.html">Upload mehrerer Dateien</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="features.remote-files.html">Zugriff auf entfernte Dateien</a></div>
+                <div class="up"><a href="features.file-upload.html">Steuerung von Dateiuploads</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="features.file-upload.put-method" class="sect1">
+   <h2 class="title">PUT-Unterstützung</h2>
+   <p class="para">
+    PHP unterstützt die HTTP PUT Methode, welche von einigen Clients verwendet wird,
+    um Dateien auf dem Server zu speichern. PUT-Anfragen sind weitaus unkomplizierter
+    als ein POST Dateiupload und sehen etwa so aus:
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="HTTPcode"><pre class="HTTPcode">PUT /path/filename.html HTTP/1.1</pre>
+</div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    Das würde normalerweise bedeuten, dass der Client den nachfolgenden Inhalt als
+    <var class="filename">/path/filename.html</var> auf dem Server speichern will. 
+    Natürlich ist es keine gute Idee, dass PHP oder Apache jeden Benutzer beliebige
+    Dateien überschreiben lässt. Um eine solche Anfrage bearbeiten zu können, muss
+    der Webserver erst angewiesen werden, ein bestimmtes PHP-Skript für die
+    Abarbeitung aufzurufen. In Apache wird dies durch die <em class="emphasis">Script</em>
+    Direktive festgelegt. Sie kann fast überall in der Apache-Konfigurationsdatei
+    platziert werden, gebräuchlich ist die Platzierung innerhalb einer
+    <em>&lt;Directory&gt;</em>- oder <em>Virtualhost</em>-Sektion.
+    Eine Zeile wie die folgende erledigt dies:
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="cdata"><pre>
+Script PUT /put.php
+</pre></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="simpara">
+    Diese Zeile legt fest, dass Apache alle PUT-Anfragen für URIs, die
+    dem Kontext entsprechen, in dem diese Zeile steht, an das <var class="filename">put.php</var>
+    Skript weiterleitet. Dies setzt natürlich voraus, dass PHP aktiv
+    und für die <var class="filename">.php</var>-Dateierweiterung registriert ist.
+   </p>
+   <p class="simpara">
+    In der put.php könnte anschließend ein Code wie der folgende verwendet werden. Dieser würde
+    den Inhalt der hochgeladenen Datei in die Datei <var class="filename">myputfile.ext</var> auf dem
+    Server kopieren.
+   </p>
+   <p class="para">
+    <div class="example" id="example-379">
+     <p><strong>Beispiel #1 Speichern von HTTP PUT Dateien</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;PUT&nbsp;Daten&nbsp;kommen&nbsp;in&nbsp;den&nbsp;stdin&nbsp;Stream&nbsp;*/<br /></span><span style="color: #0000BB">$putdata&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"php://input"</span><span style="color: #007700">,</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Eine&nbsp;Datei&nbsp;zum&nbsp;Schreiben&nbsp;öffnen&nbsp;*/<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"myputfile.ext"</span><span style="color: #007700">,</span><span style="color: #DD0000">"w"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Jeweils&nbsp;1kB&nbsp;Daten&nbsp;lesen&nbsp;und<br />&nbsp;&nbsp;&nbsp;in&nbsp;die&nbsp;Datei&nbsp;schreiben&nbsp;*/<br /></span><span style="color: #007700">while&nbsp;(</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$putdata</span><span style="color: #007700">,</span><span style="color: #0000BB">1024</span><span style="color: #007700">))<br />&nbsp;&nbsp;</span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,</span><span style="color: #0000BB">$data</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Die&nbsp;Streams&nbsp;schließen&nbsp;*/<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$putdata</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

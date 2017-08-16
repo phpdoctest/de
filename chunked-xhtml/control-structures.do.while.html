@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: do-while</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.control-structures.html">Kontrollstrukturen</a></li>
+  <li><a href="control-structures.intro.html">Einf&uuml;hrung</a></li>
+  <li><a href="control-structures.if.html">if</a></li>
+  <li><a href="control-structures.else.html">else</a></li>
+  <li><a href="control-structures.elseif.html">elseif/else if</a></li>
+  <li><a href="control-structures.alternative-syntax.html">Alternative Syntax f&uuml;r Kontrollstrukturen</a></li>
+  <li><a href="control-structures.while.html">while</a></li>
+  <li class="active"><a href="control-structures.do.while.html">do-while</a></li>
+  <li><a href="control-structures.for.html">for</a></li>
+  <li><a href="control-structures.foreach.html">foreach</a></li>
+  <li><a href="control-structures.break.html">break</a></li>
+  <li><a href="control-structures.continue.html">continue</a></li>
+  <li><a href="control-structures.switch.html">switch</a></li>
+  <li><a href="control-structures.declare.html">declare</a></li>
+  <li><a href="function.return.html">return</a></li>
+  <li><a href="function.require.html">require</a></li>
+  <li><a href="function.include.html">include</a></li>
+  <li><a href="function.require-once.html">require_once</a></li>
+  <li><a href="function.include-once.html">include_once</a></li>
+  <li><a href="control-structures.goto.html">goto</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="control-structures.while.html">while</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="control-structures.for.html">for</a></div>
+                <div class="up"><a href="language.control-structures.html">Kontrollstrukturen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="control-structures.do.while" class="sect1">
+ <h2 class="title"><em>do-while</em></h2>
+ 
+ <p class="simpara">
+  <em>do-while</em>-Schleifen sind sehr ähnlich zu
+  <em>while</em>-Schleifen, außer dass der Wahrheitsausdruck erst am
+  Ende eines jeden Durchlaufs statt zu dessen Beginn geprüft wird. Der
+  Hauptunterschied zu einer normalen <em>while</em>-Schleife ist, dass
+  die <em>do-while</em>-Schleife garantiert mindestens einmal
+  durchlaufen wird (Der Wahrheitsausdruck wird ja nur am Ende jeden Durchlaufs
+  geprüft), wohingegen es nicht zwingend ist, dass eine reguläre
+  <em>while</em>-Schleife immer ausgeführt wird (hier wird der
+  Wahrheitsausdruck bereits zu Beginn eines jeden Durchlaufs überprüft.
+  Evaluiert er dabei zu <strong><code>FALSE</code></strong>, wird die Verarbeitung der Schleife sofort
+  abgebrochen).
+ </p>
+ <p class="para">
+  Es gibt nur eine Syntax für <em>do-while</em>-Schleifen:
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />do&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">;<br />}&nbsp;while&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="simpara">
+  Die obige Schleife wird exakt einmal durchlaufen, da nach dem ersten Durchlauf,
+  wenn der Wahrheitsausdruck geprüft wird, dieser <strong><code>FALSE</code></strong> ergibt
+  (<var class="varname">$i</var> ist nicht größer als 0), so dass die
+  Schleifenausführung beendet wird.
+ </p>
+ <p class="para">
+  Fortgeschrittenen C-Programmierern ist möglicherweise eine etwas andere
+  Verwendung von <em>do-while</em>-Schleifen bekannt, die es erlaubt,
+  die Ausführung in der Mitte des Codeblocks zu unterbrechen. Dies wird durch
+  ein Kapseln in <em>do-while</em>(0) und die Verwendung des <a href="control-structures.break.html" class="link"><em>break</em></a>-Statements
+  erreicht. Das folgende Codefragment demonstriert dieses Verhalten:
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">do&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;ist&nbsp;nicht&nbsp;groß&nbsp;genug"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">*=&nbsp;</span><span style="color: #0000BB">$factor</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">$minimum_limit</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;ist&nbsp;ok"</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;i&nbsp;verarbeiten&nbsp;*/<br /><br /></span><span style="color: #007700">}&nbsp;while&nbsp;(</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="simpara">
+  Seien Sie nicht traurig, wenn Sie dies nicht oder nicht ganz verstehen.
+  Sie können trotzdem Skripte - und wirklich leistungsfähige Skripte! -
+  programmieren, ohne dieses &quot;Feature&quot; zu verwenden.
+  Seit PHP 5.3.0 ist es möglich, statt dieses Hacks den <a href="control-structures.goto.html" class="link"><em>goto</em></a>-Operator
+  zu verwenden.
+ </p>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

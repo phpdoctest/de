@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: dBase</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li><a href="book.cubrid.html">CUBRID</a></li>
+  <li><a href="book.dbplus.html">DB++</a></li>
+  <li class="active"><a href="book.dbase.html">dBase</a></li>
+  <li><a href="book.filepro.html">filePro</a></li>
+  <li><a href="book.ibase.html">Firebird/InterBase</a></li>
+  <li><a href="book.fbsql.html">FrontBase</a></li>
+  <li><a href="book.ibm-db2.html">IBM DB2</a></li>
+  <li><a href="book.ifx.html">Informix</a></li>
+  <li><a href="book.ingres.html">Ingres</a></li>
+  <li><a href="book.maxdb.html">MaxDB</a></li>
+  <li><a href="book.mongo.html">Mongo</a></li>
+  <li><a href="set.mongodb.html">MongoDB</a></li>
+  <li><a href="book.msql.html">mSQL</a></li>
+  <li><a href="book.mssql.html">Mssql</a></li>
+  <li><a href="set.mysqlinfo.html">MySQL</a></li>
+  <li><a href="book.oci8.html">OCI8</a></li>
+  <li><a href="book.paradox.html">Paradox</a></li>
+  <li><a href="book.pgsql.html">PostgreSQL</a></li>
+  <li><a href="book.sqlite.html">SQLite</a></li>
+  <li><a href="book.sqlite3.html">SQLite3</a></li>
+  <li><a href="book.sqlsrv.html">SQLSRV</a></li>
+  <li><a href="book.sybase.html">Sybase</a></li>
+  <li><a href="book.tokyo-tyrant.html">tokyo_tyrant</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.dbplus-xunlockrel.html">dbplus_xunlockrel</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.dbase.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.dbase" class="book">
+ 
+ <h1>dBase</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.dbase.html">Einf&uuml;hrung</a></li>
+<li><a href="dbase.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="dbase.requirements.html">Anforderungen</a></li>
+<li><a href="dbase.installation.html">Installation</a></li>
+<li><a href="dbase.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="dbase.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="dbase.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.dbase.html">dBase Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.dbase-add-record.html">dbase_add_record</a> — H&auml;ngt einen Datensatz an eine Datenbank an</li>
+<li><a href="function.dbase-close.html">dbase_close</a> — Schlie&szlig;t eine Datenbank</li>
+<li><a href="function.dbase-create.html">dbase_create</a> — Erzeugt eine Datenbank</li>
+<li><a href="function.dbase-delete-record.html">dbase_delete_record</a> — Markiert einen Datensatz als gel&ouml;scht</li>
+<li><a href="function.dbase-get-header-info.html">dbase_get_header_info</a> — Liefert Informationen des Dateikopfs einer Datenbank</li>
+<li><a href="function.dbase-get-record-with-names.html">dbase_get_record_with_names</a> — Liefert einen Datensatz aus einer Datenbank als assoziatives Array</li>
+<li><a href="function.dbase-get-record.html">dbase_get_record</a> — Liefert einen Datensatz aus einer Datenbank als indiziertes Array</li>
+<li><a href="function.dbase-numfields.html">dbase_numfields</a> — Liefert die Anzahl der Felder einer Datenbank</li>
+<li><a href="function.dbase-numrecords.html">dbase_numrecords</a> — Liefert die Anzahl der Datens&auml;tze einer Datenbank</li>
+<li><a href="function.dbase-open.html">dbase_open</a> — &Ouml;ffnet eine Datenbank</li>
+<li><a href="function.dbase-pack.html">dbase_pack</a> — Entfernt die als gel&ouml;scht markierten Datens&auml;tze aus einer Datenbank</li>
+<li><a href="function.dbase-replace-record.html">dbase_replace_record</a> — Ersetzt einen Datensatz in einer Datenbank</li>
+</ul>
+</li>
+</ul>
+
+
+ 
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

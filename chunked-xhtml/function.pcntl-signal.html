@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Richtet eine Signalverarbeitung ein</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li class="header up"><a href="book.pcntl.html">PCNTL</a></li>
+  <li class="header up"><a href="ref.pcntl.html">PCNTL Funktionen</a></li>
+  <li><a href="function.pcntl-alarm.html">pcntl_alarm</a></li>
+  <li><a href="function.pcntl-errno.html">pcntl_errno</a></li>
+  <li><a href="function.pcntl-exec.html">pcntl_exec</a></li>
+  <li><a href="function.pcntl-fork.html">pcntl_fork</a></li>
+  <li><a href="function.pcntl-get-last-error.html">pcntl_get_last_error</a></li>
+  <li><a href="function.pcntl-getpriority.html">pcntl_getpriority</a></li>
+  <li><a href="function.pcntl-setpriority.html">pcntl_setpriority</a></li>
+  <li><a href="function.pcntl-signal-dispatch.html">pcntl_signal_dispatch</a></li>
+  <li><a href="function.pcntl-signal-get-handler.html">pcntl_signal_get_handler</a></li>
+  <li class="active"><a href="function.pcntl-signal.html">pcntl_signal</a></li>
+  <li><a href="function.pcntl-sigprocmask.html">pcntl_sigprocmask</a></li>
+  <li><a href="function.pcntl-sigtimedwait.html">pcntl_sigtimedwait</a></li>
+  <li><a href="function.pcntl-sigwaitinfo.html">pcntl_sigwaitinfo</a></li>
+  <li><a href="function.pcntl-strerror.html">pcntl_strerror</a></li>
+  <li><a href="function.pcntl-wait.html">pcntl_wait</a></li>
+  <li><a href="function.pcntl-waitpid.html">pcntl_waitpid</a></li>
+  <li><a href="function.pcntl-wexitstatus.html">pcntl_wexitstatus</a></li>
+  <li><a href="function.pcntl-wifexited.html">pcntl_wifexited</a></li>
+  <li><a href="function.pcntl-wifsignaled.html">pcntl_wifsignaled</a></li>
+  <li><a href="function.pcntl-wifstopped.html">pcntl_wifstopped</a></li>
+  <li><a href="function.pcntl-wstopsig.html">pcntl_wstopsig</a></li>
+  <li><a href="function.pcntl-wtermsig.html">pcntl_wtermsig</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.pcntl-signal-get-handler.html">pcntl_signal_get_handler</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.pcntl-sigprocmask.html">pcntl_sigprocmask</a></div>
+                <div class="up"><a href="ref.pcntl.html">PCNTL Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.pcntl-signal" class="refentry">
+  <div class="refnamediv">
+   <h1 class="refname">pcntl_signal</h1>
+   <p class="refpurpose">Richtet eine Signalverarbeitung ein</p>
+  </div>
+  <div class="refsect1 unknown-seealsp" id="refsect1-function.pcntl-signal-unknown-seealsp">
+   <h3 class="title">Beschreibung</h3>
+    <div class="methodsynopsis dc-description">
+     <span class="type">bool</span> <span class="methodname">pcntl_signal</span>
+      ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$signo</code></span>
+     , <span class="methodparam"><span class="type">callback</span> <code class="parameter">$handle</code></span>
+     [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$restart_syscalls</code></span>
+    ] )</div>
+
+   <p class="para rdfs-comment">
+    Die Funktion <span class="function">pcntl_signal</span> richtet eine neue
+    Signalverarbeitung für das in <code class="parameter">signo</code> angegebene
+    Signal ein. Die Signalverarbeitung wird auf <code class="parameter">handler</code>
+    gesetzt, was entweder der Name einer benutzerdefinierten Funktion oder
+    eine der beiden globalen Konstanten SIG_IGN oder SIG_DFL sein kann.
+    Der optionale Parameter <code class="parameter">restart_syscalls</code> gibt an,
+    ob der Neustart von Systemaufrufen verwendet werden soll, wenn das Signal
+    eintrifft und ist vorgegeben als <strong><code>TRUE</code></strong>.
+   </p>
+   <p class="para">
+    Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+   </p>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Der optionale Parameter <code class="parameter">restart_syscalls</code> wurde mit
+     PHP 4.3.0. verfügbar.
+    </p>
+   </p></blockquote>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Die Fähigkeit, eine Objektmethode als Callback zu verwenden, wurde in PHP
+     4.3.0. verfügbar. Beachten Sie, dass die Verwendung einer Objektmethode als
+     Signalverarbeitung den Referenzzähler des Objektes erhöht, weshalb das
+     Objekt bestehen bleibt bis entweder der Handler geändert wird oder das
+     Skript endet.
+    </p>
+   </p></blockquote>
+   <div class="example" id="example-4093">
+    <p><strong>Beispiel #1 <span class="function">pcntl_signal</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Verwendung&nbsp;von&nbsp;Ticks&nbsp;wird&nbsp;seit&nbsp;PHP&nbsp;4.3.0.&nbsp;benötigt<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">ticks&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Signalverarbeitungsfunktion<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">sig_handler</span><span style="color: #007700">(</span><span style="color: #0000BB">$signo</span><span style="color: #007700">)&nbsp;<br />{<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;(</span><span style="color: #0000BB">$signo</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">SIGTERM</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Aufgaben&nbsp;zum&nbsp;Beenden&nbsp;bearbeiten<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">exit;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">SIGHUP</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Aufgaben&nbsp;zum&nbsp;Neustart&nbsp;bearbeiten<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">break;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">SIGUSR1</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Caught&nbsp;SIGUSR1...\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Alle&nbsp;anderen&nbsp;Signale&nbsp;bearbeiten<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br /><br />}<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Richte&nbsp;neue&nbsp;Signalverarbeitung&nbsp;ein...\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Signalverarbeitung&nbsp;einrichten<br /></span><span style="color: #0000BB">pcntl_signal</span><span style="color: #007700">(</span><span style="color: #0000BB">SIGTERM</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"sig_handler"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">pcntl_signal</span><span style="color: #007700">(</span><span style="color: #0000BB">SIGHUP</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #DD0000">"sig_handler"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">pcntl_signal</span><span style="color: #007700">(</span><span style="color: #0000BB">SIGUSR1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"sig_handler"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;oder&nbsp;ein&nbsp;Objekt&nbsp;verwenden,&nbsp;ab&nbsp;PHP&nbsp;4.3.0&nbsp;möglich<br />//&nbsp;pcntl_signal(SIGUSR1,&nbsp;array($obj,&nbsp;"tu_etwas");<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Erzeuge&nbsp;signal&nbsp;SIGTERM&nbsp;an&nbsp;mich&nbsp;selbst...\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;sende&nbsp;SIGUSR1&nbsp;an&nbsp;die&nbsp;aktuelle&nbsp;Prozess&nbsp;ID<br /></span><span style="color: #0000BB">posix_kill</span><span style="color: #007700">(</span><span style="color: #0000BB">posix_getpid</span><span style="color: #007700">(),&nbsp;</span><span style="color: #0000BB">SIGUSR1</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Fertig\n"<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Seit PHP 4.3.0. benutzt PCNTL Ticks als Signalverarbeitungsmechanismus,
+     welcher wesentlich schneller als der zuvor verwendete Mechanismus ist.
+     Dieser Wechsel folgt der selben Semantik wie die Verwendung von 
+     &quot;<a href="control-structures.declare.html#control-structures.declare.ticks" class="link">Benutzer Ticks</a>&quot;.
+     Man verwendet die 
+     <a href="control-structures.declare.html" class="link">declare()</a> Anweisung, um 
+     die Stellen in seinem Programm anzugeben, in denen Callbacks stattfinden 
+     dürfen, damit die Signalverarbeitung korrekt funktioniert (wie im obigen
+     Beispiel).
+    </p>
+   </p></blockquote>
+   <p class="para">
+    Siehe auch <span class="function">pcntl_fork</span> und
+    <span class="function">pcntl_waitpid</span>.
+   </p>
+  </div>
+
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,918 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Konstanten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.oci8.html">OCI8</a></li>
+  <li><a href="intro.oci8.html">Einf&uuml;hrung</a></li>
+  <li><a href="oci8.setup.html">Installation/Konfiguration</a></li>
+  <li class="active"><a href="oci8.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="oci8.examples.html">Beispiele</a></li>
+  <li><a href="oci8.connection.html">OCI8 Connection Handling and Connection Pooling</a></li>
+  <li><a href="oci8.fan.html">OCI8 Fast Application Notification (FAN) Support</a></li>
+  <li><a href="oci8.dtrace.html">OCI8 and DTrace Dynamic Tracing</a></li>
+  <li><a href="oci8.datatypes.html">Supported Datatypes</a></li>
+  <li><a href="ref.oci8.html">OCI8 Funktionen</a></li>
+  <li><a href="class.OCI-Collection.html">OCI-Collection</a></li>
+  <li><a href="class.OCI-Lob.html">OCI-Lob</a></li>
+  <li><a href="oldaliases.oci8.html">OCI8 - Veraltete Aliase und Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="oci8.configuration.html">Laufzeit-Konfiguration</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="oci8.examples.html">Beispiele</a></div>
+                <div class="up"><a href="book.oci8.html">OCI8</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="oci8.constants" class="appendix">
+ <h1>Vordefinierte Konstanten</h1>
+ <p class="simpara">Folgende Konstanten werden von dieser
+Erweiterung definiert und stehen nur zur Verfügung, wenn die Erweiterung entweder
+statisch in PHP kompiliert oder dynamisch zur Laufzeit geladen
+wurde.</p>
+ <dl>
+
+  
+   <dt>
+
+    <strong><code>OCI_DEFAULT</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Statement-Ausführungsmodus. Ein Statement wird nicht automatisch committed,
+     wenn dieser Modus benutzt wird.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_DESCRIBE_ONLY</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Statement-Ausführungsmodus. Benutze diesen Modus, wenn die Suchabfrage
+     nicht ausgeführt werden soll, sondern nur eine Beschreibung der
+     Selektierten Liste gewünscht ist.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_COMMIT_ON_SUCCESS</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Statement-Ausführungsmodus. Das Statement wird automatisch committed nach
+     einem <span class="function">oci_execute</span>-Aufruf.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_EXACT_FETCH</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Statement-Abrufmodus. Kann benutzt werden, wenn die Applikation bereits im
+     Vorfeld die genaue Anzahl der abzurufenden Zeilen kennt. Dieser Modus
+     schaltet das Prefetching (Vorab-Abruf) bei Oracle Release 8 und höher aus.
+     Der Zeiger wird bei erreichen der benötigten Zeilen beendet und verringert
+     somit die benötigten Ressourcen des Servers.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_SYSDATE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_B_BFILE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_by_name</span> benutzt, wenn BFILEs
+     gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_B_CFILEE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_by_name</span> benutzt, wenn CFILEs
+     gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_B_CLOB</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_by_name</span> benutzt, wenn CLOBs
+     gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_B_BLOB</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_by_name</span> benutzt, wenn BLOBs
+     gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_B_ROWID</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_by_name</span> benutzt, wenn ROWIDs
+     gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_B_CURSOR</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_by_name</span> benutzt, wenn Zeiger
+     (CURSOR) gebunden werden, die zuvor mit
+     <span class="function">oci_new_descriptor</span> reserviert wurden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_B_NTY</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_by_name</span> benutzt, wenn benannte
+     Datentypen gebunden werden. Zu beachten: in PHP &lt; 5.0 wurde das
+     <strong><code>OCI_B_SQLT_NTY</code></strong> genannt.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_B_BIN</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_BFILEE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das gleiche wie <strong><code>OCI_B_BFILE</code></strong>.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_CFILEE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das gleiche wie <strong><code>OCI_B_CFILEE</code></strong>.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_CLOB</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das gleiche wie <strong><code>OCI_B_CLOB</code></strong>.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_BLOB</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das gleiche wie <strong><code>OCI_B_BLOB</code></strong>.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_RDD</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das gleiche wie <strong><code>OCI_B_ROWID</code></strong>.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_NTY</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das gleiche wie <strong><code>OCI_B_NTY</code></strong>.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_LNG</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_by_name</span> benutzt, wenn LONG-Werte
+     gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_LBI</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_by_name</span> benutzt, wenn LONG-RAW-Werte
+     gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_BIN</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_by_name</span> benutzt, wenn RAW-Werte
+     gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_NUM</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_array_by_name</span> benutzt, wenn Arrays
+     aus NUMBERs gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_INT</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_array_by_name</span> benutzt, wenn Arrays
+     aus INTEGERs gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_AFC</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_array_by_name</span> benutzt, wenn Arrays
+     aus CHARs gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_CHR</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_array_by_name</span> benutzt, wenn Arrays
+     aus VARCHAR2s gebunden werden. Wird auch bei
+     <span class="function">oci_bind_by_name</span> benutzt.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_VCS</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_array_by_name</span> benutzt, wenn Arrays
+     aus VARCHARs gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_AVC</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_array_by_name</span> benutzt, wenn Arrays
+     aus CHARZs gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_STR</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_array_by_name</span> benutzt, wenn Arrays
+     aus STRINGs gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_LVC</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_array_by_name</span> benutzt, wenn Arrays aus
+     LONG-VARCHARs gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_FLT</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_array_by_name</span> benutzt, wenn Arrays aus
+     FLOATs gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_ODT</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_bind_array_by_name</span> benutzt, wenn Arrays aus
+     LONGs gebunden werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_BDOUBLE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>SQLT_BFLOAT</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_FETCHSTATEMENT_BY_COLUMN</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Standardmodus von <span class="function">oci_fetch_all</span>.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_FETCHSTATEMENT_BY_ROW</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Alternativmodus von <span class="function">oci_fetch_all</span>.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_ASSOC</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_fetch_all</span> und
+     <span class="function">oci_fetch_array</span> benutzt, um ein assoziatives Array
+     als Ergebnis zu erhalten.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_NUM</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_fetch_all</span> und
+     <span class="function">oci_fetch_array</span> benutzt, um ein durchnummeriertes
+     Array als Ergebnis zu erhalten.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_BOTH</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_fetch_all</span> und
+     <span class="function">oci_fetch_array</span> benutzt, um ein Array mit assoziativem
+     als auch durchnummeriertes Index als Ergebnis zu erhalten.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_RETURN_NULLS</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_fetch_array</span> benutzt, um bei Feldwerten
+     von <strong><code>NULL</code></strong> leere Arrayelement zu erhalten.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_RETURN_LOBS</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird bei <span class="function">oci_fetch_array</span> benutzt, um den Wert eines
+     LOBs anstelle des Deskriptors zu bekommen.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_DTYPE_FILE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Ein Schalter der <span class="function">oci_new_descriptor</span> mitteilt einen
+     neuen FILE-Deskriptor zu initialisieren.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_DTYPE_LOB</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Ein Schalter der <span class="function">oci_new_descriptor</span> mitteilt einen
+     neuen LOB-Deskriptor zu initialisieren.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_DTYPE_ROWID</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Ein Schalter der <span class="function">oci_new_descriptor</span> mitteilt einen
+     neuen ROWID-Deskriptor zu initialisieren.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_D_FILE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das gleiche wie <strong><code>OCI_DTYPE_FILE</code></strong>.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_D_LOB</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das gleiche wie <strong><code>OCI_DTYPE_LOB</code></strong>.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_D_ROWID</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das gleiche wie <strong><code>OCI_DTYPE_ROWID</code></strong>.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_SYSOPER</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird benutzt, um bei <span class="function">oci_connect</span> als SYSOPER mit
+     externen Credentials <a href="oci8.configuration.html#ini.oci8.privileged-connect" class="link">oci8.privileged_connect</a>
+     sollte hierfür aktiviert sein) verbunden zu werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_SYSDBA</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird benutzt, um bei <span class="function">oci_connect</span> als SYSDBA mit
+     externen Credentials <a href="oci8.configuration.html#ini.oci8.privileged-connect" class="link">oci8.privileged_connect</a>
+     sollte hierfür aktiviert sein) verbunden zu werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_LOB_BUFFER_FREE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird mit <a href="oci-lob.flush.html" class="xref">OCI-Lob::flush</a> benutzt, um die
+     benutzten Buffer zu leeren.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_TEMP_CLOB</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird mit <a href="oci-lob.writetemporary.html" class="xref">OCI-Lob::writeTemporary</a> benutzt, um
+     explizit anzuzeigen, dass temporäre CLOBs generiert werden sollen.
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>OCI_TEMP_BLOB</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird mit <a href="oci-lob.writetemporary.html" class="xref">OCI-Lob::writeTemporary</a> benutzt, um
+     explizit anzuzeigen, dass temporäre BLOBs generiert werden sollen.
+    </span>
+   </dd>
+
+  
+ </dl>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

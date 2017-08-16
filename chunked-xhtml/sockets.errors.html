@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Socket-Fehler</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li class="header up"><a href="book.sockets.html">Sockets</a></li>
+  <li><a href="intro.sockets.html">Einf&uuml;hrung</a></li>
+  <li><a href="sockets.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="sockets.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="sockets.examples.html">Beispiele</a></li>
+  <li class="active"><a href="sockets.errors.html">Socket-Fehler</a></li>
+  <li><a href="ref.sockets.html">Socket-Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="sockets.examples.html">Beispiele</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ref.sockets.html">Socket-Funktionen</a></div>
+                <div class="up"><a href="book.sockets.html">Sockets</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="sockets.errors" class="chapter">
+ <h1>Socket-Fehler</h1>
+ <p class="para">
+  Die Socket-Erweiterung wurde geschrieben, um eine brauchbare
+ Schnittstelle zu den mächtigen BSD-Sockets zur Verfügung zu
+ stellen. Es wurde darauf geachtet, dass die Funktionen sowohl
+ unter Win32 als auch unter Unix-Implementierungen arbeiten. Fast
+ alle Socket-Funktionen können unter bestimmten Umständen
+ fehlschlagen und deshalb eine <strong><code>E_WARNING</code></strong>-
+ Meldung ausgeben, die den aufgetretenen Fehler beschreibt. Manchmal
+  geschieht dies nicht so, wie sich Entwickler das wünschen. Zum Beispiel
+ kann die Funktion <span class="function">socket_read</span> plötzlich eine
+ <strong><code>E_WARNING</code></strong>-Meldung ausgeben, weil die
+ Verbindung unerwartet beendet wurde. Üblicherweise werden solche
+ Meldungen mit dem <em>@</em>-Operator unterdrückt und
+ der Fehlercode innerhalb der Anwendung mit der Funktion
+ <span class="function">socket_last_error</span> aufgefangen. Sie können
+ auch die Funktion <span class="function">socket_strerror</span> mit diesem
+ Fehlercode aufrufen, um eine Fehlerbeschreibung zu erhalten.
+ Nähere Informationen finden Sie bei diesen beiden Funktionen.
+ </p>
+ <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+  <p class="para">
+   Die <strong><code>E_WARNING</code></strong>-Meldungen, die von der
+  Socket-Erweiterung generiert werden, sind in Englisch, aber die
+  Meldungen, die Sie extra abfragen können, erscheinen in der
+  Sprache, die Sie eingestellt haben (<strong><code>LC_MESSAGES</code></strong>):
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Warning - socket_bind() unable to bind address [98]: Die Adresse wird bereits verwendet
+</pre></div>
+   </div>
+  </p>
+ </p></blockquote>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

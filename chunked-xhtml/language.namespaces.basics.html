@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Namespaces verwenden: Grundlagen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.namespaces.html">Namespaces</a></li>
+  <li><a href="language.namespaces.rationale.html">&Uuml;bersicht &uuml;ber Namespaces</a></li>
+  <li><a href="language.namespaces.definition.html">Namespaces definieren</a></li>
+  <li><a href="language.namespaces.nested.html">Unter-Namespaces deklarieren</a></li>
+  <li><a href="language.namespaces.definitionmultiple.html">Mehrere Namespaces in der selben Datei definieren</a></li>
+  <li class="active"><a href="language.namespaces.basics.html">Namespaces verwenden: Grundlagen</a></li>
+  <li><a href="language.namespaces.dynamic.html">Namespaces und dynamische Sprachfeatures</a></li>
+  <li><a href="language.namespaces.nsconstants.html">Namespace-Schl&uuml;sselwort und __NAMESPACE__-Konstante</a></li>
+  <li><a href="language.namespaces.importing.html">Namespaces verwenden: Aliase/Importieren</a></li>
+  <li><a href="language.namespaces.global.html">Globaler Namensraum</a></li>
+  <li><a href="language.namespaces.fallback.html">Namespaces verwenden: R&uuml;ckgriff auf globale Funktion/Konstante</a></li>
+  <li><a href="language.namespaces.rules.html">Regeln f&uuml;r Namensaufl&ouml;sung</a></li>
+  <li><a href="language.namespaces.faq.html">FAQ: Dinge, die Sie &uuml;ber Namespaces wissen sollten</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.namespaces.definitionmultiple.html">Mehrere Namespaces in der selben Datei definieren</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.namespaces.dynamic.html">Namespaces und dynamische Sprachfeatures</a></div>
+                <div class="up"><a href="language.namespaces.html">Namespaces</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.namespaces.basics" class="sect1">
+  <h2 class="title">Namespaces verwenden: Grundlagen</h2>
+  
+  <p class="para">
+   Bevor die Verwendung von Namespaces besprochen wird, ist es wichtig zu verstehen,
+   woher PHP weiß, welches Element mit Namespace vom Code angefordert wird.
+   Eine einfache Analogie kann zwischen PHP-Namensräumen und einem Dateisystem
+   gesehen werden. Es gibt drei Möglichkeiten, mit denen man auf eine Datei
+   in einem Dateisystem zugreifen kann:
+   <ol type="1">
+    <li class="listitem">
+     <span class="simpara">
+      Relative Dateinamen wie <em>foo.txt</em>. Dies wird zu
+      <em>aktuellesVerzeichnis/foo.txt</em> aufgelöst, wenn
+      aktuellesVerzeichnis das gerade geöffnete Verzeichnis ist. Wenn also
+      das aktuelle Verzeichnis <em>/home/foo</em> ist, so wird dies
+      als <em>/home/foo/foo.txt</em> aufgelöst.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      Relative Pfade wie <em>unterVerzeichnis/foo.txt</em>. Dies wird zu
+      <em>aktuellesVerzeichnis/unterVerzeichnis/foo.txt</em> aufgelöst.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      Absolute Pfadangaben wie <em>/main/foo.txt</em>. Dies wird zu
+      <em>/main/foo.txt</em> aufgelöst.
+     </span>
+    </li>
+   </ol>
+   Das gleiche Prinzip kann auf Elemente mit Namespaces in PHP angewandt werden.
+   Zum Beispiel kann eine Klasse auf drei Arten angesprochen werden:
+   <ol type="1">
+    <li class="listitem">
+     <span class="simpara">
+      Unqualifizierte Namen oder ein Klassenname ohne Präfix, wie etwa
+      <em>$a = new foo();</em> oder
+      <em>foo::staticmethod();</em>.  Falls der aktuelle Namespace
+      <em>aktuellerNamespace</em> ist, so wird dies zu
+      <em>aktuellerNamespace\foo</em> aufgelöst.  
+      Ist der Code globaler Code ohne Namespaces, so wird dies zu
+      <em>foo</em> aufgelöst.
+     </span>
+     <span class="simpara">
+      Es gibt eine Ausnahme hierzu: Unqualifizierte Namen für Funktionen und
+      Konstanten werden zu globalen Funktionen und Konstanten aufgelöst,
+      wenn die Funktion oder Konstante im Namespace nicht definiert ist.
+      Siehe auch <a href="language.namespaces.fallback.html" class="link">Namespaces verwenden:
+      Rückgriff auf globale Funktion/Konstante</a> für weitere Details.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      Qualifizierte Namen oder ein Klassenname mit Präfix, wie etwa
+      <em>$a = new unterNamespace\foo();</em> oder
+      <em>unterNamespace\foo::staticmethod();</em>.  
+      Wenn der aktuelle Namespace <em>aktuellerNamespace</em> ist, so
+      wird dies als
+      <em>aktuellerNamespace\unterNamespace\foo</em> verstanden.  
+      Wenn der Code global und ohne Namespaces ist, so wird dies zu
+      <em>unterNamespace\foo</em> aufgelöst.
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      Vollständig qualifizierte Namen oder Namen mit globalem Präfixoperator wie
+      <em>$a = new \aktuellerNamespace\foo();</em> oder
+      <em>\aktuellerNamespace\foo::staticmethod();</em>.  
+      Dies wird immer wörtlich wie der im Code angegebene Name verstanden, also
+      <em>aktuellerNamespace\foo</em>.
+     </span>
+    </li>
+   </ol>
+  </p>
+  <p class="para">
+   Hier ein Beispiel für die drei Schreibweisen in tatsächlichem Code:
+   <div class="informalexample">
+    <p class="simpara">file1.php</p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">\</span><span style="color: #0000BB">Bar</span><span style="color: #007700">\</span><span style="color: #0000BB">subnamespace</span><span style="color: #007700">;<br /><br />const&nbsp;</span><span style="color: #0000BB">FOO&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()&nbsp;{}<br />class&nbsp;</span><span style="color: #0000BB">foo<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">staticmethod</span><span style="color: #007700">()&nbsp;{}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <p class="simpara">file2.php</p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">\</span><span style="color: #0000BB">Bar</span><span style="color: #007700">;<br />include&nbsp;</span><span style="color: #DD0000">'file1.php'</span><span style="color: #007700">;<br /><br />const&nbsp;</span><span style="color: #0000BB">FOO&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br />function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()&nbsp;{}<br />class&nbsp;</span><span style="color: #0000BB">foo<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">staticmethod</span><span style="color: #007700">()&nbsp;{}<br />}<br /><br /></span><span style="color: #FF8000">/*&nbsp;Unqualifizierter&nbsp;Name&nbsp;*/<br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;wird&nbsp;als&nbsp;Funktion&nbsp;Foo\Bar\foo&nbsp;aufgelöst<br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">::</span><span style="color: #0000BB">staticmethod</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;wird&nbsp;als&nbsp;Klasse&nbsp;Foo\Bar\foo&nbsp;und&nbsp;Methode&nbsp;staticmethod&nbsp;aufgelöst<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">FOO</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;die&nbsp;Konstante&nbsp;Foo\Bar\FOO&nbsp;aus<br /><br />/*&nbsp;Qualifizierter&nbsp;Name&nbsp;*/<br /></span><span style="color: #0000BB">subnamespace</span><span style="color: #007700">\</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;wird&nbsp;als&nbsp;Funktion&nbsp;Foo\Bar\subnamespace\foo&nbsp;aufgelöst<br /></span><span style="color: #0000BB">subnamespace</span><span style="color: #007700">\</span><span style="color: #0000BB">foo</span><span style="color: #007700">::</span><span style="color: #0000BB">staticmethod</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;wird&nbsp;als&nbsp;Klasse&nbsp;Foo\Bar\subnamespace\foo&nbsp;und<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Methode&nbsp;staticmethod&nbsp;aufgelöst<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">subnamespace</span><span style="color: #007700">\</span><span style="color: #0000BB">FOO</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;die&nbsp;Konstante&nbsp;Foo\Bar\subnamespace\FOO&nbsp;aus<br /><br />/*&nbsp;Vollständig&nbsp;qualifizierter&nbsp;Name&nbsp;*/<br /></span><span style="color: #007700">\</span><span style="color: #0000BB">Foo</span><span style="color: #007700">\</span><span style="color: #0000BB">Bar</span><span style="color: #007700">\</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;wird&nbsp;als&nbsp;Funktion&nbsp;Foo\Bar\foo&nbsp;aufgelöst<br /></span><span style="color: #007700">\</span><span style="color: #0000BB">Foo</span><span style="color: #007700">\</span><span style="color: #0000BB">Bar</span><span style="color: #007700">\</span><span style="color: #0000BB">foo</span><span style="color: #007700">::</span><span style="color: #0000BB">staticmethod</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;wird&nbsp;als&nbsp;Klasse&nbsp;Foo\Bar\foo&nbsp;und&nbsp;Methode&nbsp;staticmethod&nbsp;aufgelöst<br /></span><span style="color: #007700">echo&nbsp;\</span><span style="color: #0000BB">Foo</span><span style="color: #007700">\</span><span style="color: #0000BB">Bar</span><span style="color: #007700">\</span><span style="color: #0000BB">FOO</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;die&nbsp;Konstante&nbsp;Foo\Bar\FOO&nbsp;aus<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   Beachten Sie, dass für den Zugriff auf jede globale Klasse, Funktion oder Konstante
+   auch ein vollständig qualifizierter Name verwendet werden kann, wie z.B.
+   <span class="function">\strlen</span>, <span class="classname">\Exception</span> oder
+   <em>\INI_ALL</em>.
+   <div class="example" id="example-254">
+    <p><strong>Beispiel #1 Zugriff auf globale Klassen, Funktionen und Konstanten aus einem Namespace</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">;<br /><br />function&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">()&nbsp;{}<br />const&nbsp;</span><span style="color: #0000BB">INI_ALL&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">;<br />class&nbsp;</span><span style="color: #0000BB">Exception&nbsp;</span><span style="color: #007700">{}<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;\</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #DD0000">'hi'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;globale&nbsp;Funktion&nbsp;strlen&nbsp;auf<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;\</span><span style="color: #0000BB">INI_ALL</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;greift&nbsp;auf&nbsp;die&nbsp;globale&nbsp;Konstante&nbsp;INI_ALL&nbsp;zu<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;\</span><span style="color: #0000BB">Exception</span><span style="color: #007700">(</span><span style="color: #DD0000">'error'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;eine&nbsp;Neue&nbsp;Instanz&nbsp;der&nbsp;globalen<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Klasse&nbsp;Exception<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: F&uuml;hre eine Suche durch.</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.search.html">Suchmaschinenerweiterungen</a></li>
+  <li class="header up"><a href="book.mnogosearch.html">mnoGoSearch</a></li>
+  <li class="header up"><a href="ref.mnogosearch.html">mnoGoSearch Funktionen</a></li>
+  <li><a href="function.udm-add-search-limit.html">udm_add_search_limit</a></li>
+  <li><a href="function.udm-alloc-agent-array.html">udm_alloc_agent_array</a></li>
+  <li><a href="function.udm-alloc-agent.html">udm_alloc_agent</a></li>
+  <li><a href="function.udm-api-version.html">udm_api_version</a></li>
+  <li><a href="function.udm-cat-list.html">udm_cat_list</a></li>
+  <li><a href="function.udm-cat-path.html">udm_cat_path</a></li>
+  <li><a href="function.udm-check-charset.html">udm_check_charset</a></li>
+  <li><a href="function.udm-clear-search-limits.html">udm_clear_search_limits</a></li>
+  <li><a href="function.udm-crc32.html">udm_crc32</a></li>
+  <li><a href="function.udm-errno.html">udm_errno</a></li>
+  <li><a href="function.udm-error.html">udm_error</a></li>
+  <li class="active"><a href="function.udm-find.html">udm_find</a></li>
+  <li><a href="function.udm-free-agent.html">udm_free_agent</a></li>
+  <li><a href="function.udm-free-ispell-data.html">udm_free_ispell_data</a></li>
+  <li><a href="function.udm-free-res.html">udm_free_res</a></li>
+  <li><a href="function.udm-get-doc-count.html">udm_get_doc_count</a></li>
+  <li><a href="function.udm-get-res-field.html">udm_get_res_field</a></li>
+  <li><a href="function.udm-get-res-param.html">udm_get_res_param</a></li>
+  <li><a href="function.udm-hash32.html">udm_hash32</a></li>
+  <li><a href="function.udm-load-ispell-data.html">udm_load_ispell_data</a></li>
+  <li><a href="function.udm-set-agent-param.html">udm_set_agent_param</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.udm-error.html">udm_error</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.udm-free-agent.html">udm_free_agent</a></div>
+                <div class="up"><a href="ref.mnogosearch.html">mnoGoSearch Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.udm-find" class="refentry">
+  <div class="refnamediv">
+   <h1 class="refname">udm_find</h1>
+   <p class="refpurpose">Führe eine Suche durch.</p>
+  </div>
+  
+  <div class="refsect1 unknown-unknown-unknown-descriptioq" id="refsect1-function.udm-find-unknown-unknown-unknown-descriptioq">
+   <h3 class="title">Beschreibung</h3>
+    <div class="methodsynopsis dc-description">
+     <span class="type">resource</span> <span class="methodname">udm_find</span>
+      ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$agent</code></span>
+     , <span class="methodparam"><span class="type">string</span> <code class="parameter">$query</code></span>
+     )</div>
+
+   
+   <p class="para rdfs-comment">
+    Gibt bei Erfolg einen Suchergebniszeiger zurück, <strong><code>FALSE</code></strong> bei einem
+    Fehler.
+   </p>
+   
+   <p class="para">
+    Die eigentliche Suche. Das erste Argument - die Session, das nächste
+    - die Suche selbst. Um etwas zu finden, einfach die zu suchenden
+    Begriffe in das Suchfeld eintippen und den Submit-Button drücken.
+    Zum Beispiel &quot;mysql odbc&quot;. Die doppelten Anführungszeichen &quot; sollten
+    nicht in einer Suche verwendet werden, sie werden hier nur aufgeführt,
+    um die Suchbegriffe vom anderen Text zu unterscheiden. mnoGoSearch wird
+    alle Dokumente finden, die das Wort &quot;mysql&quot; und/oder &quot;odbc&quot; enthalten.
+    Dokumente, die der Suche besser entsprechen als andere werden zuerst
+    angezeigt. Wird der Suchmodus ALL verwendet, werden nur Dokumente gefunden,
+    die alle gesuchten Wörter mindestens einmal enthalten. Wird der Suchmodus
+    ANY verwendet, werden alle Dokumente zurückgliefert, die eines der
+    gesuchten Wörter enthalten. Wenn ausgefeiltere Suchen stattfinden sollen,
+    muss die Suchsprache verwendet werden. In diesem Falle sollte der boolsche
+    Übereinstimmungsmodus gewählt werden.
+   </p>
+   
+   <p class="simpara">
+    mnoGoSearch kennt die folgenden boolschen Operatoren:
+   </p>
+   
+   <p class="simpara">
+    &amp; - logisches UND. Zum Beispiel &quot;mysql &amp;
+    odbc&quot;. mnoGoSearch wird alle Dokumente finden, die sowohl
+    &quot;mysql&quot; als auch &quot;odbc&quot; enthalten.
+   </p>
+   <p class="simpara">
+    | - logisches ODER. Zum Beispiel &quot;mysql|odbc&quot;. mnoGoSearch
+    wird alle Dokumente zurückliefern die das Wort &quot;mysql&quot; oder das
+    Wort &quot;odbc&quot; enthalten.
+   </p>
+   <p class="simpara">
+    ~ - logisches NICHT. Zum Beispiel &quot;mysql &amp; ~odbc&quot;.
+    mnoGoSearch wird alle Dokumente finden, die das Wort &quot;mysql&quot;
+    enthalten, nicht aber das Wort &quot;odbc&quot; zur gleichen Zeit.
+    Dieser Operator ist jedoch ein rein ausschließender Operator. Die Suche
+    &quot;~odbc&quot; wird keine Ergebnisse zurückliefern!
+   </p>
+   <p class="simpara">
+    () - Gruppierung, um komplexe Suchen zu bilden.  Zum Beispiel
+    &quot;(mysql | msql) &amp; ~postgres&quot;.  Die Suchesprache
+    ist simpel und stark zugleich.
+   </p>
+   
+  </div>
+
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

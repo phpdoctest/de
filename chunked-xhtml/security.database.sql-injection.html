@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: SQL Injection</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="security.html">Sicherheit</a></li>
+  <li class="header up"><a href="security.database.html">Datenbank - Sicherheit</a></li>
+  <li><a href="security.database.design.html">Datenbanken designen</a></li>
+  <li><a href="security.database.connection.html">Zur Datenbank verbinden</a></li>
+  <li><a href="security.database.storage.html">Verschl&uuml;sseltes Speichermodell</a></li>
+  <li class="active"><a href="security.database.sql-injection.html">SQL Injection</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="security.database.storage.html">Verschl&uuml;sseltes Speichermodell</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="security.errors.html">Fehlerbehandlung</a></div>
+                <div class="up"><a href="security.database.html">Datenbank - Sicherheit</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="security.database.sql-injection" class="sect1">
+    <h2 class="title">SQL Injection</h2>
+    <p class="simpara">
+     Viele Entwickler sind sich nicht bewusst, wie man sich an SQL Abfragen
+     zu schaffen machen kann und nehmen an, dass eine SQL Abfrage ein
+     vertrauenswürdiges Kommando ist. Das heißt, dass SQL Abfragen
+     Zugriffskontrollen hinters Licht führen, und dadurch Standard
+     Authentifizierungs- und Authorisationschecks umgehen können, und
+     manchmal können SQL Abfragen sogar Zugriff zu Kommandos auf
+     Betriebssystemebene erlauben.
+    </p>
+    <p class="simpara">
+     Direkt SQL Command Injection ist eine Technik, wo ein Angreifer SQL
+     Kommandos erstellt oder existierende verändert, um versteckte Daten
+     sichtbar zu machen, wertvolle Daten zu überschreiben, oder sogar
+     gefährliche Kommandos auf Systemebene des Datenbank-Hosts auszuführen.
+     Dies wird durch die Applikation erreicht, welche den Input des Benutzers
+     mit statischen Parametern kombiniert, um eine SQL Abfrage zu erstellen.
+     Die folgenden Beispiele basieren - leider - auf wahren Begebenheiten.
+    </p>
+    <p class="para">
+     Dank dem Mangel an Input Validierungen, und dem Verbinden zum
+     Datenbankserver als ein Superuser oder jemand der Benutzer anlegen kann,
+     kann ein Angreifer einen Superuser in Ihrer Datenbank anlegen.
+     <div class="example" id="example-353">
+      <p><strong>Beispiel #1 
+       Die Ergebnisliste in mehrere Seiten aufsplitten ... und Superuser anlegen
+       (PostgreSQL and MySQL)
+      </strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+$offset&nbsp;=&nbsp;$argv[0];&nbsp;//&nbsp;Vorsicht,&nbsp;keine&nbsp;Validierung&nbsp;des&nbsp;Input&nbsp;!<br />$query&nbsp;&nbsp;=&nbsp;"SELECT&nbsp;id,&nbsp;name&nbsp;FROM&nbsp;products&nbsp;ORDER&nbsp;BY&nbsp;name&nbsp;LIMIT&nbsp;20&nbsp;OFFSET&nbsp;$offset;";<br />//&nbsp;mit&nbsp;PostgreSQL<br />$result&nbsp;=&nbsp;pg_query($conn,&nbsp;$query);<br />//&nbsp;mit&nbsp;MySQL<br />$result&nbsp;=&nbsp;mysql_query($query);</span>
+</code></div>
+      </div>
+
+     </div>
+      Normale Benutzer klicken auf die &#039;nächste&#039; bzw. &#039;vorige&#039; Links, wo
+      <var class="varname">$offset</var> in der <acronym class="acronym">URL</acronym> enthalten ist. Das Skript erwartet,
+      dass die ankommende <var class="varname">$offset</var> einen Dezimalwert enthält.
+      Ganz gleich, jemand versucht einzubrechen, indem er das folgende in einer
+      <span class="function">urlencode</span>&#039;d Form an die <acronym class="acronym">URL</acronym> anhängt
+      <div class="informalexample">
+       <div class="example-contents">
+<div class="cdata"><pre>
+// Im Fall von PostgreSQL
+0;
+insert into pg_shadow(usename,usesysid,usesuper,usecatupd,passwd)
+    select &#039;crack&#039;, usesysid, &#039;t&#039;,&#039;t&#039;,&#039;crack&#039;
+    from pg_shadow where usename=&#039;postgres&#039;;
+--
+
+// Im Fall von MySQL
+0;
+UPDATE user SET Password=PASSWORD(&#039;crack&#039;) WHERE user=&#039;root&#039;;
+FLUSH PRIVILEGES;
+</pre></div>
+       </div>
+
+      </div>
+      Wenn es passiert ist, würde ihm das Skript einen Zugriff als Superuser
+      präsentieren. Beachten Sie, dass <em>0;</em> ein gültiges
+      Offset zur ursprünglichen Abfrage liefert, und sie beendet.
+    </p>
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <p class="para">
+      Es ist eine übliche Technik, den SQL Parser mittels dem Kommentarzeichen
+      in SQL <em>--</em> zu zwingen, den Rest der vom Entwickler
+      geschriebenen Abfrage zu ignorieren.
+     </p>
+    </p></blockquote>
+    <p class="para">
+     Ein gangbarer Weg um Passwörter zu finden ist, Ihre Seiten mit den
+     Suchergebnissen hinters Licht zu führen. Der Angreifer braucht nur zu
+     probieren, ob irgendeine übertragene Variable, die in dem SQL Statement
+     verwendet wird, nicht richtig gehandhabt wird. Diese Filter können
+     gewöhnlich in einer vorausgehenden Form gesetzt werden, indem
+     <em>WHERE, ORDER BY, LIMIT</em> und <em>OFFSET</em>
+     Klauseln in <em>SELECT</em> Statements umgebaut werden. Wenn
+     Ihre Datenbank das <em>UNION</em> Konstrukt unterstützt, kann
+     der Angreifer versuchen, eine komplette Abfrage an das Original anzuhängen,
+     um Paßwörter aus einer willkürlichen Tabelle aufzulisten. Die Verwendung
+     von verschlüsselten Passwortfeldern wird ausdrücklich empfohlen.
+     <div class="example" id="example-354">
+      <p><strong>Beispiel #2 
+       Artikel auflisten ... und ein paar Passwörter (irgendein Datenbankserver)
+      </strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+$query&nbsp;&nbsp;=&nbsp;"SELECT&nbsp;id,&nbsp;name,&nbsp;inserted,&nbsp;size&nbsp;FROM&nbsp;products<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE&nbsp;size&nbsp;=&nbsp;'$size'";<br />$result&nbsp;=&nbsp;odbc_exec($conn,&nbsp;$query);</span>
+</code></div>
+      </div>
+
+     </div>
+     Der statische Teil der Abfrage kann mit einem anderen
+     <em>SELECT</em> Statement kombiniert werden, welches alle
+     Passwörter preisgibt
+     <div class="informalexample">
+      <div class="example-contents">
+<div class="cdata"><pre>
+&#039;
+union select &#039;1&#039;, concat(uname||&#039;-&#039;||passwd) as name, &#039;1971-01-01&#039;, &#039;0&#039; from usertable;
+--
+</pre></div>
+      </div>
+
+     </div>
+     Wenn diese Abfrage (mit dem <em>&#039;</em> und
+     <em>--</em>) einer der in <var class="varname">$query</var> verwendeten
+     Variablen zugewiesen würde, wäre das &quot;Abfragebiest&quot; erwacht.
+    </p>
+    <p class="para">
+     SQL UPDATEs sind ebenfalls ein Anlass, Ihre Datenbank anzugreifen. Diese
+     Abfragen sind auch durch das Ändern und Anhängen einer komplett neuen
+     Abfrage gefährdet. Aber der Angreifer könnte auch mit der
+     <em>SET</em> Klausel herumspielen. In diesem Fall muss eine
+     Schemainformation vorhanden sein, um die Abfrage erfolgreich manipulieren
+     zu können. Diese kann durch Untersuchen der Variablennamen im Formular,
+     oder simpel mittels brute force gesammelt werden. Es gibt nicht so viele
+     Namenskonventionen für Felder, welche Passwörter oder Benutzernamen
+     speichern.
+     <div class="example" id="example-355">
+     <p><strong>Beispiel #3 
+      Vom Zurücksetzen eines Passwortes ... zum Erlangen von mehr Rechten
+      (irgendein Datenbankserver)
+     </strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+$query&nbsp;=&nbsp;"UPDATE&nbsp;usertable&nbsp;SET&nbsp;pwd='$pwd'&nbsp;WHERE&nbsp;uid='$uid';";</span>
+</code></div>
+      </div>
+
+     </div>
+     Aber ein böswilliger Benutzer übermittelt den Wert
+     <em>&#039; or uid like&#039;%admin%</em> zu <var class="varname">$uid</var>,
+     um das Administrator Passwort zu ändern, oder setzt einfach
+     <var class="varname">$pwd</var> auf <em>hehehe&#039;, trusted=100, admin=&#039;yes</em>, um mehr Rechte zu erhalten.
+     Dann wird die Abfrage verdreht:
+     <div class="informalexample">
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+//&nbsp;$uid:&nbsp;'&nbsp;or&nbsp;uid&nbsp;like&nbsp;'%admin%<br />$query&nbsp;=&nbsp;"UPDATE&nbsp;usertable&nbsp;SET&nbsp;pwd='...'&nbsp;WHERE&nbsp;uid=''&nbsp;or&nbsp;uid&nbsp;like&nbsp;'%admin%';";<br /><br />//&nbsp;$pwd:&nbsp;hehehe',&nbsp;trusted=100,&nbsp;admin='yes<br />$query&nbsp;=&nbsp;"UPDATE&nbsp;usertable&nbsp;SET&nbsp;pwd='hehehe',&nbsp;trusted=100,&nbsp;admin='yes'&nbsp;WHERE<br />...;";</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+    <p class="para">
+     Ein furchterregendes Beispiel, wie der Zugriff auf Kommandos auf
+     Betriebssystemebene bei manchen Datenbankservern erfolgen kann.
+     <div class="example" id="example-356">
+     <p><strong>Beispiel #4 Angriff auf das Betriebssystem des Datenbank Hosts (MSSQL Server)</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+$query&nbsp;&nbsp;=&nbsp;"SELECT&nbsp;*&nbsp;FROM&nbsp;products&nbsp;WHERE&nbsp;id&nbsp;LIKE&nbsp;'%$prod%'";<br />$result&nbsp;=&nbsp;mssql_query($query);</span>
+</code></div>
+      </div>
+
+     </div>
+     Wenn ein Angreifer den Wert
+     <em>a%&#039; exec master..xp_cmdshell &#039;net user test testpass /ADD&#039; --</em>
+     zu <var class="varname">$prod</var> überträgt, wird <var class="varname">$query</var> zu:
+     <div class="informalexample">
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+$query&nbsp;&nbsp;=&nbsp;"SELECT&nbsp;*&nbsp;FROM&nbsp;products<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE&nbsp;id&nbsp;LIKE&nbsp;'%a%'<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exec&nbsp;master..xp_cmdshell&nbsp;'net&nbsp;user&nbsp;test&nbsp;testpass&nbsp;/ADD'&nbsp;--%'";<br />$result&nbsp;=&nbsp;mssql_query($query);</span>
+</code></div>
+      </div>
+
+     </div>
+     Der MSSQL Server führt die SQL Statements in dem Batch aus, inklusive einem
+     Kommando zum Anlegen eines neuen Benutzers in der Datenbank Accounts. Würde
+     diese Applikation als <em>sa</em> und der MSSQLSERVER Service
+     mit genügend Rechten laufen, hätte der Angreifer nun ein Konto, mit welchem
+     er Zugriff auf diese Maschine hätte.
+    </p>
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <p class="para">
+      Manche der obigen Beispiele sind an einen spezifischen Datenbankserver
+      gebunden. Das heißt jedoch nicht, dass nicht ein ähnlicher Angriff auf
+      andere Produkte möglich wäre. Ihr Datenbankserver könnte auf andere
+      Weise genauso verwundbar sein.
+     </p>
+    </p></blockquote>
+    <p class="para">
+     <div class="mediaobject">
+      
+      <div class="imageobject">
+       <img src="images/cecce51a7b8d511715c8589036b98463-xkcd-bobby-tables.png" alt="Ein ausgearbeitetes Beispiel der Folgen von SQL Injection" width="666" height="205" />
+      </div>
+     </div>
+     Bild mit freundlicher Genehmigung von <a href="http://xkcd.com/327" class="link external">&raquo;&nbsp;xkcd</a>
+    </p>
+
+
+    <div class="sect2" id="security.database.avoiding">
+     <h3 class="title">Techniken zur Vermeidung</h3>
+     <p class="simpara">
+      Obwohl es offensichtlich ist, dass ein Angreifer zumindest ein
+      wenig Kenntnis der genutzten Datenbankarchitektur besitzen muss,
+      um einen erfolgreichen Angriff durchzuführen, ist das Erlangen
+      dieser Informationen oft sehr einfach. Wenn die Datenbank zum
+      Beispiel Teil eines Open Source oder anderweitig öffentlich
+      verfügbaren Paketes mit einer Standard Installation ist, dann
+      ist diese Information vollkommen frei zugänglich. Diese
+      Information kann auch durch Closed Source Code - selbst wenn
+      dieser kodiert, verschleiert oder kompiliert ist - und sogar
+      durch ihren ureigenen Code durch die Anzeige von
+      Fehlermeldungen. Andere Methoden beinhalten die Nutzung
+      typischer Tabellen und Spalten Namen. Ein Login Formular etwa,
+      dass eine Tabelle &#039;users&#039; mit den Spaltennamen &#039;id&#039;, &#039;username&#039;
+      und &#039;password&#039; nutzt.
+     </p>
+     <p class="simpara">
+      Diese Angriffe basieren hauptsächlich auf dem Ausnutzen des Codes, welcher
+      ohne Bedenken auf die Sicherheit geschrieben wurde. Vertrauen Sie nie auf
+      irgendeine Art von Input, speziell wenn er von der Clientseite kommt,
+      selbst wenn er von einer Auswahlbox, einem versteckten Eingabefeld, oder
+      einem Cookie kommt. Das erste Beispiel zeigt, dass solch eine untadelige
+      Abfrage ein Disaster anrichten kann.
+     </p>
+
+     <ul class="itemizedlist">
+      <li class="listitem">
+       <span class="simpara">
+        Stellen Sie nie als Superuser oder Owner einer Datenbank eine Verbindung
+        zur Datenbank her. Verwenden Sie immer speziell angelegte Benutzer mit
+        sehr limitierten Rechten.
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        Verwenden Sie Prepared Statements mit gebundenden Variablen. Sie werden
+        von <a href="pdo.prepared-statements.html" class="link">PDO</a>,
+        <a href="mysqli.quickstart.prepared-statements.html" class="link">MySQLi</a>
+        und anderen Bibliotheken angeboten.
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        Prüfen Sie, ob der gegebene Input dem erwarteten Datentyp entspricht.
+        <acronym class="acronym">PHP</acronym> bietet eine große Auswahl an Funktionen zum Validieren des Input,
+        von den einfachsten unter <a href="ref.var.html" class="link">Variablenfunktionen</a> und <a href="ref.ctype.html" class="link">Character Type Functions</a> (z.B.
+        <span class="function">is_numeric</span> bzw. <span class="function">ctype_digit</span>),
+        bis hin zu den <a href="ref.pcre.html" class="link">Perl kompatiblen Regulären
+        Ausdrücken</a>.
+       </span>
+      </li>
+      <li class="listitem">
+       <p class="para">
+        Wenn die Applikation numerischen Input erwartet, erwägen Sie die Prüfung
+        der Daten mit <span class="function">ctype_digit</span>, oder die Änderung des
+        Typs mit <span class="function">settype</span>, oder verwenden Sie die numerische
+        Repräsentation mittels <span class="function">sprintf</span>.
+        <div class="example" id="example-357">
+         <p><strong>Beispiel #5 Ein sicherer Weg, eine Abfrage zu erstellen</strong></p>
+         <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+settype($offset,&nbsp;'integer');<br />$query&nbsp;=&nbsp;"SELECT&nbsp;id,&nbsp;name&nbsp;FROM&nbsp;products&nbsp;ORDER&nbsp;BY&nbsp;name&nbsp;LIMIT&nbsp;20&nbsp;OFFSET&nbsp;$offset;";<br /><br />//&nbsp;Beachten&nbsp;Sie&nbsp;%d&nbsp;im&nbsp;Formatstring,&nbsp;%s&nbsp;zu&nbsp;verwenden&nbsp;wäre&nbsp;sinnlos<br />$query&nbsp;=&nbsp;sprintf("SELECT&nbsp;id,&nbsp;name&nbsp;FROM&nbsp;products&nbsp;ORDER&nbsp;BY&nbsp;name&nbsp;LIMIT&nbsp;20&nbsp;OFFSET&nbsp;%d;",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$offset);</span>
+</code></div>
+         </div>
+
+        </div>
+       </p>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        Unterstützt der Datenbank-Layer das Binden von Variablen nicht, so
+        maskieren Sie jede nicht numerische Benutzereingabe, welche zur Datenbank
+        weitergereicht werden soll mit der jeweiligen datenbankspezifischen
+        Escape-Funktion (z.B. <span class="function">mysql_real_escape_string</span>,
+        <span class="function">sqlite_escape_string</span> usw.). Generische Funktionen
+        wie <span class="function">addslashes</span> sind nur in einer sehr spezifischen
+        Umgebung nüztlich (z.B. MySQL mit einem Single Byte Zeichensatz bei
+        deaktiviertem <var class="varname">NO_BACKSLASH_ESCAPES</var>), so dass es
+        besser ist diese zu vermeiden.
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        Geben Sie keinerlei datenbankspezifische Informationen aus, speziell
+        über das Schema, egal wie (auf ehrliche oder unehrliche Weise). Siehe
+        auch <a href="security.errors.html" class="link">Fehlerbehandlung</a> und
+        <a href="ref.errorfunc.html" class="link">Error Handling and Logging
+        Functions</a>.
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        Sie können stored procedures und vorher definierte Cursor verwenden,
+        um den Datenzugriff zu abstrahieren, sodass Benutzer nicht direkt auf
+        Tabellen oder Views zugreifen, aber diese Lösung hat andere
+        Auswirkungen.
+       </span>
+      </li>
+     </ul>
+
+     <p class="simpara">
+      Abgesehen davon profitieren Sie von einer Protokollierung der Abfragen
+      entweder in Ihrem Skript, oder durch die Datenbank selbst, wenn es hilft.
+      Klar, die Protokollierung kann nicht irgendeinen schädlichen Versuch
+      verhindern, aber es kann helfen herauszufinden, welche Applikation
+      umgangen wurde. Das Log ist durch die in ihm enthaltene Information
+      nützlich, und je mehr Details es enthält, desto besser ist es im
+      Allgemeinen.
+     </p>
+    </div>
+   </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Instantiiert ein SQLite3 Objekt und &ouml;ffnet eine SQLite3 Datenbank</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.sqlite3.html">SQLite3</a></li>
+  <li class="header up"><a href="class.sqlite3.html">SQLite3</a></li>
+  <li><a href="sqlite3.busytimeout.html">SQLite3::busyTimeout</a></li>
+  <li><a href="sqlite3.changes.html">SQLite3::changes</a></li>
+  <li><a href="sqlite3.close.html">SQLite3::close</a></li>
+  <li class="active"><a href="sqlite3.construct.html">SQLite3::__construct</a></li>
+  <li><a href="sqlite3.createaggregate.html">SQLite3::createAggregate</a></li>
+  <li><a href="sqlite3.createcollation.html">SQLite3::createCollation</a></li>
+  <li><a href="sqlite3.createfunction.html">SQLite3::createFunction</a></li>
+  <li><a href="sqlite3.enableexceptions.html">SQLite3::enableExceptions</a></li>
+  <li><a href="sqlite3.escapestring.html">SQLite3::escapeString</a></li>
+  <li><a href="sqlite3.exec.html">SQLite3::exec</a></li>
+  <li><a href="sqlite3.lasterrorcode.html">SQLite3::lastErrorCode</a></li>
+  <li><a href="sqlite3.lasterrormsg.html">SQLite3::lastErrorMsg</a></li>
+  <li><a href="sqlite3.lastinsertrowid.html">SQLite3::lastInsertRowID</a></li>
+  <li><a href="sqlite3.loadextension.html">SQLite3::loadExtension</a></li>
+  <li><a href="sqlite3.open.html">SQLite3::open</a></li>
+  <li><a href="sqlite3.openblob.html">SQLite3::openBlob</a></li>
+  <li><a href="sqlite3.prepare.html">SQLite3::prepare</a></li>
+  <li><a href="sqlite3.query.html">SQLite3::query</a></li>
+  <li><a href="sqlite3.querysingle.html">SQLite3::querySingle</a></li>
+  <li><a href="sqlite3.version.html">SQLite3::version</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="sqlite3.close.html">SQLite3::close</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="sqlite3.createaggregate.html">SQLite3::createAggregate</a></div>
+                <div class="up"><a href="class.sqlite3.html">SQLite3</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="sqlite3.construct" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">SQLite3::__construct</h1>
+  <p class="refpurpose">
+   Instantiiert ein SQLite3 Objekt und öffnet eine SQLite3 Datenbank
+  </p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-sqlite3.construct-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span>  <span class="methodname">SQLite3::__construct</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$Dateiname</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$Schalter</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$Verschlüsselungs-Phrase</code></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   Instantiiert ein SQLite3-Objekt und öffnet eine Verbindung zu einer SQLite3-Datenbank.
+   Umfasst der Aufbau eine Verschlüsselung, wird versucht den angegebenen Schlüssel zu nutzen.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-sqlite3.construct-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">Dateiname</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Pfad zur SQLite-Datenbank oder <em>:memory:</em>, um eine im Speicher befindliche Datenbank zu nutzen. 
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">Schalter</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Optionale Schalter, die die Art bestimmen, wie die SQLite-Datenbank geöffnet wird.
+       Standardmäßig wird <em>SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE</em> zum Öffnen
+       genutzt.
+       <ul class="itemizedlist">
+        <li class="listitem">
+         <p class="para">
+          <em>SQLITE3_OPEN_READONLY</em>: Öffnet die Datenbank im &quot;nur lese&quot;-Modus.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <em>SQLITE3_OPEN_READWRITE</em>: Öffnet die Datenbank zum Lesen und Schreiben.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <em>SQLITE3_OPEN_CREATE</em>: erzeugt die Datenbank, sollte diese nicht existieren.
+         </p>
+        </li>
+       </ul>
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">Verschlüsselungs-Phrase</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Eine optionale Verschlüsselungs-Phrase, die zur Ver- und Entschlüsselung der 
+       Datenbank genutzt wird.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-sqlite3.construct-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt im Erfolgsfall das SQLite-Datenbank-Objekt zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-sqlite3.construct-errors">
+  <h3 class="title">Fehler/Exceptions</h3>
+  <p class="para">
+   Wirft im Fehlerfall eine <span class="classname">Exception</span>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-sqlite3.construct-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-2347">
+    <p><strong>Beispiel #1 <span class="function">SQLite3::__construct</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$db&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SQLite3</span><span style="color: #007700">(</span><span style="color: #DD0000">'mysqlitedb.db'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">exec</span><span style="color: #007700">(</span><span style="color: #DD0000">'CREATE&nbsp;TABLE&nbsp;foo&nbsp;(bar&nbsp;STRING)'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">exec</span><span style="color: #007700">(</span><span style="color: #DD0000">"INSERT&nbsp;INTO&nbsp;foo&nbsp;(bar)&nbsp;VALUES&nbsp;('This&nbsp;is&nbsp;a&nbsp;test')"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">query</span><span style="color: #007700">(</span><span style="color: #DD0000">'SELECT&nbsp;bar&nbsp;FROM&nbsp;foo'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fetchArray</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

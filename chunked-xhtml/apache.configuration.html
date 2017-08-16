@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Laufzeit-Konfiguration</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.utilspec.server.html">Serverspezifische Erweiterungen</a></li>
+  <li class="header up"><a href="book.apache.html">Apache</a></li>
+  <li class="header up"><a href="apache.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="apache.requirements.html">Anforderungen</a></li>
+  <li><a href="apache.installation.html">Installation</a></li>
+  <li class="active"><a href="apache.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="apache.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="apache.installation.html">Installation</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="apache.resources.html">Ressource-Typen</a></div>
+                <div class="up"><a href="apache.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="apache.configuration" class="section">
+ <h2 class="title">Laufzeit-Konfiguration</h2>
+ <p class="para">
+  Das Verhalten des Apache PHP-Moduls wird durch Einstellungen in der
+  <var class="filename">php.ini</var> beeinflusst. Konfigurationseinstellungen aus der <var class="filename">php.ini</var> können
+  Sie durch <a href="configuration.changes.html#configuration.changes.apache" class="link">php_flag</a>
+  Einstellungen in der Server Konfigurationsdatei oder lokal in <var class="filename">.htaccess</var>
+  Dateien überschreiben.
+ </p>
+ <div class="example" id="example-5242">
+  <p><strong>Beispiel #1 Parsen von PHP für ein Verzeichnis ausschalten mittels <var class="filename">.htaccess</var></strong></p>
+  <div class="example-contents"><div class="cdata"><pre>php_flag engine off</pre></div></div>
+
+ </div>
+ <p class="para">
+  <table class="doctable table">
+   <caption><strong>Apache Konfigurations Optionen</strong></caption>
+   
+    <thead>
+     <tr>
+     <th>Name</th>
+     <th>Standard</th>
+     <th>Veränderbar</th>
+     <th>Changelog</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td><a href="apache.configuration.html#ini.engine" class="link">engine</a></td>
+      <td>On</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 4.0.5.</td>
+     </tr>
+
+     <tr>
+      <td><a href="apache.configuration.html#ini.child-terminate" class="link">child_terminate</a></td>
+      <td>Off</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 4.0.5.</td>
+     </tr>
+
+     <tr>
+      <td><a href="apache.configuration.html#ini.last-modified" class="link">last_modified</a></td>
+      <td>Off</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 4.0.5.</td>
+     </tr>
+
+     <tr>
+      <td><a href="apache.configuration.html#ini.xbithack" class="link">xbithack</a></td>
+      <td>Off</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 4.0.5.</td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+  Weitere Details und die Definitionen der
+PHP_INI_*-Konstanten finden Sie im <a href="configuration.changes.modes.html" class="xref">Wo Konfigurationseinstellungen gesetzt werden k&ouml;nnen</a>.
+ </p>
+
+ <p class="para">Hier eine kurze Erklärung der
+Konfigurationsoptionen:</p>
+
+ <p class="para">
+ <dl>
+
+ 
+  <dt id="ini.engine">
+   <code class="parameter">engine</code>
+   <span class="type">boolean</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Parsen von PHP ein/-auschalten. Diese Option ist in erster Linie nur
+     sinnvoll, wenn PHP als Modul unter Apache läuft. Sie wird von Seiten
+     benutzt,  die den PHP-Parser für bestimmte Verzeichnisse oder virtuelle
+     Server aus- bzw. einschalten wollen. Wenn Sie
+     <strong class="userinput"><code>engine off</code></strong> in den dafür vorgesehenen
+     Blöcken in der <var class="filename">httpd.conf</var> Datei benutzen, kann PHP gezielt aktiviert
+     bzw. deaktiviert werden.
+    </p>
+   </dd>
+
+  
+   
+    <dt id="ini.child-terminate">
+     <code class="parameter">child_terminate</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Gibt an, ob PHP Skripte veranlassen, dass Kindprozesse nach dem Request
+      beendet werden, siehe auch <span class="function">apache_child_terminate</span>.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.last-modified">
+     <code class="parameter">last_modified</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Das letzte Datum der Änderung des PHP Skripts wird als
+      Last-Modified: header für diesen Request gesendet.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.xbithack">
+     <code class="parameter">xbithack</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Dateien mit gesetztem ausführbaren Bit werden unabhängig von ihrer
+      Dateiendung durch PHP geparst.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </p>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

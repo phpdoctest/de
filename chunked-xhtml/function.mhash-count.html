@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Gibt die h&ouml;chstm&ouml;glichen Hash-ID zur&uuml;ck</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.crypto.html">Kryptografische Erweiterungen</a></li>
+  <li class="header up"><a href="book.mhash.html">Mhash</a></li>
+  <li class="header up"><a href="ref.mhash.html">Mhash Funktionen</a></li>
+  <li class="active"><a href="function.mhash-count.html">mhash_count</a></li>
+  <li><a href="function.mhash-get-block-size.html">mhash_get_block_size</a></li>
+  <li><a href="function.mhash-get-hash-name.html">mhash_get_hash_name</a></li>
+  <li><a href="function.mhash-keygen-s2k.html">mhash_keygen_s2k</a></li>
+  <li><a href="function.mhash.html">mhash</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="ref.mhash.html">Mhash Funktionen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.mhash-get-block-size.html">mhash_get_block_size</a></div>
+                <div class="up"><a href="ref.mhash.html">Mhash Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.mhash-count" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">mhash_count</h1>
+    <p class="refpurpose">Gibt die höchstmöglichen Hash-ID zurück</p>
+   </div>
+   <div class="refsect1 description" id="refsect1-function.mhash-count-description">
+     <h3 class="title">Beschreibung</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="type">int</span> <span class="methodname">mhash_count</span>
+       ( <span class="methodparam">void</span>
+      )</div>
+
+    <p class="para rdfs-comment">
+     <span class="function">mhash_count</span> gibt die höchste verfügbare
+     Hash-ID zurück.
+    </p>
+   </div>
+
+   <div class="refsect1 returnvalues" id="refsect1-function.mhash-count-returnvalues">
+    <h3 class="title">Rückgabewerte</h3>
+    <p class="para">
+     Gibt die höchste verfügbare Hash-ID zurück. Hashes sind von 0 bis
+     zu der Hash-ID nummeriert.
+    </p>
+   </div>
+
+   <div class="refsect1 examples" id="refsect1-function.mhash-count-examples">
+    <h3 class="title">Beispiele</h3>
+    <p class="para">
+     <div class="example" id="example-918">
+      <p><strong>Beispiel #1 Alle Hashes durchlaufen</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$nr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mhash_count</span><span style="color: #007700">();<br /><br />for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;=&nbsp;</span><span style="color: #0000BB">$nr</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">sprintf&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"Die&nbsp;Blockgröße&nbsp;von&nbsp;%s&nbsp;ist&nbsp;%d\n"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mhash_get_hash_name&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$i</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mhash_get_block_size&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$i</span><span style="color: #007700">));<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+   </div>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Liest eine Variable aus dem Shared Memory</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li class="header up"><a href="book.sem.html">Semaphore</a></li>
+  <li class="header up"><a href="ref.sem.html">Semaphore Funktionen</a></li>
+  <li><a href="function.ftok.html">ftok</a></li>
+  <li><a href="function.msg-get-queue.html">msg_get_queue</a></li>
+  <li><a href="function.msg-queue-exists.html">msg_queue_exists</a></li>
+  <li><a href="function.msg-receive.html">msg_receive</a></li>
+  <li><a href="function.msg-remove-queue.html">msg_remove_queue</a></li>
+  <li><a href="function.msg-send.html">msg_send</a></li>
+  <li><a href="function.msg-set-queue.html">msg_set_queue</a></li>
+  <li><a href="function.msg-stat-queue.html">msg_stat_queue</a></li>
+  <li><a href="function.sem-acquire.html">sem_acquire</a></li>
+  <li><a href="function.sem-get.html">sem_get</a></li>
+  <li><a href="function.sem-release.html">sem_release</a></li>
+  <li><a href="function.sem-remove.html">sem_remove</a></li>
+  <li><a href="function.shm-attach.html">shm_attach</a></li>
+  <li><a href="function.shm-detach.html">shm_detach</a></li>
+  <li class="active"><a href="function.shm-get-var.html">shm_get_var</a></li>
+  <li><a href="function.shm-has-var.html">shm_has_var</a></li>
+  <li><a href="function.shm-put-var.html">shm_put_var</a></li>
+  <li><a href="function.shm-remove-var.html">shm_remove_var</a></li>
+  <li><a href="function.shm-remove.html">shm_remove</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.shm-detach.html">shm_detach</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.shm-has-var.html">shm_has_var</a></div>
+                <div class="up"><a href="ref.sem.html">Semaphore Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.shm-get-var" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">shm_get_var</h1> 
+  <p class="refpurpose">Liest eine Variable aus dem Shared Memory</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.shm-get-var-description">
+  <h3 class="title">Beschreibung</h3>
+   <div class="methodsynopsis dc-description">
+    <span class="type">mixed</span> <span class="methodname">shm_get_var</span>
+     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$shm_identifier</code></span>
+    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$variable_key</code></span>
+    )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">shm_get_var</span> liest die Variable mit dem Key
+   <code class="parameter">variable_key</code> aus dem mit
+   <code class="parameter">shm_identifier</code> angegebenen Shared Memory
+   Segment. Die Variable bleibt weiter im Shared Memory erhalten.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.shm-get-var-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">shm_identifier</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ein Shared Memory Resource Handle wie von
+       <span class="function">shm_attach</span> geliefert.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">variable_key</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Variablenschlüssel.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.shm-get-var-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt die Variable mit dem gegebenen Schlüssel zurück.
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

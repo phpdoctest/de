@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Lade ISpell-Daten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.search.html">Suchmaschinenerweiterungen</a></li>
+  <li class="header up"><a href="book.mnogosearch.html">mnoGoSearch</a></li>
+  <li class="header up"><a href="ref.mnogosearch.html">mnoGoSearch Funktionen</a></li>
+  <li><a href="function.udm-add-search-limit.html">udm_add_search_limit</a></li>
+  <li><a href="function.udm-alloc-agent-array.html">udm_alloc_agent_array</a></li>
+  <li><a href="function.udm-alloc-agent.html">udm_alloc_agent</a></li>
+  <li><a href="function.udm-api-version.html">udm_api_version</a></li>
+  <li><a href="function.udm-cat-list.html">udm_cat_list</a></li>
+  <li><a href="function.udm-cat-path.html">udm_cat_path</a></li>
+  <li><a href="function.udm-check-charset.html">udm_check_charset</a></li>
+  <li><a href="function.udm-clear-search-limits.html">udm_clear_search_limits</a></li>
+  <li><a href="function.udm-crc32.html">udm_crc32</a></li>
+  <li><a href="function.udm-errno.html">udm_errno</a></li>
+  <li><a href="function.udm-error.html">udm_error</a></li>
+  <li><a href="function.udm-find.html">udm_find</a></li>
+  <li><a href="function.udm-free-agent.html">udm_free_agent</a></li>
+  <li><a href="function.udm-free-ispell-data.html">udm_free_ispell_data</a></li>
+  <li><a href="function.udm-free-res.html">udm_free_res</a></li>
+  <li><a href="function.udm-get-doc-count.html">udm_get_doc_count</a></li>
+  <li><a href="function.udm-get-res-field.html">udm_get_res_field</a></li>
+  <li><a href="function.udm-get-res-param.html">udm_get_res_param</a></li>
+  <li><a href="function.udm-hash32.html">udm_hash32</a></li>
+  <li class="active"><a href="function.udm-load-ispell-data.html">udm_load_ispell_data</a></li>
+  <li><a href="function.udm-set-agent-param.html">udm_set_agent_param</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.udm-hash32.html">udm_hash32</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.udm-set-agent-param.html">udm_set_agent_param</a></div>
+                <div class="up"><a href="ref.mnogosearch.html">mnoGoSearch Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.udm-load-ispell-data" class="refentry">
+  <div class="refnamediv">
+   <h1 class="refname">udm_load_ispell_data</h1>
+   <p class="refpurpose">Lade ISpell-Daten</p>
+  </div>
+  <div class="refsect1 unknown-seealsp" id="refsect1-function.udm-load-ispell-data-unknown-seealsp">
+   <h3 class="title">Beschreibung</h3>
+    <div class="methodsynopsis dc-description">
+     <span class="type">bool</span> <span class="methodname">udm_load_ispell_data</span>
+      ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$agent</code></span>
+     , <span class="methodparam"><span class="type">int</span> <code class="parameter">$var</code></span>
+     , <span class="methodparam"><span class="type">string</span> <code class="parameter">$val1</code></span>
+     , <span class="methodparam"><span class="type">string</span> <code class="parameter">$val2</code></span>
+     , <span class="methodparam"><span class="type">int</span> <code class="parameter">$flag</code></span>
+     )</div>
+
+   <p class="para rdfs-comment">
+    <span class="function">udm_load_ispell_data</span> lädt
+    ispell-Daten. Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+   </p>
+   <p class="para">
+    <code class="parameter">agent</code> - Zeiger auf einen Agenten, erhalten nach
+    einem Aufruf von <span class="function">udm_alloc_agent</span>.
+   </p>
+   <p class="para">
+    <code class="parameter">var</code> - Parameter, der die Quelle der ISpell-Daten
+    angibt. Kann folgende Werte annehmen.
+   </p>
+   <p class="para">
+    Nachdem diese Funktion aufgerufen wurde, sollte nicht vergessen werden,
+    mittels <span class="function">udm_free_ispell_data</span> den durch ISpell belegten
+    Speicher wieder freizugeben, auch wenn UDM_ISPELL_TYPE_SERVER verwendet
+    wird.
+   </p>
+   <p class="para">
+    Der schnellste Modus ist UDM_ISPELL_TYPE_SERVER. UDM_ISPELL_TYPE_TEXT ist
+    langsamer, und UDM_ISPELL_TYPE_DB ist der langsamste. Dies gilt zumindest
+    für mnoGoSearch 3.1.10 - 3.1.11, es ist jedoch geplant, den DB-Modus in
+    zukünftigen Versionen schneller als den TEXT-Modus zu machen.
+   </p>
+   <ul class="itemizedlist">
+    <li class="listitem">
+     <span class="simpara">
+      UDM_ISPELL_TYPE_DB - Gibt an, dass die ISpell-Daten aus einer
+      SQL-Datenbank gelesen werden sollen. In diesem Fall werden
+      <code class="parameter">val1</code> und <code class="parameter">val2</code> ignoriert
+      und sollten leer gelassen werden. Der Parameter
+      <code class="parameter">flag</code> sollte <em>1</em> sein.
+     </span>
+     
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <p class="para">
+       Der Parameter <code class="parameter">flag</code> gibt an, dass die ISpell-Daten
+       nach dem Laden sortiert werden sollen, dies ist für ein korrektes
+       Arbeiten von ISpell nötig. Werden die ISpell-Daten aus Dateien gelesen,
+       kann es vorkommen, dass mehrere Aufrufe von
+       <span class="function">udm_load_ispell_data</span>
+       vorkommen, was es wenig Effektiv macht, die Daten nach jedem Aufruf zu
+       sortieren. Der Datenbank-Modus lädt jedoch alle Daten auf einmal, in
+       diesem Fall sollte der Wert also <em>1</em> betragen. Sollte
+       ein Fehler auftreten, wird <strong><code>FALSE</code></strong> zurückgegeben, Fehler und Fehlercode
+       sind in diesem Fall über <span class="function">udm_error</span> und
+       <span class="function">udm_errno</span> verfügbar.
+      </p>
+     </p></blockquote>
+     <p class="para">
+      <div class="example" id="example-5154">
+       <p><strong>Beispiel #1 <span class="function">udm_load_ispell_data</span> Beispiel</strong></p>
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(!&nbsp;</span><span style="color: #0000BB">udm_load_ispell_data</span><span style="color: #007700">(</span><span style="color: #0000BB">$udm</span><span style="color: #007700">,</span><span style="color: #0000BB">UDM_ISPELL_TYPE_DB</span><span style="color: #007700">,</span><span style="color: #DD0000">''</span><span style="color: #007700">,</span><span style="color: #DD0000">''</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"Error&nbsp;#%d:&nbsp;'%s'\n"</span><span style="color: #007700">,</span><span style="color: #0000BB">udm_errno</span><span style="color: #007700">(</span><span style="color: #0000BB">$udm</span><span style="color: #007700">),</span><span style="color: #0000BB">udm_error</span><span style="color: #007700">(</span><span style="color: #0000BB">$udm</span><span style="color: #007700">));<br />&nbsp;&nbsp;exit;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+       </div>
+
+      </div>
+     </p>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      UDM_ISPELL_TYPE_AFFIX - Gibt an, dass die ISpell-Daten aus einer Datei
+      geladen werden sollen und initiiert das Laden der Anhangsdaten. In diesem
+      Fall gibt der Parameter <code class="parameter">val1</code> den zweibuchstabigen
+      Sprachcode an, für den die Anhänge geladen werden sollen,
+      <code class="parameter">val2</code> gibt den Dateipfad an. Wird kein absoluter
+      Pfad angeben, werden die Dateien nicht in UDM_CONF_DIR, sondern in im zum
+      aktuellen Pfad relativen gesucht. Kann die Datei nicht geladen werden,
+      gibt die Funktion <strong><code>FALSE</code></strong> zurück, und eine Fehlermeldung wird ausgegeben.
+      Die Fehlercodes können nicht über <span class="function">udm_error</span> oder
+      <span class="function">udm_errno</span> ausgelesen werden. Zur Erlärung des
+      Parameters <code class="parameter">flag</code> schauen Sie bitte bei
+      UDM_ISPELL_TYPE_DB nach.
+     </p>
+     <p class="para">
+      <div class="example" id="example-5155">
+       <p><strong>Beispiel #2 <span class="function">udm_load_ispell_data</span> Beispiel</strong></p>
+       <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;((!&nbsp;</span><span style="color: #0000BB">udm_load_ispell_data</span><span style="color: #007700">(</span><span style="color: #0000BB">$udm</span><span style="color: #007700">,</span><span style="color: #0000BB">UDM_ISPELL_TYPE_AFFIX</span><span style="color: #007700">,</span><span style="color: #DD0000">'en'</span><span style="color: #007700">,</span><span style="color: #DD0000">'/opt/ispell/en.aff'</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">))&nbsp;||<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(!&nbsp;</span><span style="color: #0000BB">udm_load_ispell_data</span><span style="color: #007700">(</span><span style="color: #0000BB">$udm</span><span style="color: #007700">,</span><span style="color: #0000BB">UDM_ISPELL_TYPE_AFFIX</span><span style="color: #007700">,</span><span style="color: #DD0000">'ru'</span><span style="color: #007700">,</span><span style="color: #DD0000">'/opt/ispell/ru.aff'</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">))&nbsp;||<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(!&nbsp;</span><span style="color: #0000BB">udm_load_ispell_data</span><span style="color: #007700">(</span><span style="color: #0000BB">$udm</span><span style="color: #007700">,</span><span style="color: #0000BB">UDM_ISPELL_TYPE_SPELL</span><span style="color: #007700">,</span><span style="color: #DD0000">'en'</span><span style="color: #007700">,</span><span style="color: #DD0000">'/opt/ispell/en.dict'</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">))&nbsp;||<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(!&nbsp;</span><span style="color: #0000BB">udm_load_ispell_data</span><span style="color: #007700">(</span><span style="color: #0000BB">$udm</span><span style="color: #007700">,</span><span style="color: #0000BB">UDM_ISPELL_TYPE_SPELL</span><span style="color: #007700">,</span><span style="color: #DD0000">'ru'</span><span style="color: #007700">,</span><span style="color: #DD0000">'/opt/ispell/ru.dict'</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">)))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+       </div>
+
+      </div>
+     </p>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <p class="para">
+       <code class="parameter">flag</code> hat nur beim letzten Aufruf den Wert
+       <em>1</em>.
+      </p>
+     </p></blockquote>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      UDM_ISPELL_TYPE_SPELL - Gibt an, dass die ISpell-Daten aus einer Datei
+      gelesen werden sollen, und initiiert das Laden des ISpell-Wörterbuches.
+      In diesem Fall gibt der Parameter <code class="parameter">val1</code> den
+      zweibuchstabigen Sprachcode an, für den die Anhänge geladen werden
+      sollen, <code class="parameter">val2</code> gibt den Dateipfad an. Wird kein
+      absoluter Pfad angeben, werden die Dateien nicht in UDM_CONF_DIR,
+      sondern in im zum aktuellen Pfad relativen gesucht. Kann die Datei nicht
+      geladen werden, gibt die Funktion <strong><code>FALSE</code></strong> zurück, und eine Fehlermeldung
+      wird ausgegeben.  Die Fehlercodes können nicht über
+      <span class="function">udm_error</span> oder <span class="function">udm_errno</span>
+      ausgelesen werden. Zur Erklärung des Parameters
+      <code class="parameter">flag</code> schauen Sie bitte bei
+      UDM_ISPELL_TYPE_DB nach.
+     </p>
+     <div class="informalexample">
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;((!&nbsp;</span><span style="color: #0000BB">udm_load_ispell_data</span><span style="color: #007700">(</span><span style="color: #0000BB">$udm</span><span style="color: #007700">,</span><span style="color: #0000BB">UDM_ISPELL_TYPE_AFFIX</span><span style="color: #007700">,</span><span style="color: #DD0000">'en'</span><span style="color: #007700">,</span><span style="color: #DD0000">'/opt/ispell/en.aff'</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">))&nbsp;||<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(!&nbsp;</span><span style="color: #0000BB">udm_load_ispell_data</span><span style="color: #007700">(</span><span style="color: #0000BB">$udm</span><span style="color: #007700">,</span><span style="color: #0000BB">UDM_ISPELL_TYPE_AFFIX</span><span style="color: #007700">,</span><span style="color: #DD0000">'ru'</span><span style="color: #007700">,</span><span style="color: #DD0000">'/opt/ispell/ru.aff'</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">))&nbsp;||<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(!&nbsp;</span><span style="color: #0000BB">udm_load_ispell_data</span><span style="color: #007700">(</span><span style="color: #0000BB">$udm</span><span style="color: #007700">,</span><span style="color: #0000BB">UDM_ISPELL_TYPE_SPELL</span><span style="color: #007700">,</span><span style="color: #DD0000">'en'</span><span style="color: #007700">,</span><span style="color: #DD0000">'/opt/ispell/en.dict'</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">))&nbsp;||<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(!&nbsp;</span><span style="color: #0000BB">udm_load_ispell_data</span><span style="color: #007700">(</span><span style="color: #0000BB">$udm</span><span style="color: #007700">,</span><span style="color: #0000BB">UDM_ISPELL_TYPE_SPELL</span><span style="color: #007700">,</span><span style="color: #DD0000">'ru'</span><span style="color: #007700">,</span><span style="color: #DD0000">'/opt/ispell/ru.dict'</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">)))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <p class="para">
+       <code class="parameter">flag</code> hat nur beim letzten Aufruf den Wert<em>1</em>.
+      </p>
+     </p></blockquote>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      UDM_ISPELL_TYPE_SERVER - schaltet den Spell-Server support ein.
+      <code class="parameter">val1</code> gibt den Host an, auf dem der Spell-Server
+      läuft.. <code class="parameter">val2</code> ist noch ohne Funktion, wird in
+      Zukunft aber den Port des Spell-Servers angeben.
+      <code class="parameter">flag</code> wird nicht benötigt, da die Daten bereits
+      sortiert im Spell-Server vorliegen.
+     </p>
+     <p class="para">
+      Der Spell-Server (Spelld) liest die Rechtschreibdaten aus einer
+      seperaten Konfigurationsdatei (Standardmäßig
+      <var class="filename">/usr/local/mnogosearch/etc/spelld.conf</var>), sortiert sie und speichert sie
+      im Speicher.
+     </p>
+     <p class="para">
+      Die Funktion <span class="function">udm_load_ispell_data</span> in
+      UDM_ISPELL_TYPE_SERVER lädt eigentlich nicht die ISpell-Daten, sondern
+      legt nur die Serveradresse fest. Eigentlich wird dieser Server
+      automatisch von <span class="function">udm_find</span> benutzt, wenn eine Suche
+      durchgeführt wird. Sollte ein Fehler auftreten, wird keine Fehlermeldung
+      ausgegeben, eine ISpell-Konvertierung kann dann jedoch natürlich auch
+      nicht stattfinden.
+     </p>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <p class="para">
+       Diese Funktion ist seit mnoGoSearch 3.1.12 verfügbar.
+      </p>
+     </p></blockquote>
+     <span class="simpara">Beispiel:</span>
+     <div class="informalexample">
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+if&nbsp;(!&nbsp;Udm_Load_Ispell_Data($udm,UDM_ISPELL_TYPE_SERVER,'','',1))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Error&nbsp;loading&nbsp;ispell&nbsp;data&nbsp;from&nbsp;server&amp;lt;br&amp;gt;\n";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+</code></div>
+      </div>
+
+     </div>
+    </li>
+   </ul>
+  </div>
+
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

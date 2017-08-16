@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: New Methods</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="appendices.html">Appendices</a></li>
+  <li class="header up"><a href="migration54.html">Migration von PHP 5.3.x auf PHP 5.4.x</a></li>
+  <li><a href="migration54.changes.html">Was hat sich in PHP 5.4.x ge&auml;ndert?</a></li>
+  <li><a href="migration54.incompatible.html">Nicht r&uuml;ckw&auml;rtskompatible &Auml;nderungen</a></li>
+  <li><a href="migration54.new-features.html">Neue Features</a></li>
+  <li><a href="migration54.sapi.html">&Auml;nderungen in SAPI Modulen</a></li>
+  <li><a href="migration54.deprecated.html">Deprecated features in PHP 5.4.x</a></li>
+  <li><a href="migration54.parameters.html">New Parameters</a></li>
+  <li><a href="migration54.functions.html">New Functions</a></li>
+  <li><a href="migration54.class-constants.html">New Class Constants</a></li>
+  <li class="active"><a href="migration54.methods.html">New Methods</a></li>
+  <li><a href="migration54.new-extensions.html">New Extensions</a></li>
+  <li><a href="migration54.removed-extensions.html">Removed Extensions</a></li>
+  <li><a href="migration54.extensions-other.html">Other changes to extensions</a></li>
+  <li><a href="migration54.classes.html">New Classes</a></li>
+  <li><a href="migration54.global-constants.html">New Global Constants</a></li>
+  <li><a href="migration54.ini.html">&Auml;nderungen an der INI-Dateibehandlung</a></li>
+  <li><a href="migration54.other.html">Weitere &Auml;nderungen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="migration54.class-constants.html">New Class Constants</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="migration54.new-extensions.html">New Extensions</a></div>
+                <div class="up"><a href="migration54.html">Migration von PHP 5.3.x auf PHP 5.4.x</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="migration54.methods" class="section">
+  <h2 class="title">New Methods</h2>
+  <p class="simpara">
+   Several new methods were introduced in 5.4.0:
+  </p>
+
+  <p class="simpara"><span class="classname">XSL</span>:</p>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function">XsltProcessor::setSecurityPrefs</span> und
+     <span class="function">XsltProcessor::getSecurityPrefs</span>
+    </span>
+   </li>
+  </ul>
+  <p class="simpara"><span class="classname">SPL</span>:</p>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function">RegexIterator::getRegex</span>
+     <span class="function">SplObjectStorage::getHash</span>
+     <span class="function">DirectoryIterator::getExtension</span>
+     <span class="function">SplDoublyLinkedList::serialize</span>
+     <span class="function">SplDoublyLinkedList::unserialize</span>
+     <span class="function">SplFileInfo::getExtension</span>
+     <span class="function">SplFileObject::fputcsv</span>
+     <span class="function">SplQueue::serialize</span>
+     <span class="function">SplQueue::unserialize</span>
+     <span class="function">SplStack::serialize</span>
+     <span class="function">SplStack::unserialize</span>
+     <span class="function">SplTempFileObject::fputcsv</span>
+    </span>
+   </li>
+  </ul>
+  <p class="simpara"><span class="classname">Reflection</span>:</p>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function">ReflectionExtension::isPersistent</span>
+     <span class="function">ReflectionExtension::isTemporary</span>
+     <span class="function">ReflectionClass::isCloneable</span>
+    </span>
+   </li>
+  </ul>
+  <p class="simpara"><span class="classname">Closure</span>:</p>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function">Closure::bind</span>
+     <span class="function">Closure::bindTo</span>
+    </span>
+   </li>
+  </ul>
+  <p class="simpara"><span class="classname">PDO_dblib</span>:</p>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function">PDO::newRowset</span>
+    </span>
+   </li>
+  </ul>
+ <p class="simpara"><span class="classname">StreamWrapper</span>:</p>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function">StreamWrapper::stream_metadata</span>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function">StreamWrapper::stream_truncate</span>
+    </span>
+   </li>
+  </ul>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

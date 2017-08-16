@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Ressourcen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.types.html">Typen</a></li>
+  <li><a href="language.types.intro.html">Einf&uuml;hrung</a></li>
+  <li><a href="language.types.boolean.html">Booleans</a></li>
+  <li><a href="language.types.integer.html">Integers</a></li>
+  <li><a href="language.types.float.html">Floating point numbers</a></li>
+  <li><a href="language.types.string.html">Strings</a></li>
+  <li><a href="language.types.array.html">Arrays</a></li>
+  <li><a href="language.types.object.html">Objekte</a></li>
+  <li class="active"><a href="language.types.resource.html">Ressourcen</a></li>
+  <li><a href="language.types.null.html">NULL</a></li>
+  <li><a href="language.types.callable.html">Callbacks / Callables</a></li>
+  <li><a href="language.pseudo-types.html">Pseudo-types and variables used in this documentation</a></li>
+  <li><a href="language.types.type-juggling.html">Type Juggling</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.types.object.html">Objekte</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.types.null.html">NULL</a></div>
+                <div class="up"><a href="language.types.html">Typen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.types.resource" class="sect1">
+ <h2 class="title">Ressourcen</h2>
+
+ <p class="para">
+  Eine <span class="type">resource</span> ist eine spezielle Variable, die
+  eine Referenz zu einer externen Ressource darstellt. Ressourcen
+  werden mit Hilfe spezieller Funktionen erzeugt und genutzt.
+  Im <a href="resource.html" class="link">Anhang</a> finden Sie eine
+  Liste all dieser Funktionen und der zugehörigen
+  <span class="type">resource</span>-Typen.
+ </p>
+
+ <p class="para">
+  Siehe auch <span class="function">get_resource_type</span>.
+ </p>
+
+ <div class="sect2" id="language.types.resource.casting">
+  <h3 class="title">Konvertierung von Ressourcen</h3>
+
+  <p class="para">
+   Da <span class="type">resource</span>-Variablen spezielle Referenzen auf
+   geöffnete Dateien, Datenbankverbindungen, Grafikbereiche
+   usw. enthalten, ist die Konvertierung von <span class="type">resource</span>
+   nicht sinnvoll.
+  </p>
+ </div>
+
+ <div class="sect2" id="language.types.resource.self-destruct">
+  <h3 class="title">Resourcen freigeben</h3>
+
+  <p class="para">
+   Dank der - mit der Zend Engine von PHP 4 eingeführten - Referenzzähler
+   werden Ressourcen, die von keiner Variablen mehr referenziert werden,
+   automatisch erkannt und vom Garbage Collector freigegeben.
+   Aus diesem Grund ist es selten nötig, Speicher von Hand freizugeben.
+  </p>
+
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    Persistente Datenbankverbindungen sind eine Ausnahme von dieser
+    Regel, sie werden <em class="emphasis">nicht</em> vom Garbage Collector
+    entfernt. Mehr Informationen finden sie im Abschnitt
+    <a href="features.persistent-connections.html" class="link">Persistente
+    Verbindungen</a>.
+   </span>
+  </p></blockquote>
+
+ </div>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

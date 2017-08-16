@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Gibt die Anzahl der Tage eines bestimmten Monats in einem bestimmten Jahr in einem bestimmten Kalender zur&uuml;ck</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.calendar.html">Datums- und zeitrelevante Erweiterungen</a></li>
+  <li class="header up"><a href="book.calendar.html">Kalender</a></li>
+  <li class="header up"><a href="ref.calendar.html">Calendar Funktionen</a></li>
+  <li class="active"><a href="function.cal-days-in-month.html">cal_days_in_month</a></li>
+  <li><a href="function.cal-from-jd.html">cal_from_jd</a></li>
+  <li><a href="function.cal-info.html">cal_info</a></li>
+  <li><a href="function.cal-to-jd.html">cal_to_jd</a></li>
+  <li><a href="function.easter-date.html">easter_date</a></li>
+  <li><a href="function.easter-days.html">easter_days</a></li>
+  <li><a href="function.frenchtojd.html">frenchtojd</a></li>
+  <li><a href="function.gregoriantojd.html">gregoriantojd</a></li>
+  <li><a href="function.jddayofweek.html">jddayofweek</a></li>
+  <li><a href="function.jdmonthname.html">jdmonthname</a></li>
+  <li><a href="function.jdtofrench.html">jdtofrench</a></li>
+  <li><a href="function.jdtogregorian.html">jdtogregorian</a></li>
+  <li><a href="function.jdtojewish.html">jdtojewish</a></li>
+  <li><a href="function.jdtojulian.html">jdtojulian</a></li>
+  <li><a href="function.jdtounix.html">jdtounix</a></li>
+  <li><a href="function.jewishtojd.html">jewishtojd</a></li>
+  <li><a href="function.juliantojd.html">juliantojd</a></li>
+  <li><a href="function.unixtojd.html">unixtojd</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="ref.calendar.html">Calendar Funktionen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.cal-from-jd.html">cal_from_jd</a></div>
+                <div class="up"><a href="ref.calendar.html">Calendar Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.cal-days-in-month" class="refentry"> 
+   <div class="refnamediv">
+    <h1 class="refname">cal_days_in_month</h1>
+    <p class="refpurpose">Gibt die Anzahl der Tage eines bestimmten Monats in einem bestimmten Jahr in einem bestimmten Kalender zurück</p>
+   </div>
+
+   <div class="refsect1 description" id="refsect1-function.cal-days-in-month-description">
+    <h3 class="title">Beschreibung</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="type">int</span> <span class="methodname">cal_days_in_month</span>
+       ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$calendar</code></span>
+      , <span class="methodparam"><span class="type">int</span> <code class="parameter">$month</code></span>
+      , <span class="methodparam"><span class="type">int</span> <code class="parameter">$year</code></span>
+      )</div>
+
+    <p class="para rdfs-comment">
+     Diese Funktion gibt die Anzahl der Tage in einem
+     <code class="parameter">Monat</code> eines <code class="parameter">Jahres</code> für den
+     angegebenen <code class="parameter">Kalender</code> zurück.
+    </p>
+   </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.cal-days-in-month-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">calendar</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der zu benutzende Kalender
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">month</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Monat im gewünschten Kalender
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">year</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Das Jahr im gewünschten Kalender
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.cal-days-in-month-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Die Länge des Monats im gewünschten Kalender in Tagen
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.cal-days-in-month-examples">
+  <h3 class="title">Beispiele</h3>
+    <p class="para">
+     <div class="example" id="example-2436">
+      <p><strong>Beispiel #1 <span class="function">cal_days_in_month</span>  Beispiel</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$number&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">cal_days_in_month</span><span style="color: #007700">(</span><span style="color: #0000BB">CAL_GREGORIAN</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">8</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2003</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;31<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"August&nbsp;2003&nbsp;hatte&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$number</span><span style="color: #007700">}</span><span style="color: #DD0000">&nbsp;Tage"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>    
+   </div>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

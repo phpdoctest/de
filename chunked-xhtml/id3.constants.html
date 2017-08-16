@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Konstanten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.utilspec.audio.html">Manipulation von Audioformaten</a></li>
+  <li class="header up"><a href="book.id3.html">ID3</a></li>
+  <li><a href="intro.id3.html">Einf&uuml;hrung</a></li>
+  <li><a href="id3.setup.html">Installation/Konfiguration</a></li>
+  <li class="active"><a href="id3.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="ref.id3.html">ID3 Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="id3.resources.html">Ressource-Typen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ref.id3.html">ID3 Funktionen</a></div>
+                <div class="up"><a href="book.id3.html">ID3</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="id3.constants" class="appendix">
+ <h1>Vordefinierte Konstanten</h1>
+ <p class="para">
+   Bei den meisten id3-Funktionen kÃ¶nnen Sie eine Tag-Version als Parameter 
+   angeben oder erhalten eine solche als RÃ¼ckgabewert der Funktion.
+   Falls Sie auf diese Versionsnummern zugreifen, verwenden Sie
+   bitte diese Konstanten.
+ </p>
+ <p class="para">
+  <dl>
+
+   
+    <dt id="constant.id3-v1-0">
+     <strong><code>ID3_V1_0</code></strong> 
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Verwenden Sie <strong><code>ID3_V1_0</code></strong> bei der Arbeit 
+      mit ID3v1.0 Tags. Diese Tags enthalten die 
+      Felder title, artist, album, genre, year und comment.
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.id3-v1-1">
+     <strong><code>ID3_V1_1</code></strong> 
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Verwenden Sie <strong><code>ID3_V1_1</code></strong> bei der Arbeit 
+      mit ID3v1.1 Tags. Solche Tags enthalten sÃ¤mtliche Informationen 
+      von ID3v1.0 Tags und zusÃ¤tzlich eine Tracknummer.
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.id3-v2-1">
+     <strong><code>ID3_V2_1</code></strong> 
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Verwenden Sie <strong><code>ID3_V2_1</code></strong> bei der Arbeit
+      mit ID3 V2.1 tags.
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.id3-v2-2">
+     <strong><code>ID3_V2_2</code></strong> 
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Verwenden Sie <strong><code>ID3_V2_2</code></strong> bei der Arbeit 
+      mit ID3v2.2 Tags.
+     </span>
+    </dd>
+
+   
+    
+    <dt id="constant.id3-v2-3">
+     <strong><code>ID3_V2_3</code></strong> 
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Verwenden Sie <strong><code>ID3_V2_3</code></strong> bei der Arbeit 
+      mit ID3v2.3 Tags.
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.id3-v2-4">
+     <strong><code>ID3_V2_4</code></strong> 
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Verwenden Sie <strong><code>ID3_V2_4</code></strong> bei der Arbeit 
+      mit ID3v2.4 Tags.
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.id3-best">
+     <strong><code>ID3_BEST</code></strong> 
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Verwenden Sie <strong><code>ID3_BEST</code></strong>, wenn Sie 
+      die id3-Funktionen bestimmen lassen wollen, welche 
+      Tag-Version verwendet werden soll.
+     </span>
+    </dd>
+
+   
+ </dl>
+
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

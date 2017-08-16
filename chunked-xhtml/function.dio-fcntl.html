@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Modifiziert einen Dateideskriptor</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.file.html">Dateisystemrelevante Erweiterungen</a></li>
+  <li class="header up"><a href="book.dio.html">Direct-IO</a></li>
+  <li class="header up"><a href="ref.dio.html">Direct-IO-Funktionen</a></li>
+  <li><a href="function.dio-close.html">dio_close</a></li>
+  <li class="active"><a href="function.dio-fcntl.html">dio_fcntl</a></li>
+  <li><a href="function.dio-open.html">dio_open</a></li>
+  <li><a href="function.dio-read.html">dio_read</a></li>
+  <li><a href="function.dio-seek.html">dio_seek</a></li>
+  <li><a href="function.dio-stat.html">dio_stat</a></li>
+  <li><a href="function.dio-tcsetattr.html">dio_tcsetattr</a></li>
+  <li><a href="function.dio-truncate.html">dio_truncate</a></li>
+  <li><a href="function.dio-write.html">dio_write</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.dio-close.html">dio_close</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.dio-open.html">dio_open</a></div>
+                <div class="up"><a href="ref.dio.html">Direct-IO-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.dio-fcntl" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">dio_fcntl</h1>
+  <p class="refpurpose">Modifiziert einen Dateideskriptor</p>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.dio-fcntl-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname">dio_fcntl</span>
+    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$fd</code></span>
+   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$cmd</code></span>
+   [, <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$args</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Die Funktion <span class="function">dio_fcntl</span> führt die mit
+   <code class="parameter">cmd</code> festgelegte Operation auf dem
+   Dateideskriptor <code class="parameter">fd</code> aus. Für einige
+   dieser Operationen müssen zusätzliche Argumente im
+   Parameter <code class="parameter">args</code> übergeben werden.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.dio-fcntl-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">fd</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ein von <span class="function">dio_open</span> zurückgegebener
+       Dateideskriptor.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">cmd</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Eine der folgenden Operationen:
+       <ul class="itemizedlist">
+        <li class="listitem">
+         <p class="para">
+          <strong><code>F_SETLK</code></strong> - Setzt oder löscht eine
+          Dateisperre. Wenn diese Sperre bereits von jemand anderem
+          gehalten wird, gibt <span class="function">dio_fcntl</span> -1
+          zurück.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <strong><code>F_SETLKW</code></strong> - ähnlich <strong><code>F_SETLK</code></strong>,
+          hier wird aber in dem Fall, dass bereits jemand anderes die Sperre
+          hält, gewartet bis diese wieder freigegeben wird.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <strong><code>F_GETLK</code></strong> - <span class="function">dio_fcntl</span>
+          gibt ein assoziatives Array mit Informationen (wie weiter unten
+          beschrieben) zurück, wenn jemand anderes bereits eine Sperre hält.
+          Existiert keine andere Sperre, wird das Element &quot;type&quot; auf
+          <strong><code>F_UNLCK</code></strong> gesetzt.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <strong><code>F_DUPFD</code></strong> -
+          Findet den kleinsten verfügbaren Dateideskriptor &gt;=
+          <code class="parameter">args</code> und gibt diesen zurück.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <strong><code>F_SETFL</code></strong> -
+          Setzt die Flags des Dateideskriptors auf den in
+          <code class="parameter">args</code> angegebenen Wert. Die verfügbaren Flags
+          sind <strong><code>O_APPEND</code></strong>, <strong><code>O_NONBLOCK</code></strong>
+          und <strong><code>O_ASYNC</code></strong>. Um <strong><code>O_ASYNC</code></strong>
+          setzen zu können, benötigen Sie die
+          <a href="ref.pcntl.html" class="link">PCNTL</a>-Extension.
+         </p>
+        </li>
+       </ul>
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">args</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die <code class="parameter">cmd</code>-Operationen <strong><code>F_SETLK</code></strong>
+       und <strong><code>F_SETLLW</code></strong> erwarten ein Array mit den folgenden
+       Elementen:
+       <ul class="itemizedlist">
+        <li class="listitem">
+         <p class="para">
+          <em>start</em> - Offset an dem die Sperre beginnt
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <em>length</em> - Länge des gesperrten Bereichs, 0 bedeutet dabei &quot;bis zum
+          Dateiende&quot;
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <em>whence</em> - Die Position, auf die sich <code class="parameter">start</code>
+          bezieht, dabei steht <strong><code>SEEK_SET</code></strong> für den
+          Dateianfang, <strong><code>SEEK_END</code></strong> für das Dateiende und
+          <strong><code>SEEK_CUR</code></strong> für die aktuelle
+          Schreib-/Leseposition.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <em>type</em> - Art der Sperre: <strong><code>F_RDLCK</code></strong> (Lesesperre),
+          <strong><code>F_WRLCK</code></strong> (Schreibsperre) oder
+          <strong><code>F_UNLCK</code></strong> (Sperre aufheben)
+         </p>
+        </li>
+       </ul>
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.dio-fcntl-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt das Ergebnis des entsprechenden C-Aufrufs zurück.
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.dio-fcntl-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-2531">
+    <p><strong>Beispiel #1 Setzen und Löschen einer Sperre</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$fd&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dio_open</span><span style="color: #007700">(</span><span style="color: #DD0000">'/dev/ttyS0'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">O_RDWR</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">dio_fcntl</span><span style="color: #007700">(</span><span style="color: #0000BB">$fd</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">F_SETLK</span><span style="color: #007700">,&nbsp;Array(</span><span style="color: #DD0000">"type"</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">F_WRLCK</span><span style="color: #007700">))&nbsp;==&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Die&nbsp;Datei&nbsp;ist&nbsp;anscheinend&nbsp;schon&nbsp;anderweitig&nbsp;gesperrt<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Sperrung&nbsp;fehlgeschlagen,&nbsp;die&nbsp;Datei&nbsp;wird&nbsp;schon&nbsp;von&nbsp;jemand&nbsp;anderem&nbsp;gesperrt."</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Sperrung&nbsp;erfolgreich&nbsp;durchgeführt"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">dio_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$fd</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.dio-fcntl-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <span class="simpara">Diese Funktion ist auf
+Windows-Plattformen nicht implementiert.</span></p></blockquote>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

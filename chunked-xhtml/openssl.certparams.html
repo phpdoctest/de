@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Schl&uuml;ssel/Zertifikat Parameter</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.crypto.html">Kryptografische Erweiterungen</a></li>
+  <li class="header up"><a href="book.openssl.html">OpenSSL</a></li>
+  <li><a href="intro.openssl.html">Einf&uuml;hrung</a></li>
+  <li><a href="openssl.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="openssl.constants.html">Vordefinierte Konstanten</a></li>
+  <li class="active"><a href="openssl.certparams.html">Schl&uuml;ssel/Zertifikat Parameter</a></li>
+  <li><a href="openssl.cert.verification.html">Zertifikatpr&uuml;fung</a></li>
+  <li><a href="ref.openssl.html">OpenSSL Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="openssl.constsni.html">Server Name Indication Konstanten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="openssl.cert.verification.html">Zertifikatpr&uuml;fung</a></div>
+                <div class="up"><a href="book.openssl.html">OpenSSL</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="openssl.certparams" class="appendix">
+ <h1>Schlüssel/Zertifikat Parameter</h1>
+ <p class="para">
+  Ziemlich viele der OpenSSL Funktionen benötigen einen Schlüssel-
+  oder einen Zertifikatparameter. PHP 4.0.5 und frühere Versionen
+  müssen eine Schlüssel oder Zertifikat <span class="type">resource</span> nutzen, die von
+  einer der <em>openssl_get_xxx()</em> Funktionen zurückgegeben wird.
+  Spätere Versionen können eine der folgenden Methoden benutzen:
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <p class="para">
+     Zertifikate
+     <ol type="1">
+      <li class="listitem">
+       <span class="simpara">
+        Eine X.509 Resource die von <span class="function">openssl_x509_read</span> zurückgegeben wird.
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        Eine Zeichenkette mit dem Format
+        <var class="filename">file://pfad/zu/cert.pem</var>; die angegebene
+        Datei muss ein PEM verschlüsseltes Zertifikat enthalten.
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        Eine Zeichenkette die den Inhalt eines Zertifikats enthält, PEM
+        verschlüsselt.
+       </span>
+      </li>
+     </ol>
+    </p>
+   </li>
+ 
+   <li class="listitem">
+    <p class="para">
+     Öffentliche/Private Schlüssel
+     <ol type="1">
+      <li class="listitem">
+       <span class="simpara">
+        Eine Schlüsselresource die von
+        <span class="function">openssl_get_publickey</span> oder
+        <span class="function">openssl_get_privatekey</span> zurückgegeben wird.
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">Nur für öffentliche Schlüssel: eine X.509 Resource.</span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        Eine Zeichenkette mit dem Format
+        <var class="filename">file://pfad/zu/datei.pem</var> - die angegebene Datei
+        muss ein PEM verschlüsseltes Zertifikat/privaten Schlüssel enthalten
+        (kann auch beides enthalten).
+       </span>
+      </li>
+      <li class="listitem">
+      <span class="simpara">
+       Eine Zeichenkette die den Inhalt eines Zertifikats/Schlüssels
+       enthält, PEM verschlüsselt.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       Für private Schlüssel können Sie auch die Syntax
+       <em>array($key, $passphrase)</em> verwenden. <var class="varname">$key</var>
+       repräsentiert einen Schlüssel, den Sie entweder mit der Notation
+       file:// oder dem textlichen Inhalt wie oben angeben. <var class="varname">$passphrase</var>
+       ist eine Zeichenfolge, die die Passphrase für den privaten Schlüssel enthält.
+      </span>
+     </li>
+    </ol>
+   </p>
+  </li>
+  </ul>
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

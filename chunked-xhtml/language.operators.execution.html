@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Operatoren zur Programmausf&uuml;hrung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.operators.html">Operatoren</a></li>
+  <li><a href="language.operators.precedence.html">Operator-Rangfolge</a></li>
+  <li><a href="language.operators.arithmetic.html">Arithmetische Operatoren</a></li>
+  <li><a href="language.operators.assignment.html">Zuweisungsoperatoren</a></li>
+  <li><a href="language.operators.bitwise.html">Bit-Operatoren</a></li>
+  <li><a href="language.operators.comparison.html">Vergleichs-Operatoren</a></li>
+  <li><a href="language.operators.errorcontrol.html">Fehler-Kontroll-Operatoren</a></li>
+  <li class="active"><a href="language.operators.execution.html">Operatoren zur Programmausf&uuml;hrung</a></li>
+  <li><a href="language.operators.increment.html">Inkrement- bzw. Dekrementoperatoren</a></li>
+  <li><a href="language.operators.logical.html">Logische Operatoren</a></li>
+  <li><a href="language.operators.string.html">Zeichenketten-Operatoren</a></li>
+  <li><a href="language.operators.array.html">Array-Operatoren</a></li>
+  <li><a href="language.operators.type.html">Typ Operatoren</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.operators.errorcontrol.html">Fehler-Kontroll-Operatoren</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.operators.increment.html">Inkrement- bzw. Dekrementoperatoren</a></div>
+                <div class="up"><a href="language.operators.html">Operatoren</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.operators.execution" class="sect1">
+   <h2 class="title">Operatoren zur Programmausführung</h2>
+   <p class="para">
+    PHP unterstützt einen Operator zur Ausführung externer Programme:
+    Die sog. Backticks (``). Achtung: Die Backticks sind keine
+    einfachen Anführungszeichen! PHP versucht, den Text zwischen den
+    Backticks als Kommandozeilen-Befehl auszuführen. Die Ausgabe des
+    aufgerufenen Programms wird zurückgegeben (d.h. wird nicht einfach
+    ausgegeben, sondern kann einer Variablen zugewiesen werden). Die
+    Verwendung des Backtick-Operators ist mit
+    <span class="function">shell_exec</span> identisch.
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$output&nbsp;</span><span style="color: #007700">=&nbsp;`</span><span style="color: #DD0000">ls&nbsp;-al</span><span style="color: #007700">`;<br />echo&nbsp;</span><span style="color: #DD0000">"&lt;pre&gt;</span><span style="color: #0000BB">$output</span><span style="color: #DD0000">&lt;/pre&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Der Backtick-Operator steht nicht zur Verfügung, wenn <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">Safe Mode</a>
+     aktiviert ist oder die Funktion <span class="function">shell_exec</span>
+     deaktiviert wurde.
+    </p>
+   </p></blockquote>
+   <p class="para">
+    Siehe auch den Abschnitt über <a href="ref.exec.html" class="link">Funktionen
+    zur Programmausführung</a>, <span class="function">popen</span>,
+    <span class="function">proc_open</span> und <a href="features.commandline.html" class="link">Using PHP from the
+    commandline</a>.
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

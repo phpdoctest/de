@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Pr&uuml;ft ob ein Objekt von der angegebenen Klasse abstammt oder sie implementiert</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li class="header up"><a href="book.classobj.html">Klassen/Objekte</a></li>
+  <li class="header up"><a href="ref.classobj.html">Klassen- und Objekt-Funktionen</a></li>
+  <li><a href="function.autoload.html">__autoload</a></li>
+  <li><a href="function.call-user-method-array.html">call_user_method_array</a></li>
+  <li><a href="function.call-user-method.html">call_user_method</a></li>
+  <li><a href="function.class-alias.html">class_alias</a></li>
+  <li><a href="function.class-exists.html">class_exists</a></li>
+  <li><a href="function.get-called-class.html">get_called_class</a></li>
+  <li><a href="function.get-class-methods.html">get_class_methods</a></li>
+  <li><a href="function.get-class-vars.html">get_class_vars</a></li>
+  <li><a href="function.get-class.html">get_class</a></li>
+  <li><a href="function.get-declared-classes.html">get_declared_classes</a></li>
+  <li><a href="function.get-declared-interfaces.html">get_declared_interfaces</a></li>
+  <li><a href="function.get-declared-traits.html">get_declared_traits</a></li>
+  <li><a href="function.get-object-vars.html">get_object_vars</a></li>
+  <li><a href="function.get-parent-class.html">get_parent_class</a></li>
+  <li><a href="function.interface-exists.html">interface_exists</a></li>
+  <li><a href="function.is-a.html">is_a</a></li>
+  <li class="active"><a href="function.is-subclass-of.html">is_subclass_of</a></li>
+  <li><a href="function.method-exists.html">method_exists</a></li>
+  <li><a href="function.property-exists.html">property_exists</a></li>
+  <li><a href="function.trait-exists.html">trait_exists</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.is-a.html">is_a</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.method-exists.html">method_exists</a></div>
+                <div class="up"><a href="ref.classobj.html">Klassen- und Objekt-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.is-subclass-of" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">is_subclass_of</h1>
+  <p class="refpurpose">Prüft ob ein Objekt von der angegebenen Klasse abstammt oder sie implementiert</p>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.is-subclass-of-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">is_subclass_of</span>
+    ( <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$object</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$class_name</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$allow_string</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Diese Funktion prüft ob das Objekt <code class="parameter">objekt</code>
+   von der Klasse <code class="parameter">class_name</code> abstammt oder sie implementiert.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.is-subclass-of-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">object</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ein Klassenname oder eine Objektinstanz. Es wird kein Fehler generiert,
+       wenn die Klasse nicht existiert.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">class_name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ein Klassenname
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">allow_string</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Wenn dieser Parameter false ist, ist ein Zeichenketten-Klassenname als
+       <code class="parameter">object</code> nicht erlaubt. Dies verhindert ebenso den
+       Aufruf vom Autoloader, wenn die Klasse nicht existiert.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.is-subclass-of-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Die Funktion liefert <strong><code>TRUE</code></strong> wenn die Klasse des Objekts
+   <code class="parameter">object</code> eine Unterklasse von
+   <code class="parameter">class_name</code> ist, sonst <strong><code>FALSE</code></strong>.
+  </p>
+ </div>
+
+ <div class="refsect1 changelog" id="refsect1-function.is-subclass-of-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.3.9</td>
+       <td>
+        <code class="parameter">allow_string</code> Parameter hinzugefügt
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.7</td>
+       <td>
+        <code class="parameter">class_name</code> kann nun auch der Name eines
+        Interfaces sein
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.0.3</td>
+       <td>
+        Als <code class="parameter">object</code> kann nun auch ein Klassenname
+        anstelle einer Objektinstanz übergeben werden.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.is-subclass-of-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-5565">
+    <p><strong>Beispiel #1 <span class="function">is_subclass_of</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Definition&nbsp;einer&nbsp;Klasse<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">WidgetFactory<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$oink&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'moo'</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Definition&nbsp;einer&nbsp;Kindklasse<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">WidgetFactory_Child&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">WidgetFactory<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$oink&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'oink'</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Erzeugung&nbsp;von&nbsp;Objekten<br /></span><span style="color: #0000BB">$WF&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">WidgetFactory</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$WFC&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">WidgetFactory_Child</span><span style="color: #007700">();<br /><br />if&nbsp;(</span><span style="color: #0000BB">is_subclass_of</span><span style="color: #007700">(</span><span style="color: #0000BB">$WFC</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'WidgetFactory'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Ja,&nbsp;\$WFC&nbsp;ist&nbsp;eine&nbsp;Unterklasse&nbsp;von&nbsp;WidgetFactory\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Nein,&nbsp;\$WFC&nbsp;ist&nbsp;keine&nbsp;Unterklasse&nbsp;von&nbsp;WidgetFactory\n"</span><span style="color: #007700">;<br />}<br /><br /><br />if&nbsp;(</span><span style="color: #0000BB">is_subclass_of</span><span style="color: #007700">(</span><span style="color: #0000BB">$WF</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'WidgetFactory'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Ja,&nbsp;\$WF&nbsp;ist&nbsp;eine&nbsp;Unterklasse&nbsp;von&nbsp;WidgetFactory\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Nein,&nbsp;\$WF&nbsp;ist&nbsp;keine&nbsp;Unterklasse&nbsp;von&nbsp;WidgetFactory\n"</span><span style="color: #007700">;<br />}<br /><br /><br /></span><span style="color: #FF8000">//&nbsp;ab&nbsp;PHP&nbsp;5.0.3&nbsp;funktioniert&nbsp;auch<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">is_subclass_of</span><span style="color: #007700">(</span><span style="color: #DD0000">'WidgetFactory_Child'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'WidgetFactory'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Ja,&nbsp;WidgetFactory_Child&nbsp;ist&nbsp;eine&nbsp;Unterklasse&nbsp;von&nbsp;WidgetFactory\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Nein,&nbsp;WidgetFactory_Child&nbsp;ist&nbsp;keine&nbsp;Unterklasse&nbsp;von&nbsp;WidgetFactory\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Ja, $WFC ist eine Unterklasse von WidgetFactory
+Nein, $WF ist keine Unterklasse von WidgetFactory
+Ja, WidgetFactory_Child ist eine Unterklasse von WidgetFactory
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-5566">
+    <p><strong>Beispiel #2 Verwendung von <span class="function">is_subclass_of</span> mit einem Interface</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Definition&nbsp;des&nbsp;Interface<br /></span><span style="color: #007700">interface&nbsp;</span><span style="color: #0000BB">MyInterface<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">MyFunction</span><span style="color: #007700">();<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Definition&nbsp;der&nbsp;Klassenimplementierung&nbsp;des&nbsp;Interface<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">MyClass&nbsp;</span><span style="color: #007700">implements&nbsp;</span><span style="color: #0000BB">MyInterface<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">MyFunction</span><span style="color: #007700">()<br />&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">"MyClass&nbsp;implementiert&nbsp;MyInterface!"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Objekt-Erzeugung<br /></span><span style="color: #0000BB">$my_object&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MyClass</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Funktioniert&nbsp;seit&nbsp;5.3.7<br /><br />//&nbsp;Prüfung&nbsp;unter&nbsp;Verwendung&nbsp;des&nbsp;Objektexemplars&nbsp;der&nbsp;Klasse<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">is_subclass_of</span><span style="color: #007700">(</span><span style="color: #0000BB">$my_object</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'MyInterface'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Ja,&nbsp;\$my_object&nbsp;ist&nbsp;eine&nbsp;Unterklasse&nbsp;von&nbsp;MyInterface\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Nein,&nbsp;\$my_object&nbsp;ist&nbsp;keine&nbsp;Unterklasse&nbsp;von&nbsp;MyInterface\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Prüfung&nbsp;unter&nbsp;Verwendung&nbsp;des&nbsp;Klassennamens&nbsp;als&nbsp;Zeichenkette<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">is_subclass_of</span><span style="color: #007700">(</span><span style="color: #DD0000">'MyClass'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'MyInterface'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Ja,&nbsp;MyClass&nbsp;ist&nbsp;eine&nbsp;Unterklasse&nbsp;von&nbsp;MyInterface\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Nein,&nbsp;MyClass&nbsp;ist&nbsp;keine&nbsp;Unterklasse&nbsp;von&nbsp;MyInterface\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Ja, $my_object ist eine Unterklasse von MyInterface
+Ja, MyClass ist eine Unterklasse von MyInterface
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.is-subclass-of-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+<p class="para">Die Verwendung dieser Funktion wird jegliche registrierte
+<a href="language.oop5.autoload.html" class="link">Autoloader</a> verwenden, falls die Klasse nicht bereits bekannt ist.</p></p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.is-subclass-of-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">get_class</span></li>
+    <li class="member"><span class="function">get_parent_class</span></li>
+    <li class="member"><span class="function">is_a</span></li>
+    <li class="member"><span class="function">class_parents</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

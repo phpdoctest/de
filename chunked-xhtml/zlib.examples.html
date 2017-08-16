@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Beispiele</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.compression.html">Erweiterungen zur Datenkompression und Archivierung</a></li>
+  <li class="header up"><a href="book.zlib.html">Zlib</a></li>
+  <li><a href="intro.zlib.html">Einf&uuml;hrung</a></li>
+  <li><a href="zlib.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="zlib.constants.html">Vordefinierte Konstanten</a></li>
+  <li class="active"><a href="zlib.examples.html">Beispiele</a></li>
+  <li><a href="ref.zlib.html">Zlib-Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="zlib.constants.html">Vordefinierte Konstanten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ref.zlib.html">Zlib-Funktionen</a></div>
+                <div class="up"><a href="book.zlib.html">Zlib</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="zlib.examples" class="chapter">
+ <h1>Beispiele</h1>
+    <p class="para">
+     Dieses Beispiel öffnet eine temporäre Datei und schreibt einen Teststring
+     in die Datei, dann wird der Inhalt dieser Datei zweimal ausgegeben.
+    </p>
+    <div class="example" id="example-866">
+     <p><strong>Beispiel #1 Ein kleines Beispiel zu Zlib</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$filename&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">tempnam</span><span style="color: #007700">(</span><span style="color: #DD0000">'/tmp'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'zlibtest'</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">'.gz'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"&lt;html&gt;\n&lt;head&gt;&lt;/head&gt;\n&lt;body&gt;\n&lt;pre&gt;\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$s&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Nur&nbsp;ein&nbsp;test,&nbsp;test,&nbsp;test,&nbsp;test,&nbsp;test,&nbsp;test,&nbsp;test,&nbsp;test!\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;TemporÃ¤re&nbsp;Datei&nbsp;zum&nbsp;Schreiben&nbsp;mit&nbsp;der&nbsp;maximalen&nbsp;Kompressionsstufe&nbsp;Ã¶ffnen<br /></span><span style="color: #0000BB">$zp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gzopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"w9"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;String&nbsp;in&nbsp;die&nbsp;Datei&nbsp;schreiben<br /></span><span style="color: #0000BB">gzwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$zp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$s</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Datei&nbsp;schlieÃen<br /></span><span style="color: #0000BB">gzclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$zp</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Datei&nbsp;zum&nbsp;Lesen&nbsp;Ã¶ffnen<br /></span><span style="color: #0000BB">$zp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gzopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;3&nbsp;Zeichen&nbsp;einlesen&nbsp;und&nbsp;ausgeben<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">gzread</span><span style="color: #007700">(</span><span style="color: #0000BB">$zp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Inhalt&nbsp;der&nbsp;Datei&nbsp;ausgeben&nbsp;und&nbsp;die&nbsp;Datei&nbsp;schlieÃen<br /></span><span style="color: #0000BB">gzpassthru</span><span style="color: #007700">(</span><span style="color: #0000BB">$zp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">gzclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$zp</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Ãffne&nbsp;die&nbsp;Datei&nbsp;und&nbsp;gib&nbsp;den&nbsp;Inhalt&nbsp;zum&nbsp;zweiten&nbsp;Mal&nbsp;aus<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">readgzfile</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">)&nbsp;!=&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$s</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Error&nbsp;with&nbsp;zlib&nbsp;functions!"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">unlink</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"&lt;/pre&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+ <div class="example" id="example-867">
+  <p><strong>Beispiel #2 Arbeiten mit dem inkrementellen Kompriemierungs- und Dekomprimierungs-API ab PHP 7.0.0</strong></p>
+  <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+//&nbsp;führe&nbsp;GZIP-Komprimierung&nbsp;durch:<br />$deflateContext&nbsp;=&nbsp;deflate_init(ZLIB_ENCODING_GZIP);<br />$compressed&nbsp;=&nbsp;deflate_add($deflateContext,&nbsp;"Zu&nbsp;komprimierende&nbsp;Daten",&nbsp;ZLIB_NO_FLUSH);<br />$compressed&nbsp;.=&nbsp;deflate_add($deflateContext,&nbsp;",&nbsp;weitere&nbsp;Daten",&nbsp;ZLIB_NO_FLUSH);<br />$compressed&nbsp;.=&nbsp;deflate_add($deflateContext,&nbsp;",&nbsp;und&nbsp;noch&nbsp;mehr&nbsp;Daten!",&nbsp;ZLIB_FINISH);?&gt;<br /><br />//&nbsp;führe&nbsp;GZIP-Dekomprimierung&nbsp;durch:<br />$inflateContext&nbsp;=&nbsp;inflate_init(ZLIB_ENCODING_GZIP);<br />$uncompressed&nbsp;=&nbsp;inflate_add($inflateContext,&nbsp;$compressed,&nbsp;ZLIB_NO_FLUSH);<br />$uncompressed&nbsp;.=&nbsp;inflate_add($inflateContext,&nbsp;NULL,&nbsp;ZLIB_FINISH);<br />echo&nbsp;$uncompressed;</span>
+</code></div>
+  </div>
+
+  <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+  <div class="example-contents screen">
+<div class="cdata"><pre>
+Zu komprimierende Daten, weitere Daten, und noch mehr Daten!
+</pre></div>
+  </div>
+ </div>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

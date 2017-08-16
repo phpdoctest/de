@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Einf&uuml;hrung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li class="header up"><a href="book.ctype.html">Ctype</a></li>
+  <li class="active"><a href="intro.ctype.html">Einf&uuml;hrung</a></li>
+  <li><a href="ctype.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="ctype.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="ref.ctype.html">Ctype Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="book.ctype.html">Ctype</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ctype.setup.html">Installation/Konfiguration</a></div>
+                <div class="up"><a href="book.ctype.html">Ctype</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="intro.ctype" class="preface">
+  <h1 class="title">Einführung</h1>
+  <p class="para">
+   Die Funktionen dieser Extension überprüfen, ob ein Zeichen oder eine
+   Zeichenkette in eine bestimmte Zeichenklasse fällt, unter
+   Berücksichtigung der momentanen locale-Einstellung (Siehe auch <span class="function">setlocale</span>). 
+  </p>
+  <p class="para">
+   Beim Aufruf mit einem Integer-Argument verhalten sich diese Funktionen
+   exakt wie ihre C-Gegenstücke aus <var class="filename">ctype.h</var>, d.h.
+   das Integer-Parameter zwischen 0 und 255 als ASCII-Codes interpretiert
+   und das entsprechende Zeichen geprüft wird. Für Werte zwischen -128 und
+   -1 wird vor der Prüfungen 256 addiert.
+  </p>
+  <p class="para">
+   Beim Aufruf mit einem String-Argument überprüfen Sie jedes einzelne
+   Zeichen und geben nur <strong><code>TRUE</code></strong> zurück, wenn jedes einzelne Zeichen die
+   angeforderten entsprechenden Kriterien erfüllt. Beim Aufruf mit einer
+   leeren Zeichenkette wird in PHP &lt; 5.1 immer <strong><code>TRUE</code></strong> zurückgegeben, 
+   ab PHP 5.1 <strong><code>FALSE</code></strong>. 
+  </p>
+  <p class="para">
+   Sobald irgendetwas anderes als ein String oder Integer als Argument 
+   übergeben wird, wird sofort <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+  <p class="para">
+   Die ctype Funktionen sind grundsätzlich performanter als die entsprechenden
+   regular Expressions und oft auch schneller als die equivalenten 
+   <em>str_*</em> und <em>is_*</em> Funktionen da sie 
+   direkt in C geschrieben und optimiert sind.
+  </p>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Diese Funktionen sind in keiner Weise mit der Python &quot;ctypes&quot; Bibliothek
+    verwandt. Der Name der Erweiterung stammt von der <var class="filename">ctype.h</var>
+    C Header-Datei an, in der ihre Equivalente definiert sind.
+   </p>
+   <p class="para">
+    Diese Erweiterung ist auch älter als Python &quot;ctypes&quot;, so dass jegliche
+    Verwirrung, die durch diese Namensgebung verursacht wird, kaum unser Fehler
+    ist ...
+   </p>
+  </p></blockquote>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

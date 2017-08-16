@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Abgrenzung von Anweisungen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.basic-syntax.html">Grundlagen der Syntax</a></li>
+  <li><a href="language.basic-syntax.phptags.html">PHP Tags</a></li>
+  <li><a href="language.basic-syntax.phpmode.html">Den HTML-Bereich der Datei verlassen</a></li>
+  <li class="active"><a href="language.basic-syntax.instruction-separation.html">Abgrenzung von Anweisungen</a></li>
+  <li><a href="language.basic-syntax.comments.html">Kommentare</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.basic-syntax.phpmode.html">Den HTML-Bereich der Datei verlassen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.basic-syntax.comments.html">Kommentare</a></div>
+                <div class="up"><a href="language.basic-syntax.html">Grundlagen der Syntax</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.basic-syntax.instruction-separation" class="sect1">
+   <h2 class="title">Abgrenzung von Anweisungen</h2>
+   <p class="para">
+    Wie in C oder Perl verlangt PHP, dass Anweisungen am Ende jedes Statements
+    mit einem Semikolon beendet werden. Der schließende Tag eines Blocks mit
+    PHP-Code impliziert automatisch ein Semikolon; Sie brauchen daher kein
+    abschließendes Semikolon in der letzten Zeile des PHP-Blocks zu setzen. Der
+    schließende Tag für den Block schließt das direkt nachfolgende
+    Zeilenumbruch-Zeichen ein, wenn es vorhanden ist.
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'Dies&nbsp;ist&nbsp;ein&nbsp;Test'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;<br /></span><br /><span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'Dies&nbsp;ist&nbsp;ein&nbsp;Test'&nbsp;</span><span style="color: #0000BB">?&gt;<br /></span><br /><span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'Wir&nbsp;ließen&nbsp;den&nbsp;letzen&nbsp;schließenden&nbsp;Tag&nbsp;weg'</span><span style="color: #007700">;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <p class="para">
+      Der schließende Tag eines PHP-Blocks am Ende einer Datei ist optional, und
+      in einigen Fällen ist das Weglassen hilfreich, wenn Sie
+      <span class="function">include</span> oder <span class="function">require</span> verwenden,
+      so dass ungewollte Whitespaces nicht am Ende einer Datei auftreten und Sie
+      noch im Stande sind, später weitere Header an die Response hinzuzufügen.
+      Es ist ebenfalls praktisch, wenn Sie Output Buffering verwenden und keine
+      ungewollten Whitespaces am Ende eines durch die eingebundenen Dateien
+      erzeugten Parts sehen wollen.
+     </p>
+    </p></blockquote>
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

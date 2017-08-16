@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Die grundlegende Verwendung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.abstract.html">Abstraktionsebenen</a></li>
+  <li class="header up"><a href="book.dba.html">DBA</a></li>
+  <li class="header up"><a href="dba.examples.html">Beispiele</a></li>
+  <li class="active"><a href="dba.example.html">Die grundlegende Verwendung</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="dba.examples.html">Beispiele</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ref.dba.html">DBA-Funktionen</a></div>
+                <div class="up"><a href="dba.examples.html">Beispiele</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="dba.example" class="section">
+  <h2 class="title">Die grundlegende Verwendung</h2>
+   <p class="para">
+    <div class="example" id="example-948">
+     <p><strong>Beispiel #1 DBA Beispiel</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$id&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dba_open</span><span style="color: #007700">(</span><span style="color: #DD0000">"/tmp/test.db"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"db2"</span><span style="color: #007700">);<br /><br />if&nbsp;(!</span><span style="color: #0000BB">$id</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"dba_open&nbsp;schlug&nbsp;fehl\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />}<br /><br /></span><span style="color: #0000BB">dba_replace</span><span style="color: #007700">(</span><span style="color: #DD0000">"schluessel"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Dies&nbsp;ist&nbsp;ein&nbsp;Beispiel!"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$id</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">dba_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">"schluessel"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$id</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">dba_fetch</span><span style="color: #007700">(</span><span style="color: #DD0000">"schluessel"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$id</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">dba_delete</span><span style="color: #007700">(</span><span style="color: #DD0000">"schluessel"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$id</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">dba_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$id</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   DBA arbeitet binärsicher und besitzt keine willkürlichen Limits. Es erbt
+   allerdings alle Einschränkungen von der zugrundeliegenden
+   Datenbank-Implementation.
+  </p>
+  <p class="para">
+   Alle dateibasierten Datenbanken müssen, soweit es überhaupt möglich ist,
+   einen Weg zur Verfügung stellen, um den Dateimodus einer neu erstellten
+   Datenbank festzulegen. Der Dateimodus wird gewöhnlich als viertes Argument
+   an die Funktionen <span class="function">dba_open</span> oder
+   <span class="function">dba_popen</span> übergeben.
+  </p>
+  <p class="para">
+   Sie können auf alle Einträge in einer Datenbank sequentiell durch die
+   Verwendung von <span class="function">dba_firstkey</span> und
+   <span class="function">dba_nextkey</span> zugreifen. Während die Datenbank so
+   durchlaufen wird, darf sie nicht verändert werden.
+  </p>
+  <p class="para">
+   <div class="example" id="example-949">
+    <p><strong>Beispiel #2 Durchlaufen einer Datenbank</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;...Oeffnen&nbsp;der&nbsp;Datenbank...<br /><br /></span><span style="color: #0000BB">$schluessel&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dba_firstkey</span><span style="color: #007700">(</span><span style="color: #0000BB">$id</span><span style="color: #007700">);<br /><br />while&nbsp;(</span><span style="color: #0000BB">$schluessel&nbsp;</span><span style="color: #007700">!=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">true</span><span style="color: #007700">)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;den&nbsp;Schluessel&nbsp;fuer&nbsp;spaetere&nbsp;Aktionen&nbsp;merken<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$spaeter_bearbeiten</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">$schluessel</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$schluessel&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dba_nextkey</span><span style="color: #007700">(</span><span style="color: #0000BB">$id</span><span style="color: #007700">);<br />}<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$spaeter_bearbeiten&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$wert</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">dba_delete</span><span style="color: #007700">(</span><span style="color: #0000BB">$wert</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$id</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

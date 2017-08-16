@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Sockets</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li><a href="book.chdb.html">chdb</a></li>
+  <li><a href="book.curl.html">cURL</a></li>
+  <li><a href="book.event.html">Event</a></li>
+  <li><a href="book.fam.html">FAM</a></li>
+  <li><a href="book.ftp.html">FTP</a></li>
+  <li><a href="book.gearman.html">Gearman</a></li>
+  <li><a href="book.net-gopher.html">Gopher</a></li>
+  <li><a href="book.gupnp.html">Gupnp</a></li>
+  <li><a href="book.hwapi.html">Hyperwave API</a></li>
+  <li><a href="book.ldap.html">LDAP</a></li>
+  <li><a href="book.memcache.html">Memcache</a></li>
+  <li><a href="book.memcached.html">Memcached</a></li>
+  <li><a href="book.mqseries.html">mqseries</a></li>
+  <li><a href="book.network.html">Network</a></li>
+  <li><a href="book.rrd.html">RRD</a></li>
+  <li><a href="book.sam.html">SAM</a></li>
+  <li><a href="book.snmp.html">SNMP</a></li>
+  <li class="active"><a href="book.sockets.html">Sockets</a></li>
+  <li><a href="book.ssh2.html">SSH2</a></li>
+  <li><a href="book.stomp.html">Stomp</a></li>
+  <li><a href="book.svm.html">SVM</a></li>
+  <li><a href="book.svn.html">SVN</a></li>
+  <li><a href="book.tcpwrap.html">TCP</a></li>
+  <li><a href="book.varnish.html">Varnish</a></li>
+  <li><a href="book.yaz.html">YAZ</a></li>
+  <li><a href="book.nis.html">YP/NIS</a></li>
+  <li><a href="book.zmq.html">0MQ messaging</a></li>
+  <li><a href="book.zookeeper.html">ZooKeeper</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="class.snmpexception.html">SNMPException</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.sockets.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.remote.other.html">Sonstige Dienste</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.sockets" class="book">
+ 
+ <h1>Sockets</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.sockets.html">Einf&uuml;hrung</a></li>
+<li><a href="sockets.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="sockets.requirements.html">Anforderungen</a></li>
+<li><a href="sockets.installation.html">Installation</a></li>
+<li><a href="sockets.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="sockets.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="sockets.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="sockets.examples.html">Beispiele</a></li>
+<li><a href="sockets.errors.html">Socket-Fehler</a></li>
+<li><a href="ref.sockets.html">Socket-Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.socket-accept.html">socket_accept</a> — Akzeptiert eine Verbindung an einem Socket</li>
+<li><a href="function.socket-bind.html">socket_bind</a> — Verkn&uuml;pft einen Socket mit einem Namen</li>
+<li><a href="function.socket-clear-error.html">socket_clear_error</a> — L&ouml;scht entweder einen Fehler oder den letzten Fehlercode 
+ eines Sockets</li>
+<li><a href="function.socket-close.html">socket_close</a> — Schlie&szlig;t eine Socket-Verbindung</li>
+<li><a href="function.socket-cmsg-space.html">socket_cmsg_space</a> — Calculate message buffer size</li>
+<li><a href="function.socket-connect.html">socket_connect</a> — Baut eine Verbindung &uuml;ber einen Socket auf</li>
+<li><a href="function.socket-create-listen.html">socket_create_listen</a> — &Ouml;ffnet einen Socket, um Verbindungen &uuml;ber einem gegebenen Port aufzubauen</li>
+<li><a href="function.socket-create-pair.html">socket_create_pair</a> — Erzeugt ein Paar nicht zu unterscheidender Sockets und speichert sie in einem Array</li>
+<li><a href="function.socket-create.html">socket_create</a> — Erzeugt einen Socket (Endpunkt f&uuml;r die Kommunikation)</li>
+<li><a href="function.socket-get-option.html">socket_get_option</a> — Holt die Socket-Optionen f&uuml;r einen Socket</li>
+<li><a href="function.socket-getopt.html">socket_getopt</a> — Alias von socket_get_option</li>
+<li><a href="function.socket-getpeername.html">socket_getpeername</a> — Fragt das entfernte Ende eines gegebenen Sockets ab. Das Ergebnis
+   ist vom Typ abh&auml;ngig und ist entweder das Paar host/port oder ein Pfad des
+   Unix-Dateisystems</li>
+<li><a href="function.socket-getsockname.html">socket_getsockname</a> — Fragt das lokale Ende eines gegebenen Sockets ab. Das Ergebnis
+   ist vom Typ abh&auml;ngig und ist entweder das Paar host/port oder ein Pfad des
+   Unix-Dateisystems</li>
+<li><a href="function.socket-import-stream.html">socket_import_stream</a> — Import a stream</li>
+<li><a href="function.socket-last-error.html">socket_last_error</a> — Gibt den letzten Fehler zur&uuml;ck, der an einem Socket aufgetreten ist</li>
+<li><a href="function.socket-listen.html">socket_listen</a> — H&ouml;rt einen Socket nach Verbindungsanforderungen ab</li>
+<li><a href="function.socket-read.html">socket_read</a> — Liest h&ouml;chstens die angegebene Anzahl Bytes von einem Socket</li>
+<li><a href="function.socket-recv.html">socket_recv</a> — Empf&auml;ngt Daten von einem verbundenen Socket</li>
+<li><a href="function.socket-recvfrom.html">socket_recvfrom</a> — Empf&auml;ngt Daten von einem Socket, egal, ob verbindungsorientiert oder nicht</li>
+<li><a href="function.socket-recvmsg.html">socket_recvmsg</a> — Read a message</li>
+<li><a href="function.socket-select.html">socket_select</a> — F&uuml;hrt einen select()-Systemaufruf auf den gegebenen Socket-Arrays aus, wobei ein Zeitlimit bestimmt wird</li>
+<li><a href="function.socket-send.html">socket_send</a> — Sendet Daten an einen verbundenen Socket</li>
+<li><a href="function.socket-sendmsg.html">socket_sendmsg</a> — Send a message</li>
+<li><a href="function.socket-sendto.html">socket_sendto</a> — Sendet eine Nachricht an einen Socket, egal ob dieser verbunden ist oder nicht</li>
+<li><a href="function.socket-set-block.html">socket_set_block</a> — Setzt einen Socket auf den blockieren-Modus</li>
+<li><a href="function.socket-set-nonblock.html">socket_set_nonblock</a> — Setzt den nonblocking-Modus f&uuml;r den Datei-Deskriptor fd</li>
+<li><a href="function.socket-set-option.html">socket_set_option</a> — Setzt die Optionen f&uuml;r einen Socket</li>
+<li><a href="function.socket-setopt.html">socket_setopt</a> — Alias von socket_set_option</li>
+<li><a href="function.socket-shutdown.html">socket_shutdown</a> — Schlie&szlig;t einen Socket der zum Senden, Empfangen oder beidem ge&ouml;ffnet wurde</li>
+<li><a href="function.socket-strerror.html">socket_strerror</a> — Gibt einen String zur&uuml;ck, der einen socket-Fehler beschreibt</li>
+<li><a href="function.socket-write.html">socket_write</a> — Schreibt in einen Socket</li>
+</ul>
+</li>
+</ul>
+
+
+ 
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

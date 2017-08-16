@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Erzeugt eine eindeutige ID</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li class="header up"><a href="book.misc.html">Misc.</a></li>
+  <li class="header up"><a href="ref.misc.html">Sonstige Funktionen</a></li>
+  <li><a href="function.connection-aborted.html">connection_aborted</a></li>
+  <li><a href="function.connection-status.html">connection_status</a></li>
+  <li><a href="function.constant.html">constant</a></li>
+  <li><a href="function.define.html">define</a></li>
+  <li><a href="function.defined.html">defined</a></li>
+  <li><a href="function.die.html">die</a></li>
+  <li><a href="function.eval.html">eval</a></li>
+  <li><a href="function.exit.html">exit</a></li>
+  <li><a href="function.get-browser.html">get_browser</a></li>
+  <li><a href="function.halt-compiler.html">__halt_compiler</a></li>
+  <li><a href="function.highlight-file.html">highlight_file</a></li>
+  <li><a href="function.highlight-string.html">highlight_string</a></li>
+  <li><a href="function.ignore-user-abort.html">ignore_user_abort</a></li>
+  <li><a href="function.pack.html">pack</a></li>
+  <li><a href="function.php-check-syntax.html">php_check_syntax</a></li>
+  <li><a href="function.php-strip-whitespace.html">php_strip_whitespace</a></li>
+  <li><a href="function.show-source.html">show_source</a></li>
+  <li><a href="function.sleep.html">sleep</a></li>
+  <li><a href="function.sys-getloadavg.html">sys_getloadavg</a></li>
+  <li><a href="function.time-nanosleep.html">time_nanosleep</a></li>
+  <li><a href="function.time-sleep-until.html">time_sleep_until</a></li>
+  <li class="active"><a href="function.uniqid.html">uniqid</a></li>
+  <li><a href="function.unpack.html">unpack</a></li>
+  <li><a href="function.usleep.html">usleep</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.time-sleep-until.html">time_sleep_until</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.unpack.html">unpack</a></div>
+                <div class="up"><a href="ref.misc.html">Sonstige Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.uniqid" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">uniqid</h1>
+  <p class="refpurpose">Erzeugt eine eindeutige ID</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.uniqid-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname">uniqid</span>
+    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$prefix</code><span class="initializer"> = &quot;&quot;</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$more_entropy</code><span class="initializer"> = false</span></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   Gibt eine eindeutige ID mit Präfix zurück, die auf der aktuellen Zeit in
+   Mikrosekunden basiert.
+  </p>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="para">
+    Diese Funktion erzeugt keine zufälligen oder unvoraussagbaren Zeichenketten.
+    <em class="emphasis">Diese Funktion darf nicht für Sicherheitszwecke verwendet werden.</em>
+    Kryptographisch sichere Zufalls-Funktionen/Generatoren und kryptographisch
+    sichere Hash-Funktionen sollten verwendet werden, um unvoraussagbare sichere
+    IDs zu erzeugen.
+   </p>
+  </div>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.uniqid-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">prefix</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Kann z.B. dann hilfreich sein, wenn Sie auf mehreren Hosts
+       gleichzeitig IDs erzeugen, was im ungünstigsten Fall zur selben
+       Mikrosekunde geschehen kann.
+      </p>
+      <p class="para">
+       Bei leerem <code class="parameter">prefix</code> ist die zurückgegebene
+       Zeichenkette 13 Zeichen lang. Falls
+       <code class="parameter">more_entropy</code> <strong><code>TRUE</code></strong> ist, sind es 23 Zeichen.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">more_entropy</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Falls dieser Parameter auf <strong><code>TRUE</code></strong> gesetzt ist, wird
+       <span class="function">uniqid</span> am Ende des Rückgabewertes zusätzliche mit
+       dem Kongruenzgenerator für Pseudozufallszahlen (Combined Linear
+       Congruential Generator) erzeugte Entropie anfügen, wodurch die Wahrscheinlichkeit
+       erhöht wird, dass das Ergebnis eindeutig ist.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.uniqid-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt eine eindeutige ID als Zeichenkette zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.uniqid-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4274">
+    <p><strong>Beispiel #1 <span class="function">uniqid</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Eine&nbsp;eindeutige&nbsp;ID,&nbsp;beispielsweise:&nbsp;4b3403665fea6&nbsp;*/<br /></span><span style="color: #0000BB">$uniqid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">uniqid</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">/*&nbsp;Zusätzlich&nbsp;kann&nbsp;ein&nbsp;Präfix&nbsp;genutzt&nbsp;werden.&nbsp;Dabei&nbsp;sind&nbsp;die<br />&nbsp;*&nbsp;folgenden&nbsp;beiden&nbsp;Anweisungen&nbsp;identisch:<br />&nbsp;*/<br /></span><span style="color: #0000BB">$uniqid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">uniqid</span><span style="color: #007700">(</span><span style="color: #0000BB">$prefix</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$uniqid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$prefix&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">uniqid</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">/*&nbsp;Weiterhin&nbsp;kann&nbsp;der&nbsp;more_entropy&nbsp;Parameter&nbsp;aktiviert&nbsp;werden&nbsp;(auf&nbsp;einigen&nbsp;Systemen&nbsp;<br />&nbsp;*&nbsp;wie&nbsp;Cygwin&nbsp;ist&nbsp;dies&nbsp;sogar&nbsp;zwangsweise&nbsp;erforderlich).&nbsp;Dadurch&nbsp;generiert&nbsp;uniqid()<br />&nbsp;*&nbsp;einen&nbsp;Wert&nbsp;ähnlich&nbsp;dem&nbsp;folgenden:&nbsp;4b340550242239.64159797<br />&nbsp;*/<br /></span><span style="color: #0000BB">$uniqid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">uniqid</span><span style="color: #007700">(</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.uniqid-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <div class="caution"><strong class="caution">Achtung</strong>
+   <p class="para">
+    Diese Funktion erzeugt keine kryptographisch sicheren Tokens; tatsächlich
+    ist der Rückgabewert ohne die Übergabe eines zusätzlichen Parameters nur
+    wenig von <span class="function">microtime</span> verschieden. Zum Erzeugen von
+    kryptographisch sicheren Tokens sollte
+    <span class="function">openssl_random_pseudo_bytes</span> verwendet werden.
+   </p>
+  </div>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Unter Cygwin muss der Parameter <code class="parameter">more_entropy</code> auf
+    <strong><code>TRUE</code></strong> gesetzt sein, damit die Funktion arbeitet.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

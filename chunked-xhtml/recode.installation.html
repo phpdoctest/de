@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Installation</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.international.html">Unterst&uuml;tzung menschlicher Sprache und Zeichenkodierung</a></li>
+  <li class="header up"><a href="book.recode.html">Recode</a></li>
+  <li class="header up"><a href="recode.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="recode.requirements.html">Anforderungen</a></li>
+  <li class="active"><a href="recode.installation.html">Installation</a></li>
+  <li><a href="recode.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="recode.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="recode.requirements.html">Anforderungen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="recode.configuration.html">Laufzeit-Konfiguration</a></div>
+                <div class="up"><a href="recode.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="recode.installation" class="section">
+ <h2 class="title">Installation</h2>
+ <p class="para">
+  Um die von diesem Modul definierten Funktionen nutzbar zu machen, müssen Sie
+  Ihr PHP mit der Option <strong class="option configure">--with-recode[=DIR]</strong>
+
+  kompilieren.
+ </p>
+ <div class="warning"><strong class="warning">Warnung</strong>
+  <p class="para">
+   Abstürze und Startprobleme von PHP können auftreten, wenn die
+   Recode-Extension <em class="emphasis">nach</em> einer der beiden
+   Extensions <a href="ref.mysql.html" class="link">mysql</a> oder <a href="ref.imap.html" class="link">imap</a> geladen wird. Wenn die Recode-Extension
+   vor den genannten anderen geladen wird, tritt das Problem nicht auf. Das
+   Problem resultiert aus dem technischen Grund, dass die C-Clientlibrary,
+   die von Imap und Recode genutzt wird, jeweils ihre eigenen
+   <em>hach_lookup()</em>-Funktionalitäten mitbringt. Der Konflikt
+   mit der MySQL-Extension entsteht durch unterschiedliche
+   <em>hash_insert</em>-Funktionalitäten.
+  </p>
+ </div>
+
+ <div class="warning"><strong class="warning">Warnung</strong><p class="simpara">Die <a href="ref.imap.html" class="link">IMAP</a> , <a href="book.recode.html" class="link">recode</a>,
+<a href="ref.yaz.html" class="link">YAZ</a> und <a href="ref.cyrus.html" class="link">Cyrus</a>
+können nicht zusammen verwendet werden. Diese Tatsache
+liegt darin begründet, dass alle diese Erweiterungen die gleichen internen Symbole
+benutzen. Hinweis: Yaz 2.0 und höher hat dieses Problem nicht.</p></div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Ermittelt den Namen eines XML-Elements</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.xml.html">XML-Manipulation</a></li>
+  <li class="header up"><a href="book.simplexml.html">SimpleXML</a></li>
+  <li class="header up"><a href="class.simplexmlelement.html">SimpleXMLElement</a></li>
+  <li><a href="simplexmlelement.addAttribute.html">SimpleXMLElement::addAttribute</a></li>
+  <li><a href="simplexmlelement.addChild.html">SimpleXMLElement::addChild</a></li>
+  <li><a href="simplexmlelement.asXML.html">SimpleXMLElement::asXML</a></li>
+  <li><a href="simplexmlelement.attributes.html">SimpleXMLElement::attributes</a></li>
+  <li><a href="simplexmlelement.children.html">SimpleXMLElement::children</a></li>
+  <li><a href="simplexmlelement.construct.html">SimpleXMLElement::__construct</a></li>
+  <li><a href="simplexmlelement.count.html">SimpleXMLElement::count</a></li>
+  <li><a href="simplexmlelement.getDocNamespaces.html">SimpleXMLElement::getDocNamespaces</a></li>
+  <li class="active"><a href="simplexmlelement.getName.html">SimpleXMLElement::getName</a></li>
+  <li><a href="simplexmlelement.getNamespaces.html">SimpleXMLElement::getNamespaces</a></li>
+  <li><a href="simplexmlelement.registerXPathNamespace.html">SimpleXMLElement::registerXPathNamespace</a></li>
+  <li><a href="simplexmlelement.savexml.html">SimpleXMLElement::saveXML</a></li>
+  <li><a href="simplexmlelement.tostring.html">SimpleXMLElement::__toString</a></li>
+  <li><a href="simplexmlelement.xpath.html">SimpleXMLElement::xpath</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="simplexmlelement.getDocNamespaces.html">SimpleXMLElement::getDocNamespaces</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="simplexmlelement.getNamespaces.html">SimpleXMLElement::getNamespaces</a></div>
+                <div class="up"><a href="class.simplexmlelement.html">SimpleXMLElement</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="simplexmlelement.getName" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">SimpleXMLElement::getName</h1>
+  <p class="refpurpose">Ermittelt den Namen eines XML-Elements</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-simplexmlelement.getName-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="classsynopsis">
+   <div class="ooclass"><strong class="classname">SimpleXMLElement</strong></div>
+   <div class="methodsynopsis dc-description">
+    <span class="type">string</span> <span class="methodname">getName</span>
+     ( <span class="methodparam">void</span>
+    )</div>
+
+  </div>
+  <p class="para">
+   Ermittelt den Namen eines XML-Elements.
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-simplexmlelement.getName-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Die <em>getName</em>-Methode gibt den Namen des durch das
+   SimpleXMLElement-Objekt referenzierte XML-Tag als <span class="type">String</span> zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-simplexmlelement.getName-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-6240">
+    <p><strong>Beispiel #1 Ermitteln des XML-Element-Namens</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$sxe&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SimpleXMLElement</span><span style="color: #007700">(</span><span style="color: #0000BB">$xmlstr</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">$sxe</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getName</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$sxe</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">children</span><span style="color: #007700">()&nbsp;as&nbsp;</span><span style="color: #0000BB">$child</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$child</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getName</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

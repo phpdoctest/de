@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Bit-Operatoren</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.operators.html">Operatoren</a></li>
+  <li><a href="language.operators.precedence.html">Operator-Rangfolge</a></li>
+  <li><a href="language.operators.arithmetic.html">Arithmetische Operatoren</a></li>
+  <li><a href="language.operators.assignment.html">Zuweisungsoperatoren</a></li>
+  <li class="active"><a href="language.operators.bitwise.html">Bit-Operatoren</a></li>
+  <li><a href="language.operators.comparison.html">Vergleichs-Operatoren</a></li>
+  <li><a href="language.operators.errorcontrol.html">Fehler-Kontroll-Operatoren</a></li>
+  <li><a href="language.operators.execution.html">Operatoren zur Programmausf&uuml;hrung</a></li>
+  <li><a href="language.operators.increment.html">Inkrement- bzw. Dekrementoperatoren</a></li>
+  <li><a href="language.operators.logical.html">Logische Operatoren</a></li>
+  <li><a href="language.operators.string.html">Zeichenketten-Operatoren</a></li>
+  <li><a href="language.operators.array.html">Array-Operatoren</a></li>
+  <li><a href="language.operators.type.html">Typ Operatoren</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.operators.assignment.html">Zuweisungsoperatoren</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.operators.comparison.html">Vergleichs-Operatoren</a></div>
+                <div class="up"><a href="language.operators.html">Operatoren</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.operators.bitwise" class="sect1">
+   <h2 class="title">Bit-Operatoren</h2>
+   <p class="simpara">
+    Bit-Operatoren erlauben es, in einem Integer bestimmte Bits &quot;ein-
+    oder  auszuschalten&quot; (auf 0 oder 1 zu setzen). Wenn beide, der
+    links- und rechtsseitige Parameter, Zeichenketten sind, arbeiten
+    die Bit-Operatoren mit ASCII-Werten der einzelnen Zeichen.
+   </p>
+   <p class="para">
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">12&nbsp;</span><span style="color: #007700">^&nbsp;</span><span style="color: #0000BB">9</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Ausgabe&nbsp;'5'<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"12"&nbsp;</span><span style="color: #007700">^&nbsp;</span><span style="color: #DD0000">"9"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Ausgabe:&nbsp;das&nbsp;Backspace-Zeichen&nbsp;(ascii&nbsp;8)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;('1'&nbsp;(ascii&nbsp;49))&nbsp;^&nbsp;('9'&nbsp;(ascii&nbsp;57))&nbsp;=&nbsp;#8<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"hallo"&nbsp;</span><span style="color: #007700">^&nbsp;</span><span style="color: #DD0000">"hello"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Gibt&nbsp;die&nbsp;ASCII-Werte&nbsp;#0&nbsp;#4&nbsp;#0&nbsp;#0&nbsp;#0<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;'a'&nbsp;^&nbsp;'e'&nbsp;=&nbsp;#4&nbsp;aus<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div> 
+   </p>
+
+   <table class="doctable table">
+    <caption><strong>Bit-Operatoren</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Beispiel</th>
+       <th>Name</th>
+       <th>Ergebnis</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>$a &amp; $b</td>
+       <td>Und</td>
+       <td>
+        Bits, die in $a und $b gesetzt sind werden gesetzt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>$a | $b</td>
+       <td>Oder</td>
+       <td>
+        Bits, die in $a oder $b gesetzt sind werden gesetzt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>$a ^ $b</td>
+       <td>Entweder oder (Xor)</td>
+       <td>
+        Bits, die entweder in $a oder $b, jedoch nicht in beiden
+        gesetzt sind, werden gesetzt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>~ $a</td>
+       <td>Nicht</td>
+       <td>
+        Die Bits, die in $a nicht gesetzt sind, werden gesetzt und
+        umgekehrt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>$a &lt;&lt; $b</td>
+       <td>Nach links verschieben</td>
+       <td>
+        Verschiebung der Bits von $a um $b Stellen nach links (jede
+        Stelle entspricht einer Mulitplikation mit zwei).
+       </td>
+      </tr>
+
+      <tr>
+       <td>$a &gt;&gt; $b</td>
+       <td>Nach rechts verschieben</td>
+       <td>
+        Verschiebt die Bits von $a um $b Stellen nach rechts (jede
+        Stelle entspricht einer Division durch zwei).
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

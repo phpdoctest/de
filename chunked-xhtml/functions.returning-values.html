@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: R&uuml;ckgabewerte</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.functions.html">Funktionen</a></li>
+  <li><a href="functions.user-defined.html">Benutzerdefinierte Funktionen</a></li>
+  <li><a href="functions.arguments.html">Funktionsparameter</a></li>
+  <li class="active"><a href="functions.returning-values.html">R&uuml;ckgabewerte</a></li>
+  <li><a href="functions.variable-functions.html">Variablenfunktionen</a></li>
+  <li><a href="functions.internal.html">Interne (eingebaute) Funktionen</a></li>
+  <li><a href="functions.anonymous.html">Anonyme Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="functions.arguments.html">Funktionsparameter</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="functions.variable-functions.html">Variablenfunktionen</a></div>
+                <div class="up"><a href="language.functions.html">Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="functions.returning-values" class="sect1">
+   <h2 class="title">Rückgabewerte</h2>
+
+   <p class="para">
+    Sie können Werte mit der optionalen return-Anweisung zurückgeben.
+    Es können Variablen jeden Typs zurückgegeben werden, auch Arrays
+    oder Objekte. Dies beendet sofort die Funktion und die Kontrolle
+    wird wieder an die aufrufende Zeile zurückgegeben. Weitere
+    Informationen finden Sie unter <span class="function">return</span>.
+   </p>
+
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Wird <span class="function">return</span> ausgelassen, dann wird der Wert <strong><code>NULL</code></strong>
+     zurückgegeben.
+    </p>
+   </p></blockquote>
+   
+   <div class="sect2">
+    <h3 class="title">Einsatz von return</h3>
+   <p class="para">
+    <div class="example" id="example-163">
+     <p><strong>Beispiel #1 Einsatz von <span class="function">return</span></strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">quadrat</span><span style="color: #007700">(</span><span style="color: #0000BB">$zahl</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$zahl&nbsp;</span><span style="color: #007700">*&nbsp;</span><span style="color: #0000BB">$zahl</span><span style="color: #007700">;<br />}<br />echo&nbsp;</span><span style="color: #0000BB">quadrat</span><span style="color: #007700">(</span><span style="color: #0000BB">4</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;'16'&nbsp;aus.<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+
+   <p class="para">
+    Es ist nicht möglich, mehrere Werte von einer Funktion zurückzugeben.
+    Ein ähnliches Resultat kann man aber durch die Rückgabe eines Arrays
+    erreichen.
+   </p>
+
+   <p class="para">
+    <div class="example" id="example-164">
+    <p><strong>Beispiel #2 Rückgabe mehrerer Werte als Array</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">kleine_zahlen</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;return&nbsp;array&nbsp;(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br />}<br />list&nbsp;(</span><span style="color: #0000BB">$null</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$eins</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$zwei</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">kleine_zahlen</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    Um von einer Funktion eine Referenz zurückzugeben, müssen Sie
+    den Referenz-Operator &amp; sowohl in der Funktionsdeklaration,
+    als auch bei der Zuweisung des zurückgegebenen Wertes verwenden:
+   </p>
+
+   <p class="para">
+    <div class="example" id="example-165">
+     <p><strong>Beispiel #3 Rückgabe von Referenzen aus Funktionen</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;&amp;</span><span style="color: #0000BB">returniere_referenz</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$einereferenz</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$neuereferenz&nbsp;</span><span style="color: #007700">=&amp;&nbsp;</span><span style="color: #0000BB">returniere_referenz</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="simpara">
+    Weitere Informationen über Referenzen finden Sie im Kapitel
+    <a href="language.references.html" class="link">Referenzen in PHP</a>.
+   </p>
+  </div>
+
+  <div class="sect2" id="functions.returning-values.type-declaration">
+   <h3 class="title">Rückgabe-Typdeklarationen</h3>
+
+   <p class="para">
+    PHP 7 führt die Unterstützung von Rückgabe-Typdeklarationen ein. Ähnlich wie
+    <a href="functions.arguments.html#functions.arguments.type-declaration" class="link">Parameter-Typdeklarationen</a>
+    geben Rückgabe-Typdeklarationen den Typ des Wertes, der von einer Funktion zurückgegeben
+    wird, an. Die gleichen <a href="functions.arguments.html#functions.arguments.type-declaration.types" class="link">Typen</a>,
+    die für Parameter-Typdeklarationen verfügbar sind, sind auch für Rückgabe-Typdeklarationen
+    erlaubt.
+   </p>
+
+   <p class="para">
+    <a href="functions.arguments.html#functions.arguments.type-declaration.strict" class="link">Strenge Typsierung</a>
+    hat ebenfalls Auswirkungen auf Rückgabe-Typdeklarationen. Im normalen schwachen Typisierungsmodus werden zurückgegebene Werte in den korrekten Typ konvertiert, wenn sie
+    nicht bereits diesen Typ haben. Im strengen Modus muss der zurückgegebene Wert den
+    korrekten Typ haben; andernfalls wird ein <span class="classname">TypeError</span> ausgelöst.
+   </p>
+
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Wird eine Elternmethode überschrieben, muss die Rückgabe-Typdeklaration der Kindmethode
+     mit der Elternmethode übereinstimmen. Definiert die Elternmethode keinen Rückgabetyp,
+     dann darf die Kindmethode das tun. 
+    </p>
+   </p></blockquote>
+
+   <div class="sect3" id="functions.returning-values.type-declaration.examples">
+    <h4 class="title">Beispiele</h4>
+
+    <div class="example" id="example-166">
+     <p><strong>Beispiel #4 Grundlegende Rückgabe-Typdeklaration</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">sum</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">):&nbsp;</span><span style="color: #0000BB">float&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Beachten&nbsp;Sie,&nbsp;dass&nbsp;eine&nbsp;Gleitkommazahl&nbsp;zurückgegeben&nbsp;wird.<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">sum</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+float(3)
+</pre></div>
+      </div>
+     </div>
+
+     <div class="example" id="example-167">
+      <p><strong>Beispiel #5 Einsatz des strengen Typisierungsmodus</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">strict_types</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br />function&nbsp;</span><span style="color: #0000BB">sum</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">):&nbsp;</span><span style="color: #0000BB">int&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">sum</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">sum</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2.5</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+int(3)
+
+Fatal error: Uncaught TypeError: Return value of sum() must be of the type integer, float returned in - on line 5 in -:5
+Stack trace:
+#0 -(9): sum(1, 2.5)
+#1 {main}
+  thrown in - on line 5
+</pre></div>
+      </div>
+     </div>
+
+     <div class="example" id="example-168">
+      <p><strong>Beispiel #6 Rückgabe eines Objekts</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">C&nbsp;</span><span style="color: #007700">{}<br /><br />function&nbsp;</span><span style="color: #0000BB">getC</span><span style="color: #007700">():&nbsp;</span><span style="color: #0000BB">C&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">getC</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+object(C)#1 (0) {
+}
+</pre></div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

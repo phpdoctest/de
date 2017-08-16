@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Message Queue anlegen oder an existierende Queue anbinden</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li class="header up"><a href="book.sem.html">Semaphore</a></li>
+  <li class="header up"><a href="ref.sem.html">Semaphore Funktionen</a></li>
+  <li><a href="function.ftok.html">ftok</a></li>
+  <li class="active"><a href="function.msg-get-queue.html">msg_get_queue</a></li>
+  <li><a href="function.msg-queue-exists.html">msg_queue_exists</a></li>
+  <li><a href="function.msg-receive.html">msg_receive</a></li>
+  <li><a href="function.msg-remove-queue.html">msg_remove_queue</a></li>
+  <li><a href="function.msg-send.html">msg_send</a></li>
+  <li><a href="function.msg-set-queue.html">msg_set_queue</a></li>
+  <li><a href="function.msg-stat-queue.html">msg_stat_queue</a></li>
+  <li><a href="function.sem-acquire.html">sem_acquire</a></li>
+  <li><a href="function.sem-get.html">sem_get</a></li>
+  <li><a href="function.sem-release.html">sem_release</a></li>
+  <li><a href="function.sem-remove.html">sem_remove</a></li>
+  <li><a href="function.shm-attach.html">shm_attach</a></li>
+  <li><a href="function.shm-detach.html">shm_detach</a></li>
+  <li><a href="function.shm-get-var.html">shm_get_var</a></li>
+  <li><a href="function.shm-has-var.html">shm_has_var</a></li>
+  <li><a href="function.shm-put-var.html">shm_put_var</a></li>
+  <li><a href="function.shm-remove-var.html">shm_remove_var</a></li>
+  <li><a href="function.shm-remove.html">shm_remove</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.ftok.html">ftok</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.msg-queue-exists.html">msg_queue_exists</a></div>
+                <div class="up"><a href="ref.sem.html">Semaphore Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.msg-get-queue" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">msg_get_queue</h1>
+  <p class="refpurpose">
+   Message Queue anlegen oder an existierende Queue anbinden
+  </p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.msg-get-queue-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">resource</span> <span class="methodname">msg_get_queue</span>
+    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$key</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$perms</code><span class="initializer"> = 0666</span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">msg_get_queue</span> gibt eine ID zurück die für den
+   Zugriff auf die mit dem gegbenen <code class="parameter">key</code> bezeichnete
+   System V Message Queue genutzt werden kann. Existiert die Message Queue
+   noch nicht so wird sie mit den im optionalen Parameter <code class="parameter">perms</code>
+   angegebenen Rechten angelegt. 
+   Ein weiterer Aufruf von <span class="function">msg_get_queue</span> mit dem gleichen 
+   <code class="parameter">key</code> liefert eine andere ID, beide IDs greifen aber 
+   intern auf die gleiche Message Queue zu.
+  </p>
+ </div>
+
+
+
+ <div class="refsect1 parameters" id="refsect1-function.msg-get-queue-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">key</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Numerische ID der Message Queue.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">perms</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Zugriffsrechte der Queue. Vorgabewert ist 0666. 
+       Existiert die Message Queue bereits so wird dieser
+       Parameter ignoriert.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.msg-get-queue-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Liefert ein Resourcehandle für den Zugriff auf eine System V Message Queue.
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.msg-get-queue-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">msg_remove_queue</span></li>
+    <li class="member"><span class="function">msg_receive</span></li>
+    <li class="member"><span class="function">msg_send</span></li>
+    <li class="member"><span class="function">msg_stat_queue</span></li>
+    <li class="member"><span class="function">msg_set_queue</span></li>
+   </ul>
+  </p>
+ </div>
+  
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

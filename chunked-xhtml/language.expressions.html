@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Ausdr&uuml;cke</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li><a href="language.basic-syntax.html">Grundlagen der Syntax</a></li>
+  <li><a href="language.types.html">Typen</a></li>
+  <li><a href="language.variables.html">Variablen</a></li>
+  <li><a href="language.constants.html">Konstanten</a></li>
+  <li class="active"><a href="language.expressions.html">Ausdr&uuml;cke</a></li>
+  <li><a href="language.operators.html">Operatoren</a></li>
+  <li><a href="language.control-structures.html">Kontrollstrukturen</a></li>
+  <li><a href="language.functions.html">Funktionen</a></li>
+  <li><a href="language.oop5.html">Klassen und Objekte</a></li>
+  <li><a href="language.namespaces.html">Namespaces</a></li>
+  <li><a href="language.errors.html">Fehler</a></li>
+  <li><a href="language.exceptions.html">Ausnahmebehandlung (Exception-Handling)</a></li>
+  <li><a href="language.generators.html">Generatoren</a></li>
+  <li><a href="language.references.html">Referenzen in PHP</a></li>
+  <li><a href="reserved.variables.html">Vordefinierte Variablen</a></li>
+  <li><a href="reserved.exceptions.html">Vordefinierte Exceptions</a></li>
+  <li><a href="reserved.interfaces.html">Vordefinierte Interfaces und Klassen</a></li>
+  <li><a href="context.html">Kontextoptionen und -parameter</a></li>
+  <li><a href="wrappers.html">Unterst&uuml;tzte Protokolle und Wrapper</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.constants.predefined.html">Magische Konstanten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.operators.html">Operatoren</a></div>
+                <div class="up"><a href="langref.html">Sprachreferenz</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.expressions" class="chapter">
+ <h1>Ausdrücke</h1>
+ <p class="simpara">
+  Ausdrücke (Expressions) sind die wichtigsten Bausteine von PHP. In
+  PHP ist fast alles, was geschrieben wird, ein Ausdruck. Die einfachste,
+  aber auch zutreffendste Definition für einen Ausdruck ist &quot;alles, was
+  einen Wert hat&quot;.
+ </p>
+ <p class="simpara">
+  Die grundlegendsten Formen von Ausdrücken sind Konstanten und Variablen.
+  Wenn man &quot;<var class="varname">$a</var> = 5&quot; schreibt, weist man
+  <var class="varname">$a</var> den Ausdruck &#039;5&#039; zu. &#039;5&#039; hat offensichtlich den Wert
+  5. Anders ausgedrückt: &#039;5&#039; ist ein Ausdruck mit dem Wert 5 (in diesem Fall
+  ist &#039;5&#039; eine Integer-Konstante).
+ </p>
+ <p class="simpara">
+  Nach dieser Zuweisung würde man erwarten, dass der Wert von
+  <var class="varname">$a</var> nun ebenfalls 5 ist; wenn man also
+  <var class="varname">$b</var> = <var class="varname">$a</var> schreibt, sollte dasselbe
+  dabei herauskommen, als hätte man <var class="varname">$b</var> = 5 geschrieben.
+  Anders ausgedrückt: <var class="varname">$a</var> ist ebenfalls ein Ausdruck mit dem
+  Wert 5. Wenn alles richtig funktioniert, wird genau das passieren.
+ </p>
+ <p class="para">
+  Etwas kompliziertere Beispiele für Ausdrücke sind Funktionen.
+  Betrachten wir zum Beispiel die folgende Funktion:
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="simpara">
+  Angenommen, Sie sind mit dem Konzept von Funktionen vertraut (wenn
+  Sie es nicht sind, lesen Sie das Kapitel über <a href="language.functions.html" class="link">Funktionen</a>), dann
+  würden Sie davon ausgehen, dass die Eingabe von <em>$c = foo()</em>
+  grundsätzlich dasselbe bedeutet, als würde man <em>$c = 5</em>
+  schreiben, und genau das trifft zu. Funktionen sind Ausdrücke mit dem Wert
+  ihres Rückgabewertes. Da <em>foo()</em> den Wert 5 zurückgibt, ist
+  der Wert des Ausdruckes &#039;<em>foo()</em>&#039; 5. Normalerweise geben
+  Funktionen nicht einfach einen statischen Wert zurück, sondern berechnen
+  etwas.
+ </p>
+ <p class="simpara">
+  Natürlich müssen Werte in PHP keine Integer-Zahlen sein, und oft sind
+  sie es auch nicht. PHP unterstützt vier skalare Datentypen:
+  <span class="type">integer</span> (Ganzzahlen), <span class="type">float</span> (Fließkommazahlen),
+  <span class="type">string</span> (Zeichenketten) und <span class="type">boolean</span>
+  (Wahrheitswerte). (Skalare sind Datentypen, die man, im Gegensatz zu zum
+  Beispiel Arrays, nicht in kleinere Stücke &#039;brechen&#039; kann.) PHP
+  unsterstützt auch zwei zusammengesetzte (nicht-skalare) Datentypen:
+  Arrays und Objekte. Jeder dieser Datentypen kann Variablen zugewiesen
+  und von Funktionen zurückgegeben werden.
+ </p>
+ <p class="simpara">
+  PHP fasst den Begriff Ausdruck aber noch viel weiter, wie es auch andere
+  Programmiersprachen tun. PHP ist eine ausdrucksorientierte Sprache, in
+  dem Sinne, dass fast alles einen Ausdruck darstellt. Zurück zu dem
+  Beispiel, mit dem wir uns bereits beschäftigt haben: &#039;<var class="varname">$a</var>
+  = 5&#039;. Es ist einfach zu erkennen, dass hier zwei Werte enthalten sind: Der
+  Wert der Integer-Konstanten &#039;5&#039; und der Wert von <var class="varname">$a</var>, der
+  auf 5 geändert wird. In Wirklichkeit ist aber noch ein weiterer Wert
+  enthalten, nämlich der Wert der Zuweisung selbst. Die Zuweisung selbst
+  enthält den zugewiesenen Wert, in diesem Fall 5. In der Praxis bedeutet
+  dies, dass &#039;<var class="varname">$a</var> = 5&#039;, egal was es tut, immer einen
+  Ausdruck mit dem Wert 5 darstellt. Folglich ist &#039;<var class="varname">$b</var> =
+  (<var class="varname">$a</var> = 5)&#039; gleichbedeutend mit &#039;<var class="varname">$a</var> = 5;
+  <var class="varname">$b</var> = 5;&#039; (ein Semikolon markiert das Ende einer
+  Anweisung). Da Wertzuweisungen von rechts nach links geparst werden, kann
+  man auch &#039;<var class="varname">$b</var> = <var class="varname">$a</var> = 5&#039; schreiben.
+ </p>
+ <p class="simpara">
+  Ein anderes gutes Beispiel für die Ausdrucksorientierung von PHP
+  sind Prä- und Post-Inkrement sowie die entsprechenden Dekremente.
+  Benutzer von PHP und vielen anderen Sprachen sind vermutlich
+  mit den Notationen &#039;<em>variable++</em>&#039; und
+  &#039;<em>variable--</em>&#039; vertraut. Dies sind <a href="language.operators.increment.html" class="link">Inkrement- und
+  Dekrement-Operatoren</a>. In PHP gibt es, wie in C, zwei Arten
+  von Inkrementen - Prä-Inkrement und Post-Inkrement. Grundsätzlich erhöhen
+  sowohl Prä- als auch Post-Inkrement den Wert der Variable, und der Effekt
+  auf die Variable ist derselbe. Der Unterschied liegt im Wert des
+  Inkrement-Ausdruckes. Das Prä-Inkrement, das &#039;++<var class="varname">$variable</var>&#039;
+  geschrieben wird, enthält als Wert den Wert der erhöhten Variabe (PHP erhöht
+  den Wert der Variablen, bevor es ihren Wert ausliest, daher der Name
+  &#039;PRÄ-Inkrement&#039;). Das Post-Inkrement, das &#039;<var class="varname">$variable</var>++&#039;
+  geschrieben wird, enthält dagegen den ursprünglichen Wert der Variablen vor
+  der Erhöhung (PHP erhöht den Wert der Variablen, nachdem es ihren Wert
+  ausgelesen hat, daher der Name &#039;POST-Inkrement&#039;).
+ </p>
+ <p class="simpara">
+  Ein sehr gebräuchlicher Typ von Ausdrücken sind <a href="language.operators.comparison.html" class="link">Vergleichsausdrücke</a>.
+  Diese Ausdrücke geben entweder <strong><code>FALSE</code></strong> oder <strong><code>TRUE</code></strong> zurück. PHP unterstützt
+  &gt; (größer), &gt;= (größer oder gleich), == (gleich), != (ungleich),
+  &lt; (kleiner), und &lt;= (kleiner oder gleich). Die Sprache unterstützt
+  weiterhin ein Set von absoluten Vergleichsoperatoren: === (inhalts- und
+  typgleich) und !== (nicht inhalts- oder typgleich). Diese Ausdrücke werden
+  meist in bedingten Anweisungen, wie z. B. in
+  <em>if</em>-Anweisungen, verwendet.
+ </p>
+ <p class="simpara">
+  Im letzten Beispiel für Ausdrücke befassen wir uns mit kombinierten
+  Zuweisungs- und Operator-Ausdrücken. Wir wissen bereits, dass, wenn wir
+  <var class="varname">$a</var> um 1 erhöhen wollen, wir einfach
+  &#039;<var class="varname">$a</var>++&#039; oder &#039;++<var class="varname">$a</var>&#039; schreiben können.
+  Aber was tut man, wenn man den Wert um mehr als eins erhöhen will, z. B.
+  um 3? Man könnte mehrer Male &#039;<var class="varname">$a</var>++&#039; schreiben, aber das
+  ist offensichtlich weder ein effizienter noch komfortabler Weg. Viel
+  üblicher ist es, einfach &#039;<var class="varname">$a</var> = <var class="varname">$a</var> + 3&#039;
+  zu schreiben. &#039;<var class="varname">$a</var> + 3&#039; gibt den Wert von
+  <var class="varname">$a</var> plus 3 zurück, dieser wird wieder <var class="varname">$a</var>
+  zugewiesen, was dazu führt, dass <var class="varname">$a</var> nun um 3 erhöht wurde.
+  In PHP - wie in einigen anderen Programmiersprachen, z. B. in C - kann man
+  dies aber noch kürzer schreiben, was mit der Zeit klarer wird und auch
+  einfacher zu verstehen ist. Um 3 zu dem aktuellen Wert von
+  <var class="varname">$a</var> hinzuzufügen, schreibt man &#039;<var class="varname">$a</var> += 3&#039;.
+  Das bedeutet exakt: &quot;Nimm den Wert von <var class="varname">$a</var>, addiere 3
+  hinzu und weise <var class="varname">$a</var> den entstandenen Wert zu&quot;. Zusätzlich
+  dazu, dass diese Schreibweise kürzer und klarer ist, wird sie auch schneller
+  ausgeführt. Der Wert von &#039;<var class="varname">$a</var> += 3&#039; ist, wie der Wert
+  einer regulären Zuweisung, der zugewiesene Wert. Beachten Sie, dass dieser
+  Wert NICHT 3, sondern dem kombinierten Wert von <var class="varname">$a</var> plus 3
+  entspricht (das ist der Wert, der <var class="varname">$a</var> zugewiesen wird).
+  Jeder Operator, der zwei Elemente verbindet, kann in dieser Schreibweise
+  verwendet werden, z. B. &#039;<var class="varname">$a</var> -= 5&#039; (vermindert den Wert
+  von <var class="varname">$a</var> um 5) oder &#039;<var class="varname">$b</var> *= 7&#039;
+  (multipliziert den Wert von <var class="varname">$b</var> mit 7), usw.
+ </p>
+ <p class="para">
+  Es gibt einen weiteren Ausdruck, der Ihnen vielleicht seltsam vorkommt,
+  wenn Sie ihn bisher noch in keiner Programmiersprache kennengelernt
+  haben, den dreifach konditionalen Operator:
+ </p>
+ <p class="para">
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$eins&nbsp;</span><span style="color: #007700">?&nbsp;</span><span style="color: #0000BB">$zwei&nbsp;</span><span style="color: #007700">:&nbsp;</span><span style="color: #0000BB">$drei<br />?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="para">
+  Wenn der Wert des ersten Sub-Ausdruckes (hier: $eins) <strong><code>TRUE</code></strong> ist
+  (d. h. nicht 0), dann wird der Wert des zweiten Subausdrucks
+  (hier: $zwei) ausgewertet und ist das Ergebnis des konditionalen
+  Ausdrucks. Andernfalls wird der dritte Subausdruck ausgewertet und
+  dessen Wert zurückgegeben.
+ </p>
+ <p class="para">
+  Das folgende Beispiel sollte das Verständnis von Prä- und
+  Post-Inkrement und von Ausdrücken im Allgemeinen erleichtern:
+ </p>
+ <p class="para">
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">verdoppeln</span><span style="color: #007700">(</span><span style="color: #0000BB">$i</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">*</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Weise&nbsp;den&nbsp;Variablen&nbsp;$a&nbsp;und&nbsp;$b&nbsp;den&nbsp;Wert&nbsp;5&nbsp;zu&nbsp;*/<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">++;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Post-Inkrement,&nbsp;der&nbsp;urspruengliche&nbsp;Wert&nbsp;von&nbsp;$a&nbsp;(5)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wird&nbsp;$c&nbsp;zugewiesen.&nbsp;*/<br /></span><span style="color: #0000BB">$e&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$d&nbsp;</span><span style="color: #007700">=&nbsp;++</span><span style="color: #0000BB">$b</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Prae-Inkrement,&nbsp;der&nbsp;erhöhte&nbsp;Wert&nbsp;von&nbsp;$b&nbsp;(6)&nbsp;wird&nbsp;$d&nbsp;und<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$e&nbsp;zugewiesen.&nbsp;*/<br /><br />/*&nbsp;An&nbsp;diesem&nbsp;Punkt&nbsp;sind&nbsp;$d&nbsp;und&nbsp;$e&nbsp;beide&nbsp;gleich&nbsp;6&nbsp;*/<br /><br /></span><span style="color: #0000BB">$f&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">verdoppeln</span><span style="color: #007700">(</span><span style="color: #0000BB">$d</span><span style="color: #007700">++);&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Weise&nbsp;$f&nbsp;den&nbsp;doppelten&nbsp;Wert&nbsp;von&nbsp;$d&nbsp;vor<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;der&nbsp;Erhöhung&nbsp;um&nbsp;eins&nbsp;zu,&nbsp;2*6&nbsp;=&nbsp;12&nbsp;*/<br /></span><span style="color: #0000BB">$g&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">verdoppeln</span><span style="color: #007700">(++</span><span style="color: #0000BB">$e</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Weise&nbsp;$g&nbsp;den&nbsp;doppelten&nbsp;Wert&nbsp;von&nbsp;$e&nbsp;nach<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;der&nbsp;Erhoehung&nbsp;um&nbsp;eins&nbsp;zu,&nbsp;2*7&nbsp;=&nbsp;14&nbsp;to&nbsp;$g&nbsp;*/<br /></span><span style="color: #0000BB">$h&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$g&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Zuerst&nbsp;wird&nbsp;$g&nbsp;um&nbsp;10&nbsp;erhöht&nbsp;und&nbsp;hat&nbsp;damit&nbsp;den&nbsp;Wert<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;24.&nbsp;Der&nbsp;Wert&nbsp;dieser&nbsp;Zuweisung&nbsp;(24)&nbsp;wird&nbsp;dann&nbsp;$h<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zugewiesen,&nbsp;womit&nbsp;$h&nbsp;ebenfalls&nbsp;den&nbsp;Wert&nbsp;von&nbsp;24&nbsp;hat.&nbsp;*/<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="simpara">
+  Einige Ausdrücke können wie Anweisungen verwendet werden. In diesem Falle
+  hat eine Anweisung die Form &#039;<em>expr ;</em>&#039;, dies meint einen Ausdruck gefolgt
+  von einem Semikolon. In <em>&#039;$b = $a = 5;&#039;</em> ist <em>&#039;$a = 5&#039;</em> ein gültiger Ausdruck,
+  aber für sich allein keine Anweisung. <em>&#039;$b = $a = 5;&#039;</em> ist jedoch eine gültige
+  Anweisung.
+ </p>
+ <p class="simpara">
+  Ein letzter Punkt, der noch zu erwähnen ist, ist der Wahrheitswert
+  von Ausdrücken. In vielen Fällen, hauptsächlich in bedingten
+  Anweisungen und Schleifen, ist man nicht am spezifischen Wert
+  eines Ausdrucks interessiert, sondern kümmert sich nur darum,
+  ob er <strong><code>TRUE</code></strong> oder <strong><code>FALSE</code></strong> bedeutet.
+
+  
+
+  Die Konstanten <strong><code>TRUE</code></strong> und <strong><code>FALSE</code></strong> (case-insensitiv) sind die beiden
+  möglichen Wahrheitswerte. Wenn nötig wird ein Ausdruck automatisch in
+  einen Boolschen Wert konvertiert. Wenn Sie mehr darüber erfahren wollen,
+  lesen Sie den Abschnitt über <a href="language.types.type-juggling.html#language.types.typecasting" class="link">Typecasting</a>.
+ </p>
+ <p class="simpara">
+  PHP stellt eine vollständige und mächtige Implementierung von Ausdrücken
+  bereit, deren vollständige Dokumentation den Rahmen dieses Manuals
+  sprengen würde. Die obigen Beispiele sollten Ihnen einen guten Eindruck
+  davon verschaffen, was Ausdrücke sind und wie man nützliche Ausdrücke
+  konstruieren kann. Im Rest dieses Manuals werden wir
+  <var class="varname">expr</var> schreiben, um auszudrücken, dass an dieser
+  Stelle jeder gültige PHP-Ausdruck stehen kann.
+ </p>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

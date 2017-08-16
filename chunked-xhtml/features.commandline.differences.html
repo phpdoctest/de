@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Unterschiede zu anderen SAPIs</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="features.html">Features</a></li>
+  <li class="header up"><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></li>
+  <li><a href="features.commandline.introduction.html">Introduction</a></li>
+  <li class="active"><a href="features.commandline.differences.html">Unterschiede zu anderen SAPIs</a></li>
+  <li><a href="features.commandline.options.html">Optionen</a></li>
+  <li><a href="features.commandline.usage.html">Nutzung</a></li>
+  <li><a href="features.commandline.io-streams.html">I/O Streams</a></li>
+  <li><a href="features.commandline.interactive.html">Interaktiver Modus</a></li>
+  <li><a href="features.commandline.webserver.html">Eingebauter Webserver</a></li>
+  <li><a href="features.commandline.ini.html">INI Einstellungen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="features.commandline.introduction.html">Introduction</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="features.commandline.options.html">Optionen</a></div>
+                <div class="up"><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="features.commandline.differences" class="section">
+  <h2 class="title">Unterschiede zu anderen <acronym class="acronym">SAPI</acronym>s</h2>
+  
+  <p class="para">
+   Beachtenswerte Unterschiede der <acronym class="acronym">CLI</acronym> <acronym class="acronym">SAPI</acronym> zu anderen
+   <acronym class="acronym">SAPI</acronym>s:
+   <ul class="itemizedlist">
+    <li class="listitem">
+     <p class="para">
+      Anders als bei der <acronym class="acronym">CGI</acronym> <acronym class="acronym">SAPI</acronym> werden
+      keine Header ausgegeben.
+     </p>
+     <p class="para">
+      Obwohl die <acronym class="acronym">CGI</acronym> <acronym class="acronym">SAPI</acronym> eine Option bietet,
+      HTTP-Header zu unterdrücken, gibt es keine gleichwertige Option, sie in der
+      <acronym class="acronym">CLI</acronym> <acronym class="acronym">SAPI</acronym> anzuzeigen.
+     </p>
+     <p class="para">
+      <acronym class="acronym">CLI</acronym> wird standardmäßig im stillen Modus gestartet, dennoch gibt
+      es die Optionen <strong class="option unknown">-q</strong>
+ und <strong class="option unknown">--no-header</strong>
+
+      aus Kompatibilitätsgründen noch, so dass Sie auch ältere
+      <acronym class="acronym">CGI</acronym>-Skripte noch benutzen können.
+     </p>
+     <p class="para">
+      Es verändert das Arbeitsverzeichnis nicht zu dem des Skriptes.
+      (Die Optionen <strong class="option unknown">-C</strong>
+ und <strong class="option unknown">--no-chdir</strong>
+
+      wurden aus Kompatibilitätsgründen beibehalten.)
+     </p>
+     <p class="para">
+      Fehlermeldungen in Plaintext (keine <acronym class="acronym">HTML</acronym>-Formatierung).
+     </p>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      Es gibt bestimmte <var class="filename">php.ini</var>-Direktiven, die von der <acronym class="acronym">CLI</acronym> <acronym class="acronym">SAPI</acronym> außer Kraft
+      gesetzt werden, weil sie in einer Kommandozeilenumgebung keinen Sinn ergeben.
+     </p>
+     <p class="para">
+      <table class="doctable table">
+       <caption><strong>Überschriebene <var class="filename">php.ini</var>-Direktiven</strong></caption>
+       
+        <thead>
+         <tr>
+          <th>Direktive</th>
+          <th><acronym class="acronym">CLI</acronym> <acronym class="acronym">SAPI</acronym>-Standardwert</th>
+          <th>Kommentar</th>
+         </tr>
+
+        </thead>
+
+        <tbody class="tbody">
+         <tr>
+          <td><a href="errorfunc.configuration.html#ini.html-errors" class="link">html_errors</a></td>
+          <td><strong><code>FALSE</code></strong></td>
+          <td>
+           Es kann sehr schwierig sein, eine Fehlermeldung auf der Kommandozeile
+           zu lesen, wenn sie mit all diesen bedeutungslosen <acronym class="acronym">HTML</acronym>-Tags
+           vollgestopft ist, deswegen wird diese Direktive auf <strong><code>FALSE</code></strong> gesetzt.
+          </td>
+         </tr>
+
+         <tr>
+          <td><a href="outcontrol.configuration.html#ini.implicit-flush" class="link">implicit_flush</a></td>
+          <td><strong><code>TRUE</code></strong></td>
+          <td>
+           Es ist normalerweise erwünscht, dass alle Ausgaben, die von <span class="function">print</span>,
+           <span class="function">echo</span> und Konsorten kommen, sofort auf die Ausgabe geschrieben werden
+           und nicht in einem Puffer gecacht werden. Sie können jedoch immer noch
+           <a href="ref.outcontrol.html" class="link">output buffering</a> benutzen, wenn Sie die Standardausgabe
+           aufschieben oder manipulieren wollen.
+          </td>
+         </tr>
+
+         <tr>
+          <td><a href="info.configuration.html#ini.max-execution-time" class="link">max_execution_time</a></td>
+          <td>0 (unendlich)</td>
+          <td>
+           Da die Anwendungsbereiche von Kommandozeilenanwendungen deutlich unterschiedlicher
+           sind als die von Web-Applikationen und da diese oft lange Laufzeiten besitzen, wird
+           die maximale Ausführungszeit auf unendlich gesetzt.
+           Wegen der unendlichen Möglichkeiten, PHP in
+          </td>
+         </tr>
+
+         <tr>
+          <td><a href="ini.core.html#ini.register-argc-argv" class="link">register_argc_argv</a></td>
+          <td><strong><code>TRUE</code></strong></td>
+          <td>
+           <p class="para">
+            Weil diese Einstellung auf <strong><code>TRUE</code></strong> gesetzt ist, werden Scripte die über die
+            <acronym class="acronym">CLI</acronym> <acronym class="acronym">SAPI</acronym> ausgeführt werden, immer Zugriff auf <em class="emphasis">argc</em>
+            (Anzahl der Argumente, die der Anwendung übergeben wurden) und <em class="emphasis">argv</em>
+            (Array der eigentlichen Argumente) haben.
+           </p>
+           <p class="para">
+            Die PHP-Variablen <var class="varname">$argc</var> und <var class="varname">$argv</var> werden
+            automatisch mit den entsprechenden Werten gefüllt, wenn die <acronym class="acronym">CLI</acronym>
+            <acronym class="acronym">SAPI</acronym> benutzt wird. Diese Werte können auch in dem
+            <var class="varname">$_SERVER</var> Array gefunden werden, beispielsweise:
+            <var class="varname">$_SERVER[&#039;argv&#039;]</var>.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td><a href="outcontrol.configuration.html#ini.output-buffering" class="link">output_buffering</a></td>
+          <td><strong><code>FALSE</code></strong></td>
+          <td>
+           <p class="para">
+            Auch wenn die <var class="filename">php.ini</var> Option fest auf <strong><code>FALSE</code></strong> gesetzt ist, sind dennoch die
+            <a href="book.outcontrol.html" class="link">Output buffering</a> Funktionen verfügbar.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td><a href="info.configuration.html#ini.max-input-time" class="link">max_input_time</a></td>
+          <td><strong><code>FALSE</code></strong></td>
+          <td>
+           <p class="para">
+            Die PHP <acronym class="acronym">CLI</acronym> unterstützt GET, POST und File Uploads nicht.
+           </p>
+          </td>
+         </tr>
+
+        </tbody>
+       
+      </table>
+
+     </p>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <p class="para">
+       Diese Direktiven können nicht mit einem anderen Wert aus der
+       Konfigurationsdatei <var class="filename">php.ini</var> oder einer eigenen (falls angegeben)
+       initialisiert werden. Diese Einschränkung ergibt sich dadurch, dass diese
+       Standardwerte angewandt werden, nachdem alle Konfigurationsdateien
+       gelesen wurden. Dennoch können die Werte zur Laufzeit verändert werden
+       (was aber nicht für alle dieser Direktiven einen Sinn ergibt, beispielsweise
+       <a href="ini.core.html#ini.register-argc-argv" class="link">register_argc_argv</a>).
+      </p>
+     </p></blockquote>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <p class="para">
+       Es wird empfohlen <a href="misc.configuration.html#ini.ignore-user-abort" class="link">ignore_user_abort</a>
+       für Kommandozeilenanwendungen zu setzen. Siehe <span class="function">ignore_user_abort</span>
+       für weitere Informationen.
+      </p>
+     </p></blockquote>
+    </li>
+    
+    <li class="listitem">
+     <p class="para">
+      Um die Arbeit in der Kommandozeilenumgebung zu erleichtern, wurden einige
+      Konstanten für <a href="features.commandline.io-streams.html" class="link">Ein- und
+      Ausgabestreams</a> definiert.
+     </p>
+    </li>
+    
+    <li class="listitem">
+     <p class="para">
+      Die <acronym class="acronym">CLI</acronym> <acronym class="acronym">SAPI</acronym> ändert das aktuelle Arbeitsverzeichnis <em class="emphasis">nicht</em>
+      zu dem Verzeichnis des ausgeführten Skripts.
+     </p>
+     <div class="example" id="example-382">
+      <p><strong>Beispiel #1 
+       Beispiel, welches den Unterschied zu der <acronym class="acronym">CGI</acronym>
+       <acronym class="acronym">SAPI</acronym> verdeutlicht:
+      </strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Unsere&nbsp;einfache&nbsp;Anwendung&nbsp;namens&nbsp;test.php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">getcwd</span><span style="color: #007700">(),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      <div class="example-contents"><p>
+       Bei der <acronym class="acronym">CGI</acronym>-Version ist die Ausgabe folgende:
+      </p></div>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+$ pwd
+/tmp
+
+$ php -q another_directory/test.php
+/tmp/another_directory
+</pre></div>
+      </div>
+      <div class="example-contents"><p>
+       Dies zeigt deutlich, dass PHP das aktuelle Verzeichnis auf
+       das des ausgeführten Skriptes ändert.
+      </p></div>
+      <div class="example-contents"><p>
+       Nutzung der <acronym class="acronym">CLI</acronym> <acronym class="acronym">SAPI</acronym> führt zu folgender Ausgabe:
+      </p></div>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+$ pwd
+/tmp
+
+$ php -f another_directory/test.php
+/tmp
+</pre></div>
+      </div>
+      <div class="example-contents"><p>
+       Dies ermöglicht eine größere Flexibilität beim Erstellen von
+       Kommandozeilenanwendungen in PHP.
+      </p></div>
+     </div>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <p class="para">
+       Die <acronym class="acronym">CGI</acronym> <acronym class="acronym">SAPI</acronym> unterstützt das
+       Verhalten der <acronym class="acronym">CLI</acronym> <acronym class="acronym">SAPI</acronym> durch Angabe der Option <strong class="option unknown">-C</strong>
+
+       beim Starten von der Kommandozeile.
+      </p>
+     </p></blockquote>
+    </li>
+   </ul>
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

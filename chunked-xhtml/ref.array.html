@@ -1,0 +1,821 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Array Funktionen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li class="header up"><a href="book.array.html">Arrays</a></li>
+  <li><a href="intro.array.html">Einf&uuml;hrung</a></li>
+  <li><a href="array.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="array.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="array.sorting.html">Sorting Arrays</a></li>
+  <li class="active"><a href="ref.array.html">Array Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="array.sorting.html">Sorting Arrays</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.array-change-key-case.html">array_change_key_case</a></div>
+                <div class="up"><a href="book.array.html">Arrays</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="ref.array" class="reference">
+ <h1 class="title">Array Funktionen</h1>
+ <div class="partintro">
+   <h1 class="title">Siehe auch</h1>
+   <p class="para">
+    Siehe auch <span class="function">is_array</span>, <span class="function">explode</span>,
+    <span class="function">implode</span>, <span class="function">split</span>,
+    <span class="function">preg_split</span> und <span class="function">unset</span>.
+   </p>
+ </div>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_reference">
+<li><a href="function.array-change-key-case.html">array_change_key_case</a> — &Auml;ndert die Gro&szlig;- oder Kleinschreibung aller Schl&uuml;ssel in einem Array</li>
+<li><a href="function.array-chunk.html">array_chunk</a> — Splittet ein Array in Teile auf</li>
+<li><a href="function.array-column.html">array_column</a> — Return the values from a single column in the input array</li>
+<li><a href="function.array-combine.html">array_combine</a> — Erzeugt ein Array, indem es ein Array f&uuml;r die Schl&uuml;ssel und ein
+     anderes f&uuml;r die Werte verwendet</li>
+<li><a href="function.array-count-values.html">array_count_values</a> — Z&auml;hlt die Werte eines Arrays</li>
+<li><a href="function.array-diff-assoc.html">array_diff_assoc</a> — Berechnet den Unterschied zwischen Arrays mit zus&auml;tzlicher
+   Indexpr&uuml;fung</li>
+<li><a href="function.array-diff-key.html">array_diff_key</a> — Berechnet den Unterschied zwischen Arrays, indem es die Schl&uuml;ssel vergleicht</li>
+<li><a href="function.array-diff-uassoc.html">array_diff_uassoc</a> — Berechnet den Unterschied von Arrays mit zus&auml;tzlicher Indexpr&uuml;fung, welche durch eine benutzerdefinierte Callback-Funktion vorgenommen wird</li>
+<li><a href="function.array-diff-ukey.html">array_diff_ukey</a> — Berechnet den Unterschied zwischen Arrays mittels einer Callbackfunktion
+     f&uuml;r den Vergleich der Schl&uuml;ssel</li>
+<li><a href="function.array-diff.html">array_diff</a> — Ermittelt die Unterschiede zwischen Arrays</li>
+<li><a href="function.array-fill-keys.html">array_fill_keys</a> — Bef&uuml;llt ein Array mit Werten mit den &uuml;bergebenen Schl&uuml;sseln</li>
+<li><a href="function.array-fill.html">array_fill</a> — F&uuml;llt ein Array mit Werten</li>
+<li><a href="function.array-filter.html">array_filter</a> — Filtert Elemente eines Arrays mittels einer Callback-Funktion</li>
+<li><a href="function.array-flip.html">array_flip</a> — Vertauscht alle Schl&uuml;ssel mit ihren zugeh&ouml;rigen Werten in einem Array</li>
+<li><a href="function.array-intersect-assoc.html">array_intersect_assoc</a> — Ermittelt die Schnittmenge von Arrays mit Indexpr&uuml;fung</li>
+<li><a href="function.array-intersect-key.html">array_intersect_key</a> — Ermittelt die Schnittmenge von Arrays, indem es die 
+     Schl&uuml;ssel vergleicht</li>
+<li><a href="function.array-intersect-uassoc.html">array_intersect_uassoc</a> — Ermittelt die Schnittmenge von Arrays mit Indexpr&uuml;fung;
+  vergleicht Indizes mit einer Callbackfunktion</li>
+<li><a href="function.array-intersect-ukey.html">array_intersect_ukey</a> — Ermittelt die Schnittmenge zweier Arrays mittels eines durch eine
+  Callbackfunktion durchgef&uuml;hrten Schl&uuml;sselvergleiches</li>
+<li><a href="function.array-intersect.html">array_intersect</a> — Ermittelt die Schnittmenge von Arrays</li>
+<li><a href="function.array-key-exists.html">array_key_exists</a> — Pr&uuml;ft, ob ein Schl&uuml;ssel in einem Array existiert</li>
+<li><a href="function.array-keys.html">array_keys</a> — Liefert alle Schl&uuml;ssel oder eine Teilmenge aller Schl&uuml;ssel eines Arrays</li>
+<li><a href="function.array-map.html">array_map</a> — Wendet eine Callback-Funktion auf die Elemente von Arrays an</li>
+<li><a href="function.array-merge-recursive.html">array_merge_recursive</a> — F&uuml;hrt ein oder mehrere Arrays rekursiv zusammen</li>
+<li><a href="function.array-merge.html">array_merge</a> — F&uuml;hrt zwei oder mehr Arrays zusammen</li>
+<li><a href="function.array-multisort.html">array_multisort</a> — Sortiert mehrere oder multidimensionale Arrays</li>
+<li><a href="function.array-pad.html">array_pad</a> — F&uuml;llt ein Array bis auf die angegebene L&auml;nge mit einem Wert auf</li>
+<li><a href="function.array-pop.html">array_pop</a> — Liefert und entfernt das letzte Element eines Arrays</li>
+<li><a href="function.array-product.html">array_product</a> — Ermittelt das Produkt von Werten in einem Array</li>
+<li><a href="function.array-push.html">array_push</a> — F&uuml;gt ein oder mehr Elemente an das Ende eines Arrays an</li>
+<li><a href="function.array-rand.html">array_rand</a> — Liefert einen oder mehrere zuf&auml;llige Eintr&auml;ge eines Arrays</li>
+<li><a href="function.array-reduce.html">array_reduce</a> — Iterative Reduktion eines Arrays zu einem Wert mittels einer
+     Callbackfunktion</li>
+<li><a href="function.array-replace-recursive.html">array_replace_recursive</a> — Replaces elements from passed arrays into the first array recursively</li>
+<li><a href="function.array-replace.html">array_replace</a> — Ersetzt Elemente von &uuml;bergebenen Arrays im ersten Array</li>
+<li><a href="function.array-reverse.html">array_reverse</a> — Liefert ein Array mit umgekehrter Reihenfolge der Elemente</li>
+<li><a href="function.array-search.html">array_search</a> — Durchsucht ein Array nach einem Wert und liefert bei Erfolg den
+     zugeh&ouml;rigen Schl&uuml;ssel</li>
+<li><a href="function.array-shift.html">array_shift</a> — Liefert und entfernt das erste Element eines Arrays</li>
+<li><a href="function.array-slice.html">array_slice</a> — Extrahiert einen Ausschnitt eines Arrays</li>
+<li><a href="function.array-splice.html">array_splice</a> — Entfernt einen Teil eines Arrays und ersetzt ihn durch etwas
+   anderes</li>
+<li><a href="function.array-sum.html">array_sum</a> — Liefert die Summe der Werte in einem Array</li>
+<li><a href="function.array-udiff-assoc.html">array_udiff_assoc</a> — Ermittelt den Unterschied zwischen Arrays mit zus&auml;tzlicher
+   Indexpr&uuml;fung, vergleicht mittels einer Callbackfunktion</li>
+<li><a href="function.array-udiff-uassoc.html">array_udiff_uassoc</a> — Ermittelt den Unterschied zwischen Arrays mit zus&auml;tzlicher Indexpr&uuml;fung,
+   vergleicht Daten und Indizes mittels einer Callbackfunktion</li>
+<li><a href="function.array-udiff.html">array_udiff</a> — Ermittelt den Unterschied zwischen Arrays mittels einer Callbackfunktion f&uuml;r
+   den Datenvergleich</li>
+<li><a href="function.array-uintersect-assoc.html">array_uintersect_assoc</a> — Ermittelt die Schnittmenge von Arrays mit zus&auml;tzlicher Indexpr&uuml;fung, vergleicht Daten mittels einer Callbackfunktion</li>
+<li><a href="function.array-uintersect-uassoc.html">array_uintersect_uassoc</a> — Ermittelt die Schnittmenge von Arrays mit zus&auml;tzlicher Indexpr&uuml;fung, vergleicht Daten und Schl&uuml;ssel mittels separaten Callbackfunktionen</li>
+<li><a href="function.array-uintersect.html">array_uintersect</a> — Ermittelt die Schnittmenge von Arrays, vergleicht Daten mittels einer Callbackfunktion</li>
+<li><a href="function.array-unique.html">array_unique</a> — Entfernt doppelte Werte aus einem Array</li>
+<li><a href="function.array-unshift.html">array_unshift</a> — F&uuml;gt ein oder mehr Elemente am Anfang eines Arrays ein</li>
+<li><a href="function.array-values.html">array_values</a> — Liefert alle Werte eines Arrays</li>
+<li><a href="function.array-walk-recursive.html">array_walk_recursive</a> — Wendet eine Benutzerfunktion rekursiv auf jedes Element eines 
+   Arrays an</li>
+<li><a href="function.array-walk.html">array_walk</a> — Wendet eine vom Benutzer gelieferte Funktion auf jedes Element eines Arrays an</li>
+<li><a href="function.array.html">array</a> — Erstellt ein Array</li>
+<li><a href="function.arsort.html">arsort</a> — Sortiert ein Array in umgekehrter Reihenfolge und erh&auml;lt die
+   Index-Assoziation</li>
+<li><a href="function.asort.html">asort</a> — Sortiert ein Array und erh&auml;lt die Index-Assoziation</li>
+<li><a href="function.compact.html">compact</a> — Erstellt ein Array mit Variablen und deren Werten</li>
+<li><a href="function.count.html">count</a> — Z&auml;hlt alle Elemente eines Arrays oder etwas in einem Objekt</li>
+<li><a href="function.current.html">current</a> — Liefert das aktuelle Element eines Arrays</li>
+<li><a href="function.each.html">each</a> — Liefert das aktuelle Paar (Schl&uuml;ssel und Wert) eines Arrays und
+  r&uuml;ckt den Arrayzeiger vor</li>
+<li><a href="function.end.html">end</a> — Positioniert den internen Zeiger eines Arrays auf dessen letztes Element</li>
+<li><a href="function.extract.html">extract</a> — Importiert Variablen eines Arrays in die aktuelle Symboltabelle</li>
+<li><a href="function.in-array.html">in_array</a> — Pr&uuml;ft, ob ein Wert in einem Array existiert</li>
+<li><a href="function.key-exists.html">key_exists</a> — Alias von array_key_exists</li>
+<li><a href="function.key.html">key</a> — Liefert einen Schl&uuml;ssel eines Arrays</li>
+<li><a href="function.krsort.html">krsort</a> — Sortiert ein Array nach Schl&uuml;sseln in umgekehrter Reihenfolge</li>
+<li><a href="function.ksort.html">ksort</a> — Sortiert ein Array nach Schl&uuml;sseln</li>
+<li><a href="function.list.html">list</a> — Weist Variablen zu, als w&auml;ren sie ein Array</li>
+<li><a href="function.natcasesort.html">natcasesort</a> — Sortiert ein Array in &quot;nat&uuml;rlicher Reihenfolge&quot;, Gro&szlig;/Kleinschreibung wird
+   ignoriert</li>
+<li><a href="function.natsort.html">natsort</a> — Sortiert ein Array in &quot;nat&uuml;rlicher Reihenfolge&quot;</li>
+<li><a href="function.next.html">next</a> — R&uuml;ckt den internen Zeiger eines Arrays vor</li>
+<li><a href="function.pos.html">pos</a> — Alias von current</li>
+<li><a href="function.prev.html">prev</a> — Setzt den internen Zeiger eines Arrays um ein Element zur&uuml;ck</li>
+<li><a href="function.range.html">range</a> — Erstellt ein Array mit einem Bereich von Elementen</li>
+<li><a href="function.reset.html">reset</a> — Setzt den internen Zeiger eines Arrays auf sein erstes Element</li>
+<li><a href="function.rsort.html">rsort</a> — Sortiert ein Array in umgekehrter Reihenfolge</li>
+<li><a href="function.shuffle.html">shuffle</a> — Mischt die Elemente eines Arrays</li>
+<li><a href="function.sizeof.html">sizeof</a> — Alias von count</li>
+<li><a href="function.sort.html">sort</a> — Sortiert ein Array</li>
+<li><a href="function.uasort.html">uasort</a> — Sortiert ein Array mittels einer benutzerdefinierten
+  Vergleichsfunktion und beh&auml;lt Indexassoziationen bei</li>
+<li><a href="function.uksort.html">uksort</a> — Sortiert ein Array nach Schl&uuml;sseln mittels einer
+   benutzerdefinierten Vergleichsfunktion</li>
+<li><a href="function.usort.html">usort</a> — Sortiert ein Array nach Werten mittels einer benutzerdefinierten
+   Vergleichsfunktion</li>
+</ul>
+</ol>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

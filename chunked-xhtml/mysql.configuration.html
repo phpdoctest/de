@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Laufzeit-Konfiguration</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="set.mysqlinfo.html">MySQL</a></li>
+  <li class="header up"><a href="book.mysql.html">MySQL (Original)</a></li>
+  <li class="header up"><a href="mysql.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="mysql.requirements.html">Anforderungen</a></li>
+  <li><a href="mysql.installation.html">Installation</a></li>
+  <li class="active"><a href="mysql.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="mysql.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="mysql.installation.html">Installation</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="mysql.resources.html">Ressource-Typen</a></div>
+                <div class="up"><a href="mysql.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="mysql.configuration" class="section">
+ <h2 class="title">Laufzeit-Konfiguration</h2>
+ <p class="simpara">Das Verhalten dieser Funktionen wird
+durch Einstellungen in der <var class="filename">php.ini</var> beeinflusst.</p>
+ <p class="para">
+  <table class="doctable table">
+   <caption><strong>MySQL Konfigurations-Optionen</strong></caption>
+   
+    <thead>
+     <tr>
+      <th>Name</th>
+      <th>Standard</th>
+      <th>Veränderbar</th>
+      <th>Changelog</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td><a href="mysql.configuration.html#ini.mysql.allow-local-infile" class="link">mysql.allow_local_infile</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="mysql.configuration.html#ini.mysql.allow-persistent" class="link">mysql.allow_persistent</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="mysql.configuration.html#ini.mysql.max-persistent" class="link">mysql.max_persistent</a></td>
+      <td>&quot;-1&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="mysql.configuration.html#ini.mysql.max-links" class="link">mysql.max_links</a></td>
+      <td>&quot;-1&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="mysql.configuration.html#ini.mysql.trace-mode" class="link">mysql.trace_mode</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar ab PHP 4.3.0.</td>
+     </tr>
+
+     <tr>
+     <td><a href="mysql.configuration.html#ini.mysql.default-port" class="link">mysql.default_port</a></td>
+      <td>NULL</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="mysql.configuration.html#ini.mysql.default-socket" class="link">mysql.default_socket</a></td>
+      <td>NULL</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar ab PHP 4.0.1.</td>
+     </tr>
+
+     <tr>
+      <td><a href="mysql.configuration.html#ini.mysql.default-host" class="link">mysql.default_host</a></td>
+      <td>NULL</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="mysql.configuration.html#ini.mysql.default-user" class="link">mysql.default_user</a></td>
+      <td>NULL</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="mysql.configuration.html#ini.mysql.default-password" class="link">mysql.default_password</a></td>
+      <td>NULL</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="mysql.configuration.html#ini.mysql.connect-timeout" class="link">mysql.connect_timeout</a></td>
+      <td>&quot;60&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>PHP_INI_SYSTEM in PHP &lt;= 4.3.2. Verfügbar ab PHP 4.3.0.</td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+  Weitere Details und die Definitionen der
+PHP_INI_*-Konstanten finden Sie im <a href="configuration.changes.modes.html" class="xref">Wo Konfigurationseinstellungen gesetzt werden k&ouml;nnen</a>.
+ </p>
+ 
+ <p class="para">Hier eine kurze Erklärung der
+Konfigurationsoptionen:</p>
+ 
+ <p class="para">
+ <dl>
+
+
+  
+   <dt id="ini.mysql.allow-local-infile">
+    <code class="parameter">mysql.allow_local_infile</code>
+    <span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Erlaubt den Zugriff auf (aus PHPs Sicht) lokale Dateien mit LOAD DATA
+     Anweisungen
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.mysql.allow-persistent">
+    <code class="parameter">mysql.allow_persistent</code>
+    <span class="type">boolean</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     gibt an, ob
+     <a href="features.persistent-connections.html" class="link">persistente
+     Verbindungen</a> zu MySQL gestattet werden sollen.
+    </p>
+   </dd>
+
+  
+  
+  
+   <dt id="ini.mysql.max-persistent">
+    <code class="parameter">mysql.max_persistent</code>
+    <span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Die maximale Anzahl von persistenten MySQL Verbindungen pro Prozess.
+    </p>
+   </dd>
+
+  
+  
+  
+   <dt id="ini.mysql.max-links">
+    <code class="parameter">mysql.max_links</code>
+    <span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Die maximale Anzahl von MySQL Verbindungen, einschließlich
+     persistenter, pro Prozess.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.mysql.trace-mode">
+    <code class="parameter">mysql.trace_mode</code>
+    <span class="type">boolean</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Falls <em>mysql.trace_mode</em> aktiviert ist, werden Warnungen
+     für Tabellen/Index Scans, nicht freigegebene Ergebnismengen und
+     SQL-Fehler angezeigt. (Eingeführt in PHP 4.3.0)
+    </p>
+   </dd>
+
+  
+
+   
+   <dt id="ini.mysql.default-port">
+    <code class="parameter">mysql.default_port</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Gibt die Portnummer an, über den die Verbindung zum MySQL-Server
+     aufgebaut werden soll, wenn kein Port als Verbindungsparameter
+     übergeben wurde.
+     Wird die Portnummer nicht angegeben, wird der Port über die 
+     <var class="envar">MYSQL_TCP_PORT</var> Umgebungsvariable, dem
+     <em>mysql-tcp</em> Eintrag aus der Datei
+     <var class="filename">/etc/services</var> oder der compile-time Konstanten
+     <strong><code>MYSQL_PORT</code></strong> festgelegt, in genau dieser Reihenfolge.
+     Win32 Systeme verwenden nur die Konstante <strong><code>MYSQL_PORT</code></strong>.
+    </p>
+   </dd>
+
+  
+  
+  
+   <dt id="ini.mysql.default-socket">
+    <code class="parameter">mysql.default_socket</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Legt den Socketnamen fest, der bei der Verbindung zu einem lokalen
+     Datenbankserver verwendet werden soll, wenn kein anderer Name angegeben
+     wurde.
+    </p>
+   </dd>
+
+  
+   
+   <dt id="ini.mysql.default-host">
+    <code class="parameter">mysql.default_host</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Legt den Datenbankserver fest, zu dem eine Verbindung aufgebaut
+     werden soll, wenn kein Server angegeben wurde. Diese Option
+     hat im <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">Safe Mode</a> keine Auswirkungen.
+    </p>
+   </dd>
+
+  
+  
+  
+   <dt id="ini.mysql.default-user">
+    <code class="parameter">mysql.default_user</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Legt den Benutzernamen fest, der bei einer Verbindung zu einer
+     Datenbank verwendet werden soll, wenn kein Benutzer angegeben wurde.
+     Diese Option hat im <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">Safe Mode</a> keine Auswirkungen.
+    </p>
+   </dd>
+
+  
+  
+  
+   <dt id="ini.mysql.default-password">
+    <code class="parameter">mysql.default_password</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Legt das Passwort fest, das bei einer Verbindung zu einer Datenbank
+     verwendet werden soll, wenn kein Passwort angegeben wurde.
+     Diese Option hat im <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">Safe Mode</a> keine Auswirkungen.
+    </p>
+   </dd>
+
+  
+   
+   <dt id="ini.mysql.connect-timeout">
+    <code class="parameter">mysql.connect_timeout</code>
+    <span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+   <p class="para">
+    Verbindungstimeout in Sekunden. Auf Linuxsystemen wird dieser Timeout
+    auch für die erste Antwort des Servers benutzt.
+   </p>
+   </dd>
+
+  
+  
+ </dl>
+
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

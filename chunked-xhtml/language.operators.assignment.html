@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Zuweisungsoperatoren</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.operators.html">Operatoren</a></li>
+  <li><a href="language.operators.precedence.html">Operator-Rangfolge</a></li>
+  <li><a href="language.operators.arithmetic.html">Arithmetische Operatoren</a></li>
+  <li class="active"><a href="language.operators.assignment.html">Zuweisungsoperatoren</a></li>
+  <li><a href="language.operators.bitwise.html">Bit-Operatoren</a></li>
+  <li><a href="language.operators.comparison.html">Vergleichs-Operatoren</a></li>
+  <li><a href="language.operators.errorcontrol.html">Fehler-Kontroll-Operatoren</a></li>
+  <li><a href="language.operators.execution.html">Operatoren zur Programmausf&uuml;hrung</a></li>
+  <li><a href="language.operators.increment.html">Inkrement- bzw. Dekrementoperatoren</a></li>
+  <li><a href="language.operators.logical.html">Logische Operatoren</a></li>
+  <li><a href="language.operators.string.html">Zeichenketten-Operatoren</a></li>
+  <li><a href="language.operators.array.html">Array-Operatoren</a></li>
+  <li><a href="language.operators.type.html">Typ Operatoren</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.operators.arithmetic.html">Arithmetische Operatoren</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.operators.bitwise.html">Bit-Operatoren</a></div>
+                <div class="up"><a href="language.operators.html">Operatoren</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.operators.assignment" class="sect1">
+   <h2 class="title">Zuweisungsoperatoren</h2>
+   <p class="simpara">
+    Der einfachste Zuweisungsoperator ist &quot;=&quot;. Wahrscheinlich kommt
+    man als erstes auf die Idee, ihn mit &quot;ist gleich&quot; zu bezeichnen.
+    Das ist falsch. In Wirklichkeit bedeutet er, dass dem linken
+    Operanden der Wert des Ausdrucks auf der rechten Seite zugewiesen
+    wird (man müsste ihn also mit &quot;wird gesetzt auf den Wert von&quot;
+    übersetzen).
+   </p>
+   <p class="para">
+    Der Wert eines Zuweisungs-Ausdruckes ist der zugewiesene Wert.
+    D.h. der Wert des Ausdruckes &quot;$a = 3&quot; ist 3. Das erlaubt es,
+    einige raffinierte Dinge anzustellen:
+    <div class="informalexample">
+     <div class="example-contents"> 
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$a&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">)&nbsp;+&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;$a&nbsp;ist&nbsp;nun&nbsp;gleich&nbsp;9&nbsp;und&nbsp;$b&nbsp;wurde&nbsp;auf&nbsp;den&nbsp;Wert&nbsp;4&nbsp;gesetzt.<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    Zusätzlich zu dem oben vorgestellten Zuweisungsoperator &quot;=&quot; gibt
+    es &quot;kombinierte Operatoren&quot; für alle
+    <a href="language.operators.html" class="link">binären, arithmetischen</a> und
+    String-Operatoren, die es erlauben, den Wert einer Variablen in
+    einem Ausdruck zu benutzen, und dieser anschließend das Ergebnis
+    des Ausdrucks als neuen Wert zuzuweisen. Zum Beispiel: 
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;setzt&nbsp;$a&nbsp;auf&nbsp;den&nbsp;Wert&nbsp;8,&nbsp;als&nbsp;ob&nbsp;wir&nbsp;geschrieben&nbsp;haetten:&nbsp;$a&nbsp;=&nbsp;$a&nbsp;+&nbsp;5;<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Hallo&nbsp;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"Du!"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;setzt&nbsp;$b&nbsp;auf&nbsp;den&nbsp;Wert&nbsp;"Hallo&nbsp;Du!",&nbsp;aequivalent&nbsp;zu&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;$b&nbsp;=&nbsp;$b&nbsp;.&nbsp;"Du!";<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+
+   <p class="para">
+    Man beachte, dass die Zuweisung nur den Wert der Ursprungsvariable
+    der neuen Variable zuweist (Zuweisung als Wert, sie &quot;kopiert&quot;),
+    weshalb sich Änderungen an der einen Variablen nicht auf die
+    andere auswirken werden. Das kann wichtig sein, wenn man ein
+    großes Array o. ä. in einer Schleife kopieren muss. Beginnend mit
+    PHP 4 wird &#039;assignement by reference&#039; (Zuweisung als Verweis),
+    mit Hilfe der Schreibweise <span class="computeroutput">$var =&amp;$othervar;</span> unterstützt , das 
+    funktioniert jedoch nicht in
+    PHP 3. &#039;Assignement by reference&#039; bedeutet, dass beide Variablen
+    nach der Zuweisung die selben Daten repräsentieren und nichts
+    kopiert wird. Um mehr über Referenzen zu lernen, lesen Sie bitte
+    den Abschnitt <a href="language.references.html" class="link">Referenzen
+    erklärt</a>.
+   </p>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

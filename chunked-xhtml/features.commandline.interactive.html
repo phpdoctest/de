@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Interaktiver Modus</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="features.html">Features</a></li>
+  <li class="header up"><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></li>
+  <li><a href="features.commandline.introduction.html">Introduction</a></li>
+  <li><a href="features.commandline.differences.html">Unterschiede zu anderen SAPIs</a></li>
+  <li><a href="features.commandline.options.html">Optionen</a></li>
+  <li><a href="features.commandline.usage.html">Nutzung</a></li>
+  <li><a href="features.commandline.io-streams.html">I/O Streams</a></li>
+  <li class="active"><a href="features.commandline.interactive.html">Interaktiver Modus</a></li>
+  <li><a href="features.commandline.webserver.html">Eingebauter Webserver</a></li>
+  <li><a href="features.commandline.ini.html">INI Einstellungen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="features.commandline.io-streams.html">I/O Streams</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="features.commandline.webserver.html">Eingebauter Webserver</a></div>
+                <div class="up"><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="features.commandline.interactive" class="section">
+  <h2 class="title">Interaktiver Modus</h2>
+  
+  <p class="para">
+   Seite PHP 5.1.0 bietet die <acronym class="acronym">CLI</acronym> <acronym class="acronym">SAPI</acronym> mit der <strong class="option unknown">-a</strong>
+ Option
+   eine interaktive Shell an, wenn PHP mit der <strong class="option configure">--with-readline</strong>
+ Option kompiliert wurde.
+  </p>
+  
+  <p class="para">
+   Mittels der interaktiven Shell können sie PHP code eingeben und direkt
+   ausführen lassen.
+  </p>
+  
+  <div class="example" id="example-397">
+   <p><strong>Beispiel #1 Ausführung von Code auf der interaktiven Shell</strong></p>
+   <div class="example-contents">
+<div class="shellcode"><pre class="shellcode">$ php -a
+Interactive shell
+
+php &gt; echo 5+8;
+13
+php &gt; function addTwo($n)
+php &gt; {
+php { return $n + 2;
+php { }
+php &gt; var_dump(addtwo(2));
+int(4)
+php &gt;</pre>
+</div>
+   </div>
+
+  </div>
+  
+  <p class="para">
+   Die interaktive Shell bietet ebenfalls Tab-Autovervollständigung für
+   Funktionen, Konstanten, Klassen, Variablen, statische Methoden und
+   Klassenkonstanten.
+  </p>
+  
+  <div class="example" id="example-398">
+   <p><strong>Beispiel #2 Tab-Autovervollständigung</strong></p>
+   <div class="example-contents"><p>
+    Zweimaliges Drücken der Tab-Taste im Falle mehrerer Möglichkeiten
+    führt zu einer Auflistung dieser Möglichkeiten:
+   </p></div>
+   <div class="example-contents">
+<div class="shellcode"><pre class="shellcode">php &gt; strp[TAB][TAB]
+strpbrk   strpos    strptime  
+php &gt; strp</pre>
+</div>
+   </div>
+
+   <div class="example-contents"><p>
+    Wenn es nur eine mögliche Vervollständigung gibt, führt ein einmaliges
+    Drücken der Tab-Taste zur Vervollständigung der Zeile:
+   </p></div>
+   <div class="example-contents">
+<div class="shellcode"><pre class="shellcode">php &gt; strpt[TAB]ime(</pre>
+</div>
+   </div>
+
+   <div class="example-contents"><p>
+    Autovervollständigung funktioniert auch für Namen, welche bereits während
+    dieser interaktiven Session definiert wurden:
+   </p></div>
+   <div class="example-contents">
+<div class="shellcode"><pre class="shellcode">php &gt; $fooThisIsAReallyLongVariableName = 42;
+php &gt; $foo[TAB]ThisIsAReallyLongVariableName</pre>
+</div>
+   </div>
+
+  </div>
+  
+  <p class="para">
+   Die interaktive Shell speichert den Verlauf von zuletzt eingegeben Zeilen. Auf diesen
+   kann mittels der Pfeiltasten zugegriffen werden. Er wird in der
+   <var class="filename">~/.php_history</var> Datei gespeichert.
+  </p>
+  
+  <p class="para">
+   Seit PHP 5.4.0 bietet die <acronym class="acronym">CLI</acronym> <acronym class="acronym">SAPI</acronym> die <var class="filename">php.ini</var> Optionen <code class="parameter">cli.pager</code>
+   und <code class="parameter">cli.prompt</code>. Die <code class="parameter">cli.pager</code>
+   Option erlaubt einem externen Programm (wie etwa <var class="filename">less</var>) als
+   Pager für die Ausgabe zu agieren, anstatt dass diese direkt ausgegeben wird.
+   Die <code class="parameter">cli.prompt</code> Option erlaubt das Ändern der
+   <em>php &gt;</em> Eingabeaufforderung.
+  </p>
+  
+  <p class="para">
+   Seit PHP 5.4.0 ist es auch möglich <var class="filename">php.ini</var> Optionen einfacher zu ändern.
+  </p>
+  
+  <div class="example" id="example-399">
+   <p><strong>Beispiel #3 Setzen von <var class="filename">php.ini</var> Optionen in der interaktiven Shell</strong></p>
+   <div class="example-contents"><p>
+    Die <code class="parameter">cli.prompt</code> Option:
+   </p></div>
+   <div class="example-contents">
+<div class="shellcode"><pre class="shellcode">php &gt; #cli.prompt=hello world :&gt; 
+hello world :&gt;</pre>
+</div>
+   </div>
+
+   <div class="example-contents"><p>
+    Mittels Backticks kann PHP Code in dem Präfix ausgeführt werden:
+   </p></div>
+   <div class="example-contents">
+<div class="shellcode"><pre class="shellcode">php &gt; #cli.prompt=`echo date(&#039;H:i:s&#039;);` php &gt; 
+15:49:35 php &gt; echo &#039;hi&#039;;
+hi
+15:49:43 php &gt; sleep(2);
+15:49:45 php &gt;</pre>
+</div>
+   </div>
+
+   <div class="example-contents"><p>
+    Setzen des Pagers auf <var class="filename">less</var>:
+   </p></div>
+   <div class="example-contents">
+<div class="shellcode"><pre class="shellcode">php &gt; #cli.pager=less
+php &gt; phpinfo();
+(output displayed in less)
+php &gt;</pre>
+</div>
+   </div>
+
+  </div>
+  
+  <p class="para">
+   Die <code class="parameter">cli.prompt</code> Option unterstützt einige
+   Escape-Sequenzen.
+   <table class="doctable table">
+    <caption><strong><code class="parameter">cli.prompt</code> Escape-Sequenzen</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Sequenzen</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><em>\e</em></td>
+       <td>
+        Wird benutzt um Farben zur Eingabeaufforderung hinzuzufügen. Ein
+        Beispiel: <em>\e[032m\v \e[031m\b \e[34m\&gt; \e[0m</em>
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>\v</em></td>
+       <td>Die PHP Version.</td>
+      </tr>
+
+      <tr>
+       <td><em>\b</em></td>
+       <td>
+        Gibt an, in welchem Block PHP sich befindet. Zum Beispiel gibt
+        <em>/*</em> an, dass man sich gerade in einem mehrzeiligen
+        Kommentar befindet. Der äußerste Block ist <em>php</em>.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>\&gt;</em></td>
+       <td>
+        Gibt das Eingabeaufforderungszeichen an. Standardmäßig ist dies
+        <em>&gt;</em>, ändert sich jedoch, wenn sich die Shell
+        innerhalb eines nicht beendeten Blocks oder Strings befindet.
+        Mögliche Buchstaben sind: <em>&#039; &quot; { ( &gt;</em>
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+  
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Dateien, die mit <a href="ini.core.html#ini.auto-prepend-file" class="link">auto_prepend_file</a> und
+    <a href="ini.core.html#ini.auto-append-file" class="link">auto_append_file</a> eingebunden wurden,
+    werden in diesem Modus mit einigen Einschränkungen geparset - Funktionen
+    müssen etwa vor dem Aufruf definiert werden.
+   </p>
+  </p></blockquote>
+  
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    <a href="language.oop5.autoload.html" class="link">Automatisches Laden (autoload)</a>
+    ist im interaktiven PHP <acronym class="acronym">CLI</acronym> Modus nicht verfügbar.
+   </p>
+  </p></blockquote>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

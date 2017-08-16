@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Erstellt ein neues DateInterval Objekt</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.calendar.html">Datums- und zeitrelevante Erweiterungen</a></li>
+  <li class="header up"><a href="book.datetime.html">Datum/Uhrzeit</a></li>
+  <li class="header up"><a href="class.dateinterval.html">DateInterval</a></li>
+  <li class="active"><a href="dateinterval.construct.html">DateInterval::__construct</a></li>
+  <li><a href="dateinterval.createfromdatestring.html">DateInterval::createFromDateString</a></li>
+  <li><a href="dateinterval.format.html">DateInterval::format</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="class.dateinterval.html">DateInterval</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="dateinterval.createfromdatestring.html">DateInterval::createFromDateString</a></div>
+                <div class="up"><a href="class.dateinterval.html">DateInterval</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="dateinterval.construct" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">DateInterval::__construct</h1>
+  <p class="refpurpose">Erstellt ein neues DateInterval Objekt</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-dateinterval.construct-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="constructorsynopsis dc-description">
+   <span class="modifier">public</span>  <span class="methodname">DateInterval::__construct</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$interval_spec</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Erstellt ein neues DateInterval Objekt.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-dateinterval.construct-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">interval_spec</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Eine Intervall Spezifikation
+      </p>
+      <p class="para">
+       Das Format beginnt mit dem Buchstaben <em>P</em>
+       für <q class="quote">period</q>.
+       Jede Periodendauer wird als Integer-Wert,
+       gefolgt von einem Perioden-Bezeichner, repräsentiert.
+       Enthält die Dauer Zeitelemente, steht diesem Teil der Spezifikation der Buchstabe
+       <em>T</em> voran.
+      </p>
+      <p class="para">
+       <table class="doctable table">
+        <caption><strong>
+         <code class="parameter">interval_spec</code> Perioden Bezeichner
+        </strong></caption>
+        
+         <thead>
+          <tr>
+           <th>Perioden Bezeichner</th>
+           <th>Beschreibung</th>
+          </tr>
+
+         </thead>
+
+         <tbody class="tbody">
+          <tr>
+           <td><em>Y</em></td>
+           <td>Jahre</td>
+          </tr>
+
+          <tr>
+           <td><em>M</em></td>
+           <td>Monate</td>
+          </tr>
+
+          <tr>
+           <td><em>D</em></td>
+           <td>Tage</td>
+          </tr>
+
+          <tr>
+           <td><em>W</em></td>
+           <td>
+            Wochen. Diese werden in Tage umgerechnet und
+            können daher nicht mit <em>D</em> kombiniert werden.
+           </td>
+          </tr>
+
+          <tr>
+           <td><em>H</em></td>
+           <td>Stunden</td>
+          </tr>
+
+          <tr>
+           <td><em>M</em></td>
+           <td>Minuten</td>
+          </tr>
+
+          <tr>
+           <td><em>S</em></td>
+           <td>Sekunden</td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
+      </p>
+      <p class="para">
+       Hier sind ein paar einfache Beispiele.
+       Zwei Tage sind <em>P2D</em>.
+       Zwei Sekunden sind <em>PT2S</em>.
+       Sechs Jahre und fünf Minuten ist <em>P6YT5M</em>.
+      </p>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+        Die Einheitstypen müssen von der größten Einheit von Links
+        zur kleinsten Einheit nach rechts angegeben werden.
+        Also Jahre vor Monate, Monate vor Tage,
+        Tage vor Minuten etc.
+        Also muss ein Jahr und vier Tage als <em>P1Y4D</em>
+        dargestellt werden, nicht als <em>P4D1Y</em>.
+       </p>
+      </p></blockquote>
+      <p class="para">
+       Die Spezifikation kann aber auch als Zeitstempel angegeben werden.
+       Ein Beispiel für ein Jahr und vier Tage wäre also
+       <em>P0001-00-04T00:00:00</em>.
+       Die Werte in diesem Format können allerdings den jeweiligen Übersprungspunkt
+       der Periode nicht überschreiten
+       (z.B. ist <em>25</em> Stunden ungültig).
+      </p>
+      <p class="para">
+       Diese Formate basieren auf der <a href="http://en.wikipedia.org/wiki/Iso8601#Durations" class="link external">&raquo;&nbsp;ISO 8601 Dauer-Spezifikation</a>.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-dateinterval.construct-errors">
+  <h3 class="title">Fehler/Exceptions</h3>
+  <p class="para">
+   Wirft eine <span class="classname">Exception</span>, wenn <code class="parameter">interval_spec</code>
+   nicht als Intervall geparst werden kann.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-dateinterval.construct-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-2483">
+    <p><strong>Beispiel #1 <span class="classname">DateInterval</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$interval&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'P2Y4DT6H8M'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$interval</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+object(DateInterval)#1 (8) {
+  [&quot;y&quot;]=&gt;
+  int(2)
+  [&quot;m&quot;]=&gt;
+  int(0)
+  [&quot;d&quot;]=&gt;
+  int(4)
+  [&quot;h&quot;]=&gt;
+  int(6)
+  [&quot;i&quot;]=&gt;
+  int(8)
+  [&quot;s&quot;]=&gt;
+  int(0)
+  [&quot;invert&quot;]=&gt;
+  int(0)
+  [&quot;days&quot;]=&gt;
+  bool(false)
+}
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-dateinterval.construct-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">DateInterval::format</span></li>
+    <li class="member"><span class="function">DateTime::add</span></li>
+    <li class="member"><span class="function">DateTime::sub</span></li>
+    <li class="member"><span class="function">DateTime::diff</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

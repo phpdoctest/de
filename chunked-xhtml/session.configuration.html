@@ -1,0 +1,1293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Laufzeit-Konfiguration</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.session.html">Session-Erweiterungen</a></li>
+  <li class="header up"><a href="book.session.html">Sessions</a></li>
+  <li class="header up"><a href="session.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="session.requirements.html">Anforderungen</a></li>
+  <li><a href="session.installation.html">Installation</a></li>
+  <li class="active"><a href="session.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="session.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="session.installation.html">Installation</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="session.resources.html">Ressource-Typen</a></div>
+                <div class="up"><a href="session.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="session.configuration" class="section">
+ <h2 class="title">Laufzeit-Konfiguration</h2>
+ <p class="simpara">Das Verhalten dieser Funktionen wird
+durch Einstellungen in der <var class="filename">php.ini</var> beeinflusst.</p>
+ <p class="para">
+  <table class="doctable table">
+   <caption><strong>Session-Konfigurationsoptionen</strong></caption>
+   
+    <thead>
+     <tr>
+     <th>Name</th>
+     <th>Standard</th>
+     <th>Veränderbar</th>
+     <th>Changelog</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td><a href="session.configuration.html#ini.session.save-path" class="link">session.save_path</a></td>
+      <td>&quot;&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.name" class="link">session.name</a></td>
+      <td>&quot;PHPSESSID&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.save-handler" class="link">session.save_handler</a></td>
+      <td>&quot;files&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.auto-start" class="link">session.auto_start</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_PERDIR</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.gc-probability" class="link">session.gc_probability</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.gc-divisor" class="link">session.gc_divisor</a></td>
+      <td>&quot;100&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Seit PHP 4.3.2 verfügbar.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.gc-maxlifetime" class="link">session.gc_maxlifetime</a></td>
+      <td>&quot;1440&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.serialize-handler" class="link">session.serialize_handler</a></td>
+      <td>&quot;php&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.cookie-lifetime" class="link">session.cookie_lifetime</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.cookie-path" class="link">session.cookie_path</a></td>
+      <td>&quot;/&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.cookie-domain" class="link">session.cookie_domain</a></td>
+      <td>&quot;&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.cookie-secure" class="link">session.cookie_secure</a></td>
+      <td>&quot;&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Seit PHP 4.0.4 verfügbar.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.cookie-httponly" class="link">session.cookie_httponly</a></td>
+      <td>&quot;&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Seit PHP 5.2.0 verfügbar.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.use-strict-mode" class="link">session.use_strict_mode</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Seit PHP 5.5.2 verfügbar.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.use-cookies" class="link">session.use_cookies</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.use-only-cookies" class="link">session.use_only_cookies</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Seit PHP 4.3.0 verfügbar.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.referer-check" class="link">session.referer_check</a></td>
+      <td>&quot;&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.entropy-file" class="link">session.entropy_file</a></td>
+      <td>&quot;&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Entfernt in PHP 7.1.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.entropy-length" class="link">session.entropy_length</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Entfernt in PHP 7.1.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.cache-limiter" class="link">session.cache_limiter</a></td>
+      <td>&quot;nocache&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.cache-expire" class="link">session.cache_expire</a></td>
+      <td>&quot;180&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.use-trans-sid" class="link">session.use_trans_sid</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>
+       PHP_INI_ALL in PHP &lt;= 4.2.3. PHP_INI_PERDIR in PHP &lt; 5. Seit PHP
+       4.0.3 verfügbar.
+      </td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.trans-sid-tags" class="link">session.trans_sid_tags</a></td>
+      <td>&quot;a=href,area=href,frame=src,form=&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 7.1.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.trans-sid-hosts" class="link">session.trans_sid_hosts</a></td>
+      <td><em>$_SERVER[&#039;HTTP_HOST&#039;]</em></td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 7.1.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="outcontrol.configuration.html#ini.url-rewriter.tags" class="link">url_rewriter.tags</a></td>
+      <td>&quot;a=href,area=href,frame=src,form=&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 4.0.4. Ab PHP 7.1.0 wird diese INI Einstellung nicht länger für die Session verwendet.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.bug-compat-42" class="link">session.bug_compat_42</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Seit PHP 4.3.0 verfügbar. Entfernt in PHP 5.4.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.bug-compat-warn" class="link">session.bug_compat_warn</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Seit PHP 4.3.0 verfügbar. Entfernt in PHP 5.4.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.sid-length" class="link">session.sid_length</a></td>
+      <td>&quot;32&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 7.1.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.sid-bits-per-character" class="link">session.sid_bits_per_character</a></td>
+      <td>&quot;5&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 7.1.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.hash-function" class="link">session.hash_function</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Seit PHP 5.0.0 verfügbar. Entfernt in PHP 7.1.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.hash-bits-per-character" class="link">session.hash_bits_per_character</a></td>
+      <td>&quot;4&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Seit PHP 5.0.0 verfügbar. Entfernt in PHP 7.1.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.upload-progress.enabled" class="link">session.upload_progress.enabled</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_PERDIR</td>
+      <td>Seit PHP 5.4.0 verfügbar.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.upload-progress.cleanup" class="link">session.upload_progress.cleanup</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_PERDIR</td>
+      <td>Seit PHP 5.4.0 verfügbar.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.upload-progress.prefix" class="link">session.upload_progress.prefix</a></td>
+      <td>&quot;upload_progress_&quot;</td>
+      <td>PHP_INI_PERDIR</td>
+      <td>Seit PHP 5.4.0 verfügbar.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.upload-progress.name" class="link">session.upload_progress.name</a></td>
+      <td>&quot;PHP_SESSION_UPLOAD_PROGRESS&quot;</td>
+      <td>PHP_INI_PERDIR</td>
+      <td>Seit PHP 5.4.0 verfügbar.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.upload-progress.freq" class="link">session.upload_progress.freq</a></td>
+      <td>&quot;1%&quot;</td>
+      <td>PHP_INI_PERDIR</td>
+      <td>Seit PHP 5.4.0 verfügbar.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.upload-progress.min-freq" class="link">session.upload_progress.min_freq</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_PERDIR</td>
+      <td>Seit PHP 5.4.0 verfügbar.</td>
+     </tr>
+
+     <tr>
+      <td><a href="session.configuration.html#ini.session.lazy-write" class="link">session.lazy_write</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Seit PHP 7.0.0 verfügbar.</td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+  Weitere Details und die Definitionen der
+PHP_INI_*-Konstanten finden Sie im <a href="configuration.changes.modes.html" class="xref">Wo Konfigurationseinstellungen gesetzt werden k&ouml;nnen</a>.
+ </p>
+ <p class="para">
+  Das Sessionmanagementsystem unterstützt eine Anzahl von
+  Konfigurationsoptionen, die in der <var class="filename">php.ini</var> gesetzt werden können. Wir
+  geben dazu einen kleinen Überblick.
+  <dl>
+
+
+   
+    <dt id="ini.session.save-handler">
+     <code class="parameter">session.save_handler</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.save_handler</em> definiert den Namen der
+      Routine, die benutzt wird, um die Daten zu speichern und abzurufen, die
+      mit der Session in Verbindung stehen. Grundeinstellung
+      <em>files</em>. Zu beachten ist, dass einzelne Erweiterungen
+      ihre eigenen <em>save_handler</em> registrieren können. Welche
+      Routinen registriert sind, kann auf Basis der jeweiligen Installation
+      mit <span class="function">phpinfo</span> ermittelt werden. Siehe auch
+      <span class="function">session_set_save_handler</span>.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.save-path">
+     <code class="parameter">session.save_path</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.save_path</em> definiert das Argument, das an die
+      Speicherroutine übergeben wird. Wenn Sie die standardmäßige
+      files-Routine wählen, ist das der Pfad, unter dem die Dateien erzeugt
+      werden. Siehe auch <span class="function">session_save_path</span>.
+     </span>
+     <p class="para">
+      Für diese Anweisung gibt es ein optionales Argument
+      <em>N</em>, das die Anzahl der Verzeichnisebenen bestimmt,
+      über welche die Session-Dateien verteilt werden. Wird sie zum Beispiel
+      auf <em>&#039;5;/tmp&#039;</em> gesetzt, kann das das Anlegen einer
+      Session-Datei und Speicherstelle wie
+      <em>/tmp/4/b/1/e/3/sess_4b1e384ad74619bd212e236e52a5a174If</em>
+      bewirken. Um <em>N</em> verwenden zu können, müssen alle diese
+      Verzeichnisse vorher angelegt werden. In
+      <var class="filename">ext/session</var> gibt es für diesen Zweck ein kleines
+      Shell-Script namens <var class="filename">mod_files.sh</var> und eine Version
+      für Windows namens <var class="filename">mod_files.bat</var>. Zu beachten ist,
+      dass die automatische Speicherbereinigung (garbage collection) nicht
+      durchgeführt wird, wenn <em>N</em> verwendet wird und größer 0
+      ist (für weitere Informationen siehe eine Kopie der <var class="filename">php.ini</var>). Außerdem
+      muss bei der Verwendung von <em>N</em> beachtet werden, dass
+      <em>session.save_path</em> zwischen Anführungsstriche gesestzt
+      wird, weil der Trenner (<em>;</em>) in der <var class="filename">php.ini</var> auch für
+      Kommentare benutzt wird.
+     </p>
+     <p class="para">
+      Standardmäßig erzeugt die files-Speicherroutine Dateien mit dem Modus
+      600. Dieser Wert kann mit dem optionalen Argument
+      <em>MODE</em> geändert werden:
+      <em>N;MODE;/pfad</em>, wobei <em>MODE</em> die
+      oktale Darstellung des Modus ist. Die Angabe von <em>MODE</em>
+      hat keine Auswirkungen auf den Prozess umask.
+     </p>
+     <div class="warning"><strong class="warning">Warnung</strong>
+      <p class="para">
+       Wenn ein Verzeichnis gewählt wurde, für das jeder Leserechte hat, wie
+       das z.B. bei <var class="filename">/tmp</var> (Grundeinstellung) der Fall ist,
+       könnten andere Serverbenutzer mit Hilfe der Dateiliste dieses
+       Verzeichnisses die Sessions entführen.
+      </p>
+     </div>
+     <div class="caution"><strong class="caution">Achtung</strong>
+      <p class="para">
+       Wird das optionale Argument <em>N</em> für die
+       Verzeichnisebenen wie oben beschrieben verwendet, ist zu beachten, dass
+       ein Wert größer als 1 oder 2 wegen der großen Anzahl an benötigten
+       Verzeichnissen für die meisten Websites unangemessen ist: z.B. bedeutet
+       ein Wert von 3, dass <em>64^3</em> Verzeichnisse im
+       Dateisystem existieren, was eine große Verschwendung an Speicher und
+       Inodes zur Folge haben kann.
+      </p>
+      <p class="para">
+       Verwenden Sie <em>N</em> größer als 2 nur, wenn Sie absolut
+       sicher sind, dass Ihre Website so groß ist, dass Sie es benötigen.
+      </p>
+     </div>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <span class="simpara">
+       Vor PHP 4.3.6 mussten Benutzer von Windows diese Variable ändern, um
+       die Session-Funktionen von PHP nutzen zu können. Es muss ein gültiger
+       Pfad, z.B. <var class="filename">c:/temp</var>, angegeben werden.
+      </span>
+     </p></blockquote>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.name">
+     <code class="parameter">session.name</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.name</em> definiert den Namen der Session, der als
+      Cookie-Name verwendet wird. Grundeinstellung
+      <em>PHPSESSID</em>. Siehe auch
+      <span class="function">session_name</span>.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.auto-start">
+     <code class="parameter">session.auto_start</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.auto_start</em> definiert, ob das Session-Modul zu
+      Beginn einer Anfrage automatisch eine Session startet. Grundeinstellung
+      <em>0</em> (deaktiviert).
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.serialize-handler">
+     <code class="parameter">session.serialize_handler</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.serialize_handler</em> definiert den Namen der
+      Routine, die benutzt wird, um Daten zu serialisieren/deserialisieren.
+      Unterstützt werden das PHP-Serialisierungsformat (Name
+      <em>php_serialize</em>), die internen PHP-Formate (Namen
+      <em>php</em> und <em>php_binary</em>) und WDDX (Name
+      <em>wddx</em>). WDDX steht nur zur Verfügung, wenn PHP mit
+      <a href="ref.wddx.html" class="link">WDDX support</a> kompiliert wurde.
+      <em>php_serialize</em> steht ab PHP 5.5.4. zur Verfügung.
+      <em>php_serialize</em> verwendet intern die einfachen
+      serialize/unserialize-Funktionen und hat nicht die Einschränkungen, die
+      <em>php</em> und <em>php_binary</em> haben. Ältere
+      Serialisierungsroutinen können aus $_SESSION weder numerische Indizes
+      speichern, noch alphanumerische Indizes, die Sonderzeichen
+      (<em>|</em> und <em>!</em>) enthalten. Verwenden Sie
+      <em>php_serialize</em> um Fehler wegen solcher Indizes am Ende
+      des Skripts zu vermeiden. Grundeinstellung <em>php</em>.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.gc-probability">
+     <code class="parameter">session.gc_probability</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.gc_probability</em> wird in Verbindung mit
+      <em>session.gc_divisor</em> dazu verwendet, die
+      Wahrscheinlichkeit zu regeln, mit der die gc-Routine (gc=garbage
+      collection, Speicherbereinigung) gestartet wird. Grundeinstellung
+      <em>1</em>. Siehe auch <a href="session.configuration.html#ini.session.gc-divisor" class="link">session.gc_divisor</a>.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.gc-divisor">
+     <code class="parameter">session.gc_divisor</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.gc_divisor</em> definiert gekoppelt mit
+      <em>session.gc_probability</em> die Wahrscheinlichkeit, mit
+      der die gc-Routine (gc=garbage collection, Speicherbereinigung) bei
+      jeder Initialisierung einer Session gestartet wird. Die
+      Wahrscheinlichkeit errechnet sich aus gc_probability/gc_divisor. 1/100
+      bedeutet z.B., dass die gc-Routine bei jeder Anfrage mit einer
+      Wahrscheinlichkeit von 1% gestartet wird. Grundeinstellung
+      <em>100</em>.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.gc-maxlifetime">
+     <code class="parameter">session.gc_maxlifetime</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.gc_maxlifetime</em> definiert die Anzahl der
+      Sekunden, nach denen Daten als &#039;garbage&#039; (&#039;Müll&#039;) betrachtet und
+      möglicherweise entsorgt werden. Die Speicherbereinigung kann zu Beginn
+      einer Session durchgeführt werden (abhängig von <a href="session.configuration.html#ini.session.gc-probability" class="link">session.gc_probability</a> und
+      <a href="session.configuration.html#ini.session.gc-divisor" class="link">session.gc_divisor</a>).
+     </span>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <span class="simpara">
+       Falls sich der Wert von <em>session.gc_maxlifetime</em> in
+       verschiedenen Skripten unterscheidet, aber sie die Sessiondaten an der
+       selben Stelle speichern, löscht das Skript mit dem kleinsten Wert die
+       Daten. Verwenden Sie die Anweisung in diesem Fall zusammen mit der
+       Anweisung <a href="session.configuration.html#ini.session.save-path" class="link">session.save_path</a>.
+      </span>
+     </p></blockquote>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.referer-check">
+     <code class="parameter">session.referer_check</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.referer_check</em> enthält die Zeichenkette, auf
+      die Sie jeden HTTP-Referer überprüfen wollen. Wenn der Referer vom
+      Client gesendet und die Zeichenkette nicht gefunden wurde, wird die
+      eingebettete Session-ID als ungültig gekennzeichnet. Grundeinstellung
+      ist eine leere Zeichenkette.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.entropy-file">
+     <code class="parameter">session.entropy_file</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.entropy_file</em> gibt den Pfad zu einer externen
+      Quelle (Datei) an, die bei der Erzeugung einer Session-ID als
+      zusätzliche Entropiequelle verwendet wird. Beispiele sind
+      <em>/dev/random</em> oder <em>/dev/urandom</em>, die
+      auf vielen Unix-Systemen zur Verfügung stehen.
+     </span>
+     <span class="simpara">
+      Diese Einstellung wird unter Windows seit PHP 5.3.3 unterstützt. Wenn
+      <em>session.entropy_length</em> auf einen von Null
+      verschiedenen Wert gesetzt wird, verwendet PHP die Windows-Zufalls-API
+      als Entropie-Quelle.
+     </span>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <span class="simpara">
+       Entfernt in PHP 7.1.0.
+      </span>
+      <span class="simpara">
+       Ab PHP 5.4.0 ist die Grundeinstellung für
+       <em>session.entropy_file</em> <em>/dev/urandom</em>
+       oder <em>/dev/arandom</em>, falls es verfügbar ist. In PHP
+       5.3.0 ist diese Konfigurationsoption in der Grundeinstellung leer.
+      </span>
+     </p></blockquote>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.entropy-length">
+     <code class="parameter">session.entropy_length</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.entropy_length</em> definiert die Anzahl der
+      Bytes, die von der oben spezifizierten Datei gelesen werden.
+      Grundeinstellung <em>32</em> (deaktiviert).
+     </span>
+     <span class="simpara">
+       Entfernt in PHP 7.1.0.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.use-strict-mode">
+     <code class="parameter">session.use_strict_mode</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.use_strict_mode</em> definiert ob das Modul den
+      strikten Modus für die Session-ID verwendet. Wenn dieser Modus aktiviert
+      ist, akzeptiert das Modul keine Session-ID, die nicht initialisiert ist.
+      Falls ein Browser eine uninitialisierte Session-ID sendet, wird eine
+      neue Session-ID zum Browser gesendet. Im strikten Modus sind Anwendungen
+      vor der Übernahme der Session durch Session-Fixation geschützt.
+      Grundeinstellung <em>0</em> (deaktiviert).
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.use-cookies">
+     <code class="parameter">session.use_cookies</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.use_cookies</em> definiert, ob das Modul Cookies
+      verwendet, um die Session-ID clientseitig zu speichern. Grundeinstellung
+      <em>1</em> (aktiviert).
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.use-only-cookies">
+     <code class="parameter">session.use_only_cookies</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.use_only_cookies</em> definiert, ob das Modul
+      <em class="emphasis">nur</em> Cookies verwendet, um die
+      Session-ID clientseitig zu speichern. Mit Aktivierung dieser Einstellung
+      wird möglichen Angriffen durch Übermittlung von Session-IDs in URLs
+      vorgebeugt. Diese Einstellung wurde in PHP 4.3.0 hinzugefügt. Ab PHP
+      5.3.0 ist die Grundeinstellung <em>1</em> (aktiviert).
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.cookie-lifetime">
+     <code class="parameter">session.cookie_lifetime</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.cookie_lifetime</em> definiert die
+      Cookie-Lebensdauer, die an den Browser geschickt wird, in Sekunden. Der
+      Wert 0 bedeutet &quot;bis der Browser geschlossen wird.&quot; Grundeinstellung
+      <em>0</em>. Siehe auch
+      <span class="function">session_get_cookie_params</span> und
+      <span class="function">session_set_cookie_params</span>.
+     </span>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <span class="simpara">
+       Der Verfalls-Zeitstempel wird relativ zur Serverzeit gesetzt, die nicht
+       unbedingt mit der Browserzeit des Clients übereinstimmt.
+      </span>
+     </p></blockquote>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.cookie-path">
+     <code class="parameter">session.cookie_path</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.cookie_path</em> definiert den Pfad, der im
+      Session-Cookie gesetzt wird. Grundeinstellung <em>/</em>.
+      Siehe auch <span class="function">session_get_cookie_params</span> und
+      <span class="function">session_set_cookie_params</span>.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.cookie-domain">
+     <code class="parameter">session.cookie_domain</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.cookie_domain</em> definiert die Domain, die im
+      Session-Cookie gesetzt wird. In der Grundeinstellung überhaupt keine,
+      was bedeutet, dass entsprechend der Spezifikation für Cookies der
+      Hostname des Servers verwendet wird, der das Cookie erzeugt hat. Siehe
+      auch <span class="function">session_get_cookie_params</span> und
+      <span class="function">session_set_cookie_params</span>.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.cookie-secure">
+     <code class="parameter">session.cookie_secure</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.cookie_secure</em> definiert, ob Cookies nur über
+      sichere Verbindungen geschickt werden sollen. Grundeinstellung
+      <em>off</em>. Diese Einstellung wurde in PHP 4.0.4
+      hinzugefügt. Siehe auch <span class="function">session_get_cookie_params</span>
+      und <span class="function">session_set_cookie_params</span>.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.cookie-httponly">
+     <code class="parameter">session.cookie_httponly</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.cookie_httponly</em> markiert das Cookie als nur
+      über das HTTP-Protokoll zugänglich. Das bedeutet, dass für
+      Skriptsprachen wie z.B. JavaScript nicht zugänglich ist. Diese
+      Einstellung kann helfen, Identitätsdiebstahl durch XSS-Angriffe zu
+      reduzieren (obwohl es nicht von allen Browsern unterstützt wird).
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.cache-limiter">
+     <code class="parameter">session.cache_limiter</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.cache_limiter</em> definiert die Methode der
+      Cacheverwaltung, die bei Session-Seiten benutzt wird. Das kann einer der
+      folgenden Werte sein: <em>nocache</em>,
+      <em>private</em>, <em>private_no_expire</em> oder
+      <em>public</em>. Grundeinstellung <em>nocache</em>.
+      Informationen über die Bedeutung dieser Werte finden Sie in der
+      <span class="function">session_cache_limiter</span>-Dokumentation.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.cache-expire">
+     <code class="parameter">session.cache_expire</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.cache_expire</em> definiert in Minuten, wie lange
+      Session-Seiten im Cache bleiben. Bei nocache ist diese Angabe
+      wirkungslos. Grundeinstellung <em>180</em>. Siehe auch
+      <span class="function">session_cache_expire</span>.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.use-trans-sid">
+     <code class="parameter">session.use_trans_sid</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.use_trans_sid</em> bestimmt ob transparente
+      SID-Unterstützung aktiviert ist oder nicht. Grundeinstellung
+      <em>0</em> (deaktiviert).
+     </span>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <span class="simpara">
+       URL-basiertes Session-Management hat im Vergleich zu Cookie-basiertem
+       Session-Management zusätzliche Sicherheitsrisiken. Benutzer können zum
+       Beispiel eine URL, die eine aktive Session-ID enthält, per Email an
+       Freunde schicken oder in ihren Bookmarks speichern und immer mit der
+       selben Session-ID auf Ihre Seite zugreifen.
+      </span>
+      <span class="simpara">
+       Seit PHP 7.1.0 werden auch vollständige URL-Pfade, z.B. https://php.net/,
+       vom trans sid Feature unterstützt. Vorherige PHP-Versionen unterstützten
+       nur relative URL-Pfade. Rewrite-Ziel-Hosts werden durch <a href="session.configuration.html#ini.session.trans-sid-hosts" class="link">session.trans_sid_hosts</a>
+       definiert.
+      </span>
+      </p></blockquote>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.trans-sid-tags">
+     <code class="parameter">session.trans_sid_tags</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.trans_sid_tags</em> gibt an, welche HTML Tags
+      umgeschrieben werden, um die Session-ID zu enthalten, wenn transparente
+      SID-Unterstützung aktiviert ist. Die Voreinstellung ist
+      <em>a=href,area=href,frame=src,input=src,form=</em>.
+     </span>
+     <span class="simpara">
+      <em>form</em> ist ein besonderes Tag. <em>&lt;input hidden=&quot;session_id&quot; name=&quot;session_name&quot;&gt;</em>
+      wird als Form-Variable hinzugefügt.
+     </span>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <span class="simpara">
+       Vor PHP 7.1.0, wurde <a href="outcontrol.configuration.html#ini.url-rewriter.tags" class="link">url_rewriter.tags</a>
+       für diesen Zweck verwendet. Seit PHP 7.1.0 wird <em>fieldset</em>
+       nicht länger als besonderes Tag angesehen.
+      </span>
+     </p></blockquote>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.trans-sid-hosts">
+     <code class="parameter">session.trans_sid_hosts</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.trans_sid_hosts</em> gibt an, welche Hosts umgeschrieben
+      werden, um die Session-ID zu enthalten, wenn transparente SID-Unterstützung
+      aktiviert ist. Die Voreinstellung ist <em>$_SERVER[&#039;HTTP_HOST&#039;]</em>.
+      Mehrere Hosts können durch &quot;,&quot; getrennt angegeben werden; Leerzeichen sind
+      nicht erlaubt. Beispiel: <em>php.net,wiki.php.net,bugs.php.net</em>.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.bug-compat-42">
+     <code class="parameter">session.bug_compat_42</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Die PHP-Versionen bis 4.2.3 haben eine undokumentierte Funktion/einen
+      undokumentierten Fehler, der es Ihnen gestattet, eine Session-Variable
+      im globalen Bereich zu initialisieren, obwohl <a href="ini.core.html#ini.register-globals" class="link">register_globals</a> deaktiviert ist.
+      Ab Version 4.3.0 gibt PHP bei Verwendung dieser Funktion eine Warnung
+      aus, wenn zusätzlich <a href="session.configuration.html#ini.session.bug-compat-warn" class="link">session.bug_compat_warn</a>
+      aktiviert ist. Diese Funktion/dieser Fehler kann durch Deaktivieren
+      dieser Einstellung deaktiviert werden.
+     </span>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <span class="simpara">
+       Entfernt in PHP 5.4.0.
+      </span>
+     </p></blockquote>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.bug-compat-warn">
+     <code class="parameter">session.bug_compat_warn</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Die PHP-Versionen bis 4.2.3 haben eine undokumentierte Funktion/einen
+      undokumentierten Fehler, der es Ihnen gestattet, eine Session-Variable
+      im globalen Bereich zu initialisieren, obwohl <a href="ini.core.html#ini.register-globals" class="link">register_globals</a> deaktiviert ist.
+      Ab Version 4.3.0 gibt PHP bei Verwendung dieser Funktion eine Warnung
+      aus, wenn sowohl <a href="session.configuration.html#ini.session.bug-compat-42" class="link">session.bug_compat_42</a> als
+      auch <a href="session.configuration.html#ini.session.bug-compat-warn" class="link">session.bug_compat_warn</a>
+      aktiviert sind.
+     </span>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <span class="simpara">
+       Entfernt in PHP 5.4.0.
+      </span>
+     </p></blockquote>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.sid-length">
+     <code class="parameter">session.sid_length</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.sid_length</em> erlaubt die Angabe der Länge der
+      Session-ID-Zeichenkette. Diese Länge kann zwischen 22 und 256 liegen.
+     </span>
+     <span class="simpara">
+      Die Voreinstellung ist 32. Wird Kompatibilität benötigt, kann 32, 40, etc.
+      angegeben werden. Längere Session-IDs sind schwerer zu erraten. Wenigstens
+      32 Zeichen werden empfohlen.
+     </span>
+     <p class="para">
+      Hinweis zur Kompatibiliät: Verwenden Sie 32 für
+      <em>session.hash_func</em>=0 (MD5) und
+      <em>session.hash_bits_per_character</em>=4,
+      <em>session.hash_func</em>=1 (SHA1) und
+      <em>session.hash_bits_per_character</em>=6. Verwenden Sie 26 für
+      <em>session.hash_func</em>=0 (MD5) und
+      <em>session.hash_bits_per_character</em>=5. Verwenden Sie 22 für
+      <em>session.hash_func</em>=0 (MD5) und
+      <em>session.hash_bits_per_character</em>=6. Die INI Werte müssen
+      so konfiguriert werden, dass sie wenigstens 128 bits in der Session-ID
+      haben. Vergessen Sie nicht,
+      <em>session.sid_bits_per_character</em> den entsprechenden Wert
+      zuzuweisen; andernfalls erhalten Sie schwächere Session-IDs.
+     </p>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <span class="simpara">
+       Diese Einstellung wurde in PHP 7.1.0 eingeführt.
+      </span>
+     </p></blockquote>
+    </dd>
+
+   
+ 
+   
+    <dt id="ini.session.sid-bits-per-character">
+     <code class="parameter">session.sid_bits_per_character</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.sid_per_character</em> erlaubt die Angabe der Anzahl
+      der Bits in kodierten Session-ID-Zeichen. Die möglichen Werte sind &#039;4&#039;
+      (0-9, a-f), &#039;5&#039; (0-9, a-v) und &#039;6&#039; (0-9, a-z, A-Z, &quot;-&quot;, &quot;,&quot;).
+     </span>
+     <span class="simpara">
+      Die Voreinstellung ist 4. Mehr Bits ergeben stärkere Session-IDs.
+      5 wird für die meisten Umgebungen empfohlen.
+     </span>
+     <p class="para">
+     </p>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <span class="simpara">
+       Diese Einstellung wurde in PHP 7.1.0 eingeführt.
+      </span>
+     </p></blockquote>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.hash-function">
+     <code class="parameter">session.hash_function</code>
+     <span class="type">mixed</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.hash_function</em> gibt Ihnen die Möglichkeit, den
+      Prüfsummen-Algorithmus für die Erzeugung von Session-IDs selbst zu
+      bestimmen. &#039;0&#039; bedeutet MD5 (128 Bit) und &#039;1&#039; bedeutet SHA-1 (160 Bit).
+     </span>
+     <p class="para">
+      Ab PHP 5.3.0 ist es auch möglich, einen der Algorithmen zu bestimmen,
+      die durch die <a href="ref.hash.html" class="link">Hash-Erweiterung</a> (falls
+      vorhanden) zur Verfügung stehen, wie z.B. <em>sha512</em> oder
+      <em>whirlpool</em>. Eine vollständige Liste unterstützter
+      Algorithmen erhalten Sie mit der Funktion
+      <span class="function">hash_algos</span>.
+     </p>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <span class="simpara">
+       Diese Einstellung wurde in PHP 5 eingeführt. Entfernt in PHP 7.1.0.
+      </span>
+     </p></blockquote>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.hash-bits-per-character">
+     <code class="parameter">session.hash_bits_per_character</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      <em>session.hash_bits_per_character</em> gibt Ihnen die
+      Möglichkeit, zu definieren wieviele Bit bei der Umwandlung der binären
+      Prüfsummen-Daten in etwas Lesbares in jedem Zeichen gespeichert werden.
+      Mögliche Werte sind &#039;4&#039; (0-9, a-f), &#039;5&#039; (0-9, a-v) und &#039;6&#039; (0-9, a-z,
+      A-Z, &quot;-&quot;, &quot;,&quot;).
+     </span>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <span class="simpara">
+       Dies wurde in PHP 5 eingeführt. Entfernt in PHP 7.1.0.
+      </span>
+     </p></blockquote>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.upload-progress.enabled">
+     <code class="parameter">session.upload_progress.enabled</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Aktiviert die Überwachung des Upload-Fortschritts und füllt die
+      entsprechende <var class="varname">$_SESSION</var>-Variable. Grundeinstellung 1
+      (aktiviert).
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.upload-progress.cleanup">
+     <code class="parameter">session.upload_progress.cleanup</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Löscht die Fortschritts-Informationen, sobald alle POST-Daten gelesen
+      wurden (also der Upload abgeschlossen ist). Grundeinstellung 1
+      (aktiviert).
+     </span>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <span class="simpara">
+       Es wird dringend empfohlen diese Funktion aktiviert zu lassen.
+      </span>
+     </p></blockquote>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.upload-progress.prefix">
+     <code class="parameter">session.upload_progress.prefix</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Ein Präfix für den Namen des Schlüssels für den Upload-Fortschritt im
+      <var class="varname">$_SESSION</var>-Array. An diesen wird der Wert von
+      <em>$_POST[ini_get(&quot;session.upload_progress.name&quot;)]</em>
+      angehängt, um einen eindeutigen Schlüssel zu erhalten.
+     </span>
+     <span class="simpara">
+      Grundeinstellung &quot;upload_progress_&quot;.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.upload-progress.name">
+     <code class="parameter">session.upload_progress.name</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Der Name des Schlüssels im <var class="varname">$_SESSION</var>-Array, in
+      welchem die Fortschritts-Informationen gespeichert werden sollen. Siehe
+      auch <a href="session.configuration.html#ini.session.upload-progress.prefix" class="link">session.upload_progress.prefix</a>.
+     </span>
+     <span class="simpara">
+      Falls <em>$_POST[ini_get(&quot;session.upload_progress.name&quot;)]</em>
+      nicht übergeben wird oder nicht verfügbar ist, wird kein
+      Upload-Fortschritt aufgezeichnet.
+     </span>
+     <span class="simpara">
+      Grundeinstellung &quot;PHP_SESSION_UPLOAD_PROGRESS&quot;.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.upload-progress.freq">
+     <code class="parameter">session.upload_progress.freq</code>
+     <span class="type">mixed</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Definiert, wie oft die Fortschritts-Information aktualisiert werden
+      soll. Dieser Wert kann entweder in Bytes (d.h. Aktualisierung nachdem
+      eine bestimmte Anzahl an Bytes empfangen wurde) oder in Prozent (d.h.
+      Aktualisierung nachdem eine bestimmte Prozentzahl der gesamten
+      Dateigröße empfangen wurde) angegeben werden.
+     </span>
+     <span class="simpara">
+      Grundeinstellung &quot;1%&quot;.
+     </span>
+    </dd>
+
+   
+
+   
+    <dt id="ini.session.upload-progress.min-freq">
+     <code class="parameter">session.upload_progress.min_freq</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Die Zeit, die mindestens zwischen zwei Aktualisierungen vergehen muss.
+      Grundeinstellung &quot;1&quot; (eine Sekunde).
+     </span>
+    </dd>
+
+   
+   
+    <dt id="ini.session.lazy-write">
+     <code class="parameter">session.lazy_write</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Falls <em>session.lazy_write</em> auf 1 gesetzt ist, werden
+      Daten nur gespeichert, nachdem sie sich geändert haben. Grundeinstellung
+      1 (aktiviert).
+     </span>
+    </dd>
+
+   
+
+  </dl>
+
+ </p>
+
+ <p class="para">
+  Die Konfigurationseinstellung <a href="ini.core.html#ini.register-globals" class="link"><em>register_globals</em></a>
+  beeinflusst, wie die Session-Variablen gespeichert und wiederhergestellt
+  werden.
+ </p>
+
+ <p class="para">
+  Der Upload-Fortschritt wird nur aufgezeichnet, wenn
+  session.upload_progress.enabled aktiviert ist und die Variable
+  $_POST[ini_get(&quot;session.upload_progress.name&quot;)] gesetzt ist.
+  Siehe <a href="session.upload-progress.html" class="link">Session Upload Progress</a>
+  für weitere diesbezügliche Informationen.
+ </p>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

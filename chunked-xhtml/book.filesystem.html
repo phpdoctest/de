@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Dateisystem</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.file.html">Dateisystemrelevante Erweiterungen</a></li>
+  <li><a href="book.dio.html">Direct-IO</a></li>
+  <li><a href="book.dir.html">Verzeichnis-Funktionen</a></li>
+  <li><a href="book.fileinfo.html">Fileinfo</a></li>
+  <li class="active"><a href="book.filesystem.html">Dateisystem</a></li>
+  <li><a href="book.inotify.html">Inotify</a></li>
+  <li><a href="book.mime-magic.html">Mimetype</a></li>
+  <li><a href="book.proctitle.html">Proctitle</a></li>
+  <li><a href="book.xattr.html">xattr</a></li>
+  <li><a href="book.xdiff.html">xdiff</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="finfo.set-flags.html">finfo::set_flags</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.filesystem.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.fileprocess.file.html">Dateisystemrelevante Erweiterungen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.filesystem" class="book">
+ 
+ <h1>Dateisystem</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.filesystem.html">Einf&uuml;hrung</a></li>
+<li><a href="filesystem.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="filesystem.requirements.html">Anforderungen</a></li>
+<li><a href="filesystem.installation.html">Installation</a></li>
+<li><a href="filesystem.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="filesystem.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="filesystem.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.filesystem.html">Dateisystem</a> — Dateisystem-Funktionen<ul class="chunklist chunklist_title">
+<li><a href="function.basename.html">basename</a> — Gibt letzten Namensteil einer Pfadangabe zur&uuml;ck</li>
+<li><a href="function.chgrp.html">chgrp</a> — Wechselt die Gruppenzugeh&ouml;rigkeit einer Datei</li>
+<li><a href="function.chmod.html">chmod</a> — &Auml;ndert die Zugriffsrechte einer Datei</li>
+<li><a href="function.chown.html">chown</a> — &Auml;ndert den Eigent&uuml;mer einer Datei</li>
+<li><a href="function.clearstatcache.html">clearstatcache</a> — L&ouml;scht den Status Cache</li>
+<li><a href="function.copy.html">copy</a> — Kopiert eine Datei</li>
+<li><a href="function.delete.html">delete</a> — Siehe unlink oder unset</li>
+<li><a href="function.dirname.html">dirname</a> — Gibt den Pfad des &uuml;bergeordneten Verzeichnisses zur&uuml;ck</li>
+<li><a href="function.disk-free-space.html">disk_free_space</a> — Gibt verf&uuml;gbaren Platz auf Dateisystem oder Partition
+   zur&uuml;ck</li>
+<li><a href="function.disk-total-space.html">disk_total_space</a> — Gibt die Gesamtgr&ouml;&szlig;e eines Dateisystemes oder einer Partition
+   zur&uuml;ck</li>
+<li><a href="function.diskfreespace.html">diskfreespace</a> — Alias von disk_free_space</li>
+<li><a href="function.fclose.html">fclose</a> — Schlie&szlig;t einen offenen Dateizeiger</li>
+<li><a href="function.feof.html">feof</a> — Pr&uuml;ft, ob ein Dateizeiger am Ende der Datei steht</li>
+<li><a href="function.fflush.html">fflush</a> — Schreibt den Ausgabepuffer in eine Datei</li>
+<li><a href="function.fgetc.html">fgetc</a> — Liest das Zeichen, auf welches der Dateizeiger zeigt</li>
+<li><a href="function.fgetcsv.html">fgetcsv</a> — Liest eine Zeile von der Position des Dateizeigers und 
+   pr&uuml;ft diese auf Komma-Separierte-Werte (CSV)</li>
+<li><a href="function.fgets.html">fgets</a> — Liest eine Zeile von der Position des Dateizeigers</li>
+<li><a href="function.fgetss.html">fgetss</a> — Liest eine Zeile von der Position des Dateizeigers und entfernt HTML Tags.</li>
+<li><a href="function.file-exists.html">file_exists</a> — Pr&uuml;ft, ob eine Datei oder ein Verzeichnis existiert</li>
+<li><a href="function.file-get-contents.html">file_get_contents</a> — Liest die gesamte Datei in einen String</li>
+<li><a href="function.file-put-contents.html">file_put_contents</a> — Schreibt einen String in eine Datei</li>
+<li><a href="function.file.html">file</a> — Liest eine komplette Datei in ein Array</li>
+<li><a href="function.fileatime.html">fileatime</a> — Liefert Datum und Uhrzeit des letzten Zugriffs auf eine Datei</li>
+<li><a href="function.filectime.html">filectime</a> — Liefert Datum und Uhrzeit der letzten &Auml;nderung des Datei Inode</li>
+<li><a href="function.filegroup.html">filegroup</a> — Liefert die Gruppenzugeh&ouml;rigkeit einer Datei</li>
+<li><a href="function.fileinode.html">fileinode</a> — Liefert die Inode-Nummer einer Datei</li>
+<li><a href="function.filemtime.html">filemtime</a> — Liefert Datum und Uhrzeit der letzten Datei&auml;nderung</li>
+<li><a href="function.fileowner.html">fileowner</a> — Liefert den Dateieigent&uuml;mer</li>
+<li><a href="function.fileperms.html">fileperms</a> — Liefert die Zugriffsrechte einer Datei</li>
+<li><a href="function.filesize.html">filesize</a> — Liefert die Gr&ouml;&szlig;e einer Datei</li>
+<li><a href="function.filetype.html">filetype</a> — Liefert den Typ einer Datei</li>
+<li><a href="function.flock.html">flock</a> — Portables Datei-Sperr-Verfahren (advisory locking)</li>
+<li><a href="function.fnmatch.html">fnmatch</a> — Match filename against a pattern</li>
+<li><a href="function.fopen.html">fopen</a> — &Ouml;ffnet eine Datei oder URL</li>
+<li><a href="function.fpassthru.html">fpassthru</a> — Gibt alle verbleibenden Daten eines Dateizeigers direkt aus.</li>
+<li><a href="function.fputcsv.html">fputcsv</a> — Format line as CSV and write to file pointer</li>
+<li><a href="function.fputs.html">fputs</a> — Alias von fwrite</li>
+<li><a href="function.fread.html">fread</a> — Liest Bin&auml;rdaten aus einer Datei</li>
+<li><a href="function.fscanf.html">fscanf</a> — Interpretiert den Input einer Datei entsprechend einem 
+   angegebenen Format</li>
+<li><a href="function.fseek.html">fseek</a> — Positioniert den Dateizeiger</li>
+<li><a href="function.fstat.html">fstat</a> — Sammelt Informationen &uuml;ber eine Datei mittels eines offenen Dateizeigers</li>
+<li><a href="function.ftell.html">ftell</a> — Ermittelt die aktuelle Position des Dateizeigers</li>
+<li><a href="function.ftruncate.html">ftruncate</a> — K&uuml;rzt eine Datei auf die angegebene L&auml;nge</li>
+<li><a href="function.fwrite.html">fwrite</a> — Bin&auml;r-sicheres Dateischreiben</li>
+<li><a href="function.glob.html">glob</a> — Findet Dateinamen, die mit einem Muster &uuml;bereinstimmen</li>
+<li><a href="function.is-dir.html">is_dir</a> — Pr&uuml;ft, ob der angegebene Dateiname ein Verzeichnis ist</li>
+<li><a href="function.is-executable.html">is_executable</a> — Pr&uuml;ft, ob der Dateiname ausf&uuml;hrbar ist</li>
+<li><a href="function.is-file.html">is_file</a> — Pr&uuml;ft, ob der Dateiname eine regul&auml;re Datei ist</li>
+<li><a href="function.is-link.html">is_link</a> — Pr&uuml;ft, ob der Dateiname ein symbolischer Link ist</li>
+<li><a href="function.is-readable.html">is_readable</a> — Pr&uuml;ft, ob eine Datei existiert und lesbar ist</li>
+<li><a href="function.is-uploaded-file.html">is_uploaded_file</a> — Pr&uuml;ft, ob die Datei mittels HTTP-POST upgeloadet wurde</li>
+<li><a href="function.is-writable.html">is_writable</a> — Pr&uuml;ft, ob in eine Datei geschrieben werden kann</li>
+<li><a href="function.is-writeable.html">is_writeable</a> — Alias von is_writable</li>
+<li><a href="function.lchgrp.html">lchgrp</a> — Changes group ownership of symlink</li>
+<li><a href="function.lchown.html">lchown</a> — Changes user ownership of symlink</li>
+<li><a href="function.link.html">link</a> — Erzeugt einen harten Link</li>
+<li><a href="function.linkinfo.html">linkinfo</a> — Liefert Informationen &uuml;ber einen Link</li>
+<li><a href="function.lstat.html">lstat</a> — Sammelt Informationen &uuml;ber eine Datei oder einen symbolischen Link</li>
+<li><a href="function.mkdir.html">mkdir</a> — Erstellt ein Verzeichnis</li>
+<li><a href="function.move-uploaded-file.html">move_uploaded_file</a> — Verschiebt eine hochgeladene Datei an einen neuen Ort</li>
+<li><a href="function.parse-ini-file.html">parse_ini_file</a> — Parst eine Konfigurationsdatei</li>
+<li><a href="function.parse-ini-string.html">parse_ini_string</a> — Analysiert einen Konfigurations-String</li>
+<li><a href="function.pathinfo.html">pathinfo</a> — Liefert Informationen &uuml;ber einen Dateipfad</li>
+<li><a href="function.pclose.html">pclose</a> — Schlie&szlig;t einen Prozess-Dateizeiger</li>
+<li><a href="function.popen.html">popen</a> — &Ouml;ffnet einen Prozesszeiger</li>
+<li><a href="function.readfile.html">readfile</a> — Gibt eine Datei aus</li>
+<li><a href="function.readlink.html">readlink</a> — Liefert das Ziel eines symbolischen Links</li>
+<li><a href="function.realpath-cache-get.html">realpath_cache_get</a> — Get realpath cache entries</li>
+<li><a href="function.realpath-cache-size.html">realpath_cache_size</a> — Get realpath cache size</li>
+<li><a href="function.realpath.html">realpath</a> — L&ouml;st einen Pfad in einen absoluten und eindeutigen auf</li>
+<li><a href="function.rename.html">rename</a> — Benennt eine Datei oder ein Verzeichnis um</li>
+<li><a href="function.rewind.html">rewind</a> — Setzt die Position eines Dateizeigers auf den Anfang</li>
+<li><a href="function.rmdir.html">rmdir</a> — L&ouml;scht ein Verzeichnis</li>
+<li><a href="function.set-file-buffer.html">set_file_buffer</a> — Alias von stream_set_write_buffer</li>
+<li><a href="function.stat.html">stat</a> — Sammelt Informationen &uuml;ber eine Datei</li>
+<li><a href="function.symlink.html">symlink</a> — Erzeugt einen symbolischen Link</li>
+<li><a href="function.tempnam.html">tempnam</a> — Erzeugt eine Datei mit eindeutigem Dateinamen</li>
+<li><a href="function.tmpfile.html">tmpfile</a> — Erstellt eine tempor&auml;re Datei</li>
+<li><a href="function.touch.html">touch</a> — Setzt die Zugriffs- und Modifikationszeit einer Datei</li>
+<li><a href="function.umask.html">umask</a> — Changes the current umask</li>
+<li><a href="function.unlink.html">unlink</a> — L&ouml;scht eine Datei</li>
+</ul>
+</li>
+</ul>
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

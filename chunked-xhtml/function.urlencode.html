@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: URL-kodiert einen String</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li class="header up"><a href="book.url.html">URLs</a></li>
+  <li class="header up"><a href="ref.url.html">URL Funktionen</a></li>
+  <li><a href="function.base64-decode.html">base64_decode</a></li>
+  <li><a href="function.base64-encode.html">base64_encode</a></li>
+  <li><a href="function.get-headers.html">get_headers</a></li>
+  <li><a href="function.get-meta-tags.html">get_meta_tags</a></li>
+  <li><a href="function.http-build-query.html">http_build_query</a></li>
+  <li><a href="function.parse-url.html">parse_url</a></li>
+  <li><a href="function.rawurldecode.html">rawurldecode</a></li>
+  <li><a href="function.rawurlencode.html">rawurlencode</a></li>
+  <li><a href="function.urldecode.html">urldecode</a></li>
+  <li class="active"><a href="function.urlencode.html">urlencode</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.urldecode.html">urldecode</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="book.v8js.html">V8js</a></div>
+                <div class="up"><a href="ref.url.html">URL Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.urlencode" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">urlencode</h1>
+  <p class="refpurpose">URL-kodiert einen String</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.urlencode-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname">urlencode</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Die Funktion ist geeignet, wenn ein String innerhalb eines Queryparts eines
+   URL verwendet werden soll, und man einen komfortablen Weg benötigt, Variablen
+   an die nächste Seite zu übergeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.urlencode-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">str</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der zu kodierende String.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.urlencode-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt einen String zurück, in dem alle nicht-alphanumerischen Zeichen außer
+   <em>-_.</em> durch ein Prozentzeichen (<em>%</em>)
+   gefolgt von zwei Hexadezimalwerten und Leerzeichen durch ein Plus
+   (<em>+</em>) ersetzt werden. Das Encoding geschieht auf dem
+   gleichen Wege, wie auch durch ein WWW-Formular gepostete Daten kodiert
+   werden - das entspricht der Auszeichnung des Dateityps
+   <em>application/x-www-form-urlencoded</em>. Diese Auszeichnung
+   differiert von der Kodierung nach <a href="http://www.faqs.org/rfcs/rfc3986" class="link external">&raquo;&nbsp;RFC 3986</a>
+   (siehe auch <span class="function">rawurlencode</span>) dadurch, dass aus historischen
+   Gründen das Leerzeichen als Pluszeichen (+) kodiert wird.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.urlencode-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4585">
+    <p><strong>Beispiel #1 <span class="function">urlencode</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;a&nbsp;href="mycgi?foo='</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">urlencode</span><span style="color: #007700">(</span><span style="color: #0000BB">$userinput</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">'"&gt;'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-4586">
+    <p><strong>Beispiel #2 <span class="function">urlencode</span> und
+     <span class="function">htmlentities</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$query_string&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'foo='&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">urlencode</span><span style="color: #007700">(</span><span style="color: #0000BB">$foo</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">'&amp;bar='&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">urlencode</span><span style="color: #007700">(</span><span style="color: #0000BB">$bar</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">'&lt;a&nbsp;href="mycgi?'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">$query_string</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">'"&gt;'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.urlencode-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Seien Sie vorsichtig beim Umgang mit Variablen, die HTML-Entities enthalten
+    könnten. Angaben wie &amp;amp, &amp;copy und &amp;pound werden vom Browser
+    geparst und die eigentliche Entität wird anstelle des gewünschten
+    Variablennamens verwendet. Dies ist eine naheliegende Schwierigkeit, über
+    die das W3C bereits seit Jahren informiert. Die entsprechende Referenz
+    finden Sie hier: <a href="http://www.w3.org/TR/html4/appendix/notes.html#h-B.2.2" class="link external">&raquo;&nbsp;http://www.w3.org/TR/html4/appendix/notes.html#h-B.2.2</a>.
+   </p>
+   <p class="para">
+    PHP unterstützt den Austausch des vom W3C empfohlenen Argument-Trenners
+    Semikolon durch einen selbstgewählten Trenner über die
+    arg_separator-Direktive in der php.ini. Leider senden die meisten
+    User-Agents Formulardaten nicht im standardkonformen semikolongetrennten
+    Format. Ein möglicher Weg, mit diesem Problem umzugehen, ist die Verwendung
+    von &amp;amp; anstelle von &amp; als Trennzeichen. Sie müssen dafür nicht
+    die php.ini-Direktive arg_separator verändern. Belassen Sie sie als &amp;,
+    und verwenden Sie statt dessen für Ihre URLs die Funktionen
+    <span class="function">htmlentities</span> oder <span class="function">htmlspecialchars</span>.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.urlencode-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">urldecode</span></li>
+    <li class="member"><span class="function">htmlentities</span></li>
+    <li class="member"><span class="function">rawurlencode</span></li>
+    <li class="member"><span class="function">rawurldecode</span></li>
+    <li class="member"><a href="http://www.faqs.org/rfcs/rfc3986" class="link external">&raquo;&nbsp;RFC 3986</a></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Logische Operatoren</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.operators.html">Operatoren</a></li>
+  <li><a href="language.operators.precedence.html">Operator-Rangfolge</a></li>
+  <li><a href="language.operators.arithmetic.html">Arithmetische Operatoren</a></li>
+  <li><a href="language.operators.assignment.html">Zuweisungsoperatoren</a></li>
+  <li><a href="language.operators.bitwise.html">Bit-Operatoren</a></li>
+  <li><a href="language.operators.comparison.html">Vergleichs-Operatoren</a></li>
+  <li><a href="language.operators.errorcontrol.html">Fehler-Kontroll-Operatoren</a></li>
+  <li><a href="language.operators.execution.html">Operatoren zur Programmausf&uuml;hrung</a></li>
+  <li><a href="language.operators.increment.html">Inkrement- bzw. Dekrementoperatoren</a></li>
+  <li class="active"><a href="language.operators.logical.html">Logische Operatoren</a></li>
+  <li><a href="language.operators.string.html">Zeichenketten-Operatoren</a></li>
+  <li><a href="language.operators.array.html">Array-Operatoren</a></li>
+  <li><a href="language.operators.type.html">Typ Operatoren</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.operators.increment.html">Inkrement- bzw. Dekrementoperatoren</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.operators.string.html">Zeichenketten-Operatoren</a></div>
+                <div class="up"><a href="language.operators.html">Operatoren</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.operators.logical" class="sect1">
+   <h2 class="title">Logische Operatoren</h2>
+
+   <table class="doctable table">
+    <caption><strong>Logische Operatoren</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Beispiel</th>
+       <th>Name</th>
+       <th>Ergebnis</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>$a and $b</td>
+       <td>Und</td>
+       <td><strong><code>TRUE</code></strong> wenn sowohl $a als auch $b <strong><code>TRUE</code></strong> ist.</td>
+      </tr>
+
+      <tr>
+       <td>$a or $b</td>
+       <td>Oder</td>
+       <td><strong><code>TRUE</code></strong> wenn $a oder $b <strong><code>TRUE</code></strong> ist.</td>
+      </tr>
+
+      <tr>
+       <td>$a xor $b</td>
+       <td>Entweder Oder</td>
+       <td>
+        <strong><code>TRUE</code></strong> wenn entweder $a oder $b <strong><code>TRUE</code></strong> ist, aber nicht beide.
+       </td>
+      </tr>
+
+      <tr>
+       <td>! $a</td>
+       <td>Nicht</td>
+       <td><strong><code>TRUE</code></strong> wenn $a nicht <strong><code>TRUE</code></strong> ist.</td>
+      </tr>
+
+      <tr>
+       <td>$a &amp;&amp; $b</td>
+       <td>Und</td>
+       <td><strong><code>TRUE</code></strong> wenn sowohl $a als auch $b <strong><code>TRUE</code></strong> ist.</td>
+      </tr>
+
+      <tr>
+       <td>$a || $b</td>
+       <td>Oder</td>
+       <td><strong><code>TRUE</code></strong> wenn $a oder $b <strong><code>TRUE</code></strong> ist.</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+
+   <p class="simpara">
+    Der Grund dafür, dass es je zwei unterschiedliche Operatoren für 
+    die &quot;Und&quot;- und die &quot;Oder&quot;-Verknüpfung gibt ist der, dass die beiden
+    Operatoren jeweils Rangfolgen haben. (siehe auch <a href="language.operators.precedence.html" class="link">Operator-Rangfolge</a>.)
+   </p>
+
+   <div class="example" id="example-125">
+    <p><strong>Beispiel #1 Logische Operatoren dargestellt</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;--------------------<br />//&nbsp;foo()&nbsp;wird&nbsp;nie&nbsp;aufgerufen&nbsp;werden,&nbsp;da&nbsp;die&nbsp;Operatoren&nbsp;umgangen&nbsp;werden<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">true&nbsp;&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">and&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">$d&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">true&nbsp;&nbsp;</span><span style="color: #007700">or&nbsp;&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">());<br /><br /></span><span style="color: #FF8000">//&nbsp;--------------------<br />//&nbsp;"||"&nbsp;hat&nbsp;eine&nbsp;größere&nbsp;Priorität&nbsp;als&nbsp;"or"<br /><br />//&nbsp;Das&nbsp;Ergebnis&nbsp;des&nbsp;Ausdrucks&nbsp;(false&nbsp;||&nbsp;true)&nbsp;wird&nbsp;$e&nbsp;zugewiesen<br />//&nbsp;Funktioniert&nbsp;wie:&nbsp;($e&nbsp;=&nbsp;(false&nbsp;||&nbsp;true))<br /></span><span style="color: #0000BB">$e&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Die&nbsp;Konstante&nbsp;"false"&nbsp;wird&nbsp;$f&nbsp;zugewiesen&nbsp;und&nbsp;danach&nbsp;wird&nbsp;true&nbsp;ignoriert<br />//&nbsp;Funktioniert&nbsp;wie:&nbsp;(($e&nbsp;=&nbsp;false)&nbsp;or&nbsp;true)<br /></span><span style="color: #0000BB">$f&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">or&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$e</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;--------------------<br />//&nbsp;"&amp;&amp;"&nbsp;hat&nbsp;eine&nbsp;größere&nbsp;Priorität&nbsp;als&nbsp;"and"<br /><br />//&nbsp;Das&nbsp;Ergebnis&nbsp;des&nbsp;Ausdrucks&nbsp;(true&nbsp;&amp;&amp;&nbsp;false)&nbsp;wird&nbsp;$g&nbsp;zugewiesen<br />//&nbsp;Funktioniert&nbsp;wie:&nbsp;($g&nbsp;=&nbsp;(true&nbsp;&amp;&amp;&nbsp;false))<br /></span><span style="color: #0000BB">$g&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Die&nbsp;Konstante&nbsp;"true"&nbsp;wird&nbsp;$h&nbsp;zugewiesen&nbsp;und&nbsp;danach&nbsp;wird&nbsp;false&nbsp;ignoriert<br />//&nbsp;Funktioniert&nbsp;wie:&nbsp;(($h&nbsp;=&nbsp;true)&nbsp;and&nbsp;false)<br /></span><span style="color: #0000BB">$h&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true&nbsp;</span><span style="color: #007700">and&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$g</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$h</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+bool(true)
+bool(false)
+bool(false)
+bool(true)
+</pre></div>
+    </div>
+   </div>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

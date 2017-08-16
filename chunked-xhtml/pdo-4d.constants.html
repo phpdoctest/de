@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Constants for PDO_4D</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.abstract.html">Abstraktionsebenen</a></li>
+  <li class="header up"><a href="book.pdo.html">PDO</a></li>
+  <li class="header up"><a href="pdo.drivers.html">PDO-Treiber</a></li>
+  <li class="header up"><a href="ref.pdo-4d.html">4D (PDO)</a></li>
+  <li><a href="ref.pdo-4d.connection.html">PDO_4D DSN</a></li>
+  <li class="active"><a href="pdo-4d.constants.html">Constants for PDO_4D</a></li>
+  <li><a href="pdo-4d.sqltypes.html">SQL types with PDO_4D and PHP</a></li>
+  <li><a href="ref.pdo-4d.sql4d.html">SQL acceptable by 4D</a></li>
+  <li><a href="pdo-4d.examples.html">Examples with PDO_4D</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="ref.pdo-4d.connection.html">PDO_4D DSN</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="pdo-4d.sqltypes.html">SQL types with PDO_4D and PHP</a></div>
+                <div class="up"><a href="ref.pdo-4d.html">4D (PDO)</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="pdo-4d.constants" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">Constants for PDO_4D</h1>
+  <p class="refpurpose">Constants for PDO_4D</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-pdo-4d.constants-description">
+  <h3 class="title">Vordefinierte Konstanten</h3>
+  <p class="simpara">Die folgenden Konstanten werden vom Treiber
+definiert und sind nur verfügbar, wenn die Extension entweder in PHP einkompiliert
+oder dynamisch zur Laufzeit geladen wurde. Weiterhin sind diese Konstanten
+treiberspezifisch und sollten nur mit diesem Treiber benutzt werden. MySQL-spezifische
+Attribute mit dem PostgreSQL Treiber zu nutzen, kann zu unerwarteten Ergebnissen
+führen. Kann Ihr Code mit verschiedenen Treibern arbeiten, so können Sie
+<span class="function">PDO::getAttribute</span> benutzen, um mit
+<strong><code>PDO_ATTR_DRIVER_NAME</code></strong> den aktuellen Treiber zu
+ermitteln.</p>
+  <dl>
+
+   
+    <dt id="pdo.constants.fourd-attr-charset">
+     <strong><code>PDO::FOURD_ATTR_CHARSET</code></strong>
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Change the charset in which 4D returns data.
+      (Default is UTF-8).
+     </p>
+    </dd>
+
+   
+   
+    <dt id="pdo.constants.fourd-attr-preferred-image-types">
+     <strong><code>PDO::FOURD_ATTR_PREFERRED_IMAGE_TYPES</code></strong>
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      The requested format of the image, when selecting a row
+      with a column type PICTURE. It may be any type that 4D supports.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

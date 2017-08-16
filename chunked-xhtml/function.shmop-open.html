@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Erstellt oder &ouml;ffnet einen gemeinsamen Speicherblock</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li class="header up"><a href="book.shmop.html">Shared Memory</a></li>
+  <li class="header up"><a href="ref.shmop.html">Shared Memory Funktionen</a></li>
+  <li><a href="function.shmop-close.html">shmop_close</a></li>
+  <li><a href="function.shmop-delete.html">shmop_delete</a></li>
+  <li class="active"><a href="function.shmop-open.html">shmop_open</a></li>
+  <li><a href="function.shmop-read.html">shmop_read</a></li>
+  <li><a href="function.shmop-size.html">shmop_size</a></li>
+  <li><a href="function.shmop-write.html">shmop_write</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.shmop-delete.html">shmop_delete</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.shmop-read.html">shmop_read</a></div>
+                <div class="up"><a href="ref.shmop.html">Shared Memory Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.shmop-open" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">shmop_open</h1>
+  <p class="refpurpose">Erstellt oder öffnet einen gemeinsamen Speicherblock</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.shmop-open-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname">shmop_open</span>
+    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$key</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$flags</code></span>
+   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$mode</code></span>
+   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$size</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">shmop_open</span> Kann einen gemeinsamen Speicherbereich
+   erstellen oder öffnen.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.shmop-open-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">key</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die System-ID des gemeinsam genutzten Speicherblocks, dieser
+       Parameter kann als Dezimal- oder Hexadezimalzahl übergeben werden.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">flags</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Folgende Flags können benutzt werden:
+       <ul class="itemizedlist">
+        <li class="listitem">
+         <span class="simpara">
+          &quot;a&quot; zum Zugriff (access) auf einen gemeinsamen Speicherblock (setzt SHM_RDONLY für shmat).
+          Benutzen Sie dieses Flag, wenn Sie einen bestehenden gemeinsamen Speicherblock nur zum Lesen öffnen wollen.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          &quot;c&quot; zum Erzeugen (create) eines gemeinsamen Speicherblocks
+         (setzt IPC_CREATE). Benutzen Sie dieses Flag, wenn Sie einen
+         neuen gemeinsamen Speicherblock erzeugen wollen oder, falls
+         bereits ein Segment mit derselben ID existiert, zum Öffnen
+         dieses Segments für Lese- und Schreibzugriffe.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          &quot;w&quot; für Lese- und Schreibzugriffe. Benutzen Sie dieses Flag
+         wenn Sie in einen gemeinsamen Speicherbereich schreiben oder
+         daraus lesen müssen. Das wird meistens der Fall sein.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          &quot;n&quot; zum Erzeugen eines neuen gemeinsamen Speichersegments
+         (setzt IPC_CREATE|IPC_EXCL). Benutzen Sie dieses Flag, wenn Sie
+          ein neues gemeinsames Speichersegment erzeugen wollen. Falls
+          schon ein Segment mit diesem Flag existiert, schlägt die Funktion
+          fehl. Dies ist aus Sicherheitsgründen nützlich, denn damit können
+          Sie vermeiden, dass konkurrierende Prozesse ausgenutzt werden.
+         </span>
+        </li>
+       </ul>
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">mode</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Zugriffsberechtigungen für die gemeinsamen Speichersegmente sind
+       dieselben wie für Dateien. Diese Berechtigungen müssen als Oktalwerte
+       übergeben werden, zum Beispiel <em>0644</em>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">size</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Größe des erzeugten gemeinsam genutzten Speicherbereichs in Byte.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Beachten Sie: der dritte und vierte Parameter sollten mit 0 angegeben
+     sein, falls Sie einen bereits existierenden Speicherbereich öffnen.
+    </p>
+   </p></blockquote>
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.shmop-open-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Bei Erfolg liefert die Funktion <span class="function">shmop_open</span> eine ID
+   zurück, die Sie zum Zugriff auf den erstellten gemeinsamen Speicher benutzen
+   können. Bei einem Fehler wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.shmop-open-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4183">
+    <p><strong>Beispiel #1 Einen neuen gemeinsamen Speicherblock erstellen</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$shm_key&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftok</span><span style="color: #007700">(</span><span style="color: #0000BB">__FILE__</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'t'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$shm_id&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">shmop_open</span><span style="color: #007700">(</span><span style="color: #0000BB">$shm_key</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"c"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0644</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   In diesem Beispiel wurde ein gemeinsamer Speicherblock geöffnet. Die
+   System-ID wurde von der Funktion <span class="function">ftok</span> zurückgegeben.
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.shmop-open-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">shmop_close</span></li>
+    <li class="member"><span class="function">shmop_delete</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

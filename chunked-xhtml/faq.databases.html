@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: PHP und Datenbanken</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="faq.html">FAQ</a></li>
+  <li><a href="faq.general.html">Allgemeine Informationen</a></li>
+  <li><a href="faq.mailinglist.html">Mailing-Listen</a></li>
+  <li><a href="faq.obtaining.html">PHP beziehen</a></li>
+  <li class="active"><a href="faq.databases.html">PHP und Datenbanken</a></li>
+  <li><a href="faq.installation.html">Installation</a></li>
+  <li><a href="faq.build.html">Probleme bei der Kompilierung</a></li>
+  <li><a href="faq.using.html">PHP benutzen</a></li>
+  <li><a href="faq.passwords.html">Password Hashing</a></li>
+  <li><a href="faq.html.html">PHP und HTML</a></li>
+  <li><a href="faq.com.html">PHP und COM</a></li>
+  <li><a href="faq.misc.html">Verschiedene Fragen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="faq.obtaining.html">PHP beziehen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="faq.installation.html">Installation</a></div>
+                <div class="up"><a href="faq.html">FAQ</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="faq.databases" class="chapter">
+  <h1>PHP und Datenbanken</h1>
+  
+
+  <p class="para">
+   Dieser Abschnitt enthält häufige Fragen über die Verbindung von PHP und
+   Datenbanken. PHP kann in der Tat auf praktisch jede verfügbare Datenbank
+   zugreifen.
+  </p>
+
+  <div class="qandaset"><ol class="qandaset_questions"><li><a href="#faq.databases.mssql">
+     
+      Ich habe geh&ouml;rt, dass es m&ouml;glich ist, den Microsoft SQL-Server aus PHP
+      anzusprechen. Wie?
+     
+    </a></li><li><a href="#faq.databases.access">
+     Kann ich auf Microsoft Access-Datenbanken zugreifen?
+    </a></li><li><a href="#faq.databases.mysql.deprecated">
+     
+      Wieso wird von der Verwendung der MySQL-Erweiterung (ext/mysql), 
+      die ich seit &uuml;ber 10 Jahren verwendet habe, abgeraten? Ist diese veraltet?
+      Was soll ist stattdessen tun? Wie kann ich umstellen?
+     
+    </a></li><li><a href="#faq.databases.mysqlresource">
+     
+      Wieso bekomme ich so eine Fehlermeldung:
+      &quot;Warning: 0 is not a MySQL result index in &lt;file&gt; 
+      on line &lt;x&gt;&quot; or &quot;Warning: Supplied argument is not 
+      a valid MySQL result resource in &lt;file&gt; on line &lt;x&gt;&quot;?
+     
+    </a></li></ol></div>
+   <dl class="qandaentry" id="faq.databases.mssql">
+    <dt><strong>
+     
+      Ich habe gehört, dass es möglich ist, den Microsoft SQL-Server aus PHP
+      anzusprechen. Wie?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Auf Unix-Rechnern können Sie <a href="ref.pdo-odbc.html" class="link">PDO_ODBC</a>
+      oder die <a href="book.uodbc.html" class="link">Unified ODBC API</a> verwenden.
+     </p>
+     <p class="para">
+      Auf Windows-Rechnern können Sie ebenfalls <a href="ref.pdo-sqlsrv.html" class="link">PDO_SQLSRV</a>
+      oder <a href="book.sqlsrv.html" class="link">SQLSRV</a> verwenden.
+     </p>
+     <p class="para">
+      Sehen Sie sich auch die Antwort auf die nächste Frage an.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.databases.access">
+    <dt><strong>
+     Kann ich auf Microsoft Access-Datenbanken zugreifen?
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Ja. Sie haben bereits alle nötigen Werkzeuge, wenn sie komplett unter
+      Windows 9x/Me oder NT/2000 arbeiten, wo Sie ODBC und die ODBC-Treiber von
+      Microsoft benutzen können, um auf Microsoft Access-Datenbanken zuzugreifen.
+     </p>
+     <p class="para">
+      Wenn Sie PHP auf einem Unix-Rechner betreiben und auf MS Access auf einem
+      Windows-Rechner zugreifen wollen, brauchen sie ODBC-Treiber für Unix.
+      <a href="http://www.openlinksw.com/" class="link external">&raquo;&nbsp;OpenLink Software</a> bietet Unix-basierte
+      ODBC-Treiber an, die dazu geeignet sind.
+     </p>
+     <p class="para">
+      Eine weitere Alternative ist es, einen SQL-Server zu benutzen, der
+      ODBC-Treiber für Windows anbietet und diesen dann zu benutzen, um die Daten
+      dort abzulegen, um sie dann von Microsoft Access (über ODBC) und PHP (mit
+      den mitgelieferten Treibern) aus anzusprechen, oder ein 
+      dazwischengeschaltetetes Dateiformat zu benutzen, das sowohl Access als
+      auch PHP verstehen, beispielsweise Plaintext oder dBase-Datenbanken.
+      Zu diesem Punkt schreibt Tim Hayes von OpenLink Software:
+      <blockquote class="blockquote">
+       <p class="para">
+        Eine andere Datenbank als vermittelndes Element zu benutzen ist keine
+        gute Idee, wenn Sie ODBC direkt von PHP aus zur Datenbank benutzen können
+        - etwa mit den Openlink-Treibern. Wenn Sie wirklich ein zwischengeschaltetes
+        Dateiformat benötigen, hat Openlink jetzt Virtuoso (eine virtuelle 
+        Datenbank) für NT, Linux und andere Unix-Plattformen herausgebracht.
+        Bitte besuchen Sie unsere <a href="http://www.openlinksw.com/" class="link external">&raquo;&nbsp;Webseite</a>,
+        wenn Sie Virtuoso kostenlos herunterladen wollen.
+       </p>
+      </blockquote>
+     </p>
+     <p class="para">
+      Eine Möglichkeit, die sich als erfolgreich herausgestellt hat, ist die
+      Benutzung von MySQL und den MyODBC-Treibern unter Windows, um die
+      Datenbanken zu synchronisieren. Steve Lawrence schreibt dazu:
+     </p>
+     <p class="para">
+      <ul class="itemizedlist">
+       <li class="listitem">
+        <span class="simpara">
+         Installieren Sie MySQL wie in der Dokumentation beschrieben auf ihrem
+         System. Die neueste Version finden Sie auf 
+         <a href="http://www.mysql.com/" class="link external">&raquo;&nbsp;www.mysql.com</a> 
+         Es ist keine spezielle Konfiguration nötig, außer dass
+         Sie beim Erzeugen einer Datenbank und der Einrichtung des
+         Benutzeraccounts im Host-Feld ein % oder den Hostnamen des 
+         Windows-Computers, von dem aus Sie zugreifen möchten, eintragen 
+         sollten. Notieren Sie sich den Servernamen, Benutzernamen und das 
+         Passwort.
+        </span>
+       </li>
+       <li class="listitem">
+        <span class="simpara">
+         Laden Sie die MyODBC for Windows-Treiber von der MySQL-Seite herunter.
+         Installieren Sie ihn auf ihrem Windows-Rechner. Sie können
+         die Funktionsfähigkeit mit den mitgelieferten Programmen testen.
+        </span>
+       </li>
+       <li class="listitem">
+        <span class="simpara">
+         Erstellen Sie eine Benutzer- oder System-DSN in den ODBC-Optionen in
+         der Systemsteuerung. Überlegen Sie sich einen DSN-Namen und geben Sie
+         den Hostnamen, Benutzernamen, Passwort, Port, etc ihrer MySQL-Datenbank
+         an, die Sie im 1. Schritt konfiguriert haben.
+        </span>
+       </li>
+       <li class="listitem">
+        <span class="simpara">
+         Installieren Sie Access als Vollinstallation. Das stellt sicher, dass
+         Sie die richtigen Add-Ins haben. Zumindest benötigen Sie die 
+         ODBC-Unterstützung und den Linked-Table-Manager.
+        </span>
+       </li>
+       <li class="listitem">
+        <span class="simpara">
+         Jetzt zum lustigen Teil! Erstellen Sie eine neue Access-Datenbank.
+         Rechtsklicken Sie im Tabellenfenster und wählen Sie Link 
+         Tables/Tabellen verknüpfen oder im Menü Datei den Punkt Get
+         External Data und dann Link Tables/Tabellen verknüpfen. Wenn das
+         Dateibrowser-Fenster erscheint, wählen Sie Dateien vom Typ: ODBC.
+         Wählen Sie System-DSN und den Namen der DSN, die Sie in Schritt 3
+         erstellt haben. Wählen sie die zu verknüpfende Tabelle, klicken Sie
+         auf OK und Sie können jetzt die Tabelle öffnen und Daten auf Ihrem
+         MySQL-Server hinzufügen/löschen/ändern. Sie können auch Abfragen
+         erzeugen, Tabellen importieren und exportieren und Formulare und
+         Reports generieren, etc.
+        </span>
+       </li>
+      </ul>
+     </p>
+     <p class="para">
+      Tipps und Tricks:
+      <ul class="itemizedlist">
+       <li class="listitem">
+        <span class="simpara">
+         Sie können Ihre Tabellen in Access erstellen und nach MySQL
+         exportieren und Sie dann wieder verknüpfen. Das erleichtert
+         das Erstellen von Tabellen.
+        </span>
+       </li>
+       <li class="listitem">
+        <span class="simpara">
+         Wenn Sie Tabellen in Access erstellen, müssen Sie einen Primärschlüssel
+         definieren, wenn Sie über Access Schreibzugriff haben wollen.
+         Vergewissern Sie sich, dass sie einen Primärschlüssel in MySQL
+         erzeugen, bevor Sie die Tabelle in Access verknüpfen.
+        </span>
+       </li>
+       <li class="listitem">
+        <span class="simpara">
+         Wenn Sie ein Tabelle in MySQL ändern, müssen Sie sie in Access neu
+         verknüpfen. Rufen Sie Tools&gt;add-ins&gt;linked table manager auf,
+         suchen Sie ihre ODBC-DSN, und wählen Sie die Tabelle aus, die neu
+         verknüpft werden soll. Sie können Ihre DSN-Quelle auch verschieben,
+         wenn Sie die &quot;always prompt for new location&quot;-Checkbox ankreuzen,
+         bevor Sie OK klicken.
+        </span>
+       </li>
+      </ul>
+     </p>
+    </dd>
+   </dl>
+   
+   <dl class="qandaentry" id="faq.databases.mysql.deprecated">
+    <dt><strong>
+     
+      Wieso wird von der Verwendung der MySQL-Erweiterung (ext/mysql), 
+      die ich seit über 10 Jahren verwendet habe, abgeraten? Ist diese veraltet?
+      Was soll ist stattdessen tun? Wie kann ich umstellen?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Es gibt drei MySQL-Erweiterungen, die im Abschnitt
+      <a href="mysqlinfo.api.choosing.html" class="link">Wählen einer MySQL-API</a> beschrieben
+      werden. Die alte API sollte nicht verwendet werden und ist seit PHP 5.5.0
+      als veraltet markiert und wurde mit PHP 7.0.0 nach PECL verschoben. Es wird stark 
+      dazu geraten beim Schreiben von neuem Code entweder <a href="book.mysqli.html" class="link">mysqli</a> 
+      oder <a href="ref.pdo-mysql.html" class="link">PDO_MySQL</a> zu verwenden. 
+     </p>
+     <p class="para">
+      Derzeit sind keine Migrationsskripte verfügbar, jedoch enthält die mysqli-API sowohl
+      eine prozedurale als auch eine OOP-API. Die prozedurale Version ist dabei ähnlich zu
+      ext/mysql.
+     </p>
+     <p class="para">
+      Es ist nicht möglich die Erwieterungen zu mischen. Es wird beispielsweise
+      nicht funktionieren eine mysqli-Verbindung an PDO_MySQL oder ext/mysql zu
+      übergeben.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.databases.mysqlresource">
+    <dt><strong>
+     
+      Wieso bekomme ich so eine Fehlermeldung:
+      &quot;Warning: 0 is not a MySQL result index in &lt;file&gt; 
+      on line &lt;x&gt;&quot; or &quot;Warning: Supplied argument is not 
+      a valid MySQL result resource in &lt;file&gt; on line &lt;x&gt;&quot;?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Sie versuchen, einen result identifier zu benutzen, der 0 ist. Die 0
+      bedeutet, dass Ihre Abfrage aus irgend einem Grund fehlgeschlagen ist.
+      Sie sollten auf Fehlermeldungen überprüfen, nachdem Sie Ihre Abfrage
+      losgeschickt haben und bevor Sie versuchen, mit dem Ergebnis zu arbeiten.
+      Dies kann mit diesem oder ähnlichem Code bewerkstelligt werden:
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;*&nbsp;FROM&nbsp;tables_priv"</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$result</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      oder
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;*&nbsp;FROM&nbsp;tables_priv"</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Bad&nbsp;query:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </p>
+    </dd>
+   </dl>
+  
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

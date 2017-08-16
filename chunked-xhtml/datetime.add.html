@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Addiert einen Wert von Tagen, Monaten, Jahren, Stunden, Minuten und Sekunden
+   zu einem DateTime-Objekt</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.calendar.html">Datums- und zeitrelevante Erweiterungen</a></li>
+  <li class="header up"><a href="book.datetime.html">Datum/Uhrzeit</a></li>
+  <li class="header up"><a href="class.datetime.html">DateTime</a></li>
+  <li class="active"><a href="datetime.add.html">DateTime::add</a></li>
+  <li><a href="datetime.construct.html">DateTime::__construct</a></li>
+  <li><a href="datetime.createfromformat.html">DateTime::createFromFormat</a></li>
+  <li><a href="datetime.getlasterrors.html">DateTime::getLastErrors</a></li>
+  <li><a href="datetime.modify.html">DateTime::modify</a></li>
+  <li><a href="datetime.set-state.html">DateTime::__set_state</a></li>
+  <li><a href="datetime.setdate.html">DateTime::setDate</a></li>
+  <li><a href="datetime.setisodate.html">DateTime::setISODate</a></li>
+  <li><a href="datetime.settime.html">DateTime::setTime</a></li>
+  <li><a href="datetime.settimestamp.html">DateTime::setTimestamp</a></li>
+  <li><a href="datetime.settimezone.html">DateTime::setTimezone</a></li>
+  <li><a href="datetime.sub.html">DateTime::sub</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="class.datetime.html">DateTime</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="datetime.construct.html">DateTime::__construct</a></div>
+                <div class="up"><a href="class.datetime.html">DateTime</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="datetime.add" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">DateTime::add</h1>
+  <h1 class="refname">date_add</h1>
+  <p class="refpurpose">
+   Addiert einen Wert von Tagen, Monaten, Jahren, Stunden, Minuten und Sekunden
+   zu einem DateTime-Objekt
+  </p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-datetime.add-description">
+  <h3 class="title">Beschreibung</h3>
+  <p class="para">Objektorientierter Stil</p>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">DateTime</span> <span class="methodname">DateTime::add</span>
+    ( <span class="methodparam"><span class="type">DateInterval</span> <code class="parameter">$interval</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">Prozeduraler Stil</p>
+  <div class="methodsynopsis dc-description">
+   <span class="type">DateTime</span> <span class="methodname">date_add</span>
+    ( <span class="methodparam"><span class="type">DateTime</span> <code class="parameter">$object</code></span>
+   , <span class="methodparam"><span class="type">DateInterval</span> <code class="parameter">$interval</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Addiert das gegebene <span class="classname">DateInterval</span> Objekt zu dem
+   angegebenen <span class="classname">DateTime</span> Objekt.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-datetime.add-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <dl>
+
+   <dt>
+<code class="parameter">object</code></dt>
+
+<dd>
+<p class="para">Nur bei prozeduralem Aufruf: Ein von <span class="function">date_create</span>
+zurückgegebenes <span class="classname">DateTime</span>-Objekt.
+Diese Funktion verändert dieses Objekt.</p></dd>
+
+   
+    <dt>
+
+     <code class="parameter">interval</code>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Ein <span class="classname">DateInterval</span> Objekt
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-datetime.add-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt das <span class="classname">DateTime</span>-Objekt
+für die Verkettung von Methoden zurück Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-datetime.add-examples">
+  <h3 class="title">Beispiele</h3>
+  <div class="example" id="example-2446">
+   <p><strong>Beispiel #1 <span class="function">DateTime::add</span> Beispiel</strong></p>
+   <div class="example-contents"><p>Objektorientierter Stil</p></div>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$date&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">(</span><span style="color: #DD0000">'2000-01-01'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$date</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'P10D'</span><span style="color: #007700">));<br />echo&nbsp;</span><span style="color: #0000BB">$date</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'Y-m-d'</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>Prozeduraler Stil</p></div>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$date&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">date_create</span><span style="color: #007700">(</span><span style="color: #DD0000">'2000-01-01'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">date_add</span><span style="color: #007700">(</span><span style="color: #0000BB">$date</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">date_interval_create_from_date_string</span><span style="color: #007700">(</span><span style="color: #DD0000">'10&nbsp;days'</span><span style="color: #007700">));<br />echo&nbsp;</span><span style="color: #0000BB">date_format</span><span style="color: #007700">(</span><span style="color: #0000BB">$date</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Y-m-d'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>Die
+obigen Bespiele erzeugen folgende Ausgabe:</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+2000-01-11
+</pre></div>
+   </div>
+  </div>
+  <div class="example" id="example-2447">
+   <p><strong>Beispiel #2 Weitere <span class="function">DateTime::add</span> Beispiele</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$date&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">(</span><span style="color: #DD0000">'2000-01-01'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$date</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'PT10H30S'</span><span style="color: #007700">));<br />echo&nbsp;</span><span style="color: #0000BB">$date</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'Y-m-d&nbsp;H:i:s'</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$date&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">(</span><span style="color: #DD0000">'2000-01-01'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$date</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'P7Y5M4DT4H3M2S'</span><span style="color: #007700">));<br />echo&nbsp;</span><span style="color: #0000BB">$date</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'Y-m-d&nbsp;H:i:s'</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+2000-01-01 10:00:30
+2007-06-05 04:03:02
+</pre></div>
+   </div>
+  </div>
+  <div class="example" id="example-2448">
+   <p><strong>Beispiel #3 Vorsicht beim Addieren von Monaten</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$date&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">(</span><span style="color: #DD0000">'2000-12-31'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$interval&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'P1M'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$date</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #0000BB">$interval</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$date</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'Y-m-d'</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$date</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #0000BB">$interval</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$date</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'Y-m-d'</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+2001-01-31
+2001-03-03
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-datetime.add-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <p class="para">
+   <span class="function">DateTime::modify</span> ist
+   eine Alternative für PHP 5.2.
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-datetime.add-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <ul class="simplelist">
+   <li class="member"><span class="function">DateTime::sub</span></li>
+   <li class="member"><span class="function">DateTime::diff</span></li>
+   <li class="member"><span class="function">DateTime::modify</span></li>
+  </ul>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

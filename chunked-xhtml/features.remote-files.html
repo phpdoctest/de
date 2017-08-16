@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Zugriff auf entfernte Dateien</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="features.html">Features</a></li>
+  <li><a href="features.http-auth.html">HTTP-Authentifizierung mit PHP</a></li>
+  <li><a href="features.cookies.html">Cookies</a></li>
+  <li><a href="features.sessions.html">Sessions</a></li>
+  <li><a href="features.xforms.html">Mit XForms umgehen</a></li>
+  <li><a href="features.file-upload.html">Steuerung von Dateiuploads</a></li>
+  <li class="active"><a href="features.remote-files.html">Zugriff auf entfernte Dateien</a></li>
+  <li><a href="features.connection-handling.html">Verbindungssteuerung</a></li>
+  <li><a href="features.persistent-connections.html">Persistente Datenbankverbindungen</a></li>
+  <li><a href="features.safe-mode.html">Safe Mode</a></li>
+  <li><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></li>
+  <li><a href="features.gc.html">Garbage Collection</a></li>
+  <li><a href="features.dtrace.html">DTrace Dynamic Tracing</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="features.file-upload.put-method.html">PUT-Unterst&uuml;tzung</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="features.connection-handling.html">Verbindungssteuerung</a></div>
+                <div class="up"><a href="features.html">Features</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="features.remote-files" class="chapter">
+  <h1>Zugriff auf entfernte Dateien</h1>
+
+  <p class="para">
+   Wenn <code class="parameter">allow_url_fopen</code> in der <var class="filename">php.ini</var> aktiviert ist,
+   können <acronym class="acronym">HTTP</acronym>- und <acronym class="acronym">FTP</acronym>-URLs bei den
+   meisten Funktionen verwendet werden, die einen Dateinamen als Parameter
+   benötigen. Darüber hinaus können URLs in <span class="function">include</span>-,
+   <span class="function">include_once</span>-, <span class="function">require</span>- und
+   <span class="function">require_once</span>-Anweisungen verwendet werden (ab PHP
+   5.2.0 muss dafür <strong class="option unknown">allow_url_include</strong>
+ aktiviert sein).
+   Weitere Informationen zu den Protokollen, die von PHP unterstützt werden,
+   finden Sie im Abschnitt <a href="wrappers.html" class="xref">Unterst&uuml;tzte Protokolle und Wrapper</a>.
+  </p>
+  <p class="para">
+   Beispielsweise kann damit eine Datei auf einem anderen Webserver geöffnet
+   und nach benötigten Daten analysiert werden. Diese Daten können zur Abfrage
+   einer Datenbank benutzt werden oder passend zum Rest der eigenen Website
+   ausgegeben werden.
+  </p>
+  <p class="para">
+   <div class="example" id="example-380">
+    <p><strong>Beispiel #1 Den Titel einer entfernten Seite auslesen</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$datei&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$datei</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;p&gt;Datei&nbsp;konnte&nbsp;nicht&nbsp;geöffnet&nbsp;werden.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />}<br />while&nbsp;(!</span><span style="color: #0000BB">feof&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$datei</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$zeile&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fgets&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$datei</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1024</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Funktioniert&nbsp;nur,&nbsp;wenn&nbsp;Titel&nbsp;und&nbsp;title-Tags&nbsp;in&nbsp;einer&nbsp;Zeile&nbsp;stehen&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">preg_match&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"@\&lt;title\&gt;(.*)\&lt;/title\&gt;@i"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$zeile</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$treffer</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$title&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$treffer</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$datei</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   Auch eine Datei auf einem FTP-Server kann geschrieben werden, vorausgesetzt
+   man ist als Benutzer mit entsprechenden Zugriffsrechten angemeldet. Auf
+   diesem Weg können nur neue Dateien angelegt werden. Falls Sie versuchen
+   eine schon existierende Datei zu überschreiben, wird der
+   <span class="function">fopen</span>-Aufruf fehlschlagen.
+  </p>
+  <p class="para">
+   Um sich statt als &#039;anonymous&#039; als anderer Benutzer anzumelden, muss ein
+   Benutzername (und möglicherweise ein Passwort) innerhalb der URL angegeben
+   werden, wie z.B.
+   &#039;<em>ftp://benutzer:passwort@ftp.example.com/pfad/zur/datei</em>&#039;.
+   Die selbe Syntax kann verwendet werden, um auf Dateien via
+   <acronym class="acronym">HTTP</acronym> zuzugreifen, wenn diese eine
+   Basic-Authentifizierung benötigen.
+  </p>
+  <p class="para">
+   <div class="example" id="example-381">
+    <p><strong>Beispiel #2 Daten auf einen entfernten Server speichern</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$datei&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"ftp://ftp.example.com/incoming/outputfile"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"w"</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$datei</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;p&gt;Datei&nbsp;konnte&nbsp;nicht&nbsp;zum&nbsp;schreiben&nbsp;geöffnet&nbsp;werden.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />}<br /></span><span style="color: #FF8000">/*&nbsp;Schreibe&nbsp;die&nbsp;Daten&nbsp;hier&nbsp;hin.&nbsp;*/<br /></span><span style="color: #0000BB">fputs&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$datei</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'HTTP_USER_AGENT'</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$datei</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Obiges Beispiel könnte dazu verleiten, dieses Verfahren zu benutzen, um
+     in eine entfernte Log-Datei zu schreiben. Das würde aber leider nicht
+     funktionieren, weil der <span class="function">fopen</span>-Aufruf fehlschlagen
+     würde, wenn die entfernte Datei bereits existiert. Für eine
+     dezentralisierte Protokollierung sollten Sie sich die Funktion
+     <span class="function">syslog</span> anschauen.
+    </p>
+   </p></blockquote>
+  </p>
+
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

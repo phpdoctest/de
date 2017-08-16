@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Erzeugt eine spezielle oder eine gew&ouml;hnliche Datei (POSIX.1)</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li class="header up"><a href="book.posix.html">POSIX</a></li>
+  <li class="header up"><a href="ref.posix.html">POSIX Funktionen</a></li>
+  <li><a href="function.posix-access.html">posix_access</a></li>
+  <li><a href="function.posix-ctermid.html">posix_ctermid</a></li>
+  <li><a href="function.posix-errno.html">posix_errno</a></li>
+  <li><a href="function.posix-get-last-error.html">posix_get_last_error</a></li>
+  <li><a href="function.posix-getcwd.html">posix_getcwd</a></li>
+  <li><a href="function.posix-getegid.html">posix_getegid</a></li>
+  <li><a href="function.posix-geteuid.html">posix_geteuid</a></li>
+  <li><a href="function.posix-getgid.html">posix_getgid</a></li>
+  <li><a href="function.posix-getgrgid.html">posix_getgrgid</a></li>
+  <li><a href="function.posix-getgrnam.html">posix_getgrnam</a></li>
+  <li><a href="function.posix-getgroups.html">posix_getgroups</a></li>
+  <li><a href="function.posix-getlogin.html">posix_getlogin</a></li>
+  <li><a href="function.posix-getpgid.html">posix_getpgid</a></li>
+  <li><a href="function.posix-getpgrp.html">posix_getpgrp</a></li>
+  <li><a href="function.posix-getpid.html">posix_getpid</a></li>
+  <li><a href="function.posix-getppid.html">posix_getppid</a></li>
+  <li><a href="function.posix-getpwnam.html">posix_getpwnam</a></li>
+  <li><a href="function.posix-getpwuid.html">posix_getpwuid</a></li>
+  <li><a href="function.posix-getrlimit.html">posix_getrlimit</a></li>
+  <li><a href="function.posix-getsid.html">posix_getsid</a></li>
+  <li><a href="function.posix-getuid.html">posix_getuid</a></li>
+  <li><a href="function.posix-initgroups.html">posix_initgroups</a></li>
+  <li><a href="function.posix-isatty.html">posix_isatty</a></li>
+  <li><a href="function.posix-kill.html">posix_kill</a></li>
+  <li><a href="function.posix-mkfifo.html">posix_mkfifo</a></li>
+  <li class="active"><a href="function.posix-mknod.html">posix_mknod</a></li>
+  <li><a href="function.posix-setegid.html">posix_setegid</a></li>
+  <li><a href="function.posix-seteuid.html">posix_seteuid</a></li>
+  <li><a href="function.posix-setgid.html">posix_setgid</a></li>
+  <li><a href="function.posix-setpgid.html">posix_setpgid</a></li>
+  <li><a href="function.posix-setrlimit.html">posix_setrlimit</a></li>
+  <li><a href="function.posix-setsid.html">posix_setsid</a></li>
+  <li><a href="function.posix-setuid.html">posix_setuid</a></li>
+  <li><a href="function.posix-strerror.html">posix_strerror</a></li>
+  <li><a href="function.posix-times.html">posix_times</a></li>
+  <li><a href="function.posix-ttyname.html">posix_ttyname</a></li>
+  <li><a href="function.posix-uname.html">posix_uname</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.posix-mkfifo.html">posix_mkfifo</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.posix-setegid.html">posix_setegid</a></div>
+                <div class="up"><a href="ref.posix.html">POSIX Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.posix-mknod" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">posix_mknod</h1>
+  <p class="refpurpose">Erzeugt eine spezielle oder eine gewöhnliche Datei (POSIX.1)</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.posix-mknod-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">posix_mknod</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$pathname</code></span>
+   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$mode</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$major</code><span class="initializer"> = 0</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$minor</code><span class="initializer"> = 0</span></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   Erzeugt eine spezielle oder eine gewöhnliche Datei.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.posix-mknod-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">pathname</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die zu erzeugende Datei
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">mode</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Dieser Parameter wird zusammengesetzt aus einer bitweisen
+       ODER-Verknüpfung zwischen dem Dateityp (eine der folgenden Konstanten:
+       <strong><code>POSIX_S_IFREG</code></strong>, <strong><code>POSIX_S_IFCHR</code></strong>,
+       <strong><code>POSIX_S_IFBLK</code></strong>, <strong><code>POSIX_S_IFIFO</code></strong>
+       oder <strong><code>POSIX_S_IFSOCK</code></strong>) und den
+       Zugriffsberechtigungen.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">major</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Major-Device-Nummer (Hauptgerätenummer); wird bei der Verwendung
+       von <strong><code>S_IFCHR</code></strong> oder <strong><code>S_IFBLK</code></strong>
+       benötigt.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">minor</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Minor-Device-Nummer (Untergerätenummer).
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.posix-mknod-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.posix-mknod-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4115">
+    <p><strong>Beispiel #1 <span class="function">posix_mknod</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$datei&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'/tmp/tmpfile'</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Dateiname<br /></span><span style="color: #0000BB">$typ&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">POSIX_S_IFBLK</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Dateityp<br /></span><span style="color: #0000BB">$berechtigungen&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0777</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;oktal<br /></span><span style="color: #0000BB">$major&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$minor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">8</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;/dev/random<br /><br /></span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">posix_mknod</span><span style="color: #007700">(</span><span style="color: #0000BB">$datei</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$typ&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">$berechtigungen</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$major</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$minor</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Fehler&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">posix_get_last_error</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">':&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">posix_strerror</span><span style="color: #007700">(</span><span style="color: #0000BB">posix_get_last_error</span><span style="color: #007700">()));<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.posix-mknod-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">posix_mkfifo</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

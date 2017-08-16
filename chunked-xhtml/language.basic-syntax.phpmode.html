@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Den HTML-Bereich der Datei verlassen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.basic-syntax.html">Grundlagen der Syntax</a></li>
+  <li><a href="language.basic-syntax.phptags.html">PHP Tags</a></li>
+  <li class="active"><a href="language.basic-syntax.phpmode.html">Den HTML-Bereich der Datei verlassen</a></li>
+  <li><a href="language.basic-syntax.instruction-separation.html">Abgrenzung von Anweisungen</a></li>
+  <li><a href="language.basic-syntax.comments.html">Kommentare</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.basic-syntax.phptags.html">PHP Tags</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.basic-syntax.instruction-separation.html">Abgrenzung von Anweisungen</a></div>
+                <div class="up"><a href="language.basic-syntax.html">Grundlagen der Syntax</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.basic-syntax.phpmode" class="sect1">
+   <h2 class="title">Den HTML-Bereich der Datei verlassen</h2>
+   <p class="para">
+    Alles außerhalb eines Paares von öffnenden und schließenden Tags wird
+    vom PHP-Parser ignoriert, was es ermöglicht, dass PHP-Dateien gemischten
+    Inhalt haben können. Das ermöglicht die Einbettung von PHP in HTML-Dokumenten,
+    zum Beispiel um Templates zu erstellen.
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+&lt;p&gt;Das&nbsp;hier&nbsp;wird&nbsp;von&nbsp;PHP&nbsp;ignoriert,&nbsp;und&nbsp;vom&nbsp;Browser&nbsp;angezeigt.&lt;/p&gt;<br /><span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'Wohingegen&nbsp;das&nbsp;hier&nbsp;geparst&nbsp;wird.'</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">?&gt;<br /></span>&lt;p&gt;Dies&nbsp;wird&nbsp;ebenfalls&nbsp;von&nbsp;PHP&nbsp;ignoriert,&nbsp;und&nbsp;vom&nbsp;Browser&nbsp;angezeigt.&lt;/p&gt;</span>
+</code></div>
+     </div>
+
+    </div>
+    Dies arbeitet wie erwartet, da PHP, wenn es auf ein schließendes &gt;?-Tag
+    trifft, einfach beginnt, alles folgende auszugeben, bis es wieder auf einen
+    öffnenden Tag stößt (mit Ausnahme eines direkt folgenden Newline-Zeichens -
+    siehe auch Abschnitt <a href="language.basic-syntax.instruction-separation.html" class="link">Abgrenzung
+    von Anweisungen</a>).
+    Das gilt nicht in der Mitte einer bedingten Anweisung, in welchem Fall
+    der Interpreter das Resultat der Bedingung ermittelt, bevor die Entscheidung
+    getroffen wird, was übersprungen wird. Siehe das folgende Beispiel.
+   </p>
+   <p class="para">
+    Verwendung von Strukturen mit Bedingungen
+    <div class="example" id="example-82">
+     <p><strong>Beispiel #1 Fortgeschrittene Ausgabe unter Verwendung von Bedingungen</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$expression&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">):&nbsp;</span><span style="color: #0000BB">?&gt;<br /></span>&nbsp;&nbsp;Dies&nbsp;wird&nbsp;angezeigt,&nbsp;wenn&nbsp;der&nbsp;Ausdruck&nbsp;wahr&nbsp;ist.<br /><span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">else:&nbsp;</span><span style="color: #0000BB">?&gt;<br /></span>&nbsp;&nbsp;Andernfalls&nbsp;wird&nbsp;dies&nbsp;angezeigt.<br /><span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">endif;&nbsp;</span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+    In diesem Beispiel überspringt PHP die Blöcke, in denen die Bedingung nicht
+    erfüllt ist; selbst wenn diese außerhalb der öffnenden/schließenden PHP-Tags
+    liegen, überspringt PHP sie gemäß der Bedingung, da der PHP-Interpreter
+    Blöcke überspringt, die in einer Bedinungen liegen, die nicht erfüllt ist.
+   </p>
+   <p class="para">
+    Für die Ausgabe von großen Textblöcken ist der Ausstieg aus
+    dem Parse-Modus generell effizienter, als den gesamten Text durch
+    <span class="function">echo</span> oder <span class="function">print</span> zu jagen.
+   </p>
+   <p class="para">
+    Es gibt in PHP 5 bis zu fünf unterschiedliche Paare öffnender und schließender Tags, die
+    in Abhängigkeit von der PHP-Konfiguration verwendet werden können.
+    Zwei davon, <code class="code">&lt;?php ?&gt;</code> und <code class="code">&lt;script
+    language=&quot;php&quot;&gt; &lt;/script&gt;</code>, sind immer verfügbar.
+    Es gibt ebenfalls den kurzen Echo-Tag <code class="code">&lt;?= ?&gt;</code>,
+    der ab PHP 5.4.0 immer verfügbar ist.
+   </p>
+   <p class="para">
+    Die anderen beiden
+    sind Short-Tags und <span class="productname">ASP</span>-Tags. Das
+    bedeutet, wenn einige Leute Short-Tags und
+    <span class="productname">ASP</span>-Tags bequem finden, sind die daraus
+    resultierenden Skripte nicht überall einsetzbar, so dass diese Tags
+    grundsätzlich nicht empfehlenswert sind.
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <p class="para">
+      Beachten Sie auch, dass Sie, wenn Sie PHP in XML oder XHTML einbinden
+      wollen, die &lt;?php ?&gt;-Tags verwenden müssen, um keine Parserfehler
+      aufgrund vermischter Standards zu provozieren.
+     </p>
+    </p></blockquote>
+   </p>
+   <p class="para">
+    PHP 7 entfernt die Unterstützung von <span class="productname">ASP</span>-Tags und
+    <code class="code">&lt;script language=&quot;php&quot;&gt;</code> Tags. Daher empfehlen wir beim
+    Schreiben von PHP-Code für maximale Kompatibilität nur
+    <code class="code">&lt;?php ?&gt;</code> und <code class="code">&lt;?= ?&gt;</code> zu verwenden.
+   </p>
+   <p class="para">
+    <div class="example" id="example-83">
+     <p><strong>Beispiel #2 Die öffnenden und schließenden Tags</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+1.&nbsp;&nbsp;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'wenn&nbsp;Sie&nbsp;PHP-Code&nbsp;in&nbsp;XHTML&nbsp;oder&nbsp;XML-Dokumenten&nbsp;ausliefern&nbsp;wollen,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;verwenden&nbsp;Sie&nbsp;diese&nbsp;Tags'</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">?&gt;<br /></span><br />2.&nbsp;&nbsp;Sie&nbsp;können&nbsp;den&nbsp;kurzen&nbsp;Echo-Tag&nbsp;verwenden&nbsp;um&nbsp;<span style="color: #0000BB">&lt;?=&nbsp;</span><span style="color: #DD0000">'diese&nbsp;Zeichenkette&nbsp;auszugeben'&nbsp;</span><span style="color: #0000BB">?&gt;</span>.<br />&nbsp;&nbsp;&nbsp;&nbsp;Jener&nbsp;ist&nbsp;ab&nbsp;PHP&nbsp;5.4.0&nbsp;immer&nbsp;verfügbar,&nbsp;und&nbsp;ist&nbsp;equivalent&nbsp;zu<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'diese&nbsp;Zeichenkette&nbsp;auszugeben'&nbsp;</span><span style="color: #0000BB">?&gt;</span>.<br /><br />3.&nbsp;&nbsp;&lt;?&nbsp;echo&nbsp;'dieser&nbsp;Code&nbsp;befindet&nbsp;sich&nbsp;innerhalb&nbsp;von&nbsp;Short-Tags,&nbsp;und&nbsp;funktioniert&nbsp;nur,&nbsp;'.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wenn&nbsp;short_open_tag&nbsp;aktiviert&nbsp;ist';&nbsp;?&gt;<br /><br />4.&nbsp;&nbsp;&lt;script&nbsp;language="php"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;'manche&nbsp;Editoren&nbsp;(like&nbsp;FrontPage)&nbsp;mögen<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keine&nbsp;Processing-Instructions&nbsp;innerhalb&nbsp;dieser&nbsp;Tags';<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;Diese&nbsp;Syntax&nbsp;wurde&nbsp;in&nbsp;PHP&nbsp;7.0.0&nbsp;entfernt.<br /><br />5.&nbsp;&nbsp;&lt;%&nbsp;echo&nbsp;'Sie&nbsp;können&nbsp;optional&nbsp;ASP-Tags&nbsp;verwenden';&nbsp;%&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;Code&nbsp;innerhalb&nbsp;dieser&nbsp;Tags&nbsp;&lt;%=&nbsp;$variable;&nbsp;%&gt;&nbsp;ist&nbsp;eine&nbsp;Abkürzung&nbsp;für&nbsp;den&nbsp;Code&nbsp;&lt;%&nbsp;echo&nbsp;$variable;&nbsp;%&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;Diese&nbsp;beiden&nbsp;syntaktischen&nbsp;Konstrukte&nbsp;wurde&nbsp;in&nbsp;PHP&nbsp;7.0.0&nbsp;entfernt.</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    Short-Tags (Beispiel drei) sind nur verfügbar, wenn sie via <a href="ini.core.html#ini.short-open-tag" class="link">short_open_tag</a>-Direktive im
+    <var class="filename">php.ini</var>-Konfigurationsfile eingeschaltet wurden, oder wenn PHP mit
+    <strong class="option unknown">--enable-short-tags</strong>
+ konfiguriert wurde.
+   </p>
+   <p class="para">
+    <span class="productname">ASP</span>-Tags (Beispiel fünf) sind nur verfügbar,
+    wenn sie mittels der <a href="ini.core.html#ini.asp-tags" class="link">asp_tags</a>-Direktive
+    im <var class="filename">php.ini</var> Konfigurationsfile eingeschaltet wurden,
+    und wurden in PHP 7.0.0 entfernt.
+   </p>
+   <p class="para">
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <p class="para">
+      Die Verwendung der Short-Tags sollten Sie vermeiden, wenn Sie
+      Applikationen oder Bibliotheken entwickeln, die für die Weitergabe oder
+      den Einsatz auf nicht Ihrer Kontrolle unterstehenden PHP-Servern bestimmt
+      sind, da es sein kann, dass Short-Tags auf dem Zielsystem nicht
+      unterstützt werden. Um portablen, weiterverteilbaren Code zu haben,
+      verwenden Sie keine Short-Tags.
+     </p>
+    </p></blockquote>
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <p class="para">
+      Unter PHP 5.2 und früher war es nicht erlaubt, dass der
+      öffnende <em>&lt;?php</em> Tag allein in einer Datei stand.
+      Dies ist seit PHP 5.3 erlaubt, vorausgesetzt, dass wenigstens ein Whitespace-Zeichen
+      auf den öffnenden Tag folgt.
+     </p>
+    </p></blockquote>
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <p class="para">
+      Beginnend mit PHP 5.4 wird der kurze Echo-Tag <em>&lt;?=</em>
+      immer erkannt und ist gültig, unabhängig von der 
+      <a href="ini.core.html#ini.short-open-tag" class="link">short_open_tag</a> Einstellung.
+     </p>
+    </p></blockquote>
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

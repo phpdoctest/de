@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Wo Konfigurationseinstellungen gesetzt werden k&ouml;nnen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="install.html">Installation und Konfiguration</a></li>
+  <li class="header up"><a href="configuration.html">Laufzeiteinstellungen</a></li>
+  <li><a href="configuration.file.html">Die Konfigurationsdatei</a></li>
+  <li><a href="configuration.file.per-user.html">.user.ini-Dateien</a></li>
+  <li class="active"><a href="configuration.changes.modes.html">Wo Konfigurationseinstellungen gesetzt werden k&ouml;nnen</a></li>
+  <li><a href="configuration.changes.html">Wie man Konfigurationseinstellungen &auml;ndert</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="configuration.file.per-user.html">.user.ini-Dateien</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="configuration.changes.html">Wie man Konfigurationseinstellungen &auml;ndert</a></div>
+                <div class="up"><a href="configuration.html">Laufzeiteinstellungen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="configuration.changes.modes" class="sect1">
+   <h2 class="title">Wo Konfigurationseinstellungen gesetzt werden können</h2>
+   
+   <p class="para">
+    Diese Modi bestimmen wann und wo eine PHP-Direktive gesetzt oder
+    nicht gesetzt werden kann. Jede Direktive im Handbuch verweist auf
+    einen dieser Modi. Zum Beispiel können einige Einstellungen in
+    einem PHP-Skript mittels <span class="function">ini_set</span> gesetzt
+    werden, während andere nur über die <var class="filename">php.ini</var> oder <var class="filename">httpd.conf</var>
+    gesetzt werden können.
+   </p>
+   
+   <p class="para">
+    Ein Beispiel ist die <a href="outcontrol.configuration.html#ini.output-buffering" class="link">output_buffering</a>-Einstellung.
+    Wegen <em>PHP_INI_PERDIR</em> kann sie nicht mittels
+    <span class="function">ini_set</span> gesetzt werden. Die <a href="errorfunc.configuration.html#ini.display-errors" class="link">display_errors</a>-Einstellung
+    hingegegen kann wegen <em>PHP_INI_ALL</em> überall
+    gesetzt werden, also auch mittels <span class="function">ini_set</span>.
+   </p>
+   
+   <p class="para">
+    <table class="doctable table">
+     <caption><strong>Definition der PHP_INI_*-Modi</strong></caption>
+     
+      <thead>
+       <tr>
+        <th>Modus</th>
+        <th>Bedeutung</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr>
+        <td><em>PHP_INI_USER</em></td>
+        <td>
+         Eintrag kann in Benutzerskripten (z.B. mittels
+         <span class="function">ini_set</span>) oder in der <a href="configuration.changes.html#configuration.changes.windows" class="link">Windows-Registry</a>
+         gesetzt werden. Seit PHP 5.3 kann die Option auch in der
+         <var class="filename">.user.ini</var> gesetzt werden.
+        </td>
+       </tr>
+
+       <tr>
+        <td><em>PHP_INI_PERDIR</em></td>
+        <td>
+         Eintrag kann in der <var class="filename">php.ini</var>, <var class="filename">.htaccess</var>, <var class="filename">httpd.conf</var>
+         oder <var class="filename">.user.ini</var> (seit PHP 5.3) gesetzt werden
+        </td>
+       </tr>
+
+       <tr>
+        <td><em>PHP_INI_SYSTEM</em></td>
+        <td>
+         Eintrag kann in der <var class="filename">php.ini</var> oder <var class="filename">httpd.conf</var>
+         gesetzt werden
+        </td>
+       </tr>
+
+       <tr>
+        <td><em>PHP_INI_ALL</em></td>
+        <td>Eintrag kann überall gesetzt werden</td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

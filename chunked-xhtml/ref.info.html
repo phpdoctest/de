@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: PHP-Optionen-/-Informationen-Funktionen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li class="header up"><a href="book.info.html">PHP-Optionen/-Informationen</a></li>
+  <li><a href="intro.info.html">Einf&uuml;hrung</a></li>
+  <li><a href="info.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="info.constants.html">Vordefinierte Konstanten</a></li>
+  <li class="active"><a href="ref.info.html">PHP-Optionen-/-Informationen-Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="info.constants.html">Vordefinierte Konstanten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.assert-options.html">assert_options</a></div>
+                <div class="up"><a href="book.info.html">PHP-Optionen/-Informationen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="ref.info" class="reference">
+ <h1 class="title">PHP-Optionen-/-Informationen-Funktionen</h1>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_reference">
+<li><a href="function.assert-options.html">assert_options</a> — Setzt oder liefert die Assert-Optionen</li>
+<li><a href="function.assert.html">assert</a> — Pr&uuml;ft ab, ob eine Zusicherung FALSE ist</li>
+<li><a href="function.cli-get-process-title.html">cli_get_process_title</a> — Returns the current process title</li>
+<li><a href="function.cli-set-process-title.html">cli_set_process_title</a> — Sets the process title</li>
+<li><a href="function.dl.html">dl</a> — L&auml;dt eine PHP-Erweiterung (Extension) zur Laufzeit</li>
+<li><a href="function.extension-loaded.html">extension_loaded</a> — Pr&uuml;ft ob eine Extension geladen ist</li>
+<li><a href="function.gc-collect-cycles.html">gc_collect_cycles</a> — Forces collection of any existing garbage cycles</li>
+<li><a href="function.gc-disable.html">gc_disable</a> — Deactivates the circular reference collector</li>
+<li><a href="function.gc-enable.html">gc_enable</a> — Activates the circular reference collector</li>
+<li><a href="function.gc-enabled.html">gc_enabled</a> — Returns status of the circular reference collector</li>
+<li><a href="function.gc-mem-caches.html">gc_mem_caches</a> — Reclaims memory used by the Zend Engine memory manager</li>
+<li><a href="function.get-cfg-var.html">get_cfg_var</a> — Ermittelt den Wert einer Konfigurationsoption</li>
+<li><a href="function.get-current-user.html">get_current_user</a> — Liefert den Benutzernamen des Besitzers des aktuellen PHP-Skripts</li>
+<li><a href="function.get-defined-constants.html">get_defined_constants</a> — Returns an associative array with the names of all the constants and their values</li>
+<li><a href="function.get-extension-funcs.html">get_extension_funcs</a> — Liefert die Namen der Funktionen einer Extension</li>
+<li><a href="function.get-include-path.html">get_include_path</a> — Gets the current include_path configuration option</li>
+<li><a href="function.get-included-files.html">get_included_files</a> — Liefert ein Array mit den Namen der includierten Dateien</li>
+<li><a href="function.get-loaded-extensions.html">get_loaded_extensions</a> — Liefert ein Array mit den Namen aller einkompilierten und geladenen Extensions</li>
+<li><a href="function.get-magic-quotes-gpc.html">get_magic_quotes_gpc</a> — Zeigt die aktuelle Konfiguration von magic quotes gpc</li>
+<li><a href="function.get-magic-quotes-runtime.html">get_magic_quotes_runtime</a> — Zeigt die aktuelle Konfiguration von magic_quotes_runtime</li>
+<li><a href="function.get-required-files.html">get_required_files</a> — Alias von get_included_files</li>
+<li><a href="function.get-resources.html">get_resources</a> — Returns active resources</li>
+<li><a href="function.getenv.html">getenv</a> — Liefert den Wert einer Umgebungsvariable</li>
+<li><a href="function.getlastmod.html">getlastmod</a> — Uhrzeit der letzten &Auml;nderung eines Scripts</li>
+<li><a href="function.getmygid.html">getmygid</a> — Get PHP script owner's GID</li>
+<li><a href="function.getmyinode.html">getmyinode</a> — Ermittelt den Inode eines Skripts</li>
+<li><a href="function.getmypid.html">getmypid</a> — Prozess-Id eines Scripts</li>
+<li><a href="function.getmyuid.html">getmyuid</a> — Zeigt die User-ID des Besitzers eines PHP-Scripts</li>
+<li><a href="function.getopt.html">getopt</a> — Gets options from the command line argument list</li>
+<li><a href="function.getrusage.html">getrusage</a> — Zeigt den aktuellen Ressourcenverbrauch an</li>
+<li><a href="function.ini-alter.html">ini_alter</a> — Alias von ini_set</li>
+<li><a href="function.ini-get-all.html">ini_get_all</a> — Gets all configuration options</li>
+<li><a href="function.ini-get.html">ini_get</a> — Gets the value of a configuration option</li>
+<li><a href="function.ini-restore.html">ini_restore</a> — Restores the value of a configuration option</li>
+<li><a href="function.ini-set.html">ini_set</a> — Sets the value of a configuration option</li>
+<li><a href="function.magic-quotes-runtime.html">magic_quotes_runtime</a> — Alias von set_magic_quotes_runtime</li>
+<li><a href="function.main.html">main</a> — Dummy for main</li>
+<li><a href="function.memory-get-peak-usage.html">memory_get_peak_usage</a> — Returns the peak of memory allocated by PHP</li>
+<li><a href="function.memory-get-usage.html">memory_get_usage</a> — Returns the amount of memory allocated to PHP</li>
+<li><a href="function.php-ini-loaded-file.html">php_ini_loaded_file</a> — Retrieve a path to the loaded php.ini file</li>
+<li><a href="function.php-ini-scanned-files.html">php_ini_scanned_files</a> — Liefert die Liste von analysierten .ini-Dateien aus einem zus&auml;tzlichen ini-Verzeichnis</li>
+<li><a href="function.php-logo-guid.html">php_logo_guid</a> — Die GUID des PHP-Logos</li>
+<li><a href="function.php-sapi-name.html">php_sapi_name</a> — Gibt das genutzte Interface zwischen PHP und dem Webserver zur&uuml;ck</li>
+<li><a href="function.php-uname.html">php_uname</a> — Returns information about the operating system PHP is running on</li>
+<li><a href="function.phpcredits.html">phpcredits</a> — Prints out the credits for PHP</li>
+<li><a href="function.phpinfo.html">phpinfo</a> — Gibt Informationen zur PHP-Konfiguration aus</li>
+<li><a href="function.phpversion.html">phpversion</a> — Liefert die aktuelle PHP-Version</li>
+<li><a href="function.putenv.html">putenv</a> — Setzt den Wert einer Umgebungsvariablen.</li>
+<li><a href="function.restore-include-path.html">restore_include_path</a> — Restores the value of the include_path configuration option</li>
+<li><a href="function.set-include-path.html">set_include_path</a> — Sets the include_path configuration option</li>
+<li><a href="function.set-magic-quotes-runtime.html">set_magic_quotes_runtime</a> — Setzt magic_quotes_runtime</li>
+<li><a href="function.set-time-limit.html">set_time_limit</a> — Beschr&auml;nkt die maximale Ausf&uuml;hrungszeit</li>
+<li><a href="function.sys-get-temp-dir.html">sys_get_temp_dir</a> — Returns directory path used for temporary files</li>
+<li><a href="function.version-compare.html">version_compare</a> — Vergleicht zwei Versionsnummern im PHP-Stil</li>
+<li><a href="function.zend-logo-guid.html">zend_logo_guid</a> — Die GUID des Zend Logos</li>
+<li><a href="function.zend-thread-id.html">zend_thread_id</a> — Returns a unique identifier for the current thread</li>
+<li><a href="function.zend-version.html">zend_version</a> — Liefert die aktuelle Version der Zend Engine</li>
+</ul>
+</ol>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

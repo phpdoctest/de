@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: &Ouml;ffnet eine Datenbank</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.abstract.html">Abstraktionsebenen</a></li>
+  <li class="header up"><a href="book.dba.html">DBA</a></li>
+  <li class="header up"><a href="ref.dba.html">DBA-Funktionen</a></li>
+  <li><a href="function.dba-close.html">dba_close</a></li>
+  <li><a href="function.dba-delete.html">dba_delete</a></li>
+  <li><a href="function.dba-exists.html">dba_exists</a></li>
+  <li><a href="function.dba-fetch.html">dba_fetch</a></li>
+  <li><a href="function.dba-firstkey.html">dba_firstkey</a></li>
+  <li><a href="function.dba-handlers.html">dba_handlers</a></li>
+  <li><a href="function.dba-insert.html">dba_insert</a></li>
+  <li><a href="function.dba-key-split.html">dba_key_split</a></li>
+  <li><a href="function.dba-list.html">dba_list</a></li>
+  <li><a href="function.dba-nextkey.html">dba_nextkey</a></li>
+  <li class="active"><a href="function.dba-open.html">dba_open</a></li>
+  <li><a href="function.dba-optimize.html">dba_optimize</a></li>
+  <li><a href="function.dba-popen.html">dba_popen</a></li>
+  <li><a href="function.dba-replace.html">dba_replace</a></li>
+  <li><a href="function.dba-sync.html">dba_sync</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.dba-nextkey.html">dba_nextkey</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.dba-optimize.html">dba_optimize</a></div>
+                <div class="up"><a href="ref.dba.html">DBA-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.dba-open" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">dba_open</h1>
+  <p class="refpurpose">Öffnet eine Datenbank</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.dba-open-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">resource</span> <span class="methodname">dba_open</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$mode</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$handler</code></span>
+   [, <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$...</code></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">dba_open</span> stellt eine Datenbankinstanz für
+   <code class="parameter">path</code> mit <code class="parameter">mode</code> her und
+   benutzt dabei <code class="parameter">handler</code>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.dba-open-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">path</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ein gültiger Pfad in Ihrem Dateisystem.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">mode</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Das ist <em>r</em> für lesenden Zugriff, <em>w</em>
+       für lesenden und schreibenden Zugriff auf eine existierende Datenbank,
+       <em>c</em> für lesenden und schreibenden Zugriff und
+       Erstellen der Datenbank, falls sie noch nicht existiert und
+       <em>n</em> für das Erstellen einer Datenbank, bzw. deren
+       Zurücksetzen auf die Größe 0, falls sie schon existiert und lesenden
+       und schreibenden Zugriff. Die Datenbank wird im BTree-Modus erzeugt.
+       Andere Modi, wie Hash oder Queue, werden nicht unterstützt.
+      </p>
+      <p class="para">
+       Zusätzlich können Sie mit dem nächsten Buchstaben die
+       Datenbank-Sperrmethode festlegen. Verwenden Sie <em>l</em>
+       um die Datenbank mit einer <var class="filename">.lck</var>-Datei zu sperren
+       oder <em>d</em> um die Datenbank-Datei selbst zu sperren. Es
+       ist wichtig, dass alle Ihre Anwendungen das einheitlich machen.
+      </p>
+      <p class="para">
+       Falls Sie den Zugriff testen wollen, ohne auf die Sperrung zu warten,
+       können Sie <em>t</em> als dritten Buchstaben anfügen. Wenn
+       Sie sich absolut sicher sind, dass Sie keine Datenbanksperre benötigen,
+       können Sie statt <em>l</em> oder <em>d</em>
+       <em>-</em> verwenden. Wenn weder <em>d</em> oder
+       <em>l</em> noch <em>-</em> verwendet wird, sperrt
+       dba die Datenbank-Datei wie bei Verwendung von <em>d</em>.
+      </p>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+        Es kann jeweils nur einen Schreibzugriff auf eine Datenbank-Datei
+        geben. Wenn dba auf einen Webserver verwendet wird und mehr als eine
+        Anfrage Schreibzugriff benötigt, kann nur einer nach dem anderen
+        erledigt werden. Auch das Lesen ist während des Schreibens nicht
+        erlaubt. Die DBA-Erweiterung verwendet Sperren, um dies zu verhindern.
+        Siehe folgende Tabelle:
+        <table class="doctable table">
+         <caption><strong>DBA-Sperrung</strong></caption>
+         
+          <thead>
+           <tr>
+            <th>schon geöffnet</th>
+            <th><code class="parameter">Modus</code> = &quot;rl&quot;</th>
+            <th><code class="parameter">Modus</code> = &quot;rlt&quot;</th>
+            <th><code class="parameter">Modus</code> = &quot;wl&quot;</th>
+            <th><code class="parameter">Modus</code> = &quot;wlt&quot;</th>
+            <th><code class="parameter">Modus</code> = &quot;rd&quot;</th>
+            <th><code class="parameter">Modus</code> = &quot;rdt&quot;</th>
+            <th><code class="parameter">Modus</code> = &quot;wd&quot;</th>
+            <th><code class="parameter">Modus</code> = &quot;wdt&quot;</th>
+           </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+           <tr>
+            <td>nicht geöffnet</td>
+            <td>OK</td>
+            <td>OK</td>
+            <td>OK</td>
+            <td>OK</td>
+            <td>OK</td>
+            <td>OK</td>
+            <td>OK</td>
+            <td>OK</td>
+           </tr>
+
+           <tr>
+            <td><code class="parameter">Modus</code> = &quot;rl&quot;</td>
+            <td>OK</td>
+            <td>OK</td>
+            <td>warten</td>
+            <td><strong><code>FALSE</code></strong></td>
+            <td>unzulässig</td>
+            <td>unzulässig</td>
+            <td>unzulässig</td>
+            <td>unzulässig</td>
+           </tr>
+
+           <tr>
+            <td><code class="parameter">Modus</code> = &quot;wl&quot;</td>
+            <td>warten</td>
+            <td><strong><code>FALSE</code></strong></td>
+            <td>warten</td>
+            <td><strong><code>FALSE</code></strong></td>
+            <td>unzulässig</td>
+            <td>unzulässig</td>
+            <td>unzulässig</td>
+            <td>unzulässig</td>
+           </tr>
+
+           <tr>
+            <td><code class="parameter">Modus</code> = &quot;rd&quot;</td>
+            <td>unzulässig</td>
+            <td>unzulässig</td>
+            <td>unzulässig</td>
+            <td>unzulässig</td>
+            <td>OK</td>
+            <td>OK</td>
+            <td>warten</td>
+            <td><strong><code>FALSE</code></strong></td>
+           </tr>
+
+           <tr>
+            <td><code class="parameter">Modus</code> = &quot;wd&quot;</td>
+            <td>unzulässig</td>
+            <td>unzulässig</td>
+            <td>unzulässig</td>
+            <td>unzulässig</td>
+            <td>warten</td>
+            <td><strong><code>FALSE</code></strong></td>
+            <td>warten</td>
+            <td><strong><code>FALSE</code></strong></td>
+           </tr>
+
+          </tbody>
+         
+        </table>
+
+        <ul class="simplelist">
+         <li class="member">OK: der zweite Aufruf ist erfolgreich.</li>
+         <li class="member">warten: der zweite Aufruf wartet bis für den ersten <span class="function">dba_close</span> aufgerufen wird.</li>
+         <li class="member"><strong><code>FALSE</code></strong>: der zweite Aufruf gibt <strong><code>FALSE</code></strong> zurück.</li>
+         <li class="member">unzulässig: Sie dürfen beim Parameter <code class="parameter">Modus</code> die Modifikatoren <em>&quot;l&quot;</em> und <em>&quot;d&quot;</em> nicht zusammen verwenden.</li>
+        </ul>
+       </p>
+      </p></blockquote>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">Handler</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Name des <a href="dba.requirements.html" class="link">handler</a>s, der für
+       den Zugriff auf <code class="parameter">path</code> benutzt werden soll. Er
+       bekommt alle optionalen Argumente, die der Funktion
+       <span class="function">dba_open</span> mitgegeben wurden, übergeben und kann
+       damit in deren Name verfahren.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.dba-open-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt eine positive Verbindungskennung zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.dba-open-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>4.3.0</td>
+       <td>
+        Es ist möglich, Datenbank-Dateien über eine Netzwerkverbindung zu
+        öffnen. Falls eine Socket-Verbindung verwendet wird (wie bei HTTP oder
+        FTP), wird anstelle der Datenquelle selbst die Verbindung gesperrt.
+        Das ist wichtig zu wissen, weil in einem solchen Fall die Sperrung von
+        der Datenquelle ignoriert wird und eine andere Lösung gefunden werden
+        muss.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.dba-open-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">dba_popen</span></li>
+    <li class="member"><span class="function">dba_close</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

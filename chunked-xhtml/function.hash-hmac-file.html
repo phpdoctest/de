@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Berechnet einen Hash einer Datei mit Schl&uuml;ssel unter Verwendung von HMAC</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.crypto.html">Kryptografische Erweiterungen</a></li>
+  <li class="header up"><a href="book.hash.html">Hash</a></li>
+  <li class="header up"><a href="ref.hash.html">Hash-Funktionen</a></li>
+  <li><a href="function.hash-algos.html">hash_algos</a></li>
+  <li><a href="function.hash-copy.html">hash_copy</a></li>
+  <li><a href="function.hash-equals.html">hash_equals</a></li>
+  <li><a href="function.hash-file.html">hash_file</a></li>
+  <li><a href="function.hash-final.html">hash_final</a></li>
+  <li><a href="function.hash-hkdf.html">hash_hkdf</a></li>
+  <li class="active"><a href="function.hash-hmac-file.html">hash_hmac_file</a></li>
+  <li><a href="function.hash-hmac.html">hash_hmac</a></li>
+  <li><a href="function.hash-init.html">hash_init</a></li>
+  <li><a href="function.hash-pbkdf2.html">hash_pbkdf2</a></li>
+  <li><a href="function.hash-update-file.html">hash_update_file</a></li>
+  <li><a href="function.hash-update-stream.html">hash_update_stream</a></li>
+  <li><a href="function.hash-update.html">hash_update</a></li>
+  <li><a href="function.hash.html">hash</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.hash-hkdf.html">hash_hkdf</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.hash-hmac.html">hash_hmac</a></div>
+                <div class="up"><a href="ref.hash.html">Hash-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.hash-hmac-file" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">hash_hmac_file</h1>
+  <p class="refpurpose">Berechnet einen Hash einer Datei mit Schlüssel unter Verwendung von HMAC</p>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.hash-hmac-file-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname">hash_hmac_file</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$algo</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$raw_output</code><span class="initializer"> = false</span></span>
+  ] )</div>
+
+
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.hash-hmac-file-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">algo</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Name des gewählten Hash-Algorithmus (z.B. &quot;md5&quot;, &quot;sha256&quot;, &quot;haval160,4&quot;, usw...). Für eine Liste der unterstützten Algorithmen, siehe <span class="function">hash_algos</span>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">filename</code></dt>
+
+     <dd>
+
+      <p class="para">
+       URL der Datei, die gehasht werden soll, fopen-Wrapper werden unterstützt.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">key</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Geheimer Schlüssel für die Berechnung der HMAC-Variante des Hashs.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">raw_output</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ist dieser Parameter <strong><code>TRUE</code></strong>, werden direkt Binärdaten 
+       zurückgegeben, andernfalls werden klein geschriebene 
+       Hexadezimalziffern zurückgegeben.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.hash-hmac-file-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt den berechneten Hash als Hexadezimalzahl zurück, außer 
+   <code class="parameter">raw_output</code> ist wahr, in diesem Fall wird die
+   binäre Darstellung des Hashes zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.hash-hmac-file-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-894">
+    <p><strong>Beispiel #1 <span class="function">hash_hmac_file</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Erstelle&nbsp;die&nbsp;Datei,&nbsp;deren&nbsp;Inhalt&nbsp;gehasht&nbsp;werden&nbsp;soll&nbsp;*/<br /></span><span style="color: #0000BB">file_put_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'example.txt'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Franz&nbsp;jagt&nbsp;im&nbsp;komplett&nbsp;verwahrlosten&nbsp;Taxi&nbsp;quer&nbsp;durch&nbsp;Bayern.'</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">hash_hmac_file</span><span style="color: #007700">(</span><span style="color: #DD0000">'md5'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'example.txt'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'geheimnis'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+e949d0086c79cc6d67cf757bab4e5be8
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.hash-hmac-file-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">hash_algos</span></li>
+    <li class="member"><span class="function">hash_hmac</span></li>
+    <li class="member"><span class="function">hash_file</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

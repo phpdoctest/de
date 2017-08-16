@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Weitere &Auml;nderungen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="appendices.html">Appendices</a></li>
+  <li class="header up"><a href="migration54.html">Migration von PHP 5.3.x auf PHP 5.4.x</a></li>
+  <li><a href="migration54.changes.html">Was hat sich in PHP 5.4.x ge&auml;ndert?</a></li>
+  <li><a href="migration54.incompatible.html">Nicht r&uuml;ckw&auml;rtskompatible &Auml;nderungen</a></li>
+  <li><a href="migration54.new-features.html">Neue Features</a></li>
+  <li><a href="migration54.sapi.html">&Auml;nderungen in SAPI Modulen</a></li>
+  <li><a href="migration54.deprecated.html">Deprecated features in PHP 5.4.x</a></li>
+  <li><a href="migration54.parameters.html">New Parameters</a></li>
+  <li><a href="migration54.functions.html">New Functions</a></li>
+  <li><a href="migration54.class-constants.html">New Class Constants</a></li>
+  <li><a href="migration54.methods.html">New Methods</a></li>
+  <li><a href="migration54.new-extensions.html">New Extensions</a></li>
+  <li><a href="migration54.removed-extensions.html">Removed Extensions</a></li>
+  <li><a href="migration54.extensions-other.html">Other changes to extensions</a></li>
+  <li><a href="migration54.classes.html">New Classes</a></li>
+  <li><a href="migration54.global-constants.html">New Global Constants</a></li>
+  <li><a href="migration54.ini.html">&Auml;nderungen an der INI-Dateibehandlung</a></li>
+  <li class="active"><a href="migration54.other.html">Weitere &Auml;nderungen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="migration54.ini.html">&Auml;nderungen an der INI-Dateibehandlung</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="migration53.html">Migrating from PHP 5.2.x to PHP 5.3.x</a></div>
+                <div class="up"><a href="migration54.html">Migration von PHP 5.3.x auf PHP 5.4.x</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="migration54.other" class="section">
+  <h2 class="title">Weitere Änderungen</h2>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     Unterstützung für das Speichern der Upload-Fortschrittsrückmeldung in den
+     Session-Daten hinzugefügt.
+    </span>
+    <span class="simpara">
+     session.entropy_file standardmäßig zu /dev/urandom oder /dev/arandom
+     geändert, wenn eines der beiden zur Kompilierzeit vorhanden war.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <strong><code>E_ALL</code></strong> beinhaltet nun <strong><code>E_STRICT</code></strong>.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <a href="book.snmp.html" class="link">SNMP</a> hat nun eine OOP API.
+    </span>
+    <span class="simpara">
+     Die Funktionen geben nun FALSE bei jeder Fehlerbedingung, einschließlich
+     SNMP bezogenen (keine solche Instanz, Ende des MIB, usw.), zurück. Dies
+     bricht insbesondere voriges Verhalten von get/walk Funktionen, die eine
+     leere Zeichenkette bei SNMP bezogenen Fehlern zurückgaben.
+    </span>
+    <span class="simpara">
+      Multi-OID get/getnext/set Abfragen werden nun unterstützt.
+    </span>
+    <span class="simpara">
+     UCD-SNMP Kompatibilitätscode wurde verworfen; erwägen Sie ein Upgrade auf
+     net-snmp v5.3+; Net-SNMP v5.4+ wird für die Windows-Version benötigt.
+    </span>
+    <span class="simpara">
+     Um Unterstützung für IPv6 hinzuzufügen, wird die DNS Namensauflösung von
+     Remote-SNMP-Agents (Peer) nun durch die Extension durchgeführt, nicht mehr
+     durch die Net-SNMP Bibliothek.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <a href="book.openssl.html" class="link">OpenSSL</a> unterstützt nun AES.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <a href="features.commandline.html" class="link">CLI SAPI</a> wird bei fatalen
+     Fehlern nicht länger beendet, wenn der interaktive Modus mit Readline
+     Unterstützung verwendet wird.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Fehlermeldungen des Parsers und Warnmeldungen für inkompatible Argumente in
+     Funktionsaufrufen verbessert.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <a href="language.variables.superglobals.html" class="link">$_SERVER[&#039;REQUEST_TIME_FLOAT&#039;]</a>
+     wurde hinzugefügt, um Mikrosekundenpräzision zu enthalten.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     &lt;?= ist nun immer verfügbar, unabhängig von der <em>short_open_tag</em> Einstellung
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Unterstützung für Klassenmemberzugriff bei der Instanziierung (z.B. (new foo)-&gt;bar()) hinzugefügt
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Neue Hash-Algorithmen hinzugefügt: fnv132, fnv164, joaat
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Verkettete Zeichenkettenoffsets, z.B. $a[0][0], wobei $a eine Zeichenkette ist,
+     sind nun möglich.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Binäres Zahlenformat wurde hinzugefügt, z.B. 0b001001101.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Kurze Array-Syntax wurde hinzugefügt, z.B. $a = [1, 2, 3, 4];
+     $a = [&#039;eins&#039; =&gt; 1, &#039;zwei&#039; =&gt; 2, &#039;drei&#039; =&gt; 3, &#039;vier&#039; =&gt; 4];
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Arrayzugriff auf Funktionsaufrufrückgabewerte: foo()[0]
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Closures unterstützen nun Geltungsbereiche und <em>$this</em>.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Array-Casts von <span class="type">SimpleXMLElement</span> enthalten nun immer alle
+     Knoten anstatt nur des ersten passenden Knotens. Alle
+     <span class="type">SimpleXMLElement</span> Kinder werden nun immer angezeigt, wenn
+     <span class="function">var_dump</span>, <span class="function">var_export</span> und
+     <span class="function">print_r</span> verwendet werden.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Es ist nun möglich, die __construct Argumente von Klassen in einem
+     abstrakten Konstruktor in der Basisklasse zu erzwingen.
+    </span>
+   </li>
+  </ul>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Setzt URL-Rewrite-Variablen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li class="header up"><a href="book.outcontrol.html">Ausgabekontrolle</a></li>
+  <li class="header up"><a href="ref.outcontrol.html">Output-Control-Funktionen</a></li>
+  <li><a href="function.flush.html">flush</a></li>
+  <li><a href="function.ob-clean.html">ob_clean</a></li>
+  <li><a href="function.ob-end-clean.html">ob_end_clean</a></li>
+  <li><a href="function.ob-end-flush.html">ob_end_flush</a></li>
+  <li><a href="function.ob-flush.html">ob_flush</a></li>
+  <li><a href="function.ob-get-clean.html">ob_get_clean</a></li>
+  <li><a href="function.ob-get-contents.html">ob_get_contents</a></li>
+  <li><a href="function.ob-get-flush.html">ob_get_flush</a></li>
+  <li><a href="function.ob-get-length.html">ob_get_length</a></li>
+  <li><a href="function.ob-get-level.html">ob_get_level</a></li>
+  <li><a href="function.ob-get-status.html">ob_get_status</a></li>
+  <li><a href="function.ob-gzhandler.html">ob_gzhandler</a></li>
+  <li><a href="function.ob-implicit-flush.html">ob_implicit_flush</a></li>
+  <li><a href="function.ob-list-handlers.html">ob_list_handlers</a></li>
+  <li><a href="function.ob-start.html">ob_start</a></li>
+  <li class="active"><a href="function.output-add-rewrite-var.html">output_add_rewrite_var</a></li>
+  <li><a href="function.output-reset-rewrite-vars.html">output_reset_rewrite_vars</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.ob-start.html">ob_start</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.output-reset-rewrite-vars.html">output_reset_rewrite_vars</a></div>
+                <div class="up"><a href="ref.outcontrol.html">Output-Control-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.output-add-rewrite-var" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">output_add_rewrite_var</h1>
+    <p class="refpurpose">
+     Setzt URL-Rewrite-Variablen
+    </p>
+   </div>
+   <div class="refsect1 unknown-seealsp" id="refsect1-function.output-add-rewrite-var-unknown-seealsp">
+    <h3 class="title">Beschreibung</h3>
+    <div class="methodsynopsis dc-description">
+     <span class="type">bool</span> <span class="methodname">output_add_rewrite_var</span>
+      ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+     , <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
+     )</div>
+
+    <p class="para rdfs-comment">
+     Diese Funktion fügt ein Name/Wert-Paar zum URL Rewrite Mechanismus
+     hinzu. Name und Wert werden in der gleichen Art wie die Session-ID
+     als GET-Parameter zu URLs und als versteckte Felder zu Formularen
+     hinzugefügt wenn das transparente URL-Rewriting mit <a href="session.configuration.html#ini.session.use-trans-sid" class="link">session.use_trans_sid</a>
+     aktiviert ist. Bitte beachten Sie das nur relative URLs, nicht aber
+     absolute wie <em>http://example.com/...</em> automatisch
+     erweitert werden.
+    </p>
+    <p class="para">
+     Diese Funktion wird auch über den <var class="filename">php.ini</var> Parameter <a href="outcontrol.configuration.html#ini.url-rewriter.tags" class="link">url_rewriter.tags</a>
+     gesteuert.
+    </p>
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <span class="simpara">
+      Ein Aufruf dieser Funktion aktiviert automatisch die Ausgabepufferung
+      falls sie nicht schon aktiv ist.
+     </span>
+    </p></blockquote>
+    <p class="para">
+     <div class="example" id="example-508">
+      <p><strong>Beispiel #1 <span class="function">output_add_rewrite_var</span> Beispiel</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />output_add_rewrite_var</span><span style="color: #007700">(</span><span style="color: #DD0000">'var'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'value'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;some&nbsp;links<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;a&nbsp;href="file.php"&gt;link&lt;/a&gt;<br />&lt;a&nbsp;href="http://example.com"&gt;link2&lt;/a&gt;'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;a&nbsp;form<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;form&nbsp;action="script.php"&nbsp;method="post"&gt;<br />&lt;input&nbsp;type="text"&nbsp;name="var2"&nbsp;/&gt;<br />&lt;/form&gt;'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">ob_list_handlers</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+&lt;a href=&quot;file.php?var=value&quot;&gt;link&lt;/a&gt;
+&lt;a href=&quot;http://example.com&quot;&gt;link2&lt;/a&gt;
+
+&lt;form action=&quot;script.php&quot; method=&quot;post&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;var&quot; value=&quot;value&quot; /&gt;
+&lt;input type=&quot;text&quot; name=&quot;var2&quot; /&gt;
+&lt;/form&gt;
+
+Array
+(
+    [0] =&gt; URL-Rewriter
+)
+</pre></div>
+      </div>
+     </div>
+    </p>
+    <p class="para">
+     Siehe auch
+     <span class="function">output_reset_rewrite_vars</span>,
+     <span class="function">ob_flush</span> und
+     <span class="function">ob_list_handlers</span>.
+    </p>
+   </div>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

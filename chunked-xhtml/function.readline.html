@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Liest eine Zeile</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.utilspec.cmdline.html">Eingabezeilenspezifische Erweiterungen</a></li>
+  <li class="header up"><a href="book.readline.html">Readline</a></li>
+  <li class="header up"><a href="ref.readline.html">Readline-Funktionen</a></li>
+  <li><a href="function.readline-add-history.html">readline_add_history</a></li>
+  <li><a href="function.readline-callback-handler-install.html">readline_callback_handler_install</a></li>
+  <li><a href="function.readline-callback-handler-remove.html">readline_callback_handler_remove</a></li>
+  <li><a href="function.readline-callback-read-char.html">readline_callback_read_char</a></li>
+  <li><a href="function.readline-clear-history.html">readline_clear_history</a></li>
+  <li><a href="function.readline-completion-function.html">readline_completion_function</a></li>
+  <li><a href="function.readline-info.html">readline_info</a></li>
+  <li><a href="function.readline-list-history.html">readline_list_history</a></li>
+  <li><a href="function.readline-on-new-line.html">readline_on_new_line</a></li>
+  <li><a href="function.readline-read-history.html">readline_read_history</a></li>
+  <li><a href="function.readline-redisplay.html">readline_redisplay</a></li>
+  <li><a href="function.readline-write-history.html">readline_write_history</a></li>
+  <li class="active"><a href="function.readline.html">readline</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.readline-write-history.html">readline_write_history</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="refs.compression.html">Erweiterungen zur Datenkompression und Archivierung</a></div>
+                <div class="up"><a href="ref.readline.html">Readline-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.readline" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">readline</h1>
+  <p class="refpurpose">Liest eine Zeile</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.readline-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname">readline</span>
+    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$prompt</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Liest eine einzelne Zeile vom Benutzer ein. Sie müssen diese Zeile selbst
+   mittels <span class="function">readline_add_history</span> zur History hinzufügen.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.readline-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">prompt</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Sie können eine Zeichenkette angeben, mit dem Sie den Benutzer zur
+       Eingabe auffordern.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.readline-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt eine einzelne Zeile des Benutzers zurück. Der Zeile, die Sie erhalten,
+   fehlt das abschließende Zeichen für einen Zeilenvorschub.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.readline-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-694">
+    <p><strong>Beispiel #1 <span class="function">readline</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Drei&nbsp;Kommandos&nbsp;vom&nbsp;Benutzer&nbsp;abfragen<br /></span><span style="color: #007700">for&nbsp;(</span><span style="color: #0000BB">$i</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$line&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">readline</span><span style="color: #007700">(</span><span style="color: #DD0000">"Command:&nbsp;"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">readline_add_history</span><span style="color: #007700">(</span><span style="color: #0000BB">$line</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;History&nbsp;ausgeben<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">readline_list_history</span><span style="color: #007700">());<br /><br /></span><span style="color: #FF8000">//&nbsp;Variablen&nbsp;ausgeben<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">readline_info</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

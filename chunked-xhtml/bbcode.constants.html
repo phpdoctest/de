@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Konstanten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li class="header up"><a href="book.bbcode.html">BBCode</a></li>
+  <li><a href="intro.bbcode.html">Einf&uuml;hrung</a></li>
+  <li><a href="bbcode.setup.html">Installation/Konfiguration</a></li>
+  <li class="active"><a href="bbcode.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="ref.bbcode.html">BBCode Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="bbcode.resources.html">Ressource-Typen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ref.bbcode.html">BBCode Funktionen</a></div>
+                <div class="up"><a href="book.bbcode.html">BBCode</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="bbcode.constants" class="appendix">
+ <h1>Vordefinierte Konstanten</h1>
+ <p class="simpara">Folgende Konstanten werden von dieser
+Erweiterung definiert und stehen nur zur Verfügung, wenn die Erweiterung entweder
+statisch in PHP kompiliert oder dynamisch zur Laufzeit geladen
+wurde.</p>
+ <dl>
+
+  
+   <dt id="constant.bbcode-type-noarg">
+    <strong><code>BBCODE_TYPE_NOARG</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Dieser BBCode Tag erlaubt keine Argumente.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-type-single">
+    <strong><code>BBCODE_TYPE_SINGLE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Dieser BBCode Tag wird nicht mehr geschlossen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-type-arg">
+    <strong><code>BBCODE_TYPE_ARG</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Dieser BBCode Tag benötigt ein Argument.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-type-optarg">
+    <strong><code>BBCODE_TYPE_OPTARG</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Diesem BBCode Tag kann ein optionales Argument übergeben werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-type-root">
+    <strong><code>BBCODE_TYPE_ROOT</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Dieser BBCode Tag ist der spezielle Tag root. (In der Verschachtelung zuoberst)
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-flags-arg-parsing">
+    <strong><code>BBCODE_FLAGS_ARG_PARSING</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Dieser BBCode Tag braucht ein zu parsendes Argument. (Das Argument wird
+     auch von der Erweiterung geparst. Seit 0.10.2 kann auch ein anderer Parser
+     als Argumentparser benützt werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-flags-cdata-not-allowed">
+    <strong><code>BBCODE_FLAGS_CDATA_NOT_ALLOWED</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Dieser BBCode Tag erlaubt keinen Inhalt. (Der Inhalt wird automatisch verworfen)
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-flags-smileys-on">
+    <strong><code>BBCODE_FLAGS_SMILEYS_ON</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Dieser BBCode Tag erlaubt Smileys.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-flags-smileys-off">
+    <strong><code>BBCODE_FLAGS_SMILEYS_OFF</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Dieser BBCode Tag erlaubt keine Smileys.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-flags-one-open-per-level">
+    <strong><code>BBCODE_FLAGS_ONE_OPEN_PER_LEVEL</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Dieser BBCode Tag schliesst sich automatisch, wenn
+     ein Tag desselben Types im gleichen Verschachtelungslevel vorhanden ist.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-flags-remove-if-empty">
+    <strong><code>BBCODE_FLAGS_REMOVE_IF_EMPTY</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Dieser BBCode Tag wird automatisch entfernt,
+     wenn der Inhalt leer ist. Das erlaubt es &quot;leichteres&quot; HTML zu erstellen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-flags-deny-reopen-child">
+    <strong><code>BBCODE_FLAGS_DENY_REOPEN_CHILD</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.3
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Dieser BBCode Tag erlaubt es nicht, ungeschlossene Kinder
+     wiederzuöffnen, wenn sie automatisch geschlossen wurden.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-arg-double-quote">
+    <strong><code>BBCODE_ARG_DOUBLE_QUOTE</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das ist eine Parseroption, die es erlaubt Argumente zwischen
+     doppelten Anführungszeichen (<em>&quot;</em>) zu übergeben.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-arg-single-quote">
+    <strong><code>BBCODE_ARG_SINGLE_QUOTE</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das ist eine Parseroption, die es erlaubt Argumente
+     zwischen einfachen Anführungszeichen (<em>&#039;</em>) zu übergeben.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-arg-html-quote">
+    <strong><code>BBCODE_ARG_HTML_QUOTE</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das ist eine Parseroption, die es erlaubt, Argumente
+     zwischen HTML Anführungszeichen (<em>&amp;quot;</em>) zu übergeben.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-arg-quote-escaping">
+    <strong><code>BBCODE_ARG_QUOTE_ESCAPING</code></strong>
+    (<span class="type">integer</span>) - seit 1.0.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das ist eine Parseroption, die es erlaubt Argumente
+     zwischen escapten Anführungszeichen zu übergeben. Das erlaubt es,
+     dass das Anführungszeichen im String selbst vorkommt.
+     Das Escapezeichen ist der Backslash. (\) Er kann jegliche
+     Anführungszeichen und sich selbst escapen. Vor einem Zeichen,
+     dass sich nicht escapten lässt, wird er nicht beachtet.
+     Standardmässig sollte man nicht escapen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-auto-correct">
+    <strong><code>BBCODE_AUTO_CORRECT</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das ist eine Parseroption, die die Fehlerbehandlungsart ändert.
+     Diese Option schliesst automatisch Tags, in der Reihenfolge,
+     wie sie geöffnet wurden, und behandelt offen gelassene Tags so,
+     als wäre ein End Tag vorhanden.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-correct-reopen-tags">
+    <strong><code>BBCODE_CORRECT_REOPEN_TAGS</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das ist eine Parseroption, die die Fehlerbehandlungsart ändert.
+     Diese Option öffnet Tags automatisch neu, wenn die Tags nicht in der richtigen
+     Reihenfolge geschlossen werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-disable-tree-build">
+    <strong><code>BBCODE_DISABLE_TREE_BUILD</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Diese Parseroption deaktiviert, dass BBCode Tags geparst werden.
+     Diese Option kann nützlich sein, wenn man nur Smileys parsen will.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-default-smileys-on">
+    <strong><code>BBCODE_DEFAULT_SMILEYS_ON</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das ist eine Parseroption, die Smileys aktiviert, wenn kein
+     Flag am Anfang des Tag Levels gesetzt wurde.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-default-smileys-off">
+    <strong><code>BBCODE_DEFAULT_SMILEYS_OFF</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Diese Parseroption deaktiviert Smileys, wenn kein
+     Flag am Anfang des Tag Levels gesetzt wurde.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-force-smileys-off">
+    <strong><code>BBCODE_FORCE_SMILEYS_OFF</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Diese Parseroption deaktiviert das Parsen von
+     Smileys komplett.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-smileys-case-insensitive">
+    <strong><code>BBCODE_SMILEYS_CASE_INSENSITIVE</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.3
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Dies benützt eine nicht die Gross/Kleinschreibung beachtende
+     Erkennung für Smileys, anstatt einer einfach binären Suche.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-set-flags-set">
+    <strong><code>BBCODE_SET_FLAGS_SET</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das erlaubt es, das &quot;Vollständig&quot;-Flag auf einen Parser zu setzen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-set-flags-add">
+    <strong><code>BBCODE_SET_FLAGS_ADD</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Dies erlaubt es, ein Flag auf einen Parser zu aktiveren.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.bbcode-set-flags-remove">
+    <strong><code>BBCODE_SET_FLAGS_REMOVE</code></strong>
+    (<span class="type">integer</span>) - seit 0.10.2
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Dies erlaubt es, ein Flag auf einen Parser dezuaktivieren.
+    </span>
+   </dd>
+
+  
+ </dl>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

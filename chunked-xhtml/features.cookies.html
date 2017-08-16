@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Cookies</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="features.html">Features</a></li>
+  <li><a href="features.http-auth.html">HTTP-Authentifizierung mit PHP</a></li>
+  <li class="active"><a href="features.cookies.html">Cookies</a></li>
+  <li><a href="features.sessions.html">Sessions</a></li>
+  <li><a href="features.xforms.html">Mit XForms umgehen</a></li>
+  <li><a href="features.file-upload.html">Steuerung von Dateiuploads</a></li>
+  <li><a href="features.remote-files.html">Zugriff auf entfernte Dateien</a></li>
+  <li><a href="features.connection-handling.html">Verbindungssteuerung</a></li>
+  <li><a href="features.persistent-connections.html">Persistente Datenbankverbindungen</a></li>
+  <li><a href="features.safe-mode.html">Safe Mode</a></li>
+  <li><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></li>
+  <li><a href="features.gc.html">Garbage Collection</a></li>
+  <li><a href="features.dtrace.html">DTrace Dynamic Tracing</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="features.http-auth.html">HTTP-Authentifizierung mit PHP</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="features.sessions.html">Sessions</a></div>
+                <div class="up"><a href="features.html">Features</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="features.cookies" class="chapter">
+  <h1>Cookies</h1>
+
+  <p class="para">
+   PHP unterstützt <acronym class="acronym">HTTP</acronym>-Cookies. Hierbei handelt es sich um einen
+   Mechanismus, um Informationen beim Client zu speichern und somit
+   wiederkehrende Besucher zu identifizieren oder ihren Weg innerhalb
+   des Angebotes nachzuvollziehen. Cookies können durch die Funktionen
+   <span class="function">setcookie</span> und <span class="function">setrawcookie</span>
+    gesetzt werden. Sie sind Bestandteil
+   des <acronym class="acronym">HTTP</acronym>-Headers, was bedeutet, dass die Funktion
+   <span class="function">setcookie</span> aufgerufen werden muss, bevor irgendeine
+   Ausgabe an den Browser erfolgt. Dies ist die gleiche Einschränkung, der
+   auch die Funktion <span class="function">header</span> unterliegt. Sie können
+   die <a href="ref.outcontrol.html" class="link">Funktionen zur Ausgabesteuerung</a>
+   benutzen, um die Ausgaben des Skriptes zu verzögern, bis entschieden ist,
+   ob Cookies gesetzt bzw. Header gesendet werden sollen oder nicht.
+  </p>
+
+  <p class="para">
+   Vom Client gesendete Cookies werden automatisch im auto-globalen
+   Array <var class="varname">$_COOKIE</var> abgelegt, wenn die <a href="ini.core.html#ini.variables-order" class="link">variables_order</a>-Konfigurationsvariable
+   den Kennbuchstaben &quot;C&quot; enthält. Sollen einem Cookie mehrere Werte zugewiesen
+   werden, so muss dem Cookienamen lediglich <em>[]</em> angefügt
+   werden.
+  </p>
+
+  <p class="para">
+   Abhängig von Ihrer <a href="ini.core.html#ini.register-globals" class="link">register_globals</a>
+   Konfiguration können Cookie-Inhalte auch in regulären Variablen
+   abgelegt werden. Es wird aber empfohlen sich nicht hierauf zu
+   verlassen da dies oft aus Sicherheitsgründen deaktiviert ist.
+  </p>
+
+  <p class="para">
+   Weitere Informationen sowie Anmerkungen zu Browser-Bugs finden
+   Sie im Abschnitt <span class="function">setcookie</span> und
+   <span class="function">setrawcookie</span>.
+  </p>
+
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

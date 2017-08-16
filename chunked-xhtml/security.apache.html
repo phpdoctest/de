@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Verwendung als Apache-Modul</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="security.html">Sicherheit</a></li>
+  <li><a href="security.intro.html">Einf&uuml;hrung</a></li>
+  <li><a href="security.general.html">Allgemeine &Uuml;berlegungen</a></li>
+  <li><a href="security.cgi-bin.html">Installiert als CGI-Version</a></li>
+  <li class="active"><a href="security.apache.html">Verwendung als Apache-Modul</a></li>
+  <li><a href="security.sessions.html">Session Security</a></li>
+  <li><a href="security.filesystem.html">Dateisystem - Sicherheit</a></li>
+  <li><a href="security.database.html">Datenbank - Sicherheit</a></li>
+  <li><a href="security.errors.html">Fehlerbehandlung</a></li>
+  <li><a href="security.globals.html">Using Register Globals</a></li>
+  <li><a href="security.variables.html">Vom Nutzer &uuml;bermittelte Daten</a></li>
+  <li><a href="security.magicquotes.html">Magic Quotes</a></li>
+  <li><a href="security.hiding.html">PHP verstecken</a></li>
+  <li><a href="security.current.html">Aktuell bleiben</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="security.cgi-bin.shell.html">Fall 4: PHP-Parser au&szlig;erhalb des Webverzeichnisbaums</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="security.sessions.html">Session Security</a></div>
+                <div class="up"><a href="security.html">Sicherheit</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="security.apache" class="chapter">
+   <h1>Verwendung als Apache-Modul</h1>
+   <p class="simpara">
+    Wenn <acronym class="acronym">PHP</acronym> als Apache-Modul eingesetzt wird, übernimmt es
+    die Benutzerrechte des Apache (üblicherweise die des Users &quot;nobody&quot;). Das
+    hat verschiedene Auswirkungen auf Sicherheit und Authentifizierung. Wenn Sie
+    beispielsweise via <acronym class="acronym">PHP</acronym> auf eine Datenbank zugreifen, müssen Sie
+    dem Benutzer &quot;nobody&quot; Zugriffsrechte auf die Datenbank erteilen, es sei
+    denn, diese Datenbank hat eine integrierte Zugriffskontrolle. Das
+    heißt, dass ein böswilliges Skript auch ohne Benutzerkennung und
+    Passwort auf die Datenbank zugreifen und sie verändern könnte. Es ist
+    durchaus möglich, dass ein Web-Spider über die Webseite eines
+    Datenbankadministrators stolpert und alle Ihre Datenbanken löscht.
+    Sie können sich dagegen mit Apache-Authentifizierung schützen, oder
+    ein eigenes Zugangsmodell unter Verwendung von LDAP, .htaccess Dateien
+    etc. entwerfen, und diesen Code als Teil Ihrer
+    <acronym class="acronym">PHP</acronym>-Skripte einbinden.
+   </p>
+   <p class="simpara">
+    Ist erst einmal eine Sicherheitsstruktur bis zu dem Punkt eingerichtet, an
+    dem der <acronym class="acronym">PHP</acronym>-User (in diesem Falle der Apache-User) nur
+    noch ein geringes Risiko darstellt, hat man meist die Situation, dass
+    <acronym class="acronym">PHP</acronym> gehindert wird, beliebige Dateien in das
+    Benutzerverzeichnis zu schreiben. Oder vielleicht ist PHP dann nicht mehr in
+    der Lage, auf Datenbanken lesend oder verändernd zuzugreifen. In gleicher
+    Weise wird auch verhindert, &quot;gute&quot; oder &quot;bösartige&quot; Dateien zu schreiben,
+    oder &quot;gute&quot; bzw. &quot;bösartige&quot; Datenbanktransaktionen durchzuführen.
+   </p>
+   <p class="simpara">
+    Ein an diesem Punkt oft geöffnetes Sicherheitsloch ist die Zuweisung von
+    Root-Rechten an den Apache-Prozess oder die Ausweitung der Rechte des Apache
+    auf anderem Wege.
+   </p>
+   <p class="simpara">
+    Die Ausweitung der Benutzerrechte für Apache auf root ist extrem
+    gefährlich und kann das gesamte System kompromittieren, daher sollten
+    Prozesse, die wie sudo oder chroot mit Rootrechten arbeiten, niemandem
+    zugänglich sein, der kein Sicherheitsprofi ist.
+   </p>
+   <p class="simpara">
+    Es gibt deutlich einfachere Lösungen. Mit
+    <a href="ini.core.html#ini.open-basedir" class="link">open_basedir</a> können Sie
+    kontrollieren, welche Verzeichnisse <acronym class="acronym">PHP</acronym> benutzen darf
+    oder nicht. Sie können auch einen Bereich nur für Apache einrichten, um alle
+    webbasierten Aktivitäten auf dem System oder nicht dem Benutzer gehörende
+    Dateien zu verhindern.
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

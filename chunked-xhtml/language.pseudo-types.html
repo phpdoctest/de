@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Pseudo-types and variables used in this documentation</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.types.html">Typen</a></li>
+  <li><a href="language.types.intro.html">Einf&uuml;hrung</a></li>
+  <li><a href="language.types.boolean.html">Booleans</a></li>
+  <li><a href="language.types.integer.html">Integers</a></li>
+  <li><a href="language.types.float.html">Floating point numbers</a></li>
+  <li><a href="language.types.string.html">Strings</a></li>
+  <li><a href="language.types.array.html">Arrays</a></li>
+  <li><a href="language.types.object.html">Objekte</a></li>
+  <li><a href="language.types.resource.html">Ressourcen</a></li>
+  <li><a href="language.types.null.html">NULL</a></li>
+  <li><a href="language.types.callable.html">Callbacks / Callables</a></li>
+  <li class="active"><a href="language.pseudo-types.html">Pseudo-types and variables used in this documentation</a></li>
+  <li><a href="language.types.type-juggling.html">Type Juggling</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.types.callable.html">Callbacks / Callables</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.types.type-juggling.html">Type Juggling</a></div>
+                <div class="up"><a href="language.types.html">Typen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.pseudo-types" class="sect1">
+ <h2 class="title">Pseudo-types and variables used in this documentation</h2> 
+
+ <div class="sect2" id="language.types.mixed">
+  <h3 class="title">mixed</h3>
+
+  <p class="para">
+   <em>mixed</em> indicates that a parameter may accept multiple (but
+   not necessarily all) types.
+  </p>
+
+  <p class="para">
+   <span class="function">gettype</span> for example will accept all PHP types, while
+   <span class="function">str_replace</span> will accept <span class="type">string</span>s and
+   <span class="type">array</span>s.
+  </p>
+
+ </div>
+
+ <div class="sect2" id="language.types.number">
+  <h3 class="title">number</h3>
+
+  <p class="para">
+   <em>number</em> indicates that a parameter can be either
+   <span class="type">integer</span> or <span class="type">float</span>.
+  </p>
+
+ </div>
+
+ <div class="sect2" id="language.types.callback">
+  <h3 class="title">callback</h3>
+
+  <p class="para">
+   Some functions like <span class="function">call_user_func</span> or
+   <span class="function">usort</span> accept user-defined callback functions as a
+   parameter. Callback functions can not only be simple functions, but also
+   <span class="type">object</span> methods, including static class methods.
+  </p>
+
+  <p class="para">
+   A PHP function is passed by its name as a <span class="type">string</span>. Any built-in
+   or user-defined function can be used, except language constructs such as:
+   <span class="function">array</span>, <span class="function">echo</span>,
+   <span class="function">empty</span>, <span class="function">eval</span>, 
+   <span class="function">exit</span>, <span class="function">isset</span>, 
+   <span class="function">list</span>, <span class="function">print</span> or
+   <span class="function">unset</span>.
+  </p>
+
+  <p class="para">
+   A method of an instantiated <span class="type">object</span> is passed as an
+   <span class="type">array</span> containing an <span class="type">object</span> at index 0 and the
+   method name at index 1.
+  </p>
+
+  <p class="para">
+   Static class methods can also be passed without instantiating an
+   <span class="type">object</span> of that class by passing the class name instead of an
+   <span class="type">object</span> at index 0.
+  </p>
+
+  <p class="para">
+   Apart from common user-defined function, <span class="function">create_function</span>
+   can also be used to create an anonymous callback function.
+  </p>
+
+  <div class="example" id="example-108">
+   <p><strong>Beispiel #1 
+    Callback function examples
+   </strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;<br /><br /></span><span style="color: #FF8000">//&nbsp;An&nbsp;example&nbsp;callback&nbsp;function<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">my_callback_function</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'hello&nbsp;world!'</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;An&nbsp;example&nbsp;callback&nbsp;method<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">MyClass&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">myCallbackMethod</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Hello&nbsp;World!'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Type&nbsp;1:&nbsp;Simple&nbsp;callback<br /></span><span style="color: #0000BB">call_user_func</span><span style="color: #007700">(</span><span style="color: #DD0000">'my_callback_function'</span><span style="color: #007700">);&nbsp;<br /><br /></span><span style="color: #FF8000">//&nbsp;Type&nbsp;2:&nbsp;Static&nbsp;class&nbsp;method&nbsp;call<br /></span><span style="color: #0000BB">call_user_func</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'MyClass'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'myCallbackMethod'</span><span style="color: #007700">));&nbsp;<br /><br /></span><span style="color: #FF8000">//&nbsp;Type&nbsp;3:&nbsp;Object&nbsp;method&nbsp;call<br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MyClass</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">call_user_func</span><span style="color: #007700">(array(</span><span style="color: #0000BB">$obj</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'myCallbackMethod'</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;Type&nbsp;4:&nbsp;Static&nbsp;class&nbsp;method&nbsp;call&nbsp;(As&nbsp;of&nbsp;PHP&nbsp;5.2.3)<br /></span><span style="color: #0000BB">call_user_func</span><span style="color: #007700">(</span><span style="color: #DD0000">'MyClass::myCallbackMethod'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Type&nbsp;5:&nbsp;Relative&nbsp;static&nbsp;class&nbsp;method&nbsp;call&nbsp;(As&nbsp;of&nbsp;PHP&nbsp;5.3.0)<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">A&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">who</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"A\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">B&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">A&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">who</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"B\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">call_user_func</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'B'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'parent::who'</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//&nbsp;A<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    In PHP4, it was necessary to use a reference to create a callback that
+    points to the actual <span class="type">object</span>, and not a copy of it. For more
+    details, see
+    <a href="language.references.html" class="link">References Explained</a>.
+   </span>
+  </p></blockquote>
+
+ </div>
+ 
+ <div class="sect2" id="language.types.void">
+  <h3 class="title">void</h3>
+
+  <p class="para">
+   <em>void</em> as a return type means that the return value is
+   useless. <em>void</em> in a parameter list means that the function
+   doesn&#039;t accept any parameters.
+  </p>
+
+ </div>
+
+ <div class="sect2" id="language.types.dotdotdot">
+  <h3 class="title">...</h3>
+
+  <p class="para">
+   <code class="parameter">$...</code> in function prototypes means
+   <em>and so on</em>. This variable name is used when a function can
+   take an endless number of arguments.
+  </p>
+
+ </div>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

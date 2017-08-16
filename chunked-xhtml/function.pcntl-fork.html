@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Verzweigt den laufenden Prozess</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li class="header up"><a href="book.pcntl.html">PCNTL</a></li>
+  <li class="header up"><a href="ref.pcntl.html">PCNTL Funktionen</a></li>
+  <li><a href="function.pcntl-alarm.html">pcntl_alarm</a></li>
+  <li><a href="function.pcntl-errno.html">pcntl_errno</a></li>
+  <li><a href="function.pcntl-exec.html">pcntl_exec</a></li>
+  <li class="active"><a href="function.pcntl-fork.html">pcntl_fork</a></li>
+  <li><a href="function.pcntl-get-last-error.html">pcntl_get_last_error</a></li>
+  <li><a href="function.pcntl-getpriority.html">pcntl_getpriority</a></li>
+  <li><a href="function.pcntl-setpriority.html">pcntl_setpriority</a></li>
+  <li><a href="function.pcntl-signal-dispatch.html">pcntl_signal_dispatch</a></li>
+  <li><a href="function.pcntl-signal-get-handler.html">pcntl_signal_get_handler</a></li>
+  <li><a href="function.pcntl-signal.html">pcntl_signal</a></li>
+  <li><a href="function.pcntl-sigprocmask.html">pcntl_sigprocmask</a></li>
+  <li><a href="function.pcntl-sigtimedwait.html">pcntl_sigtimedwait</a></li>
+  <li><a href="function.pcntl-sigwaitinfo.html">pcntl_sigwaitinfo</a></li>
+  <li><a href="function.pcntl-strerror.html">pcntl_strerror</a></li>
+  <li><a href="function.pcntl-wait.html">pcntl_wait</a></li>
+  <li><a href="function.pcntl-waitpid.html">pcntl_waitpid</a></li>
+  <li><a href="function.pcntl-wexitstatus.html">pcntl_wexitstatus</a></li>
+  <li><a href="function.pcntl-wifexited.html">pcntl_wifexited</a></li>
+  <li><a href="function.pcntl-wifsignaled.html">pcntl_wifsignaled</a></li>
+  <li><a href="function.pcntl-wifstopped.html">pcntl_wifstopped</a></li>
+  <li><a href="function.pcntl-wstopsig.html">pcntl_wstopsig</a></li>
+  <li><a href="function.pcntl-wtermsig.html">pcntl_wtermsig</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.pcntl-exec.html">pcntl_exec</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.pcntl-get-last-error.html">pcntl_get_last_error</a></div>
+                <div class="up"><a href="ref.pcntl.html">PCNTL Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.pcntl-fork" class="refentry">
+  <div class="refnamediv">
+   <h1 class="refname">pcntl_fork</h1>
+   <p class="refpurpose">Verzweigt den laufenden Prozess</p>
+  </div>
+  <div class="refsect1 unknown-unknown-descriptiop" id="refsect1-function.pcntl-fork-unknown-unknown-descriptiop">
+   <h3 class="title">Beschreibung</h3>
+    <div class="methodsynopsis dc-description">
+     <span class="type">int</span> <span class="methodname">pcntl_fork</span>
+      ( <span class="methodparam">void</span>
+     )</div>
+
+   <p class="para rdfs-comment">
+    Die Funktion <span class="function">pcntl_fork</span> erzeugt einen Kindprozess der
+    sich von seinem Elternprozess nur durch seine PID und PPID unterscheidet.
+    Bitte schauen Sie für spezifische Details, wie Fork auf Ihrem System 
+    arbeitet in die fork(2) man Seite Ihres Systems.
+   </p>
+   <p class="para">
+    Bei Erfolg wird die PID des Kindprozesses an den Ausführungsstrang des
+    Elternprozess und eine 0 an den Ausführungsstrang des Kindes zurückgegeben.
+    Bei einem Fehlschlag wird -1 in den Kontext des Elternprozess zurückgegeben, kein
+    Kindprozess erzeugt und ein PHP Fehler ausgelöst.
+   </p>
+   <div class="example" id="example-4090">
+    <p><strong>Beispiel #1 <span class="function">pcntl_fork</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$pid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pcntl_fork</span><span style="color: #007700">();<br />if&nbsp;(</span><span style="color: #0000BB">$pid&nbsp;</span><span style="color: #007700">==&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Konnte&nbsp;nicht&nbsp;verzweigen'</span><span style="color: #007700">);<br />}&nbsp;else&nbsp;if&nbsp;(</span><span style="color: #0000BB">$pid</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Wir&nbsp;sind&nbsp;der&nbsp;Elternprozess<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">pcntl_wait</span><span style="color: #007700">(</span><span style="color: #0000BB">$status</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//Schützt&nbsp;uns&nbsp;vor&nbsp;Zombie&nbsp;Kindern<br /></span><span style="color: #007700">}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Wir&nbsp;sind&nbsp;das&nbsp;Kind<br /></span><span style="color: #007700">}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <p class="para">
+    Siehe auch <span class="function">pcntl_waitpid</span> und
+    <span class="function">pcntl_signal</span>.
+   </p>
+  </div>
+
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

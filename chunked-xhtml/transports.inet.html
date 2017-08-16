@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Internet Domain: TCP, UDP, SSL und TLS</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="appendices.html">Appendices</a></li>
+  <li class="header up"><a href="transports.html">Liste der unterst&uuml;tzten Socket-Transporter</a></li>
+  <li class="active"><a href="transports.inet.html">Internet Domain: TCP, UDP, SSL und TLS</a></li>
+  <li><a href="transports.unix.html">Unix-Domain: Unix und UDG</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="transports.html">Liste der unterst&uuml;tzten Socket-Transporter</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="transports.unix.html">Unix-Domain: Unix und UDG</a></div>
+                <div class="up"><a href="transports.html">Liste der unterst&uuml;tzten Socket-Transporter</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="transports.inet" class="section">
+  <h2 class="title">Internet Domain: TCP, UDP, SSL und TLS</h2>
+  <p class="simpara">
+   PHP 4, PHP 5.
+   <em>ssl://</em> &amp; <em>tls://</em> since PHP 4.3.0
+   <em>sslv2://</em> &amp; <em>sslv3://</em> since PHP 5.0.2
+  </p>
+
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    Wird kein Transporter angegeben, so wird <em>tcp://</em>
+    angenommen.
+   </span>
+  </p></blockquote>
+
+  <ul class="itemizedlist">
+   <li class="listitem"><span class="simpara"><em>127.0.0.1</em></span></li>
+   <li class="listitem"><span class="simpara"><em>fe80::1</em></span></li>
+   <li class="listitem"><span class="simpara"><em>www.example.com</em></span></li>
+   <li class="listitem"><span class="simpara"><em>tcp://127.0.0.1</em></span></li>
+   <li class="listitem"><span class="simpara"><em>tcp://fe80::1</em></span></li>
+   <li class="listitem"><span class="simpara"><em>tcp://www.example.com</em></span></li>
+   <li class="listitem"><span class="simpara"><em>udp://www.example.com</em></span></li>
+   <li class="listitem"><span class="simpara"><em>ssl://www.example.com</em></span></li>
+   <li class="listitem"><span class="simpara"><em>sslv2://www.example.com</em></span></li>
+   <li class="listitem"><span class="simpara"><em>sslv3://www.example.com</em></span></li>
+   <li class="listitem"><span class="simpara"><em>tls://www.example.com</em></span></li>
+  </ul>
+
+  <p class="simpara">
+   Internet-Domain-Sockets erwarten zusätzlich zur Zieladresse eine
+   Portnummer. Im Fall von <span class="function">fsockopen</span> wird diese
+   als zweiter Parameter übergeben und beeinflusst so nicht die
+   Formatierung der Transporter-URL. Bei <span class="function">stream_socket_client</span>
+   und damit zusammenhängenden Funktionen wird die Portnummer dagegen,
+   wie in URLs üblich, von einem Doppelpunkt getrennt an den URL
+   angehängt.
+  </p>
+
+  <ul class="itemizedlist">
+   <li class="listitem"><span class="simpara"><em>tcp://127.0.0.1:80</em></span></li>
+   <li class="listitem"><span class="simpara"><em>tcp://[fe80::1]:80</em></span></li>
+   <li class="listitem"><span class="simpara"><em>tcp://www.example.com:80</em></span></li>
+  </ul>
+
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <strong>Numerische IPv6-Adressen mit Portnummern</strong><br />
+   <span class="simpara">
+    Während im vorangegangenen Beispiel an die IPv4- und Hostname-Einträge
+    nur der Doppelpunkt und die Portnummer angehängt
+    wurden, ist die IPv6-Adresse in der zweiten Zeile zusätzlich
+    in eckige Klammern gesetzt worden: <em>[fe80::1]</em>.
+    Dies dient dazu, zwischen den Doppelpunkten in der IPv6-Adresse
+    selbst und dem Trennzeichen zwischen Adresse und
+    Portnummer unterscheiden zu können.
+   </span>
+  </p></blockquote>
+
+  <p class="simpara">
+   Die <em>ssl://</em>- und <em>tls://</em>-Transporter
+   erweitern den <em>tcp://</em>-Transporter um SSL-Verschlüsselung
+   (nur verfügbar, wenn PHP mit OpenSSL-Unterstützung kompiliert wurde).
+   Beginnend mit PHP 4.3.0 kann OpenSSL-Unterstützung statisch in PHP
+   eingebunden werden, ab PHP 5.0.0 wahlweise auch als dynamisch ladbares
+   Modul.
+  </p>
+
+  <p class="simpara">
+   <em>ssl://</em> versucht je nach Fähigkeiten und
+   Vorlieben des Kommunikationspartners eine SSL-V2- oder -V3-Verbindung
+   herzustellen. <em>sslv2://</em> und
+   <em>sslv3:</em> erzwingen explizit die Nutzung
+   des SSL-V2-bzw. -V3-Protokolls.
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

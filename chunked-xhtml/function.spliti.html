@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Zerlegt eine Zeichenkette anhand eines regul&auml;ren Ausdrucks ohne Ber&uuml;cksichtigung von Gro&szlig;-/Kleinschreibung in ein Array</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li class="header up"><a href="book.regex.html">POSIX Regex</a></li>
+  <li class="header up"><a href="ref.regex.html">POSIX Regex-Funktionen</a></li>
+  <li><a href="function.ereg-replace.html">ereg_replace</a></li>
+  <li><a href="function.ereg.html">ereg</a></li>
+  <li><a href="function.eregi-replace.html">eregi_replace</a></li>
+  <li><a href="function.eregi.html">eregi</a></li>
+  <li><a href="function.split.html">split</a></li>
+  <li class="active"><a href="function.spliti.html">spliti</a></li>
+  <li><a href="function.sql-regcase.html">sql_regcase</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.split.html">split</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.sql-regcase.html">sql_regcase</a></div>
+                <div class="up"><a href="ref.regex.html">POSIX Regex-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.spliti" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">spliti</h1>
+  <p class="refpurpose">Zerlegt eine Zeichenkette anhand eines regulären Ausdrucks ohne Berücksichtigung von Groß-/Kleinschreibung in ein Array</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.spliti-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname">spliti</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$string</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$limit</code><span class="initializer"> = -1</span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Zerlegt <code class="parameter">string</code> anhand eines regulären Ausdrucks in
+   ein Array.
+  </p>
+  <p class="para">
+   Diese Funktion entspricht <span class="function">split</span> mit dem Unterschied,
+   dass sie übereinstimmende Buchstaben nicht nach Groß- und Kleinschreibung
+   unterscheidet.
+  </p>
+  <div class="warning"><strong class="warning">Warnung</strong><p class="simpara">Diese Funktion ist
+seit PHP 5.3.0 <em class="emphasis">DEPRECATED</em> (veraltet). Sich auf diese
+Funktion zu verlassen ist in keiner Weise empfehlenswert.</p></div>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.spliti-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">pattern</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Regulärer Ausdruck ohne Berücksichtigung der Groß- und Kleinschreibung
+      </p>
+      <p class="para">
+       Wenn Sie eine Zerlegung an Zeichen vornehmen, die in regulären
+       Ausdrücken als besondere Zeichen betrachtet werden, müssen Sie diese
+       entsprechend kennzeichnen. Wenn Sie der Ansicht sind,
+       <span class="function">spliti</span> (oder, bei diesem Thema, eine andere
+       Regex-Funktion) verhalte sich seltsam, lesen Sie bitte die Datei
+       <var class="filename">regex.7</var>, die sich im <var class="filename">regex/</var> Unterverzeichnis ihrer
+       PHP-Distribution befindet. Da sie im manpage-Fomat vorliegt, sollten
+       Sie einen Befehl der Art <strong class="command">man
+       /usr/local/src/regex/regex.7</strong> verwenden, um sie zu lesen.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">string</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die zu durchsuchende Zeichenkette
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">limit</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Wenn <code class="parameter">limit</code> gesetzt wurde, enthält das
+       zurückgegebene Array höchstens <code class="parameter">limit</code> Elemente,
+       von denen das letzte den ganzen Rest von <code class="parameter">string</code>
+       enthält.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.spliti-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt ein Array mit Zeichenketten zurück, die jeweils eine Teilzeichenkette
+   von <code class="parameter">string</code> sind. Diese Teilzeichenketten entstehen
+   durch Zerlegung von <code class="parameter">string</code> an den durch den
+   regulären Ausdruck <code class="parameter">pattern</code> bestimmten Stellen ohne
+   Berücksichtigung der Groß- und Kleinschreibung.
+  </p>
+  <p class="para">
+   Wenn <code class="parameter">pattern</code> <span class="replaceable">n</span> mal
+   vorkommt, enhält das zurückgegebene Array
+   <em><span class="replaceable">n</span>+1</em> Elemente. Kommt
+   <code class="parameter">pattern</code> zum Beispiel überhaupt nicht vor, wird ein
+   Array mit nur einem Element zurückgegeben. Das gilt natürlich auch, wenn
+   <code class="parameter">string</code> leer ist. Bei Auftreten eines Fehlers gibt
+   <span class="function">spliti</span> <strong><code>FALSE</code></strong> zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.spliti-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   Dieses Beispiel verwendet &#039;a&#039; als Trennzeichen um eine Zeichenkette zu
+   zerlegen:
+   <div class="example" id="example-5311">
+    <p><strong>Beispiel #1 <span class="function">spliti</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$zeichenkette&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"aBBBaCCCADDDaEEEaGGGA"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$stuecke&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">spliti&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"a"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$zeichenkette</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$stuecke</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+  [0] =&gt;
+  [1] =&gt; BBB
+  [2] =&gt; CCC
+  [3] =&gt; DDD
+  [4] =&gt; EEEaGGGA
+)
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.spliti-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Seit PHP 5.3.0 ist
+die regex-Erweiterung zugunsten der <a href="book.pcre.html" class="link">PCRE-Erweiterung</a>
+als veraltete markiert. Ein Aufruf dieser Funktion wird eine
+<strong><code>E_DEPRECATED</code></strong>-Notice ausgeben. Sie können sich
+<a href="reference.pcre.pattern.posix.html" class="link">die Liste der Unterschiede</a>
+ansehen, wenn Sie Hilfe beim Umstieg auf PCRE benötigen.</p></p></blockquote>
+  <div class="tip"><strong class="tip">Tipp</strong>
+   <p class="para">
+    <span class="function">spliti</span> ist ab PHP 5.3.0 veraltet. Verwenden Sie
+    stattdessen <span class="function">preg_split</span> mit dem Modifikator
+    <em>i</em> (<strong><code>PCRE_CASELESS</code></strong>).
+   </p>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.spliti-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">preg_split</span></li>
+    <li class="member"><span class="function">split</span></li>
+    <li class="member"><span class="function">explode</span></li>
+    <li class="member"><span class="function">implode</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Sonstige Funktionen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li class="header up"><a href="book.misc.html">Misc.</a></li>
+  <li><a href="intro.misc.html">Einf&uuml;hrung</a></li>
+  <li><a href="misc.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="misc.constants.html">Vordefinierte Konstanten</a></li>
+  <li class="active"><a href="ref.misc.html">Sonstige Funktionen</a></li>
+  <li><a href="changelog.misc.html">Changelog</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="misc.constants.html">Vordefinierte Konstanten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.connection-aborted.html">connection_aborted</a></div>
+                <div class="up"><a href="book.misc.html">Misc.</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="ref.misc" class="reference">
+
+  <h1 class="title">Sonstige Funktionen</h1>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_reference">
+<li><a href="function.connection-aborted.html">connection_aborted</a> — &Uuml;berpr&uuml;ft, ob die Verbindung zum Client beendet wurde</li>
+<li><a href="function.connection-status.html">connection_status</a> — Liefert den Verbindungsstatus als Bitfeld</li>
+<li><a href="function.constant.html">constant</a> — Liefert den Wert einer Konstante</li>
+<li><a href="function.define.html">define</a> — Definiert eine benannte Konstante</li>
+<li><a href="function.defined.html">defined</a> — Pr&uuml;ft, ob eine benannte Konstante existiert</li>
+<li><a href="function.die.html">die</a> — Entspricht exit</li>
+<li><a href="function.eval.html">eval</a> — Wertet eine Zeichenkette als PHP-Code aus</li>
+<li><a href="function.exit.html">exit</a> — Gibt eine Meldung aus und beendet das aktuelle Skript</li>
+<li><a href="function.get-browser.html">get_browser</a> — Ermittelt die F&auml;higkeiten des Browsers eines Benutzers</li>
+<li><a href="function.halt-compiler.html">__halt_compiler</a> — Beendet die Kompilerausf&uuml;hrung</li>
+<li><a href="function.highlight-file.html">highlight_file</a> — Syntax-Hervorhebung f&uuml;r eine Datei</li>
+<li><a href="function.highlight-string.html">highlight_string</a> — Hervorhebung der Syntax eines Strings</li>
+<li><a href="function.ignore-user-abort.html">ignore_user_abort</a> — Stellt ein, ob der Verbindungsabbruch eines Clients die Skript-Ausf&uuml;hrung abbrechen soll</li>
+<li><a href="function.pack.html">pack</a> — Packt Daten in eine Bin&auml;r-Zeichenkette</li>
+<li><a href="function.php-check-syntax.html">php_check_syntax</a> — &Uuml;berpr&uuml;ft die PHP Syntax der angegebenen Datei (und f&uuml;hrt sie aus)</li>
+<li><a href="function.php-strip-whitespace.html">php_strip_whitespace</a> — Return source with stripped comments and whitespace</li>
+<li><a href="function.show-source.html">show_source</a> — Alias von highlight_file</li>
+<li><a href="function.sleep.html">sleep</a> — Programmverz&ouml;gerung</li>
+<li><a href="function.sys-getloadavg.html">sys_getloadavg</a> — Ermittelt durchschnittliche Systemlast</li>
+<li><a href="function.time-nanosleep.html">time_nanosleep</a> — Verz&ouml;gert die Ausf&uuml;hrung um die gegebene Anzahl Sekunden und Nanosekunden</li>
+<li><a href="function.time-sleep-until.html">time_sleep_until</a> — L&auml;sst das Skript bis zur angegebenen Zeit schlafen</li>
+<li><a href="function.uniqid.html">uniqid</a> — Erzeugt eine eindeutige ID</li>
+<li><a href="function.unpack.html">unpack</a> — Entpackt die Daten eines Bin&auml;r-Strings</li>
+<li><a href="function.usleep.html">usleep</a> — Programm-Verz&ouml;gerung in Mikrosekunden</li>
+</ul>
+</ol>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

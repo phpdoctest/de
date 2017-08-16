@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Shared Memory Segment anlegen oder anbinden</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li class="header up"><a href="book.sem.html">Semaphore</a></li>
+  <li class="header up"><a href="ref.sem.html">Semaphore Funktionen</a></li>
+  <li><a href="function.ftok.html">ftok</a></li>
+  <li><a href="function.msg-get-queue.html">msg_get_queue</a></li>
+  <li><a href="function.msg-queue-exists.html">msg_queue_exists</a></li>
+  <li><a href="function.msg-receive.html">msg_receive</a></li>
+  <li><a href="function.msg-remove-queue.html">msg_remove_queue</a></li>
+  <li><a href="function.msg-send.html">msg_send</a></li>
+  <li><a href="function.msg-set-queue.html">msg_set_queue</a></li>
+  <li><a href="function.msg-stat-queue.html">msg_stat_queue</a></li>
+  <li><a href="function.sem-acquire.html">sem_acquire</a></li>
+  <li><a href="function.sem-get.html">sem_get</a></li>
+  <li><a href="function.sem-release.html">sem_release</a></li>
+  <li><a href="function.sem-remove.html">sem_remove</a></li>
+  <li class="active"><a href="function.shm-attach.html">shm_attach</a></li>
+  <li><a href="function.shm-detach.html">shm_detach</a></li>
+  <li><a href="function.shm-get-var.html">shm_get_var</a></li>
+  <li><a href="function.shm-has-var.html">shm_has_var</a></li>
+  <li><a href="function.shm-put-var.html">shm_put_var</a></li>
+  <li><a href="function.shm-remove-var.html">shm_remove_var</a></li>
+  <li><a href="function.shm-remove.html">shm_remove</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.sem-remove.html">sem_remove</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.shm-detach.html">shm_detach</a></div>
+                <div class="up"><a href="ref.sem.html">Semaphore Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.shm-attach" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">shm_attach</h1>
+  <p class="refpurpose">Shared Memory Segment anlegen oder anbinden</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.shm-attach-description">
+  <h3 class="title">Beschreibung</h3>
+   <div class="methodsynopsis dc-description">
+    <span class="type">resource</span> <span class="methodname">shm_attach</span>
+     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$key</code></span> 
+    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$memsize</code></span>
+    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$perm</code><span class="initializer"> = 0666</span></span>
+   ]] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">shm_attach</span> liefert eine ID über die auf ein 
+   System V Shared Memory Segment mit dem gegebenen <code class="parameter">key</code>
+   zugegriffen werden kann. Der erste Zugriff auf ein noch nicht existierendes
+   Segment legt dieses mit der Größe <code class="parameter">memsize</code>
+   und Zugriffsberechtigungen
+   gemäß der in <code class="parameter">perm</code> gesetzten Bits an.
+  </p>
+  <p class="para">
+   Ein zweimaliger Aufruf der Funktion <span class="function">shm_attach</span>
+   mit dem gleichen <code class="parameter">key</code> liefert eine andere ID,
+   über beide IDs wird aber trotzdem auf das gleiche Shared Memory
+   Segment zugegriffen. <code class="parameter">memsize</code> und
+   <code class="parameter">perm</code> werden in diesem Fall ignoriert. 
+  </p>
+ </div>
+
+
+
+ <div class="refsect1 parameters" id="refsect1-function.shm-attach-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">key</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Eine numerische Shared Memory Segment Id.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">memsize</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Größe des Shared Memory Segments in Bytes.
+       Wird dieser Parameter nicht übergeben so wird der Wert aus
+       <em>sysvshm.init_mem</em> in <var class="filename">php.ini</var> angenommen.
+       Ist auch dieser nicht gesetzt ist der Vorgabewert 10000 Bytes.
+       bytes.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">perm</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Optionale Zugriffsrechte als Bitmaske, Default ist 0666.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.shm-attach-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Liefert ein Shared Memory Resource Handle.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.shm-attach-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        Diese Funktion gibt nun eine <a href="language.types.resource.html" class="link">Ressource</a> anstatt eines 
+        <a href="language.types.integer.html" class="link">Integer</a>
+        zurück.
+       </td>
+      </tr>
+
+     </tbody>
+    
+    </table>
+
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 notes" id="refsect1-function.shm-attach-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Diese Funktion vor PHP 5.3.0 einen Integer-Wert zurück.
+    Dieses Verhalten kann durch einen Cast auf Integer simuliert
+    werden falls dies aus Portabilitätsgründen nötig sein sollte.
+   </p>
+   <p class="para">
+    <div class="example" id="example-4179">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Temporäre&nbsp;Datei&nbsp;erstellen&nbsp;und&nbsp;Dateipfad&nbsp;speichern<br /></span><span style="color: #0000BB">$tmp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">tempnam</span><span style="color: #007700">(</span><span style="color: #DD0000">'/tmp'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PHP'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Dateitoken-Schlüssel&nbsp;ermitteln<br /></span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftok</span><span style="color: #007700">(</span><span style="color: #0000BB">$tmp</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'a'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;SHM-Resource&nbsp;anbinden,&nbsp;beachten&nbsp;Sie&nbsp;den&nbsp;weiter&nbsp;unten&nbsp;folgenden&nbsp;Cast<br /></span><span style="color: #0000BB">$id&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">shm_attach</span><span style="color: #007700">(</span><span style="color: #0000BB">$key</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">$id&nbsp;</span><span style="color: #007700">===&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'SHM-Segment&nbsp;kann&nbsp;nicht&nbsp;erzeugt&nbsp;werden'</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Cast&nbsp;auf&nbsp;Integer,&nbsp;da&nbsp;vor&nbsp;PHP&nbsp;5.3.0&nbsp;die&nbsp;Resource-ID&nbsp;als<br />//&nbsp;Integer&nbsp;zurückgegeben&nbsp;wurde.&nbsp;Der&nbsp;Cast&nbsp;simuliert&nbsp;dieses<br />//&nbsp;Verhalten<br /></span><span style="color: #0000BB">$id&nbsp;</span><span style="color: #007700">=&nbsp;(integer)&nbsp;</span><span style="color: #0000BB">$id</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.shm-attach-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">shm_detach</span></li>
+    <li class="member"><span class="function">ftok</span></li>
+   </ul>
+  </p>
+ </div>
+  
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

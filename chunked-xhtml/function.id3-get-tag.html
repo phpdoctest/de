@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Ermitteln aller Informationen in einem ID3-Tag</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.utilspec.audio.html">Manipulation von Audioformaten</a></li>
+  <li class="header up"><a href="book.id3.html">ID3</a></li>
+  <li class="header up"><a href="ref.id3.html">ID3 Funktionen</a></li>
+  <li><a href="function.id3-get-frame-long-name.html">id3_get_frame_long_name</a></li>
+  <li><a href="function.id3-get-frame-short-name.html">id3_get_frame_short_name</a></li>
+  <li><a href="function.id3-get-genre-id.html">id3_get_genre_id</a></li>
+  <li><a href="function.id3-get-genre-list.html">id3_get_genre_list</a></li>
+  <li><a href="function.id3-get-genre-name.html">id3_get_genre_name</a></li>
+  <li class="active"><a href="function.id3-get-tag.html">id3_get_tag</a></li>
+  <li><a href="function.id3-get-version.html">id3_get_version</a></li>
+  <li><a href="function.id3-remove-tag.html">id3_remove_tag</a></li>
+  <li><a href="function.id3-set-tag.html">id3_set_tag</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.id3-get-genre-name.html">id3_get_genre_name</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.id3-get-version.html">id3_get_version</a></div>
+                <div class="up"><a href="ref.id3.html">ID3 Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.id3-get-tag" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">id3_get_tag</h1>
+    <p class="refpurpose">Ermitteln aller Informationen in einem ID3-Tag</p>
+   </div>
+   <div class="refsect1 unknown-unknown-unknown-unknown-unknown-unknown-seealsu" id="refsect1-function.id3-get-tag-unknown-unknown-unknown-unknown-unknown-unknown-seealsu">
+    <h3 class="title">Beschreibung</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="type">array</span> <span class="methodname">id3_get_tag</span>
+       ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+      [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$version</code></span>
+     ] )</div>
+
+    <p class="para rdfs-comment">
+     <span class="function">id3_get_tag</span> wird verwendet, um alle Informationen 
+     in einem ID3-Tag einer bestimmten Datei zu ermitteln.
+    </p>
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <span class="simpara">Anstelle eines Dateinamens können Sie auch eine stream-Ressource übergeben.</span>
+    </p></blockquote>
+    <p class="para">
+     Der optionale Parameter <code class="parameter">version</code> erlaubt es, die Version des zu schreibenden 
+     Tags anzugeben. MP3-Dateien können sowohl ID3v1-, als auch ID3v2-Tags enthalten.
+    </p>
+    <p class="para">
+     <div class="example" id="example-646">
+      <p><strong>Beispiel #1 <span class="function">id3_get_tag</span> Beispiel</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$tag&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">id3_get_tag</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">"path/to/example.mp3"&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$tag</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      <div class="example-contents"><p>
+       Die Ausgabe wird in etwa so aussehen:
+      </p></div>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [title] =&gt; DN-38416
+    [artist] =&gt; Re:\Legion
+    [album] =&gt; Reflections
+    [year] =&gt; 2004
+    [genre] =&gt; 19
+)
+</pre></div>
+      </div>
+     </div>
+    </p>
+    <p class="para">
+      Der Key <em>genre</em> enthält eine Ganzzahl zwischen 0 and 147. Sie können
+      die Funktion <span class="function">id3_get_genre_name</span> verwenden, um diese in 
+      eine menschenlesbare Form zu bringen.
+    </p>
+    <p class="para">
+     Seit Version 0.2 unterstützt <span class="function">id3_get_tag</span> auch ID3-Tags in den Versionen 
+     2.2, 2.3 und 2.4. Übergeben Sie eine der Konstanten ID3_V2_2, ID3_V2_3 oder ID3_V2_4 als zweiten Parameter,
+     um Informationen aus diesen Tags zu lesen.
+    </p>
+    <p class="para">
+     <div class="example" id="example-647">
+      <p><strong>Beispiel #2 <span class="function">id3_get_tag</span> Beispiel</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$tag&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">id3_get_tag</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">"path/to/example2.mp3"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ID3_V2_3&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$tag</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      <div class="example-contents"><p>
+       Die Ausgabe wird in etwa so aussehen:
+      </p></div>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [copyright] =&gt; Dirty Mac
+    [originalArtist] =&gt; Dirty Mac
+    [composer] =&gt; Marcus Götze
+    [artist] =&gt; Dirty Mac
+    [title] =&gt; Little Big Man
+    [album] =&gt; Demo-Tape
+    [track] =&gt; 5/12
+    [genre] =&gt; (17)Rock
+    [year] =&gt; 2001
+)
+</pre></div>
+      </div>
+     </div>
+    </p>
+    <p class="para">
+     ID3v2.x Tags können weit mehr Informationen über eine MP3-Datei enthalten, als ID3v1.x Tags.
+    </p>
+    <p class="para">
+     Siehe auch <span class="function">id3_set_tag</span>,
+     <span class="function">id3_remove_tag</span> und <span class="function">id3_get_version</span>.
+    </p>
+   </div>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

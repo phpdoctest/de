@@ -1,0 +1,617 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: SimpleXML</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.xml.html">XML-Manipulation</a></li>
+  <li><a href="book.dom.html">DOM</a></li>
+  <li><a href="book.libxml.html">libxml</a></li>
+  <li><a href="book.sdo.html">SDO</a></li>
+  <li><a href="book.sdodasrel.html">SDO-DAS-Relational</a></li>
+  <li><a href="book.sdo-das-xml.html">SDO DAS XML</a></li>
+  <li class="active"><a href="book.simplexml.html">SimpleXML</a></li>
+  <li><a href="book.wddx.html">WDDX</a></li>
+  <li><a href="book.xmldiff.html">XMLDiff</a></li>
+  <li><a href="book.xml.html">XML Parser</a></li>
+  <li><a href="book.xmlreader.html">XMLReader</a></li>
+  <li><a href="book.xmlwriter.html">XMLWriter</a></li>
+  <li><a href="book.xsl.html">XSL</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="sdo-das-xml-document.setxmlversion.html">SDO_DAS_XML_Document::setXMLVersion</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.simplexml.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.xml.html">XML-Manipulation</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.simplexml" class="book">
+ 
+ <h1>SimpleXML</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.simplexml.html">Einf&uuml;hrung</a></li>
+<li><a href="simplexml.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="simplexml.requirements.html">Anforderungen</a></li>
+<li><a href="simplexml.installation.html">Installation</a></li>
+<li><a href="simplexml.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="simplexml.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="simplexml.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="simplexml.examples.html">Beispiele</a><ul class="chunklist chunklist_title">
+<li><a href="simplexml.examples-basic.html">Grundlegende SimpleXML Verwendung</a></li>
+<li><a href="simplexml.examples-errors.html">Behandlung von XML-Fehlern</a></li>
+</ul>
+</li>
+<li><a href="class.simplexmlelement.html">SimpleXMLElement</a> — Die SimpleXMLElement-Klasse<ul class="chunklist chunklist_title">
+<li><a href="simplexmlelement.addAttribute.html">SimpleXMLElement::addAttribute</a> — F&uuml;gt einem SimpleXML-Element ein Attribut hinzu</li>
+<li><a href="simplexmlelement.addChild.html">SimpleXMLElement::addChild</a> — F&uuml;gt dem XML-Knoten ein Kind-Element hinzu</li>
+<li><a href="simplexmlelement.asXML.html">SimpleXMLElement::asXML</a> — Gibt einen wohlgeformten XML String zur&uuml;ck, der auf einem
+   SimpleXML-Element basiert</li>
+<li><a href="simplexmlelement.attributes.html">SimpleXMLElement::attributes</a> — Identifiziert die Attribute eines Elements</li>
+<li><a href="simplexmlelement.children.html">SimpleXMLElement::children</a> — Findet Kindelemente des gegebenen Knotens</li>
+<li><a href="simplexmlelement.construct.html">SimpleXMLElement::__construct</a> — Erstellt ein neues SimpleXMLElement-Objekt</li>
+<li><a href="simplexmlelement.count.html">SimpleXMLElement::count</a> — Counts the children of an element</li>
+<li><a href="simplexmlelement.getDocNamespaces.html">SimpleXMLElement::getDocNamespaces</a> — Gibt die im Dokument vorhandenen Namespaces zur&uuml;ck</li>
+<li><a href="simplexmlelement.getName.html">SimpleXMLElement::getName</a> — Ermittelt den Namen eines XML-Elements</li>
+<li><a href="simplexmlelement.getNamespaces.html">SimpleXMLElement::getNamespaces</a> — Gibt die im Dokument verwendeten Namespaces zur&uuml;ck</li>
+<li><a href="simplexmlelement.registerXPathNamespace.html">SimpleXMLElement::registerXPathNamespace</a> — Erzeugt einen Prefix/Namespace-Kontext f&uuml;r den n&auml;chsten XPath-Query</li>
+<li><a href="simplexmlelement.savexml.html">SimpleXMLElement::saveXML</a> — Alias von SimpleXMLElement::asXML</li>
+<li><a href="simplexmlelement.tostring.html">SimpleXMLElement::__toString</a> — Returns the string content</li>
+<li><a href="simplexmlelement.xpath.html">SimpleXMLElement::xpath</a> — F&uuml;hrt ein XPath Query auf XML-Daten aus</li>
+</ul>
+</li>
+<li><a href="class.simplexmliterator.html">SimpleXMLIterator</a> — Die SimpleXMLIterator-Klasse<ul class="chunklist chunklist_title">
+<li><a href="simplexmliterator.current.html">SimpleXMLIterator::current</a> — Returns the current element</li>
+<li><a href="simplexmliterator.getchildren.html">SimpleXMLIterator::getChildren</a> — Returns the sub-elements of the current element</li>
+<li><a href="simplexmliterator.haschildren.html">SimpleXMLIterator::hasChildren</a> — Checks whether the current element has sub elements.</li>
+<li><a href="simplexmliterator.key.html">SimpleXMLIterator::key</a> — Return current key</li>
+<li><a href="simplexmliterator.next.html">SimpleXMLIterator::next</a> — Move to next element</li>
+<li><a href="simplexmliterator.rewind.html">SimpleXMLIterator::rewind</a> — Rewind to the first element</li>
+<li><a href="simplexmliterator.valid.html">SimpleXMLIterator::valid</a> — Check whether the current element is valid</li>
+</ul>
+</li>
+<li><a href="ref.simplexml.html">SimpleXML-Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.simplexml-import-dom.html">simplexml_import_dom</a> — Erzeugt ein SimpleXMLElement-Objekt aus einem
+   DOM-Knoten</li>
+<li><a href="function.simplexml-load-file.html">simplexml_load_file</a> — &Uuml;bersetzt ein XML-File in ein Objekt</li>
+<li><a href="function.simplexml-load-string.html">simplexml_load_string</a> — &Uuml;bersetzt einen XML-String in ein Objekt</li>
+</ul>
+</li>
+</ul>
+
+
+ 
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ <h1 class="title">Die SimpleXMLElement-Klasse</h1>
+ 
+ 
+ <div class="partintro">
+ 
+
+  <div class="section" id="simplexmlelement.intro">
+   <h2 class="title">Einführung</h2>
+   <p class="para">
+    Stellt ein Element in einem XML-Dokument dar.
+   </p>
+  </div>
+
+ 
+  <div class="section" id="simplexmlelement.synopsis">
+   <h2 class="title">Klassenbeschreibung</h2>
+ 
+
+   <div class="classsynopsis">
+    <div class="ooclass"><strong class="classname">SimpleXMLElement</strong></div>
+ 
+
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+       class <strong class="classname">SimpleXMLElement</strong>
+     </span>
+     
+     <span class="oointerface">implements 
+      <span class="interfacename">Traversable</span>
+     </span>
+     {</div>
+
+ 
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methoden */</div>
+    <div class="constructorsynopsis dc-description">
+      <span class="methodname">__construct</span>
+      ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
+     [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code></span>
+     [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$data_is_url</code></span>
+     [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$ns</code></span>
+     [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_prefix</code></span>
+   ]]]] )</div>
+
+    <div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname">addAttribute</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
+    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$namespace</code></span>
+   ] )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">SimpleXMLElement</span> <span class="methodname">addChild</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
+    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$namespace</code></span>
+   ]] )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">mixed</span> <span class="methodname">asXML</span>
+     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+   ] )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">SimpleXMLElement</span> <span class="methodname">attributes</span>
+     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$ns</code></span>
+    [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_prefix</code></span>
+   ]] )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">SimpleXMLElement</span> <span class="methodname">children</span>
+     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$ns</code></span>
+    [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_prefix</code></span>
+   ]] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">int</span> <span class="methodname">count</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">array</span> <span class="methodname">getDocNamespaces</span>
+     ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$recursive</code></span>
+   ] )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">string</span> <span class="methodname">getName</span>
+     ( <span class="methodparam">void</span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">array</span> <span class="methodname">getNamespaces</span>
+     ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$recursive</code></span>
+   ] )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">bool</span> <span class="methodname">registerXPathNamespace</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$prefix</code></span>
+    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$ns</code></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname">__toString</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">array</span> <span class="methodname">xpath</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
+    )</div>
+
+   }</div>
+
+ 
+  </div>
+ 
+ </div>
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+ <h1 class="title">Die SimpleXMLIterator-Klasse</h1>
+ 
+
+ <div class="partintro">
+
+
+  <div class="section" id="simplexmliterator.intro">
+   <h2 class="title">Einführung</h2>
+   <p class="para">
+    Der SimpleXMLIterator verwaltet rekursive Interation über alle Knotenpunkte eines <span class="classname">SimpleXMLElement</span>-Objektes.
+   </p>
+  </div>
+
+
+  <div class="section" id="simplexmliterator.synopsis">
+   <h2 class="title">Klassenbeschreibung</h2>
+
+
+   <div class="classsynopsis">
+    <div class="ooclass"><strong class="classname">SimpleXMLIterator</strong></div>
+
+
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+       class <strong class="classname">SimpleXMLIterator</strong>
+     </span>
+
+     <span class="ooclass">
+      <span class="modifier">extends</span>
+      <strong class="classname"> SimpleXMLElement</strong>
+     </span>
+
+     <span class="oointerface">implements 
+      <span class="interfacename">RecursiveIterator</span>
+     </span>
+
+     <span class="oointerface">, 
+      <span class="interfacename">Countable</span>
+     </span>
+
+     {</div>
+
+
+    
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methoden */</div>
+    <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname">current</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">SimpleXMLIterator</span> <span class="methodname">getChildren</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname">hasChildren</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname">key</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname">next</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname">rewind</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname">valid</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Geerbte Methoden */</div>
+    <div class="constructorsynopsis dc-description">
+      <span class="methodname">__construct</span>
+      ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
+     [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code></span>
+     [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$data_is_url</code></span>
+     [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$ns</code></span>
+     [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_prefix</code></span>
+   ]]]] )</div>
+
+    <div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname">addAttribute</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
+    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$namespace</code></span>
+   ] )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">SimpleXMLElement</span> <span class="methodname">addChild</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
+    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$namespace</code></span>
+   ]] )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">mixed</span> <span class="methodname">asXML</span>
+     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+   ] )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">SimpleXMLElement</span> <span class="methodname">attributes</span>
+     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$ns</code></span>
+    [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_prefix</code></span>
+   ]] )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">SimpleXMLElement</span> <span class="methodname">children</span>
+     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$ns</code></span>
+    [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_prefix</code></span>
+   ]] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">int</span> <span class="methodname">SimpleXMLElement::count</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">array</span> <span class="methodname">getDocNamespaces</span>
+     ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$recursive</code></span>
+   ] )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">string</span> <span class="methodname">getName</span>
+     ( <span class="methodparam">void</span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">array</span> <span class="methodname">getNamespaces</span>
+     ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$recursive</code></span>
+   ] )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">bool</span> <span class="methodname">registerXPathNamespace</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$prefix</code></span>
+    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$ns</code></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname">SimpleXMLElement::__toString</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">array</span> <span class="methodname">xpath</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
+    )</div>
+
+   }</div>
+
+  </div>
+
+
+
+ </div>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

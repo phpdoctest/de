@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Etwas n&uuml;tzliches</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="getting-started.html">Einf&uuml;hrung</a></li>
+  <li class="header up"><a href="tutorial.html">Ein kleines Tutorial</a></li>
+  <li><a href="tutorial.requirements.html">Was brauche ich?</a></li>
+  <li><a href="tutorial.firstpage.html">Ihre erste PHP-erweiterte Seite</a></li>
+  <li class="active"><a href="tutorial.useful.html">Etwas n&uuml;tzliches</a></li>
+  <li><a href="tutorial.forms.html">Formulare verarbeiten</a></li>
+  <li><a href="tutorial.oldcode.html">Alten Code mit neuen PHP-Versionen benutzen</a></li>
+  <li><a href="tutorial.whatsnext.html">Und weiter?</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="tutorial.firstpage.html">Ihre erste PHP-erweiterte Seite</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="tutorial.forms.html">Formulare verarbeiten</a></div>
+                <div class="up"><a href="tutorial.html">Ein kleines Tutorial</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="tutorial.useful" class="section">
+   <h2 class="title">Etwas nützliches</h2>
+   <p class="para">
+    Kommen wir nun zu einem etwas nützlicheren Beispiel. Wir wollen prüfen,
+    welchen Browser der Besucher benutzt.
+    Um das zu tun, prüfen wir den &quot;user agent&quot;-String, den der Browser
+    als Teil seiner HTTP-Anforderung sendet. Diese Information ist in einer
+    <a href="language.variables.html" class="link">Variablen</a> abgelegt. In PHP
+    beginnen Variablen immer mit einem Dollar-Zeichen. Die Variable, die
+    uns jetzt interessiert, ist <var class="varname">$_SERVER[&#039;HTTP_USER_AGENT&#039;]</var>.
+   </p>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     <var class="varname">$_SERVER</var> ist eine speziell reservierte PHP-Variable,
+     die alle Informationen über den Webserver enthält. Diese Variable wird
+     auch als superglobal bezeichnet. Mehr Informationen darüber finden Sie auf der
+     Manual-Seite über <a href="language.variables.superglobals.html" class="link">Superglobals</a>.
+     Diese speziellen Variablen wurden in PHP
+     <a href="http://www.php.net/releases/4_1_0.php" class="link external">&raquo;&nbsp;4.1.0</a> eingeführt.
+     Vorher wurden stattdessen die älteren <var class="varname">$HTTP_*_VARS</var>-Arrays
+     benutzt, also z.B. <var class="varname">$HTTP_SERVER_VARS</var>.
+     Beginnend mit PHP 5.4.0 wurden diese älteren Variablen entfernt. 
+     (Beachten Sie auch die Seite <a href="tutorial.oldcode.html" class="link">Alten Code
+     mit neuen PHP-Versionen benutzen</a>.)
+    </p>
+   </p></blockquote>
+   <p class="para">
+    Um die Variable auszugeben, schreiben Sie einfach:
+   </p>
+   <p class="para">
+    <div class="example" id="example-4">
+    <p><strong>Beispiel #1 Variable ausgeben (Array-Element)</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'HTTP_USER_AGENT'</span><span style="color: #007700">];<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Die Ausgabe dieses Beispiels könnte so aussehen:
+     <div class="example-contents screen"><br />
+Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)<br />
+     </div>
+    </p></div>
+   </div>
+   </p>
+   <p class="para">
+    Es gibt viele <a href="language.types.html" class="link">Typen</a> von
+    Variablen. Im obigen Beispiel haben wir ein <a href="language.types.array.html" class="link">Array</a>-Element ausgegeben.
+    Arrays können sehr nützlich sein.
+   </p>
+   <p class="para">
+    <var class="varname">$_SERVER</var> ist nur eine von vielen Variablen, die
+    Ihnen automatisch von PHP zur Verfügung gestellt werden. Eine Liste
+    finden Sie auf der Seite <a href="reserved.variables.html" class="link">Reservierte
+    Variablen</a> im Manual. Eine vollständige Liste können Sie auch
+    bekommen, wenn Sie sich die Ausgabe der
+    <span class="function">phpinfo</span>-Funktion ansehen, die im Beispiel des
+    vorigen Abschnitts benutzt wurde.
+   </p>
+   <p class="para">
+    Sie können mehrere PHP-Anweisungen innerhalb eines PHP-Tags
+    platzieren und so kleine Code-Blöcke schreiben, die mehr
+    als nur eine Ausgabe mit <span class="function">echo</span> enthalten.
+    Wenn wir zum Beispiel prüfen möchten, ob es sich beim Browser
+    des Besuchers um den Internet Explorer handelt, können wir
+    folgenden Code benutzen:
+   </p>
+   <p class="para">
+    <div class="example" id="example-5">
+     <p><strong>Beispiel #2 Beispiel, das <a href="language.control-structures.html" class="link">Kontrollstrukturen</a> und
+     <a href="language.functions.html" class="link">Funktionen</a> benutzt</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">strpos</span><span style="color: #007700">(</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'HTTP_USER_AGENT'</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">'MSIE'</span><span style="color: #007700">)&nbsp;!==&nbsp;</span><span style="color: #0000BB">FALSE</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Sie&nbsp;benutzen&nbsp;Microsofts&nbsp;Internet&nbsp;Explorer.&lt;br&nbsp;/&gt;"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+     <div class="example-contents"><p>
+      Die Ausgabe dieses Skripts könnte so aussehen:
+     </p></div>
+     <div class="example-contents screen">
+<div class="cdata"><pre>
+Sie benutzen Microsofts Internet Explorer.&lt;br /&gt;
+</pre></div>
+     </div>
+    </div>
+   </p>
+   <p class="para">
+    Hier haben wir Ihnen eine ganze Reihe von neuen Konzepten vorgestellt.
+    Wir haben hier zuerst eine <a href="control-structures.if.html" class="link">if</a>-Anweisung.
+    Wenn Sie mit der Grundlagen-Syntax der Programmiersprache C
+    vertraut sind, sollte Ihnen dies logisch erscheinen. Andernfalls
+    sollten Sie sich ein Buch mit einer
+    PHP-Einführung besorgen und die ersten Kapitel lesen. Sie
+    können natürlich auch in die <a href="langref.html" class="link">Sprachreferenz</a> des Manuals schauen.
+   </p>
+   <p class="para">
+    Das zweite hier vorgestellte Konzept ist der Aufruf der Funktion
+    <span class="function">strpos</span>. <span class="function">strpos</span> ist eine
+    in PHP eingebaute Funktion, die nach einem String in einem anderen
+    String sucht. In diesem Fall suchen wir nach <em>&#039;MSIE&#039;</em>
+    (die so genannte Nadel, engl. needle) in
+    <var class="varname">$_SERVER[&#039;HTTP_USER_AGENT&#039;]</var> (der so genannte
+    Heuhaufen, engl. haystack). Wenn die Nadel im Heuhaufen gefunden
+    wird, gibt die Funktion die Position der Nadel relativ zum Start
+    des Heuhaufens zurück. Andernfalls wird <strong><code>FALSE</code></strong> zurückgegeben.
+    Wenn nicht <strong><code>FALSE</code></strong> zurückgeben wird, wird die <a href="control-structures.if.html" class="link">if</a>-Anweisung
+    zu <strong><code>TRUE</code></strong> ausgewertet und der Code innerhalb der geschweiften Klammern
+    wird ausgeführt. Andernfalls wird der Code innerhalb der Klammern
+    nicht ausgeführt. Probieren Sie weitere
+    ähnliche Beispiele mit <a href="control-structures.if.html" class="link">if</a>,
+    <a href="control-structures.else.html" class="link">else</a> und anderen
+    Funktionen wie <span class="function">strtoupper</span> oder
+    <span class="function">strlen</span>. Jede dieser Manual-Seiten enthält
+    weitere Beispiele. Wenn Sie unsicher sind, wie die Funktionen
+    benutzt werden, lesen Sie die Handbuch-Seite <a href="about.prototypes.html" class="link">Wie sind Funktionsdefinitionen
+    (Prototypen) zu lesen?</a> und den Abschnitt zu den
+    <a href="language.functions.html" class="link">PHP-Funktionen</a>.
+   </p>
+   <p class="para">
+    Wir können jetzt einen Schritt weitergehen und sehen, wie Sie innerhalb
+    eines PHP-Blocks den PHP-Modus verlassen und wieder in ihn hinein
+    gelangen können:
+   </p>
+   <p class="para">
+    <div class="example" id="example-6">
+     <p><strong>Beispiel #3 HTML- und PHP-Modus vermischt</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">strpos</span><span style="color: #007700">(</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'HTTP_USER_AGENT'</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">'MSIE'</span><span style="color: #007700">)&nbsp;!==&nbsp;</span><span style="color: #0000BB">FALSE</span><span style="color: #007700">)&nbsp;{<br /></span><span style="color: #0000BB">?&gt;<br /></span>&lt;h3&gt;strpos()&nbsp;hat&nbsp;nicht&nbsp;FALSE&nbsp;zurückgegeben&lt;/h3&gt;<br />&lt;p&gt;Sie&nbsp;benutzen&nbsp;Internet&nbsp;Explorer&lt;/p&gt;<br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">}&nbsp;else&nbsp;{<br /></span><span style="color: #0000BB">?&gt;<br /></span>&lt;h3&gt;strpos()&nbsp;hat&nbsp;FALSE&nbsp;zurückgegeben&lt;/h3&gt;<br />&lt;p&gt;Sie&nbsp;benutzen&nbsp;nicht&nbsp;Internet&nbsp;Explorer&lt;/p&gt;<br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+     <div class="example-contents"><p>
+      Die Ausgabe dieses Skripts könnte so aussehen:
+     </p></div>
+     <div class="example-contents screen">
+<div class="cdata"><pre>
+&lt;h3&gt;strpos() hat nicht FALSE zurückgegeben&lt;/h3&gt;
+&lt;p&gt;Sie benutzen Internet Explorer&lt;/p&gt;
+</pre></div>
+     </div>
+    </div>
+   </p>
+   <p class="para">
+    Anstatt die PHP echo-Anweisung für die Ausgabe zu benutzen,
+    haben wir den PHP-Modus verlassen und normales HTML verwendet. Der wichtige
+    Punkt hierbei ist, dass der logische Ablauf des Skripts dadurch nicht
+    gestört wird. Nur einer der beiden HTML-Blöcke wird ausgegeben - abhängig
+    davon, was <span class="function">strpos</span> zurückgibt bzw.
+    ob der String <em>MSIE</em> gefunden wird oder nicht.
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

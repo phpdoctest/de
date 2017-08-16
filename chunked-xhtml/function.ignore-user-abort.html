@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Stellt ein, ob der Verbindungsabbruch eines Clients die Skript-Ausf&uuml;hrung abbrechen soll</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li class="header up"><a href="book.misc.html">Misc.</a></li>
+  <li class="header up"><a href="ref.misc.html">Sonstige Funktionen</a></li>
+  <li><a href="function.connection-aborted.html">connection_aborted</a></li>
+  <li><a href="function.connection-status.html">connection_status</a></li>
+  <li><a href="function.constant.html">constant</a></li>
+  <li><a href="function.define.html">define</a></li>
+  <li><a href="function.defined.html">defined</a></li>
+  <li><a href="function.die.html">die</a></li>
+  <li><a href="function.eval.html">eval</a></li>
+  <li><a href="function.exit.html">exit</a></li>
+  <li><a href="function.get-browser.html">get_browser</a></li>
+  <li><a href="function.halt-compiler.html">__halt_compiler</a></li>
+  <li><a href="function.highlight-file.html">highlight_file</a></li>
+  <li><a href="function.highlight-string.html">highlight_string</a></li>
+  <li class="active"><a href="function.ignore-user-abort.html">ignore_user_abort</a></li>
+  <li><a href="function.pack.html">pack</a></li>
+  <li><a href="function.php-check-syntax.html">php_check_syntax</a></li>
+  <li><a href="function.php-strip-whitespace.html">php_strip_whitespace</a></li>
+  <li><a href="function.show-source.html">show_source</a></li>
+  <li><a href="function.sleep.html">sleep</a></li>
+  <li><a href="function.sys-getloadavg.html">sys_getloadavg</a></li>
+  <li><a href="function.time-nanosleep.html">time_nanosleep</a></li>
+  <li><a href="function.time-sleep-until.html">time_sleep_until</a></li>
+  <li><a href="function.uniqid.html">uniqid</a></li>
+  <li><a href="function.unpack.html">unpack</a></li>
+  <li><a href="function.usleep.html">usleep</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.highlight-string.html">highlight_string</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.pack.html">pack</a></div>
+                <div class="up"><a href="ref.misc.html">Sonstige Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.ignore-user-abort" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">ignore_user_abort</h1>
+  <p class="refpurpose">Stellt ein, ob der Verbindungsabbruch eines Clients die Skript-Ausführung abbrechen soll</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.ignore-user-abort-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname">ignore_user_abort</span>
+    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Setzt den Wert dafür, ob der Abbruch einer Client-Verbindung die weitere
+   Abarbeitung eines Skripts beenden soll.
+  </p>
+  <p class="para">
+   Wird PHP als Kommondozeilen-Skript ausgeführt, und das TTY des Skripts wird
+   entfernt ohne dass das Skript terminiert wurde, dann stirbt das Skript beim
+   nächsten Versuch etwas zu schreiben, außer wenn <code class="parameter">value</code>
+   auf <strong><code>TRUE</code></strong> gesetzt ist.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.ignore-user-abort-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">value</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Sofern dieser Parameter angegeben wird, überschreibt diese Funktion
+       die aktuelle Einstellung von <a href="misc.configuration.html#ini.ignore-user-abort" class="link">ignore_user_abort</a> mit dem
+       übergebenen <code class="parameter">value</code>. Ist der Parameter nicht
+       angegeben, gibt die Funktion nur die aktuelle Einstellung zurück,
+       ohne sie zu verändern.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.ignore-user-abort-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt das vorhergehende Setting als Ganzzahl (integer) zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.ignore-user-abort-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4267">
+    <p><strong>Beispiel #1 Ein <span class="function">ignore_user_abort</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Ignoriere&nbsp;Abbruch&nbsp;durch&nbsp;den&nbsp;Benutzer&nbsp;und&nbsp;erlaube&nbsp;dem&nbsp;Skript&nbsp;weiterzulaufen<br /></span><span style="color: #0000BB">ignore_user_abort</span><span style="color: #007700">(</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">set_time_limit</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">'Teste&nbsp;Connectionhandling&nbsp;in&nbsp;PHP'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Lasse&nbsp;eine&nbsp;sinnfreie&nbsp;Schleife&nbsp;laufen,&nbsp;die&nbsp;uns&nbsp;irgendwann<br />//&nbsp;hoffentlich&nbsp;von&nbsp;der&nbsp;Seite&nbsp;wegklicken&nbsp;oder&nbsp;den&nbsp;"Stop"-Button<br />//&nbsp;betätigen&nbsp;lässt<br /></span><span style="color: #007700">while(</span><span style="color: #0000BB">1</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Schlug&nbsp;die&nbsp;Verbindung&nbsp;fehl?<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if(</span><span style="color: #0000BB">connection_status</span><span style="color: #007700">()&nbsp;!=&nbsp;</span><span style="color: #0000BB">CONNECTION_NORMAL</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;10&nbsp;Sekunden&nbsp;warten<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">sleep</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Wird&nbsp;dieser&nbsp;Punkt&nbsp;erreicht,&nbsp;wurde&nbsp;das&nbsp;'break'<br />//&nbsp;von&nbsp;einem&nbsp;Punkt&nbsp;innerhalb&nbsp;der&nbsp;while-Schleife&nbsp;getriggert<br /><br />//&nbsp;Somit&nbsp;können&nbsp;wir&nbsp;hier&nbsp;ein&nbsp;Log&nbsp;schreiben&nbsp;oder&nbsp;andere&nbsp;Aufgaben<br />//&nbsp;ausführen,&nbsp;die&nbsp;nicht&nbsp;davon&nbsp;abhängig&nbsp;sind,&nbsp;ob&nbsp;der&nbsp;Browser&nbsp;des<br />//&nbsp;Benutzers&nbsp;noch&nbsp;eine&nbsp;stehende&nbsp;Verbindung&nbsp;zum&nbsp;Server&nbsp;hat<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.ignore-user-abort-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <p class="para">
+   PHP wird nicht herausfinden, ob ein User die Verbindung abgebrochen hat,
+   bevor es nicht versucht, Informationen an den Client zu senden. Die einfache
+   Verwendung eines echo-Statements ist keine Garantie dafür, dass eine
+   Information übertragen wurde, lesen Sie daher auch die Dokumentation zu
+   <span class="function">flush</span>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.ignore-user-abort-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">connection_aborted</span></li>
+    <li class="member"><span class="function">connection_status</span></li>
+    <li class="member">
+     Die <a href="features.connection-handling.html" class="link">Verbindungssteuerung</a> mit
+     einer kompletten Beschreibung der Verbindungssteuerung in PHP.
+    </li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

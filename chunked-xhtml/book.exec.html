@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Ausf&uuml;hrung von Systemprogrammen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li><a href="book.eio.html">Eio</a></li>
+  <li><a href="book.ev.html">Ev</a></li>
+  <li><a href="book.expect.html">Expect</a></li>
+  <li><a href="book.libevent.html">Libevent</a></li>
+  <li><a href="book.pcntl.html">PCNTL</a></li>
+  <li><a href="book.posix.html">POSIX</a></li>
+  <li class="active"><a href="book.exec.html">Programmausf&uuml;hrung</a></li>
+  <li><a href="book.pthreads.html">pthreads</a></li>
+  <li><a href="book.sem.html">Semaphore</a></li>
+  <li><a href="book.shmop.html">Shared Memory</a></li>
+  <li><a href="book.sync.html">Sync</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.posix-uname.html">posix_uname</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.exec.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.exec" class="book">
+ 
+ <h1>Ausführung von Systemprogrammen</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.exec.html">Einf&uuml;hrung</a></li>
+<li><a href="exec.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="exec.requirements.html">Anforderungen</a></li>
+<li><a href="exec.installation.html">Installation</a></li>
+<li><a href="exec.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="exec.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="exec.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.exec.html">Funktionen zur Programmausf&uuml;hrung</a><ul class="chunklist chunklist_title">
+<li><a href="function.escapeshellarg.html">escapeshellarg</a> — Maskiert eine Zeichenkette (String), um sie als Shell-Argument benutzen zu k&ouml;nnen</li>
+<li><a href="function.escapeshellcmd.html">escapeshellcmd</a> — Maskiert Shell-Metazeichen</li>
+<li><a href="function.exec.html">exec</a> — F&uuml;hrt ein externes Programm aus</li>
+<li><a href="function.passthru.html">passthru</a> — F&uuml;hrt ein externes Programm aus und zeigt dessen Ausgabe an</li>
+<li><a href="function.proc-close.html">proc_close</a> — Schlie&szlig;t einen Prozess, der mit proc_open
+   gestartet wurde und gibt den Exitcode dieses Prozesses zur&uuml;ck</li>
+<li><a href="function.proc-get-status.html">proc_get_status</a> — Liefert Informationen &uuml;ber einen mit proc_open
+   gestarteten Prozess</li>
+<li><a href="function.proc-nice.html">proc_nice</a> — &Auml;ndert die Priorit&auml;t des aktuellen Prozesses</li>
+<li><a href="function.proc-open.html">proc_open</a> — F&uuml;hrt ein Kommando aus und &ouml;ffnet Dateizeiger f&uuml;r die Ein- und Ausgabe</li>
+<li><a href="function.proc-terminate.html">proc_terminate</a> — Beendet einen von proc_open gestarteten Prozess</li>
+<li><a href="function.shell-exec.html">shell_exec</a> — F&uuml;hrt ein Kommando auf der Shell aus und gibt den kompletten
+   Output als String zur&uuml;ck</li>
+<li><a href="function.system.html">system</a> — F&uuml;hrt ein externes Programm aus und zeigt dessen Ausgabe an</li>
+</ul>
+</li>
+</ul>
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

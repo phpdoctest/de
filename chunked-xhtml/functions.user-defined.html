@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Benutzerdefinierte Funktionen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.functions.html">Funktionen</a></li>
+  <li class="active"><a href="functions.user-defined.html">Benutzerdefinierte Funktionen</a></li>
+  <li><a href="functions.arguments.html">Funktionsparameter</a></li>
+  <li><a href="functions.returning-values.html">R&uuml;ckgabewerte</a></li>
+  <li><a href="functions.variable-functions.html">Variablenfunktionen</a></li>
+  <li><a href="functions.internal.html">Interne (eingebaute) Funktionen</a></li>
+  <li><a href="functions.anonymous.html">Anonyme Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.functions.html">Funktionen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="functions.arguments.html">Funktionsparameter</a></div>
+                <div class="up"><a href="language.functions.html">Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="functions.user-defined" class="sect1">
+   <h2 class="title">Benutzerdefinierte Funktionen</h2>
+
+   <p class="para">
+    Eine Funktion kann wie folgt definiert werden:
+   </p>
+
+   <p class="para">
+    <div class="example" id="example-142">
+     <p><strong>Beispiel #1 Pseudocode zur Demonstration der Nutzung von Funktionen</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg_1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$arg_2</span><span style="color: #007700">,&nbsp;...,&nbsp;</span><span style="color: #0000BB">$arg_n</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Beispielfunktion.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$retval</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+
+   <p class="simpara">
+    Jeder beliebige korrekte PHP-Code kann in einer Funktion
+    vorkommen, sogar andere Funktionen und <a href="language.oop5.basic.html#language.oop5.basic.class" class="link">Klassen</a>-Definitionen.
+   </p>
+   <p class="para">
+    Für Funktionsnamen gelten in PHP die gleichen Regeln wie für
+    andere Bezeichner. Ein gültiger Funktionsname beginnt mit
+    einem Buchstaben oder Unterstrich gefolgt von einer beliebigen
+    Anzahl von Buchstaben, Ziffern und Unterstrichen. Als
+    regulärer Ausdruck wird dies so ausgedrückt:
+    <em>[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*</em>.
+   </p>
+   <div class="tip"><strong class="tip">Tipp</strong><p class="simpara">Siehe auch <a href="userlandnaming.html" class="xref">Userland Naming Guide</a>.</p></div>
+   <p class="simpara">
+    Es ist nicht erforderlich, dass Funktionen bereits definiert sein
+    müssen, wenn auf sie verwiesen wird,
+    <em class="emphasis">außer</em> wenn eine Funktion nur bedingt definiert
+    wird, wie in den beiden untenstehenden Beispielen gezeigt.
+   </p>
+   <p class="para">
+    Wenn eine Funktion nur unter bestimmten Bedingungen definiert wird,
+    wie in den beiden folgenden Beispielen,
+    muss die Definition dieser Funktion noch <em class="emphasis">vor</em>
+    deren Aufruf abgearbeitet werden.
+   </p>
+   <p class="para">
+    <div class="example" id="example-143">
+     <p><strong>Beispiel #2 Bedingte Funktionen</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$makefoo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*&nbsp;Wir&nbsp;können&nbsp;foo()&nbsp;von&nbsp;hier&nbsp;aus&nbsp;nicht<br />&nbsp;&nbsp;&nbsp;aufrufen,&nbsp;da&nbsp;sie&nbsp;noch&nbsp;nicht&nbsp;existiert,<br />&nbsp;&nbsp;&nbsp;aber&nbsp;wir&nbsp;können&nbsp;bar()&nbsp;aufrufen&nbsp;*/<br /><br /></span><span style="color: #0000BB">bar</span><span style="color: #007700">();<br /><br />if&nbsp;(</span><span style="color: #0000BB">$makefoo</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">()<br />&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Ich&nbsp;existiere&nbsp;nicht,&nbsp;bis&nbsp;mich&nbsp;die&nbsp;Programmausführung&nbsp;erreicht&nbsp;hat.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">/*&nbsp;Nun&nbsp;können&nbsp;wir&nbsp;foo()&nbsp;sicher&nbsp;aufrufen,<br />&nbsp;&nbsp;&nbsp;da&nbsp;$makefoo&nbsp;als&nbsp;true&nbsp;ausgewertet&nbsp;wurde&nbsp;*/<br /><br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$makefoo</span><span style="color: #007700">)&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">();<br /><br />function&nbsp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Ich&nbsp;existiere&nbsp;sofort&nbsp;nach&nbsp;Programmstart.\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    <div class="example" id="example-144">
+     <p><strong>Beispiel #3 Funktionen innerhalb von Funktionen</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">()<br />&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Ich&nbsp;existiere&nbsp;nicht,&nbsp;bis&nbsp;foo()&nbsp;aufgerufen&nbsp;wurde.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">/*&nbsp;Wir&nbsp;können&nbsp;bar()&nbsp;noch&nbsp;nicht<br />&nbsp;&nbsp;&nbsp;aufrufen,&nbsp;da&nbsp;es&nbsp;nicht&nbsp;existiert&nbsp;*/<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">/*&nbsp;Nun&nbsp;können&nbsp;wir&nbsp;auch&nbsp;bar()&nbsp;aufrufen,<br />&nbsp;&nbsp;&nbsp;da&nbsp;sie&nbsp;durch&nbsp;die&nbsp;Abarbeitung&nbsp;von<br />&nbsp;&nbsp;&nbsp;foo()&nbsp;verfügbar&nbsp;gemacht&nbsp;wurde&nbsp;*/<br /><br /></span><span style="color: #0000BB">bar</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    Alle Funktionen und Klassen in PHP existieren im globalen Namensraum -
+    sie können außerhalb von Funktionen aufgerufen werden, selbst wenn sie
+    innerhalb einer Funktion definiert wurden und umgekehrt.
+   </p>
+   <p class="simpara">
+    PHP unterstützt weder das Überladen von Funktionen, noch ist es
+    möglich, zuvor deklarierte Funktionen neu zu definieren oder die
+    Definition zu löschen.
+   </p>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <span class="simpara">
+     Groß- und Kleinschreibung spielt zwar bei Funktionsnamen keine
+     Rolle, es empfiehlt sich aber trotzdem bei Funktionsaufrufen
+     die gleiche Schreibweise wie in der Deklaration zu benutzen.
+    </span>
+   </p></blockquote>
+   <p class="simpara">
+    Sowohl <a href="functions.arguments.html#functions.variable-arg-list" class="link">eine
+    variable Anzahl Parameter</a> als auch
+    <a href="functions.arguments.html#functions.arguments.default" class="link">Vorgabewerte
+    für Parameter</a> werden in Funktionen unterstützt.
+    Siehe auch die Funktionsreferenzen für
+    <span class="function">func_num_args</span>,
+    <span class="function">func_get_arg</span> und
+    <span class="function">func_get_args</span> für weitere Informationen.
+   </p>
+
+   <p class="para">
+    Es ist in PHP möglich, Funktionen rekursiv aufzurufen.
+    <div class="example" id="example-145">
+     <p><strong>Beispiel #4 Rekursive Funktionen</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">recursion</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$a</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">recursion</span><span style="color: #007700">(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <span class="simpara">
+     Rekursive Funktions-/Methodenaufrufe mit einer Tiefe von über 100-200
+     können zu einem Stacküberlauf und damit zum Programmabbruch führen.
+     Besonders unbegrenzte Rekursion wird als Programmierfehler erachtet.
+    </span>
+   </p></blockquote>
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

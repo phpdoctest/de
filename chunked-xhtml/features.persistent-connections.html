@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Persistente Datenbankverbindungen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="features.html">Features</a></li>
+  <li><a href="features.http-auth.html">HTTP-Authentifizierung mit PHP</a></li>
+  <li><a href="features.cookies.html">Cookies</a></li>
+  <li><a href="features.sessions.html">Sessions</a></li>
+  <li><a href="features.xforms.html">Mit XForms umgehen</a></li>
+  <li><a href="features.file-upload.html">Steuerung von Dateiuploads</a></li>
+  <li><a href="features.remote-files.html">Zugriff auf entfernte Dateien</a></li>
+  <li><a href="features.connection-handling.html">Verbindungssteuerung</a></li>
+  <li class="active"><a href="features.persistent-connections.html">Persistente Datenbankverbindungen</a></li>
+  <li><a href="features.safe-mode.html">Safe Mode</a></li>
+  <li><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></li>
+  <li><a href="features.gc.html">Garbage Collection</a></li>
+  <li><a href="features.dtrace.html">DTrace Dynamic Tracing</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="features.connection-handling.html">Verbindungssteuerung</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="features.safe-mode.html">Safe Mode</a></div>
+                <div class="up"><a href="features.html">Features</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="features.persistent-connections" class="chapter">
+  <h1>Persistente Datenbankverbindungen</h1>
+
+  <p class="simpara">
+   Persistente Verbindungen sind Verbindungen, die nach
+   Abarbeitung des Skriptes nicht geschlossen werden. Wenn eine
+   persistente Verbindung angefordert wird, prüft PHP zuerst, ob
+   bereits eine identische persistente Verbindung (die vielleicht
+   vorher offen geblieben ist) existiert und benutzt sie in diesem Fall.
+   Sollte keine Verbindung existieren, wird eine hergestellt. Eine
+   &#039;identische&#039; Verbindung ist eine Verbindung, die zu dem
+   gleichen Host mit dem gleichen Usernamen und Passwort
+   hergestellt wurde.</p>
+  <p class="simpara">
+   Wer nicht durchgängig mit der Art und Weise vertraut ist, wie
+   Webserver arbeiten und die Last verteilen, könnte missverstehen,
+   wofür persistente Verbindungen gedacht sind. Im Besonderen bieten
+   sie <em class="emphasis">keine</em> Möglichkeit, &#039;Benutzersitzungen&#039;
+   über die gleiche Verbindung zu öffnen und
+   <em class="emphasis">keine</em> Möglichkeit, eine Transaktion effizient
+   aufzubauen, und sie können auch viele andere Dinge nicht. Um
+   absolute Klarheit zu schaffen: Persistente Verbindungen bieten
+   <em class="emphasis">keine</em> Funktionalität, die nicht auch von
+   nicht-persistenten Verbindungen bereitgestellt wird.
+  </p>
+  <p class="simpara">
+   Warum?
+  </p> 
+  <p class="simpara">
+   Das hat mit der Arbeitsweise von Webservern zu tun. Es gibt drei
+   Möglichkeiten, wie ein Webserver PHP zur Generierung von
+   Webseiten einsetzen kann.
+  </p>
+  <p class="simpara">
+   Die erste Methode ist, PHP als CGI-&#039;Wrapper&#039; zu benutzen. 
+   Wenn diese Methode eingesetzt wird, wird für jede Anfrage 
+   nach einer PHP-Seite vom Webserver eine Instanz des PHP-
+   Interpreters gestartet und anschließend wieder beendet. 
+   Durch die Beendigung des Interpreters nach abgeschlossener
+   Anfrage werden alle Ressourcen, auf die zugegriffen wurde 
+   (wie beispielsweise eine Verbindung zu einem SQL-
+   Datenbankserver) wieder geschlossen. In diesem Fall erreicht
+   man nichts, wenn man persistente Verbindungen benutzt - sie
+   sind eben nicht beständig.
+  </p>
+  <p class="simpara">
+   Die zweite und populärste Methode ist der Einsatz von PHP als
+   Modul in einem Multiprozess-Webserver, was momentan nur auf den
+   Apache zutrifft. Typischerweise hat ein Multiprozess-Webserver
+   einen Prozess (den &#039;Eltern&#039; Prozess), der einen Satz weiterer
+   Prozesse (die &#039;Kinder&#039;) koordiniert, welche die eigentliche Arbeit
+   des Bereitstellens der Seiten übernehmen. Jede Anfrage, die von
+   einem Client erfolgt, wird an einen untergeordneten Prozess, der
+   noch keine andere Anfrage bearbeitet, weitergereicht. Das bedeutet,
+   dass eine zweite Anfrage des gleichen Clients an den Server unter
+   Umständen von einem anderen untergeordneten Prozess als die
+   erste Anfrage bearbeitet wird. Wurde eine persistente Verbindung
+   einmal geöffnet kann jede danach folgende Seite innerhalb des
+   gleichen Prozesses diese bereits zum Server bestehende Verbindung
+   weiter verwenden.
+  </p>
+  <p class="simpara">
+   Die letzte Methode ist, PHP als Plug-in für einen Multithread-
+   Webserver zu benutzen. Derzeit bietet PHP 4 Unterstützung für
+   ISAPI, WSAPI und NSAPI (unter Windows), wodurch die Nutzung von
+   PHP mit Multithread-Serven wie Netscape Fast Track (iPlanet),
+   Microsoft Internet Information Server (IIS) und O&#039;Reilly&#039;s WebSite
+   Pro ermöglicht wird. Das Verhalten entspricht im wesentlichen dem
+   oben beschriebenen Multiprozess-Modell.
+  </p>
+  <p class="simpara">
+   Wozu dienen persistente Verbindungen, wenn sie keine 
+   zusätzliche Funktionalität bieten?
+  </p>
+  <p class="simpara">
+   Die Antwort ist außerordentlich einfach: Effizienz. Persistente
+   Verbindungen sind nützlich, wenn der Aufwand für das Herstellen
+   einer Verbindung zu einem SQL-Server hoch ist. Ob dies der Fall ist
+   oder nicht, hängt von vielen Faktoren ab - zum Beispiel, um welche
+   Datenbank es sich handelt, ob sie auf dem gleichen Rechner wie der
+   Webserver läuft oder welche Last die SQL-Maschine zu bewältigen hat
+   usw. Grundsätzlich gilt, dass, wenn viele Verbindungen hergestellt
+   werden müssen, persistente Verbindungen außerordentlich hilfreich
+   sind. Sie veranlassen den untergeordneten Prozess, sich während
+   seiner gesamten Lebensdauer lediglich einmal mit dem SQL-Server zu
+   verbinden, anstatt bei jedem Aufruf einer Seite, die eine Verbindung
+   benötigt. Das heißt, dass jeder untergeordnete Prozess, der eine
+   persistente Verbindung öffnet, seine eigene dauerhafte Verbindung
+   zum Server hat. Bei 20 untergeordneten Prozessen, die ein Skript 
+   ausführen, das eine persistente Verbindung zum SQL-Server 
+   herstellt, hat man beispielsweise 20 verschiedene Verbindungen 
+   zum SQL-Server - eine für jeden untergeordneten Prozess.
+  </p>
+  <p class="simpara">
+   Beachten Sie jedoch, dass dies auch ein paar Nachteile haben kann,
+   wenn Sie eine Datenbank mit limitierten Verbindungen benutzen, welche
+   durch persistente Verbindungen überschritten werden. Wenn Ihre Datenbank
+   ein Limit von 16 gleichzeitigen Verbindungen hat, und aufgrund einer
+   stark ausgelasteten Server-Session 17 Kind-Prozesse versuchen, eine
+   Verbindung herzustellen, wird es einem nicht gelingen. Sollten in
+   Ihren Skripten Fehler bestehen, welche das Schließen der Verbindungen
+   nicht erlauben (wie z.B. Endlosschleifen), kann das eine Datenbank
+   mit mit nur 16 Verbindungen sehr schnell überschwemmen. Konsultieren
+   Sie die Dokumentation Ihrer Datenbank bezüglich der Behandlung von
+   aufgegebenen Verbindungen oder Verbindungen im Leerlauf.
+  </p>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="simpara">
+    Sie sollten sich zur Vorsicht noch ein paar Gedanken machen, wenn
+    Sie persistente Verbindungen benutzen. Einer ist, wenn Sie über eine
+    persistente Verbindung Tabellen sperren und das Skript diese Sperre
+    aus welchem Grund auch immer nicht mehr aufheben kann, nachfolgende
+    Skripte, welche die selbe Verbindung benutzen, blockieren und den
+    Neustart von entweder dem Webserver oder dem Datenbankserver
+    verlangen. Ein weiterer ist, dass wenn Sie Transaktionen benutzen,
+    ein Transaktionsblock zu dem nächsten die Verbindung nutzenden Skript
+    übertragen wird, wenn die Ausführung des Skriptes vor dem
+    Transaktionsblock gestoppt wird. In jedem Fall können Sie
+    <span class="function">register_shutdown_function</span> benutzen, um eine
+    einfache Funktion zu registrieren, welche Ihre Tabellen wieder
+    entsperrt, oder Ihre Transaktionen zurückstellt. Besser ist es, wenn
+    Sie dieses Problem gänzlich vermeiden, indem keine persistenten
+    Verbindungen in Skripten benutzen, welche Tabellen sperren oder
+    Transaktionen verwenden (Sie können sie immer noch anderswo benutzen).
+   </p>
+  </div>
+  <p class="simpara">
+   Eine wichtige Zusammenfassung. Persistente Verbindungen wurden
+   entwickelt, um eins-zu-eins Abbildungen auf reguläre Verbindungen 
+   zu haben. Das heißt, dass man <em class="emphasis">immer</em> in der Lage
+   sein sollte, die persistenten Verbindungen durch nicht-persistente
+   zu ersetzten, ohne dass dies den Skriptablauf verändert. Es <em class="emphasis">
+   kann</em> (und wird vermutlich auch) die Effizienz des Skriptes
+   beeinflussen, aber nicht dessen Verhalten.
+  </p>
+  <p class="para">
+   Siehe auch <span class="function">fbsql_pconnect</span>,
+   <span class="function">ibase_pconnect</span>, <span class="function">ifx_pconnect</span>,
+   <span class="function">msql_pconnect</span>, <span class="function">mssql_pconnect</span>,
+   <span class="function">mysql_pconnect</span>, <span class="function">ociplogon</span>,
+   <span class="function">odbc_pconnect</span>, <span class="function">ora_plogon</span>,
+   <span class="function">pfsockopen</span>, <span class="function">pg_pconnect</span> und
+   <span class="function">sybase_pconnect</span>.
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

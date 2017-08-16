@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Einf&uuml;hrung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.dbase.html">dBase</a></li>
+  <li class="active"><a href="intro.dbase.html">Einf&uuml;hrung</a></li>
+  <li><a href="dbase.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="dbase.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="ref.dbase.html">dBase Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="book.dbase.html">dBase</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="dbase.setup.html">Installation/Konfiguration</a></div>
+                <div class="up"><a href="book.dbase.html">dBase</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="intro.dbase" class="preface">
+  <h1 class="title">Einführung</h1>
+  <p class="para">
+   Diese Funktionen erlauben Ihnen den Zugriff auf Datensätze, die in
+   Datenbanken im dBase-Format (dbf) vorliegen.
+  </p>
+  <p class="para">
+   dBase-Dateien sind einfache sequentielle Dateien mit fester Datensatzlänge.
+   Neue Datensätze werden am Dateiende angehängt und gelöschte Datensätze
+   werden beibehalten, bis Sie <span class="function">dbase_pack</span> aufrufen.
+  </p>
+  <p class="para">
+   Nur dbf Datei-Level 3 (dBASE III+) - 5 (dBASE V) werden unterstützt.
+   Folgende dBase-Feldtypen stehen stehen zur Verfügung:
+   <table class="doctable table">
+    <caption><strong>Verfügbare Feldtypen</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Feld</th>
+       <th>dBase-Typ</th>
+       <th>Format</th>
+       <th>Zusätzliche Informationen</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><em>M</em></td>
+       <td>Memo</td>
+       <td>n/a</td>
+       <td>
+        Dieser Typ wird von PHP nicht unterstützt, ein solches Feld wird
+        ignoriert
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>D</em></td>
+       <td>Date</td>
+       <td><em>YYYYMMDD</em></td>
+       <td>Die Feldlänge ist auf acht Zeichen begrenzt</td>
+      </tr>
+
+      <tr>
+       <td><em>T</em></td>
+       <td>DateTime</td>
+       <td><em>YYYYMMDDhhmmss.uuu</em></td>
+       <td>Es wird keine Gültigkeitsprüfung vorgenommen. Verfügbar seit dbase 7.0.0.</td>
+      </tr>
+
+      <tr>
+       <td><em>N</em></td>
+       <td>Number</td>
+       <td>Eine Zahl</td>
+       <td>
+        Sie müssen die Länge und die Genauigkeit (die Anzahl der
+        Nachkommastellen) angeben
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>C</em></td>
+       <td>String</td>
+       <td>Eine Zeichenkette</td>
+       <td>
+        Sie müssen die Länge angeben. Wenn Daten eingetragen werden, werden
+        Leerzeichen ans Ende der Zeichenkette angehängt, bis die festgelegte
+        Länge erreicht ist.
+        Überlange Zeichenketten werden stillschweigend abgeschnitten, wenn die Daten gespeichert werden.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>L</em></td>
+       <td>Boolean</td>
+       <td>
+        <em>T</em> oder <em>Y</em> für <strong><code>TRUE</code></strong>,
+        <em>F</em> oder <em>N</em> für <strong><code>FALSE</code></strong>
+       </td>
+       <td>
+        Wird seit dbase 7.0.0 als <span class="type">bool</span> (<strong><code>TRUE</code></strong> oder <strong><code>FALSE</code></strong>) zurückgeliefert.
+        Wurde vorher als <span class="type">int</span> (<em>1</em> oder <em>0</em>&gt; zurückgeliefert.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>F</em></td>
+       <td>Float</td>
+       <td>Eine Gleitkommazahl</td>
+       <td>
+        Die Unterstützung für diesen Feldtyp wurde in PHP 5.2.0 hinzugefügt
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Diese Erweiterung wurde ins <a href="http://pecl.php.net/" class="link external">&raquo;&nbsp;PECL</a>-Repositorium verschoben und ist nicht mehr Teil von PHP ab PHP 5.3.0.
+   </p>
+  </p></blockquote>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="para">
+    Es gibt keine Unterstützug für Indizes oder Memo-Felder. Auch
+    Sperrfunktionen sind nicht vorhanden. Zwei gleichzeitig ablaufende
+    Webserver-Prozesse, die die selbe dBase-Datei bearbeiten, werden Ihre
+    Datenbank sehr wahrscheinlich zerstören.
+   </p>
+   <p class="para">
+    Wir empfehlen, keine dBase-Dateien als Produktions-Datenbank zu benutzen.
+    Wählen Sie dafür stattdessen einen echten SQL-Server; <a href="http://www.mysql.com/" class="link external">&raquo;&nbsp;MySQL</a> oder <a href="http://www.postgresql.org/" class="link external">&raquo;&nbsp;Postgres</a> sind bei PHP eine gute Wahl. Die
+    dBase-Unterstützung durch PHP dient hauptsächlich dem Im- und Export von
+    Daten zu oder aus ihrer Web-Datenbank, weil das DBF-Datei-Format allgemein
+    von Windows-Tabellenkalulationen und -Zeitplanern verstanden wird.
+   </p>
+  </div>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

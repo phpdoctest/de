@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Was kann PHP?</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="getting-started.html">Einf&uuml;hrung</a></li>
+  <li class="header up"><a href="introduction.html">Einf&uuml;hrung</a></li>
+  <li><a href="intro-whatis.html">Was ist PHP?</a></li>
+  <li class="active"><a href="intro-whatcando.html">Was kann PHP?</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="intro-whatis.html">Was ist PHP?</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="tutorial.html">Ein kleines Tutorial</a></div>
+                <div class="up"><a href="introduction.html">Einf&uuml;hrung</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="intro-whatcando" class="section">
+   <div class="info"><h1 class="title">Was kann PHP?</h1></div>
+   <p class="para">
+    Alles. PHP ist hauptsächlich auf serverseitige Skripte fokussiert,
+    weshalb Sie alles tun können, was auch ein anderes CGI-Programm
+    kann, wie z.B. Formulardaten sammeln, dynamische Inhalte für
+    Webseiten generieren oder Cookies senden und empfangen. Aber PHP
+    kann noch viel mehr.
+   </p>
+   <p class="para">
+    Es gibt drei Hauptgebiete, in denen PHP-Skripte genutzt werden.
+    <ul class="itemizedlist">
+     <li class="listitem">
+      <span class="simpara">
+       Serverseitige Programmierung. Dies ist das traditionelle und auch Hauptfeld
+       von PHP. Sie benötigen drei Dinge, um damit arbeiten zu können: Den
+       PHP-Parser (CGI oder Server-Modul), einen Webserver und einen Webbrowser.
+       Sie müssen einen Webserver laufen lassen, der mit einer PHP-Installation
+       verbunden ist. Sie können auf die Ausgabe Ihres PHP-Programms mittels
+       eines Webbrowsers zugreifen, der die Seite mithilfe des Servers darstellt.
+       Dieses gesamte Szenario können Sie auf Ihrem heimischen Rechner laufen
+       lassen, wenn Sie erst einmal mit PHP-Programmierung experimentieren
+       wollen. Weitere Informationen finden Sie im Abschnitt <a href="install.html" class="link">Installation</a>.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       Kommandozeilenprogrammierung. Es ist auch möglich PHP-Skripte
+       zu schreiben, die ohne einen Server oder Browser arbeiten können. Sie
+       benötigen dafür nur den PHP-Parser. Die Art der Nutzung ist ideal
+       für Programme, die regelmäßig mitels cron (auf *nix oder Linux) oder
+       dem Task Scheduler (unter Windows) ausgeführt werden. Die Skripte
+       können außerdem verwendet werden, um einfache Textprozessierung
+       auszuführen. Weitere Informationen dazu finden Sie im
+       Abschnitt <a href="features.commandline.html" class="link">Verwendung von PHP auf
+       der Eingabezeile</a>.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       Schreiben von Desktop-Applikationen. PHP ist wahrscheinlich
+       nicht die allerbeste Sprache, um Desktop-Anwendungen mit grafischer
+       Oberfläche zu schreiben, aber wenn Sie PHP sehr gut kennen und einige
+       weiterführende PHP-Features in Ihren clientseitigen Applikationen nutzen
+       möchten, können Sie PHP-GTK nutzen, um derartige Programme zu schreiben.
+       Auf diese Art haben Sie auch die Möglichkeit, plattformübergreifende
+       Applikationen zu schreiben. PHP-GTK ist eine Erweiterung von PHP, die in
+       der Hauptdistribution nicht enthalten ist. Sollten Sie daran interessiert
+       sein, besuchen Sie die <a href="http://gtk.php.net/" class="link external">&raquo;&nbsp;PHP-GTK
+       Website</a>.
+      </span>
+     </li>
+    </ul>
+   </p>
+   <p class="para">
+    PHP kann auf allen gängigen Betriebssystemen 
+    <a href="install.html" class="link">verwendet</a> werden, inkl.
+    Linux, vielen Unix-Varianten (inkl. HP-UX, Solaris und OpenBSD),
+    Microsoft Windows, Mac OS X, RISC OS, und wahrscheinlich anderen.
+    PHP unterstützt auch die meisten der heute gebräuchlichen Webserver.
+    Dies umfasst Apache, Microsoft Internet Information Server,
+    Personal Web Server, Netscape- und iPlanet-Server, Oreilly
+    Website Pro-Server, Caudium, Xitami, OmniHTTPd und viele andere.
+    Für den Großteil der Server bietet PHP ein eigenes Modul, für die
+    anderen, die den CGI-Standard unterstützen, kann PHP als CGI-Prozessor
+    arbeiten.
+   </p>
+   <p class="para">
+    So haben Sie die Freiheit, PHP auf dem Betriebssystem und dem Webserver
+    Ihrer Wahl laufen zu lassen. Weiterhin können Sie je nach Vorliebe
+    prozedural oder objektorientiert programmieren oder eine Mischung aus
+    beidem verwenden. Auch wenn in PHP 4 noch nicht jedes Standard-OOP-Feature
+    implementiert ist, sind viele Codebibliotheken und große Applikationen
+    (unter anderem die PEAR-Bibliothek) bereits ausschließlich objektorientiert
+    programmiert. Mit PHP 5 werden die objektorientierten Schwächen von PHP 4
+    behoben und ein vollständiges Objektmodell eingeführt.
+   </p>
+   <p class="para">
+    Mit PHP sind Sie nicht auf die Ausgabe von HTML beschränkt. Seine
+    Fähigkeiten umfassen auch das dynamische Generieren von Bildern,
+    PDF-Dateien und Flashanimationen (mittels libswf und Ming). Sie
+    können auch leicht jede Art von Text, wie XHTML oder irgendeine
+    andere XML Datei, ausgeben. PHP kann diese Dateien automatisch
+    generieren und im Dateisystem speichern anstatt diese nur
+    auszugeben. Auf diese Weise lässt sich ein serverseitiger Cache Ihrer
+    dynamischen Inhalte erstellen.
+   </p>
+   <p class="para">
+    Vielleicht die größte und bemerkenswerteste Stärke von PHP ist
+    seine Unterstützung für eine <a href="refs.database.html" class="link">breite Masse 
+    von Datenbanken.</a> Eine datenbankgestützte Website zu erstellen ist
+    mithilfe der Datenbankerweiterungen (z.B. für 
+    <a href="book.mysqli.html" class="link">mysql</a>) unglaublich einfach.
+    Wir haben auch eine Extension zur Datenbankabstraktion 
+    (names <a href="book.pdo.html" class="link">PDO</a>), welche
+    Ihnen die transparente Verwendung irgendeiner von dieser Erweiterung
+    unterstützten Datenbank erlaubt. Desweiteren unterstützt PHP 
+    <a href="book.uodbc.html" class="link">ODBC</a>, den Open Database Connection Standard,
+    mit welchem Sie sich mit jeder anderen Datenbank verbinden können, die diesen
+    weltweiten Standard unterstützt. Andere Datenbanken können 
+    <a href="book.curl.html" class="link">cURL</a> oder 
+    <a href="book.sockets.html" class="link">sockets</a> verwenden (wie z.B. CouchDB).
+   </p>
+   <p class="para">
+    PHP unterstützt auch die Kommunikation mit anderen Services, welche
+    Protokolle wie LDAP, IMAP, SNMP, NNTP, POP3, HTTP, COM (auf Windows)
+    und unzählige andere unterstützen. Sie können auch einfache
+    Netzwerk-Sockets öffnen und unter Verwendung irgendeines anderen Protokolls
+    kommunizieren. PHP unterstützt auch WDDX (Web Distributed Data
+    Exchange) zum Austausch komplexer Daten zwischen Programmiersprachen.
+    Da wir gerade vom Zusammenwirken sprechen: PHP unterstützt auch die
+    Instantiierung von Java-Objekten und deren transparente Verwendung als
+    PHP-Objekte.
+   </p>
+   <p class="para">
+    PHP verfügt über äußerst hilfreiche 
+    <a href="refs.basic.text.html" class="link">Textverarbeitungsfunktionen</a>, von
+    den regulären Ausdrücken (<a href="book.pcre.html" class="link">PCRE</a>) bis zum Parsen
+    von <a href="refs.xml.html" class="link">XML-Dokumenten</a>. PHP vereinheitlicht all
+    diese XML-Erweiterungen auf der soliden Basis der <a href="book.libxml.html" class="link">libxml2-Bibliothek</a> und erweitert diese 
+    Funktionalität durch die hinzugefügte Unterstützung von 
+    <a href="book.simplexml.html" class="link">SimpleXML</a>, <a href="book.xmlreader.html" class="link">XMLReader</a> und <a href="book.xmlwriter.html" class="link">XMLWriter</a>.
+   </p>
+   <p class="para">
+    Es gibt noch viele andere interessante Erweiterungen die 
+    <a href="extensions.html" class="link">alphabetisch</a> sowie 
+    <a href="funcref.html" class="link">kategorisch</a> dokumentiert sind. Ebenfalls
+    existieren PECL Erweiterungen die ggf. in der PHP Dokumentation selbst
+    dokumentiert sind, wie z.B. <a href="http://xdebug.org/" class="link external">&raquo;&nbsp;XDebug</a>
+   </p>
+   <p class="para">
+    Wie Sie sehen können, reicht diese Seite nicht aus, um alle Möglichkeiten
+    und Vorteile von PHP aufzulisten. Lesen Sie im Abschnitt <a href="install.html" class="link">Installation</a> weiter und konsultieren Sie
+    auch die <a href="funcref.html" class="link">Funktionsreferenz</a> für weitere
+    Erläuterungen der einzelnen hier erwähnten Erweiterungen.
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Registriert eine oder mehrere globale Variablen in der aktuellen Session</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.session.html">Session-Erweiterungen</a></li>
+  <li class="header up"><a href="book.session.html">Sessions</a></li>
+  <li class="header up"><a href="ref.session.html">Session-Funktionen</a></li>
+  <li><a href="function.session-abort.html">session_abort</a></li>
+  <li><a href="function.session-cache-expire.html">session_cache_expire</a></li>
+  <li><a href="function.session-cache-limiter.html">session_cache_limiter</a></li>
+  <li><a href="function.session-commit.html">session_commit</a></li>
+  <li><a href="function.session-create-id.html">session_create_id</a></li>
+  <li><a href="function.session-decode.html">session_decode</a></li>
+  <li><a href="function.session-destroy.html">session_destroy</a></li>
+  <li><a href="function.session-encode.html">session_encode</a></li>
+  <li><a href="function.session-gc.html">session_gc</a></li>
+  <li><a href="function.session-get-cookie-params.html">session_get_cookie_params</a></li>
+  <li><a href="function.session-id.html">session_id</a></li>
+  <li><a href="function.session-is-registered.html">session_is_registered</a></li>
+  <li><a href="function.session-module-name.html">session_module_name</a></li>
+  <li><a href="function.session-name.html">session_name</a></li>
+  <li><a href="function.session-regenerate-id.html">session_regenerate_id</a></li>
+  <li><a href="function.session-register-shutdown.html">session_register_shutdown</a></li>
+  <li class="active"><a href="function.session-register.html">session_register</a></li>
+  <li><a href="function.session-reset.html">session_reset</a></li>
+  <li><a href="function.session-save-path.html">session_save_path</a></li>
+  <li><a href="function.session-set-cookie-params.html">session_set_cookie_params</a></li>
+  <li><a href="function.session-set-save-handler.html">session_set_save_handler</a></li>
+  <li><a href="function.session-start.html">session_start</a></li>
+  <li><a href="function.session-status.html">session_status</a></li>
+  <li><a href="function.session-unregister.html">session_unregister</a></li>
+  <li><a href="function.session-unset.html">session_unset</a></li>
+  <li><a href="function.session-write-close.html">session_write_close</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.session-register-shutdown.html">session_register_shutdown</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.session-reset.html">session_reset</a></div>
+                <div class="up"><a href="ref.session.html">Session-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.session-register" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">session_register</h1>
+  <p class="refpurpose">Registriert eine oder mehrere globale Variablen in der aktuellen Session</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.session-register-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">session_register</span>
+    ( <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$name</code></span>
+   [, <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$...</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">session_register</span> akzeptiert eine variable Anzahl von
+   Argumenten, die jeweils entweder eine Zeichenkette sein können, die den
+   Namen einer Variablen trägt, oder ein Array, das aus solchen Variablennamen
+   oder anderen Arrays besteht. Für jeden Namen registriert
+   <span class="function">session_register</span> die globale Variable mit diesem Namen
+   in der aktuellen Session.
+  </p>
+  <p class="para">
+   Sie können eine Session-Variable auch erzeugen, indem Sie das entsprechende
+   Element des <var class="varname">$_SESSION</var>- oder (PHP &lt;= 4.1.0)
+   <var class="varname">$HTTP_SESSION_VARS</var>-Arrays setzen.
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Sie&nbsp;sollten&nbsp;session_register()&nbsp;nicht&nbsp;verwenden<br /></span><span style="color: #0000BB">$barney&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"A&nbsp;big&nbsp;purple&nbsp;dinosaur."</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">session_register</span><span style="color: #007700">(</span><span style="color: #DD0000">"barney"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Ab&nbsp;PHP&nbsp;4.1.0&nbsp;ist&nbsp;die&nbsp;Verwendung&nbsp;von&nbsp;$_SESSION&nbsp;vorzuziehen<br /></span><span style="color: #0000BB">$_SESSION</span><span style="color: #007700">[</span><span style="color: #DD0000">"zim"</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"An&nbsp;invader&nbsp;from&nbsp;another&nbsp;planet."</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Die&nbsp;alte&nbsp;Methode&nbsp;war,&nbsp;$HTTP_SESSION_VARS&nbsp;zu&nbsp;verwenden<br /></span><span style="color: #0000BB">$HTTP_SESSION_VARS</span><span style="color: #007700">[</span><span style="color: #DD0000">"spongebob"</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"He's&nbsp;got&nbsp;square&nbsp;pants."</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   Wenn <span class="function">session_start</span> nicht vor dieser Funktion
+   aufgerufen wurde, erfolgt ein impliziter Aufruf von
+   <span class="function">session_start</span> ohne Parameter.
+   <var class="varname">$_SESSION</var> ahmt dieses Verhalten nicht nach und benötigt
+   den Aufruf von <span class="function">session_start</span> bevor es verwendet wird.
+  </p>
+  <div class="warning"><strong class="warning">Warnung</strong><p class="simpara">Diese Funktion ist
+seit PHP 5.3.0 <em class="emphasis">DEPRECATED</em> (veraltet) und seit PHP 5.4.0 <em class="emphasis">ENTFERNT</em>.</p></div>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.session-register-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Eine Zeichenkette, die den Namen einer Variablen trägt, oder ein Array,
+       das aus solchen Variablennamen oder anderen Arrays besteht.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">...</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.session-register-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.session-register-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <div class="caution"><strong class="caution">Achtung</strong>
+   <p class="para">
+    Wenn Sie wollen, dass ihr Script unabhängig von der Einstellung von <a href="ini.core.html#ini.register-globals" class="link">register_globals</a> funktioniert,
+    müssen Sie stattdessen das Array <var class="varname">$_SESSION</var> verwenden,
+    weil <var class="varname">$_SESSION</var>-Einträge automatisch registriert werden.
+    Wenn Sie in Ihrem Script <span class="function">session_register</span> verwenden,
+    funktioniert es nicht in Umgebungen, in denen die PHP-Anweisung <a href="ini.core.html#ini.register-globals" class="link">register_globals</a> deaktiviert ist.
+   </p>
+  </div>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <strong>register_globals: Wichtiger
+Hinweis</strong><br /><p class="para">Seit PHP 4.2.0 ist die Standardeinstellung für die
+Konfigurationsoption <a href="ini.core.html#ini.register-globals" class="link">
+register_globals</a> <em class="emphasis">off</em>. Die PHP-Community ermutigt
+alle, sich nicht auf diese Option zu verlassen und Alternativen wie
+<a href="language.variables.predefined.html" class="link">superglobals</a> zu verwenden.</p></p></blockquote>
+  <div class="caution"><strong class="caution">Achtung</strong>
+   <p class="para">
+    Diese Funktion registriert eine <em class="emphasis">globale</em> Variable.
+    Wenn Sie eine Session-Variable innerhalb einer Funktion registrieren
+    wollen, müssen Sie sicherstellen, dass Sie sie unter Verwendung des <a href="language.variables.scope.html" class="link"><strong class="command">global</strong></a>-Schlüsselworts
+    oder des <var class="varname">$GLOBALS[]</var>-Arrays global machen oder die
+    nachstehend vermerkten speziellen Session-Arrays verwenden.
+   </p>
+  </div>
+  <div class="caution"><strong class="caution">Achtung</strong>
+   <p class="para">
+    Wenn Sie <var class="varname">$_SESSION</var> (oder
+    <var class="varname">$HTTP_SESSION_VARS</var>) verwenden, sollten Sie nicht
+    <span class="function">session_register</span>,
+    <span class="function">session_is_registered</span> und
+    <span class="function">session_unregister</span> verwenden.
+   </p>
+  </div>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Gegenwärtig ist es nicht möglich, Ressourcen-Variablen in einer Session zu
+    registrieren. Zum Beispiel können Sie nicht erwarten, dass die als
+    Session-Variable gespeicherte Verbindungs-Kennung der zu einer Datenbank
+    aufgebauten Verbindung bei der nächsten Wiederherstellung der Session noch
+    gültig ist. PHP-Funktionen, die eine Ressource zurückgeben, können daran
+    erkannt werden, dass sie einen Rückgabewert <em>resource</em> in
+    ihrer Funktionsdefinition haben. Eine Liste der Funktionen, die Ressourcen
+    zurückgeben befindet sich im Anhang <a href="resource.html" class="link">Liste von PHP
+    Ressourcen</a>.
+   </p>
+   <p class="para">
+    Bei Verwendung von <var class="varname">$_SESSION</var> (oder
+    <var class="varname">$HTTP_SESSION_VARS</var> bei PHP 4.0.6 oder niedriger) weisen
+    Sie <var class="varname">$_SESSION</var> einen Wert zu, also $_SESSION[&#039;var&#039;] =
+    &#039;ABC&#039;;
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.session-register-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">session_is_registered</span></li>
+    <li class="member"><span class="function">session_unregister</span></li>
+    <li class="member"><var class="varname">$_SESSION</var></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

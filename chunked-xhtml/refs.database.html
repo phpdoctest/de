@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Datenbankerweiterungen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li><a href="refs.utilspec.audio.html">Manipulation von Audioformaten</a></li>
+  <li><a href="refs.remote.auth.html">Authentifizierungsdienste</a></li>
+  <li><a href="refs.utilspec.cmdline.html">Eingabezeilenspezifische Erweiterungen</a></li>
+  <li><a href="refs.compression.html">Erweiterungen zur Datenkompression und Archivierung</a></li>
+  <li><a href="refs.creditcard.html">Kreditkartendaten-Verarbeitung</a></li>
+  <li><a href="refs.crypto.html">Kryptografische Erweiterungen</a></li>
+  <li class="active"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li><a href="refs.calendar.html">Datums- und zeitrelevante Erweiterungen</a></li>
+  <li><a href="refs.fileprocess.file.html">Dateisystemrelevante Erweiterungen</a></li>
+  <li><a href="refs.international.html">Unterst&uuml;tzung menschlicher Sprache und Zeichenkodierung</a></li>
+  <li><a href="refs.utilspec.image.html">Bildverarbeitung und -generierung</a></li>
+  <li><a href="refs.remote.mail.html">E-Mail-relevante Erweiterungen</a></li>
+  <li><a href="refs.math.html">Mathematische Erweiterungen</a></li>
+  <li><a href="refs.utilspec.nontext.html">Non-Text MIME-Ausgaben</a></li>
+  <li><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li><a href="refs.search.html">Suchmaschinenerweiterungen</a></li>
+  <li><a href="refs.utilspec.server.html">Serverspezifische Erweiterungen</a></li>
+  <li><a href="refs.basic.session.html">Session-Erweiterungen</a></li>
+  <li><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li><a href="refs.webservice.html">Web Services</a></li>
+  <li><a href="refs.utilspec.windows.html">Windowsbasierte Erweiterungen</a></li>
+  <li><a href="refs.xml.html">XML-Manipulation</a></li>
+  <li><a href="refs.ui.html">GUI Erweiterungen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.password-verify.html">password_verify</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="refs.database.abstract.html">Abstraktionsebenen</a></div>
+                <div class="up"><a href="funcref.html">Funktionsreferenz</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="refs.database" class="set">
+   <h1>Datenbankerweiterungen</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="refs.database.abstract.html">Abstraktionsebenen</a><ul class="chunklist chunklist_title">
+<li><a href="book.dba.html">DBA</a> — Abstraktionsschicht f&uuml;r dbm-style-Datenbanken</li>
+<li><a href="book.dbx.html">dbx</a></li>
+<li><a href="book.uodbc.html">ODBC</a> — ODBC (Unified)</li>
+<li><a href="book.pdo.html">PDO</a> — PHP Data Objects</li>
+</ul>
+</li>
+<li><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a><ul class="chunklist chunklist_title">
+<li><a href="book.cubrid.html">CUBRID</a> — CUBRID</li>
+<li><a href="book.dbplus.html">DB++</a></li>
+<li><a href="book.dbase.html">dBase</a></li>
+<li><a href="book.filepro.html">filePro</a></li>
+<li><a href="book.ibase.html">Firebird/InterBase</a></li>
+<li><a href="book.fbsql.html">FrontBase</a></li>
+<li><a href="book.ibm-db2.html">IBM DB2</a> — IBM DB2, Cloudscape and Apache Derby</li>
+<li><a href="book.ifx.html">Informix</a></li>
+<li><a href="book.ingres.html">Ingres</a> — Ingres DBMS, EDBC und Enterprise Access Gateways</li>
+<li><a href="book.maxdb.html">MaxDB</a></li>
+<li><a href="book.mongo.html">Mongo</a> — MongoDB driver (legacy)</li>
+<li><a href="set.mongodb.html">MongoDB</a> — MongoDB driver</li>
+<li><a href="book.msql.html">mSQL</a></li>
+<li><a href="book.mssql.html">Mssql</a> — Microsoft SQL Server</li>
+<li><a href="set.mysqlinfo.html">MySQL</a> — MySQL Drivers and Plugins</li>
+<li><a href="book.oci8.html">OCI8</a> — Oracle OCI8</li>
+<li><a href="book.paradox.html">Paradox</a> — Paradox File Access</li>
+<li><a href="book.pgsql.html">PostgreSQL</a></li>
+<li><a href="book.sqlite.html">SQLite</a></li>
+<li><a href="book.sqlite3.html">SQLite3</a> — SQLite3</li>
+<li><a href="book.sqlsrv.html">SQLSRV</a> — Microsoft SQL Server Driver for PHP</li>
+<li><a href="book.sybase.html">Sybase</a></li>
+<li><a href="book.tokyo-tyrant.html">tokyo_tyrant</a> — tokyo_tyrant</li>
+</ul>
+</li>
+</ul>
+
+
+   
+
+   
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Verbindungen und Verbindungsmanagement</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.abstract.html">Abstraktionsebenen</a></li>
+  <li class="header up"><a href="book.pdo.html">PDO</a></li>
+  <li><a href="intro.pdo.html">Einf&uuml;hrung</a></li>
+  <li><a href="pdo.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="pdo.constants.html">Vordefinierte Konstanten</a></li>
+  <li class="active"><a href="pdo.connections.html">Verbindungen und Verbindungsmanagement</a></li>
+  <li><a href="pdo.transactions.html">Transaktionen und auto-commit</a></li>
+  <li><a href="pdo.prepared-statements.html">Prepared Statements und Stored Procedures</a></li>
+  <li><a href="pdo.error-handling.html">Fehler und Fehlerbehandlung</a></li>
+  <li><a href="pdo.lobs.html">Large Objects (LOBs)</a></li>
+  <li><a href="class.pdo.html">PDO</a></li>
+  <li><a href="class.pdostatement.html">PDOStatement</a></li>
+  <li><a href="class.pdoexception.html">PDOException</a></li>
+  <li><a href="pdo.drivers.html">PDO-Treiber</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="pdo.constants.html">Vordefinierte Konstanten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="pdo.transactions.html">Transaktionen und auto-commit</a></div>
+                <div class="up"><a href="book.pdo.html">PDO</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="pdo.connections" class="chapter">
+ <h1>Verbindungen und Verbindungsmanagement</h1>
+ <h1>Verbindungen und Verwaltung der Verbindungen</h1>
+ <p class="para">
+  Verbindungen werden durch das Erstellen von Instanzen der PDO-Basisklasse
+  erzeugt. Es ist unerheblich, welchen Treiber Sie benutzen wollen. Sie
+  benutzen immer den PDO-Klassennamen. Der Konstruktor erwartet Parameter
+  zur Angabe der Datenbankquelle (auch bekannt als DSN) und optional für
+  Benutzername und Passwort (falls vorhanden).
+ </p>
+ <p class="para">
+  <div class="example" id="example-965"><p><strong>Beispiel #1 Mit MySQL verbinden</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$dbh&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">(</span><span style="color: #DD0000">'mysql:host=localhost;dbname=test'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pass</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="para">
+  Wenn es Fehler bei der Verbindung gibt, wird eine Ausnahme vom Typ
+  <em>PDOException</em> geworfen. Sie können die Ausnahme abfangen,
+  wenn Sie sich selbst um die Fehlerbedingung kümmern wollen, oder Sie
+  können es einer globalen Routine zur Ausnahmebehandlung überlassen, die
+  Sie mit <span class="function">set_exception_handler</span> konfigurieren.
+ </p>
+ <p class="para">
+  <div class="example" id="example-966"><p><strong>Beispiel #2 Verbindungsfehler behandeln</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">try&nbsp;{<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">(</span><span style="color: #DD0000">'mysql:host=localhost;dbname=test'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pass</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">query</span><span style="color: #007700">(</span><span style="color: #DD0000">'SELECT&nbsp;*&nbsp;from&nbsp;FOO'</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$row</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">;<br />}&nbsp;catch&nbsp;(</span><span style="color: #0000BB">PDOException&nbsp;$e</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;print&nbsp;</span><span style="color: #DD0000">"Error!:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br/&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;die();<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <div class="warning"><strong class="warning">Warnung</strong>
+  <p class="para">
+   Wenn Ihre Anwendung die vom PDO-Konstruktor geworfene Ausnahme nicht
+   auffängt, ist die normale Vorgehensweise der Zend Engine, das Skript zu
+   terminieren und einen Backtrace anzuzeigen. Dieser Backtrace wird
+   wahrscheinlich alle Details der Datenbankverbindung enthüllen, inklusive
+   Benutzername und Passwort. Sie sind also verantwortlich, diese Ausnahme
+   aufzufangen, entweder explizit (mit einem <em>catch</em>-Block)
+   oder implizit mit <span class="function">set_exception_handler</span>.
+  </p>
+ </div>
+ <p class="para">
+  Bei erfolgreicher Verbindung zur Datenbank wird eine Instanz der
+  PDO-Klasse an Ihr Skript zurückgegeben. Die Verbindung bleibt während der
+  Lebensdauer des PDO-Objekts aktiv. Um die Verbindung zu beenden, müssen
+  Sie das Objekt löschen, indem Sie sicherstellen, dass alle Referenzen
+  darauf gelöscht werden - das erreichen Sie, indem Sie der Variable, die
+  das Objekt beinhaltet, <strong><code>NULL</code></strong> zuweisen. Wenn Sie das nicht explizit tun,
+  schließt PHP die Verbindung automatisch, wenn Ihr Skript endet.
+ </p>
+ <p class="para">
+  <div class="example" id="example-967"><p><strong>Beispiel #3 Eine Verbindung schließen</strong></p>
+  <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$dbh&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">(</span><span style="color: #DD0000">'mysql:host=localhost;dbname=test'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pass</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;hier&nbsp;die&nbsp;Verbindung&nbsp;nutzen<br /><br /><br />//&nbsp;und&nbsp;nachdem&nbsp;das&nbsp;erledigt&nbsp;ist,&nbsp;wird&nbsp;sie&nbsp;geschlossen<br /></span><span style="color: #0000BB">$dbh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="para">
+  Viele Webanwendungen profitieren von persistenten Verbindungen zum
+  Datenbankserver. Persistente Verbindungen werden nicht am Ende des Skripts
+  geschlossen, sondern werden gecacht und wiederverwendet, wenn ein anderes
+  Skript eine Verbindung mit denselben Daten anfordert. Der Cache an
+  persistenten Verbindungen erlaubt Ihnen, den Overhead zu vermeiden, wenn
+  jedesmal eine neue Verbindung geöffnet wird, sobald ein Skript mit der
+  Datenbank kommunizieren muss, was sich in einer schnelleren Anwendung
+  widerspiegelt.
+ </p>
+ <p class="para">
+  <div class="example" id="example-968"><p><strong>Beispiel #4 Persistente Verbindungen</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$dbh&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">(</span><span style="color: #DD0000">'mysql:host=localhost;dbname=test'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pass</span><span style="color: #007700">,&nbsp;array(<br />&nbsp;&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ATTR_PERSISTENT&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true<br /></span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+  <p class="para">
+   Wenn Sie persistente Verbindungen verwenden wollen, müssen Sie
+   <strong><code>PDO::ATTR_PERSISTENT</code></strong> im Array von Treiberoptionen
+   setzen, das an den PDO-Konstruktor übergeben wird. Wenn Sie dieses Attribut
+   mittels <span class="function">PDO::setAttribute</span> nach der Instanziierung des
+   Objekts setzen, verwendet der Treiber keine persistenten Verbindungen.
+  </p>
+ </p></blockquote>
+ <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+  <p class="para">
+   Wenn Sie den PDO-ODBC-Treiber benutzen und Ihre ODBC-Bibliotheken ODBC Connection
+   Pooling unterstützen (unixODBC und Windows etwa, es könnte auch andere geben), dann
+   wird empfohlen, dass sie keine persistenten PDO-Verbindungen benutzen, sondern das
+   Cachen der Verbindungen der ODBC Connection Pooling-Schicht überlassen. Der ODBC
+   Connection Pool wird mit anderen Modulen im Prozess geteilt. Wenn PDO also
+   angewiesen wird die Verbindung zu cachen, wird diese Verbindung nie dem ODBC
+   Connection Pool zurückgegeben, was darin resultiert, dass zusätzliche Verbindungen
+   aufgebaut werden, um jene anderen Module zu bedienen.
+  </p>
+ </p></blockquote>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

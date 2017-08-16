@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: F&uuml;hrt ein SQL Statement aus und gibt die Zahl der betroffenen Zeilen zur&uuml;ck</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.abstract.html">Abstraktionsebenen</a></li>
+  <li class="header up"><a href="book.pdo.html">PDO</a></li>
+  <li class="header up"><a href="class.pdo.html">PDO</a></li>
+  <li><a href="pdo.begintransaction.html">PDO::beginTransaction</a></li>
+  <li><a href="pdo.commit.html">PDO::commit</a></li>
+  <li><a href="pdo.construct.html">PDO::__construct</a></li>
+  <li><a href="pdo.errorcode.html">PDO::errorCode</a></li>
+  <li><a href="pdo.errorinfo.html">PDO::errorInfo</a></li>
+  <li class="active"><a href="pdo.exec.html">PDO::exec</a></li>
+  <li><a href="pdo.getattribute.html">PDO::getAttribute</a></li>
+  <li><a href="pdo.getavailabledrivers.html">PDO::getAvailableDrivers</a></li>
+  <li><a href="pdo.intransaction.html">PDO::inTransaction</a></li>
+  <li><a href="pdo.lastinsertid.html">PDO::lastInsertId</a></li>
+  <li><a href="pdo.prepare.html">PDO::prepare</a></li>
+  <li><a href="pdo.query.html">PDO::query</a></li>
+  <li><a href="pdo.quote.html">PDO::quote</a></li>
+  <li><a href="pdo.rollback.html">PDO::rollBack</a></li>
+  <li><a href="pdo.setattribute.html">PDO::setAttribute</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="pdo.errorinfo.html">PDO::errorInfo</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="pdo.getattribute.html">PDO::getAttribute</a></div>
+                <div class="up"><a href="class.pdo.html">PDO</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="pdo.exec" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">PDO::exec</h1>
+  <p class="refpurpose">
+   Führt ein SQL Statement aus und gibt die Zahl der betroffenen Zeilen zurück
+  </p>
+ </div>
+ <div class="refsect1 description" id="refsect1-pdo.exec-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">int</span> <span class="methodname">PDO::exec</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$statement</code></span>
+   )</div>
+
+
+  <p class="para rdfs-comment">
+   <span class="function">PDO::exec</span> führt ein SQL Statement aus und gibt
+   die Anzahl der betroffenen Zeilen zurück.
+  </p>
+  <p class="para">
+   <span class="function">PDO::exec</span> gibt nicht die Ergebnisse eines SELECT
+   Statements zurück. Um diese zu erhalten kann entweder <span class="function">PDO::query</span>
+   genutzt werden, oder ein ein PDOStatement, welches über <span class="function">PDO::prepare</span>
+   erstellt und über <span class="function">PDOStatement::execute</span> ausgeführt wird.
+  </p>
+
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-pdo.exec-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">statement</code></dt>
+
+      <dd>
+
+       <p class="para">
+        Das SQL Statement, welches ausgeführt werden soll.
+       </p>
+       <p class="para">
+        Alle Usereingaben in diesem Query müssen <a href="pdo.quote.html" class="link">maskiert werden</a>.
+       </p>
+      </dd>
+
+     
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-pdo.exec-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   <span class="function">PDO::exec</span> gibt die Anzahl von Zeilen zurück, welche
+   durch diese Abfrage geändert oder gelöscht wurden. Wenn keine Zeilen
+   geändert wurden, gibt <span class="function">PDO::exec</span> <em>0</em>
+   zurück. 
+  </p>
+
+  <div class="warning"><strong class="warning">Warnung</strong><p class="simpara">Diese Funktion kann sowohl das
+boolsche <strong><code>FALSE</code></strong> zurückliefern, als auch einen nicht-boolschen Wert, welcher zu <strong><code>FALSE</code></strong> ausgewertet wird.
+Weitere Informationen entnehmen Sie bitte dem Abschnitt über die
+<a href="language.types.boolean.html" class="link"> boolschen Typen</a>. Benutzen Sie deshalb
+<a href="language.operators.comparison.html" class="link">den === Operator</a>,
+um den Rückgabewert dieser Funktion zu überprüfen.</p></div>
+  <p class="para">
+   Das folgende Beispiel verlässt sich fälschlicherweise auf den Rückgabewert
+   von <span class="function">PDO::exec</span>, weswegen ein Statement, welches 0 Zeilen
+   ändert, einen Aufruf von <span class="function">die</span> nach sich zieht:
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">exec</span><span style="color: #007700">()&nbsp;or&nbsp;die(</span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">errorInfo</span><span style="color: #007700">(),&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </p>
+
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-pdo.exec-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-989">
+    <p><strong>Beispiel #1 Ein DELETE Statement ausführen</strong></p>
+    <div class="example-contents"><p>
+     Führt das DELETE Statement aus und gibt die Anzahl der gelöschten
+     Zeilen aus.
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$dbh&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">(</span><span style="color: #DD0000">'odbc:sample'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'db2inst1'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ibmdb2'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Entferne&nbsp;alle&nbsp;roten&nbsp;Früchte&nbsp;aus&nbsp;der&nbsp;Tabelle&nbsp;*/<br /></span><span style="color: #0000BB">$count&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">exec</span><span style="color: #007700">(</span><span style="color: #DD0000">"DELETE&nbsp;FROM&nbsp;fruit&nbsp;WHERE&nbsp;colour&nbsp;=&nbsp;'red'"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Und&nbsp;gebe&nbsp;die&nbsp;Anzahl&nbsp;an&nbsp;gelöschten&nbsp;Zeilen&nbsp;zurück&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$count</span><span style="color: #DD0000">&nbsp;Zeilen&nbsp;wurden&nbsp;gelöscht.\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+10 Zeilen wurden gelöscht.
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+
+ <div class="refsect1 seealso" id="refsect1-pdo.exec-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">PDO::prepare</span></li>
+    <li class="member"><span class="function">PDO::query</span></li>
+    <li class="member"><span class="function">PDOStatement::execute</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

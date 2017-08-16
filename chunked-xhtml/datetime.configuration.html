@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Laufzeit-Konfiguration</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.calendar.html">Datums- und zeitrelevante Erweiterungen</a></li>
+  <li class="header up"><a href="book.datetime.html">Datum/Uhrzeit</a></li>
+  <li class="header up"><a href="datetime.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="datetime.requirements.html">Anforderungen</a></li>
+  <li><a href="datetime.installation.html">Installation</a></li>
+  <li class="active"><a href="datetime.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="datetime.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="datetime.installation.html">Installation</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="datetime.resources.html">Ressource-Typen</a></div>
+                <div class="up"><a href="datetime.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="datetime.configuration" class="section">
+ <h2 class="title">Laufzeit-Konfiguration</h2>
+ <p class="simpara">Das Verhalten dieser Funktionen wird
+durch Einstellungen in der <var class="filename">php.ini</var> beeinflusst.</p>
+ <p class="para">
+  <table class="doctable table">
+   <caption><strong>Date/Time Configuration Options</strong></caption>
+   
+    <thead>
+     <tr>
+      <th>Name</th>
+      <th>Standard</th>
+      <th>Veränderbar</th>
+      <th>Changelog</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td><a href="datetime.configuration.html#ini.date.default-latitude" class="link">date.default_latitude</a></td>
+      <td>&quot;31.7667&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 5.0.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="datetime.configuration.html#ini.date.default-longitude" class="link">date.default_longitude</a></td>
+      <td>&quot;35.2333&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 5.0.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="datetime.configuration.html#ini.date.sunrise-zenith" class="link">date.sunrise_zenith</a></td>
+      <td>&quot;90.583333&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 5.0.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="datetime.configuration.html#ini.date.sunset-zenith" class="link">date.sunset_zenith</a></td>
+      <td>&quot;90.583333&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 5.0.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="datetime.configuration.html#ini.date.timezone" class="link">date.timezone</a></td>
+      <td>&quot;&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 5.1.0.</td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+  Weitere Details und die Definitionen der
+PHP_INI_*-Konstanten finden Sie im <a href="configuration.changes.modes.html" class="xref">Wo Konfigurationseinstellungen gesetzt werden k&ouml;nnen</a>.
+ </p>
+
+ <p class="para">Hier eine kurze Erklärung der
+Konfigurationsoptionen:</p>
+
+ <p class="para">
+  <dl>
+
+   
+    <dt id="ini.date.default-latitude">
+     <code class="parameter">date.default_latitude</code>
+     <span class="type">float</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Vorgabe-Breitengrad.
+     </p>
+    </dd>
+
+   
+
+   
+    <dt id="ini.date.default-longitude">
+     <code class="parameter">date.default_longitude</code>
+     <span class="type">float</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Vorgabe-Längengrad.
+     </p>
+    </dd>
+
+   
+
+   
+    <dt id="ini.date.sunrise-zenith">
+     <code class="parameter">date.sunrise_zenith</code>
+     <span class="type">float</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Vorgabe-Sonnenaufgangszenit.
+     </p>
+    </dd>
+
+   
+
+   
+    <dt id="ini.date.sunset-zenith">
+     <code class="parameter">date.sunset_zenith</code>
+     <span class="type">float</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Vorgabe-Sonnenuntergangszenit.
+     </p>
+    </dd>
+
+   
+
+   
+    <dt id="ini.date.timezone">
+     <code class="parameter">date.timezone</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Diese Zeitzone wird von allen Datums- und Zeitfunktionen
+      als Vorgabewert genutzt wenn die Umgebungsvariable 
+      <var class="varname">TZ</var> nicht gesetzt ist.
+      Die Vorrangreihenfolge ist auf der Handbuchseite zu 
+      <span class="function">date_default_timezone_get</span> beschrieben.
+      Siehe <a href="timezones.html" class="xref">Liste unterst&uuml;tzter Zeitzonen</a> für eine Liste der 
+      unterstützten Zeitzonen.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </p>
+ <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+  <span class="simpara">
+   Die ersten vier Konfigurationsoptionen werden zur Zeit nur von
+   den Funktionen <span class="function">date_sunrise</span> und
+   <span class="function">date_sunset</span> genutzt.
+  </span>
+ </p></blockquote>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

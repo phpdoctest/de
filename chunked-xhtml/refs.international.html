@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Unterst&uuml;tzung menschlicher Sprache und Zeichenkodierung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li><a href="refs.utilspec.audio.html">Manipulation von Audioformaten</a></li>
+  <li><a href="refs.remote.auth.html">Authentifizierungsdienste</a></li>
+  <li><a href="refs.utilspec.cmdline.html">Eingabezeilenspezifische Erweiterungen</a></li>
+  <li><a href="refs.compression.html">Erweiterungen zur Datenkompression und Archivierung</a></li>
+  <li><a href="refs.creditcard.html">Kreditkartendaten-Verarbeitung</a></li>
+  <li><a href="refs.crypto.html">Kryptografische Erweiterungen</a></li>
+  <li><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li><a href="refs.calendar.html">Datums- und zeitrelevante Erweiterungen</a></li>
+  <li><a href="refs.fileprocess.file.html">Dateisystemrelevante Erweiterungen</a></li>
+  <li class="active"><a href="refs.international.html">Unterst&uuml;tzung menschlicher Sprache und Zeichenkodierung</a></li>
+  <li><a href="refs.utilspec.image.html">Bildverarbeitung und -generierung</a></li>
+  <li><a href="refs.remote.mail.html">E-Mail-relevante Erweiterungen</a></li>
+  <li><a href="refs.math.html">Mathematische Erweiterungen</a></li>
+  <li><a href="refs.utilspec.nontext.html">Non-Text MIME-Ausgaben</a></li>
+  <li><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li><a href="refs.search.html">Suchmaschinenerweiterungen</a></li>
+  <li><a href="refs.utilspec.server.html">Serverspezifische Erweiterungen</a></li>
+  <li><a href="refs.basic.session.html">Session-Erweiterungen</a></li>
+  <li><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li><a href="refs.webservice.html">Web Services</a></li>
+  <li><a href="refs.utilspec.windows.html">Windowsbasierte Erweiterungen</a></li>
+  <li><a href="refs.xml.html">XML-Manipulation</a></li>
+  <li><a href="refs.ui.html">GUI Erweiterungen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.xdiff-string-rabdiff.html">xdiff_string_rabdiff</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="book.enchant.html">Enchant</a></div>
+                <div class="up"><a href="funcref.html">Funktionsreferenz</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="refs.international" class="set">
+   <h1>Unterstützung menschlicher Sprache und Zeichenkodierung</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="book.enchant.html">Enchant</a> — Enchant spelling library<ul class="chunklist chunklist_title">
+<li><a href="intro.enchant.html">Einf&uuml;hrung</a></li>
+<li><a href="enchant.setup.html">Installation/Konfiguration</a></li>
+<li><a href="enchant.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="enchant.examples.html">Beispiele</a></li>
+<li><a href="ref.enchant.html">Enchant Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.fribidi.html">FriBiDi</a><ul class="chunklist chunklist_title">
+<li><a href="intro.fribidi.html">Einf&uuml;hrung</a></li>
+<li><a href="fribidi.setup.html">Installation/Konfiguration</a></li>
+<li><a href="fribidi.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.fribidi.html">FriBiDi-Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.gender.html">Gender</a> — Geschlecht aus Vornamen ermitteln<ul class="chunklist chunklist_title">
+<li><a href="intro.gender.html">Einf&uuml;hrung</a></li>
+<li><a href="gender.setup.html">Installation/Konfiguration</a></li>
+<li><a href="gender.examples.html">Beispiele</a></li>
+<li><a href="class.gender.html">Gender\Gender</a> — The Gender\Gender class</li>
+</ul>
+</li>
+<li><a href="book.gettext.html">Gettext</a><ul class="chunklist chunklist_title">
+<li><a href="intro.gettext.html">Einf&uuml;hrung</a></li>
+<li><a href="gettext.setup.html">Installation/Konfiguration</a></li>
+<li><a href="gettext.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.gettext.html">Gettext-Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.iconv.html">iconv</a><ul class="chunklist chunklist_title">
+<li><a href="intro.iconv.html">Einf&uuml;hrung</a></li>
+<li><a href="iconv.setup.html">Installation/Konfiguration</a></li>
+<li><a href="iconv.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.iconv.html">iconv Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.intl.html">intl</a> — Internationalization Functions<ul class="chunklist chunklist_title">
+<li><a href="intro.intl.html">Einf&uuml;hrung</a></li>
+<li><a href="intl.setup.html">Installation/Konfiguration</a></li>
+<li><a href="intl.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="intl.examples.html">Beispiele</a></li>
+<li><a href="class.collator.html">Collator</a> — The Collator class</li>
+<li><a href="class.numberformatter.html">NumberFormatter</a> — The NumberFormatter class</li>
+<li><a href="class.locale.html">Locale</a> — The Locale class</li>
+<li><a href="class.normalizer.html">Normalizer</a> — The Normalizer class</li>
+<li><a href="class.messageformatter.html">MessageFormatter</a> — The MessageFormatter class</li>
+<li><a href="class.intlcalendar.html">IntlCalendar</a> — The IntlCalendar class</li>
+<li><a href="class.intltimezone.html">IntlTimeZone</a> — The IntlTimeZone class</li>
+<li><a href="class.intldateformatter.html">IntlDateFormatter</a> — The IntlDateFormatter class</li>
+<li><a href="class.resourcebundle.html">ResourceBundle</a> — The ResourceBundle class</li>
+<li><a href="class.spoofchecker.html">Spoofchecker</a> — The Spoofchecker class</li>
+<li><a href="class.transliterator.html">Transliterator</a> — The Transliterator class</li>
+<li><a href="class.intlbreakiterator.html">IntlBreakIterator</a> — The IntlBreakIterator class</li>
+<li><a href="class.intlrulebasedbreakiterator.html">IntlRuleBasedBreakIterator</a> — The IntlRuleBasedBreakIterator class</li>
+<li><a href="class.intlcodepointbreakiterator.html">IntlCodePointBreakIterator</a> — The IntlCodePointBreakIterator class</li>
+<li><a href="class.intlpartsiterator.html">IntlPartsIterator</a> — The IntlPartsIterator class</li>
+<li><a href="class.uconverter.html">UConverter</a> — The UConverter class</li>
+<li><a href="ref.intl.grapheme.html">Grapheme Funktionen</a></li>
+<li><a href="ref.intl.idn.html">IDN Funktionen</a></li>
+<li><a href="class.intlchar.html">IntlChar</a> — IntlChar</li>
+<li><a href="class.intlexception.html">IntlException</a> — Exception class for intl errors</li>
+<li><a href="class.intliterator.html">IntlIterator</a> — The IntlIterator class</li>
+<li><a href="ref.intl.html">intl Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.mbstring.html">Multibyte String</a><ul class="chunklist chunklist_title">
+<li><a href="intro.mbstring.html">Einf&uuml;hrung</a></li>
+<li><a href="mbstring.setup.html">Installation/Konfiguration</a></li>
+<li><a href="mbstring.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="mbstring.encodings.html">Summaries of supported encodings</a></li>
+<li><a href="mbstring.ja-basic.html">Basics of Japanese multi-byte encodings</a></li>
+<li><a href="mbstring.http.html">HTTP Input and Output</a></li>
+<li><a href="mbstring.supported-encodings.html">Supported Character Encodings</a></li>
+<li><a href="mbstring.overload.html">Function Overloading Feature</a></li>
+<li><a href="mbstring.php4.req.html">PHP Character Encoding Requirements</a></li>
+<li><a href="ref.mbstring.html">Multibyte String Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.pspell.html">Pspell</a><ul class="chunklist chunklist_title">
+<li><a href="intro.pspell.html">Einf&uuml;hrung</a></li>
+<li><a href="pspell.setup.html">Installation/Konfiguration</a></li>
+<li><a href="pspell.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.pspell.html">Pspell Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.recode.html">Recode</a> — GNU Recode<ul class="chunklist chunklist_title">
+<li><a href="intro.recode.html">Einf&uuml;hrung</a></li>
+<li><a href="recode.setup.html">Installation/Konfiguration</a></li>
+<li><a href="recode.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.recode.html">Recode-Funktionen</a></li>
+</ul>
+</li>
+</ul>
+
+   
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

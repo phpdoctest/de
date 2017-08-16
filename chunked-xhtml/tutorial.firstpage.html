@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Ihre erste PHP-erweiterte Seite</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="getting-started.html">Einf&uuml;hrung</a></li>
+  <li class="header up"><a href="tutorial.html">Ein kleines Tutorial</a></li>
+  <li><a href="tutorial.requirements.html">Was brauche ich?</a></li>
+  <li class="active"><a href="tutorial.firstpage.html">Ihre erste PHP-erweiterte Seite</a></li>
+  <li><a href="tutorial.useful.html">Etwas n&uuml;tzliches</a></li>
+  <li><a href="tutorial.forms.html">Formulare verarbeiten</a></li>
+  <li><a href="tutorial.oldcode.html">Alten Code mit neuen PHP-Versionen benutzen</a></li>
+  <li><a href="tutorial.whatsnext.html">Und weiter?</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="tutorial.requirements.html">Was brauche ich?</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="tutorial.useful.html">Etwas n&uuml;tzliches</a></div>
+                <div class="up"><a href="tutorial.html">Ein kleines Tutorial</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="tutorial.firstpage" class="section">
+   <h2 class="title">Ihre erste PHP-erweiterte Seite</h2>
+   <p class="para">
+    Erstellen Sie eine Datei mit dem Namen <var class="filename">hallo.php</var>
+    und speichern Sie diese im Root-Verzeichnis Ihres Webservers
+    (<var class="varname">DOCUMENT_ROOT</var>) mit dem folgenden Inhalt:
+   </p>
+   <p class="para">
+    <div class="example" id="example-2">
+     <p><strong>Beispiel #1 Unser erstes PHP-Skript: <var class="filename">hallo.php</var></strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+&lt;html&gt;<br />&nbsp;&lt;head&gt;<br />&nbsp;&nbsp;&lt;title&gt;PHP-Test&lt;/title&gt;<br />&nbsp;&lt;/head&gt;<br />&nbsp;&lt;body&gt;<br />&nbsp;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;p&gt;Hallo&nbsp;Welt&lt;/p&gt;'</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">?&gt;<br /></span>&nbsp;&lt;/body&gt;<br />&lt;/html&gt;</span>
+</code></div>
+     </div>
+
+     <div class="example-contents"><p>
+      Benutzen Sie Ihren Browser, um die Datei über den Webserver-URL
+      aufzurufen. Der URL muss mit <em>/hallo.php</em>  enden. Wenn Sie lokal
+      entwickeln, sieht der URL z.B. so aus:
+      <em>http://localhost/hallo.php</em> oder
+      <em>http://127.0.0.1/hallo.php</em> - andere Adressen
+      sind aber, abhängig vom Webserver, auch möglich.
+      Wenn Sie alles korrekt installiert haben, wird die Datei von
+      PHP geparst und Sie werden die folgende Ausgabe in Ihrem
+      Browser sehen:
+     </p></div>
+     <div class="example-contents screen">
+<div class="cdata"><pre>
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;title&gt;PHP-Test&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;p&gt;Hallo Welt&lt;/p&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+     </div>
+    </div>
+   </p>
+   <p class="para">
+    Das Beispiel ist extrem einfach und natürlich brauchen Sie PHP nicht,
+    um eine Seite wie diese zu erstellen. Denn es macht nicht mehr, als
+    <em>Hallo Welt</em> mit der
+    <span class="function">echo</span>-Anweisung von PHP auszugeben. Bitte
+    beachten Sie, dass die Datei <em class="emphasis">nicht ausführbar</em>
+    sein muss. Der Server erkennt anhand der Dateiendung &quot;.php&quot;, dass
+    sie durch PHP interpretiert werden muss. Stellen Sie sich eine
+    normale HTML-Datei vor, die eine Menge von speziellen Tags enthält,
+    mit denen Sie einige interessante Dinge tun können.
+   </p>
+   <p class="para">
+    Wenn Sie dieses Beispiel ausprobiert haben und Sie aber keine Ausgabe
+    erhalten haben oder zum Download aufgefordert worden sind oder die
+    komplette Datei als Text erhalten haben, dann ist es sehr wahrscheinlich,
+    dass auf Ihrem Server PHP nicht aktiviert oder falsch konfiguriert ist.
+    Fragen Sie in diesem
+    Fall Ihren Administrator und weisen Sie ihn auf das
+    <a href="install.html" class="link">Installations-Kapitel</a> hin.
+    Wenn Sie lokal entwickeln, lesen Sie bitte das Installations-Kapitel,
+    um festzustellen, ob alles richtig konfiguriert wurde. Stellen Sie
+    sicher, dass Sie die Datei über das HTTP-Protokoll aufrufen können.
+    Wenn Sie die Datei direkt aus Ihrem Dateisystem aufrufen, wird sie
+    nicht durch PHP geparst. Sollten Ihre Probleme nach Lesen dieses
+    Kapitels immer noch bestehen, zögern Sie nicht und nutzen Sie eines
+    der vielen <a href="http://www.php.net/support.php" class="link external">&raquo;&nbsp;Support</a>-Angebote.
+   </p>
+   <p class="para">
+    Der wichtigste Punkt im Beispiel ist, Ihnen das spezielle PHP Tag-Format
+    zu zeigen. Im Beispiel wurde <em>&lt;?php</em> verwendet,
+    um den Beginn eines PHP-Tags zu kennzeichnen. Anschließend folgte
+    die PHP-Anweisung. Mit dem schließenden Tag, <em>?&gt;</em>,
+    wurde der PHP-Modus wieder verlassen. Sie können an jeder Stelle und so
+    oft Sie wollen, in den PHP-Modus wechseln und ihn wieder verlassen. Für
+    weitere Details lesen Sie bitte den Abschnitt zu den <a href="language.basic-syntax.html" class="link">Grundlagen der Syntax</a> von PHP.
+   </p>
+
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <strong>Anmerkungen zu Zeilenwechseln</strong><br />
+    <p class="para">
+     Zeilenwechsel sind in HTML nur von geringer Bedeutung, trotzdem
+     ist es sinnvoll HTML Code durch Zeilenwechsel zu formatieren
+     um die Lesbarkeit zu erhöhen. Ein Zeilenwechsel, der direkt auf
+     ein schließendes <em>?&gt;&gt;</em> folgt, wird von PHP
+     bei der Ausgabe entfernt. Dies ist äußerst nützlich, wenn Sie
+     viele PHP-Blöcke einfügen oder Dateien includieren, die keine
+     Ausgabe erzeugen sollen. Auf der anderen Seite kann es aber auch
+     verwirrend sein. Sie können einen Zeilenwechsel erzwingen, indem
+     Sie entweder ein zusätzliches Leerzeichen hinter
+     <em>?&gt;</em> einfügen oder explizit mit echo oder
+     print ein Zeilenwechselzeichen am Ende Ihres Codes ausgeben.
+    </p>
+   </p></blockquote>
+
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <strong>Anmerkung zu Text-Editoren</strong><br />
+    <p class="para">
+     Es gibt eine ganze Reihe von Text-Editoren und Integrated Development
+     Environments (IDEs), mit denen Sie Ihre PHP-Dateien erstellen, bearbeiten
+     und managen können. Eine Liste solcher Programme finden Sie hier:
+     <a href="http://en.wikipedia.org/wiki/List_of_PHP_editors" class="link external">&raquo;&nbsp;PHP Editors List</a>.
+     Wenn Sie einen Editor vorschlagen möchten, besuchen Sie bitte die genannte
+     Seite und bitten Sie den Betreiber der Seite, dass er den Editor
+     der Liste hinzufügt.
+     Wir empfehlen Ihnen einen Editor zu benutzen, der Syntax-Highlighting
+     bietet.
+    </p>
+   </p></blockquote>
+
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <strong>Anmerkung zu Textverarbeitungsprogrammen</strong><br />
+    <p class="para">
+     Textverarbeitungsprogramme wie StarOffice Writer, Microsoft Word und Abiword sind
+     keine gute Wahl, um PHP-Dateien zu bearbeiten.
+     Wenn Sie eines dieser Programme für dieses Test-Skript nutzen möchten,
+     dann müssen Sie sicherstellen, dass die Datei als <em class="emphasis">&quot;Nur
+     Text&quot;</em>-Datei
+     gespeichert wird, da PHP sonst das Skript nicht lesen und nicht
+     ausführen kann.
+    </p>
+   </p></blockquote>
+
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <strong>Anmerkung zu Notepad, dem Windows-Standard-Editor</strong><br />
+    <p class="para">
+     Wenn Sie Ihre PHP-Skripte mit Notepad schreiben, müssen Sie sicherstellen,
+     dass Ihre Dateien mit der Endung <var class="filename">.php</var> gespeichert
+     werden. (Notepad fügt die Endung <var class="filename">.txt</var> automatisch
+     an den Dateinamen an, wenn Sie das nicht mit einem der folgenden Schritte
+     verhindern.)
+     Wenn Sie die Datei speichern und einen Namen für die Datei eingeben sollen,
+     dann setzen Sie den Dateinamen in Anführungszeichen (z.B.
+     &quot;<var class="filename">hallo.php</var>&quot;).
+     Alternativ können Sie auch im &quot;Datei speichern&quot;-Fenster in der Drop-Down-Liste
+     &quot;Dateityp&quot; die Einstellung auf &quot;Alle Dateien&quot; ändern. Sie können dann den
+     Dateinamen ohne Anführungszeichen eingeben.
+    </p>
+   </p></blockquote>
+
+   <p class="para">
+    Nachdem Sie jetzt erfolgreich ein einfaches, funktionierendes PHP-Skript
+    geschrieben haben, wird es Zeit, das berühmteste PHP-Skript zu schreiben.
+    Rufen Sie die Funktion <span class="function">phpinfo</span> auf und Sie bekommen
+    viele nützliche Informationen über Ihr System und Ihre Installation wie
+    z.B. die verfügbaren <a href="language.variables.predefined.html" class="link">vordefinierten Variablen</a>,
+    die geladenen PHP-Module und die <a href="configuration.html" class="link">Konfigurations</a>-Einstellungen. Nehmen Sie
+    sich etwas Zeit und schauen Sie sich diese wichtigen Informationen an.
+   </p>
+   <p class="para">
+    <div class="example" id="example-3">
+     <p><strong>Beispiel #2 Anzeigen von Systeminformationen mit PHP</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;phpinfo</span><span style="color: #007700">();&nbsp;</span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

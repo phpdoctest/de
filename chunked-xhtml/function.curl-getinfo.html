@@ -1,0 +1,654 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Informationen zu einem bestimmten Transfer abfragen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li class="header up"><a href="book.curl.html">cURL</a></li>
+  <li class="header up"><a href="ref.curl.html">cURL Funktionen</a></li>
+  <li><a href="function.curl-close.html">curl_close</a></li>
+  <li><a href="function.curl-copy-handle.html">curl_copy_handle</a></li>
+  <li><a href="function.curl-errno.html">curl_errno</a></li>
+  <li><a href="function.curl-error.html">curl_error</a></li>
+  <li><a href="function.curl-escape.html">curl_escape</a></li>
+  <li><a href="function.curl-exec.html">curl_exec</a></li>
+  <li><a href="function.curl-file-create.html">curl_file_create</a></li>
+  <li class="active"><a href="function.curl-getinfo.html">curl_getinfo</a></li>
+  <li><a href="function.curl-init.html">curl_init</a></li>
+  <li><a href="function.curl-multi-add-handle.html">curl_multi_add_handle</a></li>
+  <li><a href="function.curl-multi-close.html">curl_multi_close</a></li>
+  <li><a href="function.curl-multi-exec.html">curl_multi_exec</a></li>
+  <li><a href="function.curl-multi-getcontent.html">curl_multi_getcontent</a></li>
+  <li><a href="function.curl-multi-info-read.html">curl_multi_info_read</a></li>
+  <li><a href="function.curl-multi-init.html">curl_multi_init</a></li>
+  <li><a href="function.curl-multi-remove-handle.html">curl_multi_remove_handle</a></li>
+  <li><a href="function.curl-multi-select.html">curl_multi_select</a></li>
+  <li><a href="function.curl-multi-setopt.html">curl_multi_setopt</a></li>
+  <li><a href="function.curl-multi-strerror.html">curl_multi_strerror</a></li>
+  <li><a href="function.curl-pause.html">curl_pause</a></li>
+  <li><a href="function.curl-reset.html">curl_reset</a></li>
+  <li><a href="function.curl-setopt-array.html">curl_setopt_array</a></li>
+  <li><a href="function.curl-setopt.html">curl_setopt</a></li>
+  <li><a href="function.curl-share-close.html">curl_share_close</a></li>
+  <li><a href="function.curl-share-init.html">curl_share_init</a></li>
+  <li><a href="function.curl-share-setopt.html">curl_share_setopt</a></li>
+  <li><a href="function.curl-strerror.html">curl_strerror</a></li>
+  <li><a href="function.curl-unescape.html">curl_unescape</a></li>
+  <li><a href="function.curl-version.html">curl_version</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.curl-file-create.html">curl_file_create</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.curl-init.html">curl_init</a></div>
+                <div class="up"><a href="ref.curl.html">cURL Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.curl-getinfo" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">curl_getinfo</h1>
+  <p class="refpurpose">Informationen zu einem bestimmten Transfer abfragen</p>
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.curl-getinfo-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname">curl_getinfo</span>
+    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$ch</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$opt</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Gibt Informationen über den letzen Transfer zurück. 
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.curl-getinfo-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    <dt>
+<code class="parameter">ch</code>
+</dt>
+<dd>
+<p class="para">Ein von <span class="function">curl_init</span> zurückgegebenes
+cURL-Handle.</p></dd>
+
+    
+     <dt>
+<code class="parameter">opt</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Eine der folgenden Konstanten:
+       <ul class="itemizedlist">
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_EFFECTIVE_URL</code></strong> - Letzter effektiver URL
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_HTTP_CODE</code></strong> - Zuletzt empfangener HTTP-Code
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_FILETIME</code></strong> - Letzte Änderung des Dokuments, bei aktivierter <strong><code>CURLOPT_FILETIME</code></strong> Option; wenn -1 zurückgegeben wird ist die Zeit unbekannt
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_TOTAL_TIME</code></strong> - Gesamtdauer des letzten Transfers in Sekunden
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_NAMELOOKUP_TIME</code></strong> - Zeit in Sekunden zur Auflösung des Hostnamens
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_CONNECT_TIME</code></strong> - Dauer des Verbindungsaufbaus in Sekunden
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_PRETRANSFER_TIME</code></strong> - Zeit in Sekunden zwischen dem Start und dem eigentlichen Beginn des Empfangs
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_STARTTRANSFER_TIME</code></strong> - Zeit in Sekunden bis zur Übertragung des ersten Bytes
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_REDIRECT_COUNT</code></strong> - Anzahl der Weiterleitungen,
+          bei aktivierter <strong><code>CURLOPT_FOLLOWLOCATION</code></strong> Option
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_REDIRECT_TIME</code></strong> - Zeit in Sekunden, die von allen Umleitungsschritten 
+          beansprucht wird, bevor der eigentliche Transfer beginnt
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_REDIRECT_URL</code></strong> -
+          Bei deaktivierter <strong><code>CURLOPT_FOLLOWLOCATION</code></strong>:
+          die Weiterleitungs-URL, die in der letzten Transaktion gefunden wurde,
+          und die als nächstes manuell angefordert werden sollte.
+          Bei aktivierter <strong><code>CURLOPT_FOLLOWLOCATION</code></strong> Option
+          ist dies immer leer. Die Weiterleitungs-URL ist in diesem Fall in
+          <strong><code>CURLINFO_EFFECTIVE_URL</code></strong> verfügbar
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_PRIMARY_IP</code></strong> - Die IP-Adresse der jüngsten Verbindung
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_PRIMARY_PORT</code></strong> - Ziel-Port der jüngsten Verbindung
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_LOCAL_IP</code></strong> - lokale (Quell-) IP-Adresse der jüngsten Verbindung
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_LOCAL_PORT</code></strong> - lokaler (Quell-) Port der jüngsten Verbindung
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_SIZE_UPLOAD</code></strong> - Anzahl der gesendeten Bytes
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_SIZE_DOWNLOAD</code></strong> - Anzahl der empfangenen Bytes
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_SPEED_DOWNLOAD</code></strong> - Durchschnittliche Download-Geschwindigkeit
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_SPEED_UPLOAD</code></strong> - Durchschnittliche Upload-Geschwindigkeit
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_HEADER_SIZE</code></strong> - Gesamtgröße aller empfangenen Header
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_HEADER_OUT</code></strong> - Der gesendete Request.
+          Damit dies funktioniert, muss die <strong><code>CURLINFO_HEADER_OUT</code></strong> Option
+          durch Aufruf von <span class="function">curl_setopt</span> zum Handle hinzugefügt werden
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+        <strong><code>CURLINFO_REQUEST_SIZE</code></strong> - Gesamtgröße aller Abfragen, momentan nur für HTTP verfügbar
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_SSL_VERIFYRESULT</code></strong> - Ergebnis der SSL-Zertifikat-Überprüfung,  
+          angefordert durch das Setzen von CURLOPT_SSL_VERIFYPEER
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_CONTENT_LENGTH_DOWNLOAD</code></strong> - Die Größe des Downloads, ermittelt aus dem Content-Length-Header
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_CONTENT_LENGTH_UPLOAD</code></strong> - Festgesetzte Größe des Uploads
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_CONTENT_TYPE</code></strong> - <em>Content-Type:</em> des angeforderten Dokuments.
+          NULL zeigt an, dass der Server keinen gültigen <em>Content-Type:</em> Header gesendet hat
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_PRIVATE</code></strong> - Private Daten, die mit diesem cURL Handle zugehörig sind,
+          und die zuvor mit der <strong><code>CURLOPT_PRIVATE</code></strong> Option von <span class="function">curl_setopt</span> gesetzt wurden
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_RESPONSE_CODE</code></strong> - Der letzte Response-Code
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_HTTP_CONNECTCODE</code></strong> - Der CONNECT Response-Code
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_HTTPAUTH_AVAIL</code></strong> - Eine Bitmaske, die die verfügbaren
+          Authentifikationsmethode(n) gemäß der vorherigen Response anzeigt
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_PROXYAUTH_AVAIL</code></strong> - Eine Bitmaske, die die verfügbaren
+          Proxy-Authentifikationsmethode(n) gemäß der vorherigen Response anzeigt
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_OS_ERRNO</code></strong> - Errno eines Verbindungsfehlers. Die Zahl ist OS- und systemabhängig.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_NUM_CONNECTS</code></strong> - Die Anzahl der Verbindungen, die cURL erzeugen musste, um die vorherigen Übertragung durchzuführen
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_SSL_ENGINES</code></strong> - Die unterstützten OpenSSL Crypto-Engines
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_COOKIELIST</code></strong> - Alle bekannten Cookies
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_FTP_ENTRY_PATH</code></strong> - Entry-Pfad des FTP-Server
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_APPCONNECT_TIME</code></strong> - Die Zeitdauer in Sekunden, die bis zum
+           SSL/SSH-Verbindungsaufbau/Handshake zum entfernten Server verstrichen ist
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_CERTINFO</code></strong> - Die TLS Zertifikatskette
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_CONDITION_UNMET</code></strong> - Info über eine nicht eingehaltene Zeitbedingung
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_RTSP_CLIENT_CSEQ</code></strong> - Die nächste CSeq des RTSP-Clients
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_RTSP_CSEQ_RECV</code></strong> - Die zuletzt empfangene CSeq
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_RTSP_SERVER_CSEQ</code></strong> - Die nächste CSeq des RTSP-Servers
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_RTSP_SESSION_ID</code></strong> - Die RTSP Session-ID
+         </span>
+        </li>
+       </ul>
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.curl-getinfo-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Wird der Parameter <code class="parameter">opt</code> angegeben, wird der entsprechende
+   Wert zurückgegeben. Andernfalls liefert die Funktion ein assoziatives
+   Array mit den folgenden Elementen zurück (analog dem Parameter <code class="parameter">opt</code>),
+   oder <strong><code>FALSE</code></strong> im Fehlerfall:
+   <ul class="itemizedlist">
+    <li class="listitem">
+     <span class="simpara">
+      &quot;url&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;content_type&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;http_code&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;header_size&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;request_size&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;filetime&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;ssl_verify_result&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;redirect_count&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;total_time&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;namelookup_time&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;connect_time&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;pretransfer_time&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;size_upload&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;size_download&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;speed_download&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;speed_upload&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;download_content_length&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;upload_content_length&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;starttransfer_time&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;redirect_time&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;certinfo&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;primary_ip&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;primary_port&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;local_ip&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;local_port&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;redirect_url&quot;
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;request_header&quot; (Dies ist nur gesetzt, wenn die <strong><code>CURLINFO_HEADER_OUT</code></strong>
+      durch einen vorherigen Aufruf von <span class="function">curl_setopt</span> gesetzt wurde)
+     </span>
+    </li>
+   </ul>
+   Es ist zu beachten, dass private Daten nicht im assoziativen Array enthalten sind,
+   sondern individuell durch <strong><code>CURLINFO_PRIVATE</code></strong> Option abgerufen werden müssen.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.curl-getinfo-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.5.0</td>
+       <td>
+        <strong><code>CURLINFO_RESPONSE_CODE</code></strong>,
+        <strong><code>CURLINFO_HTTP_CONNECTCODE</code></strong>,
+        <strong><code>CURLINFO_HTTPAUTH_AVAIL</code></strong>,
+        <strong><code>CURLINFO_PROXYAUTH_AVAIL</code></strong>,
+        <strong><code>CURLINFO_OS_ERRNO</code></strong>,
+        <strong><code>CURLINFO_NUM_CONNECTS</code></strong>,
+        <strong><code>CURLINFO_SSL_ENGINES</code></strong>,
+        <strong><code>CURLINFO_COOKIELIST</code></strong>,
+        <strong><code>CURLINFO_FTP_ENTRY_PATH</code></strong>,
+        <strong><code>CURLINFO_APPCONNECT_TIME</code></strong>,
+        <strong><code>CURLINFO_CONDITION_UNMET</code></strong>,
+        <strong><code>CURLINFO_RTSP_CLIENT_CSEQ</code></strong>,
+        <strong><code>CURLINFO_RTSP_CSEQ_RECV</code></strong>,
+        <strong><code>CURLINFO_RTSP_SERVER_CSEQ</code></strong> und
+        <strong><code>CURLINFO_RTSP_SESSION_ID</code></strong> eingeführt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.4.7</td>
+       <td>
+        <strong><code>CURLINFO_PRIMARY_IP</code></strong>,
+        <strong><code>CURLINFO_PRIMARY_PORT</code></strong>,
+        <strong><code>CURLINFO_LOCAL_IP</code></strong> und
+        <strong><code>CURLINFO_LOCAL_PORT</code></strong> eingeführt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.7</td>
+       <td>
+        <strong><code>CURLINFO_REDIRECT_URL</code></strong> eingeführt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        <strong><code>CURLINFO_CERTINFO</code></strong> eingeführt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.2.4</td>
+       <td>
+        <strong><code>CURLINFO_PRIVATE</code></strong> eingeführt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.1.3</td>
+       <td>
+        Konstante <strong><code>CURLINFO_HEADER_OUT</code></strong> eingeführt.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 examples" id="refsect1-function.curl-getinfo-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4693">
+    <p><strong>Beispiel #1 <span class="function">curl_getinfo</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Eine&nbsp;cURL-Resource&nbsp;erstellen<br /></span><span style="color: #0000BB">$ch&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_init</span><span style="color: #007700">(</span><span style="color: #DD0000">'http://www.example.com/'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;ausführen<br /></span><span style="color: #0000BB">curl_exec</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;prüfen,&nbsp;ob&nbsp;ein&nbsp;Fehler&nbsp;aufgetreten&nbsp;ist<br /></span><span style="color: #007700">if(!</span><span style="color: #0000BB">curl_errno</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">))<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$info&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_getinfo</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Es&nbsp;wurden&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">'total_time'</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">'&nbsp;Sekunden&nbsp;benötigt&nbsp;für&nbsp;einen&nbsp;Request&nbsp;an&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">'url'</span><span style="color: #007700">];<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Resource&nbsp;schliessen<br /></span><span style="color: #0000BB">curl_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-4694">
+    <p><strong>Beispiel #2 <span class="function">curl_getinfo</span>-Beispiel mit <code class="parameter">opt</code> Parameter</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Eine&nbsp;cURL-Resource&nbsp;erstellen<br /></span><span style="color: #0000BB">$ch&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_init</span><span style="color: #007700">(</span><span style="color: #DD0000">'http://www.example.com/'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;ausführen<br /></span><span style="color: #0000BB">curl_exec</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;HTTP-Status-Code&nbsp;prüfen<br /></span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">curl_errno</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;switch&nbsp;(</span><span style="color: #0000BB">$http_code&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_getinfo</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">CURLINFO_HTTP_CODE</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">200</span><span style="color: #007700">:&nbsp;&nbsp;</span><span style="color: #FF8000">#&nbsp;OK<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">break;<br />&nbsp;&nbsp;&nbsp;&nbsp;default:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Unerwarter&nbsp;HTTP-Code:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$http_code</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Resource&nbsp;schliessen<br /></span><span style="color: #0000BB">curl_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.curl-getinfo-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Informationen, die mit dieser Funktion gesammelt wurden, bleiben erhalten,
+    wenn das Handle wiederverwendet wird. Das bedeutet, dass außer wenn eine
+    Stastik von dieser Funktion intern überschrieben wird, die vorherige Info
+    zurück gebeben wird.
+   </p>
+  </p></blockquote>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

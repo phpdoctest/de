@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Zlib-Funktionen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.compression.html">Erweiterungen zur Datenkompression und Archivierung</a></li>
+  <li class="header up"><a href="book.zlib.html">Zlib</a></li>
+  <li><a href="intro.zlib.html">Einf&uuml;hrung</a></li>
+  <li><a href="zlib.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="zlib.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="zlib.examples.html">Beispiele</a></li>
+  <li class="active"><a href="ref.zlib.html">Zlib-Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="zlib.examples.html">Beispiele</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.deflate-add.html">deflate_add</a></div>
+                <div class="up"><a href="book.zlib.html">Zlib</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="ref.zlib" class="reference">
+
+  <h1 class="title">Zlib-Funktionen</h1>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_reference">
+<li><a href="function.deflate-add.html">deflate_add</a> — Incrementally deflate data</li>
+<li><a href="function.deflate-init.html">deflate_init</a> — Initialize an incremental deflate context</li>
+<li><a href="function.gzclose.html">gzclose</a> — Schlie&szlig;t eine ge&ouml;ffnete gz-Datei</li>
+<li><a href="function.gzcompress.html">gzcompress</a> — Komprimiert einen String</li>
+<li><a href="function.gzdecode.html">gzdecode</a> — Decodes a gzip compressed string</li>
+<li><a href="function.gzdeflate.html">gzdeflate</a> — Komprimiert eine Zeichenkette</li>
+<li><a href="function.gzencode.html">gzencode</a> — Create a gzip compressed string</li>
+<li><a href="function.gzeof.html">gzeof</a> — Pr&uuml;fe auf EOF bei einem gz-Datei Descriptor</li>
+<li><a href="function.gzfile.html">gzfile</a> — Read entire gz-file into an array</li>
+<li><a href="function.gzgetc.html">gzgetc</a> — Hole Zeichen von gz-Datei Deskriptor</li>
+<li><a href="function.gzgets.html">gzgets</a> — Get line from file pointer</li>
+<li><a href="function.gzgetss.html">gzgetss</a> — Get line from gz-file pointer and strip HTML tags</li>
+<li><a href="function.gzinflate.html">gzinflate</a> — Dekomprimiere (inflate) eine komprimierte (deflate) Zeichenkette</li>
+<li><a href="function.gzopen.html">gzopen</a> — &Ouml;ffnet gz-Dateien</li>
+<li><a href="function.gzpassthru.html">gzpassthru</a> — Gibt alle verbleibenden Daten eines gz-Datei Deskriptors aus</li>
+<li><a href="function.gzputs.html">gzputs</a> — Alias von gzwrite</li>
+<li><a href="function.gzread.html">gzread</a> — Liest binary-safe aus einer gz-Datei</li>
+<li><a href="function.gzrewind.html">gzrewind</a> — Setzt die Dateiposition auf den Anfang zur&uuml;ck</li>
+<li><a href="function.gzseek.html">gzseek</a> — Positioniert innerhalb einer gz-Datei</li>
+<li><a href="function.gztell.html">gztell</a> — Ermittelt die aktuelle Position in einer gz-Datei</li>
+<li><a href="function.gzuncompress.html">gzuncompress</a> — Dekomprimiert einen komprimierten String</li>
+<li><a href="function.gzwrite.html">gzwrite</a> — Ausgabe in gz-komprimierte Dateien</li>
+<li><a href="function.inflate-add.html">inflate_add</a> — Incrementally inflate encoded data</li>
+<li><a href="function.inflate-init.html">inflate_init</a> — Initialize an incremental inflate context</li>
+<li><a href="function.readgzfile.html">readgzfile</a> — Gibt eine gz-komprimierte Datei aus</li>
+<li><a href="function.zlib-decode.html">zlib_decode</a> — raw/gzip/zlib kodierte Daten dekomprimieren</li>
+<li><a href="function.zlib-encode.html">zlib_encode</a> — Komprimiert Daten mit der gew&auml;hlten Kodierung</li>
+<li><a href="function.zlib-get-coding-type.html">zlib_get_coding_type</a> — Gibt die f&uuml;r Ausgabekomprimierung genutze Methode zur&uuml;ck</li>
+</ul>
+</ol>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Konvertiert Zeichenketten in einen anderen Zeichensatz</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.international.html">Unterst&uuml;tzung menschlicher Sprache und Zeichenkodierung</a></li>
+  <li class="header up"><a href="book.iconv.html">iconv</a></li>
+  <li class="header up"><a href="ref.iconv.html">iconv Funktionen</a></li>
+  <li><a href="function.iconv-get-encoding.html">iconv_get_encoding</a></li>
+  <li><a href="function.iconv-mime-decode-headers.html">iconv_mime_decode_headers</a></li>
+  <li><a href="function.iconv-mime-decode.html">iconv_mime_decode</a></li>
+  <li><a href="function.iconv-mime-encode.html">iconv_mime_encode</a></li>
+  <li><a href="function.iconv-set-encoding.html">iconv_set_encoding</a></li>
+  <li><a href="function.iconv-strlen.html">iconv_strlen</a></li>
+  <li><a href="function.iconv-strpos.html">iconv_strpos</a></li>
+  <li><a href="function.iconv-strrpos.html">iconv_strrpos</a></li>
+  <li><a href="function.iconv-substr.html">iconv_substr</a></li>
+  <li class="active"><a href="function.iconv.html">iconv</a></li>
+  <li><a href="function.ob-iconv-handler.html">ob_iconv_handler</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.iconv-substr.html">iconv_substr</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.ob-iconv-handler.html">ob_iconv_handler</a></div>
+                <div class="up"><a href="ref.iconv.html">iconv Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.iconv" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">iconv</h1>
+  <p class="refpurpose">Konvertiert Zeichenketten in einen anderen Zeichensatz</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.iconv-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname">iconv</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$in_charset</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$out_charset</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Die Funktion konvertiert die in Zeichensatz
+   <code class="parameter">in_charset</code> kodierte Zeichenkette <code class="parameter">str</code> in eine Zeichenkette mit Kodierung
+   <code class="parameter">out_charset</code>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.iconv-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">in_charset</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Eingabe-Zeichensatz.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">out_charset</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Ausgabe-Zeichensatz.
+      </p>
+      <p class="para">
+       Wenn Sie die Zeichenkette <em>//TRANSLIT</em> an
+       <code class="parameter">out_charset</code> anhängen, wird die Transliteration
+       aktiviert. Das bedeutet, dass ein Zeichen, das im Zielzeichensatz nicht
+       dargestellt werden kann mit einem oder mehreren ähnlich aussehenden
+       Zeichen annähernd dargestellt werden kann. Wenn Sie die Zeichenkette
+       <em>//IGNORE</em> anhängen, werden diese nicht darstellbaren
+       Zeichen ohne Warnung verworfen. Ansonsten wird eine
+       <strong><code>E_NOTICE</code></strong> erzeugt und die Funktion gibt <strong><code>FALSE</code></strong>
+       zurück.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">str</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die zu konvertierende Zeichenkette.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.iconv-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt die konvertierte Zeichenkette zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.iconv-changelog">
+   <h3 class="title">Changelog</h3>
+   <p class="para">
+    <table class="doctable informaltable">
+     
+      <thead>
+       <tr>
+        <th>Version</th>
+        <th>Beschreibung</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr>
+        <td>5.4.0</td>
+        <td>
+         Seit dieser Version gibt die Funktion <strong><code>FALSE</code></strong> bei nicht erlaubten
+         Zeichen zurück, außer wenn <em>//IGNORE</em> im
+         Ausgabe-Zeichensatz angegeben wurde. Vorher wurde eine partielle
+         Ausgabezeichenkette zurück gegeben.
+        </td>
+       </tr>
+
+    </tbody>
+   
+  </table>
+
+ </p>
+</div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.iconv-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-2683">
+    <p><strong>Beispiel #1 <span class="function">iconv</span>-Beispiel:</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$text&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"This&nbsp;is&nbsp;the&nbsp;Euro&nbsp;symbol&nbsp;'€'."</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #DD0000">'Original&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'TRANSLIT&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">iconv</span><span style="color: #007700">(</span><span style="color: #DD0000">"UTF-8"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"ISO-8859-1//TRANSLIT"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'IGNORE&nbsp;&nbsp;&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">iconv</span><span style="color: #007700">(</span><span style="color: #DD0000">"UTF-8"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"ISO-8859-1//IGNORE"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'Plain&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">iconv</span><span style="color: #007700">(</span><span style="color: #DD0000">"UTF-8"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"ISO-8859-1"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Original : This is the Euro symbol &#039;€&#039;.
+TRANSLIT : This is the Euro symbol &#039;EUR&#039;.
+IGNORE   : This is the Euro symbol &#039;&#039;.
+Plain    :
+Notice: iconv(): Detected an illegal character in input string in .\iconv-example.php on line 7
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

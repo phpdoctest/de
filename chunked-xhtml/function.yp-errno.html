@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Returns the error code of the previous operation</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li class="header up"><a href="book.nis.html">YP/NIS</a></li>
+  <li class="header up"><a href="ref.nis.html">YP/NIS-Funktionen</a></li>
+  <li><a href="function.yp-all.html">yp_all</a></li>
+  <li><a href="function.yp-cat.html">yp_cat</a></li>
+  <li><a href="function.yp-err-string.html">yp_err_string</a></li>
+  <li class="active"><a href="function.yp-errno.html">yp_errno</a></li>
+  <li><a href="function.yp-first.html">yp_first</a></li>
+  <li><a href="function.yp-get-default-domain.html">yp_get_default_domain</a></li>
+  <li><a href="function.yp-master.html">yp_master</a></li>
+  <li><a href="function.yp-match.html">yp_match</a></li>
+  <li><a href="function.yp-next.html">yp_next</a></li>
+  <li><a href="function.yp-order.html">yp_order</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.yp-err-string.html">yp_err_string</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.yp-first.html">yp_first</a></div>
+                <div class="up"><a href="ref.nis.html">YP/NIS-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.yp-errno" class="refentry">
+   <div class="refnamediv">
+   <h1 class="refname">yp_errno</h1> 
+    <p class="refpurpose">
+     Returns the error code of the previous operation
+    </p>
+   </div>
+   <div class="refsect1 unknown-unknown-returnvalueu" id="refsect1-function.yp-errno-unknown-unknown-returnvalueu">
+    <h3 class="title">Description</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="type">int</span> <span class="methodname">yp_errno</span>
+       ( <span class="methodparam">void</span>
+      )</div>
+
+    <p class="para rdfs-comment"> 
+     <span class="function">yp_errno</span> returns the error code of the
+     previous operation.
+    </p>
+    <p class="para">
+     Possible errors are:
+    </p>
+    <p class="para">
+     <ul class="simplelist">
+      <li class="member">1 args to function are bad</li> 
+      <li class="member">2 RPC failure - domain has been unbound</li>
+      <li class="member">3 can&#039;t bind to server on this domain</li>
+      <li class="member">4 no such map in server&#039;s domain</li>
+      <li class="member">5 no such key in map</li>
+      <li class="member">6 internal yp server or client error</li>
+      <li class="member">7 resource allocation failure</li> 
+      <li class="member">8 no more records in map database</li>
+      <li class="member">9 can&#039;t communicate with portmapper</li>
+      <li class="member">10 can&#039;t communicate with ypbind</li>
+      <li class="member">11 can&#039;t communicate with ypserv</li>
+      <li class="member">12 local domain name not set</li> 
+      <li class="member">13 yp database is bad</li> 
+      <li class="member">14 yp version mismatch</li> 
+      <li class="member">15 access violation</li> 
+      <li class="member">16 database busy</li>
+     </ul>
+    </p>
+    <p class="para">
+     See also <span class="function">yp_err_string</span>.
+    </p>
+   </div>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

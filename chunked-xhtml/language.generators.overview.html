@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Generatoren-&Uuml;bersicht</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.generators.html">Generatoren</a></li>
+  <li class="active"><a href="language.generators.overview.html">Generatoren-&Uuml;bersicht</a></li>
+  <li><a href="language.generators.syntax.html">Generator-Syntax</a></li>
+  <li><a href="language.generators.comparison.html">Vergleich von Generatoren mit Iterator-Objekten</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.generators.html">Generatoren</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.generators.syntax.html">Generator-Syntax</a></div>
+                <div class="up"><a href="language.generators.html">Generatoren</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.generators.overview" class="sect1">
+  <h2 class="title">Generatoren-Übersicht</h2>
+  
+
+  <p class="para">
+   Generatoren bieten eine einfache Möglichkeit, um einfache <a href="language.oop5.iterations.html" class="link">Iteratoren</a> zu erstellen, ohne
+   den Overhead oder die Komplexität der Erstellung einer Klasse zu haben, 
+   die das <span class="classname">Iterator</span>-Interface implementiert.
+  </p>
+
+  <p class="para">
+   Ein Generator ermöglicht es Code zu schreiben, der <a href="control-structures.foreach.html" class="link">foreach</a> nutzt, um über
+   eine Datenmenge zu iterieren, ohne ein Array im Speicher zu erzeugen,
+   was zur Überschreitung des Speicherlimits führen kann oder beträchtliche
+   Prozessorzeit benötigt. Alternativ können Sie eine Generatorfunktion
+   schreiben, die einer normalen <a href="functions.user-defined.html" class="link">Funktion</a> entspricht, bei der aber
+   keine einmalige <a href="functions.returning-values.html" class="link">Rückgabe</a>
+   erfolgt, sondern der Generator so oft wie nötig einen Wert abgibt
+   (Stichwort: <a href="language.generators.syntax.html#control-structures.yield" class="link">yield</a>), um die Werte zu liefern, über die iteriert werden
+   soll.
+  </p>
+
+  <p class="para">
+   Ein einfaches Beispiel dazu ist, die <span class="function">range</span>-Funktion
+   durch einen Generator neu zu implementieren. Die
+   Standard-<span class="function">range</span>-Funktion generiert und liefert Arrays,
+   welche jeden Wert enthalten, was große Arrays zur Folge haben kann: zum
+   Beispiel hat der Aufruf <strong class="command">range(0, 1000000)</strong> zur Folge,
+   dass weit über 100 MB an Speicher benötigt werden.
+  </p>
+
+  <p class="para">
+   Als Alternative können wir einen <em>xrange()</em>-Generator 
+   implementieren, welcher immer nur genug Speicher benötigt, um ein
+   <span class="classname">Iterator</span>-Objekt zu erzeugen und intern den aktuellen
+   Zustand des Generators zu verfolgen, was sich als weniger als 1 Kilobyte
+   herausstellt.
+  </p>
+
+  <div class="example" id="example-287">
+   <p><strong>Beispiel #1 Implementierung von <span class="function">range</span> als Generator</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">xrange</span><span style="color: #007700">(</span><span style="color: #0000BB">$start</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$limit</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$step&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$start&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">$limit</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$step&nbsp;</span><span style="color: #007700">&lt;=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;</span><span style="color: #0000BB">LogicException</span><span style="color: #007700">(</span><span style="color: #DD0000">'Schrittweite&nbsp;muss&nbsp;positiv&nbsp;sein'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$start</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;=&nbsp;</span><span style="color: #0000BB">$limit</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">$step</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yield&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$step&nbsp;</span><span style="color: #007700">&gt;=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;</span><span style="color: #0000BB">LogicException</span><span style="color: #007700">(</span><span style="color: #DD0000">'Schrittweite&nbsp;muss&nbsp;negativ&nbsp;sein'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$start</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&gt;=&nbsp;</span><span style="color: #0000BB">$limit</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">$step</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yield&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">/*<br />&nbsp;*&nbsp;Hinweis:&nbsp;sowohl&nbsp;range()&nbsp;als&nbsp;auch&nbsp;xrange()&nbsp;<br />&nbsp;*&nbsp;erzeugen&nbsp;die&nbsp;gleiche&nbsp;Ausgabe.<br />&nbsp;*/<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'Einstellige&nbsp;ungerade&nbsp;Zahlen&nbsp;von&nbsp;range():&nbsp;&nbsp;'</span><span style="color: #007700">;<br />foreach&nbsp;(</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">9</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$zahl</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$zahl</span><span style="color: #DD0000">&nbsp;"</span><span style="color: #007700">;<br />}<br />echo&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #DD0000">'Einstellige&nbsp;ungerade&nbsp;Zahlen&nbsp;von&nbsp;xrange():&nbsp;'</span><span style="color: #007700">;<br />foreach&nbsp;(</span><span style="color: #0000BB">xrange</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">9</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$zahl</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$zahl</span><span style="color: #DD0000">&nbsp;"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Einstellige ungerade Zahlen von range():  1 3 5 7 9 
+Einstellige ungerade Zahlen von xrange(): 1 3 5 7 9 
+</pre></div>
+   </div>
+  </div>
+
+  <div class="sect2" id="language.generators.object">
+   <h3 class="title"><span class="classname">Generator</span>-Objekte</h3>
+   <p class="para">
+    Beim ersten Aufruf einer Generatorfunktion wird ein Objekt der internen
+    <span class="classname">Generator</span>-Klasse zurückgegeben. Dieses Objekt
+    implementiert das <span class="classname">Iterator</span>-Interface in gleicher
+    Weise wie es ein forward-only Iterator-Objekt machen würde und stellt
+    Methoden zur Verfügung, die aufgerufen werden können, um den Zustand des
+    Generators zu manipulieren, einschließlich des Sendens von Werten an,
+    und der Rückgabe von Werten von ihm.
+   </p>
+  </div>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

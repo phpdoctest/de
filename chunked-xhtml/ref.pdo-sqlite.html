@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: SQLite Functions (PDO_SQLITE)</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.abstract.html">Abstraktionsebenen</a></li>
+  <li class="header up"><a href="book.pdo.html">PDO</a></li>
+  <li class="header up"><a href="pdo.drivers.html">PDO-Treiber</a></li>
+  <li><a href="ref.pdo-cubrid.html">CUBRID (PDO)</a></li>
+  <li><a href="ref.pdo-dblib.html">MS SQL Server (PDO)</a></li>
+  <li><a href="ref.pdo-firebird.html">Firebird (PDO)</a></li>
+  <li><a href="ref.pdo-ibm.html">IBM (PDO)</a></li>
+  <li><a href="ref.pdo-informix.html">Informix (PDO)</a></li>
+  <li><a href="ref.pdo-mysql.html">MySQL (PDO)</a></li>
+  <li><a href="ref.pdo-sqlsrv.html">MS SQL Server (PDO)</a></li>
+  <li><a href="ref.pdo-oci.html">Oracle (PDO)</a></li>
+  <li><a href="ref.pdo-odbc.html">ODBC and DB2 (PDO)</a></li>
+  <li><a href="ref.pdo-pgsql.html">PostgreSQL (PDO)</a></li>
+  <li class="active"><a href="ref.pdo-sqlite.html">SQLite (PDO)</a></li>
+  <li><a href="ref.pdo-4d.html">4D (PDO)</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="pdo.pgsqllobunlink.html">PDO::pgsqlLOBUnlink</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ref.pdo-sqlite.connection.html">PDO_SQLITE DSN</a></div>
+                <div class="up"><a href="pdo.drivers.html">PDO-Treiber</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="ref.pdo-sqlite" class="reference">
+  
+  <h1 class="title">SQLite Functions (PDO_SQLITE)</h1>
+  
+  <div class="partintro">
+
+   <div class="section" id="pdo-sqlite.intro">
+   <h2 class="title">Einführung</h2>
+    <p class="para">
+     Der PDO_SQLITE-Treiber implementiert das <a href="intro.pdo.html" class="link">PHP
+     Data Objects (PDO) Interface</a>, um Zugriff auf SQLite3-Datenbanken
+     zu ermöglichen.
+    </p>
+    <p class="para">
+     Unter PHP 5.1 bietet die <a href="ref.sqlite.html" class="link">SQLite</a>-Erweiterung
+     ebenfalls einen Treiber für SQLite2-Datenbanken. Obwohl dieser kein
+     Bestandteil des PDO_SQLITE-Treibers ist, verhält er sich ähnlich, weshalb er
+     nebenher dokumentiert wird. Der SQLite2-Treiber für PDO wird nur deshalb
+     angeboten, damit es einfacher ist bestehende SQLite2-Datenbankdateien in
+     Applikationen einzubinden, die bereits den schnelleren und effizienteren
+     SQLITE_PDO-Treiber nutzen. Das hat zur Folge, dass der SQlite2-Treiber nicht
+     so umfangreich an Fähigkeiten ist, wie der SQLite3-Treiber.
+    </p>
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <p class="para">
+      PDO_SQLITE erlaubt es Zeichenketten, abgesehen von Datenströmen, mit
+      <strong><code>PDO::PARAM_LOB</code></strong> zu nutzen.
+
+     </p>
+    </p></blockquote>
+   </div>
+
+   
+
+<div class="section" id="ref.pdo-sqlite.installation">
+ <h2 class="title">Installation</h2>
+ <p class="para">
+  The PDO_SQLITE PDO driver is enabled by default. To disable,
+  <strong class="option configure">--without-pdo-sqlite[=DIR]</strong>
+ may be used, 
+  where the optional <em>[=DIR]</em> is the sqlite base install directory.
+ </p>
+</div>
+
+
+
+   
+  </div>
+
+  
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_reference">
+<li><a href="ref.pdo-sqlite.connection.html">PDO_SQLITE DSN</a> — Verbindungen zu SQLite-Datenbanken aufbauen</li>
+<li><a href="pdo.sqlitecreateaggregate.html">PDO::sqliteCreateAggregate</a> — Registers an aggregating User Defined Function for use in SQL statements</li>
+<li><a href="pdo.sqlitecreatecollation.html">PDO::sqliteCreateCollation</a> — Registers a User Defined Function for use as a collating function in SQL statements</li>
+<li><a href="pdo.sqlitecreatefunction.html">PDO::sqliteCreateFunction</a> — Registers a User Defined Function for use in SQL statements</li>
+</ul>
+</ol>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

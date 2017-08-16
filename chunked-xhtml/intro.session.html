@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Einf&uuml;hrung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.session.html">Session-Erweiterungen</a></li>
+  <li class="header up"><a href="book.session.html">Sessions</a></li>
+  <li class="active"><a href="intro.session.html">Einf&uuml;hrung</a></li>
+  <li><a href="session.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="session.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="session.examples.html">Beispiele</a></li>
+  <li><a href="session.upload-progress.html">Session-Upload-Fortschritt</a></li>
+  <li><a href="session.security.html">Sessions und Sicherheit</a></li>
+  <li><a href="ref.session.html">Session-Funktionen</a></li>
+  <li><a href="class.sessionhandler.html">SessionHandler</a></li>
+  <li><a href="class.sessionhandlerinterface.html">SessionHandlerInterface</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="book.session.html">Sessions</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="session.setup.html">Installation/Konfiguration</a></div>
+                <div class="up"><a href="book.session.html">Sessions</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="intro.session" class="preface">
+  <h1 class="title">Einführung</h1>
+  <p class="para">
+   Die Unterstützung von Sessions in PHP bietet die Möglichkeit, bestimmte
+   Daten während einer Folge von Aufrufen Ihrer Website festzuhalten.
+  </p>
+  <p class="para">
+   Einem Besucher wird beim Aufruf Ihrer Website eine eindeutige ID, die
+   sogenannte Session-ID, zugeordnet. Diese wird entweder benutzerseitig in
+   einem Cookie abgelegt oder in der URL übermittelt.
+  </p>
+  <p class="para">
+   Die Unterstützung von Sessions erlaubt Ihnen, Daten zwischen Anfragen im
+   superglobalen Array <var class="varname">$_SESSION</var> zu speichern. Wenn ein
+   Besucher Ihre Website aufruft, überprüft PHP automatisch (falls <a href="session.configuration.html#ini.session.auto-start" class="link">session.auto_start</a> auf 1 gesetzt
+   ist) oder auf Anfrage (explizit durch <span class="function">session_start</span>),
+   ob mit der Anfrage schon eine bestimmte Session-ID gesendet wurde. Wenn
+   dies der Fall ist, wird die zuvor gespeicherte Umgebung wiederhergestellt.
+  </p>
+  <div class="caution"><strong class="caution">Achtung</strong>
+   <p class="para">
+    Falls Sie <a href="session.configuration.html#ini.session.auto-start" class="link">session.auto_start</a>
+    aktivieren, können Objekte nur in Ihre Sessions aufgenommen werden, indem
+    die Klassendefinition mittels <a href="ini.core.html#ini.auto-prepend-file" class="link">auto_prepend_file</a> geladen wird.
+    Andernfalls müssen Sie Ihr Objekt mittels <span class="function">serialize</span>
+    serialisieren und danach mittels <span class="function">unserialize</span>
+    deserialisieren.
+   </p>
+  </div>
+  <p class="para">
+   <var class="varname">$_SESSION</var> (und alle registrierten Variablen) werden
+   intern von PHP unter Verwendung der in der Konfigurationseinstellung
+   <a href="session.configuration.html#ini.session.serialize-handler" class="link">session.serialize_handler</a>
+   festgelegten Serialisierungsroutine serialisiert, nachdem die Anfrage
+   beendet ist. Registrierte Variablen, die nicht definiert sind, werden als
+   nicht definiert gekennzeichnet. Auch bei darauf folgenden Zugriffen werden
+   sie nicht vom Session-Modul definiert, außer der Benutzer definiert sie
+   später.
+  </p>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="para">
+    Weil Session-Daten serialisiert werden, können
+    <span class="type">resource</span>-Variablen nicht in der Session gespeichert werden.
+   </p>
+   <p class="para">
+    Die Serialisierungsroutinen (<em>php</em> und
+    <em>php_binary</em>) erben die Beschränkungen für
+    register_globals. Daher können numerische Indizes oder alphanumerische
+    Indizes, die Sonderzeichen (<em>|</em> und <em>!</em>)
+    enthalten, nicht verwendet werden. Deren Verwendung erzeugt Fehler beim
+    Beenden des Scripts. <em>php_serialize</em> hat diese
+    Einschränkungen nicht. <em>php_serialize</em> steht seit PHP
+    5.5.4 zur Verfügung.
+   </p>
+  </div>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Bitte beachten Sie beim Arbeiten mit Sessions, dass der Datensatz einer
+    Session nicht angelegt wird, bevor eine Variable mit der Funktion
+    <span class="function">session_register</span> registriert oder dem superglobalen
+    Array <var class="varname">$_SESSION</var> ein neuer Schlüssel hinzugefügt wird.
+    Das gilt auch dann, wenn eine Session mit der Funktion
+    <span class="function">session_start</span> gestartet wurde.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Mit PHP 5.2.2 wurde die nicht dokumentierte Eigenschaft eingeführt,
+    Session-Dateien in &quot;/tmp&quot; zu speichern, selbst wenn <a href="ini.core.html#ini.open-basedir" class="link">open_basedir</a> aktiviert war und &quot;/tmp&quot;
+    nicht ausdrücklich zur Liste der zulässigen Pfade hinzugefügt wurde. Diese
+    Eigenschaft wurde in PHP 5.3.0 aus PHP entfernt.
+   </p>
+  </p></blockquote>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

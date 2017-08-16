@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Klassen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="appendices.html">Appendices</a></li>
+  <li class="header up"><a href="reserved.html">Liste der reservierten W&ouml;rter</a></li>
+  <li><a href="reserved.keywords.html">Liste der Schl&uuml;sselworte</a></li>
+  <li class="active"><a href="reserved.classes.html">Vordefinierte Klassen</a></li>
+  <li><a href="reserved.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="reserved.other-reserved-words.html">Liste weiterer reservierter W&ouml;rter</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="reserved.keywords.html">Liste der Schl&uuml;sselworte</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="reserved.constants.html">Vordefinierte Konstanten</a></div>
+                <div class="up"><a href="reserved.html">Liste der reservierten W&ouml;rter</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="reserved.classes" class="sect1">
+   <h2 class="title">Vordefinierte Klassen</h2>
+   <p class="para">
+    Dieser Abschnitt listet vordefierte Klassen auf, welche von
+    PHP selbst definiert werden. Von Erweiterungen definierte Klassen
+    werden in den jeweiligen Abschnitten des Manuals beschrieben.
+   </p>
+
+   <div class="sect2" id="reserved.classes.standard">
+    <h3 class="title">Standardmäßig definierte Klassen</h3>
+
+    <p class="simpara">
+     Diese Klassen sind im Standard-Funktionsumfang einer PHP-Distribution enthalten.
+    </p>
+
+    <dl>
+
+     
+      <dt>
+<span class="classname">Directory</span></dt>
+
+      <dd>
+
+       <span class="simpara">
+        Die Klasse die von <span class="function">dir</span> instanziiert wird.
+       </span>
+      </dd>
+
+     
+     
+      <dt>
+<span class="classname">stdClass</span></dt>
+
+      <dd>
+
+       <span class="simpara">
+        Erstellt beim <a href="language.types.object.html#language.types.object.casting" class="link">Casten
+        zu einem Objekt</a>.
+       </span>
+      </dd>
+
+     
+     
+      <dt>
+<span class="classname">__PHP_Incomplete_Class</span></dt>
+
+      <dd>
+
+       <span class="simpara">
+        Wird unter Umständen von <span class="function">unserialize</span> erstellt.
+       </span>
+      </dd>
+
+     
+    </dl>
+
+   </div>
+
+   <div class="sect2" id="reserved.classes.php5">
+    <h3 class="title">Vordefinierte Klassen in PHP 5</h3>
+
+    <p class="simpara">
+     Diese zusätzlichen vordefinierten Klassen wurden mit PHP 5.0.0
+     eingeführt.
+    </p>
+
+    <dl>
+
+     
+      <dt>
+<span class="classname">Exception</span></dt>
+
+      <dd>
+
+       <span class="simpara">
+       </span>
+      </dd>
+
+     
+     
+      <dt>
+<span class="classname">ErrorException</span></dt>
+
+      <dd>
+
+       <span class="simpara">
+        Verfügbar seit PHP 5.1.0.
+       </span>
+      </dd>
+
+     
+     
+      <dt>
+<span class="classname">php_user_filter</span></dt>
+
+      <dd>
+
+       <span class="simpara">
+       </span>
+      </dd>
+
+     
+    </dl>
+
+   </div>
+
+   <div class="sect2" id="reserved.classes.closure">
+    <h3 class="title">Closure</h3>
+    
+    <p class="simpara">
+     Die vordefinierte finale Klasse <span class="classname">Closure</span> wurde in
+     PHP 5.3.0 eingeführt. Sie wird benutzt um <a href="functions.anonymous.html" class="link">anonyme
+     Funktionen</a> darzustellen.
+    </p>
+    <p class="simpara">
+     Weitere Informationen siehe <a href="class.closure.html" class="link">Beschreibung
+     der Klasse</a>.
+    </p>
+    
+   </div>
+
+   <div class="sect2" id="reserved.classes.generator">
+    <h3 class="title">Generator</h3>
+
+    <p class="simpara">
+     Die vordefinierte finale Klasse <span class="classname">Generator</span> wurde in
+     PHP 5.5.0 eingeführt. Sie wird benutzt um <a href="language.generators.html" class="link">Generatoren</a> darzustellen.
+    </p>
+    <p class="simpara">
+     Weitere Informationen siehe <a href="class.generator.html" class="link">Beschreibung
+     der Klasse</a>.
+    </p>
+   </div>
+
+   <div class="sect2" id="reserved.classes.special">
+    <h3 class="title">Spezielle Klassen</h3>
+
+    <p class="simpara">
+     Die folgenden Bezeichner können nicht als Klassenname genutzt
+     werden, da sie eine besondere Bedeutung haben.
+    </p>
+
+    <dl>
+
+     
+      <dt>
+<span class="classname">self</span></dt>
+
+      <dd>
+
+       <span class="simpara">
+        <a href="language.oop5.paamayim-nekudotayim.html" class="link">Aktuelle Klasse</a>.
+       </span>
+      </dd>
+
+     
+     
+      <dt>
+<span class="classname">static</span></dt>
+
+      <dd>
+
+       <span class="simpara">
+        <a href="language.oop5.late-static-bindings.html" class="link">Aktuelle Klasse
+         zur Laufzeit</a>.
+       </span>
+      </dd>
+
+     
+     
+      <dt>
+<span class="classname">parent</span></dt>
+
+      <dd>
+
+       <span class="simpara">
+        <a href="language.oop5.paamayim-nekudotayim.html" class="link">Vaterklasse</a>.
+       </span>
+      </dd>
+
+     
+    </dl>
+
+   </div>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

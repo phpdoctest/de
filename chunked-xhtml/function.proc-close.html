@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Schlie&szlig;t einen Prozess, der mit proc_open
+   gestartet wurde und gibt den Exitcode dieses Prozesses zur&uuml;ck</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li class="header up"><a href="book.exec.html">Programmausf&uuml;hrung</a></li>
+  <li class="header up"><a href="ref.exec.html">Funktionen zur Programmausf&uuml;hrung</a></li>
+  <li><a href="function.escapeshellarg.html">escapeshellarg</a></li>
+  <li><a href="function.escapeshellcmd.html">escapeshellcmd</a></li>
+  <li><a href="function.exec.html">exec</a></li>
+  <li><a href="function.passthru.html">passthru</a></li>
+  <li class="active"><a href="function.proc-close.html">proc_close</a></li>
+  <li><a href="function.proc-get-status.html">proc_get_status</a></li>
+  <li><a href="function.proc-nice.html">proc_nice</a></li>
+  <li><a href="function.proc-open.html">proc_open</a></li>
+  <li><a href="function.proc-terminate.html">proc_terminate</a></li>
+  <li><a href="function.shell-exec.html">shell_exec</a></li>
+  <li><a href="function.system.html">system</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.passthru.html">passthru</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.proc-get-status.html">proc_get_status</a></div>
+                <div class="up"><a href="ref.exec.html">Funktionen zur Programmausf&uuml;hrung</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.proc-close" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">proc_close</h1>
+  <p class="refpurpose">Schließt einen Prozess, der mit <span class="function">proc_open</span>
+   gestartet wurde und gibt den Exitcode dieses Prozesses zurück</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.proc-close-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname">proc_close</span>
+    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$process</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">proc_close</span> entspricht <span class="function">pclose</span>,
+   außer dass Die Funktion nur mit Prozessen arbeitet, die von
+   <span class="function">proc_open</span> gestartet wurden.
+   <span class="function">proc_close</span> wartet auf den zu beendenden Prozess und
+   gibt seinen Exitcode zurück. Wenn Sie offene Pipes zu diesem Prozess haben,
+   sollten Sie zuvor <span class="function">fclose</span> ausführen, um Deadlocks
+   vorzubeugen - der Child-Prozess kann sich nicht beenden, solange noch Pipes
+   geöffnet sind.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.proc-close-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">process</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die zu schließende <span class="function">proc_open</span>-<span class="type">Ressource</span>.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.proc-close-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt den Termination-Status des gelaufenen Prozesses zurück. Falls ein
+   Fehler auftritt wird <em>-1</em> zurückgegeben.
+  </p>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+ <p class="para">
+  If PHP has been compiled with --enable-sigchild, the return value of this function is undefined.
+ </p>
+</p></blockquote>
+
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

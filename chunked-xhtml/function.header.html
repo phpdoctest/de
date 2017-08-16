@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Sendet einen HTTP-Header in Rohform</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li class="header up"><a href="book.network.html">Network</a></li>
+  <li class="header up"><a href="ref.network.html">Netzwerk-Funktionen</a></li>
+  <li><a href="function.checkdnsrr.html">checkdnsrr</a></li>
+  <li><a href="function.closelog.html">closelog</a></li>
+  <li><a href="function.define-syslog-variables.html">define_syslog_variables</a></li>
+  <li><a href="function.dns-check-record.html">dns_check_record</a></li>
+  <li><a href="function.dns-get-mx.html">dns_get_mx</a></li>
+  <li><a href="function.dns-get-record.html">dns_get_record</a></li>
+  <li><a href="function.fsockopen.html">fsockopen</a></li>
+  <li><a href="function.gethostbyaddr.html">gethostbyaddr</a></li>
+  <li><a href="function.gethostbyname.html">gethostbyname</a></li>
+  <li><a href="function.gethostbynamel.html">gethostbynamel</a></li>
+  <li><a href="function.gethostname.html">gethostname</a></li>
+  <li><a href="function.getmxrr.html">getmxrr</a></li>
+  <li><a href="function.getprotobyname.html">getprotobyname</a></li>
+  <li><a href="function.getprotobynumber.html">getprotobynumber</a></li>
+  <li><a href="function.getservbyname.html">getservbyname</a></li>
+  <li><a href="function.getservbyport.html">getservbyport</a></li>
+  <li><a href="function.header-register-callback.html">header_register_callback</a></li>
+  <li><a href="function.header-remove.html">header_remove</a></li>
+  <li class="active"><a href="function.header.html">header</a></li>
+  <li><a href="function.headers-list.html">headers_list</a></li>
+  <li><a href="function.headers-sent.html">headers_sent</a></li>
+  <li><a href="function.http-response-code.html">http_response_code</a></li>
+  <li><a href="function.inet-ntop.html">inet_ntop</a></li>
+  <li><a href="function.inet-pton.html">inet_pton</a></li>
+  <li><a href="function.ip2long.html">ip2long</a></li>
+  <li><a href="function.long2ip.html">long2ip</a></li>
+  <li><a href="function.openlog.html">openlog</a></li>
+  <li><a href="function.pfsockopen.html">pfsockopen</a></li>
+  <li><a href="function.setcookie.html">setcookie</a></li>
+  <li><a href="function.setrawcookie.html">setrawcookie</a></li>
+  <li><a href="function.socket-get-status.html">socket_get_status</a></li>
+  <li><a href="function.socket-set-blocking.html">socket_set_blocking</a></li>
+  <li><a href="function.socket-set-timeout.html">socket_set_timeout</a></li>
+  <li><a href="function.syslog.html">syslog</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.header-remove.html">header_remove</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.headers-list.html">headers_list</a></div>
+                <div class="up"><a href="ref.network.html">Netzwerk-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.header" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">header</h1>
+  <p class="refpurpose">Sendet einen HTTP-Header in Rohform</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.header-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname">header</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$string</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$replace</code><span class="initializer"> = true</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$http_response_code</code></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">header</span> wird zum Senden von
+   <acronym class="acronym">HTTP</acronym>-Anfangsinformationen (Headern) im Rohformat
+   benutzt. Weitere Informationen über die <acronym class="acronym">HTTP</acronym> Header
+   finden Sie in der <a href="http://www.faqs.org/rfcs/rfc2616" class="link external">&raquo;&nbsp;HTTP/1.1 Spezifikation</a>.
+  </p>
+  <p class="para">
+   Beachten Sie, dass Sie die Funktion <span class="function">header</span> aufrufen müssen,
+   bevor Sie irgendeine andere Art von Ausgabe (seien es normale HTML-Tags,
+   Leerzeilen in einer Datei oder von PHP) zum Client schicken. Es handelt sich
+   hier um einen typischen Fehler, der zum Beispiel auftritt, wenn Sie Code
+   mittels <span class="function">include</span> oder <span class="function">require</span> oder
+   einer anderen Dateizugriffs-Funktion einlesen, die Leerzeichen oder
+   Leerzeilen enthalten, die ausgegeben werden, bevor <span class="function">header</span>
+   aufgerufen wird. Das gleiche Problem kann auch auftreten, wenn Sie eine
+   Datei verwenden, in der HTML und PHP vermischt wurden.
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+&lt;html&gt;<br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Dies&nbsp;wird&nbsp;einen&nbsp;Fehler&nbsp;provozieren.&nbsp;Beachten&nbsp;Sie&nbsp;die&nbsp;vorangehende&nbsp;Ausgabe,<br />&nbsp;*&nbsp;die&nbsp;vor&nbsp;dem&nbsp;Aufruf&nbsp;von&nbsp;header()&nbsp;erzeugt&nbsp;wird&nbsp;*/<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Location:&nbsp;http://www.example.com/'</span><span style="color: #007700">);<br />exit;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.header-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">string</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Header-String.
+      </p>
+      <p class="para">
+       Es gibt zwei Spezialfälle von Header-Aufrufen. Der erste ist ein
+       Header, der mit &quot;<em>HTTP/</em>&quot; beginnt (ob Groß- oder
+       Kleinschreibung ist nicht relevant) und zum Herausfinden des zu
+       sendenden HTTP Statuscodes verwendet wird. Wenn Sie zum Beispiel
+       Apache konfiguriert haben, um ein PHP Skript zum Bearbeiten von
+       Anforderungen fehlender Dateien (mittels der
+       <em>ErrorDocument</em>-Direktive) zu verwenden, möchten
+       Sie bestimmt sicherstellen, dass Ihr Skript den passenden Statuscode
+       generiert.
+      </p>
+      <p class="para">
+       <div class="informalexample">
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />header</span><span style="color: #007700">(</span><span style="color: #DD0000">"HTTP/1.0&nbsp;404&nbsp;Not&nbsp;Found"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
+      </p>
+      <p class="para">
+       Der zweite Spezialfall ist der &quot;Location:&quot; Header. Es wird nicht nur
+       der Header an den Browser geschickt, sondern auch ein
+       <em>REDIRECT</em> (302) Statuscode, wenn nicht bereits der
+       <em>201</em>- oder ein <em>3xx</em>-Statuscode gesendet
+       wurde.
+      </p>
+      <p class="para">
+       <div class="informalexample">
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Location:&nbsp;http://www.example.com/"</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">/*&nbsp;Browser&nbsp;umleiten&nbsp;*/<br /><br />/*&nbsp;Stellen&nbsp;Sie&nbsp;sicher,&nbsp;dass&nbsp;der&nbsp;nachfolgende&nbsp;Code&nbsp;nicht&nbsp;ausgefuehrt&nbsp;wird,&nbsp;wenn<br />&nbsp;&nbsp;&nbsp;eine&nbsp;Umleitung&nbsp;stattfindet.&nbsp;*/<br /></span><span style="color: #007700">exit;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">replace</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der optionale Parameter <code class="parameter">replace</code> gibt an, ob der
+       Header einen vorhergehenden gleichartigen Header ersetzten soll, oder ob
+       ein zweiter Header des selben Typs hinzugefügt werden soll. Standardmäßig
+       wird ersetzt; wenn Sie als zweites Argument <strong><code>FALSE</code></strong> übergeben, können Sie
+       so mehrere Header desselben Typs erzwingen. Zum Beispiel:
+      </p>
+      <p class="para">
+       <div class="informalexample">
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />header</span><span style="color: #007700">(</span><span style="color: #DD0000">'WWW-Authenticate:&nbsp;Negotiate'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'WWW-Authenticate:&nbsp;NTLM'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">http_response_code</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Forciert einen HTTP-Response-Code des angegebenen Wertes. Dieser Parameter
+       hat nur einen Effekt, wenn <code class="parameter">string</code> nicht leer ist.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.header-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Es wird kein Wert zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.header-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.1.2</td>
+       <td>
+        Die Funktion unterbindet das gleichzeitige Versenden mehrerer Header
+        zum Schutz gegen Header-Injection-Angriffe.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.header-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4933">
+    <p><strong>Beispiel #1 Download-Dialog</strong></p>
+    <div class="example-contents"><p>
+     Wollen Sie den Benutzer auffordern, die von Ihnen gesendeten Daten
+     wie z.B. eine generierte PDF Datei zu speichern, können Sie den
+     Header <a href="http://www.faqs.org/rfcs/rfc2183" class="link external">&raquo;&nbsp;Content-Disposition</a> verwenden,
+     um einen empfohlenen Dateinamen anzubieten und den Browser zu zwingen,
+     den Dialog zum Speichern anzuzeigen.
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Wir&nbsp;werden&nbsp;eine&nbsp;PDF&nbsp;Datei&nbsp;ausgeben<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Type:&nbsp;application/pdf'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Es&nbsp;wird&nbsp;downloaded.pdf&nbsp;benannt<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Disposition:&nbsp;attachment;&nbsp;filename="downloaded.pdf"'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Die&nbsp;originale&nbsp;PDF&nbsp;Datei&nbsp;heißt&nbsp;original.pdf<br /></span><span style="color: #0000BB">readfile</span><span style="color: #007700">(</span><span style="color: #DD0000">'original.pdf'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-4934">
+    <p><strong>Beispiel #2 Caching-Direktiven</strong></p>
+    <div class="example-contents"><p>
+     PHP-Skripte erzeugen oft dynamische Inhalte, die weder vom Browser
+     noch von irgendeinem Proxy zwischen Web-Server und Client-Browser
+     gepuffert (&quot;gecached&quot;) werden sollen bzw. dürfen. Bei vielen Proxies
+     und Browsern kann das Cachen wie folgt unterbunden werden:
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Cache-Control:&nbsp;no-cache,&nbsp;must-revalidate"</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;HTTP/1.1<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Expires:&nbsp;Sat,&nbsp;26&nbsp;Jul&nbsp;1997&nbsp;05:00:00&nbsp;GMT"</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Datum&nbsp;in&nbsp;der&nbsp;Vergangenheit<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <p class="para">
+        Es könnte auch sein, dass Ihre Seiten nicht zwischengespeichert werden,
+        auch wenn Sie obigen Header nicht ausgeben. Es gibt eine Anzahl Optionen,
+        welche die Benutzer in ihren Browser einstellen können, um das
+        standardmäßige Caching-Verhalten zu verändern. Durch das Senden obiger
+        Header sollten Sie jedwede Einstellungen, die die Ausgabe Ihres Skriptes
+        zwischenspeichern würden, außer Kraft setzen.
+       </p>
+       <p class="para">
+        Weiterhin können Sie <span class="function">session_cache_limiter</span> und
+        die Konfigurationsoption <em>session.cache_limiter</em>
+        verwenden, um die korrekten Header bezüglich Caching automatisch
+        generieren zu lassen, sollten Sie Sessions benutzen.
+       </p>
+      </p></blockquote>
+    </p></div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.header-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+ <p class="para">
+  Header sind nur dann zugänglich und werden nur dann gesendet,
+  wenn die genutzte SAPI sie unterstützt.
+ </p>
+</p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Sie können die Limitierung, dass Header vor jeglicher Ausgabe gesendet
+    werden müssen, umgehen, indem Sie Outputbuffering benutzen, mit
+    dem Overhead, dass Ihre gesamten Ausgaben an den Browser auf dem Server
+    gepuffert werden, bis Sie diese senden. Sie können dies tun, indem Sie in
+    Ihrem Skript <span class="function">ob_start</span> und
+    <span class="function">ob_end_flush</span> verwenden, oder indem Sie die
+    Konfigurationsdirektive <em>output_buffering</em> in der <var class="filename">php.ini</var>
+    bzw. in den Server-Konfigurationsdateien auf On setzen.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Die HTTP-Status-Headerzeile wird immer die erste zum Client gesendete
+    sein, egal ob der aktuelle <span class="function">header</span>-Aufruf der erste
+    ist oder nicht. Der Status kann mittels <span class="function">header</span>
+    jederzeit mit einer neuen Statuszeile überschrieben werden, sofern die
+    HTTP-Header noch nicht gesendet wurden.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Der Microsoft Internet Explorer 4.01 hat einen Bug, der diese
+    Funktionalität verhindert, und es gibt keinen Workaround. Auch
+    im Microsoft Internet Explorer 5.5 existiert ein Bug, der dies
+    behindert, dieser kann jedoch mittels eines Upgrades auf Service
+    Pack 2 oder höher behoben werden.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    Ist <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">safe mode</a> aktiviert, wird
+    die UID des Skriptes dem <em>realm</em>-Teil des Headers
+    <em>WWW-Authenticate</em> (für HTTP Authentifizierung
+    verwendet) hinzugefügt, sollten Sie diesen Header setzen.
+   </span>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    HTTP/1.1 verlangt einen absoluten <acronym class="acronym">URI</acronym> inklusive dem
+    Schema, Hostnamen und absoluten Pfad als Argument
+    von <a href="http://tools.ietf.org/html/rfc7231#section-7.1.2" class="link external">&raquo;&nbsp;Location:</a>,
+    aber manche Clients akzeptieren auch relative URIs. Gewöhnlich können
+    Sie mittels <var class="varname">$_SERVER[&#039;HTTP_HOST&#039;]</var>,
+    <var class="varname">$_SERVER[&#039;PHP_SELF&#039;]</var> und <span class="function">dirname</span>
+    aus einem relativen Link einen absoluten URI selbst erstellen:
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Redirect&nbsp;auf&nbsp;eine&nbsp;andere&nbsp;Seite&nbsp;im&nbsp;aktuell&nbsp;angeforderten&nbsp;Verzeichnis&nbsp;*/<br /></span><span style="color: #0000BB">$host&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'HTTP_HOST'</span><span style="color: #007700">];<br /></span><span style="color: #0000BB">$uri&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">rtrim</span><span style="color: #007700">(</span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_SELF'</span><span style="color: #007700">]),&nbsp;</span><span style="color: #DD0000">'/\\'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$extra&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'mypage.php'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Location:&nbsp;http://</span><span style="color: #0000BB">$host$uri</span><span style="color: #DD0000">/</span><span style="color: #0000BB">$extra</span><span style="color: #DD0000">"</span><span style="color: #007700">);<br />exit;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Die Session-ID wird nicht mit dem Location-Header übermittelt, selbst wenn
+    <a href="session.configuration.html#ini.session.use-trans-sid" class="link">session.use_trans_sid</a>
+    eingeschaltet ist. Sie muss daher manuell durch Verwendung der
+    <strong><code>SID</code></strong>-Konstante hinzugefügt werden.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.header-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">headers_sent</span></li>
+    <li class="member"><span class="function">setcookie</span></li>
+    <li class="member"><span class="function">http_response_code</span></li>
+    <li class="member">
+     The section on <a href="features.http-auth.html" class="link">HTTP
+     authentication</a>
+    </li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Liest die EXIF-Header von JPEG oder TIFF aus</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.utilspec.image.html">Bildverarbeitung und -generierung</a></li>
+  <li class="header up"><a href="book.exif.html">Exif</a></li>
+  <li class="header up"><a href="ref.exif.html">Exif-Funktionen</a></li>
+  <li><a href="function.exif-imagetype.html">exif_imagetype</a></li>
+  <li class="active"><a href="function.exif-read-data.html">exif_read_data</a></li>
+  <li><a href="function.exif-tagname.html">exif_tagname</a></li>
+  <li><a href="function.exif-thumbnail.html">exif_thumbnail</a></li>
+  <li><a href="function.read-exif-data.html">read_exif_data</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.exif-imagetype.html">exif_imagetype</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.exif-tagname.html">exif_tagname</a></div>
+                <div class="up"><a href="ref.exif.html">Exif-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.exif-read-data" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">exif_read_data</h1>
+  <p class="refpurpose">Liest die <acronym class="acronym">EXIF</acronym>-Header von <acronym class="acronym">JPEG</acronym> oder <acronym class="acronym">TIFF</acronym> aus</p>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.exif-read-data-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname">exif_read_data</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$sections</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$arrays</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$thumbnail</code></span>
+  ]]] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">exif_read_data</span> liest die
+   <acronym class="acronym">EXIF</acronym>-Header aus einer <acronym class="acronym">JPEG</acronym>- oder
+   <acronym class="acronym">TIFF</acronym>-Bilddatei aus. Auf diese Weise kann man die
+   Metadaten auslesen, die mit Digitalkameras erzeugt wurden.
+  </p>
+  <p class="para">
+   Exif-Header kommen normalerweise bei JPEG/TIFF-Bildern vor, die von
+   Digitalkameras gemacht wurden. Leider hat jeder Kamerahersteller eine
+   andere Vorstellung davon, wie man die Bilder beschreibt. Man kann sich
+   also nicht darauf verlassen, das ein bestimmter Exif-Header vorhanden ist.
+  </p>
+  <p class="para">
+   <em>Height</em> und <em>Width</em> werden genauso wie
+   <span class="function">getimagesize</span> berechnet. Diese Werte dürfen also nicht
+   Teil von irgendwelchen Headern sein, die zurückgegeben werden. Ferner ist
+   <em>html</em> ein Höhen/Breiten-Textstring für den Gebrauch in
+   normalem <acronym class="acronym">HTML</acronym>.
+  </p>
+  <p class="para">
+   Wenn ein Exif-Header einen Copyrightvermerk beinhaltet, kann dieser selbst
+   aus zwei Werten bestehen. Da die Lösung im Exif-2.10 -Standard nicht
+   konsistent ist, liefert der COMPUTED-Bereich die beiden Einträge
+   <em>Copyright.Photographer</em> und <em>Copyright.Editor</em>,
+   während der IFD0-Bereich aus einem Byte-Array besteht, der die beiden Werte
+   duch ein NULL-Zeichen trennt. Wenn der Datentyp falsch ist, ist nur der
+   erste Eintrag vorhanden (normales Verhalten von Exif). COMPUTED beinhaltet
+   auch ein <em>Copyright</em>-Eintrag. Dieser entspricht entweder
+   dem originalen Copyright-String oder er besteht aus einer kommaseparierten
+   Liste von Foto- und Herausgeber-Copyright.
+  </p>
+  <p class="para">
+   Der Tag UserComment besitzt das gleiche Problem, wie das Copyright-Tag. Er
+   kann zwei Werte speichern. Als erstes die benutze Kodierung und als zweites
+   den Wert selbst. Wenn dem so ist, enthält der IFD-Bereich die Kodierung oder
+   ein Byte-Array. Der COMPUTED-Bereich speichert die beiden Einträge
+   <em>UserCommentEncoding</em> und <em>UserComment</em>.
+   Der Eintrag <em>UserComment</em> ist in beiden Fällen verfügbar.
+   Er sollte also dem Eintrag im IFD0-Bereich vorgezogen werden.
+  </p>
+  <p class="para">
+   <span class="function">exif_read_data</span> validiert auch EXIF-Datentags entsprechend
+   der EXIF-Spezifikationen (<a href="http://exif.org/Exif2-2.PDF" class="link external">&raquo;&nbsp;http://exif.org/Exif2-2.PDF</a>,
+   Seite 20).
+  </p>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Windows ME/XP können beide beim Anschließen einer Kamera die Exif-Header
+    verwerfen. Mehr Informationen dazu sind unter
+    [toten Link] zu finden. 
+   </p>
+  </p></blockquote>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.exif-read-data-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">filename</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Name der zu lesenden Bilddatei. Dieser darf keine
+       <acronym class="acronym">URL</acronym> sein.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">sections</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ist eine kommaseparierte List von Bereichen, die in der Datei vorhanden
+       sein muss, um das Rückgabe-<span class="type">array</span> zu erzeugen. Wenn keine
+       der geforderten Bereiche gefunden werden kann, wird <strong><code>FALSE</code></strong> zurückgegeben.
+       <table class="doctable informaltable">
+        
+         <tbody class="tbody">
+          <tr>
+           <td>FILE</td>
+           <td>FileName, FileSize, FileDateTime, SectionsFound</td>
+          </tr>
+
+          <tr>
+           <td>COMPUTED</td>
+           <td>
+            html, Width, Height, IsColor und andere, wenn vorhanden. Height und
+            Width werden genauso wie <span class="function">getimagesize</span> berechnet.
+            Diese Werte dürfen also nicht Teil von irgendwelchen Headern sein,
+            die zurückgegeben werden. Ferner ist html ein Höhen/Breiten-Textstring
+            für den Gebrauch in normalem <acronym class="acronym">HTML</acronym>.
+           </td>
+          </tr>
+
+          <tr>
+           <td>ANY_TAG</td>
+           <td>Irgendwelche Informationen, die ein Tag besitzen, wie z.B. IFD0, EXIF, ...</td>
+          </tr>
+
+          <tr>
+           <td>IFD0</td>
+           <td>
+            Alle IFD0-Daten mit Tag. In normalen Bilddateien beinhalten diese Bildgröße usw.
+           </td>
+          </tr>
+
+          <tr>
+           <td>THUMBNAIL</td>
+           <td>
+            Eine Datei sollte ein Miniaturbild enthalten, wenn es einen zweiten
+            IFD besitzt. Alle Informationen mit Tags über das eingebettete
+            Miniaturbild werden in diesem Bereich gespeichert.
+           </td>
+          </tr>
+
+          <tr>
+           <td>COMMENT</td>
+           <td>Kommentarheader des JPEG-Bildes.</td>
+          </tr>
+
+          <tr>
+           <td>EXIF</td>
+           <td>
+            Der EXIF-Bereich ist ein Unterbereich von IFD0. Er enthält
+            detailliertere Information über das Bild. Die meisten dieser
+            Einträge beziehen sich auf die Digitalkamera.
+           </td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">arrays</code></dt>
+
+      <dd>
+
+      <p class="para">
+       Definiert ob jeder Bereich ein Array wird oder nicht. Die
+       <code class="parameter">sections</code> <em>COMPUTED</em>,
+       <em>THUMBNAIL</em> und <em>COMMENT</em> werden
+       immer zu Arrays, da die Namen der Werte mit denen anderer Bereiche
+       kollidieren können.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">thumbnail</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Bei <strong><code>TRUE</code></strong> wird das Miniaturbild ausgelesen, ansonsten nur die Daten
+       der Tags.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.exif-read-data-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt ein assoziatives <span class="type">array</span> zurück, bei dem der Arrayindex den
+   Headernamen entspricht und der Arraywert die Werte enthält, die mit diesen
+   Headern in Verbindung stehen. Wenn keine Daten zurückgeliefert werde können,
+   liefert <span class="function">exif_read_data</span> <strong><code>FALSE</code></strong>.
+  </p>
+ </div>
+
+ <div class="refsect1 changelog" id="refsect1-function.exif-read-data-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>4.3.0</td>
+       <td>
+        Kann alle eingebetteten <acronym class="acronym">IFD</acronym>-Daten inklusive Arrays
+        (werden auch als solche zurückgegeben) lesen. Sowohl die Größe des
+        eingebetteten Miniaturbildes wird im Unterbereich von
+        <em>THUMBNAIL</em> zurückgegeben als auch Miniaturbilder im
+        <acronym class="acronym">TIFF</acronym>-Format. Es gibt auch keine Längenbeschränkung
+        mehr für die Rückgabewerte (solange das Speicherlimit nicht erreicht
+        wird).
+       </td>
+      </tr>
+
+      <tr>
+       <td>4.3.0</td>
+       <td>
+        Wenn PHP <a href="ref.mbstring.html" class="link">mbstring</a> unterstützt, können
+        die Benutzerkommentare automatisch umkodiert werden. Benutzerkommentare
+        in Unicode oder JIS werden automatisch in den entsprechenden exif-Initwert
+        der <var class="filename">php.ini</var> umkodiert.
+       </td>
+      </tr>
+
+      <tr>
+       <td>4.3.0</td>
+       <td>
+        Wenn das Bild irgendeinen IFD0-Wert hat, enthält der Bereich COMPUTED
+        einen Eintrag ByteOrderMotorola, welcher auf 0 für little-endian (intel)
+        und 1 für big-endian (motorola) Bytefolge gesetzt ist. Bei einem
+        falschen Datentyp, enthalten COMPUTED und UserComment auch nicht mehr
+        nur den ersten Copyrighteintrag.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.exif-read-data-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-3427">
+    <p><strong>Beispiel #1 <span class="function">exif_read_data</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"test1.jpg:&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$exif&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">exif_read_data</span><span style="color: #007700">(</span><span style="color: #DD0000">'tests/test1.jpg'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'IFD0'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$exif</span><span style="color: #007700">===</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">?&nbsp;</span><span style="color: #DD0000">"Keine&nbsp;Headerdaten&nbsp;gefunden.&lt;br&nbsp;/&gt;\n"&nbsp;</span><span style="color: #007700">:&nbsp;</span><span style="color: #DD0000">"Bild&nbsp;beinhaltet&nbsp;Header&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$exif&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">exif_read_data</span><span style="color: #007700">(</span><span style="color: #DD0000">'tests/test2.jpg'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"test2.jpg:&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />foreach&nbsp;(</span><span style="color: #0000BB">$exif&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$section</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$section&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$val</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$key</span><span style="color: #DD0000">.</span><span style="color: #0000BB">$name</span><span style="color: #DD0000">:&nbsp;</span><span style="color: #0000BB">$val</span><span style="color: #DD0000">&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Der erste Aufruf schlägt fehl, da das Bild keine Headerinformationen hat.
+    </p></div>
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+test1.jpg:
+Keine Headerdaten gefunden.
+test2.jpg:
+FILE.FileName: test2.jpg
+FILE.FileDateTime: 1017666176
+FILE.FileSize: 1240
+FILE.FileType: 2
+FILE.SectionsFound: ANY_TAG, IFD0, THUMBNAIL, COMMENT
+COMPUTED.html: width=&quot;1&quot; height=&quot;1&quot;
+COMPUTED.Height: 1
+COMPUTED.Width: 1
+COMPUTED.IsColor: 1
+COMPUTED.ByteOrderMotorola: 1
+COMPUTED.UserComment: Exif test image.
+COMPUTED.UserCommentEncoding: ASCII
+COMPUTED.Copyright: Photo (c) M.Boerger, Edited by M.Boerger.
+COMPUTED.Copyright.Photographer: Photo (c) M.Boerger
+COMPUTED.Copyright.Editor: Edited by M.Boerger.
+IFD0.Copyright: Photo (c) M.Boerger
+IFD0.UserComment: ASCII
+THUMBNAIL.JPEGInterchangeFormat: 134
+THUMBNAIL.JPEGInterchangeFormatLength: 523
+COMMENT.0: Comment #1.
+COMMENT.1: Comment #2.
+COMMENT.2: Comment #3end
+THUMBNAIL.JPEGInterchangeFormat: 134
+THUMBNAIL.Thumbnail.Height: 1
+THUMBNAIL.Thumbnail.Height: 1
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.exif-read-data-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">exif_thumbnail</span></li>
+    <li class="member"><span class="function">getimagesize</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

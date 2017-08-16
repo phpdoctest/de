@@ -1,0 +1,908 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Konstanten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.compression.html">Erweiterungen zur Datenkompression und Archivierung</a></li>
+  <li class="header up"><a href="book.zip.html">Zip</a></li>
+  <li><a href="intro.zip.html">Einf&uuml;hrung</a></li>
+  <li><a href="zip.setup.html">Installation/Konfiguration</a></li>
+  <li class="active"><a href="zip.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="zip.examples.html">Beispiele</a></li>
+  <li><a href="class.ziparchive.html">ZipArchive</a></li>
+  <li><a href="ref.zip.html">Zip Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="zip.resources.html">Ressource-Typen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="zip.examples.html">Beispiele</a></div>
+                <div class="up"><a href="book.zip.html">Zip</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="zip.constants" class="appendix">
+ <h1>Vordefinierte Konstanten</h1>
+ <p class="simpara">Folgende Konstanten werden von dieser
+Erweiterung definiert und stehen nur zur Verfügung, wenn die Erweiterung entweder
+statisch in PHP kompiliert oder dynamisch zur Laufzeit geladen
+wurde.</p>
+ 
+ <p class="para">
+  ZipArchive nutzt Klassenkonstanten. Es gibt drei Arten von Konstanten
+  für Flags (FL_), Fehler (ER_) und Modi (ohne Prefix).
+ </p>
+ 
+ <dl>
+
+  
+   <dt id="ziparchive.constants.create">
+    <strong><code>ZIPARCHIVE::CREATE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Archiv anlegen wenn es noch nicht existiert.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.overwrite">
+    <strong><code>ZIPARCHIVE::OVERWRITE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Immer ein neues Archiv anlegen, dieser Modus
+     überschreibt ein eventuell bereits bestehendes Archiv.
+    </span>
+   </dd>
+
+  
+  
+  
+   <dt id="ziparchive.constants.excl">
+    <strong><code>ZIPARCHIVE::EXCL</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Mit einer Fehlermeldung abbrechen falls das Archiv
+     bereits existiert.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.checkcons">
+    <strong><code>ZIPARCHIVE::CHECKCONS</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Prüft zusätliche Konsistenzbedingungen und bricht mit
+     einem Fehler ab wenn diese nicht erfüllt sind.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.fl-nocase">
+    <strong><code>ZIPARCHIVE::FL_NOCASE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Namensverleiche ohne Beachtung von Groß- und Kleinschreibung.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.fl-nodir">
+    <strong><code>ZIPARCHIVE::FL_NODIR</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Verzeichniskomponenten ignorieren.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.fl-compressed">
+    <strong><code>ZIPARCHIVE::FL_COMPRESSED</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Komprimierte Daten lesen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.fl-unchanged">
+    <strong><code>ZIPARCHIVE::FL_UNCHANGED</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Orginaldaten benutzen und Änderungen ignorieren.
+    </span>
+   </dd>
+
+  
+  
+  
+   <dt id="ziparchive.constants.fl-enc-guess">
+    <strong><code>ZipArchive::FL_ENC_GUESS</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Versuche die String-Kodierung zu erraten (Standardwert).
+     Verfügbar ab PHP 7.0.8.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.fl-enc-raw">
+    <strong><code>ZipArchive::FL_ENC_RAW</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Lies unmodifizierten String. Verfügbar ab PHP 7.0.8.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.fl-enc-strict">
+    <strong><code>ZipArchive::FL_ENC_STRICT</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Folge streng der Spezifikation. Verfügbar ab PHP 7.0.8.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.fl-enc-utf8">
+    <strong><code>ZipArchive::FL_ENC_UTF_8</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Der String ist UTF-8 kodiert. Verfügbar ab PHP 7.0.8.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.fl-enc-cp437">
+    <strong><code>ZipArchive::FL_ENC_CP437</code></strong>
+     (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Der String ist CP437 kodiert. Verfügbar ab PHP 7.0.8.
+    </span>
+   </dd>
+
+  
+
+  
+   <dt id="ziparchive.constants.cm-default">
+    <strong><code>ZIPARCHIVE::CM_DEFAULT</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Benutze &quot;deflate&quot; oder &quot;store&quot; je nachdem was
+     effektiver ist.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.cm-store">
+    <strong><code>ZIPARCHIVE::CM_STORE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Daten unkomprimiert mit der &quot;store&quot; Methode ablegen
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.cm-shrink">
+    <strong><code>ZIPARCHIVE::CM_SHRINK</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Daten mit der &quot;shrink&quot; Methode ablegen
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.cm-reduce-1">
+    <strong><code>ZIPARCHIVE::CM_REDUCE_1</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Daten mit Faktor 1 reduzieren
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.cm-reduce-2">
+    <strong><code>ZIPARCHIVE::CM_REDUCE_2</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Daten mit Faktor 2 reduzieren
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.cm-reduce-3">
+    <strong><code>ZIPARCHIVE::CM_REDUCE_3</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Daten mit Faktor 3 reduzieren
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.cm-reduce-4">
+    <strong><code>ZIPARCHIVE::CM_REDUCE_4</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Daten mit Faktor 4 reduzieren
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.cm-implode">
+    <strong><code>ZIPARCHIVE::CM_IMPLODE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Daten mit der &quot;implode&quot; Methode ablegen
+    </span>
+   </dd>
+
+  
+   
+   <dt id="ziparchive.constants.cm-deflate">
+    <strong><code>ZIPARCHIVE::CM_DEFLATE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Daten mit der &quot;deflate&quot; Methode ablegen
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.cm-deflate64">
+    <strong><code>ZIPARCHIVE::CM_DEFLATE64</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Daten mit der &quot;deflate64&quot; Methode ablegen
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.cm-pkware-implode">
+    <strong><code>ZIPARCHIVE::CM_PKWARE_IMPLODE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Daten mit der PKWARE Implode Methode ablegen
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.cm-bzip2">
+    <strong><code>ZIPARCHIVE::CM_BZIP2</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Daten mit dem Bzip2 Algorithmus ablegen
+    </span>
+   </dd>
+
+  
+  
+  
+   <dt id="ziparchive.constants.er-ok">
+    <strong><code>ZIPARCHIVE::ER_OK</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Kein Fehler.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-multidisk">
+    <strong><code>ZIPARCHIVE::ER_MULTIDISK</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ZIP Archiv über mehrere Datenträger nicht unterstützt.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-rename">
+    <strong><code>ZIPARCHIVE::ER_RENAME</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Umbenennung einer temporären Datei fehlgeschlagen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-close">
+    <strong><code>ZIPARCHIVE::ER_CLOSE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Schließen eines Archivs fehlgeschlagen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-seek">
+    <strong><code>ZIPARCHIVE::ER_SEEK</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Seek Fehler
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-read">
+    <strong><code>ZIPARCHIVE::ER_READ</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Lesefehler
+    </span>
+   </dd>
+
+  
+  
+  
+   <dt id="ziparchive.constants.er-write">
+    <strong><code>ZIPARCHIVE::ER_WRITE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Schreibfehler
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-crc">
+    <strong><code>ZIPARCHIVE::ER_CRC</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     CRC Prüfsummenfehler
+    </span>
+   </dd>
+
+  
+   
+   <dt id="ziparchive.constants.er-zipclosed">
+    <strong><code>ZIPARCHIVE::ER_ZIPCLOSED</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das die Datei enthaltende Archiv wurde geschlossen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-noent">
+    <strong><code>ZIPARCHIVE::ER_NOENT</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Datei nicht gefunden.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-exists">
+    <strong><code>ZIPARCHIVE::ER_EXISTS</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Datei existiert bereits.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-open">
+    <strong><code>ZIPARCHIVE::ER_OPEN</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Datei kann nicht geöffnet werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-tmpopen">
+    <strong><code>ZIPARCHIVE::ER_TMPOPEN</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Temporäre Datei kann nicht angelegt werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-zlib">
+    <strong><code>ZIPARCHIVE::ER_ZLIB</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Zlib Fehler
+    </span>
+   </dd>
+
+  
+  
+  
+   <dt id="ziparchive.constants.er-memory">
+    <strong><code>ZIPARCHIVE::ER_MEMORY</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Speicheranforderung fehlgeschlagen
+    </span>
+   </dd>
+
+  
+  
+  
+   <dt id="ziparchive.constants.er-changed">
+    <strong><code>ZIPARCHIVE::ER_CHANGED</code></strong>
+    (<span class="type">string</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Eintrag wurde geändert.
+    </span>
+   </dd>
+
+  
+  
+  
+   <dt id="ziparchive.constants.er-compnotsupp">
+    <strong><code>ZIPARCHIVE::ER_COMPNOTSUPP</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Kompressionsmethode nicht unterstützt.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-eof">
+    <strong><code>ZIPARCHIVE::ER_EOF</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Unerwartetes Dateiende.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-inval">
+    <strong><code>ZIPARCHIVE::ER_INVAL</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Ungültiges Argument.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-nozip">
+    <strong><code>ZIPARCHIVE::ER_NOZIP</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Kein Ziparchiv.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-internal">
+    <strong><code>ZIPARCHIVE::ER_INTERNAL</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Interner Fehler.
+    </span>
+   </dd>
+
+  
+   
+   <dt id="ziparchive.constants.er-incons">
+    <strong><code>ZIPARCHIVE::ER_INCONS</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Ziparchiv inkonsistent.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-remove">
+    <strong><code>ZIPARCHIVE::ER_REMOVE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Datei kann nicht entfernt werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="ziparchive.constants.er-deleted">
+    <strong><code>ZIPARCHIVE::ER_DELETED</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Eintrag wurde entfernt.
+    </span>
+   </dd>
+
+  
+ </dl>
+
+ 
+ <dl>
+
+  <strong class="title">Betriebssystemkonstanten für externe Attribute</strong>
+ 
+  <dt id="ziparchive.constants.opsys.default">
+   <strong><code>ZipArchive::OPSYS_DOS</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_AMIGA</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_OPENVMS</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_UNIX</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_VM_CMS</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_ATARI_ST</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_OS_2</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_MACINTOSH</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_Z_SYSTEM</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_CPM</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_WINDOWS_NTFS</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_MVS</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_VSE</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_ACORN_RISC</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_VFAT</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_ALTERNATE_MVS</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_BEOS</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_TANDEM</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_OS_400</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_OS_X</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dt>
+
+   <strong><code>ZipArchive::OPSYS_DEFAULT</code></strong> (<span class="type">integer</span>)
+  </dt>
+
+  <dd>
+
+   <span class="simpara">
+    Seit PHP 5.6.0, PECL zip 1.12.4
+   </span>
+  </dd>
+
+ 
+ </dl>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

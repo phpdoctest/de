@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Setzt die Parameter der aktuellen mnoGoSearch Session</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.search.html">Suchmaschinenerweiterungen</a></li>
+  <li class="header up"><a href="book.mnogosearch.html">mnoGoSearch</a></li>
+  <li class="header up"><a href="ref.mnogosearch.html">mnoGoSearch Funktionen</a></li>
+  <li><a href="function.udm-add-search-limit.html">udm_add_search_limit</a></li>
+  <li><a href="function.udm-alloc-agent-array.html">udm_alloc_agent_array</a></li>
+  <li><a href="function.udm-alloc-agent.html">udm_alloc_agent</a></li>
+  <li><a href="function.udm-api-version.html">udm_api_version</a></li>
+  <li><a href="function.udm-cat-list.html">udm_cat_list</a></li>
+  <li><a href="function.udm-cat-path.html">udm_cat_path</a></li>
+  <li><a href="function.udm-check-charset.html">udm_check_charset</a></li>
+  <li><a href="function.udm-clear-search-limits.html">udm_clear_search_limits</a></li>
+  <li><a href="function.udm-crc32.html">udm_crc32</a></li>
+  <li><a href="function.udm-errno.html">udm_errno</a></li>
+  <li><a href="function.udm-error.html">udm_error</a></li>
+  <li><a href="function.udm-find.html">udm_find</a></li>
+  <li><a href="function.udm-free-agent.html">udm_free_agent</a></li>
+  <li><a href="function.udm-free-ispell-data.html">udm_free_ispell_data</a></li>
+  <li><a href="function.udm-free-res.html">udm_free_res</a></li>
+  <li><a href="function.udm-get-doc-count.html">udm_get_doc_count</a></li>
+  <li><a href="function.udm-get-res-field.html">udm_get_res_field</a></li>
+  <li><a href="function.udm-get-res-param.html">udm_get_res_param</a></li>
+  <li><a href="function.udm-hash32.html">udm_hash32</a></li>
+  <li><a href="function.udm-load-ispell-data.html">udm_load_ispell_data</a></li>
+  <li class="active"><a href="function.udm-set-agent-param.html">udm_set_agent_param</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.udm-load-ispell-data.html">udm_load_ispell_data</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="book.solr.html">Solr</a></div>
+                <div class="up"><a href="ref.mnogosearch.html">mnoGoSearch Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.udm-set-agent-param" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">udm_set_agent_param</h1>
+  <p class="refpurpose">Setzt die Parameter der aktuellen mnoGoSearch Session</p>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.udm-set-agent-param-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">udm_set_agent_param</span>
+    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$agent</code></span>
+   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$var</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$val</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Deklariert mnoGoSearch Sessionparameter.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.udm-set-agent-param-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">agent</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Verweis auf einen Agent, der durch
+       <span class="function">udm_alloc_agent</span> geholt wurde.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">var</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die folgenden Parameter und deren Werte sind erlaubt:
+       <ul class="itemizedlist">
+        <li class="listitem">
+         <span class="simpara">
+          UDM_PARAM_PAGE_NUM - wird genutzt, um eine bestimmte Seite
+          aus den Suchergebnissen auszuwählen. Ergebnissseiten
+          werden von 0 an gezählt.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          UDM_PARAM_PAGE_SIZE - Anzahl der Suchergebnisse, die pro
+          Seite angezeigt werden.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          UDM_PARAM_SEARCH_MODE - Suchmodus. Die folgenden Werte
+          sind erlaubt: UDM_MODE_ALL - Logische UND-Verknüpfung;
+          UDM_MODE_ANY - Logische ODER-Verknüpfung; UDM_MODE_BOOL -
+          boolsche Suche. Siehe <span class="function">udm_find</span> für
+          weitere Details zur boolschen Suche.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          UDM_PARAM_CACHE_MODE - Schaltet den Ergebnis-Cache an oder
+          aus. Falls eingeschaltet wird die Suchmaschine
+          Suchergebnisse auf der Festplatte zwischenspeichern. Für
+          den Fall, dass später eine ähnliche Suche durchgeführt
+          wird, werden die Ergebnisse für ein schnelleres Ergebnis
+          aus dem Cache gelesen. Werte: UDM_CACHE_ENABLED,
+          UDM_CACHE_DISABLED.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          UDM_PARAM_TRACK_MODE - schaltet den Trackquery-Modus an oder
+          aus. Seit Version 3.1.12 von mnoGoSearch wird eine
+          Verfolgung von Suchanfragen unterstützt. Um die
+          Track-Funktion nutzen zu können, müssen zusätzliche
+          SQL-Tabellen angelegt werden. Für MySQL liegen die
+          Tabellenbeschreibungen in create/mysql/track.txt. Wird eine
+          Suche durchgeführt, werden die Suchwörter in diesen Tabellen
+          zusammen mit der Anzahl der gefundenen Dokumente und dem
+          aktuellen Unix-Timestamp gespeichert. Verfügbare Werte:
+          UDM_TRACK_ENABLED, UDM_TRACK_DISABLED.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          UDM_PARAM_PHRASE_MODE - Gibt an, ob die Index-Datenbank eine
+          Unterstützung für &quot;Phrases&quot; erlaubt. (Muß vor der Indizierung in der
+          indexer.conf eingeschaltet werden. Mögliche Werte: UDM_PHRASE_ENABLED und
+          UDM_PHRASE_DISABLED. Wird der Phrase-Modus verwendet, ist es natürlich
+          nach wie vor möglich, alle anderen Suchmodi zu verwenden. Seit Version
+          3.1.11 wird auch der Cache-Modus zusammen mit dem Phrase-Modus
+          unterstützt.
+         </span>
+         <span class="simpara">
+          Beispiele:
+         </span>
+         <span class="simpara">
+          &quot;Arizona desert&quot; - Diese Abfrage gibt alle Dokumente zurück, die
+          &quot;Arizona desert&quot; als eine Zeichenkette enthalten. Für eine Suche nach
+          kompletten Zeichenkette müssen diese in doppelte Anführungszeichen
+          gesetzt werden.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          UDM_PARAM_CHARSET - Legt einen lokalen Zeichensatz wie koi8-r, cp1252
+          fest.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          UDM_PARAM_STOPFILE - Legt den Namen und den Pfad einer stopword-Datei
+          fest. Auch hier wird nicht relativ zu UDM_CONF_DIR gesucht sondern
+          relativ zu zu dem Pfad wo das aktuelle PHP-Script läuft.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          UDM_PARAM_STOPTABLE - Lädt die stopwords aus der angegebenen SQL-Tabelle.
+          Es können mehrere Stopwordtable-Kommandos verwendet werden.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          UDM_PARAM_WEIGHT_FACTOR - Legt fest, wie bestimmte Teile eines Dokumentes
+          zur Sortierung gewertet werden. Zur Zeit werden Body, Title, Keywords,
+          Description und URL unterstützt. Um dieses Feature nutzen zu können, muss
+          der Grad 2 in den *Weight-Anweisungen in der indexer.conf verwendet
+          werden. Stellen wir uns vor, folgende Werte würden verwendet:
+         </span>
+         <pre class="literallayout">
+          URLWeight     1
+          BodyWeight    2
+          TitleWeight   4
+          KeywordWeight 8
+          DescWeight    16
+         </pre>
+         <span class="simpara">
+         Solange der Indexer eine logische bit-ODER Operation verwendet, um das
+         Gewicht einzelner Wörter festzulegen, wenn ein Wort mehrere Male im
+         selben Dokument vorkommt, ist es möglich, zur Zeit der Suche
+         festzustellen, welches Wort in welchem Teil des Dokumentes vorkommt.
+         Wörter, die nur im Body auftauchen, haben das Gewicht 00000010 in
+         binärer Notation. Wörter, die in allen Dokumententeilen vorkommen haben
+         das Gewicht 00011111.
+        </span>
+        <span class="simpara">
+         Der Wert dieses Parameter ist ein String, bestehend aus den hexadezimalen
+         Ziffern ABCDE. Jede Ziffer ist ein Faktor für das korrespondierende Bit.
+         Für die oben angeführte Konfiguration zum Beispiel:
+        </span>
+        <pre class="literallayout">
+         E ist ein Faktor für das Gewicht 1  (URL Weight bit)
+         D ist ein Faktor für das Gewicht 2  (BodyWeight bit)
+         C ist ein Faktor für das Gewicht 4  (TitleWeight bit)
+         B ist ein Faktor für das Gewicht 8  (KeywordWeight bit)
+         A ist ein Faktor für das Gewicht 16 (DescWeight bit)
+        </pre>
+        <span class="simpara">
+         Beispiele:
+        </span>
+        <span class="simpara">
+         UDM_PARAM_WEIGHT_FACTOR=00001 wird nur in URLs suchen.
+        </span>
+        <span class="simpara">
+         UDM_PARAM_WEIGHT_FACTOR=00100 wird nur in Titeln suchen.
+        </span>
+        <span class="simpara">
+         UDM_PARAM_WEIGHT_FACTOR=11100 wird in Titel, Keywords, Description
+         aber nicht in URL und Body suchen.
+        </span>
+        <span class="simpara">
+         UDM_PARAM_WEIGHT_FACTOR=F9421 wird folgendermaßen Suchen und Werten:
+        </span>
+        <pre class="literallayout">
+         Beschreibung mit dem Faktor 15  (F hex)
+         Keywords mit dem Faktor 9
+         Title mit dem Faktor  4
+         Body mit dem Faktor 2
+         URL mit dem Faktor 1
+        </pre>
+        <span class="simpara">
+         Wenn die Variable UDM_PARAM_WEIGHT_FACTOR übergeben wird, wird das
+         Originalgewicht zur Sortierung verwendet.
+        </span>
+       </li>
+       <li class="listitem">
+        <span class="simpara">
+         UDM_PARAM_WORD_MATCH - Wortteilübereinstimmung. Dieser Parameter kann
+         verwendet werden, um festzulegen, welcher Wortteil mit dem gesuchten Wort
+         übereinstimmen muss. Dieses Feature funktioniert nur im &quot;single&quot; oder
+         &quot;multi&quot;-Modus. Im Cachemode und in den CRC-Modi ist eine Verwendung nicht
+         möglich. Erlaubt Werte:
+        </span>
+        <span class="simpara">UDM_MATCH_BEGIN - Der Wortanfang muss übereinstimmen;</span>
+        <span class="simpara">UDM_MATCH_END - Das Wortende muss übereinstimmen;</span>
+        <span class="simpara">UDM_MATCH_WORD - Das gesamte Wort muss übereinstimmen;</span>
+        <span class="simpara">UDM_MATCH_SUBSTR - Teile des Wortes müssen übereinstimmen.</span>
+       </li>
+       <li class="listitem">
+        <span class="simpara">
+         UDM_PARAM_MIN_WORD_LEN - Legt die mininmale Wortlänge fest. Jedes Wort,
+         dass kürzer als die angegebene Länge ist, wird als stopword aufgefasst.
+        </span>
+       </li>
+       <li class="listitem">
+        <span class="simpara">
+         UDM_PARAM_ISPELL_PREFIXES - Mögliche Werte: UDM_PREFIXES_ENABLED und
+         UDM_PREFIXES_DISABLED, die explizit die Verwendung von ISpell-Prefixen
+         an- oder abschalten. Wird also zum Beispiel das Wort &quot;tested&quot; in einer
+         Suchabfrage verwendet, werden auch Wörter wie &quot;test&quot; oder &quot;testing&quot;
+         gefunden. Nur Endungen werden normalerweise Unterstützt. Prefixe
+         verändern für gewöhnlich die Bedeutung von Wörtern. So werden bei einer
+         Suche nach &quot;tested&quot; z.B. auch Dokumente gefunden, die das Wort
+         &quot;untested&quot; enthalten. Um diese Funktion nutzen zu können, müssen vorher
+         mittels <span class="function">udm_load_ispell_data</span> ISpell-Daten geladen
+         werden.
+        </span>
+       </li>
+       <li class="listitem">
+        <span class="simpara">
+         UDM_PARAM_CROSS_WORDS - Aktiviert oder deaktiviert eine Unterstützung für
+         Crosswords. Mögliche Werte: UDM_CROSS_WORDS_ENABLED und
+         UDM_CROSS_WORDS_DISABLED.
+        </span>
+        <span class="simpara">
+         Das Crosswords-Feature erlaubt es, Wörter zwischen &lt;a href=&quot;xxx&quot;&gt;
+         und &lt;/a&gt; dem Dokument zuzuordnen, zu dem dieser Link führt.
+        </span>
+       </li>
+      </ul>
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">val</code></dt>
+
+    <dd>
+
+     <p class="para">
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </p>
+</div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.udm-set-agent-param-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>4.1.0</td>
+       <td>
+        <strong><code>UDM_PARAM_VARDIR</code></strong> was added.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.udm-set-agent-param-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.udm-set-agent-param-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <span class="simpara">
+    Crosswords are supported only in mnoGoSearch 3.1.11 or later.
+   </span>
+  </p></blockquote>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

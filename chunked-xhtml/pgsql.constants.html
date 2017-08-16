@@ -1,0 +1,983 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Konstanten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.pgsql.html">PostgreSQL</a></li>
+  <li><a href="intro.pgsql.html">Einf&uuml;hrung</a></li>
+  <li><a href="pgsql.setup.html">Installation/Konfiguration</a></li>
+  <li class="active"><a href="pgsql.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="pgsql.examples.html">Beispiele</a></li>
+  <li><a href="ref.pgsql.html">PostgreSQL-Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="pgsql.resources.html">Ressource-Typen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="pgsql.examples.html">Beispiele</a></div>
+                <div class="up"><a href="book.pgsql.html">PostgreSQL</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="pgsql.constants" class="appendix">
+ <h1>Vordefinierte Konstanten</h1>
+ <p class="simpara">Folgende Konstanten werden von dieser
+Erweiterung definiert und stehen nur zur Verfügung, wenn die Erweiterung entweder
+statisch in PHP kompiliert oder dynamisch zur Laufzeit geladen
+wurde.</p>
+
+ <dl>
+
+  
+   <dt id="constant.pgsql-libpq-version">
+    <strong><code>PGSQL_LIBPQ_VERSION</code></strong>
+    (<span class="type">string</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Kurze libpq Version, die nur Zahlen und Punkte enthält.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-libpq-version-str">
+    <strong><code>PGSQL_LIBPQ_VERSION_STR</code></strong>
+    (<span class="type">string</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Lange libpq Version, die Compiler-Information enthält.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-assoc">
+    <strong><code>PGSQL_ASSOC</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+      Wird an die Funktion <span class="function">pg_fetch_array</span>
+   übergeben. Gibt ein assoziatives Array zurück, mit den Feldnamen
+   als Indizes und den entsprechenden Werten.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-num">
+    <strong><code>PGSQL_NUM</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+      Wird an die Funktion <span class="function">pg_fetch_array</span>
+   übergeben. Gibt ein numerisches Array zurück, mit den Feldnummern
+   als Indizes und den entsprechenden Werten.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-both">
+    <strong><code>PGSQL_BOTH</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+      Wird an die Funktion <span class="function">pg_fetch_array</span> übergeben.
+      Gibt ein Array zurück, das sowohl assoziativ (mit den Feldnamen)
+      als auch numerisch (mit den Feldnummern) indiziert ist, und den
+      entsprechenden Werten.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-connect-force-new">
+    <strong><code>PGSQL_CONNECT_FORCE_NEW</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+      Wird an die Funktion <span class="function">pg_connect</span> übergeben, um
+   eine neue Verbindung zu erzwingen, anstatt eine identische,
+   bereits geöffnete Verbindung wieder zu benutzen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-connect-async">
+    <strong><code>PGSQL_CONNECT_ASYNC</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an <span class="function">pg_connect</span> übergeben, um eine asynchrone
+     Verbindung zu erzeugen. In PHP 5.6.0 hinzugefügt.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-connection-bad">
+    <strong><code>PGSQL_CONNECTION_BAD</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+      Wird von der Funktion <span class="function">pg_connection_status</span>
+   zurückgegeben und  zeigt an, dass der Status der
+   Datenbankverbindung ungültig ist.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-connection-ok">
+    <strong><code>PGSQL_CONNECTION_OK</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+      Wird von der Funktion <span class="function">pg_connection_status</span>
+   zurückgegeben und zeigt an, dass der Status der
+   Datenbankverbindung gültig ist.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-seek-set">
+    <strong><code>PGSQL_SEEK_SET</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_lo_seek</span> übergeben.
+  Das Objekt wird von Beginn an durchsucht.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-seek-cur">
+    <strong><code>PGSQL_SEEK_CUR</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_lo_seek</span> übergeben.
+  Das Objekt wird ab der aktuellen Position durchsucht.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-seek-end">
+    <strong><code>PGSQL_SEEK_END</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_lo_seek</span> übergeben.
+  Das Objekt wird, ausgehend vom Ende, durchsucht.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-empty-query">
+    <strong><code>PGSQL_EMPTY_QUERY</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von der Funktion <span class="function">pg_result_status</span>
+  zurückgegeben, wenn der an den Server gesendete String leer war.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-command-ok">
+    <strong><code>PGSQL_COMMAND_OK</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von der Funktion <span class="function">pg_result_status</span>
+  zurückgegeben. Ein Kommando wurde erfolgreich ausgeführt, aber es
+  wurden keine Daten zurückgegeben.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-tuples-ok">
+    <strong><code>PGSQL_TUPLES_OK</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von der Funktion <span class="function">pg_result_status</span>
+  zurückgegeben. Ein Kommando wurde erfolgreich ausgeführt und es
+  wurden Daten (wie etwa ein <em>SELECT</em> oder
+  <em>SHOW</em>) zurückgegeben.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-copy-out">
+    <strong><code>PGSQL_COPY_OUT</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von der Funktion <span class="function">pg_result_status</span>
+  zurückgegeben. Ein Datentransfer vom Server wurde gestartet.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-copy-in">
+    <strong><code>PGSQL_COPY_IN</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von der Funktion <span class="function">pg_result_status</span>
+  zurückgegeben. Ein Datentransfer zum Server wurde gestartet.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-bad-response">
+    <strong><code>PGSQL_BAD_RESPONSE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von der Funktion <span class="function">pg_result_status</span>
+  zurückgegeben. Die Serverantwort wurde nicht verstanden.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-nonfatal-error">
+    <strong><code>PGSQL_NONFATAL_ERROR</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von der Funktion <span class="function">pg_result_status</span>
+  zurückgegeben. Ein nicht-fataler Fehler (eine Notiz oder Warnung)
+  ist aufgetreten.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-fatal-error">
+    <strong><code>PGSQL_FATAL_ERROR</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von der Funktion <span class="function">pg_result_status</span>
+  zurückgegeben. Ein fataler Fehler ist aufgetreten.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-transaction-idle">
+    <strong><code>PGSQL_TRANSACTION_IDLE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von der Funktion <span class="function">pg_transaction_status</span>
+  zurückgegeben. Die Verbindung wird momentan nicht benutzt, es
+  findet aktuell keine Transaktion statt.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-transaction-active">
+    <strong><code>PGSQL_TRANSACTION_ACTIVE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von der Funktion <span class="function">pg_transaction_status</span>
+  zurückgegeben. Die Verbindung wird momentan benutzt. Es wird eine
+  Abfrage  ausgeführt, die noch nicht beendet ist.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-transaction-intrans">
+    <strong><code>PGSQL_TRANSACTION_INTRANS</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von der Funktion <span class="function">pg_transaction_status</span>
+  zurückgegeben. Die Verbindung wird von einer Transaktion benutzt,
+  ist aber momentan nicht aktiv.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-transaction-inerror">
+    <strong><code>PGSQL_TRANSACTION_INERROR</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von der Funktion <span class="function">pg_transaction_status</span>
+  zurückgegeben. Die Verbindung wurde von einer abgebrochenen
+  Transaktion benutzt und ist momentan nicht aktiv.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-transaction-unknown">
+    <strong><code>PGSQL_TRANSACTION_UNKNOWN</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von der Funktion <span class="function">pg_transaction_status</span>
+  zurückgegeben. Die Verbindung ist ungültig.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-diag-severity">
+    <strong><code>PGSQL_DIAG_SEVERITY</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_result_error_field</span>
+  übergeben.
+     Gibt den Schweregrad des Fehlers zurück. Die Feldinhalte sind <em>ERROR</em>,
+     <em>FATAL</em> oder <em>PANIC</em>
+  (in einer Fehlermeldung) oder <em>WARNING</em>,
+  <em>NOTICE</em>, <em>DEBUG</em>,
+     <em>INFO</em> oder <em>LOG</em>
+  (in einer Notice-Meldung) oder eine lokalisierte Übersetzung davon.
+  Dieses Feld ist immer verfügbar.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-diag-sqlstate">
+    <strong><code>PGSQL_DIAG_SQLSTATE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_result_error_field</span>
+  übergeben. Gibt den SQLSTATE-Code des Fehlers zurück. Der
+  SQLSTATE-Code identifiziert den Typ des aufgetretenen Fehlers.
+  Dieser kann von Anwendungen ausgewertet werden, um entsprechende
+  Operationen auszuführen (beispielsweise Fehlerbehandlungsroutinen),
+  als Reaktion auf einen bestimmten Datenbankfehler. dieses Feld kann
+  nicht lokalisiert werden und ist immer verfügbar.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-diag-message-primary">
+    <strong><code>PGSQL_DIAG_MESSAGE_PRIMARY</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_result_error_field</span>
+  übergeben. Dies ist die primäre, für Menschen lesbare Fehlermeldung
+  (normalerweise in einer Zeile) und ist immer verfügbar.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-diag-message-detail">
+    <strong><code>PGSQL_DIAG_MESSAGE_DETAIL</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_result_error_field</span>
+  übergeben. Detail: eine optionale untergeordnete Fehlermeldung, in
+  der das Problem genauer beschrieben wird. Diese Meldung kann
+  mehrere Zeilen lang sein.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-diag-message-hint">
+    <strong><code>PGSQL_DIAG_MESSAGE_HINT</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_result_error_field</span>
+  übergeben. Hint: ein optionaler Hinweis, wie mit dem Problem
+  umzugehen ist. Dies wurde eingeführt, um (möglicherweise
+  unpassende) Lösungen zur Verfügung zu stellen, anstatt harte
+  Fakten, wie bei Details. Diese Meldung kann mehrere Zeilen lang
+  sein.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-diag-statement-position">
+    <strong><code>PGSQL_DIAG_STATEMENT_POSITION</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_result_error_field</span>
+  übergeben. Dies ist ein String, der eine dezimale Integerzahl
+  enthält, die die Cursorposition des originalen SQL-Strings angibt,
+  an der ein Fehler auftrat. Das erste Zeichen hat die Position 1 und
+  zur Bestimmung der Positionen werden Zeichen zugrundegelegt und
+  nicht Bytes.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-diag-internal-position">
+    <strong><code>PGSQL_DIAG_INTERNAL_POSITION</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_result_error_field</span>
+  übergeben. Per Definition ist das dasselbe wie das Feld
+  <strong><code>PG_DIAG_STATEMENT_POSITION</code></strong>, es wird aber
+  benutzt, wenn die Cursorposition auf ein intern generiertes
+  Kommando verweist und nicht auf eines, das vom Benutzer eingegeben
+  wurde. Das Feld <strong><code>PG_DIAG_INTERNAL_QUERY</code></strong> wird
+  immer gesetzt, wenn dieses Feld gesetzt ist.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-diag-internal-query">
+    <strong><code>PGSQL_DIAG_INTERNAL_QUERY</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_result_error_field</span>
+  übergeben. Dies ist der Text eines fehlgeschlagenen, intern
+  generierten Kommandos. Das kann beispielsweise eine SQL-Abfrage
+  sein, die von einer PL/pgSQL-Funktion gesendet wurde.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-diag-context">
+    <strong><code>PGSQL_DIAG_CONTEXT</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_result_error_field</span>
+  übergeben. Dies gibt einen Hinweis auf den Kontext, in dem ein
+  Fehler auftrat. Gegenwärtig sind Zurückverfolgungen des
+  Aufrufstacks von Funktionen aktivierter prozeduraler Sprachen darin
+  enthalten, sowie intern generierte Abfragen. Die Ablaufverfolgung
+  enthält einen Eintrag pro Zeile, die neuesten Einträge zuerst.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-diag-source-file">
+    <strong><code>PGSQL_DIAG_SOURCE_FILE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_result_error_field</span>
+  übergeben. Dies ist der Name der Datei im PostgreSQL-Quellcode, bei
+  der der Fehler gemeldet wurde.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-diag-source-line">
+    <strong><code>PGSQL_DIAG_SOURCE_LINE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_result_error_field</span>
+  übergeben. Die Zeilennummer in der Datei im PostgreSQL-Quellcode,
+  bei der der Fehler gemeldet wurde.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-diag-source-function">
+    <strong><code>PGSQL_DIAG_SOURCE_FUNCTION</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_result_error_field</span>
+  übergeben. Der Name der Funktion im PostgreSQL-Quellcode, bei der
+  der Fehler gemeldet wurde.
+    </span>
+   </dd>
+
+  
+
+  
+   <dt id="constant.pgsql-errors-terse">
+    <strong><code>PGSQL_ERRORS_TERSE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_set_error_verbosity</span>
+  übergeben. Damit wird festgelegt, dass Fehlermeldungen die Felder
+  severity, primary text und position enthalten. Normalerweise passt
+  das alles in eine Zeile.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-errors-default">
+    <strong><code>PGSQL_ERRORS_DEFAULT</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_set_error_verbosity</span>
+  übergeben. Die Standardeinstellung gibt Meldungen mit den oben
+  beschriebenen Inhalten zurück, zuzüglich aller Details, Hinweise
+  und Kontext-Informationen. (Dies kann mehrere Zeilen umfassen.)
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-errors-verbose">
+    <strong><code>PGSQL_ERRORS_VERBOSE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_set_error_verbosity</span>
+  übergeben. In diesem Modus werden alle verfügbaren Felder
+  zurückgegeben.
+    </span>
+   </dd>
+
+  
+
+  
+   <dt id="constant.pgsql-status-long">
+    <strong><code>PGSQL_STATUS_LONG</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_result_status</span>
+  übergeben. Zeigt an, dass ein numerischer Ergebniscode gewünscht
+  ist.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-status-string">
+    <strong><code>PGSQL_STATUS_STRING</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_result_status</span>
+  übergeben. Zeigt an, dass eine textuelles Ergebnis gewünscht ist.
+    </span>
+   </dd>
+
+  
+
+  
+   <dt id="constant.pgsql-conv-ignore-default">
+    <strong><code>PGSQL_CONV_IGNORE_DEFAULT</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_convert</span> übergeben.
+  Während der Konversion werden Standardwerte in der Tabelle
+  ignoriert.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-conv-force-null">
+    <strong><code>PGSQL_CONV_FORCE_NULL</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_convert</span> übergeben.
+     Anstelle eines leeren Strings <span class="type">string</span> wird der SQL
+  Nullwert <em>NULL</em> benutzt.
+ </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-conv-ignore-not-null">
+    <strong><code>PGSQL_CONV_IGNORE_NOT_NULL</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an die Funktion <span class="function">pg_convert</span> übergeben.
+     Die Konversion von <strong><code>NULL</code></strong> in SQL <em>NOT NULL</em>-Spalten wird ignoriert.
+    </span>
+   </dd>
+
+  
+
+  
+   <dt id="constant.pgsql-dml-no-conv">
+    <strong><code>PGSQL_DML_NO_CONV</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an <span class="function">pg_insert</span>, <span class="function">pg_select</span>,
+     <span class="function">pg_update</span> und <span class="function">pg_delete</span>
+     übergeben. Alle Parameter werden übergeben wie sie sind. Manuelles
+     Maskieren ist erforderlich, wenn Parameter Anwenderdaten enthalten. Dafür
+     ist <span class="function">pg_escape_string</span> zu verwenden.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-dml-exec">
+    <strong><code>PGSQL_DML_EXEC</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an <span class="function">pg_insert</span>, <span class="function">pg_select</span>,
+     <span class="function">pg_update</span> und <span class="function">pg_delete</span> übergeben.
+     Führt eine Abfrage durch diese Funktionen aus.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-dml-async">
+    <strong><code>PGSQL_DML_ASYNC</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an <span class="function">pg_insert</span>, <span class="function">pg_select</span>,
+     <span class="function">pg_update</span> und <span class="function">pg_delete</span> übergeben.
+     Führt eine asynchrone Abfrage durch diese Funktionen aus.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-dml-string">
+    <strong><code>PGSQL_DML_STRING</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an <span class="function">pg_insert</span>, <span class="function">pg_select</span>,
+     <span class="function">pg_update</span> und <span class="function">pg_delete</span> übergeben.
+     Gibt den ausgeführten Abfragestring zurück.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-dml-escape">
+    <strong><code>PGSQL_DML_ESCAPE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird an <span class="function">pg_insert</span>, <span class="function">pg_select</span>,
+     <span class="function">pg_update</span> und <span class="function">pg_delete</span>
+     übergeben. Maskiert alle Parameter anstatt <span class="function">pg_convert</span>
+     intern aufzurufen. Diese Option verzichtet auf das Nachschlagen von
+     Meta-Daten. Die Abfrage kann so schnell sein wie
+     <span class="function">pg_query</span> und <span class="function">pg_send_query</span>.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-polling-failed">
+    <strong><code>PGSQL_POLLING_FAILED</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von <span class="function">pg_connect_poll</span> zurückgegeben, um anzuzeigen,
+     dass der Verbindungsversuch fehlschlug.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-polling-reading">
+    <strong><code>PGSQL_POLLING_READING</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von <span class="function">pg_connect_poll</span> zurückgegeben, um anzuzeigen,
+     dass die Verbindung auf Lesebereitschaft des PostgreSQL-Socket wartet.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-polling-writing">
+    <strong><code>PGSQL_POLLING_WRITING</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von <span class="function">pg_connect_poll</span> zurückgegeben, um anzuzeigen,
+     dass die Verbindung auf Schreibbereitschaft des PostgreSQL-Socket wartet.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-polling-ok">
+    <strong><code>PGSQL_POLLING_OK</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von <span class="function">pg_connect_poll</span> zurückgegeben, um anzuzeigen,
+     dass die Verbindung bereit zur Verwendung ist.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-polling-active">
+    <strong><code>PGSQL_POLLING_ACTIVE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Wird von <span class="function">pg_connect_poll</span> zurückgegeben, um anzuzeigen,
+     dass die Verbindung zur Zeit aktiv ist.
+    </span>
+   </dd>
+
+  
+
+ </dl>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

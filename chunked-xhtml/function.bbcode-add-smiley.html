@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: F&uuml;gt dem Parser ein Smiley hinzu</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li class="header up"><a href="book.bbcode.html">BBCode</a></li>
+  <li class="header up"><a href="ref.bbcode.html">BBCode Funktionen</a></li>
+  <li><a href="function.bbcode-add-element.html">bbcode_add_element</a></li>
+  <li class="active"><a href="function.bbcode-add-smiley.html">bbcode_add_smiley</a></li>
+  <li><a href="function.bbcode-create.html">bbcode_create</a></li>
+  <li><a href="function.bbcode-destroy.html">bbcode_destroy</a></li>
+  <li><a href="function.bbcode-parse.html">bbcode_parse</a></li>
+  <li><a href="function.bbcode-set-arg-parser.html">bbcode_set_arg_parser</a></li>
+  <li><a href="function.bbcode-set-flags.html">bbcode_set_flags</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.bbcode-add-element.html">bbcode_add_element</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.bbcode-create.html">bbcode_create</a></div>
+                <div class="up"><a href="ref.bbcode.html">BBCode Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.bbcode-add-smiley" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">bbcode_add_smiley</h1>
+  <p class="refpurpose">Fügt dem Parser ein Smiley hinzu</p>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.bbcode-add-smiley-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">bbcode_add_smiley</span>
+    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$bbcode_container</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$smiley</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$replace_by</code></span>
+   )</div>
+
+
+  <p class="para rdfs-comment">
+    Fügt dem Parser ein Smiley hinzu
+  </p>
+
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.bbcode-add-smiley-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">bbcode_container</code></dt>
+
+     <dd>
+
+      <p class="para">
+       BBCode_Container Ressource, die von <span class="function">bbcode_create</span> zurückgegeben wird.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">smiley</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Das Smiley, der ersetzt werden soll.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">replace_by</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der HTML Code, durch das das Textsmiley ersetzt werden soll.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.bbcode-add-smiley-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.bbcode-add-smiley-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-5272">
+    <p><strong>Beispiel #1 <span class="function">bbcode_add_smiley</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*<br />&nbsp;*&nbsp;Die&nbsp;Regeln&nbsp;vorbereiten<br />&nbsp;*/<br /></span><span style="color: #0000BB">$arrayBBCode</span><span style="color: #007700">=array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">=&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(</span><span style="color: #DD0000">'type'</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">BBCODE_TYPE_ROOT</span><span style="color: #007700">,&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'childs'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'!i'</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'b'</span><span style="color: #007700">=&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(</span><span style="color: #DD0000">'type'</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">BBCODE_TYPE_NOARG</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'open_tag'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'&lt;b&gt;'</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'close_tag'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'&lt;/b&gt;'</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'u'</span><span style="color: #007700">=&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(</span><span style="color: #DD0000">'type'</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">BBCODE_TYPE_NOARG</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'open_tag'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'&lt;u&gt;'</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'close_tag'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'&lt;/u&gt;'</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'flags'</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">BBCODE_FLAGS_SMILEYS_OFF</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'i'</span><span style="color: #007700">=&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(</span><span style="color: #DD0000">'type'</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">BBCODE_TYPE_NOARG</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'open_tag'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'&lt;i&gt;'</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'close_tag'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'&lt;/i&gt;'</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'childs'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'b'</span><span style="color: #007700">),<br />);<br /></span><span style="color: #FF8000">/*&nbsp;<br />&nbsp;*&nbsp;Der&nbsp;geparste&nbsp;Text<br />&nbsp;*/<br /></span><span style="color: #0000BB">$text</span><span style="color: #007700">=&lt;&lt;&lt;EOF<br /></span><span style="color: #DD0000">[i]&nbsp;Keine&nbsp;Parse&nbsp;Text&nbsp;[/i]&nbsp;:)<br />[b]&nbsp;Geparst,&nbsp;mit&nbsp;Smiley&nbsp;:(&nbsp;[/b]<br />[u]&nbsp;Geparst,&nbsp;ohne&nbsp;Smiley&nbsp;:D&nbsp;:D&nbsp;[/u]<br /></span><span style="color: #007700">EOF;<br /></span><span style="color: #FF8000">/*<br />&nbsp;*&nbsp;Den&nbsp;Parser&nbsp;initialisieren<br />&nbsp;*/<br /></span><span style="color: #0000BB">$BBHandler</span><span style="color: #007700">=</span><span style="color: #0000BB">bbcode_create</span><span style="color: #007700">(</span><span style="color: #0000BB">$arrayBBCode</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">/*<br />&nbsp;*&nbsp;Dem&nbsp;Parser&nbsp;die&nbsp;Smileyregeln&nbsp;hinzufügen&nbsp;<br />&nbsp;*/<br /></span><span style="color: #0000BB">bbcode_add_smiley</span><span style="color: #007700">(</span><span style="color: #0000BB">$BBHandler</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">":)"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"&lt;img&nbsp;src=\"smiley.gif\"&nbsp;alt=\":)\"&nbsp;/&gt;"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">bbcode_add_smiley</span><span style="color: #007700">(</span><span style="color: #0000BB">$BBHandler</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">":("</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"&lt;img&nbsp;src=\"sad.gif\"&nbsp;alt=\":(\"&nbsp;/&gt;"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">bbcode_add_smiley</span><span style="color: #007700">(</span><span style="color: #0000BB">$BBHandler</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">":D"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"&lt;img&nbsp;src=\"happy.gif\"&nbsp;alt=\":D\"&nbsp;/&gt;"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">bbcode_add_smiley</span><span style="color: #007700">(</span><span style="color: #0000BB">$BBHandler</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">":p"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"&lt;img&nbsp;src=\"tong.gif\"&nbsp;alt=\":p\"&nbsp;/&gt;"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">bbcode_add_smiley</span><span style="color: #007700">(</span><span style="color: #0000BB">$BBHandler</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">":|"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"&lt;img&nbsp;src=\"special.gif\"&nbsp;alt=\":|\"&nbsp;/&gt;"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">bbcode_add_smiley</span><span style="color: #007700">(</span><span style="color: #0000BB">$BBHandler</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">":6:"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"&lt;img&nbsp;src=\"six.gif\"&nbsp;alt=\":6:\"&nbsp;/&gt;"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">/*<br />&nbsp;*&nbsp;Den&nbsp;Text&nbsp;parsen<br />&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">bbcode_parse</span><span style="color: #007700">(</span><span style="color: #0000BB">$BBHandler</span><span style="color: #007700">,</span><span style="color: #0000BB">$text</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+&lt;i&gt; Kein Parse Test &lt;/i&gt; &lt;img src=&quot;smiley.gif&quot; alt=&quot;:)&quot; /&gt;
+&lt;b&gt; Geparst, mit Smiley &lt;img src=&quot;sad.gif&quot; alt=&quot;:(&quot; /&gt; &lt;/b&gt;
+&lt;u&gt; Geparst, ohne Smiley :D &lt;/u&gt;
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

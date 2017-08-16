@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Variablen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.variables.html">Variablen</a></li>
+  <li><a href="language.variables.basics.html">Grundlegendes</a></li>
+  <li class="active"><a href="language.variables.predefined.html">Vordefinierte Variablen</a></li>
+  <li><a href="language.variables.scope.html">Geltungsbereich von Variablen</a></li>
+  <li><a href="language.variables.variable.html">Variable Variablen</a></li>
+  <li><a href="language.variables.external.html">Variablen aus externen Quellen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.variables.basics.html">Grundlegendes</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.variables.scope.html">Geltungsbereich von Variablen</a></div>
+                <div class="up"><a href="language.variables.html">Variablen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.variables.predefined" class="sect1">
+   <h2 class="title">Vordefinierte Variablen</h2>
+   <p class="simpara">
+    PHP bietet jedem ausgeführtem Skript eine Vielzahl von
+    vordefinierten Variablen an. Viele dieser Variablen können
+    jedoch nicht vollständig erläutert werden, da sie abhängig
+    sind vom Web-Server, der Version und dem Setup des Web-
+    Servers sowie weiteren Faktoren. Einige dieser Variablen
+    stehen nicht zur Verfügung, wenn PHP-Skripte per <a href="features.commandline.html" class="link">Kommando-Zeilen-Aufruf</a>
+    ausgeführt werden. Für eine Liste dieser Variablen lesen Sie bitte
+    den Abschnitt <a href="reserved.variables.html" class="link">Vordefinierte
+    Variablen</a>.
+   </p>
+   <div class="warning"><strong class="warning">Warnung</strong>
+    <p class="simpara">
+     Ab PHP 4.2.0 ist der standardmäßige Wert für die PHP-Anweisung
+     <a href="ini.core.html#ini.register-globals" class="link">register_globals</a>
+     <em class="emphasis">off</em>. Dies ist eine wesentliche Änderung in
+     PHP. Die Anweisung register_globals <em class="emphasis">off</em>
+     beeinflusst den Satz von vordefinierten Variablen, die im
+     globalen Bereich verfügbar sind. Um zum Beispiel
+     <var class="varname">DOCUMENT_ROOT</var> zu bekommen, müssen Sie
+     <var class="varname">$_SERVER[&#039;DOCUMENT_ROOT&#039;]</var> statt
+     <var class="varname">$DOCUMENT_ROOT</var> verwenden oder um
+     <var class="varname">$id</var> von der URL
+     <em>http://www.example.com/test.php?id=3</em> zu
+     bekommen <var class="varname">$_GET[&#039;id&#039;]</var> statt
+     <var class="varname">$id</var> oder <var class="varname">$_ENV[&#039;HOME&#039;]</var>
+     statt <var class="varname">$HOME</var>.
+    </p>
+    <p class="simpara">
+     Für diese Änderung betreffende Informationen lesen Sie bitte den
+     Konfigurations-Eintrag für <a href="ini.core.html#ini.register-globals" class="link">register_globals</a>, das
+     Sicherheitskapitel über die <a href="security.globals.html" class="link">Verwendung von Register
+     Globals</a> und außerdem die PHP
+     <a href="http://www.php.net/releases/4_1_0.php" class="link external">&raquo;&nbsp;4.1.0</a> und
+     <a href="http://www.php.net/releases/4_2_0.php" class="link external">&raquo;&nbsp;4.2.0</a> Release
+     Announcements.
+    </p>
+    <p class="simpara">
+     Die reservierten vordefinierten Variablen, wie die
+     <a href="language.variables.superglobals.html" class="link">Superglobalen
+     Arrays</a>, sollten bevorzugt verwendet werden.
+    </p>
+   </div>
+   <p class="simpara">
+    Ab Version 4.1.0 stehen in PHP eine zusätzliche Reihe
+    vordefinierter Arrays zur Verfügung, die Variablen vom Webserver
+    (gegebenenfalls), von der Umgebung und von Benutzereingaben
+    enthalten. Diese neuen Arrays sind insofern etwas sehr Spezielles,
+    als sie automatisch global sind -- d.h., sie stehen automatisch in
+    jedem Bereich zur Verfügung. Deshalb sind sie auch bekannt als
+    &#039;Superglobale&#039;. (Es gibt in PHP keinen
+    Mechanismus für benutzerdefinierte Superglobale.) Die Superglobale
+    werden nachfolgend aufgelistet, aber für eine Liste ihres Inhalts
+    und die weitere Diskussion vordefinierter Variablen und ihres
+    Wesens lesen Sie bitte den Abschnitt <a href="reserved.variables.html" class="link">Reservierte vordefinierte
+    Variablen</a>. Außerdem werden Sie feststellen, dass die alten
+    vordefinierten Variablen (<var class="varname">$HTTP_*_VARS</var>) noch
+    existieren.
+
+    Seit PHP 5.0.0 können Sie die
+Registrierung der langen von PHP <a href="language.variables.predefined.html" class="link">
+vordefinierten Arrays</a> mit der Konfigurationsoption
+<a href="ini.core.html#ini.register-long-arrays" class="link">register_long_arrays</a>
+abschalten.
+   </p>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <strong>Variable Variablen</strong><br />
+    <p class="para">
+     Superglobale können innerhalb von Funktionen und Methoden nicht als 
+     <a href="language.variables.variable.html" class="link">Variable Variablen</a>
+     verwendet werden.
+    </p>
+   </p></blockquote>
+
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Obwohl Superglobale und die HTTP_*_VARS zur gleichen Zeit existieren
+     können sind sie nicht identisch. Änderungen dieser Variablen haben
+     keinen Einfluss auf die jeweils anderen.
+    </p>
+   </p></blockquote>
+
+   <p class="para">
+    Falls bestimmte Variablen nicht unter <a href="ini.core.html#ini.variables-order" class="link">variables_order</a> angegeben
+    sind, dann bleiben auch ihre entsprechenden vordefinierten Arrays
+    leer.
+   </p>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

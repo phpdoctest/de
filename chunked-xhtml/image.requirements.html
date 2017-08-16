@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Anforderungen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.utilspec.image.html">Bildverarbeitung und -generierung</a></li>
+  <li class="header up"><a href="book.image.html">GD</a></li>
+  <li class="header up"><a href="image.setup.html">Installation/Konfiguration</a></li>
+  <li class="active"><a href="image.requirements.html">Anforderungen</a></li>
+  <li><a href="image.installation.html">Installation</a></li>
+  <li><a href="image.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="image.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="image.setup.html">Installation/Konfiguration</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="image.installation.html">Installation</a></div>
+                <div class="up"><a href="image.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="image.requirements" class="section">
+  <h2 class="title">Anforderungen</h2>
+  <p class="para">
+   Mit der <acronym class="acronym">GD</acronym>-Bibliothek (verfügbar unter <a href="http://www.libgd.org/" class="link external">&raquo;&nbsp;http://www.libgd.org/</a>) können Sie auch Grafiken erzeugen und
+   manipulieren.
+  </p>
+  <p class="para">
+   Die mittels dieser Funktionen veränderbaren Grafik-Formate hängen davon
+   ab, welche Version von <acronym class="acronym">GD</acronym> Sie installieren und welche
+   zusätzlichen Bibliotheken <acronym class="acronym">GD</acronym> benötigt, um mit diesen
+   Formaten umgehen zu können. <acronym class="acronym">GIF</acronym> wird ab gd-2.0.28 unterstützt.
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <span class="simpara">
+     Ab PHP 5.0 wird libgd-2.0.4 oder höher benötigt.
+     Ab PHP 5.5 wird libgd-2.1.0 oder höher benötigt. Alternativ kann die gebündelte
+     <acronym class="acronym">GD</acronym>-Bibliothek, die mit PHP ab 4.3 ausgeliefert wird, verwendet werden.
+    </span>
+   </p></blockquote>
+  </p>
+  <p class="para">
+   Sie können <acronym class="acronym">GD</acronym> erweitern, um mehr Grafikformate zu verwenden.
+   <table class="doctable table">
+   <caption><strong>Unterstützte Grafikformate</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Grafikformat</th>
+       <th>Download der benötigten Bibliothek</th>
+       <th>Anmerkungen</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><em>gif</em></td>
+       <td class="empty">&nbsp;</td>
+       <td>
+        Wird nur von GD-Versionen neuer als gd-2.0.28
+        unterstützt. <em class="emphasis">Schreiben</em> von 
+        <acronym class="acronym">GIF</acronym> wird ab PHP 5.0.1 unterstützt.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>jpeg</em></td>
+       <td><a href="http://www.ijg.org/" class="link external">&raquo;&nbsp;http://www.ijg.org/</a></td>
+       <td>
+        Wenn Sie die jpeg-Bibliothek übersetzen (vor dem Übersetzen
+        von PHP), müssen Sie die Option 
+        <strong class="option configure">--enable-shared</strong>
+im configure-Schritt 
+        benutzen. Wenn Sie dies nicht tun, werden Sie den Fehler 
+        <em>libjpeg.(a|so) not found</em> beim configure-Schritt der 
+        PHP-Übersetzung erhalten.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>png</em></td>
+       <td><a href="http://www.libpng.org/pub/png/libpng.html" class="link external">&raquo;&nbsp;http://www.libpng.org/pub/png/libpng.html</a></td>
+       <td>
+        Nur von <acronym class="acronym">GD</acronym>-Versionen neuer als gd-1.6 unterstützt.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>xpm</em></td>
+       <td><a href="ftp://metalab.unc.edu/pub/Linux/libs/X/!INDEX.html" class="link external">&raquo;&nbsp;ftp://metalab.unc.edu/pub/Linux/libs/X/!INDEX.html</a></td>
+       <td>
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+
+  <p class="para">
+   Sie können <acronym class="acronym">GD</acronym> erweitern, um unterschiedliche Schriften zu 
+   verwenden. Die folgenden Schriftbibliotheken werden unterstützt.
+   <table class="doctable table">
+   <caption><strong>Unterstützte Schriftbibliotheken</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Schriftbibliothek</th>
+       <th>Download</th>
+       <th>Anmerkungen</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><em>FreeType 1.x</em></td>
+       <td><a href="http://www.freetype.org/" class="link external">&raquo;&nbsp;http://www.freetype.org/</a></td>
+       <td>Die Unterstützung von FreeType 1.x wurde ab PHP 5.3.0 entfernt.</td>
+      </tr>
+
+      <tr>
+       <td><em>FreeType 2</em></td>
+       <td><a href="http://www.freetype.org/" class="link external">&raquo;&nbsp;http://www.freetype.org/</a></td>
+       <td class="empty">&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td><em>T1lib</em></td>
+       <td><a href="ftp://sunsite.unc.edu/pub/Linux/libs/graphics/" class="link external">&raquo;&nbsp;ftp://sunsite.unc.edu/pub/Linux/libs/graphics/</a>)</td>
+       <td>
+        Unterstützung für Type 1-Schriften. (Entfernt ab PHP 7.0.0).
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

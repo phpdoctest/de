@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Positioniert den Datensatzzeiger, bevor Daten geholt werden</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.ingres.html">Ingres</a></li>
+  <li class="header up"><a href="ref.ingres.html">Ingres-Funktionen</a></li>
+  <li><a href="function.ingres-autocommit-state.html">ingres_autocommit_state</a></li>
+  <li><a href="function.ingres-autocommit.html">ingres_autocommit</a></li>
+  <li><a href="function.ingres-charset.html">ingres_charset</a></li>
+  <li><a href="function.ingres-close.html">ingres_close</a></li>
+  <li><a href="function.ingres-commit.html">ingres_commit</a></li>
+  <li><a href="function.ingres-connect.html">ingres_connect</a></li>
+  <li><a href="function.ingres-cursor.html">ingres_cursor</a></li>
+  <li><a href="function.ingres-errno.html">ingres_errno</a></li>
+  <li><a href="function.ingres-error.html">ingres_error</a></li>
+  <li><a href="function.ingres-errsqlstate.html">ingres_errsqlstate</a></li>
+  <li><a href="function.ingres-escape-string.html">ingres_escape_string</a></li>
+  <li><a href="function.ingres-execute.html">ingres_execute</a></li>
+  <li><a href="function.ingres-fetch-array.html">ingres_fetch_array</a></li>
+  <li><a href="function.ingres-fetch-assoc.html">ingres_fetch_assoc</a></li>
+  <li><a href="function.ingres-fetch-object.html">ingres_fetch_object</a></li>
+  <li><a href="function.ingres-fetch-proc-return.html">ingres_fetch_proc_return</a></li>
+  <li><a href="function.ingres-fetch-row.html">ingres_fetch_row</a></li>
+  <li><a href="function.ingres-field-length.html">ingres_field_length</a></li>
+  <li><a href="function.ingres-field-name.html">ingres_field_name</a></li>
+  <li><a href="function.ingres-field-nullable.html">ingres_field_nullable</a></li>
+  <li><a href="function.ingres-field-precision.html">ingres_field_precision</a></li>
+  <li><a href="function.ingres-field-scale.html">ingres_field_scale</a></li>
+  <li><a href="function.ingres-field-type.html">ingres_field_type</a></li>
+  <li><a href="function.ingres-free-result.html">ingres_free_result</a></li>
+  <li><a href="function.ingres-next-error.html">ingres_next_error</a></li>
+  <li><a href="function.ingres-num-fields.html">ingres_num_fields</a></li>
+  <li><a href="function.ingres-num-rows.html">ingres_num_rows</a></li>
+  <li><a href="function.ingres-pconnect.html">ingres_pconnect</a></li>
+  <li><a href="function.ingres-prepare.html">ingres_prepare</a></li>
+  <li><a href="function.ingres-query.html">ingres_query</a></li>
+  <li class="active"><a href="function.ingres-result-seek.html">ingres_result_seek</a></li>
+  <li><a href="function.ingres-rollback.html">ingres_rollback</a></li>
+  <li><a href="function.ingres-set-environment.html">ingres_set_environment</a></li>
+  <li><a href="function.ingres-unbuffered-query.html">ingres_unbuffered_query</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.ingres-query.html">ingres_query</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.ingres-rollback.html">ingres_rollback</a></div>
+                <div class="up"><a href="ref.ingres.html">Ingres-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.ingres-result-seek" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">ingres_result_seek</h1>
+  <p class="refpurpose">Positioniert den Datensatzzeiger, bevor Daten geholt werden</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.ingres-result-seek-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">ingres_result_seek</span>
+    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
+   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$position</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Mit dieser Funktion kann die Position des Cursors, der mit der
+   Ergebniskennung verknüpft ist, gesetzt werden, bevor Daten geholt
+   werden. Falls <a href="ingres.configuration.html#ini.ingres.array-index-start" class="link">ingres.array_index_start</a>
+   auf 0 gesetzt ist, hat die erste Zeile die Nummer 0, ansonsten die Nummer 1.
+   <span class="function">ingres_result_seek</span> kann nur mit Abfragen verwendet
+   werden, für die <a href="ingres.configuration.html#ini.ingres.scrollable" class="link">scrollable cursors</a>
+   gesetzt ist. Die Funktion kann nicht zusammen mit
+   <span class="function">ingres_unbuffered_query</span> benutzt werden.
+  </p>
+
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <strong>Verwandte Konfigurationen</strong><br />
+   <p class="para">
+    Siehe auch die Direktiven <a href="ingres.configuration.html#ini.ingres.scrollable" class="link">ingres.scrollable</a>
+    und <a href="ingres.configuration.html#ini.ingres.array-index-start" class="link">ingres.array_index_start</a> der
+    <a href="ingres.configuration.html" class="link">Laufzeit-Konfiguration</a>.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.ingres-result-seek-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">result</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Ergebniskennung einer Abfrage
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">position</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Zeilenposition, auf die der Cursor gesetzt werden soll. Falls <a href="ingres.configuration.html#ini.ingres.array-index-start" class="link">ingres.array_index_start</a>
+       den Wert 0 hat, hat die erste Zeile die Nummer 0, ansonsten die Nummer 1.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.ingres-result-seek-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.ingres-result-seek-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-1288">
+    <p><strong>Beispiel #1 Positioniere den Cursor auf die dritte Zeile</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$result</span><span style="color: #007700">=</span><span style="color: #0000BB">ingres_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"select&nbsp;*&nbsp;from&nbsp;airport&nbsp;where&nbsp;ap_ccode&nbsp;=&nbsp;'ES'&nbsp;order&nbsp;by&nbsp;ap_place&nbsp;asc"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;gehe&nbsp;zu&nbsp;Zeile&nbsp;3&nbsp;*/<br /></span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">ingres_result_seek</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">))<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">ingres_errno</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">"&nbsp;-&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">ingres_error&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">"Skript&nbsp;beendet"</span><span style="color: #007700">);<br />}<br />else<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$airport&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ingres_fetch_object&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$airport</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">ap_iatacode&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&nbsp;-&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;&nbsp;</span><span style="color: #0000BB">$airport</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">ap_name&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">ingres_commit</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.ingres-result-seek-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">ingres_query</span></li>
+    <li class="member"><span class="function">ingres_fetch_array</span></li>
+    <li class="member"><span class="function">ingres_fetch_assoc</span></li>
+    <li class="member"><span class="function">ingres_fetch_object</span></li>
+    <li class="member"><span class="function">ingres_fetch_row</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

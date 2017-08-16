@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Fall 2: --enable-force-cgi-redirect benutzen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="security.html">Sicherheit</a></li>
+  <li class="header up"><a href="security.cgi-bin.html">Installiert als CGI-Version</a></li>
+  <li><a href="security.cgi-bin.attacks.html">M&ouml;gliche Angriffe</a></li>
+  <li><a href="security.cgi-bin.default.html">Fall 1: Nur &ouml;ffentliche Dateien vorhanden</a></li>
+  <li class="active"><a href="security.cgi-bin.force-redirect.html">Fall 2: --enable-force-cgi-redirect benutzen</a></li>
+  <li><a href="security.cgi-bin.doc-root.html">Fall 3: doc_root oder user_dir festlegen</a></li>
+  <li><a href="security.cgi-bin.shell.html">Fall 4: PHP-Parser au&szlig;erhalb des Webverzeichnisbaums</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="security.cgi-bin.default.html">Fall 1: Nur &ouml;ffentliche Dateien vorhanden</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="security.cgi-bin.doc-root.html">Fall 3: doc_root oder user_dir festlegen</a></div>
+                <div class="up"><a href="security.cgi-bin.html">Installiert als CGI-Version</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="security.cgi-bin.force-redirect" class="sect1">
+    <h2 class="title">Fall 2: <em>--enable-force-cgi-redirect</em> benutzen</h2>
+    <p class="simpara">
+     Die Konfigurationsdirektive <a href="ini.core.html#ini.cgi.force-redirect" class="link">cgi.force_redirect</a>
+     verhindert grundsätzlich den Aufruf von PHP mit einer URL wie <var class="filename">http://my.host/cgi-bin/php/secretdir/script.php</var>.
+     Stattdessen parst PHP in diesem Modus nur dann, wenn der Aufruf
+     durch einen korrekten Redirect des Webservers erfolgte.
+     PHP älter als 4.2.0 nutzte stattdessen die
+     <em>--enable-force-cgi-redirect</em>-Kompilierungsoption.n
+    </p>
+    <p class="simpara">
+     Normalerweise wird der Redirect in der Apache-Konfiguration mit den
+     folgenden Einträgen festgelegt:</p>
+    <div class="example-contents">
+<div class="apache-confcode"><pre class="apache-confcode">Action php-script /cgi-bin/php
+AddHandler php-script .php</pre>
+</div>
+    </div>
+
+    <p class="simpara">
+     Diese Option wurde nur mit dem Apache Webserver getestet und
+     ist abhängig davon, wie Apache die nicht standardmäßige
+     CGI-Umgebungsvariable <var class="envar">REDIRECT_STATUS</var> bei
+     Redirect-Anfragen setzt.
+     Sollte Ihr Webserver keine Möglichkeit unterstützen, zu übermitteln,
+     ob es sich um einen direkten Aufruf oder einen Redirect handelt,
+     können Sie diese Option nicht verwenden und müssen einen der
+     anderen hier beschriebenen Wege gehen, die CGI-Version zu
+     nutzen.
+    </p>
+   </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

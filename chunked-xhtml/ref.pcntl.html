@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: PCNTL Funktionen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li class="header up"><a href="book.pcntl.html">PCNTL</a></li>
+  <li><a href="intro.pcntl.html">Einf&uuml;hrung</a></li>
+  <li><a href="pcntl.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="pcntl.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="pcntl.examples.html">Beispiele</a></li>
+  <li class="active"><a href="ref.pcntl.html">PCNTL Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="pcntl.example.html">Grundlegende Verwendung</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.pcntl-alarm.html">pcntl_alarm</a></div>
+                <div class="up"><a href="book.pcntl.html">PCNTL</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="ref.pcntl" class="reference">
+ <h1 class="title">PCNTL Funktionen</h1>
+
+ <div class="partintro">
+  <h1 class="title">Siehe auch</h1>
+  <p class="para">
+    Ein Blick in den Abschnitt über
+    <a href="ref.posix.html" class="link">POSIX Funktionen</a>
+    kann hilfreich sein.
+  </p>
+ </div>
+
+ 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+<strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_reference">
+<li><a href="function.pcntl-alarm.html">pcntl_alarm</a> — Setzt einen Zeitschalter f&uuml;r die Auslieferung eines Signals</li>
+<li><a href="function.pcntl-errno.html">pcntl_errno</a> — Alias von pcntl_get_last_error</li>
+<li><a href="function.pcntl-exec.html">pcntl_exec</a> — F&uuml;hrt ein angegebenes Programm im aktuellen Prozessraum aus</li>
+<li><a href="function.pcntl-fork.html">pcntl_fork</a> — Verzweigt den laufenden Prozess</li>
+<li><a href="function.pcntl-get-last-error.html">pcntl_get_last_error</a> — Retrieve the error number set by the last pcntl function which failed</li>
+<li><a href="function.pcntl-getpriority.html">pcntl_getpriority</a> — Liest die Priorit&auml;t irgendeines Prozesses</li>
+<li><a href="function.pcntl-setpriority.html">pcntl_setpriority</a> — &Auml;ndert die Priorit&auml;t irgendeines Prozesses</li>
+<li><a href="function.pcntl-signal-dispatch.html">pcntl_signal_dispatch</a> — Calls signal handlers for pending signals</li>
+<li><a href="function.pcntl-signal-get-handler.html">pcntl_signal_get_handler</a> — Get the current handler for specified signal</li>
+<li><a href="function.pcntl-signal.html">pcntl_signal</a> — Richtet eine Signalverarbeitung ein</li>
+<li><a href="function.pcntl-sigprocmask.html">pcntl_sigprocmask</a> — Sets and retrieves blocked signals</li>
+<li><a href="function.pcntl-sigtimedwait.html">pcntl_sigtimedwait</a> — Waits for signals, with a timeout</li>
+<li><a href="function.pcntl-sigwaitinfo.html">pcntl_sigwaitinfo</a> — Waits for signals</li>
+<li><a href="function.pcntl-strerror.html">pcntl_strerror</a> — Retrieve the system error message associated with the given errno</li>
+<li><a href="function.pcntl-wait.html">pcntl_wait</a> — Wartet auf ein oder gibt den Status eines abgezweigten Kindes zur&uuml;ck</li>
+<li><a href="function.pcntl-waitpid.html">pcntl_waitpid</a> — Wartet auf ein oder gibt den Status eines abgezweigten Kindes zur&uuml;ck</li>
+<li><a href="function.pcntl-wexitstatus.html">pcntl_wexitstatus</a> — Gibt den Statuscode eines beendeten Kindes zur&uuml;ck</li>
+<li><a href="function.pcntl-wifexited.html">pcntl_wifexited</a> — Gibt TRUE zur&uuml;ck, wenn der Statuscode ein erfolgreiches Beenden darstellt</li>
+<li><a href="function.pcntl-wifsignaled.html">pcntl_wifsignaled</a> — Gibt TRUE zur&uuml;ck, wenn der Statuscode eine Terminierung wegen eines Signals angibt</li>
+<li><a href="function.pcntl-wifstopped.html">pcntl_wifstopped</a> — Gibt TRUE zur&uuml;ck, wenn der Kindprozess gerade gestoppt ist</li>
+<li><a href="function.pcntl-wstopsig.html">pcntl_wstopsig</a> — Gibt das Signal zur&uuml;ck, welches das Anhalten des Kindes verursachte</li>
+<li><a href="function.pcntl-wtermsig.html">pcntl_wtermsig</a> — Gibt das Signal zur&uuml;ck, welches das Beenden des Kindes verursachte</li>
+</ul>
+</ol>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

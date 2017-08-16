@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Fehlerbehandlung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="security.html">Sicherheit</a></li>
+  <li><a href="security.intro.html">Einf&uuml;hrung</a></li>
+  <li><a href="security.general.html">Allgemeine &Uuml;berlegungen</a></li>
+  <li><a href="security.cgi-bin.html">Installiert als CGI-Version</a></li>
+  <li><a href="security.apache.html">Verwendung als Apache-Modul</a></li>
+  <li><a href="security.sessions.html">Session Security</a></li>
+  <li><a href="security.filesystem.html">Dateisystem - Sicherheit</a></li>
+  <li><a href="security.database.html">Datenbank - Sicherheit</a></li>
+  <li class="active"><a href="security.errors.html">Fehlerbehandlung</a></li>
+  <li><a href="security.globals.html">Using Register Globals</a></li>
+  <li><a href="security.variables.html">Vom Nutzer &uuml;bermittelte Daten</a></li>
+  <li><a href="security.magicquotes.html">Magic Quotes</a></li>
+  <li><a href="security.hiding.html">PHP verstecken</a></li>
+  <li><a href="security.current.html">Aktuell bleiben</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="security.database.sql-injection.html">SQL Injection</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="security.globals.html">Using Register Globals</a></div>
+                <div class="up"><a href="security.html">Sicherheit</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="security.errors" class="chapter">
+   <h1>Fehlerbehandlung</h1>
+   <p class="para">
+    PHP Security hat zwei Seiten der Fehlerbehandlung. Eine ist für die
+    Erhöhung der Sicherheit vorteilhaft, die andere ist schädlich.
+   </p>
+   <p class="para">
+    Eine Standard-Angriffstaktik beinhaltet die Erstellung eines Profils
+    des anzugreifenden Systems, indem die aufgrund der Einspeisung von
+    unzulässigen Daten zurückgegebenen Fehlermeldungen anhand deren
+    Art und des Kontextes ausgewertet werden. Dies erlaubt es einem Angreifer,
+    nach Informationen über den Server zu suchen, um seine potentielle
+    Verwundbarkeit herauszufinden. Wenn z.B. ein Angreifer
+    Informationen über eine auf einem eingesendeten Formular basierte
+    Seite zusammengetragen hat, kann er versuchen, Variablen zu
+    überschreiben bzw. zu modifizieren:
+    <div class="example" id="example-358">
+     <p><strong>Beispiel #1 Variablen mit einer eigenen HTML-Seite angreifen</strong></p>
+     <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;form method=&quot;post&quot; action=&quot;attacktarget?username=badfoo&amp;password=badfoo&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;username&quot; value=&quot;badfoo&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;password&quot; value=&quot;badfoo&quot;&gt;
+&lt;/form&gt;</pre>
+</div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    Die normalerweise zurückgegebenen PHP-Fehler können für den Entwickler
+    hilfreich sein, wenn dieser ein Skript debuggen möchte, da sie z.B. Hinweise
+    auf eine nicht vorhandene Funktion oder Datei, die PHP-Datei und die
+    Zeilennummer des auftretenden Fehlers ausgeben. Dies alles sind
+    Informationen, die ausgenutzt werden können. Es ist für
+    einen PHP-Entwickler nicht unüblich, <span class="function">show_source</span>,
+    <span class="function">highlight_string</span> oder
+    <span class="function">highlight_file</span> zur Fehlersuche zu verwenden,
+    jedoch kann dies in einem produktiven System auch versteckte Variablen,
+    ungeprüfte Syntax und andere gefährliche Informationen aufdecken.
+    Besonders gefährlich ist es, Code aus bekannten Quellen mit integrierten
+    Debugging-Handlern auszuführen, oder weit verbreitete Debuggingtechniken
+    zu verwenden. Wenn ein Angreifer die von Ihnen benutzte generelle
+    Technik herausfindet, kann er versuchen, Ihre Seite mittels Bruteforce zu
+    knacken, indem er verschiedene allgemein gebräuchliche Debugstrings
+    sendet:
+    <div class="example" id="example-359">
+     <p><strong>Beispiel #2 Ausnutzen von gebräuchlichen Debugging-Variablen</strong></p>
+     <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;form method=&quot;post&quot; action=&quot;attacktarget?errors=Y&amp;amp;showerrors=1&amp;amp;debug=1&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;errors&quot; value=&quot;Y&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;showerrors&quot; value=&quot;1&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;debug&quot; value=&quot;1&quot; /&gt;
+&lt;/form&gt;</pre>
+</div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    Ungeachtet der Fehlerbehandlungsmethode führt die Möglichkeit, ein
+    System nach Fehlermeldungen zu sondieren, dazu, dass einem Angreifer mehr
+    Informationen geboten werden.
+   </p>
+   <p class="para">
+    Zum Beispiel weist schon alleine der Stil einer Standardfehlermeldung darauf
+    hin, dass auf einem System PHP läuft. Wenn der Angreifer auf eine
+    .html Seite kommt und untersuchen möchte, welches System im Hintergrund
+    läuft (um nach bekannten Systemschwächen Ausschau zu halten), könnte dieser
+    mittels der Einspeisung von falschen Daten herausfinden, dass ein
+    System mit PHP aufgebaut ist.
+   </p>
+   <p class="para">
+    Ein Fehler einer Funktion gibt Aufschluss darüber, ob ein System eine
+    bestimmte Datenbankapplikation benutzt, oder gibt Hinweise darauf,
+    wie eine Webseite programmiert bzw. entworfen wurde. Dies erlaubt
+    eine tiefere Überprüfung von offenen Datenbankports oder die Suche
+    nach spezifischen Bugs bzw. Schwächen einer Webseite. Mit der
+    Einspeisung von falschen Daten kann ein Angreifer z.B. die Reihenfolge
+    der Authentifizierung in einem Skript bestimmen (anhand der
+    Zeilennummern in den Fehlermeldungen). Ebenso lassen sich auch durch
+    &quot;Herumstochern&quot; Missbrauchsmöglichkeiten an verschiedenen Stellen im Skript
+    herausfinden.
+   </p>
+   <p class="para">
+    Eine Fehlermeldung des Dateisystems oder eines generellen PHP-Errors kann
+    darüber Auskunft geben, welche Rechte der Webserver hat, ebenso darüber, wie
+    die Dateien auf dem Webserver strukturiert und organisiert sind. Vom
+    Entwickler geschriebene Fehlermeldungen können das Problem verschlimmern,
+    bis hin zum Preisgeben von zuvor &quot;versteckten&quot; Informationen.
+   </p>
+   <p class="para">
+    Es gibt drei bedeutende Lösungen zu diesem Thema. Die erste ist, alle
+    Funktionen zu überprüfen und zu versuchen, einen Großteil der
+    Fehlermeldungen zu ersetzen. Die zweite ist, die Ausgabe von Fehlermeldungen
+    bei produktivem Code generell zu deaktivieren. Die dritte ist, sich unter
+    Verwendung der PHP-Funktionen zur Fehlerbehandlung einen eigenen
+    Errorhandler zu schreiben. Abhängig von Ihrer Sicherheitspolitik könnte jede
+    der drei Lösungen für Sie geeignet sein.
+   </p>
+   <p class="para">
+    Ein Weg, diesen Punkt zügig abzuarbeiten, ist, das PHP-eigene
+    <span class="function">error_reporting</span> zu benutzen, um Ihren Code
+    sicherer zu gestalten und möglicherweise gefährliche Nutzungen von
+    Variablen zu entdecken. Wenn Sie Ihren Code noch vor dem Einsatz
+    mit <strong><code>E_ALL</code></strong> testen, können Sie schnell Bereiche entdecken, 
+    in denen Ihre Variablen eventuell für Verseuchung oder andere Modifikationen 
+    offen sind. Ist Ihr Code einsatzbereit, können Sie entweder das Errorreporting 
+    komplett ausschalten, indem Sie <span class="function">error_reporting</span> auf 0 
+    setzen, oder Sie schalten die Fehleranzeige mittels der <var class="filename">php.ini</var>-Option
+    <em>display_errors</em> aus, um Ihren Code vor dem Ausspähen zu
+    schützen. Wenn Sie letztere Möglichkeit wählen, sollten Sie mittels der
+    Ini-Direktive <em>error_log</em> einen Pfad definieren, in dem
+    sich das Logfile befindet, und <em>log_errors</em> anschalten.
+    <div class="example" id="example-360">
+     <p><strong>Beispiel #3 Gefährliche Variablen mit E_ALL finden</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$username</span><span style="color: #007700">)&nbsp;{&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Vor&nbsp;Verwendung&nbsp;nicht&nbsp;initialisiert&nbsp;oder&nbsp;geprüft<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$good_login&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />}<br />if&nbsp;(</span><span style="color: #0000BB">$good_login&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{&nbsp;</span><span style="color: #FF8000">//&nbsp;Wenn&nbsp;der&nbsp;obige&nbsp;Test&nbsp;fehlschlägt,&nbsp;ist&nbsp;vor&nbsp;der<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Verwendung&nbsp;nicht&nbsp;initialisiert&nbsp;oder&nbsp;geprüft<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">readfile&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"/highly/sensitive/data/index.html"</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

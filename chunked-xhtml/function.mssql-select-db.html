@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: W&auml;hlt eine MS SQL Datenbank aus</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.mssql.html">Mssql</a></li>
+  <li class="header up"><a href="ref.mssql.html">Mssql-Funktionen</a></li>
+  <li><a href="function.mssql-bind.html">mssql_bind</a></li>
+  <li><a href="function.mssql-close.html">mssql_close</a></li>
+  <li><a href="function.mssql-connect.html">mssql_connect</a></li>
+  <li><a href="function.mssql-data-seek.html">mssql_data_seek</a></li>
+  <li><a href="function.mssql-execute.html">mssql_execute</a></li>
+  <li><a href="function.mssql-fetch-array.html">mssql_fetch_array</a></li>
+  <li><a href="function.mssql-fetch-assoc.html">mssql_fetch_assoc</a></li>
+  <li><a href="function.mssql-fetch-batch.html">mssql_fetch_batch</a></li>
+  <li><a href="function.mssql-fetch-field.html">mssql_fetch_field</a></li>
+  <li><a href="function.mssql-fetch-object.html">mssql_fetch_object</a></li>
+  <li><a href="function.mssql-fetch-row.html">mssql_fetch_row</a></li>
+  <li><a href="function.mssql-field-length.html">mssql_field_length</a></li>
+  <li><a href="function.mssql-field-name.html">mssql_field_name</a></li>
+  <li><a href="function.mssql-field-seek.html">mssql_field_seek</a></li>
+  <li><a href="function.mssql-field-type.html">mssql_field_type</a></li>
+  <li><a href="function.mssql-free-result.html">mssql_free_result</a></li>
+  <li><a href="function.mssql-free-statement.html">mssql_free_statement</a></li>
+  <li><a href="function.mssql-get-last-message.html">mssql_get_last_message</a></li>
+  <li><a href="function.mssql-guid-string.html">mssql_guid_string</a></li>
+  <li><a href="function.mssql-init.html">mssql_init</a></li>
+  <li><a href="function.mssql-min-error-severity.html">mssql_min_error_severity</a></li>
+  <li><a href="function.mssql-min-message-severity.html">mssql_min_message_severity</a></li>
+  <li><a href="function.mssql-next-result.html">mssql_next_result</a></li>
+  <li><a href="function.mssql-num-fields.html">mssql_num_fields</a></li>
+  <li><a href="function.mssql-num-rows.html">mssql_num_rows</a></li>
+  <li><a href="function.mssql-pconnect.html">mssql_pconnect</a></li>
+  <li><a href="function.mssql-query.html">mssql_query</a></li>
+  <li><a href="function.mssql-result.html">mssql_result</a></li>
+  <li><a href="function.mssql-rows-affected.html">mssql_rows_affected</a></li>
+  <li class="active"><a href="function.mssql-select-db.html">mssql_select_db</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-rows-affected.html">mssql_rows_affected</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="set.mysqlinfo.html">MySQL</a></div>
+                <div class="up"><a href="ref.mssql.html">Mssql-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.mssql-select-db" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">mssql_select_db</h1>
+  <p class="refpurpose">Wählt eine MS SQL Datenbank aus</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.mssql-select-db-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">mssql_select_db</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$database_name</code></span>
+   [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">mssql_select_db</span> setzt auf dem Server die aktuelle
+   Datenbank, auf die sich die angegebene Verbindungskennung
+   <code class="parameter">link_identifier</code> bezieht. Wurde keine
+   Verbindungskennung angegeben, wird die zuletzt geöffnete Verbindung
+   angenommen.
+  </p>
+  <p class="para">
+   Jeder folgende Aufruf von <span class="function">mssql_query</span> bezieht sich auf
+   die geöffnete Datenbank.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.mssql-select-db-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">database_name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Name der Datenbank
+      </p>
+      <p class="para">
+       Um einen Datenbanknamen, der Leerzeichen, Bindestriche oder
+       irgendwelche andere ungewöhnliche Zeichen enthält zu maskieren, muss
+       er, wie im folgenden Beispiel gezeigt, in Klammern gesetzt werden.
+       Diese Technik muss auch angewandt werden, wenn eine Datenbank
+       ausgewählt wird, deren Name ein reserviertes Wort ist (wie z.B.
+       <em>primary</em>).
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">link_identifier</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der von <span class="function">mssql_connect</span> oder
+       <span class="function">mssql_pconnect</span> zurückgegebene Bezeichner einer MS
+       SQL-Verbindung
+      </p>
+      <p class="para">
+       Falls keine Verbindungskennung angegeben wird, wird von der zuletzt
+       geöffneten Verbindung ausgegangen. Wenn es keine offene Verbindung
+       gibt, versucht die Funktion eine Verbindung aufzubauen, als wäre
+       <span class="function">mssql_connect</span> aufgerufen worden, und diese zu
+       benutzen.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.mssql-select-db-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.mssql-select-db-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="mssql.mssql-select-db.example.basic">
+    <p><strong>Beispiel #1 <span class="function">mssql_select_db</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Mit&nbsp;MSSQL&nbsp;verbinden<br /></span><span style="color: #0000BB">$verbindung&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'KALLESPC\SQLEXPRESS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'sa'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'phpfi'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Die&nbsp;Datenbank&nbsp;'php'&nbsp;auswählen<br /></span><span style="color: #0000BB">mssql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">'php'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$verbindung</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="mssql.mssql-select-db.example.escape">
+    <p><strong>Beispiel #2 Maskieren des Datenbanknamens mit eckigen Klammern</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Mit&nbsp;MSSQL&nbsp;verbinden<br /></span><span style="color: #0000BB">$verbindung&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'KALLESPC\SQLEXPRESS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'sa'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'phpfi'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Die&nbsp;Datenbank&nbsp;'mein.datenbank-name'&nbsp;auswählen<br /></span><span style="color: #0000BB">mssql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">'[mein.datenbank-name]'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$verbindung</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.mssql-select-db-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">mssql_connect</span></li>
+    <li class="member"><span class="function">mssql_pconnect</span></li>
+    <li class="member"><span class="function">mssql_query</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

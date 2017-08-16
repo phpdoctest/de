@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Erzeugt Daten zur Ablaufverfolgung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li class="header up"><a href="book.errorfunc.html">Fehlerbehandlung</a></li>
+  <li class="header up"><a href="ref.errorfunc.html">Fehlerbehandlungsfunktionen</a></li>
+  <li class="active"><a href="function.debug-backtrace.html">debug_backtrace</a></li>
+  <li><a href="function.debug-print-backtrace.html">debug_print_backtrace</a></li>
+  <li><a href="function.error-clear-last.html">error_clear_last</a></li>
+  <li><a href="function.error-get-last.html">error_get_last</a></li>
+  <li><a href="function.error-log.html">error_log</a></li>
+  <li><a href="function.error-reporting.html">error_reporting</a></li>
+  <li><a href="function.restore-error-handler.html">restore_error_handler</a></li>
+  <li><a href="function.restore-exception-handler.html">restore_exception_handler</a></li>
+  <li><a href="function.set-error-handler.html">set_error_handler</a></li>
+  <li><a href="function.set-exception-handler.html">set_exception_handler</a></li>
+  <li><a href="function.trigger-error.html">trigger_error</a></li>
+  <li><a href="function.user-error.html">user_error</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="ref.errorfunc.html">Fehlerbehandlungsfunktionen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.debug-print-backtrace.html">debug_print_backtrace</a></div>
+                <div class="up"><a href="ref.errorfunc.html">Fehlerbehandlungsfunktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.debug-backtrace" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">debug_backtrace</h1>
+  <p class="refpurpose">Erzeugt Daten zur Ablaufverfolgung</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.debug-backtrace-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname">debug_backtrace</span>
+    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = DEBUG_BACKTRACE_PROVIDE_OBJECT</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$limit</code><span class="initializer"> = 0</span></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">debug_backtrace</span> erzeugt Daten zur Ablaufverfolgung.
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 parameters" id="refsect1-function.debug-backtrace-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">options</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ab 5.3.6 ist akzeptiert dieser Parameter eine Bitmaske mit den folgenden Optionen:
+       <table class="doctable table">
+        <caption><strong><span class="function">debug_backtrace</span> Optionen</strong></caption>
+        
+         <tbody class="tbody">
+          <tr>
+           <td>DEBUG_BACKTRACE_PROVIDE_OBJECT</td>
+           <td>
+            Ob der &quot;object&quot; Index befüllt werden soll.
+           </td>
+          </tr>
+
+          <tr>
+           <td>DEBUG_BACKTRACE_IGNORE_ARGS</td>
+           <td>
+            Ob der &quot;args&quot; Index, welcher alle Funktions- oder Methodenargumente
+            enthält, ausgelassen werden soll um Arbeitsspeicher zu sparen.
+           </td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
+       Vor PHP 5.3.6 waren die einzigen möglichen Werte <strong><code>TRUE</code></strong> und <strong><code>FALSE</code></strong>, welche
+       dem Setzen oder nicht Setzen von <strong><code>DEBUG_BACKTRACE_PROVIDE_OBJECT</code></strong> entsprachen.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">limit</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ab PHP 5.4.0 kann dieser Parameter benutzt werden, um die Anzahl an zurückgegebenen
+       Stack Frames zu limitieren. Standardmäßig (<code class="parameter">limit</code>=<em>0</em>)
+       werden alle Stack Frames zurückgegeben.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.debug-backtrace-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt ein assoziatives <span class="type">Array</span> zurück. Als zurückgegebene
+   Arrayelemente von <span class="function">debug_backtrace</span> sind möglich:
+  </p>
+  <p class="para">
+   <table class="doctable table">
+    <caption><strong>Mögliche Rückgabewerte von <span class="function">debug_backtrace</span></strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Name</th>
+       <th>Typ</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>function</td>
+       <td><span class="type">string</span></td>
+       <td>
+        Der Name der aktuell ausgeführten Funktion. Siehe auch
+        <a href="language.constants.predefined.html" class="link">__FUNCTION__</a>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>line</td>
+       <td><span class="type">integer</span></td>
+       <td>
+        Die aktuelle Zeilennummer. Siehe auch
+        <a href="language.constants.predefined.html" class="link">__LINE__</a>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>file</td>
+       <td><span class="type">string</span></td>
+       <td>
+        Der aktuelle Dateiname. Siehe auch
+        <a href="language.constants.predefined.html" class="link">__FILE__</a>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>class</td>
+       <td><span class="type">string</span></td>
+       <td>
+        Der aktuelle <a href="language.oop5.html" class="link">class</a> - Name. Siehe auch
+        <a href="language.constants.predefined.html" class="link">__CLASS__</a>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>object</td>
+       <td><span class="type">object</span></td>
+       <td>
+        Das aktuelle <a href="language.oop5.html" class="link">Objekt</a>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>type</td>
+       <td><span class="type">string</span></td>
+       <td>
+        Der aktuelle Typ des Aufrufs. Falls der Aufruf in einer
+        Methode erfolgte, wird &quot;-&gt;&quot; zurückgegeben. Falls der Aufruf
+        aus einer statischen Funktion erfolgte, wird &quot;::&quot;
+        zurückgegeben und falls der Aufruf aus einer Funktion
+        erfolgte, wird nichts zurückgegeben.
+       </td>
+      </tr>
+
+      <tr>
+       <td>args</td>
+       <td><span class="type">array</span></td>
+       <td>
+        Falls der Aufruf aus einer Funktion erfolgte, werden hier die
+        Funktionsargumente aufgelistet. Falls der Aufruf aus einer
+        eingebundenen Datei erfolgte, werden die Namen der
+        Include-Dateien angegeben.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.debug-backtrace-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.4.0</td>
+       <td>
+        Der Parameter <code class="parameter">limit</code> wurde hinzugefügt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.6</td>
+       <td>
+        Der Parameter <code class="parameter">provide_object</code> wurde durch
+        <code class="parameter">options</code> ersetzt und <strong><code>DEBUG_BACKTRACE_IGNORE_ARGS</code></strong>
+        wurde als zusätzliche Option hinzugefügt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.2.5</td>
+       <td>
+        Der optionale Parameter <code class="parameter">provide_object</code> wurde
+        hinzugefügt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.1.1</td>
+       <td>
+        Aktuelles <span class="type">object</span> als möglichen Rückgabewert hinzugefügt.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.debug-backtrace-examples">
+   <h3 class="title">Beispiele</h3>
+   <p class="para">
+    <div class="example" id="example-481">
+     <p><strong>Beispiel #1 <span class="function">debug_backtrace</span>-Beispiel</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Dateiname:&nbsp;/tmp/a.php<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">a_test</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"\nHi:&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">debug_backtrace</span><span style="color: #007700">());<br />}<br /><br /></span><span style="color: #0000BB">a_test</span><span style="color: #007700">(</span><span style="color: #DD0000">'friend'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;<br /></span><br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Dateiname:&nbsp;/tmp/b.php<br /></span><span style="color: #007700">include_once&nbsp;</span><span style="color: #DD0000">'/tmp/a.php'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Ergebnisse beim Aufruf von <var class="filename">/tmp/b.php</var>:
+    </p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Hi: friend
+array(2) {
+  [0]=&gt;
+  array(4) {
+    [&quot;file&quot;] =&gt; string(10) &quot;/tmp/a.php&quot;
+    [&quot;line&quot;] =&gt; int(10)
+    [&quot;function&quot;] =&gt; string(6) &quot;a_test&quot;
+    [&quot;args&quot;]=&gt;
+    array(1) {
+      [0] =&gt; &amp;string(6) &quot;friend&quot;
+    }
+  }
+  [1]=&gt;
+  array(4) {
+    [&quot;file&quot;] =&gt; string(10) &quot;/tmp/b.php&quot;
+    [&quot;line&quot;] =&gt; int(2)
+    [&quot;args&quot;] =&gt;
+    array(1) {
+      [0] =&gt; string(10) &quot;/tmp/a.php&quot;
+    }
+    [&quot;function&quot;] =&gt; string(12) &quot;include_once&quot;
+  }
+}
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.debug-backtrace-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">trigger_error</span></li>
+    <li class="member"><span class="function">debug_print_backtrace</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

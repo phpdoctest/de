@@ -1,0 +1,877 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Konfiguration</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="install.html">Installation und Konfiguration</a></li>
+  <li class="header up"><a href="install.fpm.html">FastCGI Process Manager (FPM)</a></li>
+  <li><a href="install.fpm.install.html">Installation</a></li>
+  <li class="active"><a href="install.fpm.configuration.html">Konfiguration</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="install.fpm.install.html">Installation</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="install.pecl.html">Installation of PECL extensions</a></div>
+                <div class="up"><a href="install.fpm.html">FastCGI Process Manager (FPM)</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="install.fpm.configuration" class="sect1">
+ <h2 class="title">Konfiguration</h2>
+ <p class="para">
+  FPM verwendet die <var class="filename">php.ini</var> Syntax für die Konfigurationsdatei - <var class="filename">php-fpm.conf</var>,
+  und Pool-Konfigurationsdateien.
+ </p>
+ <div class="sect2"> 
+  <h3 class="title">Liste globaler <var class="filename">php-fpm.conf</var> Direktiven</h3>
+  <dl>
+
+   
+    <dt id="pid">
+     <code class="parameter">pid</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Pfad zur PID Datei. Standardwert: none.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="error-log">
+     <code class="parameter">error_log</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Pfad zur error log Datei. Standardwert:
+      <em>#INSTALL_PREFIX#/log/php-fpm.log</em>.
+      Ist der Wert &quot;syslog&quot;, wird das Log an syslogd gesendet anstatt in eine
+      lokale Datei geschrieben zu werden.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="log-level">
+     <code class="parameter">log_level</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Error log level. Mögliche Werte: alert, error, warning, notice,
+      debug. Standardwert: notice.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="syslog-facility">
+     <code class="parameter">syslog.facility</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Wird verwendet, um anzugeben, welche Art von Programm die Nachricht protokolliert.
+      Standardwert: daemon.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="syslog-ident">
+     <code class="parameter">syslog.ident</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Wird jeder Nachricht vorangestellt. Werden mehrere FPM-Instanzen auf dem
+      selben Server ausgeführt, können Sie den Standardwert so ändern, dass er
+      den gemeinsamen Bedürfnissen entspricht. Standardwert: php-fpm.
+     </p>
+    </dd>
+
+   
+    
+    <dt id="emergency-restart-threshold">
+     <code class="parameter">emergency_restart_threshold</code>
+     <span class="type">int</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Wenn diese Anzahl an Kindprozessen mit SIGSEGV oder SIGBUS terminiert, 
+      innerhalb des durch <em>emergency_restart_interval</em> gesetzten 
+      Zeitintervals, dann wird FPM neu starten. Der Wert 0 meint &#039;Off&#039;. 
+      Standardwert: 0 (Off).
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="emergency-restart-interval">
+     <code class="parameter">emergency_restart_interval</code>
+     <span class="type">mixed</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Zeitinterval, dass von emergency_restart_interval verwendet wird, um zu bestimmen, wann 
+      ein zeitversetzter Neustart ausgelöst werden soll. Das kann als Workaround bei zufälligen 
+      Fehlern im Shared Memory eines Accelerators nützlich sein. 
+      Verfügbare Einheiten: s(econds), m(inutes), h(ours), oder d(ays).
+      Standardeinheit: seconds. Standardwert: 0 (Off).
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="process-control-timeout">
+     <code class="parameter">process_control_timeout</code>
+     <span class="type">mixed</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Zeitlimit der Kindprozesse, um auf eine Reaktion vom Master zu warten.
+      Verfügbare Einheiten: s(econds), m(inutes), h(ours), oder d(ays)
+      Standardeinheit: seconds. Standardwert: 0.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="process-max">
+     <code class="parameter">process.max</code>
+     <span class="type">int</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Die Höchstanzahl von Prozessen, die FPM forken wird. Dies wurde
+      konzipiert, um die globale Prozessanzahl zu kontrollieren, wenn
+      dynamisches PM in vielen Pools verwendet wird. Mit Vorsicht zu verwenden.
+      Standardwert: 0.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="process-priority">
+     <code class="parameter">process.priority</code>
+     <span class="type">int</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Gibt die auf den Master-Prozess (wenn festgelegt) anzuwendende nice(2)
+      Priorität an. Der Wert kann zwischen -19 (höchste Priorität) und 20
+      (niedrigere Priorität) liegen. Standardwert: nicht gesetzt.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="daemonize">
+     <code class="parameter">daemonize</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Schickt FPM in den Hintergrund. Setze &#039;no&#039;, um FPM im Vordergrund zu halten 
+      und zu debuggen. Standardwert: yes.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="rlimit-files-master">
+     <code class="parameter">rlimit_files</code>
+     <span class="type">int</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Setzt das Ressourcenlimit (rlimit) der offenen Datei-Deskiptoren für den
+      Master-Prozess. Standardwert: Setzt die Ressourcengrenze (rlimit) der
+      offenen Datei-Deskiptoren für den Master-Prozess.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="rlimit-core-master">
+     <code class="parameter">rlimit_core</code>
+     <span class="type">int</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Setzt das Ressourcenlimit (rlimit) der Maximalgröße einer Core-Datei für
+      den Master-Prozess. Standardwert: 0.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="events-mechanism">
+     <code class="parameter">events.mechanism</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Spezifiziert den Ereignismechanismus den FPM verwendet. Die folgenden sind
+      möglich: select, poll, epoll, kqueue (*BSD), port (Solaris). Standardwert:
+      leer (Auto-Erkennung).
+     </p>
+    </dd>
+
+   
+   
+    <dt id="systemd-interval">
+     <code class="parameter">systemd_interval</code>
+     <span class="type">int</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Wenn FPM mit systemd Integration kompiliert wurde, gibt dies das Intervall
+      in Sekunden an, in dem Statusberichtsmeldungen an systemd gesendet werden.
+      0 deaktiviert dies. Standardwert: 10.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+ 
+ <div class="sect2"> 
+  <h3 class="title">Liste der Pool Direktiven</h3>
+  <p class="para">
+   Mit FPM sind mehrere Pools an Prozessen mit unterschiedlichen Einstellungen lauffähig.
+   Nachfolgend finden Sie die Einstellungen die pro Pool verändert werden können.
+  </p>
+  <dl>
+
+   
+    <dt id="listen">
+     <code class="parameter">listen</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Die Adresse, unter welcher FastCGI-Anfragen angenommen werden. Gültig ist die Syntax:
+      &#039;ip.add.re.ss:port&#039;, &#039;port&#039;, &#039;/path/to/unix/socket&#039;. Diese Einstellunge ist für 
+      jeden Pool zwingend notwendig.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="listen-backlog">
+     <code class="parameter">listen.backlog</code>
+     <span class="type">int</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Setzt listen(2) backlog. Der Wert &#039;-1&#039; meint unbegrenzt. Standardwert:
+      -1.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="listen-allowed-clients">
+     <code class="parameter">listen.allowed_clients</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Liste mit IPv4 Adressen von FastCGI Clients, denen eine Verbindung gestattet ist.
+      Gleichzusetzen mit der FCGI_WEB_SERVER_ADDRS Umgebungsvariable im originalen PHP 
+      FastCGI (5.2.2+). Macht nur Sinn mit einem empfangenden TCP Socket.
+      Die Adressen sind durch Komma zu trennen. Wenn der Wert leer gelassen wird, 
+      dann werden Verbindungen von beliebigen IP Adressen akzeptiert. Standardwert: any.
+      IPv6 Adressen sind seit 5.5.20 und 5.6.4 erlaubt.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="listen-owner">
+     <code class="parameter">listen.owner</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Setzt die Rechte für den Unix Socket, falls dieser verwendet wird. Unter Linux 
+      müssen Lese- und Schreibrechte gesetzt werden, um Verbindungen eines Webservers zu 
+      erlauben. Viele BSD-Derivate erlauben Verbindungen unabhängig von den Rechteeinstellungen.
+      Standardwert: user und group werden auf den aktuellen User gesetzt und Mode auf 0660.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="listen-group">
+     <code class="parameter">listen.group</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Siehe <em>listen.owner</em>.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="listen-mode">
+     <code class="parameter">listen.mode</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Siehe <em>listen.owner</em>.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="listen-acl-users">
+     <code class="parameter">listen.acl_users</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Wenn POSIX Zugriffskontrolllisten unterstützt werden, können Sie diese mit
+      dieser Option einstellen. Wenn eingestellt, dann werden
+      <em>listen.owner</em> und <em>listen.group</em>
+      ignoriert. Der Wert ist eine durch Kommas getrennte Liste von
+      Benutzernamen. Seit PHP 5.6.5.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="listen-acl-groups">
+     <code class="parameter">listen.acl_groups</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Siehe <em>listen.acl_users</em>. Der Wert ist eine durch Kommas
+      getrennte Liste von Gruppennamen. Seit PHP 5.6.5.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="user">
+     <code class="parameter">user</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Der Unix-Benutzer der FPM Prozesse. Diese Einstellung ist zwingend notwendig.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="group">
+     <code class="parameter">group</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Die Unix-Benutzergruppe der FPM Prozesse. Wenn nicht eingestellt, wird 
+      als Wert die Gruppe des Standard-Nutzers verwendet. 
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="pm">
+     <code class="parameter">pm</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Wähle, wie der Prozess-Manager die Anzahl der Kindprozesse verwaltet.
+      Mögliche Werte: <em>static</em>, <em>ondemand</em>,
+      <em>dynamic</em>. 
+      Diese Einstellung ist zwingend notwendig.
+     </p>
+     <p class="para">
+      <em>static</em> - die Anzahl der Kindprozesse ist fest eingestellt (<em>pm.max_children</em>).
+     </p>
+     <p class="para">
+      <em>ondemand</em> - die Kindprozesse werden gestartet, sobald sie
+      benötigt werden, im Gegensatz zu dynamic, wo zu Beginn bereits
+      <em>pm.start_servers</em> Prozesse gestartet werden.
+     </p>
+     <p class="para">
+      <em>dynamic</em> - die Anzahl der Kindprozesse wird dynamisch eingestellt, 
+      wobei die folgenden Einstellungen zugrundegelegt werden: <em>pm.max_children</em>, 
+      <em>pm.start_servers</em>, 
+      <em>pm.min_spare_servers</em>, <em>pm.max_spare_servers</em>.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="pm.max-chidlren">
+     <code class="parameter">pm.max_children</code>
+     <span class="type">int</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Die Anzahl an Kindprozessen, die erstellt werden, wenn <em>pm</em> auf 
+      <em>static</em> gesetzt und die maximale Anzahl an Kindprozessen, die 
+      erstellt werden, wenn <em>pm</em> auf <em>dynamic</em> gesetzt ist. 
+      Diese Einstellung ist zwingend notwendig.
+     </p>
+     <p class="para">
+      Die Einstellung setzt das Limit für die Anzahl gleichzeitiger Verbindungen.
+      Gleichzusetzen mit der ApacheMaxClients-Direktive mit
+      mpm_prefork und der <var class="varname">PHP_FCGI_CHILDREN</var> Umgebungsvariable im
+      originalen PHP FastCGI.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="pm.start-servers">
+     <code class="parameter">pm.start_servers</code>
+     <span class="type">int</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Die Anzahl an Kindprozessen, die beim Start erstellt werden.
+      Wird nur verwendet, wenn <em>pm</em> auf <em>dynamic</em> gesetzt ist.
+      Standardwert: min_spare_servers + (max_spare_servers -
+      min_spare_servers) / 2.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="pm.min-spare-servers">
+     <code class="parameter">pm.min_spare_servers</code>
+     <span class="type">int</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Die gewünschte Mindestanzahl an Prozessen. Wird nur genutzt, wenn
+      <em>pm</em> auf <em>dynamic</em> gesetzt ist. Ebenfalls zwingend notwendig.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="pm.max-spare-servers">
+     <code class="parameter">pm.max_spare_servers</code>
+     <span class="type">int</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Die gewünschte Maximalanzahl an Prozessen. Wird nur genutzt, wenn
+      <em>pm</em> auf <em>dynamic</em> gesetzt ist. Ebenfalls zwingend erforderlich.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="pm.max-requests">
+     <code class="parameter">pm.max_requests</code>
+     <span class="type">int</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Die Anzahl an Anfragen, die ein Kindprozesse ausführt, bevor er neu startet.
+      Das kann hilfreich sein, um Memory Leaks in Bibliotheken von Drittanbietern zu debuggen. 
+      Für eine unbegrenzte Anfrageanzahl &#039;0&#039; verwenden. Vergleichbar mit 
+      <var class="varname">PHP_FCGI_MAX_REQUESTS</var>. Standardwert: 0.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="pm.status-path">
+     <code class="parameter">pm.status_path</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Die URI, um die FPM Statusseite anzuzeigen. Wenn dieser Wert nicht gesetzt ist, wird kein
+      URI als Statusseite erkannt. Standardwert: none.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="ping.path">
+     <code class="parameter">ping.path</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Die Ping URI, um die Monitoring-Seite von FPM aufzurufen. Wenn dieser Wert nicht gesetzt ist, 
+      dann wird keine URI als Ping-Seite erkannt. Das kann dafür verwendet werden, zu testen, 
+      ob FPM noch läuft und antwortet. Es sei der Hinweis gestattet, dass der Wert mit einem 
+      Forwardslash (/) zu beginnen hat.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="ping.response">
+     <code class="parameter">ping.response</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Diese Direktive kann dazu verwendet werden, die Antwort auf eine Ping-Anfrage zu gestalten. 
+      Die Antwort ist vom Typ text/plain mit Antwortcode 200.
+      Standardwert: pong.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="request-terminate-timeout">
+     <code class="parameter">request_terminate_timeout</code>
+     <span class="type">mixed</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Das Zeitfenster, in dem die einzelne Anfrage beantwortet sein sollte und falls nicht, der 
+      bearbeitende Prozess terminiert wird. Diese Einstellung sollte verwendet werden, wenn 
+      die &#039;max_execution_time&#039; php.ini Einstellung, aus irgendeinem Grund nicht zu einem Scriptabbruch 
+      führt.Der Wert &#039;0&#039; steht für &#039;Off&#039;. Mögliche Einheiten: s(econds)(default), m(inutes), h(ours) 
+      oder d(ays). Standardwert: 0.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="request-slowlog-timeout">
+     <code class="parameter">request_slowlog_timeout</code>
+     <span class="type">mixed</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Das Zeitfenster, in dem die einzelne Anfrage beantwortet sein sollte und falls nicht, 
+      ein PHP Backtrace in die Log-Datei für langsame Anfragen geschrieben wird.
+      Der Wert &#039;0&#039; meint &#039;Off&#039;.
+      Mögliche Einheiten: s(econds)(default), m(inutes), h(ours) oder d(ays).
+      Standardwert: 0.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="slowlog">
+     <code class="parameter">slowlog</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Die Log-Datei für langsame Anfragen. Standardwert:
+      <em>#INSTALL_PREFIX#/log/php-fpm.log.slow</em>.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="rlimit-files">
+     <code class="parameter">rlimit_files</code>
+     <span class="type">int</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Setzt open file descriptor rlimit für Kind-Prozesse in diesem Pool. Standardwert: Systemeinstellung.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="rlimit-core">
+     <code class="parameter">rlimit_core</code>
+     <span class="type">int</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Setzt max core size rlimit für Kind-Prozesse in diesem Pool. Mögliche Werte: &#039;unlimited&#039; oder ein Integer größer oder gleich 0.
+      Standardwert: Systemeinstellung.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="chroot">
+     <code class="parameter">chroot</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Wechselt (chroot) beim Start in das angegebene Verzeichnis. Der Wert muss eine absolute Pfadangabe 
+      sein. Wenn dieser Wert nicht gesetzt ist, wird chroot nicht verwendet.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="chdir">
+     <code class="parameter">chdir</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Wechselt (chdir) beim Start in das angegebene Verzeichnis. Der Wert muss eine absolute Pfadangabe sein. 
+      Standardwert: aktuelles Verzeichnis oder / wenn chroot.
+     </p> 
+    </dd>
+
+   
+   
+    <dt id="catch-workers-output">
+     <code class="parameter">catch_workers_output</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Umleitung von Stdout und Stderr in das allgemeine Errorlog. Wenn nicht gesetzt,
+      werden Stdout und Stderr umgeleitet nach /dev/null, entsprechend der FastCGI Spezifikation.
+      Standardwert: no.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="clear-env">
+     <code class="parameter">clear_env</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Löscht die Umgebung in FPM-Arbeitern. Verhindert, dass beliebige
+      Umgebungsvariablen FPM-Arbeiterprozesse erreichen, indem die Umgebung in
+      den Arbeitern gelöscht wird, bevor die Umgebungsvariablen, die in dieser
+      Pool-Konfiguration angegeben sind, hinzugefügt werden. Seit PHP 5.4.27,
+      5.5.11, and 5.6.0.
+      Standardwert: Yes.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="security-limit-extensions">
+     <code class="parameter">security.limit_extensions</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Beschränkt die Dateirweiterungen des Haupt-Skripts, das FPM zu parsen erlaubt.
+      Dies kann Konfigurationsfehler auf der Webserverseite verhindern. Sie
+      sollten FPM nur auf .php Erweiterungen beschränken, um zu verhindern, dass
+      bösartige Nutzter andere Erweiterungen verwenden, um PHP Code auszuführen.
+      Standardwert: .php.
+     </p> 
+    </dd>
+
+   
+  </dl>
+
+  <p class="para">
+   Es ist möglich, zusätzliche Umgebungsvariablen zu setzen und PHP Einstellungen eines bestimmten 
+   Pools zu verändern. Dazu sind die nachfolgenden Einstellungen in der Pool-Konfigurationsdatei erforderlich.
+   <div class="example" id="example-76">
+    <p><strong>Beispiel #1 Übergabe von Umgebungsvariablen und PHP Einstellungen an einen Pool</strong></p>
+    <div class="example-contents">
+     <div class="inicode"><pre class="inicode">env[HOSTNAME] = $HOSTNAME
+     env[PATH] = /usr/local/bin:/usr/bin:/bin
+     env[TMP] = /tmp
+     env[TMPDIR] = /tmp
+     env[TEMP] = /tmp
+     
+     php_admin_value[sendmail_path] = /usr/sbin/sendmail -t -i -f www@my.domain.com
+     php_flag[display_errors] = off
+     php_admin_value[error_log] = /var/log/fpm-php.www.log
+     php_admin_flag[log_errors] = on
+     php_admin_value[memory_limit] = 32M</pre>
+</div>
+    </div>
+
+   </div>
+   PHP Einstellungen die mit <em>php_value</em> oder
+   <em>php_flag</em> übergeben wurden überschreiben vorherige Werte.
+   Es sei der Hinweis gestattet, dass 
+   <a href="ini.core.html#ini.disable-functions" class="link">disable_functions</a> oder 
+   <a href="ini.core.html#ini.disable-classes" class="link">disable_classes</a> nicht dazu führt,
+   dass vorher definierte <var class="filename">php.ini</var> Einstellungen überschrieben werden, 
+   vielmehr werden die neuen Werte angehängt.
+  </p>
+  <p class="para">
+   Einstellungen die mit <em>php_admin_value</em> und <em>php_admin_flag</em>
+   gemacht wurden, können nicht durch Verwendung von <span class="function">ini_set</span> verändert werden.
+  </p>
+  <p class="para">
+   Ab PHP 5.3.3 können PHP-Einstellungen ebenfalls im Webserver vorgenommen
+   werden.
+   <div class="example" id="example-77">
+    <p><strong>Beispiel #2 Festlegen von PHP-Einstellungen in nginx.conf</strong></p>
+    <div class="example-contents">
+     <div class="inicode"><pre class="inicode">set $php_value &quot;pcre.backtrack_limit=424242&quot;;
+set $php_value &quot;$php_value \n pcre.recursion_limit=99999&quot;;
+fastcgi_param  PHP_VALUE $php_value;
+
+fastcgi_param  PHP_ADMIN_VALUE &quot;open_basedir=/var/www/htdocs&quot;;</pre>
+</div>
+    </div>
+
+   </div>
+   <div class="caution"><strong class="caution">Achtung</strong>
+    <p class="para">
+     Weil diese Einstellungen an php-fpm als FastCGI Header übergeben werden,
+     sollte php-fpm nicht an eine öffentlich zugängliche Adresse gebunden sein.
+     Andernfalls könnte jeder die PHP Konfigurationsoptionen ändern. Siehe auch
+     <a href="install.fpm.configuration.html#listen-allowed-clients" class="link">listen.allowed_clients</a>.
+    </p>
+   </div>
+  </p>
+ </div>
+ 
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

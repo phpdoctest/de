@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Liefert die Anzahl der Datens&auml;tze einer Datenbank</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.dbase.html">dBase</a></li>
+  <li class="header up"><a href="ref.dbase.html">dBase Funktionen</a></li>
+  <li><a href="function.dbase-add-record.html">dbase_add_record</a></li>
+  <li><a href="function.dbase-close.html">dbase_close</a></li>
+  <li><a href="function.dbase-create.html">dbase_create</a></li>
+  <li><a href="function.dbase-delete-record.html">dbase_delete_record</a></li>
+  <li><a href="function.dbase-get-header-info.html">dbase_get_header_info</a></li>
+  <li><a href="function.dbase-get-record-with-names.html">dbase_get_record_with_names</a></li>
+  <li><a href="function.dbase-get-record.html">dbase_get_record</a></li>
+  <li><a href="function.dbase-numfields.html">dbase_numfields</a></li>
+  <li class="active"><a href="function.dbase-numrecords.html">dbase_numrecords</a></li>
+  <li><a href="function.dbase-open.html">dbase_open</a></li>
+  <li><a href="function.dbase-pack.html">dbase_pack</a></li>
+  <li><a href="function.dbase-replace-record.html">dbase_replace_record</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.dbase-numfields.html">dbase_numfields</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.dbase-open.html">dbase_open</a></div>
+                <div class="up"><a href="ref.dbase.html">dBase Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.dbase-numrecords" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">dbase_numrecords</h1>
+  <p class="refpurpose">Liefert die Anzahl der Datensätze einer Datenbank</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.dbase-numrecords-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname">dbase_numrecords</span>
+    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$dbase_identifier</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Gibt die Anzahl der Datensätze (Zeilen) der angegebenen Datenbank zurück.
+  </p>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Die Anzahl der Datensätze liegt zwischen 1 und
+    <em>dbase_numrecords($db)</em>, wogegen die Anzahl der Felder
+    zwischen 0 und <em>dbase_numfields($db)-1</em> liegt.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.dbase-numrecords-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">dbase_identifier</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Datenbank-Verbindungskennung, die von
+       <span class="function">dbase_open</span> oder <span class="function">dbase_create</span>
+       zurückgegeben wurde.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.dbase-numrecords-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Die Anzahl der Datensätze in der Datenbank oder <strong><code>FALSE</code></strong>, falls ein Fehler
+   auftrat.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.dbase-numrecords-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-1168">
+    <p><strong>Beispiel #1 Eine Schleife über alle Datensätze der Datenbank ausführen</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;im&nbsp;nur-lesen-Modus&nbsp;öffnen<br /></span><span style="color: #0000BB">$db&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dbase_open</span><span style="color: #007700">(</span><span style="color: #DD0000">'/tmp/test.dbf'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">$db</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$anzahl_datensaetze&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dbase_numrecords</span><span style="color: #007700">(</span><span style="color: #0000BB">$db</span><span style="color: #007700">);<br />&nbsp;&nbsp;for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;=&nbsp;</span><span style="color: #0000BB">$anzahl_datensaetze</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;mache&nbsp;hier&nbsp;mit&nbsp;jedem&nbsp;Datensatz&nbsp;etwas<br />&nbsp;&nbsp;</span><span style="color: #007700">}<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.dbase-numrecords-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">dbase_numfields</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

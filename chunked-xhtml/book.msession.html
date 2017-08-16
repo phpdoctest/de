@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Mohawk Software Session Handler-Funktionen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.session.html">Session-Erweiterungen</a></li>
+  <li class="active"><a href="book.msession.html">msession</a></li>
+  <li><a href="book.session.html">Sessions</a></li>
+  <li><a href="book.session-pgsql.html">Session PgSQL</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="refs.basic.session.html">Session-Erweiterungen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.msession.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.basic.session.html">Session-Erweiterungen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.msession" class="book">
+ <h1>Mohawk Software Session Handler-Funktionen</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.msession.html">Einf&uuml;hrung</a></li>
+<li><a href="msession.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="msession.requirements.html">Anforderungen</a></li>
+<li><a href="msession.installation.html">Installation</a></li>
+<li><a href="msession.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="msession.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="msession.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.msession.html">msession-Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.msession-connect.html">msession_connect</a> — Baut eine Verbindung zum msession-Server auf</li>
+<li><a href="function.msession-count.html">msession_count</a> — Gibt die Session-Zahl zur&uuml;ck</li>
+<li><a href="function.msession-create.html">msession_create</a> — Erstellt eine Session</li>
+<li><a href="function.msession-destroy.html">msession_destroy</a> — Zerst&ouml;rt eine Session</li>
+<li><a href="function.msession-disconnect.html">msession_disconnect</a> — Schlie&szlig;t eine Verbindung zum msession-Server</li>
+<li><a href="function.msession-find.html">msession_find</a> — Sucht nach Sessions mit Name und Wert</li>
+<li><a href="function.msession-get-array.html">msession_get_array</a> — Gibt ein Array mit msession-Variablen zur&uuml;ck</li>
+<li><a href="function.msession-get-data.html">msession_get_data</a> — Get data session unstructured data</li>
+<li><a href="function.msession-get.html">msession_get</a> — Gibt einen Wert aus der Session zur&uuml;ck</li>
+<li><a href="function.msession-inc.html">msession_inc</a> — Erh&ouml;ht einen Wert innerhalb einer Session</li>
+<li><a href="function.msession-list.html">msession_list</a> — Liste aller Sessions</li>
+<li><a href="function.msession-listvar.html">msession_listvar</a> — Liste aller Sessions, die eine bestimmte Variable enthalten</li>
+<li><a href="function.msession-lock.html">msession_lock</a> — Sperrt eine Session</li>
+<li><a href="function.msession-plugin.html">msession_plugin</a> — Ruft eine Escape-Funktion innerhalb des msession-Personality-Plugins auf</li>
+<li><a href="function.msession-randstr.html">msession_randstr</a> — Gibt eine Zufallszeichenkette zur&uuml;ck</li>
+<li><a href="function.msession-set-array.html">msession_set_array</a> — Setzt msession-Variablen aus einem Array</li>
+<li><a href="function.msession-set-data.html">msession_set_data</a> — Set data session unstructured data</li>
+<li><a href="function.msession-set.html">msession_set</a> — Setzt einen Wert in der Session</li>
+<li><a href="function.msession-timeout.html">msession_timeout</a> — Setzt/liefert Session-Timeout</li>
+<li><a href="function.msession-uniq.html">msession_uniq</a> — Gibt eine eindeutige ID zur&uuml;ck</li>
+<li><a href="function.msession-unlock.html">msession_unlock</a> — Entsperrt eine Session</li>
+</ul>
+</li>
+</ul>
+
+ 
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

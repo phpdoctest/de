@@ -1,0 +1,554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Laufzeit-Konfiguration</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li class="header up"><a href="book.info.html">PHP-Optionen/-Informationen</a></li>
+  <li class="header up"><a href="info.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="info.requirements.html">Anforderungen</a></li>
+  <li><a href="info.installation.html">Installation</a></li>
+  <li class="active"><a href="info.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="info.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="info.installation.html">Installation</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="info.resources.html">Ressource-Typen</a></div>
+                <div class="up"><a href="info.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="info.configuration" class="section">
+ <h2 class="title">Laufzeit-Konfiguration</h2>
+ <p class="simpara">Das Verhalten dieser Funktionen wird
+durch Einstellungen in der <var class="filename">php.ini</var> beeinflusst.</p>
+ <p class="para">
+  <table class="doctable table">
+   <caption><strong>Konfigurationsoptionen für PHP Optionen/Info</strong></caption>
+   
+    <thead>
+     <tr>
+      <th>Name</th>
+      <th>Standard</th>
+      <th>Veränderbar</th>
+      <th>Changelog</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td><a href="info.configuration.html#ini.assert.active" class="link">assert.active</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="info.configuration.html#ini.assert.bail" class="link">assert.bail</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="info.configuration.html#ini.assert.warning" class="link">assert.warning</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="info.configuration.html#ini.assert.callback" class="link">assert.callback</a></td>
+      <td>NULL</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="info.configuration.html#ini.assert.quiet-eval" class="link">assert.quiet_eval</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="info.configuration.html#ini.assert.exception" class="link">assert.exception</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 7.0.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="info.configuration.html#ini.enable-dl" class="link">enable_dl</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td>Dieses veraltete Feature <em class="emphasis">wird</em> in der
+Zukunft sicherlich <em class="emphasis">entfernt</em>.</td>
+     </tr>
+
+     <tr>
+      <td><a href="info.configuration.html#ini.max-execution-time" class="link">max_execution_time</a></td>
+      <td>&quot;30&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="info.configuration.html#ini.max-input-time" class="link">max_input_time</a></td>
+      <td>&quot;-1&quot;</td>
+      <td>PHP_INI_PERDIR</td>
+      <td>Verfügbar seit PHP 4.3.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="info.configuration.html#ini.max-input-nesting-level" class="link">max_input_nesting_level</a></td>
+      <td>&quot;64&quot;</td>
+      <td>PHP_INI_SYSTEM|PHP_INI_PERDIR</td>
+      <td>Verfügbar ab PHP 4.4.8 und PHP 5.2.3.</td>
+     </tr>
+
+     <tr>
+      <td><a href="info.configuration.html#ini.max-input-vars" class="link">max_input_vars</a></td>
+      <td>1000</td>
+      <td>PHP_INI_PERDIR</td>
+      <td>Verfügbar seit PHP 5.3.9.</td>
+     </tr>
+
+     <tr>
+      <td><a href="info.configuration.html#ini.magic-quotes-gpc" class="link">magic_quotes_gpc</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_PERDIR</td>
+      <td>PHP_INI_ALL ab PHP &lt;= 4.2.3. Entfernt in PHP 5.4.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="info.configuration.html#ini.magic-quotes-runtime" class="link">magic_quotes_runtime</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Entfernt in PHP 5.4.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="info.configuration.html#ini.zend.enable-gc" class="link">zend.enable_gc</a></td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar ab PHP 5.3.0.</td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+ 
+  Weitere Details und die Definitionen der
+PHP_INI_*-Konstanten finden Sie im <a href="configuration.changes.modes.html" class="xref">Wo Konfigurationseinstellungen gesetzt werden k&ouml;nnen</a>.
+ </p>
+ 
+ <p class="para">Hier eine kurze Erklärung der
+Konfigurationsoptionen:</p>
+ 
+ <p class="para">
+  <dl>
+
+   
+    <dt id="ini.assert.active">
+     <code class="parameter">assert.active</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Aktiviert <span class="function">assert</span> Auswertung.
+     </p>
+    </dd>
+
+   
+   
+   
+    <dt id="ini.assert.bail">
+     <code class="parameter">assert.bail</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Beendet die Ausführung eines Skripts bei fehlgeschlagener Aussage.
+     </p>
+    </dd>
+
+   
+   
+   
+    <dt id="ini.assert.warning">
+     <code class="parameter">assert.warning</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Erzeugt ein PHP warning für jede fehlgeschlagene Aussage.
+     </p>
+    </dd>
+
+   
+   
+   
+    <dt id="ini.assert.callback">
+     <code class="parameter">assert.callback</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Benutzerdefinierte Funktion, die bei fehlgeschlagenen Aussagen ausgeführt
+      wird.
+     </p>
+    </dd>
+
+   
+   
+   
+    <dt id="ini.assert.quiet-eval">
+     <code class="parameter">assert.quiet_eval</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Benutzt die aktuelle Einstellung von <span class="function">error_reporting</span>
+      während der Überprüfung eines Ausdrucks einer Aussage. Ist diese
+      Einstellung aktiviert, werden wähhrend der Überprüfung keine Fehler
+      angezeigt (implizit error_reporting(0)). Falls deaktiviert, werden Fehler
+      entsprechend der Einstellung von <span class="function">error_reporting</span>
+      angezeigt.
+     </p>
+    </dd>
+
+   
+   
+   
+    <dt id="ini.assert.exception">
+     <code class="parameter">assert.exception</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Erzeugt eine <span class="classname">AssertionError</span> Exception für die
+      fehlgeschlagene Assertion.
+     </p>
+    </dd>
+
+   
+
+   
+    <dt id="ini.enable-dl">
+     <code class="parameter">enable_dl</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Sie können das dynamische Laden von PHP Erweiterungen mittels
+      <span class="function">dl</span> für virtuelle Server oder per Verzeichnis an- und
+      abschalten.
+     </p>
+     <p class="para">
+      Der Hauptgrund dynmisches Laden abzustellen sind Sicherheitsüberlegungen.
+      Mit dynamischen Laden ist es möglich, alle
+      <a href="ini.core.html#ini.open-basedir" class="link">open_basedir</a> Einschränkungen
+      zu umgehen. Standard ist es, dynamisches Laden zu erlauben, außer wenn
+      Sie den <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">Safe Mode</a> benutzen. Im <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">Safe Mode</a> ist es nicht möglich
+      <span class="function">dl</span> zu benutzen.
+     </p>
+    </dd>
+
+   
+   
+   
+    <dt id="ini.max-execution-time">
+     <code class="parameter">max_execution_time</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Legt die maximale Zeit in Sekunden fest, die ein Skript laufen darf,
+      bevor der Parser die Ausführung stoppt. Diese Einstellung hilft zu
+      verhindern, dass schlampig geschriebene Skripte Ihren Server lahmlegen.
+      Der Standardwert für diese Einstellung ist <em>30</em> Sekunden.
+      Wird PHP von der <a href="features.commandline.html" class="link">Kommandozeile</a>
+      ausgeführt so ist der Vorgabewert <em>0</em>.
+     </p>
+     <p class="para">
+      Die maximale Ausführungszeit beeinhaltet keine Systemaufrufe,
+      Streamoperationen, usw. Weitere Details finden Sie bei der
+      <span class="function">set_time_limit</span> Funktion.
+     </p>
+     <p class="para">
+      Bei aktiviertem <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">Safe Mode</a> können Sie diese Einstellung nicht mit
+      <span class="function">ini_set</span> verändern. Die einzige Möglichkeit diese
+      Beschränkung zu umgehen besteht darin, entweder den Safe Mode
+      abzustellen, oder das Zeitlimit in der <var class="filename">php.ini</var> zu verändern.
+     </p>
+     <p class="para">
+      Ihr Webbserver kann andere Timeout-Einstellungen haben die ebenfalls
+      die PHP-Ausführung unterbrechen können. Apache verfügt über eine
+      <em>TimeOut</em>-Direktive und IIS hat eine CGI timeout
+      Funktion. Beide sind als Standardwert auf 300 Sekunden eingestellt. 
+      Genauere Informationen finden Sie in der Dokumentation Ihres Webservers.
+     </p>
+    </dd>
+
+   
+   
+   
+    <dt id="ini.max-input-time">
+     <code class="parameter">max_input_time</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Legt die maximale Zeit in Sekunden fest, die ein Skript verbrauchen darf,
+      um Eingabedaten (wie POST, GET und Dateiuploads) zu verarbeiten. Die
+      Zeitmessung beginnt sobald PHP auf dem Server aufgerufen wird, und endet
+      wenn die Ausführung beginnt.
+     </p>
+    </dd>
+
+   
+   
+   
+    <dt id="ini.max-input-nesting-level">
+     <code class="parameter">max_input_nesting_level</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Legt die maximale Verschachtelungtiefe für 
+      <a href="language.variables.external.html" class="link">Eingabevariablen</a> (z.B.
+      <var class="varname">$_GET</var>, <var class="varname">$_POST</var> ...)
+      fest.
+     </p>
+    </dd>
+
+   
+   
+   
+    <dt id="ini.max-input-vars">
+     <code class="parameter">max_input_vars</code>
+     <span class="type">integer</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Wie viele <a href="language.variables.external.html" class="link">Eingabe-Variablen</a> maximal angenommen werden (dieses Limit wird auf die 
+      superglobalen $_GET, $_POST und $_COOKIE separat angewandt). Diese Direktive verhindert
+      die Nutzung von Hashtable Kollisionen für eine Denial of Service Attacke. Wenn
+      mehr Eingabe-Variablen gesendet werden, als mit dieser Direktive erlaubt, wird
+      ein Fehler der Stufe <strong><code>E_WARNING</code></strong> geworfen und weitere
+      Eingabe-Variablen werden nicht angenommen. 
+     </p>
+    </dd>
+
+   
+   
+   
+    <dt id="ini.magic-quotes-gpc">
+     <code class="parameter">magic_quotes_gpc</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <div class="warning"><strong class="warning">Warnung</strong><p class="simpara">Dieses Feature ist
+seit PHP 5.3.0 <em class="emphasis">DEPRECATED</em> (veraltet) und seit PHP 5.4.0 <em class="emphasis">ENTFERNT</em>.</p></div>
+     <p class="para">
+      Legt die magic_quotes Einstellungen für GPC (Get/Post/Cookie) fest. Ist
+      diese Einstellung auf on, werden alle &#039; (einzelne Anführungszeichen),
+      &quot; (doppelte Anführungszeichen), \ (Backslash) und NUL&#039;s automatisch
+      mit einem Backslash geschützt.
+     </p>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <p class="para">
+       PHP 4 werden auch <var class="varname">$_ENV</var>
+       Variablen geschützt.
+      </p>
+     </p></blockquote>
+     <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+      <p class="para">
+       Steht die Einstellung für <a href="sybase.configuration.html#ini.magic-quotes-sybase" class="link">
+       magic_quotes_sybase</a> ebenfalls auf ON, überschreibt diese
+       magic_quotes_gpc komplett. Beide Einstellungen aktiviert bewirken, dass
+       nur einzelne Anführungszeichen durch <em class="emphasis">&#039;&#039;</em> geschützt
+       werden. Doppelte Anführungszeichen, Backslashes und NUL&#039;s werden nicht
+       verändert und verbleiben im Originalzustand.
+      </p>
+     </p></blockquote>
+     <p class="para">
+      Siehe auch <span class="function">get_magic_quotes_gpc</span>
+     </p>
+    </dd>
+
+   
+   
+   
+    <dt id="ini.magic-quotes-runtime">
+     <code class="parameter">magic_quotes_runtime</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <div class="warning"><strong class="warning">Warnung</strong><p class="simpara">Dieses Feature ist
+seit PHP 5.3.0 <em class="emphasis">DEPRECATED</em> (veraltet) und seit PHP 5.4.0 <em class="emphasis">ENTFERNT</em>.</p></div>
+     <p class="para">
+      Falls <code class="parameter">magic_quotes_runtime</code> aktiviert ist, werden
+      die meisten Funktionen die Daten von einer beliebigen externen Quelle
+      zurückgeben, inklusive Datenbanken und Textdateien, die in den Daten
+      enthaltenen Anführungszeichen mit einem Backslash geschützt zurückgeben.
+      Falls zusätzlich <a href="sybase.configuration.html#ini.magic-quotes-sybase" class="link">
+      magic_quotes_sybase</a> auf on steht, werden einzelne
+      Anführungszeichen mit einem einzelnen Anführungszeichen statt einem
+      Backslash geschützt.
+     </p>
+     <p class="para">
+      Funktionen die von <code class="parameter">magic_quotes_runtime</code> betroffen sind
+      (ohne die Funktionen aus PECL):
+      <ul class="simplelist">
+       <li class="member"><span class="function">get_meta_tags</span></li>
+       <li class="member"><span class="function">file_get_contents</span></li>
+       <li class="member"><span class="function">file</span></li>
+       <li class="member"><span class="function">fgets</span></li>
+       <li class="member"><span class="function">fwrite</span></li>
+       <li class="member"><span class="function">fread</span></li>
+       <li class="member"><span class="function">fputcsv</span></li>
+       <li class="member"><span class="function">stream_socket_recvfrom</span></li>
+       <li class="member"><span class="function">exec</span></li>
+       <li class="member"><span class="function">system</span></li>
+       <li class="member"><span class="function">passthru</span></li>
+       <li class="member"><span class="function">stream_get_contents</span></li>
+       <li class="member"><span class="function">bzread</span></li>
+       <li class="member"><span class="function">gzfile</span></li>
+       <li class="member"><span class="function">gzgets</span></li>
+       <li class="member"><span class="function">gzwrite</span></li>
+       <li class="member"><span class="function">gzread</span></li>
+       <li class="member"><span class="function">phar_file_get_contents</span></li>
+       <li class="member"><span class="function">exif_read_data</span></li>
+       <li class="member"><span class="function">dba_insert</span></li>
+       <li class="member"><span class="function">dba_replace</span></li>
+       <li class="member"><span class="function">dba_fetch</span></li>
+       <li class="member"><span class="function">ibase_fetch_row</span></li>
+       <li class="member"><span class="function">ibase_fetch_assoc</span></li>
+       <li class="member"><span class="function">ibase_fetch_object</span></li>
+       <li class="member"><span class="function">mssql_fetch_row</span></li>
+       <li class="member"><span class="function">mssql_fetch_object</span></li>
+       <li class="member"><span class="function">mssql_fetch_array</span></li>
+       <li class="member"><span class="function">mssql_fetch_assoc</span></li>
+       <li class="member"><span class="function">mysqli_fetch_row</span></li>
+       <li class="member"><span class="function">mysqli_fetch_array</span></li>
+       <li class="member"><span class="function">mysqli_fetch_assoc</span></li>
+       <li class="member"><span class="function">mysqli_fetch_object</span></li>
+       <li class="member"><span class="function">pg_fetch_row</span></li>
+       <li class="member"><span class="function">pg_fetch_assoc</span></li>
+       <li class="member"><span class="function">pg_fetch_array</span></li>
+       <li class="member"><span class="function">pg_fetch_object</span></li>
+       <li class="member"><span class="function">pg_fetch_all</span></li>
+       <li class="member"><span class="function">pg_select</span></li>
+       <li class="member"><span class="function">sybase_fetch_object</span></li>
+       <li class="member"><span class="function">sybase_fetch_array</span></li>
+       <li class="member"><span class="function">sybase_fetch_assoc</span></li>
+       <li class="member"><span class="function">SplFileObject::fgets</span></li>
+       <li class="member"><span class="function">SplFileObject::fgetcsv</span></li>
+       <li class="member"><span class="function">SplFileObject::fwrite</span></li>
+      </ul>
+     </p>
+    </dd>
+
+   
+   
+   
+    <dt id="ini.zend.enable-gc">
+     <code class="parameter">zend.enable_gc</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Aktiviert bzw. deaktiviert die Speicherbereinigung
+      zirkulär abhängiger Referenzen.
+     </p>
+    </dd>
+
+   
+   
+  </dl>
+
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

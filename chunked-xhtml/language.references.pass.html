@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Parameter&uuml;bergabe per Referenz</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.references.html">Referenzen in PHP</a></li>
+  <li><a href="language.references.whatare.html">Was Referenzen sind</a></li>
+  <li><a href="language.references.whatdo.html">Was Referenzen leisten</a></li>
+  <li><a href="language.references.arent.html">Was Referenzen nicht sind</a></li>
+  <li class="active"><a href="language.references.pass.html">Parameter&uuml;bergabe per Referenz</a></li>
+  <li><a href="language.references.return.html">Referenzen zur&uuml;ckgeben</a></li>
+  <li><a href="language.references.unset.html">Referenzen aufheben</a></li>
+  <li><a href="language.references.spot.html">Referenzen entdecken</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.references.arent.html">Was Referenzen nicht sind</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.references.return.html">Referenzen zur&uuml;ckgeben</a></div>
+                <div class="up"><a href="language.references.html">Referenzen in PHP</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.references.pass" class="sect1">
+   <h2 class="title">Parameterübergabe per Referenz</h2>
+   <p class="para">
+   Man kann Variablen an Funktionen per Referenz übergeben, so dass die Funktion
+   ihre Argumente modifizieren kann. Dazu benutzt man folgende Syntax:
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$var</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$var</span><span style="color: #007700">++;<br />}<br /><br /></span><span style="color: #0000BB">$a</span><span style="color: #007700">=</span><span style="color: #0000BB">5</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;$a&nbsp;ist&nbsp;6<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+  Zu beachten ist, dass kein Referenz-Zeichen beim Funktionsaufruf steht, nur in
+  der Funktionsdefinition. Diese allein ist ausreichend, um das Argument per
+  Referenz zu übergeben. In neueren PHP-Versionen gibt es eine Warnung, dass die
+  Benutzung von &quot;Call-time pass-by-reference&quot; mit Hilfe von &amp; in
+  <em>foo(&amp;$a);</em> veraltet ist.
+  </p>
+  <p class="para">
+  Folgende Dinge können per Referenz übergeben werden:
+   <ul class="itemizedlist">
+    <li class="listitem">
+     <span class="simpara">
+      Variablen, zum Beispiel <em>foo($a)</em>
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      &quot;New&quot;-Ausdrücke, zum Beispiel <em>foo(new foobar())</em>
+     </span>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      Referenzen, zurückgegeben von einer Funktion, zum Beispiel:
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;&amp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">bar</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+    Es gibt detailliertere Erläuterungen zur Rückgabe <a href="language.references.return.html" class="link">by-reference</a>.
+     </p>
+    </li>
+  </ul>
+  </p>
+  <p class="para">
+  Alle anderen Ausdrücke sollte nicht per Referenz übergeben werden, da das
+  Ergebnis undefiniert ist. Folgende Beispiele sind etwa ungültig:
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">()&nbsp;</span><span style="color: #FF8000">//&nbsp;Beachte&nbsp;das&nbsp;fehlende&nbsp;&amp;<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">bar</span><span style="color: #007700">());&nbsp;</span><span style="color: #FF8000">//&nbsp;Fatal&nbsp;error&nbsp;seit&nbsp;PHP&nbsp;5.0.5<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Ausdruck,&nbsp;keine&nbsp;Variable<br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">5</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Fatal&nbsp;error<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+    Diese Anforderungen gelten für PHP 4.0.4 und später.
+  </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

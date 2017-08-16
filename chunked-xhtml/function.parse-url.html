@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Analysiert eine URL und gibt ihre Bestandteile zur&uuml;ck</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li class="header up"><a href="book.url.html">URLs</a></li>
+  <li class="header up"><a href="ref.url.html">URL Funktionen</a></li>
+  <li><a href="function.base64-decode.html">base64_decode</a></li>
+  <li><a href="function.base64-encode.html">base64_encode</a></li>
+  <li><a href="function.get-headers.html">get_headers</a></li>
+  <li><a href="function.get-meta-tags.html">get_meta_tags</a></li>
+  <li><a href="function.http-build-query.html">http_build_query</a></li>
+  <li class="active"><a href="function.parse-url.html">parse_url</a></li>
+  <li><a href="function.rawurldecode.html">rawurldecode</a></li>
+  <li><a href="function.rawurlencode.html">rawurlencode</a></li>
+  <li><a href="function.urldecode.html">urldecode</a></li>
+  <li><a href="function.urlencode.html">urlencode</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.http-build-query.html">http_build_query</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.rawurldecode.html">rawurldecode</a></div>
+                <div class="up"><a href="ref.url.html">URL Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.parse-url" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">parse_url</h1>
+  <p class="refpurpose">Analysiert eine URL und gibt ihre Bestandteile zurück</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.parse-url-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname">parse_url</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$url</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$component</code><span class="initializer"> = -1</span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Diese Funktion parst einen URL und gibt ein assoziatives Array zurück, das
+   die im URL vorhandenen Komponenten enthält.
+  </p>
+  <p class="para">
+   Diese Funktion ist <em class="emphasis">nicht</em> dazu gedacht,
+   einen gegebenen URL zu validieren, sondern es gliedert einen URL in die
+   unten aufgeführten Bestandteile. Unvollständige URLs werden als Parameter
+   akzeptiert, <span class="function">parse_url</span> versucht, sie bestmöglich zu
+   analysieren.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.parse-url-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">url</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der zu parsende URL. Ungültige Zeichen werden durch <em>_</em>
+       ersetzt.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+   <dl>
+
+    
+     <dt>
+<code class="parameter">component</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Geben Sie einen der folgenden Parameter an, um nur einen spezifischen
+       Teil des URL als <span class="type">String</span> (außer wenn
+       <strong><code>PHP_URL_PORT</code></strong> angegeben wird, in welchem Fall der
+       Rückgabewert ein <span class="type">Integer</span> ist) zu erhalten:
+       Geben Sie entweder <strong><code>PHP_URL_SCHEME</code></strong>,
+       <strong><code>PHP_URL_HOST</code></strong>, <strong><code>PHP_URL_PORT</code></strong>,
+       <strong><code>PHP_URL_USER</code></strong>, <strong><code>PHP_URL_PASS</code></strong>,
+       <strong><code>PHP_URL_PATH</code></strong>, <strong><code>PHP_URL_QUERY</code></strong>
+       oder <strong><code>PHP_URL_FRAGMENT</code></strong> an.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.parse-url-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Bei sehr fehlerhaften URLs kann <span class="function">parse_url</span> <strong><code>FALSE</code></strong>
+   zurückgeben.
+  </p>
+  <p class="para">
+   Wird der <code class="parameter">component</code> Parameter ausgelassen, wird ein
+   assoziatives <span class="type">Array</span> zurückgegeben. Mindestens ein Bestandteil liegt
+   im Array vor. Mögliche Schlüssel in diesem Array sind:
+   <ul class="itemizedlist">
+    <li class="listitem">
+     <span class="simpara">
+      <var class="varname">scheme</var> - z.B. http
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      <var class="varname">host</var>
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      <var class="varname">port</var>
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      <var class="varname">user</var>
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      <var class="varname">pass</var>
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      <var class="varname">path</var>
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      <var class="varname">query</var> - alles nach dem Fragezeichen
+      <em>?</em>
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
+      <var class="varname">fragment</var> - alles nach dem Textanker
+      <em>#</em>
+     </span>
+    </li>
+   </ul>
+  </p>
+  <p class="para">
+   Ist der Parameter <code class="parameter">component</code> angegeben, gibt
+   <span class="function">parse_url</span> ein
+   <span class="type">String</span> (oder ein <span class="type">Integer</span>, im Fall von
+   <strong><code>PHP_URL_PORT</code></strong>) anstelle des normalen <span class="type">Array</span> zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.parse-url-changelog">
+  <h3 class="title">Changelog</h3>
+ 
+ <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.4.7</td>
+       <td>
+        <em class="emphasis">Host</em>-Erkennung bei fehlendem <em class="emphasis">Schema</em>
+        und führendem Komponententrenner korrigiert.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.3</td>
+       <td><strong><code>E_WARNING</code></strong> für fehlerhafte URLs entfernt.</td>
+      </tr>
+
+      <tr>
+       <td>5.1.2</td>
+       <td><code class="parameter">component</code>-Parameter hinzugefügt</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+</div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.parse-url-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4579">
+    <p><strong>Beispiel #1 Ein <span class="function">parse_url</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$url&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'http://benutzername:passwort@hostname:9090/pfad?argument=wert#textanker'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">parse_url</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">parse_url</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_URL_SCHEME</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">parse_url</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_URL_USER</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">parse_url</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_URL_PASS</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">parse_url</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_URL_HOST</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">parse_url</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_URL_PORT</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">parse_url</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_URL_PATH</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">parse_url</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_URL_QUERY</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">parse_url</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_URL_FRAGMENT</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+array(8) {
+  [&quot;scheme&quot;]=&gt;
+  string(4) &quot;http&quot;
+  [&quot;host&quot;]=&gt;
+  string(8) &quot;hostname&quot;
+  [&quot;port&quot;]=&gt;
+  int(9090)
+  [&quot;user&quot;]=&gt;
+  string(12) &quot;benutzername&quot;
+  [&quot;pass&quot;]=&gt;
+  string(8) &quot;passwort&quot;
+  [&quot;path&quot;]=&gt;
+  string(5) &quot;/pfad&quot;
+  [&quot;query&quot;]=&gt;
+  string(13) &quot;argument=wert&quot;
+  [&quot;fragment&quot;]=&gt;
+  string(9) &quot;textanker&quot;
+}
+string(4) &quot;http&quot;
+string(12) &quot;benutzername&quot;
+string(8) &quot;passwort&quot;
+string(8) &quot;hostname&quot;
+int(9090)
+string(5) &quot;/pfad&quot;
+string(13) &quot;argument=wert&quot;
+string(9) &quot;textanker&quot;
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-4580">
+    <p><strong>Beispiel #2 Ein <span class="function">parse_url</span>-Beispiel mit fehlendem Schema</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$url&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'//www.example.com/path?googleguy=googley'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Vor&nbsp;5.4.7&nbsp;wurde&nbsp;der&nbsp;Pfad&nbsp;als&nbsp;"//www.example.com/path"&nbsp;angezeigt<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">parse_url</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+array(3) {
+  [&quot;host&quot;]=&gt;
+  string(15) &quot;www.example.com&quot;
+  [&quot;path&quot;]=&gt;
+  string(5) &quot;/path&quot;
+  [&quot;query&quot;]=&gt;
+  string(17) &quot;googleguy=googley&quot;
+}
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.parse-url-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Diese Funktion verarbeitet keine relativen URLs.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Die Funktion ist primär dazu gedacht, URLs zu parsen, nicht jedoch URIs. Um
+    jedoch die Abwärtskompatibilität von PHP zu gewährleisten, wird für das
+    Schema file:// die Ausnahme dreier Slashes (file:///) zugelassen. Bei allen
+    anderen Schemata ist diese Notierung ungültig.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.parse-url-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">pathinfo</span></li>
+    <li class="member"><span class="function">parse_str</span></li>
+    <li class="member"><span class="function">http_build_query</span></li>
+    <li class="member"><span class="function">http_build_url</span></li>
+    <li class="member"><span class="function">dirname</span></li>
+    <li class="member"><span class="function">basename</span></li>
+    <li class="member"><a href="http://www.faqs.org/rfcs/rfc3986" class="link external">&raquo;&nbsp;RFC 3986</a></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

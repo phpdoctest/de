@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Zeitpunkt des Osterfestes (0 Uhr) als Unix-Timestamp</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.calendar.html">Datums- und zeitrelevante Erweiterungen</a></li>
+  <li class="header up"><a href="book.calendar.html">Kalender</a></li>
+  <li class="header up"><a href="ref.calendar.html">Calendar Funktionen</a></li>
+  <li><a href="function.cal-days-in-month.html">cal_days_in_month</a></li>
+  <li><a href="function.cal-from-jd.html">cal_from_jd</a></li>
+  <li><a href="function.cal-info.html">cal_info</a></li>
+  <li><a href="function.cal-to-jd.html">cal_to_jd</a></li>
+  <li class="active"><a href="function.easter-date.html">easter_date</a></li>
+  <li><a href="function.easter-days.html">easter_days</a></li>
+  <li><a href="function.frenchtojd.html">frenchtojd</a></li>
+  <li><a href="function.gregoriantojd.html">gregoriantojd</a></li>
+  <li><a href="function.jddayofweek.html">jddayofweek</a></li>
+  <li><a href="function.jdmonthname.html">jdmonthname</a></li>
+  <li><a href="function.jdtofrench.html">jdtofrench</a></li>
+  <li><a href="function.jdtogregorian.html">jdtogregorian</a></li>
+  <li><a href="function.jdtojewish.html">jdtojewish</a></li>
+  <li><a href="function.jdtojulian.html">jdtojulian</a></li>
+  <li><a href="function.jdtounix.html">jdtounix</a></li>
+  <li><a href="function.jewishtojd.html">jewishtojd</a></li>
+  <li><a href="function.juliantojd.html">juliantojd</a></li>
+  <li><a href="function.unixtojd.html">unixtojd</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.cal-to-jd.html">cal_to_jd</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.easter-days.html">easter_days</a></div>
+                <div class="up"><a href="ref.calendar.html">Calendar Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.easter-date" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">easter_date</h1>
+    <p class="refpurpose">
+     Zeitpunkt des Osterfestes (0 Uhr) als Unix-Timestamp
+    </p>
+   </div>
+
+   <div class="refsect1 description" id="refsect1-function.easter-date-description">
+    <h3 class="title">Beschreibung</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="type">int</span> <span class="methodname">easter_date</span>
+       ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$year</code><span class="initializer"> = date(&quot;Y&quot;)</span></span>
+     ] )</div>
+
+    <p class="para rdfs-comment">
+     Diese Funktion liefert den Unix-Timestamp (in Sekunden seit 1970)
+     zurück, der dem Begin des Ostersonntag im durch
+     <code class="parameter">year</code> spezifizierten Jahr entspricht.  
+    </p>
+    <div class="warning"><strong class="warning">Warnung</strong> 
+     <p class="para">
+      Liegt das angegebene Jahr vor 1970 oder nach 2037 (auf
+      32 bit-Systemen), so wird eine Warnung ausgegeben und das Ergebnis
+      ist nicht gültig.
+     </p>
+    </div>
+    <p class="para">
+     Das Datum des Osterfestes wurde im Jahre 325 auf dem Konzil von
+     Nicaea auf den ersten Sonntag nach Frühlingsvollmond, also dem
+     Vollmond während oder direkt nach der Tagundnachtgleiche am
+     21. März, festgelegt.  Der hier genutzte Algorithmus wurde um das Jahr 532
+     von Dionysius Exiguus eingeführt. Bis zum Jahr 1752 wird nach dem
+     Julianischen Kalender ein einfacher 19jähriger Zyklus für die
+     Bestimmung der Mondphasen benutzt. Im September 1752 übernahmen
+     dann auch Britannien und seine Kolonien den von Clavius und
+     Lilius vorgeschlagenen und im Oktober 1582 von Papst Gregor dem
+     XIII.  eingeführten Gregorianischen Kalender. Hierdurch wurden
+     zwei Korrekturfaktoren eingeführt, um den Zyklus genauer
+     abzubilden.
+    </p>
+   </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.easter-date-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">year</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Das Jahr als Zahl zwischen 1970 und 2037. Wenn nicht angegeben, wird das
+       aktuelle Jahr gemäß der lokalen Zeit verwendet.
+      </p>
+     </dd>
+
+      
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.easter-date-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Das Osterdatum als Unix Timestamp.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.easter-date-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-2439">
+    <p><strong>Beispiel #1 <span class="function">easter_date</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"M-d-Y"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">easter_date</span><span style="color: #007700">(</span><span style="color: #0000BB">1999</span><span style="color: #007700">));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Apr-04-1999<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"M-d-Y"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">easter_date</span><span style="color: #007700">(</span><span style="color: #0000BB">2000</span><span style="color: #007700">));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Apr-23-2000<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"M-d-Y"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">easter_date</span><span style="color: #007700">(</span><span style="color: #0000BB">2001</span><span style="color: #007700">));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Apr-15-2001<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.easter-date-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    <span class="function">easter_date</span> verlässt sich auf die Zeitfunktionen der C Bibliothek
+    des Systems anstatt die internen Datums- und Zeitfunktionen von PHP zu verwenden.
+    Infolgedessen verwendet <span class="function">easter_date</span> die <em>TZ</em>
+    Umgebungsvariable um die Zeitzone zu bestimmen, in der sie arbeiten soll,
+    anstatt PHPs <a href="datetime.configuration.html#ini.date.timezone" class="link">default time zone</a> zu
+    verwenden, was unerwartetes Verhalten zur Folge haben kann, wenn diese
+    Funktion in Verbindung mit anderen Datumsfunktionen in PHP verwendet wird.
+   </p>
+   <p class="para">
+    Als Workaround kann <span class="function">easter_days</span> mit
+    <span class="classname">DateTime</span> und <span class="classname">DateInterval</span>
+    verwendet werden, um den Beginn von Ostern in Ihrer PHP Zeitzone wie folgt zu berechnen:
+   </p>
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">get_easter_datetime</span><span style="color: #007700">(</span><span style="color: #0000BB">$year</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$base&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">(</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$year</span><span style="color: #DD0000">-03-21"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$days&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">easter_days</span><span style="color: #007700">(</span><span style="color: #0000BB">$year</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$base</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">"P</span><span style="color: #007700">{</span><span style="color: #0000BB">$days</span><span style="color: #007700">}</span><span style="color: #DD0000">D"</span><span style="color: #007700">));<br />}<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #0000BB">2012</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2015</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$year</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"Ostern&nbsp;%d&nbsp;ist&nbsp;am&nbsp;%s\n"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$year</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">get_easter_datetime</span><span style="color: #007700">(</span><span style="color: #0000BB">$year</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'j.n.'</span><span style="color: #007700">));<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <p class="para">Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Ostern 2012 ist am 8.4.
+Ostern 2013 ist am 31.3.
+Ostern 2014 ist am 20.4.
+Ostern 2015 ist am 5.4.
+</pre></div>
+    </div>
+   </div>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.easter-date-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member">
+     <span class="function">easter_days</span> zur Berechnung des Osterdatums
+     vor 1970 oder nach 2037
+    </li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

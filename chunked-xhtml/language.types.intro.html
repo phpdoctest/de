@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Einf&uuml;hrung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.types.html">Typen</a></li>
+  <li class="active"><a href="language.types.intro.html">Einf&uuml;hrung</a></li>
+  <li><a href="language.types.boolean.html">Booleans</a></li>
+  <li><a href="language.types.integer.html">Integers</a></li>
+  <li><a href="language.types.float.html">Floating point numbers</a></li>
+  <li><a href="language.types.string.html">Strings</a></li>
+  <li><a href="language.types.array.html">Arrays</a></li>
+  <li><a href="language.types.object.html">Objekte</a></li>
+  <li><a href="language.types.resource.html">Ressourcen</a></li>
+  <li><a href="language.types.null.html">NULL</a></li>
+  <li><a href="language.types.callable.html">Callbacks / Callables</a></li>
+  <li><a href="language.pseudo-types.html">Pseudo-types and variables used in this documentation</a></li>
+  <li><a href="language.types.type-juggling.html">Type Juggling</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.types.html">Typen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.types.boolean.html">Booleans</a></div>
+                <div class="up"><a href="language.types.html">Typen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.types.intro" class="sect1">
+  <h2 class="title">Einführung</h2>
+
+  <p class="simpara">
+   PHP unterstützt acht primitive Typen.
+  </p>
+
+  <p class="para">
+   Vier skalare Typen:
+  </p>
+
+  <ul class="itemizedlist">
+
+   <li class="listitem">
+    <span class="simpara">
+     <span class="type">Boolean</span>
+    </span>
+   </li>
+
+   <li class="listitem">
+    <span class="simpara">
+     <span class="type">Integer</span>
+    </span>
+   </li>
+
+   <li class="listitem">
+    <span class="simpara">
+     <span class="type">Fließkomma-Zahl (float)</span> (auch <span class="type">double</span>)
+    </span>
+   </li>
+
+   <li class="listitem">
+    <span class="simpara">
+     <span class="type">String / Zeichenkette</span>
+    </span>
+   </li>
+
+  </ul>
+
+  <p class="para">
+   Drei zusammengesetzte Typen:
+  </p>
+
+  <ul class="itemizedlist">
+
+   <li class="listitem">
+    <span class="simpara">
+     <span class="type">Array</span>
+    </span>
+   </li>
+
+   <li class="listitem">
+    <span class="simpara">
+     <span class="type">Objekt</span>
+    </span>
+   </li>
+
+   <li class="listitem">
+    <span class="simpara">
+     <span class="type">Callable</span>
+    </span>
+   </li>
+
+  </ul>
+
+  <p class="para">
+   Und zuletzt zwei spezielle Typen:
+  </p>
+
+  <ul class="itemizedlist">
+
+   <li class="listitem">
+    <span class="simpara">
+     <span class="type">Ressource</span>
+    </span>
+   </li>
+
+   <li class="listitem">
+    <span class="simpara">
+     <span class="type">NULL</span>
+    </span>
+   </li>
+
+  </ul>
+
+  <p class="para">
+   Für die bessere Lesbarkeit führt dieses Handbuch ein paar <a href="language.pseudo-types.html" class="link">Pseudo-Typen</a> ein:
+  </p>
+
+  <ul class="itemizedlist">
+
+   <li class="listitem">
+    <span class="simpara">
+     <span class="type">mixed</span>
+    </span>
+   </li>
+
+   <li class="listitem">
+    <span class="simpara">
+     <span class="type">number</span>
+    </span>
+   </li>
+
+   <li class="listitem">
+    <span class="simpara">
+     <span class="type">callback</span> (alias <span class="type">callable</span>)
+    </span>
+   </li>
+
+   <li class="listitem">
+    <span class="simpara">
+     <span class="type">array|object</span>
+    </span>
+   </li>
+
+   <li class="listitem">
+    <span class="simpara">
+     <span class="type">void</span>
+    </span>
+   </li>
+
+  </ul>
+
+  <p class="para">
+   Sowie die Pseudovariable <code class="parameter">$...</code>.
+  </p>
+
+  <p class="simpara">
+   Sie werden auch ein paar Hinweise auf den Typ &quot;Double&quot; finden.
+   Betrachten Sie Double als dasselbe wie Float. Die beiden
+   Bezeichnungen existieren nur aus historischen Gründen.
+  </p>
+
+  <p class="simpara">
+   Der Typ einer Variablen wird normalerweise nicht vom
+   Programmierer bestimmt. Zur Laufzeit von PHP wird entschieden,
+   welchen Typs eine Variable ist. Dies ist abhängig vom Zusammenhang, in dem
+   die Variable benutzt wird.
+  </p>
+
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <span class="simpara">
+     Um den Typ und den Wert eines bestimmten <a href="language.expressions.html" class="link">Ausdrucks (Expression)</a> zu
+     überprüfen, können Sie <span class="function">var_dump</span> benutzen.
+    </span>
+
+    <p class="para">
+     Wenn Sie zur Fehlersuche einfach nur eine lesbare Darstellung
+     eines Typs benötigen, benutzen Sie <span class="function">gettype</span>.
+     Um auf einen bestimmten Typ zu prüfen, sollten Sie
+     <em class="emphasis">nicht</em> <span class="function">gettype</span> benutzen.
+     Stattdessen sollten Sie die
+     <em>is_<span class="replaceable">type</span></em> Funktionen
+     verwenden.  Ein paar Beispiele:
+    </p>
+
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$a_bool&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">TRUE</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ein&nbsp;Boolean&nbsp;(Wahrheitswert)<br /></span><span style="color: #0000BB">$a_str&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;eine&nbsp;Zeichenkette&nbsp;(String)<br /></span><span style="color: #0000BB">$a_str2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;eine&nbsp;Zeichenkette&nbsp;(String)<br /></span><span style="color: #0000BB">$an_int&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">12</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ein&nbsp;Integer&nbsp;(Ganzzahl)<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">gettype</span><span style="color: #007700">(</span><span style="color: #0000BB">$a_bool</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;aus:&nbsp;&nbsp;boolean<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">gettype</span><span style="color: #007700">(</span><span style="color: #0000BB">$a_str</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;aus:&nbsp;&nbsp;string<br /><br /><br />//&nbsp;Falls&nbsp;es&nbsp;ein&nbsp;Integer&nbsp;ist,&nbsp;erhöhe&nbsp;ihn&nbsp;um&nbsp;vier<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">is_int</span><span style="color: #007700">(</span><span style="color: #0000BB">$an_int</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$an_int&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Falls&nbsp;$a_bool&nbsp;ein&nbsp;String&nbsp;ist,&nbsp;gib&nbsp;ihn&nbsp;aus<br />//&nbsp;(gibt&nbsp;überhaupt&nbsp;nichts&nbsp;aus)<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">is_string</span><span style="color: #007700">(</span><span style="color: #0000BB">$a_bool</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"String:&nbsp;</span><span style="color: #0000BB">$a_bool</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p></blockquote>
+
+  <p class="simpara">
+   Wenn sie die Umwandlung in einen bestimmten Variablen-Typ
+   erzwingen wollen, erreichen Sie dies entweder durch <a href="language.types.type-juggling.html#language.types.typecasting" class="link">Typ-Umwandlung</a> (Cast) oder
+   durch Gebrauch der Funktion <span class="function">settype</span>.
+  </p>
+
+  <p class="simpara">
+   Beachten Sie, dass eine Variable abhängig vom Typ, dem die
+   Variable zu dem Zeitpunkt entspricht, in bestimmten Situationen
+   unterschiedlich ausgewertet werden kann. Weitere Informationen
+   entnehmen Sie dem Abschnitt zur <a href="language.types.type-juggling.html" class="link">Typ-Veränderung (Type Juggling)</a>.
+   Schauen Sie sich außerdem <a href="types.comparisons.html" class="link">Die PHP
+   Typ-Vergleichstabellen</a> an, wenn Sie an Beispielen
+   verschiedener typenbezogener Vergleiche interessiert sind.
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Magische Konstanten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.constants.html">Konstanten</a></li>
+  <li><a href="language.constants.syntax.html">Syntax</a></li>
+  <li class="active"><a href="language.constants.predefined.html">Magische Konstanten</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.constants.syntax.html">Syntax</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.expressions.html">Ausdr&uuml;cke</a></div>
+                <div class="up"><a href="language.constants.html">Konstanten</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.constants.predefined" class="sect1">
+   <h2 class="title">Magische Konstanten</h2>
+
+   <p class="simpara">
+    PHP stellt jedem Skript zur Laufzeit eine Vielzahl von <a href="reserved.constants.html" class="link">vordefinierten Konstanten</a>
+    zur Verfügung. Viele dieser Konstanten werden jedoch von verschiedenen
+    Erweiterungen definiert, die nur zur Verfügung stehen, wenn diese
+    Erweiterungen selbst zur Verfügung stehen, d.h. entweder über dynamisches
+    Laden zur Laufzeit oder Einkompilieren.
+   </p>
+
+   <p class="para">
+    Es gibt acht magische Konstanten, die, abhängig davon, wo sie eingesetzt
+    werden, einen unterschiedlichen Wert haben. Zum Beispiel hängt
+    der Wert der Konstanten <strong><code>__LINE__</code></strong> davon ab, in welcher
+    Zeile ihres Skripts Sie diese Konstante verwenden. Diese besonderen
+    Konstanten sind unabhängig von Groß-/Kleinschreibung und sind folgende:
+   </p>
+   <p class="para">
+    <table class="doctable table">
+     <caption><strong>Einige &quot;magische&quot; PHP-Konstanten</strong></caption>
+     
+      <thead>
+       <tr>
+        <th>Name</th>
+        <th>Beschreibung</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr id="constant.line">
+        <td><strong><code>__LINE__</code></strong></td>
+        <td>
+         Die aktuelle Zeilennummer einer Datei.
+        </td>
+       </tr>
+
+       <tr id="constant.file">
+        <td><strong><code>__FILE__</code></strong></td>
+        <td>
+         Der vollständige Pfad- und Dateiname einer Datei wobei Symlinks
+         aufgelöst wurden. Wird diese Konstante
+         innerhalb einer nachgeladenen Datei verwendet, wird der Name
+         dieser eingebundenen Datei zurückgegeben.
+        </td>
+       </tr>
+
+       <tr id="constant.dir">
+        <td><strong><code>__DIR__</code></strong></td>
+        <td>Der Name des Verzeichnisses, in dem sich die Datei befindet. Wird
+         die Konstante innerhalb eines Includes verwendet, wird das Verzeichnis
+         der eingebundenen Datei zurückgegeben. Dies entspricht dem Verhalten
+         von <em>dirname(__FILE__)</em>. Der Verzeichnisname hat keinen
+         beendenden Schrägstrich, sofern es sich nicht um das Rootverzeichnis
+         handelt.
+        </td>
+       </tr>
+
+       <tr id="constant.function">
+        <td><strong><code>__FUNCTION__</code></strong></td>
+        <td>
+         Der Name der Funktion.
+        </td>
+       </tr>
+
+       <tr id="constant.class">
+        <td><strong><code>__CLASS__</code></strong></td>
+        <td>
+         Der Name einer Klasse. Der Klassenname enthält auch den Namen
+         des Namespaces in dem er deklariert wurde (z.B. <em>Foo\Bar</em>).
+         __CLASS__ kann seit PHP 5.4 auch in Traits verwendet werden, in welchem Fall
+         Name der Klasse welche den Trait verwendet zurückgegeben wird.
+        </td>
+       </tr>
+
+       <tr id="constant.trait">
+        <td><strong><code>__TRAIT__</code></strong></td>
+        <td>
+         Der Trait Name. Dieser enthält auch den
+         Namespace in welchem der Trait definiert wurde (z.B. <em>Foo\Bar</em>).
+        </td>
+       </tr>
+
+       <tr id="constant.method">
+        <td><strong><code>__METHOD__</code></strong></td>
+        <td>
+         Der Name der Klassenmethode.
+        </td>
+       </tr>
+
+       <tr id="constant.namespace">
+        <td><strong><code>__NAMESPACE__</code></strong></td>
+        <td>
+         Der Name des aktuellen Namespace.
+        </td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
+   <p class="para">
+    Siehe auch
+    <span class="function">get_class</span>,
+    <span class="function">get_object_vars</span>,
+    <span class="function">file_exists</span> und
+    <span class="function">function_exists</span>.
+   </p>
+
+   <div class="sect2" id="language.constants.predefined.changelog">
+    <h3 class="title">Changelog</h3>
+
+    <p class="para">
+     <table class="doctable informaltable">
+      
+       <thead>
+        <tr>
+         <th>Version</th>
+         <th>Beschreibung</th>
+        </tr>
+
+       </thead>
+
+       <tbody class="tbody">
+        <tr>
+         <td>5.4.0</td>
+         <td>
+          <strong><code>__TRAIT__</code></strong> Konstante hinzugefügt
+         </td>
+        </tr>
+
+        <tr>
+         <td>5.3.0</td>
+         <td>
+          <strong><code>__DIR__</code></strong> und <strong><code>__NAMESPACE__</code></strong> Konstanten hinzugefügt
+         </td>
+        </tr>
+
+        <tr>
+         <td>5.0.0</td>
+         <td>
+          <strong><code>__METHOD__</code></strong> Konstante hinzugefügt
+         </td>
+        </tr>
+
+        <tr>
+         <td>5.0.0</td>
+         <td>
+          Vor dieser Version waren die Werte von manchen &quot;magischen&quot; Konstanten
+          immer in Kleinschreibung. Diese sind nun allesamt in der Groß-/Kleinschreibung,
+          in der sie deklariert wurden.
+         </td>
+        </tr>
+
+        <tr>
+         <td>4.3.0</td>
+         <td>
+          <strong><code>__FUNCTION__</code></strong> und <strong><code>__CLASS__</code></strong> Konstanten hinzugefügt
+         </td>
+        </tr>
+
+        <tr>
+         <td>4.0.2</td>
+         <td>
+          <strong><code>__FILE__</code></strong> enthält immer einen absoluten Pfad, wobei
+          Symlinks aufgelöst wurden, wohingegen es in älteren Versionen unter
+          Umständen einen relativen Pfad enthielt
+         </td>
+        </tr>
+
+       </tbody>
+      
+     </table>
+
+    </p>
+   </div>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

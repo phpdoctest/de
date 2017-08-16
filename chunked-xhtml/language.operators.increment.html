@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Inkrement- bzw. Dekrementoperatoren</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.operators.html">Operatoren</a></li>
+  <li><a href="language.operators.precedence.html">Operator-Rangfolge</a></li>
+  <li><a href="language.operators.arithmetic.html">Arithmetische Operatoren</a></li>
+  <li><a href="language.operators.assignment.html">Zuweisungsoperatoren</a></li>
+  <li><a href="language.operators.bitwise.html">Bit-Operatoren</a></li>
+  <li><a href="language.operators.comparison.html">Vergleichs-Operatoren</a></li>
+  <li><a href="language.operators.errorcontrol.html">Fehler-Kontroll-Operatoren</a></li>
+  <li><a href="language.operators.execution.html">Operatoren zur Programmausf&uuml;hrung</a></li>
+  <li class="active"><a href="language.operators.increment.html">Inkrement- bzw. Dekrementoperatoren</a></li>
+  <li><a href="language.operators.logical.html">Logische Operatoren</a></li>
+  <li><a href="language.operators.string.html">Zeichenketten-Operatoren</a></li>
+  <li><a href="language.operators.array.html">Array-Operatoren</a></li>
+  <li><a href="language.operators.type.html">Typ Operatoren</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.operators.execution.html">Operatoren zur Programmausf&uuml;hrung</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.operators.logical.html">Logische Operatoren</a></div>
+                <div class="up"><a href="language.operators.html">Operatoren</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.operators.increment" class="sect1">
+   <h2 class="title">Inkrement- bzw. Dekrementoperatoren</h2>
+
+   <p class="para">
+    PHP unterstützt Prä- und Post-Inkrement- und Dekrementoperatoren
+    im Stil der Programmiersprache C.
+   </p>
+
+   <table class="doctable table">
+    <caption><strong>Inkrement- und Dekrementoperatoren</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Beispiel</th>
+       <th>Name</th>
+       <th>Auswirkung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>++$a</td>
+       <td>Prä-Inkrement</td>
+       <td>
+        Erhöht den Wert von $a um eins (inkrementiert $a) und gibt
+        anschließend den neuen Wert von $a zurück.
+       </td>
+      </tr>
+
+      <tr>
+       <td>$a++</td>
+       <td>Post-Inkrement</td>
+       <td>
+        Gibt zuerst den aktuellen Wert von $a zurück und erhöht dann
+        den Wert von $a um eins.
+       </td>
+      </tr>
+
+      <tr>
+       <td>--$a</td>
+       <td>Prä-Dekrement</td>
+       <td>
+        Vermindert den Wert von $a um eins (dekrementiert $a) und gibt
+        anschließend den neuen Wert von $a zurück.
+       </td>
+      </tr>
+
+      <tr>
+       <td>$a--</td>
+       <td>Post-Dekrement</td>
+       <td>
+        Gibt zuerst den aktuellen Wert von $a zurück und erniedrigt
+        dann den Wert von $a um eins.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+
+   <p class="para">
+    Ein einfaches Beispiel-Skript:
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"&lt;h3&gt;Post-Inkrement&lt;/h3&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Sollte&nbsp;5&nbsp;sein:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">++&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Sollte&nbsp;6&nbsp;sein:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #DD0000">"&lt;h3&gt;Pre-Inkrement&lt;/h3&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Sollte&nbsp;6&nbsp;sein:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;++</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Sollte&nbsp;6&nbsp;sein:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #DD0000">"&lt;h3&gt;Post-Dekrement&lt;/h3&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Sollte&nbsp;5&nbsp;sein:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">--&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Sollte&nbsp;4&nbsp;sein:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #DD0000">"&lt;h3&gt;Pre-Dekrement&lt;/h3&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Sollte&nbsp;4&nbsp;sein:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;--</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Sollte&nbsp;4&nbsp;sein:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    PHP folgt bei der Behandlung arithmetischer Operationen an
+    Zeichenvariablen der Perl-Konvention und nicht der von C. Zum
+    Beispiel wird in Perl aus &#039;Z&#039;+1 &#039;AA&#039;, während aus &#039;Z&#039;+1 in C &#039;[&#039;
+    wird ( ord(&#039;Z&#039;) == 90, ord(&#039;[&#039;) == 91 ). Beachten Sie, dass
+    Zeichenvariablen zwar inkrementiert aber nicht dekrementiert
+    werden können.
+    <div class="example" id="example-124">
+     <p><strong>Beispiel #1 Arithmetrische Operationen an Zeichenvariablen</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'W'</span><span style="color: #007700">;<br />for(</span><span style="color: #0000BB">$n</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">&lt;</span><span style="color: #0000BB">6</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">++)<br />&nbsp;&nbsp;echo&nbsp;++</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*<br />&nbsp;&nbsp;Erzeugt&nbsp;in&nbsp;etwa&nbsp;folgende&nbsp;Ausgabe:<br /><br />X<br />Y<br />Z<br />AA<br />AB<br />AC<br /><br />*/<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

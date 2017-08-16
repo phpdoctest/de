@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Namespace-Schl&uuml;sselwort und __NAMESPACE__-Konstante</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.namespaces.html">Namespaces</a></li>
+  <li><a href="language.namespaces.rationale.html">&Uuml;bersicht &uuml;ber Namespaces</a></li>
+  <li><a href="language.namespaces.definition.html">Namespaces definieren</a></li>
+  <li><a href="language.namespaces.nested.html">Unter-Namespaces deklarieren</a></li>
+  <li><a href="language.namespaces.definitionmultiple.html">Mehrere Namespaces in der selben Datei definieren</a></li>
+  <li><a href="language.namespaces.basics.html">Namespaces verwenden: Grundlagen</a></li>
+  <li><a href="language.namespaces.dynamic.html">Namespaces und dynamische Sprachfeatures</a></li>
+  <li class="active"><a href="language.namespaces.nsconstants.html">Namespace-Schl&uuml;sselwort und __NAMESPACE__-Konstante</a></li>
+  <li><a href="language.namespaces.importing.html">Namespaces verwenden: Aliase/Importieren</a></li>
+  <li><a href="language.namespaces.global.html">Globaler Namensraum</a></li>
+  <li><a href="language.namespaces.fallback.html">Namespaces verwenden: R&uuml;ckgriff auf globale Funktion/Konstante</a></li>
+  <li><a href="language.namespaces.rules.html">Regeln f&uuml;r Namensaufl&ouml;sung</a></li>
+  <li><a href="language.namespaces.faq.html">FAQ: Dinge, die Sie &uuml;ber Namespaces wissen sollten</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.namespaces.dynamic.html">Namespaces und dynamische Sprachfeatures</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.namespaces.importing.html">Namespaces verwenden: Aliase/Importieren</a></div>
+                <div class="up"><a href="language.namespaces.html">Namespaces</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.namespaces.nsconstants" class="sect1">
+  <h2 class="title">Namespace-Schlüsselwort und __NAMESPACE__-Konstante</h2>
+  
+  <p class="para">
+   PHP unterstützt zwei Arten des abstrakten Zugriffs auf Elemente innerhalb eines
+   Namenspaces, die magische Konstante <strong><code>__NAMESPACE__</code></strong> und das
+   Schlüsselwort <em>namespace</em>.
+  </p>
+  <p class="para">
+   Der Wert von <strong><code>__NAMESPACE__</code></strong> ist ein String, der den Namen
+   des aktuellen Namespace beinhaltet. In globalem Code ohne Namespaces beinhaltet dies
+   einen leeren String.
+   <div class="example" id="example-257">
+    <p><strong>Beispiel #1 __NAMESPACE__-Beispiel, Code mit Namespace</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">MyProject</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #DD0000">'"'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">__NAMESPACE__</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'"'</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;"MyProject"&nbsp;aus<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <div class="example" id="example-258">
+    <p><strong>Beispiel #2 __NAMESPACE__-Beispiel, globaler Code</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'"'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">__NAMESPACE__</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'"'</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;""&nbsp;aus<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   Die Konstante <strong><code>__NAMESPACE__</code></strong> ist nützlich, um dynamische
+   Namen zu konstruieren, zum Beispiel:
+   <div class="example" id="example-259">
+    <p><strong>Beispiel #3 __NAMESPACE__ zur dynamischen Namenszusammensetzung verwenden</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">MyProject</span><span style="color: #007700">;<br /><br />function&nbsp;</span><span style="color: #0000BB">get</span><span style="color: #007700">(</span><span style="color: #0000BB">$classname</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">__NAMESPACE__&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'\\'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$classname</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   Das Schlüsselwort <em>namespace</em> kann verwendet werden, um
+   explizit ein Element des aktuellen Namespaces oder eines untergeordneten
+   Namespaces anzufordern. Es ist das äquivalent der Namespaces zum
+   <em>self</em>-Operator für Klassen.
+   <div class="example" id="example-260">
+    <p><strong>Beispiel #4 Der namespace-Operator, innerhalb eines Namespace</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">MyProject</span><span style="color: #007700">;<br /><br />use&nbsp;</span><span style="color: #0000BB">blah</span><span style="color: #007700">\</span><span style="color: #0000BB">blah&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">mine</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;siehe&nbsp;"Namespaces&nbsp;verwenden:&nbsp;Aliase/Importieren"<br /><br /></span><span style="color: #0000BB">blah</span><span style="color: #007700">\</span><span style="color: #0000BB">mine</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Funktion&nbsp;MyProject\blah\mine()&nbsp;auf<br /></span><span style="color: #007700">namespace\</span><span style="color: #0000BB">blah</span><span style="color: #007700">\</span><span style="color: #0000BB">mine</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Funktion&nbsp;MyProject\blah\mine()&nbsp;auf<br /><br /></span><span style="color: #007700">namespace\</span><span style="color: #0000BB">func</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Function&nbsp;MyProject\func()&nbsp;auf<br /></span><span style="color: #007700">namespace\</span><span style="color: #0000BB">sub</span><span style="color: #007700">\</span><span style="color: #0000BB">func</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Function&nbsp;MyProject\sub\func()&nbsp;auf<br /></span><span style="color: #007700">namespace\</span><span style="color: #0000BB">cname</span><span style="color: #007700">::</span><span style="color: #0000BB">method</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;statische&nbsp;Methode&nbsp;"method"&nbsp;der&nbsp;Klasse&nbsp;MyProject\cname&nbsp;auf<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;namespace\</span><span style="color: #0000BB">sub</span><span style="color: #007700">\</span><span style="color: #0000BB">cname</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;MyProject\sub\cname<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;namespace\</span><span style="color: #0000BB">CONSTANT</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;weist&nbsp;den&nbsp;Wert&nbsp;der&nbsp;Konstante&nbsp;MyProject\CONSTANT&nbsp;$b&nbsp;zu<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <div class="example" id="example-261">
+    <p><strong>Beispiel #5 Der namespace-Operator, in globalem Code</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">namespace\</span><span style="color: #0000BB">func</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Function&nbsp;func()&nbsp;auf<br /></span><span style="color: #007700">namespace\</span><span style="color: #0000BB">sub</span><span style="color: #007700">\</span><span style="color: #0000BB">func</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Function&nbsp;sub\func()&nbsp;auf<br /></span><span style="color: #007700">namespace\</span><span style="color: #0000BB">cname</span><span style="color: #007700">::</span><span style="color: #0000BB">method</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;statische&nbsp;Methode&nbsp;"method"&nbsp;der&nbsp;Klasse&nbsp;cname&nbsp;auf<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;namespace\</span><span style="color: #0000BB">sub</span><span style="color: #007700">\</span><span style="color: #0000BB">cname</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;sub\cname<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;namespace\</span><span style="color: #0000BB">CONSTANT</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;weist&nbsp;den&nbsp;Wert&nbsp;der&nbsp;Konstante&nbsp;CONSTANT&nbsp;$b&nbsp;zu<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: F&uuml;hrt einen select()-Systemaufruf auf den gegebenen Socket-Arrays aus, wobei ein Zeitlimit bestimmt wird</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li class="header up"><a href="book.sockets.html">Sockets</a></li>
+  <li class="header up"><a href="ref.sockets.html">Socket-Funktionen</a></li>
+  <li><a href="function.socket-accept.html">socket_accept</a></li>
+  <li><a href="function.socket-bind.html">socket_bind</a></li>
+  <li><a href="function.socket-clear-error.html">socket_clear_error</a></li>
+  <li><a href="function.socket-close.html">socket_close</a></li>
+  <li><a href="function.socket-cmsg-space.html">socket_cmsg_space</a></li>
+  <li><a href="function.socket-connect.html">socket_connect</a></li>
+  <li><a href="function.socket-create-listen.html">socket_create_listen</a></li>
+  <li><a href="function.socket-create-pair.html">socket_create_pair</a></li>
+  <li><a href="function.socket-create.html">socket_create</a></li>
+  <li><a href="function.socket-get-option.html">socket_get_option</a></li>
+  <li><a href="function.socket-getopt.html">socket_getopt</a></li>
+  <li><a href="function.socket-getpeername.html">socket_getpeername</a></li>
+  <li><a href="function.socket-getsockname.html">socket_getsockname</a></li>
+  <li><a href="function.socket-import-stream.html">socket_import_stream</a></li>
+  <li><a href="function.socket-last-error.html">socket_last_error</a></li>
+  <li><a href="function.socket-listen.html">socket_listen</a></li>
+  <li><a href="function.socket-read.html">socket_read</a></li>
+  <li><a href="function.socket-recv.html">socket_recv</a></li>
+  <li><a href="function.socket-recvfrom.html">socket_recvfrom</a></li>
+  <li><a href="function.socket-recvmsg.html">socket_recvmsg</a></li>
+  <li class="active"><a href="function.socket-select.html">socket_select</a></li>
+  <li><a href="function.socket-send.html">socket_send</a></li>
+  <li><a href="function.socket-sendmsg.html">socket_sendmsg</a></li>
+  <li><a href="function.socket-sendto.html">socket_sendto</a></li>
+  <li><a href="function.socket-set-block.html">socket_set_block</a></li>
+  <li><a href="function.socket-set-nonblock.html">socket_set_nonblock</a></li>
+  <li><a href="function.socket-set-option.html">socket_set_option</a></li>
+  <li><a href="function.socket-setopt.html">socket_setopt</a></li>
+  <li><a href="function.socket-shutdown.html">socket_shutdown</a></li>
+  <li><a href="function.socket-strerror.html">socket_strerror</a></li>
+  <li><a href="function.socket-write.html">socket_write</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.socket-recvmsg.html">socket_recvmsg</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.socket-send.html">socket_send</a></div>
+                <div class="up"><a href="ref.sockets.html">Socket-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.socket-select" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">socket_select</h1>
+  <p class="refpurpose">Führt einen select()-Systemaufruf auf den gegebenen Socket-Arrays aus, wobei ein Zeitlimit bestimmt wird</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.socket-select-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname">socket_select</span>
+    ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$read</code></span>
+   , <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$write</code></span>
+   , <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$except</code></span>
+   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$tv_sec</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$tv_usec</code><span class="initializer"> = 0</span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">socket_select</span> nimmt als Parameter Socket-Arrays entgegen
+   und wartet, ob diese ihren Status ändern. Diejenigen, die Hintergrundwissen
+   über BSD-Sockets haben, werden feststellen, dass diese Socket-Arrays in
+   Wirklichkeit die sogenannten Datei-Deskriptor-Mengen sind. Drei voneinander
+   unabhängige Arrays mit Socket-Deskriptoren werden überwacht.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.socket-select-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">read</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Sockets, die im <code class="parameter">read</code>-Array aufgelistet sind,
+       werden daraufhin überwacht, ob Zeichen zum Auslesen zur Verfügung
+       gestellt werden. (Um genauer zu sein: es wird überwacht, ob ein
+       Lesevorgang blockiert - ein Socket ist nämlich auch dann bereit, wenn er
+       bis zum Dateiende gelesen hat. In diesem Fall gibt
+       <span class="function">socket_read</span> einen leeren String zurück.)
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">write</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Sockets, die im <code class="parameter">write</code>-Array aufgelistet
+       sind, werden daraufhin überwacht, ob ein Schreibvorgang blockiert.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">except</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Sockets, die im <code class="parameter">except</code>-Array aufgelistet
+       sind, werden auf Ausnahmen überwacht.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">tv_sec</code></dt>
+
+     <dd>
+
+      <p class="para">
+       <code class="parameter">tv_sec</code> und <code class="parameter">tv_usec</code>
+       bilden zusammen den <em class="emphasis">timeout</em>-Parameter. Der
+       <em class="emphasis">timeout</em> ist eine obere Schranke für die Zeit, die
+       verstreichen kann, bis <span class="function">socket_select</span> zurückkehrt.
+       <code class="parameter">tv_sec</code> kann 0 sein, wodurch
+       <span class="function">socket_select</span> sofort zurückkehrt. Dies ist
+       nützlich beim Polling. Falls der Parameter <code class="parameter">tv_sec</code>
+       <strong><code>NULL</code></strong> ist (kein Timeout), kann <span class="function">socket_select</span>
+       unendlich lange blockieren.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">tv_usec</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="para">
+    Beim Beenden werden alle Arrays aktualisiert, und zeigen an, welche
+    Sockets ihren Status geändert haben.
+   </p>
+  </div>
+  <p class="para">
+   Sie brauchen nicht jedes Array einzeln an <span class="function">socket_select</span>
+   übergeben. Sie können die Arrays auch weglassen und stattdessen leere
+   Arrays oder <strong><code>NULL</code></strong> angeben. Vergessen Sie nicht, dass diese Arrays
+   <em class="emphasis">by reference</em> übergeben werden müssen und dass sie
+   verändert werden, nachdem die Funktion <span class="function">socket_select</span>
+   beendet ist.
+  </p>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Wegen einer Einschränkung in der aktuellen Zend Engine ist es nicht möglich,
+    eine Konstante, wie etwa <strong><code>NULL</code></strong>, direkt als Parameter an Funktionen zu
+    übergeben, die ihre Argumente als Referenzen erwarten. Sie können
+    stattdessen eine temporäre Variable oder einen Ausdruck, in dem der am
+    weitesten links stehende Teilausdruck eine temporäre Variable ist, benutzen.
+    <div class="example" id="example-5041">
+     <p><strong>Beispiel #1 <strong><code>NULL</code></strong> mit <span class="function">socket_select</span> benutzen:</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$e&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">socket_select</span><span style="color: #007700">(</span><span style="color: #0000BB">$r</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.socket-select-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Bei Erfolg gibt <span class="function">socket_select</span> die Anzahl der
+   Socket-Deskriptoren zurück, die in den aktualisierten Arrays enthalten sind.
+   Falls der Timeout wirksam wird, bevor irgend etwas Interessantes passiert,
+   ist das Funktionsergebnis 0. Falls ein Fehler auftritt, wird <strong><code>FALSE</code></strong>
+   zurückgegeben. Der Fehlercode kann dann mit
+   <span class="function">socket_last_error</span> abgefragt werden.
+  </p>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Wenn Sie einen Fehler aufspüren wollen, müssen Sie unbedingt den
+    Operator <em>===</em> benutzen. Weil
+    <span class="function">socket_select</span> auch 0 zurückgeben kann, wird der
+    Vergleich mit <em>==</em> sonst zu <strong><code>TRUE</code></strong> ausgewertet.
+    <div class="example" id="example-5042">
+     <p><strong>Beispiel #2 Rückgaben von <span class="function">socket_select</span> verstehen</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$e&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">;<br />if&nbsp;(</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">===&nbsp;</span><span style="color: #0000BB">socket_select</span><span style="color: #007700">(</span><span style="color: #0000BB">$r</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"socket_select()&nbsp;fehlgeschlagen,&nbsp;Grund:&nbsp;"&nbsp;</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">socket_strerror</span><span style="color: #007700">(</span><span style="color: #0000BB">socket_last_error</span><span style="color: #007700">())&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.socket-select-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-5043">
+    <p><strong>Beispiel #3 <span class="function">socket_select</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Das&nbsp;Array&nbsp;read&nbsp;vorbereiten&nbsp;*/<br /></span><span style="color: #0000BB">$read&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">$socket1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$socket2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$write&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$except&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$num_changed_sockets&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">socket_select</span><span style="color: #007700">(</span><span style="color: #0000BB">$read</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$write</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$except</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">$num_changed_sockets&nbsp;</span><span style="color: #007700">===&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Fehlerbehandlung&nbsp;*/<br /></span><span style="color: #007700">}&nbsp;else&nbsp;if&nbsp;(</span><span style="color: #0000BB">$num_changed_sockets&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Mindestens&nbsp;an&nbsp;einem&nbsp;Socket&nbsp;ist&nbsp;etwas&nbsp;Interessantes&nbsp;passiert&nbsp;*/<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.socket-select-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Seien Sie sich bewusst, dass manche Socket-Implementierungen sehr
+    sorgfältig benutzt werden müssen. Ein paar grundsätzliche Regeln:
+    <ul class="itemizedlist">
+     <li class="listitem">
+      <span class="simpara">
+       Sie sollten immer versuchen, <span class="function">socket_select</span> ohne
+       Timeout zu benutzen. Ihr Programm sollte nichts tun, wenn keine Daten
+       verfügbar sind. Code, der von Zeitbegrenzungen abhängig ist, ist
+       normalerweise nicht portierbar und schwierig zu debuggen.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       Es sollte kein Socket-Deskriptor in die Arrays eingefügt werden, wenn
+       Sie nicht vorhaben, die Ergebnisse nach der Ausführung von
+       <span class="function">socket_select</span> zu prüfen und entsprechend darauf zu
+       reagieren. Nachdem <span class="function">socket_select</span> beendet ist, müssen
+       alle Sockets in allen Socket-Arrays geprüft werden. Jeder Socket, der
+       zum Schreiben zur Verfügung steht, muss beschrieben werden und aus jedem
+       Socket, der zum Lesen verfügbar ist, muss gelesen werden.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       Bei Schreib-/Leseoperationen auf den Sockets in den Arrays müssen Sie
+       damit rechnen, dass nicht notwendigerweise alle Daten geschrieben/gelesen
+       werden, die Sie angeben. Seien Sie darauf vorbereitet, dass Sie
+       möglicherweise nur ein einziges Byte schreiben/lesen können.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       Fast allen Socket-Implementierungen ist gemeinsam, dass sie nur eine
+       einzige Ausnahme in dem Array <code class="parameter">except</code> auffangen
+       können. Und zwar, wenn bandexterne Daten von einem Socket empfangen
+       werden.
+      </span>
+     </li>
+    </ul>
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.socket-select-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">socket_read</span></li>
+    <li class="member"><span class="function">socket_write</span></li>
+    <li class="member"><span class="function">socket_last_error</span></li>
+    <li class="member"><span class="function">socket_strerror</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: F&uuml;hrt ein externes Programm aus und zeigt dessen Ausgabe an</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li class="header up"><a href="book.exec.html">Programmausf&uuml;hrung</a></li>
+  <li class="header up"><a href="ref.exec.html">Funktionen zur Programmausf&uuml;hrung</a></li>
+  <li><a href="function.escapeshellarg.html">escapeshellarg</a></li>
+  <li><a href="function.escapeshellcmd.html">escapeshellcmd</a></li>
+  <li><a href="function.exec.html">exec</a></li>
+  <li><a href="function.passthru.html">passthru</a></li>
+  <li><a href="function.proc-close.html">proc_close</a></li>
+  <li><a href="function.proc-get-status.html">proc_get_status</a></li>
+  <li><a href="function.proc-nice.html">proc_nice</a></li>
+  <li><a href="function.proc-open.html">proc_open</a></li>
+  <li><a href="function.proc-terminate.html">proc_terminate</a></li>
+  <li><a href="function.shell-exec.html">shell_exec</a></li>
+  <li class="active"><a href="function.system.html">system</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.shell-exec.html">shell_exec</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="book.pthreads.html">pthreads</a></div>
+                <div class="up"><a href="ref.exec.html">Funktionen zur Programmausf&uuml;hrung</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.system" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">system</h1>
+  <p class="refpurpose">Führt ein externes Programm aus und zeigt dessen Ausgabe an</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.system-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname">system</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$command</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter reference">&$return_var</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Die Funktion <span class="function">system</span> ähnelt der C Version der
+   Funktion sehr, indem es einen übergebenen
+   <code class="parameter">Befehl</code> ausführt und dessen Ausgabe
+   anzeigt.
+  </p>
+  <p class="para">
+   Wird ein <span class="function">system</span>-Funktionsaufruf durchgeführt, versucht
+   die Funktion automatisch, nach jeder Ausgabezeile den Ausgabepuffer zu
+   flushen, sofern PHP als Servermodul läuft.
+  </p>
+  <p class="para">
+   Wenn Sie einen Befehl ausführen wollen und die erzeugten Daten ohne Behinderung
+   direkt zurückgeben wollen, verwenden Sie stattdessen die Funktion
+   <span class="function">passthru</span>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.system-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">command</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Das auszuführende Kommando.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">return_var</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ist das <code class="parameter">return_var</code>-Argument angegeben, wird der
+       Rückgabewert des ausgeführten Befehls in diese Variable geschrieben.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.system-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg die letzte Zeile der Ausgabe des Befehls zurück, im Fehlerfall
+   hingegen <strong><code>FALSE</code></strong>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.system-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4128">
+    <p><strong>Beispiel #1 <span class="function">system</span> example</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;pre&gt;'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Gibt&nbsp;das&nbsp;gesamte&nbsp;Ergebnis&nbsp;des&nbsp;Shellkommandos&nbsp;"ls"&nbsp;aus&nbsp;und&nbsp;hält&nbsp;als<br />//&nbsp;Rückgabewert&nbsp;die&nbsp;letzte&nbsp;Zeile&nbsp;dieser&nbsp;Ausgabe&nbsp;in&nbsp;$last_line.&nbsp;Der<br />//&nbsp;Rückgabewert&nbsp;des&nbsp;Shellkommandos&nbsp;wird&nbsp;in&nbsp;$retval&nbsp;gespeichert.<br /></span><span style="color: #0000BB">$last_line&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">system</span><span style="color: #007700">(</span><span style="color: #DD0000">'ls'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$retval</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Ausgeben&nbsp;zusätzlicher&nbsp;Informationen<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'<br />&lt;/pre&gt;<br />&lt;hr&nbsp;/&gt;Letzte&nbsp;Zeile&nbsp;der&nbsp;Ausgabe:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$last_line&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'<br />&lt;hr&nbsp;/&gt;Rückgabewert:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$retval</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.system-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <div class="warning"><strong class="warning">Warnung</strong><p class="para">Falls Sie es erlauben, dass Daten von
+Usereingaben an diese Funktion weitergereicht werden, sollten Sie
+<span class="function">escapeshellarg</span> oder <span class="function">escapeshellcmd</span>
+verwenden. Bei Verwendung dieser Funktionen stellen Sie sicher, dass kein
+Benutzer Ihr System überlisten kann, beliebige Kommandos auszuführen</p></div>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Falls Sie diese Funktion benutzen, um ein
+Programm zu starten und im Hintergrund weiterlaufen lassen möchten,
+müssen Sie sicherstellen, dass die Ausgabe des Programms in eine Datei oder
+einen anderen Ausgabestream umgeleitet wird. Anderenfalls wird PHP solange
+hängen, bis das Programm zu Ende ausgeführt wurde.</p></p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <span class="simpara">Mit aktiviertem <a href="features.safe-mode.html" class="link">Safe Mode</a> können Sie nur Programme
+ausführen, die im Verzeichnis liegen, das mit <a href="ini.sect.safe-mode.html#ini.safe-mode-exec-dir" class="link">safe_mode_exec_dir</a> angegeben wurde. Aus
+praktischen Gründen ist es gegenwärtig nicht erlaubt, dass der Pfad zu einem
+Programm <em>..</em> enthält.</span></p></blockquote>
+  <div class="warning"><strong class="warning">Warnung</strong><p class="simpara">Mit aktiviertem <a href="features.safe-mode.html" class="link">Safe Mode</a> wird der Kommandostring
+mit <span class="function">escapeshellcmd</span> kodiert. Deshalb wird
+<em>echo y | echo x</em> zu
+<em>echo y \| echo x</em>.</p></div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.system-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">exec</span></li>
+    <li class="member"><span class="function">passthru</span></li>
+    <li class="member"><span class="function">popen</span></li>
+    <li class="member"><span class="function">escapeshellcmd</span></li>
+    <li class="member"><span class="function">pcntl_exec</span></li>
+    <li class="member"><a href="language.operators.execution.html" class="link">Backtick-Operator</a></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

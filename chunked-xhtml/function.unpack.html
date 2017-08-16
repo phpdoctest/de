@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Entpackt die Daten eines Bin&auml;r-Strings</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li class="header up"><a href="book.misc.html">Misc.</a></li>
+  <li class="header up"><a href="ref.misc.html">Sonstige Funktionen</a></li>
+  <li><a href="function.connection-aborted.html">connection_aborted</a></li>
+  <li><a href="function.connection-status.html">connection_status</a></li>
+  <li><a href="function.constant.html">constant</a></li>
+  <li><a href="function.define.html">define</a></li>
+  <li><a href="function.defined.html">defined</a></li>
+  <li><a href="function.die.html">die</a></li>
+  <li><a href="function.eval.html">eval</a></li>
+  <li><a href="function.exit.html">exit</a></li>
+  <li><a href="function.get-browser.html">get_browser</a></li>
+  <li><a href="function.halt-compiler.html">__halt_compiler</a></li>
+  <li><a href="function.highlight-file.html">highlight_file</a></li>
+  <li><a href="function.highlight-string.html">highlight_string</a></li>
+  <li><a href="function.ignore-user-abort.html">ignore_user_abort</a></li>
+  <li><a href="function.pack.html">pack</a></li>
+  <li><a href="function.php-check-syntax.html">php_check_syntax</a></li>
+  <li><a href="function.php-strip-whitespace.html">php_strip_whitespace</a></li>
+  <li><a href="function.show-source.html">show_source</a></li>
+  <li><a href="function.sleep.html">sleep</a></li>
+  <li><a href="function.sys-getloadavg.html">sys_getloadavg</a></li>
+  <li><a href="function.time-nanosleep.html">time_nanosleep</a></li>
+  <li><a href="function.time-sleep-until.html">time_sleep_until</a></li>
+  <li><a href="function.uniqid.html">uniqid</a></li>
+  <li class="active"><a href="function.unpack.html">unpack</a></li>
+  <li><a href="function.usleep.html">usleep</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.uniqid.html">uniqid</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.usleep.html">usleep</a></div>
+                <div class="up"><a href="ref.misc.html">Sonstige Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.unpack" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">unpack</h1>
+  <p class="refpurpose">Entpackt die Daten eines Binär-Strings</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.unpack-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname">unpack</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$format</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Überträgt die Daten eines Binär-Strings in ein Array unter Berücksichtigung
+   des <code class="parameter">format</code>-Parameters.
+  </p>
+  <p class="para">
+   Die entpackten Daten werden in einem assoziativen Array abgebildet. Hierzu
+   müssen die verschiedenen Format-Codes benannt und mit &quot;/&quot; getrennt werden.
+   Wenn ein sich wiederholendes Argument existiert, werden die Array-Schlüssel
+   durchnummeriert, indem ihnen eine Zahl angehängt wird.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.unpack-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">format</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Format-Codes werden unter <span class="function">pack</span> näher erläutert.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">data</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die gepackten Daten.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.unpack-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt ein assoziatives Array zurück, dass die entpackten Elemente als
+   Binärzeichenkette enthält.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.unpack-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.5.0</td>
+       <td>
+        <p class="para">
+         Änderungen wurden durchgeführt, um diese Funktion in Übereinstimmung
+         mit Perl zu bringen:
+        </p>
+        <p class="para">
+         Der &quot;a&quot; Code erhält nun abschließende NULL Bytes.
+        </p>
+        <p class="para">
+         Der &quot;A&quot; Code entfernt nun alle abschließenden ASCII Whitespaces
+         (Leerzeichen, Tabs, Zeilenvorschübe, Wagenrückläufe und NULL Bytes).
+        </p>
+        <p class="para">
+         Der &quot;Z&quot; Code wurde für mit NULL aufgefüllte Zeichenketten hinzugefügt,
+         und entfernt abschließende NULL Bytes.
+        </p>
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.unpack-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4275">
+    <p><strong>Beispiel #1 <span class="function">unpack</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$binarydata&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"\x04\x00\xa0\x00"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">unpack</span><span style="color: #007700">(</span><span style="color: #DD0000">"cchars/nint"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$binarydata</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Das Ergebnis Array enthält die Einträge &quot;chars&quot; mit dem wert
+     <em>4</em> und &quot;int&quot; mit <em>160</em>.
+    </p></div>
+   </div>
+  </p>
+
+  <p class="para">
+   <div class="example" id="example-4276">
+    <p><strong>Beispiel #2 <span class="function">unpack</span> Beispiel mit Wiederholer</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$binarydata&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"\x04\x00\xa0\x00"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">unpack</span><span style="color: #007700">(</span><span style="color: #DD0000">"c2chars/nint"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$binarydata</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+     <div class="example-contents"><p>
+      Das Ergebnis Array wird die Einträge &quot;chars1&quot;, &quot;chars2&quot; and &quot;int&quot;
+      enthalten.
+     </p></div>
+    </div>
+   </p>
+  </div>
+
+
+
+ <div class="refsect1 notes" id="refsect1-function.unpack-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <div class="caution"><strong class="caution">Achtung</strong>
+   <p class="para">
+    Beachten Sie, dass PHP Integer-Werte intern mit Vorzeichen
+    speichert. Wenn Sie einen großen vorzeichenlosen Longwert
+    entpacken und er von der selben Größe ist, die PHP für dessen
+    Speicherung verwendet, wird das Ergebnis ein negativer Wert sein
+    (auch wenn Sie dieses als vorzeichenlos zu entpacken angegeben
+    haben).
+   </p>
+  </div>
+  <div class="caution"><strong class="caution">Achtung</strong>
+   <p class="para">
+    Beachten Sie, dass für nicht benannte Elemente ein leerer String verwendet
+    wird. Werden mehrere Elemente nicht bennant, werden die entsprechenden
+    Elemente überschrieben, da die verwendeten Schlüssel identisch sind:
+   </p>
+   <p class="para">
+    <div class="example" id="example-4277">
+     <p><strong>Beispiel #3 <span class="function">unpack</span> Beispiel mit unbenannten Schlüsseln</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$binarydata&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"\x32\x42\x00\xa0"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">unpack</span><span style="color: #007700">(</span><span style="color: #DD0000">"c2/n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$binarydata</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+     <div class="example-contents"><p>
+      Das Ergebnis Array wird die Elemente &quot;1&quot; mit dem Wert <em>160</em>
+      und &quot;2&quot; mit <em>66</em> enthalten. Der erste Wert vom Symbol
+      <em>c</em> wurde mit dem Wert vom Symbol <em>n</em>
+      überschrieben.
+     </p></div>
+    </div>
+   </p>
+  </div>
+ </div>
+
+ 
+
+ <div class="refsect1 seealso" id="refsect1-function.unpack-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">pack</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Fehler-Kontroll-Operatoren</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.operators.html">Operatoren</a></li>
+  <li><a href="language.operators.precedence.html">Operator-Rangfolge</a></li>
+  <li><a href="language.operators.arithmetic.html">Arithmetische Operatoren</a></li>
+  <li><a href="language.operators.assignment.html">Zuweisungsoperatoren</a></li>
+  <li><a href="language.operators.bitwise.html">Bit-Operatoren</a></li>
+  <li><a href="language.operators.comparison.html">Vergleichs-Operatoren</a></li>
+  <li class="active"><a href="language.operators.errorcontrol.html">Fehler-Kontroll-Operatoren</a></li>
+  <li><a href="language.operators.execution.html">Operatoren zur Programmausf&uuml;hrung</a></li>
+  <li><a href="language.operators.increment.html">Inkrement- bzw. Dekrementoperatoren</a></li>
+  <li><a href="language.operators.logical.html">Logische Operatoren</a></li>
+  <li><a href="language.operators.string.html">Zeichenketten-Operatoren</a></li>
+  <li><a href="language.operators.array.html">Array-Operatoren</a></li>
+  <li><a href="language.operators.type.html">Typ Operatoren</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.operators.comparison.html">Vergleichs-Operatoren</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.operators.execution.html">Operatoren zur Programmausf&uuml;hrung</a></div>
+                <div class="up"><a href="language.operators.html">Operatoren</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.operators.errorcontrol" class="sect1">
+   <h2 class="title">Fehler-Kontroll-Operatoren</h2>
+   
+   <p class="simpara">
+    PHP unterstützt einen Operator zur Fehlerkontrolle: Das @-Symbol.
+    Stellt man das @ in PHP vor einen Ausdruck werden alle
+    Fehlermeldungen, die von diesem Ausdruck erzeugt werden könnten,
+    ignoriert.
+   </p>
+
+   <p class="simpara">
+    Ist das <a href="errorfunc.configuration.html#ini.track-errors" class="link"><strong class="option unknown">track_errors</strong>
+</a>-Feature
+    aktiviert, werden alle Fehlermeldungen, die von diesem Ausdruck erzeugt
+    werden, in der Variablen <a href="reserved.variables.phperrormsg.html" class="link">$php_errormsg</a>
+    gespeichert. Da diese Variable mit jedem neuen Auftreten eines
+    Fehlers überschrieben wird, sollte man sie möglichst bald nach
+    Verwendung des Ausdrucks überprüfen, wenn man mit ihr arbeiten
+    will.
+   </p>
+
+   <p class="para">
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Beabsichtigter&nbsp;Dateifehler&nbsp;*/<br /></span><span style="color: #0000BB">$my_file&nbsp;</span><span style="color: #007700">=&nbsp;@</span><span style="color: #0000BB">file&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">'nicht_vorhandene_Datei'</span><span style="color: #007700">)&nbsp;or<br />&nbsp;&nbsp;&nbsp;&nbsp;die&nbsp;(</span><span style="color: #DD0000">"Datei&nbsp;konnte&nbsp;nicht&nbsp;geöffnetwerden:&nbsp;Fehler&nbsp;war:'</span><span style="color: #0000BB">$php_errormsg</span><span style="color: #DD0000">'"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Das&nbsp;funktioniert&nbsp;bei&nbsp;jedem&nbsp;Ausdruck,&nbsp;nicht&nbsp;nur&nbsp;bei&nbsp;Funktionen:<br /></span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">=&nbsp;@</span><span style="color: #0000BB">$cache</span><span style="color: #007700">[</span><span style="color: #0000BB">$key</span><span style="color: #007700">];&nbsp;<br /></span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;keine&nbsp;Notice,&nbsp;falls&nbsp;der&nbsp;Index&nbsp;$key&nbsp;nicht&nbsp;vorhanden&nbsp;ist.<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <span class="simpara">
+     Der @-Operator funktioniert nur bei <a href="language.expressions.html" class="link">Ausdrücken</a>. Eine einfache
+     Daumenregel: wenn Sie den Wert von etwas bestimmen können, dann
+     können Sie den @-Operator davor schreiben. Zum Beispiel können
+     Sie ihn vor Variablen, Funktionsaufrufe und vor
+     <span class="function">include</span> setzen, vor Konstanten und so
+     weiter. Nicht verwenden können Sie diesen Operator vor Funktions-
+     oder Klassendefinitionen oder vor Kontrollstrukturen wie zum
+     Beispiel <em>if</em> und <em>foreach</em> und
+     so weiter.
+    </span>
+   </p></blockquote>
+   <p class="simpara">
+    Siehe auch <span class="function">error_reporting</span> und den Abschnitt
+    über <a href="ref.errorfunc.html" class="link">Error Handling and Logging
+    Functions</a>.
+   </p>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Der @ Fehler-Kontroll-Operator verhindert jedoch keine Meldungen,
+     welche aus Fehlern beim Parsen resultieren.
+    </p>
+   </p></blockquote>
+
+   <div class="warning"><strong class="warning">Warnung</strong>
+    <p class="para">
+     Zum gegenwärtigen Zeitpunkt deaktiviert der &quot;@&quot;
+     Fehler-Kontrolloperator die Fehlermeldungen selbst bei kritischen
+     Fehlern, die die Ausführung eines Skripts beenden. Unter anderem
+     bedeutet das, wenn Sie &quot;@&quot; einer bestimmten Funktion
+     voranstellen, diese aber nicht zur Verfügung steht oder falsch
+     geschrieben wurde, Ihr PHP-Skript einfach beendet wird, ohne
+     Hinweis auf die Ursache.
+    </p>
+   </div>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

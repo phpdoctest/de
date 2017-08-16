@@ -1,0 +1,466 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Sucht und ersetzt mit regul&auml;ren Ausdr&uuml;cken</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li class="header up"><a href="book.pcre.html">PCRE</a></li>
+  <li class="header up"><a href="ref.pcre.html">PCRE-Funktionen</a></li>
+  <li><a href="function.preg-filter.html">preg_filter</a></li>
+  <li><a href="function.preg-grep.html">preg_grep</a></li>
+  <li><a href="function.preg-last-error.html">preg_last_error</a></li>
+  <li><a href="function.preg-match-all.html">preg_match_all</a></li>
+  <li><a href="function.preg-match.html">preg_match</a></li>
+  <li><a href="function.preg-quote.html">preg_quote</a></li>
+  <li><a href="function.preg-replace-callback-array.html">preg_replace_callback_array</a></li>
+  <li><a href="function.preg-replace-callback.html">preg_replace_callback</a></li>
+  <li class="active"><a href="function.preg-replace.html">preg_replace</a></li>
+  <li><a href="function.preg-split.html">preg_split</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.preg-replace-callback.html">preg_replace_callback</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.preg-split.html">preg_split</a></div>
+                <div class="up"><a href="ref.pcre.html">PCRE-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.preg-replace" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">preg_replace</h1>
+  <p class="refpurpose">Sucht und ersetzt mit regulären Ausdrücken</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.preg-replace-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname">preg_replace</span>
+    ( <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$pattern</code></span>
+   , <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$replacement</code></span>
+   , <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$subject</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$limit</code><span class="initializer"> = -1</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter reference">&$count</code></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   Durchsucht die Zeichenkette <code class="parameter">subject</code> nach
+   Übereinstimmungen mit <code class="parameter">pattern</code> und ersetzt sie mit
+   <code class="parameter">replacement</code>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.preg-replace-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">pattern</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Ausdruck, nach dem gesucht wird. Es kann entweder eine Zeichenkette
+       oder ein Array mit Zeichenketten sein.
+      </p>
+      <p class="para">
+       Es stehen auch einige <a href="reference.pcre.pattern.modifiers.html" class="link">PCRE-Modifikatoren</a>
+       zur Verfügung.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">replacement</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Zeichenkette oder das Array mit Zeichenketten zum Ersetzen. Falls
+       dieser Parameter eine Zeichenkette ist und der Parameter
+       <code class="parameter">pattern</code> ein Array, werden alle Suchmuster durch
+       diese Zeichenkette ersetzt. Falls sowohl <code class="parameter">pattern</code>
+       als auch <code class="parameter">replacement</code> Arrays sind, wird jedes
+       Suchmuster <code class="parameter">pattern</code> durch das Gegenstück aus
+       <code class="parameter">replacement</code> ersetzt. Wenn das
+       <code class="parameter">replacement</code>-Array weniger Elemente hat als das
+       <code class="parameter">pattern</code>-Array, wird jedes überzählige
+       <code class="parameter">pattern</code> durch die leere Zeichenkette ersetzt.
+      </p>
+      <p class="para">
+       <code class="parameter">replacement</code> darf Referenzen in der Form
+       <em>\\<span class="replaceable">n</span></em> oder (ab PHP 4.0.4)
+       <em>$<span class="replaceable">n</span></em> enthalten, wobei
+       Letztere vorzuziehen ist. Jede dieser Referenzen wird mit dem Text
+       ersetzt, der vom <span class="replaceable">n</span>-ten eingeklammerten
+       Suchmuster erfasst wurde. <span class="replaceable">n</span> kann einen Wert
+       von 0 bis 99 haben. <em>\\0</em> oder <em>$0</em>
+       beziehen sich auf den Text, der auf das komplette Suchmuster passt. Um
+       die Nummer des erfassenden Teil-Suchmusters zu erhalten, werden
+       öffnende Klammern mit 1 beginnend von links nach rechts gezählt. Um
+       einen Backslash im Ersatz zu verwenden, muss er verdoppelt werden
+       (<em>&quot;\\\\&quot;</em> PHP-Zeichenkette).
+      </p>
+      <p class="para">
+       Wenn Sie mit einer Ersetzung arbeiten wollen, in der auf eine
+       Rückreferenzierung direkt eine weitere Zahl folgt (d.h., direkt nach
+       der Übereinstimmmung mit einem Suchmuster soll eine Zahl kommen),
+       können Sie für Ihre Rückreferenzierung nicht die Schreibweise
+       <em>\\1</em> verwenden. So würde z.B. <em>\\11</em>
+       die Funktion <span class="function">preg_replace</span> verwirren, weil sie
+       nicht weiß, ob Sie die Rückreferenzierung <em>\\1</em>
+       gefolgt von der Zahl <em>1</em> wollen oder nur die
+       Rückreferenzierung <em>\\11</em>. In diesem Fall ist die
+       Lösung, <em>${1}1</em> zu verwenden. Damit wird eine
+       isolierte Rückreferenzierung <em>$1</em> erzeugt und die
+       <em>1</em> bleibt ein Buchstabensymbol.
+      </p>
+      <p class="para">
+       Wenn Sie den veralteten Modifikator <em>e</em> verwenden,
+       maskiert diese Funktion ein paar Zeichen (nämlich <em>&#039;</em>,
+       <em>&quot;</em>, <em>\</em> und NULL) in den
+       Zeichenketten, mit denen die Rückreferenzierungen ersetzen werden. Das
+       wird gemacht, um sicherzustellen, dass keine Syntaxfehler entstehen,
+       wenn Rückreferenzierungen verwendet werden, die einfache oder doppelte
+       Anführungszeichen enthalten (z.B.
+       <em>&#039;strlen(\&#039;$1\&#039;)+strlen(&quot;$2&quot;)&#039;</em>). Vergewissern Sie
+       sich, dass Sie die <a href="language.types.string.html" class="link">Zeichenketten-Syntax</a> von PHP
+       kennen, um genau zu wissen, wie die ausgewertete Zeichenkette aussieht.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">subject</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Zeichenkette oder ein Array mit Zeichenketten zum Durchsuchen.
+      </p>
+      <p class="para">
+       Falls <code class="parameter">subject</code> ein Array ist, wird das Suchen und
+       Ersetzen auf jedes Element von <code class="parameter">subject</code> angewandt
+       und der Rückgabewert ist ebenfalls ein Array.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">limit</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die maximal mögliche Anzahl von Ersetzungen für jedes Suchmuster in
+       jeder <code class="parameter">subject</code>. Standardmäßiger Wert:
+       <em>-1</em> (kein Limit).
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">count</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Falls angegeben, wird dieser Variable die Anzahl vorgenommener
+       Ersetzungen zugewiesen.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.preg-replace-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   <span class="function">preg_replace</span> gibt ein Array zurück, falls
+   <code class="parameter">subject</code> ein Array ist, andernfalls eine
+   Zeichenkette.
+  </p>
+  <p class="para">
+   Falls Übereinstimmungen gefunden wurden, wird die neue Zeichenkette
+   <code class="parameter">subject</code> zurückgegeben, andernfalls wird
+   <code class="parameter">subject</code> unverändert zurückgegeben oder <strong><code>NULL</code></strong>, falls
+   ein Fehler auftrat.
+  </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-function.preg-replace-errors">
+  <h3 class="title">Fehler/Exceptions</h3>
+  <p class="para">
+   Ab PHP 5.5.0 wird bei Übergabe des Modifikators &quot;\e&quot; ein Fehler der Stufe
+   <strong><code>E_DEPRECATED</code></strong> ausgegeben. Ab PHP 7.0.0 wird in diesem
+   Fall ein Fehler der Stufe <strong><code>E_WARNING</code></strong> ausgegeben, und der
+   &quot;\e&quot; Modifikator hat keine Wirkung.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.preg-replace-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.0.0</td>
+       <td>
+        Die Unterstützung für den <em>/e</em> Modifikator wurde entfernt.
+        Verwenden Sie statt dessen <span class="function">preg_replace_callback</span>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.5.0</td>
+       <td>
+        Der Modifikator <em>/e</em> ist veraltet und sollte nicht
+        mehr verwendet werden. Verwenden Sie stattdessen
+        <span class="function">preg_replace_callback</span>. Für ergänzende
+        Informationen über Sicherheitsrisiken
+        siehe <a href="reference.pcre.pattern.modifiers.html#reference.pcre.pattern.modifiers.eval" class="link">PREG_REPLACE_EVAL</a>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.1.0</td>
+       <td>Den Parameter <code class="parameter">count</code> hinzugefügt</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.preg-replace-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-5294">
+    <p><strong>Beispiel #1 
+     Die Verwendung von Rückreferenzierungen mit darauf folgenden numerischen
+     Literalen
+    </strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$zeichenkette&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'15.&nbsp;April&nbsp;2003'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$suchmuster&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'/(\d+)\.&nbsp;(\w+)&nbsp;(\d+)/i'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$ersetzung&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'${2}1,$3'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$suchmuster</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ersetzung</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$zeichenkette</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+April1,2003
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-5295">
+    <p><strong>Beispiel #2 
+     Die Verwendung von <span class="function">preg_replace</span> mit indizierten
+     Arrays
+    </strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$zeichenkette&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Der&nbsp;schnelle&nbsp;braune&nbsp;Fuchs&nbsp;springt&nbsp;über&nbsp;den&nbsp;faulen&nbsp;Hund.'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$suchmuster&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /></span><span style="color: #0000BB">$suchmuster</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'/schnelle/'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$suchmuster</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'/braune/'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$suchmuster</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'/Fuchs/'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$ersetzungen&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /></span><span style="color: #0000BB">$ersetzungen</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'Bär'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$ersetzungen</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'schwarze'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$ersetzungen</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'langsame'</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$suchmuster</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ersetzungen</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$zeichenkette</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Der Bär schwarze langsame springt über den faulen Hund.
+</pre></div>
+    </div>
+    <div class="example-contents"><p>
+     Wenn wir Suchmuster und Ersetzungen mit <span class="function">ksort</span>
+     sortieren, sollten wir bekommen was wir wollten.
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />ksort</span><span style="color: #007700">(</span><span style="color: #0000BB">$suchmuster</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">ksort</span><span style="color: #007700">(</span><span style="color: #0000BB">$ersetzungen</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$suchmuster</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ersetzungen</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$zeichenkette</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Der langsame schwarze Bär springt über den faulen Hund.
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-5296">
+    <p><strong>Beispiel #3 Ersetzen mehrerer Werte</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$suchmuster&nbsp;</span><span style="color: #007700">=&nbsp;array&nbsp;(</span><span style="color: #DD0000">'/(19|20)(\d{2})-(\d{1,2})-(\d{1,2})/'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'/^\s*{(\w+)}\s*=/'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$ersetzen&nbsp;</span><span style="color: #007700">=&nbsp;array&nbsp;(</span><span style="color: #DD0000">'\4.\3.\1\2'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'$\1&nbsp;='</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$suchmuster</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ersetzen</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'{startDatum}&nbsp;=&nbsp;1999-5-27'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+$startDatum = 27.5.1999
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-5297">
+    <p><strong>Beispiel #4 Leerzeichen entfernen</strong></p>
+    <div class="example-contents"><p>
+     Dieses Beispiel entfernt überschüssige Leerzeichen aus einer
+     Zeichenkette.
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'foo&nbsp;&nbsp;&nbsp;o'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(</span><span style="color: #DD0000">'/\s\s+/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;Das&nbsp;ist&nbsp;jetzt&nbsp;'foo&nbsp;o'<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-5298">
+    <p><strong>Beispiel #5 Die Verwendung des Parameters <code class="parameter">count</code></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$anzahl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'/\d/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'/\s/'</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">'*'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'xp&nbsp;4&nbsp;to'</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$anzahl</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$anzahl</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//3<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+xp***to
+3
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.preg-replace-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Bei Verwendung von Arrays für <code class="parameter">pattern</code> und
+    <code class="parameter">replacement</code> werden die Schlüssel in der Reihenfolge
+    bearbeitet, in der sie im Array vorliegen. Das ist <em class="emphasis">nicht
+    notwendigerweise</em> dieselbe, wie die numerische Reihenfolge der
+    Indizes. Wenn Sie Indizes verwenden, um festzulegen welches
+    <code class="parameter">pattern</code> durch welchen Ersatz
+    <code class="parameter">replacement</code> ersetzt werden soll, sollten Sie vor
+    dem Aufruf von <span class="function">preg_replace</span>
+    <span class="function">ksort</span> auf jedes Array anwenden.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.preg-replace-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><a href="pcre.pattern.html" class="link">PCRE-Suchmuster</a></li>
+    <li class="member"><span class="function">preg_quote</span></li>
+    <li class="member"><span class="function">preg_filter</span></li>
+    <li class="member"><span class="function">preg_match</span></li>
+    <li class="member"><span class="function">preg_replace_callback</span></li>
+    <li class="member"><span class="function">preg_split</span></li>
+    <li class="member"><span class="function">preg_last_error</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: PHP und HTML</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="faq.html">FAQ</a></li>
+  <li><a href="faq.general.html">Allgemeine Informationen</a></li>
+  <li><a href="faq.mailinglist.html">Mailing-Listen</a></li>
+  <li><a href="faq.obtaining.html">PHP beziehen</a></li>
+  <li><a href="faq.databases.html">PHP und Datenbanken</a></li>
+  <li><a href="faq.installation.html">Installation</a></li>
+  <li><a href="faq.build.html">Probleme bei der Kompilierung</a></li>
+  <li><a href="faq.using.html">PHP benutzen</a></li>
+  <li><a href="faq.passwords.html">Password Hashing</a></li>
+  <li class="active"><a href="faq.html.html">PHP und HTML</a></li>
+  <li><a href="faq.com.html">PHP und COM</a></li>
+  <li><a href="faq.misc.html">Verschiedene Fragen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="faq.passwords.html">Password Hashing</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="faq.com.html">PHP und COM</a></div>
+                <div class="up"><a href="faq.html">FAQ</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="faq.html" class="chapter">
+  <h1>PHP und HTML</h1>
+  
+
+  <p class="para">
+   PHP und HTML interagieren stark: PHP kann HTML generieren und HTML kann Informationen
+   an PHP weitergeben. Bevor Sie diese FAQ lesen, sollten Sie verstanden haben, wie
+   Sie auf <a href="language.variables.external.html" class="link">Variablen aus externen
+   Quellen</a> zugreifen können. Die Manual-Seite zu diesem Thema enthält viele Beispiele,
+   die das Verständnis erleichtern.
+  </p>
+
+  <div class="qandaset"><ol class="qandaset_questions"><li><a href="#faq.html.encoding">
+     
+      Wie muss ich kodieren/dekodieren, wenn ich einen Wert &uuml;ber ein
+      Formular/einen URL weitergeben m&ouml;chte?
+     
+    </a></li><li><a href="#faq.html.form-image">
+     
+      Ich versuche ein &lt;input type=&quot;image&quot;&gt;-Tag zu benutzen, aber die Variablen
+      $foo.x and $foo.y sind nicht verf&uuml;gbar.
+      Auch $_GET[&#039;foo.x&#039;] existiert nicht. Wo finde ich diese?
+     
+    </a></li><li><a href="#faq.html.arrays">
+     Wie kann ich Array aus einem HTML-Formular erstellen?
+    </a></li><li><a href="#faq.html.select-multiple">
+     
+      Wie bekomme ich alle Werte aus einem &quot;select multiple&quot;-HTML-Tag?
+     
+    </a></li><li><a href="#faq.html.javascript-variable">
+     
+      Wie kann ich eine Variable von JavaScript an PHP &uuml;bergeben?
+     
+    </a></li></ol></div>
+   <dl class="qandaentry" id="faq.html.encoding">
+    <dt><strong>
+     
+      Wie muss ich kodieren/dekodieren, wenn ich einen Wert über ein
+      Formular/einen URL weitergeben möchte?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Es gibt mehrere Stufen, für die Encoding wichtig ist. Angenommen, Sie
+      haben einen <span class="type">String</span> <var class="varname">$data</var>, der den String,
+      den Sie in nicht-kodierter Weise weitergeben möchten, enthält. Dann
+      sind dies die relevanten Stufen:
+      <ul class="itemizedlist">
+       <li class="listitem">
+        <p class="para">
+         HTML-Interpretation: Wenn Sie einen zufälligen String angeben wollen,
+         <em class="emphasis">müssen</em> Sie ihn in die doppelte Anführungszeichen
+         einschließen und <span class="function">htmlspecialchars</span> auf den gesamten
+         Wert anwenden.
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para">
+         URL: Ein URL besteht aus mehreren Teilen. Wenn Sie wollen, dass Ihre
+         Daten als ein Element interpretiert werden, dann <em class="emphasis">müssen</em>
+         Sie Ihre Daten mit <span class="function">urlencode</span> kodieren.
+        </p>
+       </li>
+      </ul>
+     </p>
+     <p class="para">
+      <div class="example" id="example-6322">
+       <p><strong>Beispiel #1 Ein verstecktes HTML-Formularelement</strong></p>
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;input&nbsp;type="hidden"&nbsp;value="'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">htmlspecialchars</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">'"&nbsp;/&gt;'</span><span style="color: #007700">.</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+      </div>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <span class="simpara">
+        Es wäre falsch, <span class="function">urlencode</span> auf <var class="varname">$data</var>
+        anzuwenden, da es die Aufgabe des Browsers ist, die Daten zu kodieren.
+        Alle populären Browser machen dies auch korrekt. Beachten Sie, dass dies
+        unabhängig von der verwendeten Methode (also z.B. GET oder POST) geschieht.
+        Feststellen werden Sie dies aber nur bei GET-Anfragen, da POST-Anfragen
+        meist versteckt geschehen.
+       </span>
+      </p></blockquote>
+      <div class="example" id="example-6323">
+       <p><strong>Beispiel #2 Daten, die vom Benutzer bearbeitet werden sollen</strong></p>
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"&lt;textarea&nbsp;name='mydata'&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">htmlspecialchars</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">).</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;/textarea&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+      </div>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <span class="simpara">
+        Die Daten werden wie Browser wie gewünscht ausgegeben, da der Browser
+        die HTML-escapten Symbole interpretiert.
+       </span>
+       <span class="simpara">
+        Nach dem Abschicken, egal ob via GET oder POST, werden die Daten für den
+        Transfer kodiert (mit <span class="function">urlencode</span>) und von PHP
+        direkt wieder dekodiert (mit <span class="function">urldecode</span>). Sie müssen
+        also für die Kodierung und Dekodierung nicht selbst sorgen, die Browser und PHP
+        erledigen dies automatisch für Sie.
+       </span>
+      </p></blockquote>
+      <div class="example" id="example-6324">
+       <p><strong>Beispiel #3 In einem URL</strong></p>
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;a&nbsp;href="'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">htmlspecialchars</span><span style="color: #007700">(</span><span style="color: #DD0000">"/nextpage.php?stage=23&amp;data="&nbsp;</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">urlencode</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">))&nbsp;.&nbsp;</span><span style="color: #DD0000">'"&gt;'</span><span style="color: #007700">.</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+      </div>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <span class="simpara">
+        Hier wird eine HTML-GET-Anfrage gefakt, deswegen müssen Sie die Daten manuell
+        mit <span class="function">urlencode</span> kodieren.
+       </span>
+      </p></blockquote>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <span class="simpara">
+        Sie müssen <span class="function">htmlspecialchars</span> auf den gesamten URL anwenden,
+        da der URL als Wert eines HTML-Attributs auftritt. In diesem Fall wird der Browser
+        zuerst etwas wie &quot;un-<span class="function">htmlspecialchars</span>&quot; auf den Wert anwenden
+        und dann erst den URL weitergeben. PHP wird den URL korrekt verstehen, da Sie die
+        Daten mit <span class="function">urlencode</span> kodiert haben.
+       </span>
+       <span class="simpara">
+        Sie werden feststellen, dass das <em>&amp;</em> im URL durch
+        <em>&amp;amp;</em> ersetzt wird. Auch wenn die meisten Browser
+        richtig arbeiten, falls Sie diese Ersetzung vergessen sollten, sollten Sie sich
+        trotzdem nicht darauf verlassen. Das bedeutet, dass Sie - auch wenn Ihr URL nicht
+        dynamisch ist - trotzdem <span class="function">htmlspecialchars</span> auf den
+        URL anwenden <em class="emphasis">müssen</em>.
+       </span>
+      </p></blockquote>
+     </p>
+     
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.html.form-image">
+    <dt><strong>
+     
+      Ich versuche ein &lt;input type=&quot;image&quot;&gt;-Tag zu benutzen, aber die Variablen
+      <var class="varname">$foo.x</var> and <var class="varname">$foo.y</var> sind nicht verfügbar.
+      Auch <var class="varname">$_GET[&#039;foo.x&#039;]</var> existiert nicht. Wo finde ich diese?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Wenn ein Formular abgeschickt werden soll, ist es möglich, ein Bild statt des
+      Standard-Submit-Buttons zu verwenden, indem Sie ein Tag wie das folgende verwenden:
+      <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;input type=&quot;image&quot; src=&quot;image.gif&quot; name=&quot;foo&quot; /&gt;</pre>
+</div>
+      </div>
+
+      Wenn der Benutzer irgendwo auf das Bild klickt, wird das zugehörige Formular
+      zusammen mit zwei zusätzlichen Variablen übertragen: <var class="varname">foo.x</var>
+      und <var class="varname">foo.y</var>.
+     </p>
+     <p class="para">
+      Da <var class="varname">foo.x</var> und <var class="varname">foo.y</var> in PHP ungültige
+      Variablennamen erzeugen würden, werden Sie automatisch in
+      <var class="varname">$foo_x</var> und <var class="varname">$foo_y</var> konvertiert. Die
+      Punkte werden also durch Unterstriche ersetzt. Sie können auf diese
+      Variablen also genauso wie im Abschnitt <a href="language.variables.external.html" class="link">Variablen aus externen Quellen</a>
+      zugreifen, z.B. <var class="varname">$_GET[&#039;foo_x&#039;]</var>.
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+         Leerzeichen in Namen von Formularelementen werden in Unterstriche konvertiert.
+       </p>
+      </p></blockquote>
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.html.arrays">
+    <dt><strong>
+     Wie kann ich Array aus einem HTML-Formular erstellen?
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Um die Formularwerte als <a href="language.types.array.html" class="link">Array</a> im
+      PHP-Skript zur Verfügung zu haben, müssen Sie die &lt;input&gt;, &lt;select&gt;
+      or &lt;textarea&gt;-Felder wie folgt benennen:
+      <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;input name=&quot;MeinArray[]&quot; /&gt;
+&lt;input name=&quot;MeinArray[]&quot; /&gt;
+&lt;input name=&quot;MeinArray[]&quot; /&gt;
+&lt;input name=&quot;MeinArray[]&quot; /&gt;</pre>
+</div>
+      </div>
+
+      Beachten Sie die eckigen Klammern hinter dem Variablen-Namen, denn dadurch wird
+      das Array erst erzeugt. Sie können Felder in verschiedenen Arrays gruppieren,
+      wenn Sie verschiedenen Feldern die gleichen Namen geben:
+      <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;input name=&quot;MeinArray[]&quot; /&gt;
+&lt;input name=&quot;MeinArray[]&quot; /&gt;
+&lt;input name=&quot;MeinAnderesArray[]&quot; /&gt;
+&lt;input name=&quot;MeinAnderesArray[]&quot; /&gt;</pre>
+</div>
+      </div>
+
+      Daraus werden zwei Arrays, MeinArray und MeinAnderesArray erstellt. Es ist 
+      auch möglich, spezielle Schlüssel anzugeben:
+      <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;input name=&quot;AnderesArray[]&quot; /&gt;
+&lt;input name=&quot;AnderesArray[]&quot; /&gt;
+&lt;input name=&quot;AnderesArray[email]&quot; /&gt;
+&lt;input name=&quot;AnderesArray[telefon]&quot; /&gt;</pre>
+</div>
+      </div>
+
+      Das Array AnderesArray enthält daraufhin die Schlüssel 0, 1, email und
+      telefon.
+      </p>
+      <p class="para">
+       <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+        <p class="para">
+         Die Angabe von Array-Schlüsseln ist in HTML optional. Wenn Sie keinen
+         Schlüssel angeben, wird das Array in der Formular-Reihenfolge gefüllt.
+         Im ersten Beispiel enthält also die Schlüssel 0, 1, 2 und 3.
+        </p>
+       </p></blockquote>
+      </p>
+      <p class="para">
+      Siehe auch: <a href="ref.array.html" class="link">Array-Funktionen</a> und
+      <a href="language.variables.external.html" class="link">Variablen aus externen Quellen</a>.
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.html.select-multiple">
+    <dt><strong>
+     
+      Wie bekomme ich alle Werte aus einem &quot;select multiple&quot;-HTML-Tag?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Mit einem &quot;select multiple&quot;-Tag können Benutzer mehrere Werte aus einer
+      Liste auswählen. Diese Werte werden dann an den &quot;action handler&quot; des Formulars
+      (z.B. ein PHP-Skript) übergeben. Problematisch ist dabei, dass alle mit demselben
+      Namen übergeben werden, z.B.:
+      <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;select name=&quot;var&quot; multiple=&quot;yes&quot;&gt;</pre>
+</div>
+      </div>
+
+      Jede ausgewählte Option wird übergeben als:
+      <div class="example-contents"><div class="cdata"><pre>
+var=option1
+var=option2
+var=option3
+      </pre></div></div>
+
+      Jede Option wird den Inhalt der vorherigen
+      <var class="varname">$var</var>-Variablen überschreiben. Die Lösung ist, die
+      spezielle PHP-Lösung hierfür zu verwenden. Sie sollten das Tag wie
+      folgt umschreiben:
+      <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;select name=&quot;var[]&quot; multiple&gt;</pre>
+</div>
+      </div>
+
+      PHP weiß dann, dass <var class="varname">$var</var> als Array behandelt
+      werden soll. Jede ausgewählte Wert wird dem Array hinzugefügt.
+      Das erste Element wird zu <var class="varname">$var[0]</var>, das nächste zu
+      <var class="varname">$var[1]</var> etc. Die <span class="function">count</span>-Funktion
+      kann benutzt werden, um herauszufinden, wie viele Optionen ausgewählt
+      wurden. Mit der <span class="function">sort</span>-Funktion können Sie bei
+      Bedarf das Array sortieren.
+     </p>
+     <p class="para">
+      Beachten Sie, dass, falls Sie JavaScript benutzen, die eckigen Klammern
+      <em>[]</em> im Feldnamen Probleme machen können, wenn Sie
+      versuchen, über den Namen auf das Feld zu verweisen. Benutzen Sie
+      stattdessen die numerische ID des Formularfelds oder schließen Sie
+      den Variablennamen in einfache Anführungszeichen ein und benutzen Sie
+      dies als den Index, z.B.:
+      <div class="example-contents"><div class="cdata"><pre>
+variable = document.forms[0].elements[&#039;var[]&#039;];
+      </pre></div></div>
+
+     </p>
+    </dd>
+   </dl>
+
+   <dl class="qandaentry" id="faq.html.javascript-variable">
+    <dt><strong>
+     
+      Wie kann ich eine Variable von JavaScript an PHP übergeben?
+     
+    </strong></dt>
+    <dd class="answer">
+     <p class="para">
+      Da JavaScript (normalerweise) nur auf dem Client läuft, während
+      PHP (normalerweise) auf Servern läuft, und da HTTP ein &quot;status-loses&quot;
+      Protokoll ist, können zwischen den beiden Sprachen keine Variablen
+      direkt ausgetauscht werden.
+     </p>
+     <p class="para">
+      Allerdings ist es trotzdem möglich, Variablen zwischen den beiden
+      zu übergeben. Eine Möglichkeit ist, den JavaScript-Code mit PHP
+      zu generieren. Außerdem muss die angezeigte Seite sich regelmäßig
+      selbst aktualisieren und dabei bestimmte Variablen an das PHP-Skript
+      übergeben. Das folgende Beispiel zeigt wie Sie dies tun können --
+      es ermöglicht PHP, die Bildschirmauflösung (Höhe und Breite) zu
+      ermitteln, was normalerweise nur Client-seitig möglich ist.
+     </p>
+     <p class="para">
+      <div class="example" id="example-6325">
+       <p><strong>Beispiel #4 JavaScript mit PHP generieren</strong></p>
+       <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(isset(</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'width'</span><span style="color: #007700">])&nbsp;AND&nbsp;isset(</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'height'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Ausgabe&nbsp;der&nbsp;beiden&nbsp;Größenangaben<br />&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Die&nbsp;Bildschirmbreite&nbsp;ist:&nbsp;"</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'width'</span><span style="color: #007700">]&nbsp;.</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Die&nbsp;Bildschirmhöhe&nbsp;ist:&nbsp;"</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'height'</span><span style="color: #007700">]&nbsp;.</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Übergabe&nbsp;der&nbsp;Größenangaben<br />&nbsp;&nbsp;//&nbsp;(der&nbsp;ursprüngliche&nbsp;'QUERY_STRING'&nbsp;wird&nbsp;beibehalten;<br />&nbsp;&nbsp;//&nbsp;&nbsp;POST-Variablen&nbsp;müssen&nbsp;anders&nbsp;behandelt&nbsp;werden)<br /><br />&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"&lt;script&nbsp;language='javascript'&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&nbsp;&nbsp;location.href=\"</span><span style="color: #007700">${</span><span style="color: #0000BB">_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'SCRIPT_NAME'</span><span style="color: #007700">]}</span><span style="color: #DD0000">?</span><span style="color: #007700">${</span><span style="color: #0000BB">_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'QUERY_STRING'</span><span style="color: #007700">]}</span><span style="color: #DD0000">"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&amp;width=\"&nbsp;+&nbsp;screen.width&nbsp;+&nbsp;\"&amp;height=\"&nbsp;+&nbsp;screen.height;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;/script&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;exit();<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+       </div>
+
+      </div>
+     </p>
+    </dd>
+   </dl>
+
+  
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

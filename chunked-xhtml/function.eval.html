@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Wertet eine Zeichenkette als PHP-Code aus</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li class="header up"><a href="book.misc.html">Misc.</a></li>
+  <li class="header up"><a href="ref.misc.html">Sonstige Funktionen</a></li>
+  <li><a href="function.connection-aborted.html">connection_aborted</a></li>
+  <li><a href="function.connection-status.html">connection_status</a></li>
+  <li><a href="function.constant.html">constant</a></li>
+  <li><a href="function.define.html">define</a></li>
+  <li><a href="function.defined.html">defined</a></li>
+  <li><a href="function.die.html">die</a></li>
+  <li class="active"><a href="function.eval.html">eval</a></li>
+  <li><a href="function.exit.html">exit</a></li>
+  <li><a href="function.get-browser.html">get_browser</a></li>
+  <li><a href="function.halt-compiler.html">__halt_compiler</a></li>
+  <li><a href="function.highlight-file.html">highlight_file</a></li>
+  <li><a href="function.highlight-string.html">highlight_string</a></li>
+  <li><a href="function.ignore-user-abort.html">ignore_user_abort</a></li>
+  <li><a href="function.pack.html">pack</a></li>
+  <li><a href="function.php-check-syntax.html">php_check_syntax</a></li>
+  <li><a href="function.php-strip-whitespace.html">php_strip_whitespace</a></li>
+  <li><a href="function.show-source.html">show_source</a></li>
+  <li><a href="function.sleep.html">sleep</a></li>
+  <li><a href="function.sys-getloadavg.html">sys_getloadavg</a></li>
+  <li><a href="function.time-nanosleep.html">time_nanosleep</a></li>
+  <li><a href="function.time-sleep-until.html">time_sleep_until</a></li>
+  <li><a href="function.uniqid.html">uniqid</a></li>
+  <li><a href="function.unpack.html">unpack</a></li>
+  <li><a href="function.usleep.html">usleep</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.die.html">die</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.exit.html">exit</a></div>
+                <div class="up"><a href="ref.misc.html">Sonstige Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.eval" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">eval</h1>
+  <p class="refpurpose">Wertet eine Zeichenkette als PHP-Code aus</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.eval-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname">eval</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$code</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Wertet die in <code class="parameter">code</code> enthaltene Zeichenkette als
+   PHP aus.
+  </p>
+  <div class="caution"><strong class="caution">Achtung</strong>
+   <p class="para">
+    Das <span class="function">eval</span>-Sprachkonstrukt ist
+    <em class="emphasis">sehr gefährlich</em>, weil es die Ausführung von beliebigem
+    PHP-Code erlaubt.
+    <em class="emphasis">Seine Verwendung wird daher nicht empfohlen.</em>
+    Wenn sorgfältig überprüft wurde, dass es keine andere Möglichkeit gibt als
+    dieses Konstrukt zu verwenden, ist besonders darauf zu achten
+    <em class="emphasis">keine von Nutzern bereit gestellten Daten zu übergeben</em>
+    ohne diese zuvor ordnungsgemäß zu validieren.
+   </p>
+  </div>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.eval-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">code</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Gültiger PHP-Code, der ausgewertet werden soll.
+      </p>
+      <p class="para">
+       Der Code darf nicht in öffnende und schließende
+       <a href="language.basic-syntax.phpmode.html" class="link">PHP-Tags</a>
+       eingeschlossen sein, d.h. <em>&#039;echo &quot;Hi!&quot;;&#039;</em> muss anstelle
+       von <em>&#039;&lt;? echo &quot;Hi!&quot;; &gt;&#039;</em> übergeben werden.
+       Es ist dennoch möglich den PHP-Modus durch die entsprechenden PHP-Tags zu
+       verlassen und wieder zu betreten, z.B.
+       <em>&#039;echo &quot;Im PHP-Modus!&quot;; ?&gt;Im HTML-Modus!&lt;? echo &quot;Wieder im PHP-Modus!&quot;;&#039;</em>.
+      </p>
+      <p class="para">
+       Abgesehen davon muss der übergebene Code gültiges PHP sein. Das
+       beinhaltet, dass alle Anweisungen ordnungsgemäß mit einem Strichpunkt
+       terminiert sein müssen. <em>&#039;echo &quot;Hi!&quot;&#039;</em>, zum Beispiel,
+       verursacht einen Parse-Fehler, wohingegen
+       <em>&#039;echo &quot;Hi!&quot;;&#039;</em> funktioniert.
+      </p>
+      <p class="para">
+       Eine <em>return</em>-Anweisung beendet die Auswertung des
+       Codes sofort.
+      </p>
+      <p class="para">
+       Der Code wird im Geltungsbereich des <span class="function">eval</span>
+       aufrufenden Codes ausgeführt. Daher bleiben sämtliche Variablen, die im
+       <span class="function">eval</span> Aufruf definiert oder geändert werden, nach
+       dessen Ende sichtbar.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.eval-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   <span class="function">eval</span> gibt <strong><code>NULL</code></strong> zurück, außer wenn im
+   ausgewerteten Code <em>return</em> aufgerufen wird, dann aber
+   wird der an <em>return</em> übergebene Wert zurückgegeben. Falls
+   im ausgewerteten Code ein Parse Error auftritt, gibt
+   <span class="function">eval</span> <strong><code>FALSE</code></strong> zurück und der weitere Code wird normal
+   ausgeführt. Es ist in <span class="function">eval</span> nicht möglich, einen Parse
+   Error mittels <span class="function">set_error_handler</span> abzufangen.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.eval-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4260">
+    <p><strong>Beispiel #1 <span class="function">eval</span> Beispiel (einfache Texteinfügung)</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$string&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Bierglas'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Binding-Lager'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Das&nbsp;ist&nbsp;mein&nbsp;$string,&nbsp;voll&nbsp;mit&nbsp;$name.'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$str&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />eval&nbsp;(</span><span style="color: #DD0000">"\$str&nbsp;=&nbsp;\"</span><span style="color: #0000BB">$str</span><span style="color: #DD0000">\";"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$str&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Das ist mein $string, voll mit $name.
+Das ist mein Bierglas, voll mit Binding-Lager.
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.eval-notes">
+  <h3 class="title">Anmerkungen</h3>
+
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <span class="simpara">Da dies ein Sprachkonstrukt
+und keine Funktion ist, können Sie dieses nicht mit
+<a href="functions.variable-functions.html" class="link">Variablenfunktionen</a>
+verwenden.</span></p></blockquote>
+
+  <div class="tip"><strong class="tip">Tipp</strong><p class="simpara">Bei allem, dessen Ergebnisausgabe direkt
+im Browser angezeigt wird, können Sie die
+<a href="book.outcontrol.html" class="link">Funktionen zur Ausgabesteuerung</a> verwenden.
+Damit lässt sich die Ausgabe dieser Funktion erfassen, und - zum Beispiel -
+in einem <span class="type">string</span> speichern.</p></div>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Im Fall eines schweren Fehlers im augewerteten Code wird das komplette
+    Skript beendet.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.eval-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">call_user_func</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

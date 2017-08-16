@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: FrontBase</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li><a href="book.cubrid.html">CUBRID</a></li>
+  <li><a href="book.dbplus.html">DB++</a></li>
+  <li><a href="book.dbase.html">dBase</a></li>
+  <li><a href="book.filepro.html">filePro</a></li>
+  <li><a href="book.ibase.html">Firebird/InterBase</a></li>
+  <li class="active"><a href="book.fbsql.html">FrontBase</a></li>
+  <li><a href="book.ibm-db2.html">IBM DB2</a></li>
+  <li><a href="book.ifx.html">Informix</a></li>
+  <li><a href="book.ingres.html">Ingres</a></li>
+  <li><a href="book.maxdb.html">MaxDB</a></li>
+  <li><a href="book.mongo.html">Mongo</a></li>
+  <li><a href="set.mongodb.html">MongoDB</a></li>
+  <li><a href="book.msql.html">mSQL</a></li>
+  <li><a href="book.mssql.html">Mssql</a></li>
+  <li><a href="set.mysqlinfo.html">MySQL</a></li>
+  <li><a href="book.oci8.html">OCI8</a></li>
+  <li><a href="book.paradox.html">Paradox</a></li>
+  <li><a href="book.pgsql.html">PostgreSQL</a></li>
+  <li><a href="book.sqlite.html">SQLite</a></li>
+  <li><a href="book.sqlite3.html">SQLite3</a></li>
+  <li><a href="book.sqlsrv.html">SQLSRV</a></li>
+  <li><a href="book.sybase.html">Sybase</a></li>
+  <li><a href="book.tokyo-tyrant.html">tokyo_tyrant</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-wait-event.html">ibase_wait_event</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.fbsql.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.fbsql" class="book">
+ 
+ <h1>FrontBase</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.fbsql.html">Einf&uuml;hrung</a></li>
+<li><a href="fbsql.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="fbsql.requirements.html">Anforderungen</a></li>
+<li><a href="fbsql.installation.html">Installation</a></li>
+<li><a href="fbsql.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="fbsql.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="fbsql.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.fbsql.html">FrontBase Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.fbsql-affected-rows.html">fbsql_affected_rows</a> — Ermittelt die Anzahl der von der vorherigen FrontBase-Operation betroffenen Datens&auml;tze</li>
+<li><a href="function.fbsql-autocommit.html">fbsql_autocommit</a> — Aktiviert oder deaktiviert Autocommit</li>
+<li><a href="function.fbsql-blob-size.html">fbsql_blob_size</a> — Get the size of a BLOB</li>
+<li><a href="function.fbsql-change-user.html">fbsql_change_user</a> — Wechselt den eingeloggten Benutzer der aktiven Verbindung</li>
+<li><a href="function.fbsql-clob-size.html">fbsql_clob_size</a> — Get the size of a CLOB</li>
+<li><a href="function.fbsql-close.html">fbsql_close</a> — Beendet eine FrontBase-Verbindung</li>
+<li><a href="function.fbsql-commit.html">fbsql_commit</a> — Wendet eine Transaktion auf die Datenbank an</li>
+<li><a href="function.fbsql-connect.html">fbsql_connect</a> — &Ouml;ffnet eine Verbindung zu einem FrontBase-Server</li>
+<li><a href="function.fbsql-create-blob.html">fbsql_create_blob</a> — Create a BLOB</li>
+<li><a href="function.fbsql-create-clob.html">fbsql_create_clob</a> — Create a CLOB</li>
+<li><a href="function.fbsql-create-db.html">fbsql_create_db</a> — Erstellt eine FrontBase-Datenbank</li>
+<li><a href="function.fbsql-data-seek.html">fbsql_data_seek</a> — Bewegt den internen Ergebnis-Zeiger</li>
+<li><a href="function.fbsql-database-password.html">fbsql_database_password</a> — Sets or retrieves the password for a FrontBase database</li>
+<li><a href="function.fbsql-database.html">fbsql_database</a> — Lesen oder Setzen des Datenbanknamens, der mit einer Verbindung verwendet wird</li>
+<li><a href="function.fbsql-db-query.html">fbsql_db_query</a> — Absetzen einer Anfrage an die Datenbank</li>
+<li><a href="function.fbsql-db-status.html">fbsql_db_status</a> — Ermittelt den Status einer angegebenen Datenbank</li>
+<li><a href="function.fbsql-drop-db.html">fbsql_drop_db</a> — L&ouml;schen (DROP) einer FrontBase-Datenbank</li>
+<li><a href="function.fbsql-errno.html">fbsql_errno</a> — Liefert die numerische Fehlermeldung der der letzten Operation zur&uuml;ck</li>
+<li><a href="function.fbsql-error.html">fbsql_error</a> — Liefert den Fehlertext der zuvor ausgef&uuml;hrten Operation</li>
+<li><a href="function.fbsql-fetch-array.html">fbsql_fetch_array</a> — Fetch a result row as an associative array, a numeric array, or both</li>
+<li><a href="function.fbsql-fetch-assoc.html">fbsql_fetch_assoc</a> — Fetch a result row as an associative array</li>
+<li><a href="function.fbsql-fetch-field.html">fbsql_fetch_field</a> — Liefert ein Objekt mit Feldinformationen aus einem Abfrageergebnis</li>
+<li><a href="function.fbsql-fetch-lengths.html">fbsql_fetch_lengths</a> — Get the length of each output in a result</li>
+<li><a href="function.fbsql-fetch-object.html">fbsql_fetch_object</a> — Fetch a result row as an object</li>
+<li><a href="function.fbsql-fetch-row.html">fbsql_fetch_row</a> — Liefert einen Datensatz als numerisches Array</li>
+<li><a href="function.fbsql-field-flags.html">fbsql_field_flags</a> — Get the flags associated with the specified field in a result</li>
+<li><a href="function.fbsql-field-len.html">fbsql_field_len</a> — Returns the length of the specified field</li>
+<li><a href="function.fbsql-field-name.html">fbsql_field_name</a> — Liefert den Namen des angegebenen Feldes im Ergebnis</li>
+<li><a href="function.fbsql-field-seek.html">fbsql_field_seek</a> — Setzt den Ergebniszeiger auf den angegebenen Feldoffset</li>
+<li><a href="function.fbsql-field-table.html">fbsql_field_table</a> — Liefert den Namen der Tabelle, die das genannte Feld enth&auml;lt</li>
+<li><a href="function.fbsql-field-type.html">fbsql_field_type</a> — Liefert den Typ des angegebenen Feldes in einem Ergebnis</li>
+<li><a href="function.fbsql-free-result.html">fbsql_free_result</a> — Gibt vom Ergebnis belegten Speicher wieder frei</li>
+<li><a href="function.fbsql-get-autostart-info.html">fbsql_get_autostart_info</a> — Beschreibung</li>
+<li><a href="function.fbsql-hostname.html">fbsql_hostname</a> — Ermittelt oder setzt den mit einer Verbindung verwendeten Hostnamen</li>
+<li><a href="function.fbsql-insert-id.html">fbsql_insert_id</a> — Get the id generated from the previous INSERT operation</li>
+<li><a href="function.fbsql-list-dbs.html">fbsql_list_dbs</a> — List databases available on a FrontBase server</li>
+<li><a href="function.fbsql-list-fields.html">fbsql_list_fields</a> — List FrontBase result fields</li>
+<li><a href="function.fbsql-list-tables.html">fbsql_list_tables</a> — List tables in a FrontBase database</li>
+<li><a href="function.fbsql-next-result.html">fbsql_next_result</a> — Setzt den internen Ergebniskennungszeiger auf das n&auml;chste Ergebnis</li>
+<li><a href="function.fbsql-num-fields.html">fbsql_num_fields</a> — Ermittelt Anzahl der Felder im Ergebnis</li>
+<li><a href="function.fbsql-num-rows.html">fbsql_num_rows</a> — Liefert die Anzahl der Datens&auml;tze in einem Ergebnis</li>
+<li><a href="function.fbsql-password.html">fbsql_password</a> — Liest oder setzt das Bentuzerpasswort f&uuml;r eine Verbindung</li>
+<li><a href="function.fbsql-pconnect.html">fbsql_pconnect</a> — &Ouml;ffnet eine persistente Verbindung zu einem FrontBase-Server</li>
+<li><a href="function.fbsql-query.html">fbsql_query</a> — Sendet eine FrontBase-Abfrage</li>
+<li><a href="function.fbsql-read-blob.html">fbsql_read_blob</a> — Read a BLOB from the database</li>
+<li><a href="function.fbsql-read-clob.html">fbsql_read_clob</a> — Read a CLOB from the database</li>
+<li><a href="function.fbsql-result.html">fbsql_result</a> — Liefert Ergebnisdaten</li>
+<li><a href="function.fbsql-rollback.html">fbsql_rollback</a> — Rollback a transaction to the database</li>
+<li><a href="function.fbsql-rows-fetched.html">fbsql_rows_fetched</a> — Get the number of rows affected by the last statement</li>
+<li><a href="function.fbsql-select-db.html">fbsql_select_db</a> — W&auml;hlt eine FrontBase-Datenbank aus</li>
+<li><a href="function.fbsql-set-characterset.html">fbsql_set_characterset</a> — Change input/output character set</li>
+<li><a href="function.fbsql-set-lob-mode.html">fbsql_set_lob_mode</a> — Setzt den LOB-Lese-Modus f&uuml;r ein FrontBase-Ergebnis</li>
+<li><a href="function.fbsql-set-password.html">fbsql_set_password</a> — Change the password for a given user</li>
+<li><a href="function.fbsql-set-transaction.html">fbsql_set_transaction</a> — Set the transaction locking and isolation</li>
+<li><a href="function.fbsql-start-db.html">fbsql_start_db</a> — Startet eine Datenbank auf einem lokalen oder entfernten Server</li>
+<li><a href="function.fbsql-stop-db.html">fbsql_stop_db</a> — Stoppt eine Datenbank auf einem lokalen oder entferneten Server</li>
+<li><a href="function.fbsql-table-name.html">fbsql_tablename</a> — Liefert den Tabellennamen eines Felds</li>
+<li><a href="function.fbsql-tablename.html">fbsql_tablename</a> — Alias von fbsql_table_name</li>
+<li><a href="function.fbsql-username.html">fbsql_username</a> — Liest oder setzt den Benutzernamen f&uuml;r die Verbindung</li>
+<li><a href="function.fbsql-warnings.html">fbsql_warnings</a> — Aktivieren oder Deaktivieren von FrontBase-Warnungen</li>
+</ul>
+</li>
+</ul>
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

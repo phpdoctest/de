@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vergleicht zwei Reihen f&uuml;r Sortierzwecke</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.abstract.html">Abstraktionsebenen</a></li>
+  <li class="header up"><a href="book.dbx.html">dbx</a></li>
+  <li class="header up"><a href="ref.dbx.html">dbx Funktionen</a></li>
+  <li><a href="function.dbx-close.html">dbx_close</a></li>
+  <li class="active"><a href="function.dbx-compare.html">dbx_compare</a></li>
+  <li><a href="function.dbx-connect.html">dbx_connect</a></li>
+  <li><a href="function.dbx-error.html">dbx_error</a></li>
+  <li><a href="function.dbx-escape-string.html">dbx_escape_string</a></li>
+  <li><a href="function.dbx-fetch-row.html">dbx_fetch_row</a></li>
+  <li><a href="function.dbx-query.html">dbx_query</a></li>
+  <li><a href="function.dbx-sort.html">dbx_sort</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.dbx-close.html">dbx_close</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.dbx-connect.html">dbx_connect</a></div>
+                <div class="up"><a href="ref.dbx.html">dbx Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.dbx-compare" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">dbx_compare</h1>
+  <p class="refpurpose">Vergleicht zwei Reihen für Sortierzwecke</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.dbx-compare-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname">dbx_compare</span>
+    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$row_a</code></span>
+   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$row_b</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$column_key</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code><span class="initializer"> = DBX_CMP_ASC | DBX_CMP_NATIVE</span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">dbx_compare</span> ist eine Hilfsfunktion für
+   <span class="function">dbx_sort</span>, um das Erstellen bzw. Verwenden
+   benutzerdefinierter Sortierfunktionen zu vereinfachen.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.dbx-compare-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">row_a</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Erste Reihe
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">row_b</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Zweite Reihe
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">column_key</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die verglichene Spalte
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">flags</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Parameter <code class="parameter">flags</code> kann angegeben werden, um die
+       Vergleichsrichtung:
+       <ul class="itemizedlist">
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>DBX_CMP_ASC</code></strong> - aufsteigende Reihenfolge
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>DBX_CMP_DESC</code></strong> - absteigende Reihenfolge
+         </span>
+        </li>
+       </ul>
+       und den bevorzugten Vergleichstyp zu spezifizieren:
+       <ul class="itemizedlist">
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>DBX_CMP_NATIVE</code></strong> - keine Typkonvertierung
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>DBX_CMP_TEXT</code></strong> - vergleicht die Werte als Strings
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>DBX_CMP_NUMBER</code></strong> - vergleicht die Werte numerisch
+         </span>
+        </li>
+       </ul>
+       Eine der Vergleichs- und eine der Typkonstanten kann mit dem
+       Bit-Operator OR (|) kombiniert werden.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.dbx-compare-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt <em>0</em> zurück, wenn <em>row_a[$column_key]</em>
+   gleich <em>row_b[$column_key]</em> ist. Ist der erste Wert größer
+   oder kleiner als der zweite, wird <em>1</em> bzw.
+   <em>-1</em> zurückgegeben (oder umgekehrt, wenn der Parameter
+   <code class="parameter">flag</code> auf <strong><code>DBX_CMP_DESC</code></strong> gesetzt
+   ist).
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.dbx-compare-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-952">
+    <p><strong>Beispiel #1 <span class="function">dbx_compare</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">user_re_order</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$rv&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dbx_compare</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"parentid"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">DBX_CMP_DESC</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">$rv</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$rv&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dbx_compare</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"id"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">DBX_CMP_NUMBER</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$rv</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$link&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dbx_connect</span><span style="color: #007700">(</span><span style="color: #0000BB">DBX_ODBC</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"db"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"username"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Fehler&nbsp;beim&nbsp;Verbinden"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dbx_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"SELECT&nbsp;id,&nbsp;parentid,&nbsp;description&nbsp;FROM&nbsp;table&nbsp;ORDER&nbsp;BY&nbsp;id"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Die&nbsp;Daten&nbsp;in&nbsp;$result&nbsp;sind&nbsp;nun&nbsp;nach&nbsp;id&nbsp;sortiert<br /><br /></span><span style="color: #0000BB">dbx_sort</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"user_re_order"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Die&nbsp;Daten&nbsp;in&nbsp;$result&nbsp;sind&nbsp;nun&nbsp;nach&nbsp;parentid&nbsp;(absteigend)&nbsp;sortiert,<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;dann&nbsp;nach&nbsp;id<br /><br /></span><span style="color: #0000BB">dbx_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.dbx-compare-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">dbx_sort</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

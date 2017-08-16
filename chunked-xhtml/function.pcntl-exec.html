@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: F&uuml;hrt ein angegebenes Programm im aktuellen Prozessraum aus</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li class="header up"><a href="book.pcntl.html">PCNTL</a></li>
+  <li class="header up"><a href="ref.pcntl.html">PCNTL Funktionen</a></li>
+  <li><a href="function.pcntl-alarm.html">pcntl_alarm</a></li>
+  <li><a href="function.pcntl-errno.html">pcntl_errno</a></li>
+  <li class="active"><a href="function.pcntl-exec.html">pcntl_exec</a></li>
+  <li><a href="function.pcntl-fork.html">pcntl_fork</a></li>
+  <li><a href="function.pcntl-get-last-error.html">pcntl_get_last_error</a></li>
+  <li><a href="function.pcntl-getpriority.html">pcntl_getpriority</a></li>
+  <li><a href="function.pcntl-setpriority.html">pcntl_setpriority</a></li>
+  <li><a href="function.pcntl-signal-dispatch.html">pcntl_signal_dispatch</a></li>
+  <li><a href="function.pcntl-signal-get-handler.html">pcntl_signal_get_handler</a></li>
+  <li><a href="function.pcntl-signal.html">pcntl_signal</a></li>
+  <li><a href="function.pcntl-sigprocmask.html">pcntl_sigprocmask</a></li>
+  <li><a href="function.pcntl-sigtimedwait.html">pcntl_sigtimedwait</a></li>
+  <li><a href="function.pcntl-sigwaitinfo.html">pcntl_sigwaitinfo</a></li>
+  <li><a href="function.pcntl-strerror.html">pcntl_strerror</a></li>
+  <li><a href="function.pcntl-wait.html">pcntl_wait</a></li>
+  <li><a href="function.pcntl-waitpid.html">pcntl_waitpid</a></li>
+  <li><a href="function.pcntl-wexitstatus.html">pcntl_wexitstatus</a></li>
+  <li><a href="function.pcntl-wifexited.html">pcntl_wifexited</a></li>
+  <li><a href="function.pcntl-wifsignaled.html">pcntl_wifsignaled</a></li>
+  <li><a href="function.pcntl-wifstopped.html">pcntl_wifstopped</a></li>
+  <li><a href="function.pcntl-wstopsig.html">pcntl_wstopsig</a></li>
+  <li><a href="function.pcntl-wtermsig.html">pcntl_wtermsig</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.pcntl-errno.html">pcntl_errno</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.pcntl-fork.html">pcntl_fork</a></div>
+                <div class="up"><a href="ref.pcntl.html">PCNTL Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.pcntl-exec" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">pcntl_exec</h1>
+    <p class="refpurpose">
+     Führt ein angegebenes Programm im aktuellen Prozessraum aus
+    </p>
+   </div>
+   <div class="refsect1 unknown-descriptioo" id="refsect1-function.pcntl-exec-unknown-descriptioo">
+    <h3 class="title">Beschreibung</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="type">void</span> <span class="methodname">pcntl_exec</span>
+       ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
+      [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$args</code></span>
+      [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$envs</code></span>
+     ]] )</div>
+
+    <p class="para rdfs-comment">
+     <span class="function">pcntl_exec</span> führt das Programm
+     <code class="parameter">path</code> mit den Parametern <code class="parameter">args</code>
+     aus. <code class="parameter">path</code> muss der Pfad zur binären ausführbaren
+     Datei oder einem Skript mit einem gültigen auf eine ausführbare Datei 
+     zeigenden Pfad in der Shebang (zum Beispiel #!/usr/local/bin/perl) als 
+     erste Zeile sein. Suchen Sie in der execve(2) man Seite Ihres Systems nach
+     weiteren Informationen.
+    </p>
+    <p class="para">
+     <code class="parameter">args</code> ist ein Array von Parameterstrings, die dem
+     Programm übergeben werden.
+    </p>
+    <p class="para">
+     <code class="parameter">envs</code> ist ein Array von Strings, die dem Programm
+     als Umgebungsvariablen übergeben werden. Das Array ist im Format Name
+     =&gt; Wert, wobei der Schlüssel der Name der Umgebungsvariable und der Wert
+     der Inhalt dieser Variable ist.
+    </p>
+    <p class="para">
+     <span class="function">pcntl_exec</span> gibt bei Fehlern <strong><code>FALSE</code></strong> zurück und kehrt
+     bei Erfolg nicht mehr zurück.
+    </p>
+   </div>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

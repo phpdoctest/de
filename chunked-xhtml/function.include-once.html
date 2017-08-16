@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: include_once</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.control-structures.html">Kontrollstrukturen</a></li>
+  <li><a href="control-structures.intro.html">Einf&uuml;hrung</a></li>
+  <li><a href="control-structures.if.html">if</a></li>
+  <li><a href="control-structures.else.html">else</a></li>
+  <li><a href="control-structures.elseif.html">elseif/else if</a></li>
+  <li><a href="control-structures.alternative-syntax.html">Alternative Syntax f&uuml;r Kontrollstrukturen</a></li>
+  <li><a href="control-structures.while.html">while</a></li>
+  <li><a href="control-structures.do.while.html">do-while</a></li>
+  <li><a href="control-structures.for.html">for</a></li>
+  <li><a href="control-structures.foreach.html">foreach</a></li>
+  <li><a href="control-structures.break.html">break</a></li>
+  <li><a href="control-structures.continue.html">continue</a></li>
+  <li><a href="control-structures.switch.html">switch</a></li>
+  <li><a href="control-structures.declare.html">declare</a></li>
+  <li><a href="function.return.html">return</a></li>
+  <li><a href="function.require.html">require</a></li>
+  <li><a href="function.include.html">include</a></li>
+  <li><a href="function.require-once.html">require_once</a></li>
+  <li class="active"><a href="function.include-once.html">include_once</a></li>
+  <li><a href="control-structures.goto.html">goto</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.require-once.html">require_once</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="control-structures.goto.html">goto</a></div>
+                <div class="up"><a href="language.control-structures.html">Kontrollstrukturen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.include-once" class="sect1">
+ <h2 class="title">include_once</h2>
+ 
+ <p class="para">
+  <em>include_once</em> bindet eine angegebene Datei ein und
+  führt sie als PHP-Skript aus.
+  Dieses Verhalten ist identisch zu <span class="function">include</span>, mit dem
+  einzigen Unterschied, dass die Datei, wenn sie bereits eingebunden wurde,
+  nicht erneut eingebunden wird, und include_once <strong><code>TRUE</code></strong> zurückgibt. Wie der Name schon sagt, wird die Datei nur
+  einmal eingebunden werden.
+ </p>
+ <p class="para">
+  <em>include_once</em> kann beispielsweise benutzt werden,
+  wenn die selbe Datei an mehreren Stellen eingebunden wird, um Problemen
+  durch erneute Definitionen von Funktionen, erneute Zuweisung
+  von Variablen oder ähnliches zu vermeiden.
+ </p>
+ <p class="para">
+  Für die Funktionsweise der Funktion, siehe die Dokumentation zu 
+  <span class="function">include</span>.
+ </p>
+ <p class="para">
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+  <p class="para">
+   Mit PHP 4 wird auf Betriebssystemen, die bei Dateinamen nicht zwischen
+   Groß- und Kleinschreibung unterscheiden (wie Windows), bei 
+   <em>_once</em> dennoch zwischen Groß- und Kleinschreibung
+   unterschieden, wie das folgende Beispiel zeigt:
+   <div class="example" id="example-138">
+    <p><strong>Beispiel #1 <em>include_once</em> mit einem case-insensitive Betriebssystem und PHP 4</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">include_once&nbsp;</span><span style="color: #DD0000">"a.php"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;a.php&nbsp;wird&nbsp;eingebunden.<br /></span><span style="color: #007700">include_once&nbsp;</span><span style="color: #DD0000">"A.php"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;a.php&nbsp;wird&nbsp;nochmal&nbsp;eingebunden!&nbsp;(Nur&nbsp;in&nbsp;PHP&nbsp;4)<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    Dieses Verhalten hat sich in PHP 5 geändert, so dass zum Beispiel bei
+    Windows der Pfad zuerst normalisiert wird, sodass
+    <var class="filename">C:\PROGRA~1\A.php</var> und <var class="filename">C:\Program Files\a.php</var>
+    als das selbe erkannt und nur einmal eingebunden werden.
+   </p>
+  </p></blockquote>
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Transaktionen und auto-commit</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.abstract.html">Abstraktionsebenen</a></li>
+  <li class="header up"><a href="book.pdo.html">PDO</a></li>
+  <li><a href="intro.pdo.html">Einf&uuml;hrung</a></li>
+  <li><a href="pdo.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="pdo.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="pdo.connections.html">Verbindungen und Verbindungsmanagement</a></li>
+  <li class="active"><a href="pdo.transactions.html">Transaktionen und auto-commit</a></li>
+  <li><a href="pdo.prepared-statements.html">Prepared Statements und Stored Procedures</a></li>
+  <li><a href="pdo.error-handling.html">Fehler und Fehlerbehandlung</a></li>
+  <li><a href="pdo.lobs.html">Large Objects (LOBs)</a></li>
+  <li><a href="class.pdo.html">PDO</a></li>
+  <li><a href="class.pdostatement.html">PDOStatement</a></li>
+  <li><a href="class.pdoexception.html">PDOException</a></li>
+  <li><a href="pdo.drivers.html">PDO-Treiber</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="pdo.connections.html">Verbindungen und Verbindungsmanagement</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="pdo.prepared-statements.html">Prepared Statements und Stored Procedures</a></div>
+                <div class="up"><a href="book.pdo.html">PDO</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="pdo.transactions" class="chapter">
+    <h1>Transaktionen und auto-commit</h1>
+    <p class="para">
+     Jetzt, wo Sie via PDO verbunden sind, müssen Sie sich bewusst machen, wie PDO
+     Transaktionen verwaltet, bevor Sie anfangen, Abfragen auszuführen. Falls Sie noch 
+     nie mit Transaktionen zu tun hatten, diese bieten 4 wichtige Features: Atomizität, 
+     Konsistenz (Consistency), Isolation und Dauerhaftigkeit (Durability) (ACID).
+     Einfach gesagt wird alles in einer Transaktion, auch wenn es in Einzelschritten
+     ausgeführt wird, garantiert in sicherer Weise in die Datenbank eingetragen, ohne
+     Beeinträchtigung durch andere Verbindungen, wenn es abgeschickt wird. Aktivitäten in
+     Transaktionen können auch automatisch annulliert werden (wenn Sie es noch nicht 
+     abgeschickt haben), was Fehlerbehandlung in Ihren Scripts einfacher macht.
+    </p>
+    <p class="para">
+     Transaktionen werden typischerweise implementiert, indem Ihre Menge an Änderungen
+     &quot;aufgespart&quot; wird und dann in einem Rutsch abgearbeitet werden. Das hat den netten
+     Nebeneffekt, dass die Effizienz der Aktualisierungen drastisch erhöht wird. In 
+     anderen Worten können Transaktionen Ihre Scripts schneller und möglicherweise auch
+     robuster machen. Aber Sie müssen sie korrekt verwenden, um davon zu profitieren.
+    </p>
+    <p class="para">
+     Unglücklicherweise unterstützt nicht jede Datenbank Transaktionen, deswegen muss PDO
+     in einem &quot;auto-commit&quot; genannten Modus laufen, wenn Sie die Verbindung zum ersten 
+     Mal öffnen. &quot;Auto-commit&quot; bedeutet, dass jede Abfrage, die Sie ausführen ihre eigene
+     implizite Transaktion besitzt, wenn die Datenbank das unterstützt, oder keine
+     Transaktion, wenn die Datenbank keine Transaktionen unterstützt. Wenn Sie eine
+     Transaktion benötigen, müssen Sie eine mit der Methode 
+     <span class="function">PDO::beginTransaction</span> initiieren. Wenn der zu Grunde liegende
+     Treiber keine Transaktionen unterstützt, wird eine <em>PDOException</em>
+     geworfen (unbeachtet Ihrer Einstellungen zur Fehlerbehandlung: dies ist immer eine
+     ernste Fehlerbedingung). Wenn Sie dann in einer Transaktion sind, können Sie
+     <span class="function">PDO::commit</span> oder <span class="function">PDO::rollBack</span> benutzen,
+     um die Transaktion abzuschließen, abhängig vom Erfolg des Codes, den Sie während der
+     Transaktion ausgeführt haben.
+    </p>
+    <div class="warning"><strong class="warning">Warnung</strong>
+     <p class="para">
+      PDO überprüft nur auf Treiberebene auf Transaktionsfähigkeit. Wenn bestimmte
+      Laufzeitbedingunen ergeben, dass Transaktionen nicht verfügbar sind, wird
+       <span class="methodname">PDO::beginTransaction</span> trotzdem ohne Fehler <strong><code>TRUE</code></strong>
+      zurückgeben, wenn der Server die Anfrage zum Start einer Transaktion akzeptiert.
+     </p>
+     <p class="para">
+      Ein Beispiel wäre es, Transaktionen auf MyISAM-Tabellen in einer MySQL-Datenbank
+      zu verwenden
+     </p>
+    </div>
+    <p class="para">
+     Wenn das Script endet oder die Verbindung im Begriff ist, geschlossen zu werden und
+     Sie eine Transaktion ausstehen haben, wird PDO automatisch einen Rollback 
+     durchführen. Dies ist eine Sicherheitsmaßnahme, um Inkonsistenzen in dem Fall, dass
+     das Script unerwartet beendet wird, zu vermeiden - wenn Sie die Transaktion nicht
+     explizit ausgeführt haben, wird angenommen, dass etwas schiefgegangen ist, deswegen
+     wird zur Sicherheit Ihrer Daten ein Rollback durchgeführt.
+    </p>
+    <div class="warning"><strong class="warning">Warnung</strong>
+     <p class="para">
+      Der automatische Rollback wird nur durchgeführt, wenn Sie die Transaktion per
+      <span class="function">PDO::beginTransaction</span> starten. Wenn Sie manuell eine Abfrage
+      ausführen, die eine Transaktion startet, kann PDO nichts davon wissen und kann
+      deswegen auch keinen Rollback durchführen, wenn etwas schiefgeht.
+     </p>
+    </div>
+    <p class="para">
+     <div class="example" id="example-969"><p><strong>Beispiel #1 Mehrere Abfragen in einer Transaktion</strong></p>
+      <div class="example-contents"><p>
+       Im folgenden Beispiel nehmen wir an, dass wir einen Satz von Einträgen für einen
+       neuen Angestellten eintragen wollen, dem die ID-Nummer 23 zugeordnet wurde.
+       Zusätzlich zur Angabe der Basisdaten für diese Person müssen wir auch ihr Gehalt
+       festhalten. Es ist ziemlich einfach, zwei getrennte Aktualisierungen 
+       durchzuführen, aber indem wir sie in <span class="function">PDO::beginTransaction</span>
+       und <span class="function">PDO::commit</span> einschließen, garantieren wir, dass niemand
+       anderes diese Änderungen sieht, bis sie komplett sind. Wenn etwas schiefgeht, wird
+       der <em>catch</em>-Block alle seit Beginn der Transaktion durchgeführten
+       Änderungen rückgängig machen und dann eine Fehlermeldung ausgeben.
+      </p></div>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">try&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">(</span><span style="color: #DD0000">'odbc:SAMPLE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'db2inst1'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ibmdb2'</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ATTR_PERSISTENT&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">));<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Connected\n"</span><span style="color: #007700">;<br />}&nbsp;catch&nbsp;(</span><span style="color: #0000BB">Exception&nbsp;$e</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;die(</span><span style="color: #DD0000">"Unable&nbsp;to&nbsp;connect:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">());<br />}<br /><br />try&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setAttribute</span><span style="color: #007700">(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ATTR_ERRMODE</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ERRMODE_EXCEPTION</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">beginTransaction</span><span style="color: #007700">();<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">exec</span><span style="color: #007700">(</span><span style="color: #DD0000">"insert&nbsp;into&nbsp;staff&nbsp;(id,&nbsp;first,&nbsp;last)&nbsp;values&nbsp;(23,&nbsp;'Joe',&nbsp;'Bloggs')"</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">exec</span><span style="color: #007700">(</span><span style="color: #DD0000">"insert&nbsp;into&nbsp;salarychange&nbsp;(id,&nbsp;amount,&nbsp;changedate)&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;values&nbsp;(23,&nbsp;50000,&nbsp;NOW())"</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">commit</span><span style="color: #007700">();<br />&nbsp;&nbsp;<br />}&nbsp;catch&nbsp;(</span><span style="color: #0000BB">Exception&nbsp;$e</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rollBack</span><span style="color: #007700">();<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Failed:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">();<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+    <p class="para">
+     Sie sind nicht darauf beschränkt, Änderungen in einer Transaktion durchzuführen. Sie
+     können auch komplexe Abfragen ausführen um Daten zu erhalten, und diese
+     Informationen etwa dazu benutzen, mehr Änderungen und Abfragen zu erzeugen. Während
+     die Transaktion aktiv ist, kann garantiert niemand anderes Änderungen durchführen,
+     während Sie bei der Arbeit sind. Um ehrlich zu sein, stimmt das nicht 100%, aber es
+     ist für den Anfang ausreichend, falls Sie noch nie von Transaktionen gehört haben.
+    </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

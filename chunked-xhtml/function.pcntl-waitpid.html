@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Wartet auf ein oder gibt den Status eines abgezweigten Kindes zur&uuml;ck</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li class="header up"><a href="book.pcntl.html">PCNTL</a></li>
+  <li class="header up"><a href="ref.pcntl.html">PCNTL Funktionen</a></li>
+  <li><a href="function.pcntl-alarm.html">pcntl_alarm</a></li>
+  <li><a href="function.pcntl-errno.html">pcntl_errno</a></li>
+  <li><a href="function.pcntl-exec.html">pcntl_exec</a></li>
+  <li><a href="function.pcntl-fork.html">pcntl_fork</a></li>
+  <li><a href="function.pcntl-get-last-error.html">pcntl_get_last_error</a></li>
+  <li><a href="function.pcntl-getpriority.html">pcntl_getpriority</a></li>
+  <li><a href="function.pcntl-setpriority.html">pcntl_setpriority</a></li>
+  <li><a href="function.pcntl-signal-dispatch.html">pcntl_signal_dispatch</a></li>
+  <li><a href="function.pcntl-signal-get-handler.html">pcntl_signal_get_handler</a></li>
+  <li><a href="function.pcntl-signal.html">pcntl_signal</a></li>
+  <li><a href="function.pcntl-sigprocmask.html">pcntl_sigprocmask</a></li>
+  <li><a href="function.pcntl-sigtimedwait.html">pcntl_sigtimedwait</a></li>
+  <li><a href="function.pcntl-sigwaitinfo.html">pcntl_sigwaitinfo</a></li>
+  <li><a href="function.pcntl-strerror.html">pcntl_strerror</a></li>
+  <li><a href="function.pcntl-wait.html">pcntl_wait</a></li>
+  <li class="active"><a href="function.pcntl-waitpid.html">pcntl_waitpid</a></li>
+  <li><a href="function.pcntl-wexitstatus.html">pcntl_wexitstatus</a></li>
+  <li><a href="function.pcntl-wifexited.html">pcntl_wifexited</a></li>
+  <li><a href="function.pcntl-wifsignaled.html">pcntl_wifsignaled</a></li>
+  <li><a href="function.pcntl-wifstopped.html">pcntl_wifstopped</a></li>
+  <li><a href="function.pcntl-wstopsig.html">pcntl_wstopsig</a></li>
+  <li><a href="function.pcntl-wtermsig.html">pcntl_wtermsig</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.pcntl-wait.html">pcntl_wait</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.pcntl-wexitstatus.html">pcntl_wexitstatus</a></div>
+                <div class="up"><a href="ref.pcntl.html">PCNTL Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.pcntl-waitpid" class="refentry">
+  <div class="refnamediv">
+   <h1 class="refname">pcntl_waitpid</h1>
+   <p class="refpurpose">Wartet auf ein oder gibt den Status eines abgezweigten Kindes zurück</p>
+  </div>
+  <div class="refsect1 unknown-unknown-seealsq" id="refsect1-function.pcntl-waitpid-unknown-unknown-seealsq">
+   <h3 class="title">Beschreibung</h3>
+    <div class="methodsynopsis dc-description">
+     <span class="type">int</span> <span class="methodname">pcntl_waitpid</span>
+      ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$pid</code></span>
+     , <span class="methodparam"><span class="type">int</span> <code class="parameter reference">&$status</code></span>
+     [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code></span>
+    ] )</div>
+
+   <p class="para rdfs-comment">
+    Die Funktion <span class="function">pcntl_waitpid</span> unterbricht die Ausführung
+    des aktuellen Prozesses bis ein durch den Parameter 
+    <code class="parameter">pid</code> angegebenes Kind sich beendet hat oder bis ein
+    Signal ausgeliefert wurde dessen Aktion den aktuellen Prozess beendet oder
+    eine Signalverabeitungsfunktion aufruft.
+    Wenn ein Kind, welches durch <code class="parameter">pid</code> angefordert wird, 
+    sich zum Zeitpunkt des Funktionsaufrufes bereits beendet hat (ein sog. 
+    &quot;Zombie&quot; Prozess) kehrt die Funktion umgehend zurück. Alle durch das Kind
+    verwendeten Ressourcen werden freigegeben. Bitte schlagen Sie in der
+    waitpid(2) man Seite Ihres Systems für spezifische Dateils nach, wie
+    waitpid auf Ihrem System arbeitet.
+   </p>
+   <p class="para">
+    <span class="function">pcntl_waitpid</span> gibt entweder die Prozess ID des Kindes 
+    zurück, das beendet wurde, -1 im Fehlerfalle oder Null, wenn WNOHANG 
+    verwendet wurde und kein Kind verfügbar war.
+   </p>
+   <p class="para">
+    Der Wert von <code class="parameter">pid</code> kann einer der Folgenden sein:
+    <table class="doctable table">
+     <caption><strong>mögliche Werte für <code class="parameter">pid</code></strong></caption>
+     
+      <tbody class="tbody">
+       <tr>
+        <td><em>&lt; -1</em></td>
+        <td>
+         wartet auf einen Kindprozess dessen Prozessgruppen ID gleich dem
+         absoluten Wert von <code class="parameter">pid</code> ist.
+        </td>
+       </tr>
+
+       <tr>
+        <td><em>-1</em></td>
+        <td>
+         wartet auf einen Kindprozess; dies ist das selbe Verhalten, welches die
+         wait Funktion anbietet.
+        </td>
+       </tr>
+
+       <tr>
+        <td><em>0</em></td>
+        <td>
+         wartet auf einen Kindprozess dessen Prozessgruppen ID gleich dem Wert
+         des aufrufenden Prozesses ist.
+        </td>
+       </tr>
+
+       <tr>
+        <td><em>&gt; 0</em></td>
+        <td>
+         wartet auf das Kind, dessen Prozess ID gleich dem Wert von
+         <code class="parameter">pid</code> ist.
+        </td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Angeben von <em>-1</em> für den Parameter 
+     <code class="parameter">pid</code> ist äquivalent zur Funktionalität der Funktion
+     <span class="function">pcntl_wait</span> (ohne <code class="parameter">options</code>).
+    </p>
+   </p></blockquote>
+   <p class="para">
+    <span class="function">pcntl_waitpid</span> speichert Statusinformationen im Parameter
+    <code class="parameter">status</code>, welcher durch die folgenden Funktionen
+    ausgewertet werden kann:
+    <span class="function">pcntl_wifexited</span>,
+    <span class="function">pcntl_wifstopped</span>,
+    <span class="function">pcntl_wifsignaled</span>,
+    <span class="function">pcntl_wexitstatus</span>,
+    <span class="function">pcntl_wtermsig</span> und
+    <span class="function">pcntl_wstopsig</span>.
+   </p>
+   <p class="para">
+    Der Wert von <code class="parameter">options</code> ist der Wert von Null oder mehr
+    der mittels <em>OR</em> verknüpften folgenden beiden globalen 
+    Konstanten:
+    <table class="doctable table">
+     <caption><strong>mögliche Werte für <code class="parameter">options</code></strong></caption>
+     
+      <tbody class="tbody">
+       <tr>
+        <td><em>WNOHANG</em></td>
+        <td>
+         kehre umgehend zurück, wenn kein Kind beendet wurde.
+        </td>
+       </tr>
+
+       <tr>
+        <td><em>WUNTRACED</em></td>
+        <td>
+         kehre für Kinder zurück die gestoppt sind und für solche, deren
+         Status nicht gemeldet ist.
+        </td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
+   <p class="para">
+    Siehe auch <span class="function">pcntl_fork</span>,
+    <span class="function">pcntl_signal</span>,
+    <span class="function">pcntl_wifexited</span>,
+    <span class="function">pcntl_wifstopped</span>,
+    <span class="function">pcntl_wifsignaled</span>,
+    <span class="function">pcntl_wexitstatus</span>,
+    <span class="function">pcntl_wtermsig</span> und
+    <span class="function">pcntl_wstopsig</span>.
+   </p>
+  </div>
+
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

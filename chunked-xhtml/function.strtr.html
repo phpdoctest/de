@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Tauscht Zeichen aus oder ersetzt Zeichenketten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li class="header up"><a href="book.strings.html">Zeichenketten</a></li>
+  <li class="header up"><a href="ref.strings.html">String-Funktionen</a></li>
+  <li><a href="function.addcslashes.html">addcslashes</a></li>
+  <li><a href="function.addslashes.html">addslashes</a></li>
+  <li><a href="function.bin2hex.html">bin2hex</a></li>
+  <li><a href="function.chop.html">chop</a></li>
+  <li><a href="function.chr.html">chr</a></li>
+  <li><a href="function.chunk-split.html">chunk_split</a></li>
+  <li><a href="function.convert-cyr-string.html">convert_cyr_string</a></li>
+  <li><a href="function.convert-uudecode.html">convert_uudecode</a></li>
+  <li><a href="function.convert-uuencode.html">convert_uuencode</a></li>
+  <li><a href="function.count-chars.html">count_chars</a></li>
+  <li><a href="function.crc32.html">crc32</a></li>
+  <li><a href="function.crypt.html">crypt</a></li>
+  <li><a href="function.echo.html">echo</a></li>
+  <li><a href="function.explode.html">explode</a></li>
+  <li><a href="function.fprintf.html">fprintf</a></li>
+  <li><a href="function.get-html-translation-table.html">get_html_translation_table</a></li>
+  <li><a href="function.hebrev.html">hebrev</a></li>
+  <li><a href="function.hebrevc.html">hebrevc</a></li>
+  <li><a href="function.hex2bin.html">hex2bin</a></li>
+  <li><a href="function.html-entity-decode.html">html_entity_decode</a></li>
+  <li><a href="function.htmlentities.html">htmlentities</a></li>
+  <li><a href="function.htmlspecialchars-decode.html">htmlspecialchars_decode</a></li>
+  <li><a href="function.htmlspecialchars.html">htmlspecialchars</a></li>
+  <li><a href="function.implode.html">implode</a></li>
+  <li><a href="function.join.html">join</a></li>
+  <li><a href="function.lcfirst.html">lcfirst</a></li>
+  <li><a href="function.levenshtein.html">levenshtein</a></li>
+  <li><a href="function.localeconv.html">localeconv</a></li>
+  <li><a href="function.ltrim.html">ltrim</a></li>
+  <li><a href="function.md5-file.html">md5_file</a></li>
+  <li><a href="function.md5.html">md5</a></li>
+  <li><a href="function.metaphone.html">metaphone</a></li>
+  <li><a href="function.money-format.html">money_format</a></li>
+  <li><a href="function.nl-langinfo.html">nl_langinfo</a></li>
+  <li><a href="function.nl2br.html">nl2br</a></li>
+  <li><a href="function.number-format.html">number_format</a></li>
+  <li><a href="function.ord.html">ord</a></li>
+  <li><a href="function.parse-str.html">parse_str</a></li>
+  <li><a href="function.print.html">print</a></li>
+  <li><a href="function.printf.html">printf</a></li>
+  <li><a href="function.quoted-printable-decode.html">quoted_printable_decode</a></li>
+  <li><a href="function.quoted-printable-encode.html">quoted_printable_encode</a></li>
+  <li><a href="function.quotemeta.html">quotemeta</a></li>
+  <li><a href="function.rtrim.html">rtrim</a></li>
+  <li><a href="function.setlocale.html">setlocale</a></li>
+  <li><a href="function.sha1-file.html">sha1_file</a></li>
+  <li><a href="function.sha1.html">sha1</a></li>
+  <li><a href="function.similar-text.html">similar_text</a></li>
+  <li><a href="function.soundex.html">soundex</a></li>
+  <li><a href="function.sprintf.html">sprintf</a></li>
+  <li><a href="function.sscanf.html">sscanf</a></li>
+  <li><a href="function.str-getcsv.html">str_getcsv</a></li>
+  <li><a href="function.str-ireplace.html">str_ireplace</a></li>
+  <li><a href="function.str-pad.html">str_pad</a></li>
+  <li><a href="function.str-repeat.html">str_repeat</a></li>
+  <li><a href="function.str-replace.html">str_replace</a></li>
+  <li><a href="function.str-rot13.html">str_rot13</a></li>
+  <li><a href="function.str-shuffle.html">str_shuffle</a></li>
+  <li><a href="function.str-split.html">str_split</a></li>
+  <li><a href="function.str-word-count.html">str_word_count</a></li>
+  <li><a href="function.strcasecmp.html">strcasecmp</a></li>
+  <li><a href="function.strchr.html">strchr</a></li>
+  <li><a href="function.strcmp.html">strcmp</a></li>
+  <li><a href="function.strcoll.html">strcoll</a></li>
+  <li><a href="function.strcspn.html">strcspn</a></li>
+  <li><a href="function.strip-tags.html">strip_tags</a></li>
+  <li><a href="function.stripcslashes.html">stripcslashes</a></li>
+  <li><a href="function.stripos.html">stripos</a></li>
+  <li><a href="function.stripslashes.html">stripslashes</a></li>
+  <li><a href="function.stristr.html">stristr</a></li>
+  <li><a href="function.strlen.html">strlen</a></li>
+  <li><a href="function.strnatcasecmp.html">strnatcasecmp</a></li>
+  <li><a href="function.strnatcmp.html">strnatcmp</a></li>
+  <li><a href="function.strncasecmp.html">strncasecmp</a></li>
+  <li><a href="function.strncmp.html">strncmp</a></li>
+  <li><a href="function.strpbrk.html">strpbrk</a></li>
+  <li><a href="function.strpos.html">strpos</a></li>
+  <li><a href="function.strrchr.html">strrchr</a></li>
+  <li><a href="function.strrev.html">strrev</a></li>
+  <li><a href="function.strripos.html">strripos</a></li>
+  <li><a href="function.strrpos.html">strrpos</a></li>
+  <li><a href="function.strspn.html">strspn</a></li>
+  <li><a href="function.strstr.html">strstr</a></li>
+  <li><a href="function.strtok.html">strtok</a></li>
+  <li><a href="function.strtolower.html">strtolower</a></li>
+  <li><a href="function.strtoupper.html">strtoupper</a></li>
+  <li class="active"><a href="function.strtr.html">strtr</a></li>
+  <li><a href="function.substr-compare.html">substr_compare</a></li>
+  <li><a href="function.substr-count.html">substr_count</a></li>
+  <li><a href="function.substr-replace.html">substr_replace</a></li>
+  <li><a href="function.substr.html">substr</a></li>
+  <li><a href="function.trim.html">trim</a></li>
+  <li><a href="function.ucfirst.html">ucfirst</a></li>
+  <li><a href="function.ucwords.html">ucwords</a></li>
+  <li><a href="function.vfprintf.html">vfprintf</a></li>
+  <li><a href="function.vprintf.html">vprintf</a></li>
+  <li><a href="function.vsprintf.html">vsprintf</a></li>
+  <li><a href="function.wordwrap.html">wordwrap</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.strtoupper.html">strtoupper</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.substr-compare.html">substr_compare</a></div>
+                <div class="up"><a href="ref.strings.html">String-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.strtr" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">strtr</h1>
+  <p class="refpurpose">Tauscht Zeichen aus oder ersetzt Zeichenketten</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.strtr-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname">strtr</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$from</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$to</code></span>
+   )</div>
+
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname">strtr</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
+   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$replace_pairs</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Diese Funktion gibt eine Kopie von <code class="parameter">str</code> zurück, in der
+   alle Vorkommen jedes Zeichens von <code class="parameter">from</code> in das
+   korrespondierende Zeichen in <code class="parameter">to</code> umgewandelt wurden.
+
+   Mit drei Argumenten gibt diese Funktion eine Kopie von
+   <code class="parameter">str</code> zurück, in der alle Vorkommen jedes
+   (single-byte) Zeichens von <code class="parameter">from</code> in das
+   korrespondierende Zeichen in <code class="parameter">to</code> übersetzt wurden;
+   d. h. jedes Vorkommen von <em>$from[$n]</em> wurde ersetzt durch
+   <em>$to[$n]</em>, wobei <em>$n</em> ein gültiger Offset
+   in beiden Argumenten ist.
+  </p>
+  <p class="para">
+   Haben <code class="parameter">from</code> und <code class="parameter">to</code> eine
+   unterschiedliche Länge, werden die überzähligen Zeichen im jeweils
+   längeren Parameter ignoriert. Die Länge von <code class="parameter">str</code> wird
+   die gleiche wie die des Rückgabewertes sein.
+  </p>
+  <p class="para">
+    Wurden zwei Argumente übergeben, sollte das zweite ein
+    <span class="type">array</span> in der Form <em>array(&#039;from&#039; =&gt; &#039;to&#039;,
+   ...)</em> sein. Der Rückgabewert ist ein <span class="type">string</span> in dem
+   alle Vorkommen der Array Schlüssel durch die entsprechenden Werte ersetzt
+   wurden. Die längsten Schlüssel werden zuerst getestet werden.
+    Wurde eine Teilzeichenkette ersetzt, wird ihr neuer Wert nicht nochmals
+   durchsucht.
+  </p>
+  <p class="para">
+    In diesem Fall können die Schlüssel und Werte beliebige Längen haben,
+    vorausgesetzt, es gibt keinen leeren Schlüssel; zusätzlich kann die Länge
+    des Rückgabewertes von der de <code class="parameter">str</code> abweichen.
+    Diese Funktion ist jedoch dann am effizientesten, wenn alle Schlüssel die
+    gleiche Größe besitzen.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.strtr-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">str</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der <span class="type">String</span>, in dem die Ersetzungen vorgenommen werden sollen.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">from</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der <span class="type">String</span>, der gegen <code class="parameter">to</code> ausgetauscht
+       werden soll.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">to</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der <span class="type">String</span>, der <code class="parameter">from</code> ersetzen soll.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">replace_pairs</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der <code class="parameter">replace_pairs</code>-Parameter kann anstatt der
+       Parameter <code class="parameter">to</code> und
+       <code class="parameter">from</code> verwendet werden. In diesem Fall muss ein
+       <span class="type">array</span> in der Form <em>array(&#039;von&#039; =&gt; &#039;nach&#039;,
+       ...)</em> übergeben werden.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.strtr-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+    Gibt den übersetzten <span class="type">string</span> zurück.
+  </p>
+  <p class="para">
+   Wenn <code class="parameter">replace_pairs</code> einen Schlüssel enthält, der
+   ein leerer <span class="type">string</span> (<em>&quot;&quot;</em>) ist, wird
+   <strong><code>FALSE</code></strong> zurückgegeben. Ist <code class="parameter">str</code> kein Skalar, dann wird
+   er nicht in eine Zeichenkette umgewandelt; statt dessen wird eine Warnung
+   erzeugt und <strong><code>NULL</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.strtr-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-5409">
+    <p><strong>Beispiel #1 <span class="function">strtr</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+//In&nbsp;dieser&nbsp;Form,&nbsp;strtr()&nbsp;übersetzt&nbsp;byte-zu-byte<br />//Daher&nbsp;gehen&nbsp;wir&nbsp;hier&nbsp;von&nbsp;einer&nbsp;single-byte&nbsp;Kodierung&nbsp;aus.<br /><span style="color: #0000BB">&lt;?php<br />$addr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #0000BB">$addr</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"äåö"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"aao"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+    Das nächste Beispiel zeigt das Verhalten von <span class="function">strtr</span>,
+    aufgerufen mit nur zwei Argumenten. Beachten Sie den Vorrang der
+    Ersetzungen (<em>&quot;h&quot;</em> wird nicht gewählt, da es längere
+    Übereinstimmungen gibt) und dass der ersetzte Text nicht erneut durchsucht
+    wurde.
+  </p>
+  <div class="example" id="example-5410">
+   <p><strong>Beispiel #2 <span class="function">strtr</span>-Beispiel mit zwei Argumenten</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$trans&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"h"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"-"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"hello"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"hi"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"hi"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"hello"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #DD0000">"hi&nbsp;all,&nbsp;I&nbsp;said&nbsp;hello"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$trans</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+hello all, I said hi
+</pre></div>
+    </div>
+  </div>
+  <p class="para">
+    Die zwei Verhaltensweisen unterscheiden sich wesentlich. Mit 3 Argumenten
+    esetzt <span class="function">strtr</span> Bytes; mit zweien kann sie längere
+    Teilzeichenketten ersetzen.
+  </p>
+  <div class="example" id="example-5411">
+   <p><strong>Beispiel #3 <span class="function">strtr</span> Vergleich der Verhaltensweisen</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #DD0000">"baab"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"ab"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"01"</span><span style="color: #007700">),</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$trans&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"ab"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"01"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #DD0000">"baab"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$trans</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt folgende
+Ausgabe:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+1001
+ba01
+</pre></div>
+    </div>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.strtr-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">str_replace</span></li>
+    <li class="member"><span class="function">preg_replace</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

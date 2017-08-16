@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Konstanten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li class="header up"><a href="book.info.html">PHP-Optionen/-Informationen</a></li>
+  <li><a href="intro.info.html">Einf&uuml;hrung</a></li>
+  <li><a href="info.setup.html">Installation/Konfiguration</a></li>
+  <li class="active"><a href="info.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="ref.info.html">PHP-Optionen-/-Informationen-Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="info.resources.html">Ressource-Typen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ref.info.html">PHP-Optionen-/-Informationen-Funktionen</a></div>
+                <div class="up"><a href="book.info.html">PHP-Optionen/-Informationen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="info.constants" class="appendix">
+ <h1>Vordefinierte Konstanten</h1>
+ <p class="simpara">Die aufgelisteten Konstanten
+stehen immer zur Verfügung, da sie zum Grundbestand von PHP gehören.</p>
+   <table class="doctable table">
+    <caption><strong>Vordefinierte Konstanten für <span class="function">phpcredits</span></strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Konstante</th>
+       <th>Wert</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>CREDITS_GROUP</td>
+       <td>1</td>
+       <td>Eine Liste der Kernentwickler</td>
+      </tr>
+
+      <tr>
+       <td>CREDITS_GENERAL</td>
+       <td>2</td>
+       <td>
+        Generelle Credits: Sprachentwurf und -konzept, PHP-Autoren und
+        SAPI-Module.
+       </td>
+      </tr>
+
+      <tr>
+       <td>CREDITS_SAPI</td>
+       <td>4</td>
+       <td>
+        Eine Liste der Server-API-Module für PHP und deren Autoren.
+       </td>
+      </tr>
+
+      <tr>
+       <td>CREDITS_MODULES</td>
+       <td>8</td>
+       <td>
+        Eine Liste der Erweiterungsmodule für PHP und deren Autoren.
+       </td>
+      </tr>
+
+      <tr>
+       <td>CREDITS_DOCS</td>
+       <td>16</td>
+       <td>
+        Die Credits für das Documentationsteam.
+       </td>
+      </tr>
+
+      <tr>
+       <td>CREDITS_FULLPAGE</td>
+       <td>32</td>
+       <td>
+        Wird üblicherweise in Verbindung mit den anderen Konstanten verwendet.
+        Gibt an, dass eine komplette, eigenständige HTML-Seite ausgegeben
+        wird, die alle Informationen enthält, die mit anderen Konstanten
+        angefordert wurden.
+       </td>
+      </tr>
+
+      <tr>
+       <td>CREDITS_QA</td>
+       <td>64</td>
+       <td>
+        Die Credits für das Qualitätssicherungsteam.
+       </td>
+      </tr>
+
+      <tr>
+       <td>CREDITS_ALL</td>
+       <td>-1</td>
+       <td>
+        Alle Credits. Dies entspricht der Angabe von: CREDITS_DOCS +
+        CREDITS_GENERAL + CREDITS_GROUP + CREDITS_MODULES + CREDITS_QA
+        CREDITS_FULLPAGE. Eine komplette, eigenständige HTML-Seite mit den
+        entsprechenden Tags wird erzeugt und ausgegeben. Das ist der
+        Standardwert.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+
+   <table class="doctable table">
+    <caption><strong><span class="function">phpinfo</span>-Konstanten</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Konstante</th>
+       <th>Wert</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>INFO_GENERAL</td>
+       <td>1</td>
+       <td>
+        Die Konfigurationsangaben, <var class="filename">php.ini</var> Speicherort, Builddatum,
+        Webserver, Betriebssystem und mehr.
+       </td>
+      </tr>
+
+      <tr>
+       <td>INFO_CREDITS</td>
+       <td>2</td>
+       <td>
+        PHP-Credits. Siehe auch <span class="function">phpcredits</span>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>INFO_CONFIGURATION</td>
+       <td>4</td>
+       <td>
+        Gegenwärtige lokale und Master-Werte für PHP-Einstellungen. Siehe auch
+        <span class="function">ini_get</span>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>INFO_MODULES</td>
+       <td>8</td>
+       <td>
+        Geladene Module und ihre entsprechenden Einstellungen.
+       </td>
+      </tr>
+
+      <tr>
+       <td>INFO_ENVIRONMENT</td>
+       <td>16</td>
+       <td>
+        Informationen über Umgebungsvariablen, die auch in
+        <var class="varname">$_ENV</var> zur Verfügung stehen.
+       </td>
+      </tr>
+
+      <tr>
+       <td>INFO_VARIABLES</td>
+       <td>32</td>
+       <td>
+        Zeigt alle <a href="language.variables.predefined.html" class="link">
+        vordefinierten Variablen</a> von EGPCS (Environment, GET,
+        POST, Cookie, Server).
+       </td>
+      </tr>
+
+      <tr>
+       <td>INFO_LICENSE</td>
+       <td>64</td>
+       <td>
+        PHP-Lizenz-Informationen. Siehe auch die <a href="http://www.php.net/license/" class="link external">&raquo;&nbsp;Lizenz-FAQ</a>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>INFO_ALL</td>
+       <td>-1</td>
+       <td>
+        Zeigt alle oben genannten Einträge. Das ist der Standardwert.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+
+ <dl>
+
+  
+   <dt>
+
+    <strong><code>ASSERT_ACTIVE</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>ASSERT_CALLBACK</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>ASSERT_BAIL</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>ASSERT_WARNING</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+
+    </span>
+   </dd>
+
+  
+  
+   <dt>
+
+    <strong><code>ASSERT_QUIET_EVAL</code></strong>
+    (<span class="type">integer</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+
+    </span>
+   </dd>
+
+  
+ </dl>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

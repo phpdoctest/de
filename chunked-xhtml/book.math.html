@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Mathematische Funktionen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.math.html">Mathematische Erweiterungen</a></li>
+  <li><a href="book.bc.html">BC Math</a></li>
+  <li><a href="book.gmp.html">GMP</a></li>
+  <li><a href="book.lapack.html">Lapack</a></li>
+  <li class="active"><a href="book.math.html">Mathe</a></li>
+  <li><a href="book.stats.html">Statistics</a></li>
+  <li><a href="book.trader.html">Trader</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="class.lapackexception.html">LapackException</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.math.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.math.html">Mathematische Erweiterungen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.math" class="book">
+ 
+ <h1>Mathematische Funktionen</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.math.html">Einf&uuml;hrung</a></li>
+<li><a href="math.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="math.requirements.html">Anforderungen</a></li>
+<li><a href="math.installation.html">Installation</a></li>
+<li><a href="math.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="math.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="math.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.math.html">Mathematische Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.abs.html">abs</a> — Absolutwert bzw. Betrag</li>
+<li><a href="function.acos.html">acos</a> — Arkuskosinus</li>
+<li><a href="function.acosh.html">acosh</a> — Areakosinus Hyperbolikus</li>
+<li><a href="function.asin.html">asin</a> — Arkussinus</li>
+<li><a href="function.asinh.html">asinh</a> — Areasinus Hyperbolikus</li>
+<li><a href="function.atan2.html">atan2</a> — Arkustangens-Variante mit zwei Parametern</li>
+<li><a href="function.atan.html">atan</a> — Arkustangens</li>
+<li><a href="function.atanh.html">atanh</a> — Areatangens Hyperbolikus</li>
+<li><a href="function.base-convert.html">base_convert</a> — Konvertiert einen numerischen Wert zwischen verschiedenen Zahlensystemen</li>
+<li><a href="function.bindec.html">bindec</a> — Umwandlung von bin&auml;r zu dezimal</li>
+<li><a href="function.ceil.html">ceil</a> — Aufrunden</li>
+<li><a href="function.cos.html">cos</a> — Kosinus</li>
+<li><a href="function.cosh.html">cosh</a> — Kosinus Hyperbolikus</li>
+<li><a href="function.decbin.html">decbin</a> — Dezimal zu Bin&auml;r Konvertierung</li>
+<li><a href="function.dechex.html">dechex</a> — Dezimal zu Hexadezimal Umwandlung</li>
+<li><a href="function.decoct.html">decoct</a> — Dezimal zu Oktal Umwandlung</li>
+<li><a href="function.deg2rad.html">deg2rad</a> — Rechnet einen Winkel von Grad in Bogenma&szlig; um</li>
+<li><a href="function.exp.html">exp</a> — Exponentialfunktion</li>
+<li><a href="function.expm1.html">expm1</a> — Exponentialfunktion mit erh&ouml;hter Genauigkeit</li>
+<li><a href="function.floor.html">floor</a> — Abrunden</li>
+<li><a href="function.fmod.html">fmod</a> — Rest einer Flie&szlig;kommadivision</li>
+<li><a href="function.getrandmax.html">getrandmax</a> — Liefert die maximale Zufallszahl</li>
+<li><a href="function.hexdec.html">hexdec</a> — Hexadezimal zu Dezimal Umwandlung</li>
+<li><a href="function.hypot.html">hypot</a> — L&auml;nge der Hypotenuse eines rechtwinkligen Dreiecks</li>
+<li><a href="function.intdiv.html">intdiv</a> — Integer division</li>
+<li><a href="function.is-finite.html">is_finite</a> — Pr&uuml;ft auf einen g&uuml;ltigen endlichen Wert</li>
+<li><a href="function.is-infinite.html">is_infinite</a> — Pr&uuml;ft ob ein Wert unendlich ist</li>
+<li><a href="function.is-nan.html">is_nan</a> — Pr&uuml;ft ob ein Wert keine Zahl ist</li>
+<li><a href="function.lcg-value.html">lcg_value</a> — Kongruenzgenerator f&uuml;r Pseudozufallszahlen</li>
+<li><a href="function.log10.html">log10</a> — Dekadischer Logarithmus</li>
+<li><a href="function.log1p.html">log1p</a> — Berechent log(1 + number) mit erh&ouml;hter Genauigkeit</li>
+<li><a href="function.log.html">log</a> — Logarithmus</li>
+<li><a href="function.max.html">max</a> — Maximalwert bestimmen</li>
+<li><a href="function.min.html">min</a> — Minimalwert bestimmen</li>
+<li><a href="function.mt-getrandmax.html">mt_getrandmax</a> — Zeigt den gr&ouml;&szlig;tm&ouml;glichen Zufallswert an</li>
+<li><a href="function.mt-rand.html">mt_rand</a> — Erzeugt &quot;bessere&quot; Zufallszahlen</li>
+<li><a href="function.mt-srand.html">mt_srand</a> — Setzt den besseren Zufallszahlengenerator</li>
+<li><a href="function.octdec.html">octdec</a> — Oktal zu Dezimal Umwandlung</li>
+<li><a href="function.pi.html">pi</a> — Liefert den Wert von Pi</li>
+<li><a href="function.pow.html">pow</a> — Potenzfunktion</li>
+<li><a href="function.rad2deg.html">rad2deg</a> — Umrechnung von Bogenma&szlig; in Grad</li>
+<li><a href="function.rand.html">rand</a> — Erzeugt eine zuf&auml;llige Zahl</li>
+<li><a href="function.round.html">round</a> — Rundet einen Flie&szlig;kommawert</li>
+<li><a href="function.sin.html">sin</a> — Sinus</li>
+<li><a href="function.sinh.html">sinh</a> — Sinus Hyperbolikus</li>
+<li><a href="function.sqrt.html">sqrt</a> — Quadratwurzel</li>
+<li><a href="function.srand.html">srand</a> — Anfangswert f&uuml;r Zufallsgenerator festlegen</li>
+<li><a href="function.tan.html">tan</a> — Tangens</li>
+<li><a href="function.tanh.html">tanh</a> — Tangens Hyperbolikus</li>
+</ul>
+</li>
+</ul>
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

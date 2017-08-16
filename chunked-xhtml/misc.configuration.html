@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Laufzeit-Konfiguration</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li class="header up"><a href="book.misc.html">Misc.</a></li>
+  <li class="header up"><a href="misc.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="misc.requirements.html">Anforderungen</a></li>
+  <li><a href="misc.installation.html">Installation</a></li>
+  <li class="active"><a href="misc.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="misc.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="misc.installation.html">Installation</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="misc.resources.html">Ressource-Typen</a></div>
+                <div class="up"><a href="misc.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="misc.configuration" class="section">
+ <h2 class="title">Laufzeit-Konfiguration</h2>
+ <p class="simpara">Das Verhalten dieser Funktionen wird
+durch Einstellungen in der <var class="filename">php.ini</var> beeinflusst.</p>
+ <p class="para">
+  <table class="doctable table">
+   <caption><strong>Konfigurations-Optionen für Sonstiges</strong></caption>
+   
+    <thead>
+     <tr>
+      <th>Name</th>
+      <th>Standard</th>
+      <th>Veränderbar</th>
+      <th>Changelog</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td><a href="misc.configuration.html#ini.ignore-user-abort" class="link">ignore_user_abort</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="misc.configuration.html#ini.syntax-highlighting" class="link">highlight.string</a></td>
+      <td>&quot;#DD0000&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="misc.configuration.html#ini.syntax-highlighting" class="link">highlight.comment</a></td>
+      <td>&quot;#FF8000&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="misc.configuration.html#ini.syntax-highlighting" class="link">highlight.keyword</a></td>
+      <td>&quot;#007700&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="misc.configuration.html#ini.syntax-highlighting" class="link">highlight.bg</a></td>
+      <td>&quot;#FFFFFF&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Entfernt in PHP 5.4.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="misc.configuration.html#ini.syntax-highlighting" class="link">highlight.default</a></td>
+      <td>&quot;#0000BB&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="misc.configuration.html#ini.syntax-highlighting" class="link">highlight.html</a></td>
+      <td>&quot;#000000&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="misc.configuration.html#ini.browscap" class="link">browscap</a></td>
+      <td>NULL</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+  Weitere Details und die Definitionen der
+PHP_INI_*-Konstanten finden Sie im <a href="configuration.changes.modes.html" class="xref">Wo Konfigurationseinstellungen gesetzt werden k&ouml;nnen</a>.
+ </p>
+
+ <p class="para">Hier eine kurze Erklärung der
+Konfigurationsoptionen:</p>
+
+ <p class="para">
+  <dl>
+
+
+   
+    <dt id="ini.ignore-user-abort">
+     <code class="parameter">ignore_user_abort</code>
+     <span class="type">boolean</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Standardmäßig <strong><code>FALSE</code></strong>. Wird die Einstellung auf <strong><code>TRUE</code></strong> geändert, werden
+      Skripte nicht beendet, nachdem der Client die Verbindung abgebrochen hat.
+     </p>
+     <p class="para">
+      Siehe auch <span class="function">ignore_user_abort</span>.
+     </p>
+    </dd>
+
+   
+
+    
+     <dt id="ini.syntax-highlighting">
+      <code class="parameter">highlight.bg</code>
+      <span class="type">string</span>
+     </dt>
+
+     <dt>
+
+      <code class="parameter">highlight.comment</code>
+      <span class="type">string</span>
+     </dt>
+
+     <dt>
+
+      <code class="parameter">highlight.default</code>
+      <span class="type">string</span>
+     </dt>
+
+     <dt>
+
+      <code class="parameter">highlight.html</code>
+      <span class="type">string</span>
+     </dt>
+
+     <dt>
+
+      <code class="parameter">highlight.keyword</code>
+      <span class="type">string</span>
+     </dt>
+
+     <dt>
+
+      <code class="parameter">highlight.string</code>
+      <span class="type">string</span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       Farbangaben für Syntax-Highlighting. Alle Angaben, die bei
+       &lt;font color=&quot;??????&quot;&gt; gültig sind, funktionieren.
+      </p>
+     </dd>
+
+    
+
+   
+    <dt id="ini.browscap">
+     <code class="parameter">browscap</code>
+     <span class="type">string</span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Name (z.B.: <var class="filename">browscap.ini</var>) und Speicherort der Datei
+      mit den Angaben zu den Fähigkeiten der verschiedenen Browser. Siehe auch
+      <span class="function">get_browser</span>.
+     </p>
+    </dd>
+
+   
+
+  </dl>
+
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

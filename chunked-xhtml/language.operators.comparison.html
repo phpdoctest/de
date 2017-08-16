@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vergleichs-Operatoren</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.operators.html">Operatoren</a></li>
+  <li><a href="language.operators.precedence.html">Operator-Rangfolge</a></li>
+  <li><a href="language.operators.arithmetic.html">Arithmetische Operatoren</a></li>
+  <li><a href="language.operators.assignment.html">Zuweisungsoperatoren</a></li>
+  <li><a href="language.operators.bitwise.html">Bit-Operatoren</a></li>
+  <li class="active"><a href="language.operators.comparison.html">Vergleichs-Operatoren</a></li>
+  <li><a href="language.operators.errorcontrol.html">Fehler-Kontroll-Operatoren</a></li>
+  <li><a href="language.operators.execution.html">Operatoren zur Programmausf&uuml;hrung</a></li>
+  <li><a href="language.operators.increment.html">Inkrement- bzw. Dekrementoperatoren</a></li>
+  <li><a href="language.operators.logical.html">Logische Operatoren</a></li>
+  <li><a href="language.operators.string.html">Zeichenketten-Operatoren</a></li>
+  <li><a href="language.operators.array.html">Array-Operatoren</a></li>
+  <li><a href="language.operators.type.html">Typ Operatoren</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.operators.bitwise.html">Bit-Operatoren</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.operators.errorcontrol.html">Fehler-Kontroll-Operatoren</a></div>
+                <div class="up"><a href="language.operators.html">Operatoren</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.operators.comparison" class="sect1">
+   <h2 class="title">Vergleichs-Operatoren</h2>
+   <p class="simpara">
+    Vergleichs-Operatoren erlauben es - wie der Name schon sagt -
+    zwei Werte zu vergleichen. Wenn Sie an Beispielen verschiedener
+    auf Typen bezogener Vergleiche interessiert sind, können Sie sich
+    <a href="types.comparisons.html" class="link">PHP type comparison
+    tables</a> anschauen.
+   </p>
+
+   <table class="doctable table">
+    <caption><strong>Vergleichsoperatoren</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Beispiel</th>
+       <th>Name</th>
+       <th>Ergebnis</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>$a == $b</td>
+       <td>Gleich</td>
+       <td>Gibt <strong><code>TRUE</code></strong> zurück, wenn $a gleich $b ist.</td>
+      </tr>
+
+      <tr>
+       <td>$a === $b</td>
+       <td>Identisch</td>
+       <td>
+        Gibt <strong><code>TRUE</code></strong> zurück wenn $a gleich $b ist und beide vom
+        gleichen Typ sind (eingeführt in PHP 4).
+       </td>
+      </tr>
+
+      <tr>
+       <td>$a != $b</td>
+       <td>Ungleich</td>
+       <td>
+        Gibt <strong><code>TRUE</code></strong> zurück, wenn $a nicht gleich $b ist.
+       </td>
+      </tr>
+
+      <tr>
+       <td>$a &lt;&gt; $b</td>
+       <td>Ungleich</td>
+       <td>
+        Gibt <strong><code>TRUE</code></strong> zurück, wenn $a nicht gleich $b ist.
+       </td>
+      </tr>
+
+      <tr>
+       <td>$a !== $b</td>
+       <td>Nicht identisch</td>
+       <td>
+        Gibt <strong><code>TRUE</code></strong> zurück, wenn $a nicht gleich $b ist, oder wenn
+        beide nicht vom gleichen Typ sind (eingeführt in PHP 4).
+       </td>
+      </tr>
+
+      <tr>
+       <td>$a &lt; $b</td>
+       <td>Kleiner Als</td>
+       <td>Gibt <strong><code>TRUE</code></strong> zurück, wenn $a kleiner als $b ist.</td>
+      </tr>
+
+      <tr>
+       <td>$a &gt; $b</td>
+       <td>Größer Als</td>
+       <td>Gibt <strong><code>TRUE</code></strong> zurück, wenn $a größer als $b ist.</td>
+      </tr>
+
+      <tr>
+       <td>$a &lt;= $b</td>
+       <td>Kleiner Gleich </td>
+       <td>
+        Gibt <strong><code>TRUE</code></strong> zurück, wenn $a kleiner oder gleich $b ist.
+       </td>
+      </tr>
+
+      <tr>
+       <td>$a &gt;= $b</td>
+       <td>Größer Gleich</td>
+       <td>
+        Gibt <strong><code>TRUE</code></strong> zurück, wenn $a größer oder gleich $b ist.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+
+   <div class="sect2" id="language.operators.comparison.ternary">
+    <h3 class="title">Ternärer Operator</h3>
+   <p class="para">
+    Ein weiterer Vergleichs-Operator ist der &quot;?:&quot; (oder
+    ternäre) Operator.
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Beispielanwendung&nbsp;für&nbsp;den&nbsp;ternären&nbsp;Operator<br /></span><span style="color: #0000BB">$action&nbsp;</span><span style="color: #007700">=&nbsp;(empty(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'action'</span><span style="color: #007700">]))&nbsp;?&nbsp;</span><span style="color: #DD0000">'standard'&nbsp;</span><span style="color: #007700">:&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'action'</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;Obiges&nbsp;ist&nbsp;mit&nbsp;dieser&nbsp;if/else-Anweisung&nbsp;identisch<br /></span><span style="color: #007700">if&nbsp;(empty(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'action'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$action&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'standard'</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$action&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'action'</span><span style="color: #007700">];<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div> 
+    Der Ausdruck <em>(ausdr1) ? (ausdr2) : (ausdr3)</em>
+    gibt <span class="replaceable">ausdr2</span> zurück, wenn
+    <span class="replaceable">ausdr1</span> <strong><code>TRUE</code></strong> zurückgibt und
+    <span class="replaceable">ausdr3</span>, wenn
+    <span class="replaceable">ausdr1</span> <strong><code>FALSE</code></strong> zurückgibt.
+   </p>
+   <p class="para">
+     Seit PHP 5.3 kann man beim ternären Operator den mittleren Teil
+     weglassen. Der Ausdruck <em>(ausdr1) ?: (ausdr3)</em> 
+    gibt <span class="replaceable">ausdr1</span> zurück, wenn 
+    <span class="replaceable">ausdr1</span> als <strong><code>TRUE</code></strong> ausgewertet wird, 
+    andernfalls <span class="replaceable">ausdr3</span>.
+   </p>
+   <p class="para">
+    Siehe auch <span class="function">strcasecmp</span>,
+    <span class="function">strcmp</span>,
+    <a href="language.operators.array.html" class="link">Array-Operatoren</a>
+    und den Abschnitt über <a href="language.types.html" class="link">Typen</a>.
+   </p>
+   </div>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

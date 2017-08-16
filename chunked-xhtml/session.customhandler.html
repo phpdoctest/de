@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Individuelle Session-Routinen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.session.html">Session-Erweiterungen</a></li>
+  <li class="header up"><a href="book.session.html">Sessions</a></li>
+  <li class="header up"><a href="session.examples.html">Beispiele</a></li>
+  <li><a href="session.examples.basic.html">Grundlegende Anwendung</a></li>
+  <li><a href="session.idpassing.html">&Uuml;bermittlung der Session-ID</a></li>
+  <li class="active"><a href="session.customhandler.html">Individuelle Session-Routinen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="session.idpassing.html">&Uuml;bermittlung der Session-ID</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="session.upload-progress.html">Session-Upload-Fortschritt</a></div>
+                <div class="up"><a href="session.examples.html">Beispiele</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="session.customhandler" class="section">
+  <h2 class="title">Individuelle Session-Routinen</h2>
+  <p class="para">
+   Wenn die Speicherung in einer Datenbank oder irgendeine andere Art der
+   Speicherung realisiert werden soll, kann
+   <span class="function">session_set_save_handler</span> verwendet werden, um eine
+   Reihe von benutzerdefinierten Speicherfunktionen zu erstellen. Ab PHP 5.4.0
+   können mit dem <span class="classname">SessionHandlerInterface</span>
+   Session-Routinen erstellt werden oder interne PHP-Routinen durch Beerbung
+   von <span class="classname">SessionHandler</span> erweitert werden.
+  </p>
+  <p class="para">
+   Die in <span class="function">session_set_save_handler</span> definierten
+   Callback-Funktionen sind Methoden, die von PHP während des Lebenszyklus
+   einer Session aufgerufen werden: <code class="parameter">open</code>,
+   <code class="parameter">read</code>, <code class="parameter">write</code> und
+   <code class="parameter">close</code> und für Verwaltungsaufgaben:
+   <code class="parameter">destroy</code> um eine Session zu löschen und
+   <code class="parameter">gc</code> für die regelmäßige Speicherbereinigung.
+  </p>
+  <p class="para">
+   Deshalb benötigt PHP immer Session-Speicherroutinen. Der Standard ist
+   normalerweise die interne &#039;files&#039;-Speicherroutine. Eine benutzerdefinierte
+   Speicherroutine kann mittels <span class="function">session_set_save_handler</span>
+   erstellt werden. Alternative interne Speicherroutinen werden auch von
+   PHP-Erweiterungen, wie z.B. <code class="parameter">sqlite</code>,
+   <code class="parameter">memcache</code> und <code class="parameter">memcached</code> zur
+   Verfügung gestellt und können mittels <a href="session.configuration.html#ini.session.save-handler" class="link">session.save_handler</a> festgelegt
+   werden.
+  </p>
+  <p class="para">
+   Wenn die Session beginnt, ruft PHP intern die
+   <code class="parameter">open</code>-Routine, gefolgt vom
+   <code class="parameter">read</code>-Callback auf, der eine verschlüsselte
+   Zeichenkette genau so zurückgeben sollte, wie sie ursprünglich für die
+   Speicherung übergeben wurde. Nachdem der
+   <code class="parameter">read</code>-Callback die verschlüsselte Zeichenkette
+   zurückgegeben hat, wird sie von PHP entschlüsselt und die
+   <var class="varname">$_SESSION</var>-Superglobale mit dem resultierenden Array
+   gefüllt.
+  </p>
+  <p class="para">
+   Wenn das PHP-Skript endet (oder wenn
+   <span class="function">session_write_close</span> aufgerufen wird), wird die
+   <var class="varname">$_SESSION</var>-Superglobale intern verschlüsselt und zusammen
+   mit der Session-ID an den <code class="parameter">write</code>-Callback übergeben.
+   Nach dem <code class="parameter">write</code>-Callback ruft PHP intern den
+   <code class="parameter">close</code>-Callback auf.
+  </p>
+  <p class="para">
+   Wenn eine Session gelöscht werden soll, ruft PHP die
+   <code class="parameter">destroy</code>-Routine mit der Session-ID auf.
+  </p>
+  <p class="para">
+   Von Zeit zu Zeit ruft PHP den <code class="parameter">gc</code>-Callback auf, um
+   Sessions zu löschen, die entsprechend ihrer eingestellten maximalen
+   Lebensdauer abgelaufen sind. Diese Routine sollte alle gespeicherten
+   Datensätze löschen, auf die länger als die in
+   <code class="parameter">$lifetime</code> festgelegte Zeitspanne nicht mehr
+   zugegriffen wurde.
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

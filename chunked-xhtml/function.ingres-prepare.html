@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Bereitet eine Abfrage zur sp&auml;teren Ausf&uuml;hrung vor</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.ingres.html">Ingres</a></li>
+  <li class="header up"><a href="ref.ingres.html">Ingres-Funktionen</a></li>
+  <li><a href="function.ingres-autocommit-state.html">ingres_autocommit_state</a></li>
+  <li><a href="function.ingres-autocommit.html">ingres_autocommit</a></li>
+  <li><a href="function.ingres-charset.html">ingres_charset</a></li>
+  <li><a href="function.ingres-close.html">ingres_close</a></li>
+  <li><a href="function.ingres-commit.html">ingres_commit</a></li>
+  <li><a href="function.ingres-connect.html">ingres_connect</a></li>
+  <li><a href="function.ingres-cursor.html">ingres_cursor</a></li>
+  <li><a href="function.ingres-errno.html">ingres_errno</a></li>
+  <li><a href="function.ingres-error.html">ingres_error</a></li>
+  <li><a href="function.ingres-errsqlstate.html">ingres_errsqlstate</a></li>
+  <li><a href="function.ingres-escape-string.html">ingres_escape_string</a></li>
+  <li><a href="function.ingres-execute.html">ingres_execute</a></li>
+  <li><a href="function.ingres-fetch-array.html">ingres_fetch_array</a></li>
+  <li><a href="function.ingres-fetch-assoc.html">ingres_fetch_assoc</a></li>
+  <li><a href="function.ingres-fetch-object.html">ingres_fetch_object</a></li>
+  <li><a href="function.ingres-fetch-proc-return.html">ingres_fetch_proc_return</a></li>
+  <li><a href="function.ingres-fetch-row.html">ingres_fetch_row</a></li>
+  <li><a href="function.ingres-field-length.html">ingres_field_length</a></li>
+  <li><a href="function.ingres-field-name.html">ingres_field_name</a></li>
+  <li><a href="function.ingres-field-nullable.html">ingres_field_nullable</a></li>
+  <li><a href="function.ingres-field-precision.html">ingres_field_precision</a></li>
+  <li><a href="function.ingres-field-scale.html">ingres_field_scale</a></li>
+  <li><a href="function.ingres-field-type.html">ingres_field_type</a></li>
+  <li><a href="function.ingres-free-result.html">ingres_free_result</a></li>
+  <li><a href="function.ingres-next-error.html">ingres_next_error</a></li>
+  <li><a href="function.ingres-num-fields.html">ingres_num_fields</a></li>
+  <li><a href="function.ingres-num-rows.html">ingres_num_rows</a></li>
+  <li><a href="function.ingres-pconnect.html">ingres_pconnect</a></li>
+  <li class="active"><a href="function.ingres-prepare.html">ingres_prepare</a></li>
+  <li><a href="function.ingres-query.html">ingres_query</a></li>
+  <li><a href="function.ingres-result-seek.html">ingres_result_seek</a></li>
+  <li><a href="function.ingres-rollback.html">ingres_rollback</a></li>
+  <li><a href="function.ingres-set-environment.html">ingres_set_environment</a></li>
+  <li><a href="function.ingres-unbuffered-query.html">ingres_unbuffered_query</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.ingres-pconnect.html">ingres_pconnect</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.ingres-query.html">ingres_query</a></div>
+                <div class="up"><a href="ref.ingres.html">Ingres-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.ingres-prepare" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">ingres_prepare</h1>
+  <p class="refpurpose">Bereitet eine Abfrage zur späteren Ausführung vor</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.ingres-prepare-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname">ingres_prepare</span>
+    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$query</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Bereitet eine Abfrage zur Ausführung mit <span class="function">ingres_execute</span> vor.
+  </p>
+  <p class="para">
+   Die Abfrage wird Teil der aktuell geöffneten Transaktion. Falls es aktuell
+   keine offene Transaktion gibt, wird mit <span class="function">ingres_query</span>
+   eine geöffnet. Geschlossen wird sie entweder mit <span class="function">ingres_commit</span>,
+   wobei die gemachten Änderungen in die Datenbank geschrieben werden, oder
+   mit <span class="function">ingres_rollback</span>, wobei die Änderungen verworfen
+   werden. Wenn das Skript zuende ist, wird jede geöffnete Transaktion zurückgesetzt
+   (indem die <span class="function">ingres_rollback</span> aufgerufen wird). Sie können
+   vor dem Öffnen einer neuen Transaktion <span class="function">ingres_autocommit</span>
+   ausführen, danach werden alle Änderungen sofort nach der Ausführung einer
+   SQL-Abfrage committet.
+  </p>
+
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <strong>Verwandte Konfigurationen</strong><br />
+   <p class="para">
+    Siehe auch die Direktiven <a href="ingres.configuration.html#ini.ingres.describe" class="link">ingres.describe</a>,
+    <a href="ingres.configuration.html#ini.ingres.scrollable" class="link">ingres.scrollable</a> und
+    <a href="ingres.configuration.html#ini.ingres.utf8" class="link">ingres.utf8</a> der
+    <a href="ingres.configuration.html" class="link">Laufzeit-Konfiguration</a>.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.ingres-prepare-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">link</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Verbindungskennung
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">query</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Eine gültige SQL-Abfrage (siehe im <em class="emphasis">SQL reference
+       guide</em> der Ingres-Dokumentation).
+       Bei der Funktion <span class="function">ingres_query</span> finden Sie bei
+       dem Parameter <a href="function.ingres-query.html#function.ingres-query.query" class="link">query</a>
+       eine Liste der SQL-Kommandos, die nicht mit <span class="function">ingres_prepare</span>
+       ausgeführt werden können.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.ingres-prepare-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   <span class="function">ingres_prepare</span> gibt eine Ergebniskennung zurück,
+   die in der Funktion <span class="function">ingres_execute</span> verwendet wird,
+   um die Abfrage auszuführen. Ob dabei ein Fehler auftrat, kann mit
+   <span class="function">ingres_errno</span>, <span class="function">ingres_error</span> oder
+   <span class="function">ingres_errsqlstate</span> ermittelt werden.
+  </p>
+ </div>
+
+
+
+
+ <div class="refsect1 seealso" id="refsect1-function.ingres-prepare-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">ingres_unbuffered_query</span></li>
+    <li class="member"><span class="function">ingres_fetch_array</span></li>
+    <li class="member"><span class="function">ingres_fetch_object</span></li>
+    <li class="member"><span class="function">ingres_fetch_row</span></li>
+    <li class="member"><span class="function">ingres_commit</span></li>
+    <li class="member"><span class="function">ingres_rollback</span></li>
+    <li class="member"><span class="function">ingres_autocommit</span></li>
+    <li class="member"><span class="function">ingres_set_environment</span></li>
+    <li class="member"><span class="function">ingres_errno</span></li>
+    <li class="member"><span class="function">ingres_error</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

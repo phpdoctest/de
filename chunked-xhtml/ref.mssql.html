@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Mssql-Funktionen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.mssql.html">Mssql</a></li>
+  <li><a href="intro.mssql.html">Einf&uuml;hrung</a></li>
+  <li><a href="mssql.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="mssql.constants.html">Vordefinierte Konstanten</a></li>
+  <li class="active"><a href="ref.mssql.html">Mssql-Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="mssql.constants.html">Vordefinierte Konstanten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.mssql-bind.html">mssql_bind</a></div>
+                <div class="up"><a href="book.mssql.html">Mssql</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="ref.mssql" class="reference">
+ <h1 class="title">Mssql-Funktionen</h1>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_reference">
+<li><a href="function.mssql-bind.html">mssql_bind</a> — F&uuml;gt einer Stored Procedure oder einer Remote Stored Procedure einen Parameter hinzu</li>
+<li><a href="function.mssql-close.html">mssql_close</a> — Schlie&szlig;t die Verbindung zum MS SQL Server</li>
+<li><a href="function.mssql-connect.html">mssql_connect</a> — Baut eine Verbindung zum MS SQL Server auf</li>
+<li><a href="function.mssql-data-seek.html">mssql_data_seek</a> — Bewegt den internen Datensatzzeiger</li>
+<li><a href="function.mssql-execute.html">mssql_execute</a> — F&uuml;hrt eine Stored Procedure in einer MS SQL-Datenbank aus</li>
+<li><a href="function.mssql-fetch-array.html">mssql_fetch_array</a> — Liefert einen Ergebnis-Datensatz als assoziatives Array, als numerisches Array oder beides</li>
+<li><a href="function.mssql-fetch-assoc.html">mssql_fetch_assoc</a> — Liefert ein assoziatives Array des aktuellen Datensatzes aus dem Ergebnis, das durch die Ergebniskennung bestimmt ist</li>
+<li><a href="function.mssql-fetch-batch.html">mssql_fetch_batch</a> — Liefert den n&auml;chsten Stapel von Datens&auml;tzen</li>
+<li><a href="function.mssql-fetch-field.html">mssql_fetch_field</a> — Liefert Informationen &uuml;ber ein Feld</li>
+<li><a href="function.mssql-fetch-object.html">mssql_fetch_object</a> — Liefert einen Datensatz als Objekt</li>
+<li><a href="function.mssql-fetch-row.html">mssql_fetch_row</a> — Liefert einen Datensatz als indiziertes Array</li>
+<li><a href="function.mssql-field-length.html">mssql_field_length</a> — Liefert die L&auml;nge eines Feldes</li>
+<li><a href="function.mssql-field-name.html">mssql_field_name</a> — Liefert den Namen eines Feldes</li>
+<li><a href="function.mssql-field-seek.html">mssql_field_seek</a> — Setzt einen Feld-Offset</li>
+<li><a href="function.mssql-field-type.html">mssql_field_type</a> — Liefert den Typ eines Feldes</li>
+<li><a href="function.mssql-free-result.html">mssql_free_result</a> — Gibt den Ergebnisspeicher frei</li>
+<li><a href="function.mssql-free-statement.html">mssql_free_statement</a> — Gibt den Anweisungsspeicher frei</li>
+<li><a href="function.mssql-get-last-message.html">mssql_get_last_message</a> — Gibt die letzte Meldung des Servers zur&uuml;ck</li>
+<li><a href="function.mssql-guid-string.html">mssql_guid_string</a> — Wandelt eine bin&auml;re GUID mit 16 Bytes in eine Zeichenkette um</li>
+<li><a href="function.mssql-init.html">mssql_init</a> — Initialisiert eine Stored Procedure oder eine Remote Stored Procedure</li>
+<li><a href="function.mssql-min-error-severity.html">mssql_min_error_severity</a> — Setzt die untere Fehlerschwelle</li>
+<li><a href="function.mssql-min-message-severity.html">mssql_min_message_severity</a> — Setzt die untere Schwelle f&uuml;r Meldungen</li>
+<li><a href="function.mssql-next-result.html">mssql_next_result</a> — Bewegt den internen Ergebnis-Zeiger zum n&auml;chsten Ergebnis</li>
+<li><a href="function.mssql-num-fields.html">mssql_num_fields</a> — Liefert die Anzahl der Felder eines Ergebnisses</li>
+<li><a href="function.mssql-num-rows.html">mssql_num_rows</a> — Liefert die Anzahl der Datens&auml;tze eines Ergebnisses</li>
+<li><a href="function.mssql-pconnect.html">mssql_pconnect</a> — Baut eine persistente MS SQL Verbindung auf</li>
+<li><a href="function.mssql-query.html">mssql_query</a> — Sendet eine MS SQL Anfrage</li>
+<li><a href="function.mssql-result.html">mssql_result</a> — Liefert die bei einer Abfrage gefundenen Daten</li>
+<li><a href="function.mssql-rows-affected.html">mssql_rows_affected</a> — Liefert die Anzahl der von einer Anfrage betroffenen Datens&auml;tze</li>
+<li><a href="function.mssql-select-db.html">mssql_select_db</a> — W&auml;hlt eine MS SQL Datenbank aus</li>
+</ul>
+</ol>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

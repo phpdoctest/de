@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Calendar Funktionen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.calendar.html">Datums- und zeitrelevante Erweiterungen</a></li>
+  <li class="header up"><a href="book.calendar.html">Kalender</a></li>
+  <li><a href="intro.calendar.html">Einf&uuml;hrung</a></li>
+  <li><a href="calendar.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="calendar.constants.html">Vordefinierte Konstanten</a></li>
+  <li class="active"><a href="ref.calendar.html">Calendar Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="calendar.constants.html">Vordefinierte Konstanten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.cal-days-in-month.html">cal_days_in_month</a></div>
+                <div class="up"><a href="book.calendar.html">Kalender</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="ref.calendar" class="reference">
+  <h1 class="title">Calendar Funktionen</h1>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_reference">
+<li><a href="function.cal-days-in-month.html">cal_days_in_month</a> — Gibt die Anzahl der Tage eines bestimmten Monats in einem bestimmten Jahr in einem bestimmten Kalender zur&uuml;ck</li>
+<li><a href="function.cal-from-jd.html">cal_from_jd</a> — Konvertiert von Julian Day Count zu einem unterst&uuml;tzten Kalender</li>
+<li><a href="function.cal-info.html">cal_info</a> — Gibt Informationen zu einem bestimmten Kalender zur&uuml;ck</li>
+<li><a href="function.cal-to-jd.html">cal_to_jd</a> — Konvertiert von einem unterst&uuml;tzten Kalenderformat in Julian-Format</li>
+<li><a href="function.easter-date.html">easter_date</a> — Zeitpunkt des Osterfestes (0 Uhr) als Unix-Timestamp</li>
+<li><a href="function.easter-days.html">easter_days</a> — Anzahl der Tage zwischen dem 21. M&auml;rz und Ostersonntag</li>
+<li><a href="function.frenchtojd.html">frenchtojd</a> — Konvertiert ein Datum des Franz&ouml;sischen Revolutionskalenders zu einer
+   julianischen Tageszahl</li>
+<li><a href="function.gregoriantojd.html">gregoriantojd</a> — Konvertierung vom Gregorianischen Kalender zum Julianischen Datum</li>
+<li><a href="function.jddayofweek.html">jddayofweek</a> — Bestimmt den Wochentag aus einem Julianischen Datum</li>
+<li><a href="function.jdmonthname.html">jdmonthname</a> — Bestimmt den Monat aus dem Julianischen Datum</li>
+<li><a href="function.jdtofrench.html">jdtofrench</a> — Konvertiert ein Julianisches Datum zum Kalender der Franz&ouml;sischen
+   Revolution</li>
+<li><a href="function.jdtogregorian.html">jdtogregorian</a> — Konvertierung vom Julianischen Datum zum Gregorianischen Kalender</li>
+<li><a href="function.jdtojewish.html">jdtojewish</a> — Konvertierung vom Julianischen Datum zum J&uuml;dischen Kalender</li>
+<li><a href="function.jdtojulian.html">jdtojulian</a> — Konvertierung vom Julianischen Datum zum Julianischen Kalender</li>
+<li><a href="function.jdtounix.html">jdtounix</a> — Konvertiert Julianisches Datum in Unix-Timestamp</li>
+<li><a href="function.jewishtojd.html">jewishtojd</a> — Konvertiert vom J&uuml;dischen Kalender zum Julianischen Datum</li>
+<li><a href="function.juliantojd.html">juliantojd</a> — Konvertierung vom Julianischen Kalender zum Julianischen Datum</li>
+<li><a href="function.unixtojd.html">unixtojd</a> — Konvertiert Unix-Timestamp in Julianisches Datum</li>
+</ul>
+</ol>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Packt Daten in eine Bin&auml;r-Zeichenkette</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li class="header up"><a href="book.misc.html">Misc.</a></li>
+  <li class="header up"><a href="ref.misc.html">Sonstige Funktionen</a></li>
+  <li><a href="function.connection-aborted.html">connection_aborted</a></li>
+  <li><a href="function.connection-status.html">connection_status</a></li>
+  <li><a href="function.constant.html">constant</a></li>
+  <li><a href="function.define.html">define</a></li>
+  <li><a href="function.defined.html">defined</a></li>
+  <li><a href="function.die.html">die</a></li>
+  <li><a href="function.eval.html">eval</a></li>
+  <li><a href="function.exit.html">exit</a></li>
+  <li><a href="function.get-browser.html">get_browser</a></li>
+  <li><a href="function.halt-compiler.html">__halt_compiler</a></li>
+  <li><a href="function.highlight-file.html">highlight_file</a></li>
+  <li><a href="function.highlight-string.html">highlight_string</a></li>
+  <li><a href="function.ignore-user-abort.html">ignore_user_abort</a></li>
+  <li class="active"><a href="function.pack.html">pack</a></li>
+  <li><a href="function.php-check-syntax.html">php_check_syntax</a></li>
+  <li><a href="function.php-strip-whitespace.html">php_strip_whitespace</a></li>
+  <li><a href="function.show-source.html">show_source</a></li>
+  <li><a href="function.sleep.html">sleep</a></li>
+  <li><a href="function.sys-getloadavg.html">sys_getloadavg</a></li>
+  <li><a href="function.time-nanosleep.html">time_nanosleep</a></li>
+  <li><a href="function.time-sleep-until.html">time_sleep_until</a></li>
+  <li><a href="function.uniqid.html">uniqid</a></li>
+  <li><a href="function.unpack.html">unpack</a></li>
+  <li><a href="function.usleep.html">usleep</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.ignore-user-abort.html">ignore_user_abort</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.php-check-syntax.html">php_check_syntax</a></div>
+                <div class="up"><a href="ref.misc.html">Sonstige Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.pack" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">pack</h1>
+  <p class="refpurpose">Packt Daten in eine Binär-Zeichenkette</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.pack-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname">pack</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$format</code></span>
+   [, <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$args</code></span>
+   [, <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$...</code></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   Packt die angegebenen Argumente unter Beachtung von
+   <code class="parameter">format</code> in eine Binär-Zeichenkette.
+  </p>
+  <p class="para">
+   Die Idee für diese Funktion entstammt Perl. Alle Formatierungs-Anweisungen
+   funktionieren genau wie dort, allerdings fehlen in PHP einige Format-Codes
+   von Perl (z.B. &quot;u&quot;).
+  </p>
+  <p class="para">
+   Beachten sie, dass der Unterschied zwischen vorzeichenlosen und
+   vorzeichenbehafteten Werten nur Einfluss auf die Funktion
+   <span class="function">unpack</span> hat, wogegen die Funktion
+   <span class="function">pack</span> bei vorzeichenlosen und vorzeichenbehafteten
+   Format-Codes dasselbe Ergebnis liefert.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.pack-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">format</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Zeichenkette <code class="parameter">format</code> besteht aus
+       Format-Codes, gefolgt von einem optionalen Wiederholungs-Argument.
+       Dieses Argument kann ein ganzzahliger Wert sein oder ein
+       <em>*</em> für Wiederholung bis ans Ende der Daten. Bei den
+       Format-Codes a, A, h und H gibt das Wiederholungs-Argument an, wie
+       viele gleiche Zeichen folgen. Im Zusammenhang mit &quot;@&quot; gibt das
+       Wiederholungs-Argument die absolute Position an, ab der das nächste
+       Zeichen steht. Bei allen anderen steht der Wiederholungs-Zähler für die
+       Anzahl der benutzten Daten-Argumente, die in die sich ergebende
+       Binär-Zeichenkette gepackt werden sollen.
+      </p>
+      <p class="para">
+       Zurzeit sind folgende Formate implementiert:
+       <table class="doctable table">
+        <caption><strong><span class="function">pack</span>-Formatzeichen</strong></caption>
+        
+         <thead>
+          <tr>
+           <th>Code</th>
+           <th>Beschreibung</th>
+          </tr>
+
+         </thead>
+
+         <tbody class="tbody">
+          <tr>
+           <td>a</td>
+           <td>mit NUL gefüllte Zeichenkette</td>
+          </tr>
+
+          <tr>
+           <td>A</td>
+           <td>mit Leerzeichen gefüllte Zeichenkette</td>
+          </tr>
+
+          <tr>
+           <td>h</td>
+           <td>Hex-Zeichenkette, unterer Halbwert zuerst</td>
+          </tr>
+
+          <tr>
+           <td>H</td>
+           <td>Hex-Zeichenkette, oberer Halbwert zuerst</td>
+          </tr>
+
+          <tr>
+           <td>c</td>
+           <td>vorzeichenbehaftetes Zeichen</td>
+          </tr>
+
+          <tr>
+           <td>C</td>
+           <td>vorzeichenloses Zeichen</td>
+          </tr>
+
+          <tr>
+           <td>s</td>
+           <td>
+            vorzeichenbehafteter Short-Typ (immer 16 Bit, Byte-Folge
+            maschinenabhängig)
+           </td>
+          </tr>
+
+          <tr>
+           <td>S</td>
+           <td>
+            vorzeichenloser Short-Typ (immer 16 Bit, Byte-Folge
+            maschinenabhängig)
+           </td>
+          </tr>
+
+          <tr>
+           <td>n</td>
+           <td>
+            vorzeichenloser Short-Typ (immer 16 Bit, Byte-Folge Big Endian)
+           </td>
+          </tr>
+
+          <tr>
+           <td>v</td>
+           <td>
+            vorzeichenloser Short-Typ (immer 16 Bit, Byte-Folge Little Endian)
+           </td>
+          </tr>
+
+          <tr>
+           <td>i</td>
+           <td>
+            vorzeichenbehaftete Ganzzahl (Größe und Byte-Folge
+            maschinenabhängig)
+           </td>
+          </tr>
+
+          <tr>
+           <td>I</td>
+           <td>
+            vorzeichenlose Ganzzahl (Größe und Byte-Folge maschinenabhängig)
+           </td>
+          </tr>
+
+          <tr>
+           <td>l</td>
+           <td>
+            vorzeichenbehafteter Long-Typ (immer 32 Bit, Byte-Folge
+            maschinenabhängig)
+           </td>
+          </tr>
+
+          <tr>
+           <td>L</td>
+           <td>
+            vorzeichenloser Long-Typ (immer 32 Bit, Byte-Folge
+            maschinenabhängig)
+           </td>
+          </tr>
+
+          <tr>
+           <td>N</td>
+           <td>
+            vorzeichenloser Long-Typ (immer 32 Bit, Byte-Folge Big Endian)
+           </td>
+          </tr>
+
+          <tr>
+           <td>V</td>
+           <td>
+            vorzeichenloser Long-Typ (immer 32 Bit, Byte-Folge Little Endian)
+           </td>
+          </tr>
+
+          <tr>
+           <td>q</td>
+           <td>
+            vorzeichenbehafteter Long-Long-Typ (immer 64 bit, maschinenabhängig)
+           </td>
+          </tr>
+
+          <tr>
+           <td>Q</td>
+           <td>
+            vorzeichenloser Long-Long-Typ (immer 64 bit, maschinenabhängig)
+           </td>
+          </tr>
+
+          <tr>
+           <td>J</td>
+           <td>
+            vorzeichenloser Long-Long-Typ (immer 64 bit, Byte-Folge Big Endian)
+           </td>
+          </tr>
+
+          <tr>
+           <td>P</td>
+           <td>
+            vorzeichenloser Long-Long-Typ (immer 64 bit, Byte-Folge Little Endian)
+           </td>
+          </tr>
+
+          <tr>
+           <td>f</td>
+           <td>
+            Gleitkommazahl (maschinenabhängige Größe und Wiedergabe)
+           </td>
+          </tr>
+
+          <tr>
+           <td>d</td>
+           <td>Double-Typ (maschinenabhängige Größe und Wiedergabe)</td>
+          </tr>
+
+          <tr>
+           <td>x</td>
+           <td>NUL Byte</td>
+          </tr>
+
+          <tr>
+           <td>X</td>
+           <td>geht in der Zeichenkette ein Byte rückwärts</td>
+          </tr>
+
+          <tr>
+           <td>Z</td>
+           <td>NUL-aufgefüllte Zeichenkette (neu in PHP 5.5)</td>
+          </tr>
+
+          <tr>
+           <td>@</td>
+           <td>NUL-Auffüllung bis zur absoluten Position</td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">args</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.pack-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt die Daten als Binär-Zeichenkette zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.pack-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.6.3</td>
+       <td>
+        Die &quot;q&quot;, &quot;Q&quot;, &quot;J&quot; und &quot;P&quot; Codes wurden hinzugefügt, um die Arbeit mit
+        64-bit Zahlen zu ermöglichen.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.5.0</td>
+       <td>
+        Der &quot;Z&quot; Code mit equivalenter Funktionsweise wie &quot;a&quot; wurde zwecks
+        Perl-Kompatibilität hinzugefügt.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.pack-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4268">
+    <p><strong>Beispiel #1 <span class="function">pack</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$binaerdaten&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pack</span><span style="color: #007700">(</span><span style="color: #DD0000">"nvc*"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0x1234</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0x5678</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">65</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">66</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Die sich daraus ergebende Binär-Zeichenkette ist sechs Bytes lang und
+     enthält die Byte-Folge 0x12, 0x34, 0x78, 0x56, 0x41, 0x42.
+    </p></div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.pack-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <div class="caution"><strong class="caution">Achtung</strong>
+   <p class="para">
+    Es ist zu beachten, dass PHP <span class="type">integer</span> Werte intern als
+    vorzeichenbehaftete Werte einer maschinenabhängigen Größe speichert (C-Typ
+    <em>long</em>). Integer-Literale und Operationen die Zahlen
+    außerhalb der Grenzen des <span class="type">integer</span>-Typs ergeben, werden als
+    <span class="type">float</span> gespeichert. Wenn diese Floats als Integer gepackt
+    werden, werden sie zuerst in den Integer-Typ gewandelt. Dies kann u.U. ein
+    nicht erwünschtes Byte-Muster ergeben.
+   </p>
+   <p class="para">
+    Der wichtigste Fall ist das Packen vorzeichenloser Zahlen, die als
+    <span class="type">integer</span>-Typ darstellbar wären, wenn dieser vorzeichenlos wäre.
+    Auf Systemen wo der <span class="type">integer</span>-Typ 32 bit groß ist, resultiert die
+    Umwandlung üblicherweise im selben Byte-Muster wie wenn der
+    <span class="type">integer</span> vorzeichenlos wäre (allerdings ist das auf
+    implementierungsspezifische Konvertierungen von vorzeichenlosen in
+    vorzeichenbehaftete Zahlen gemäß dem C-Standard angewiesen). Auf Systemen wo
+    der <span class="type">integer</span>-Typ 64 bit groß ist, hat <span class="type">float</span>
+    vermutlich keine Mantisse, die groß genug ist, um den Wert ohne
+    Genauigkeitsverlust zu speichern. Haben diese Systeme ebenfalls einen
+    nativen 64-bit C <em>int</em>-Typ (die meisten UNIX-artigen
+    Systeme haben das nicht), dann ist die einzige Möglichkeit das
+    <em>I</em>-Packformat auf den oberen Bereich zu nutzen, negative
+    <span class="type">integer</span> Werte mit der gleichen Byte-Darstellung wie die
+    gewünschten vorzeichenlosen Werte zu erzeugen.
+   </p>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.pack-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">unpack</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Gibt den Wert eines Offset-Punkts zur&uuml;ck</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="reserved.interfaces.html">Vordefinierte Interfaces und Klassen</a></li>
+  <li class="header up"><a href="class.arrayaccess.html">ArrayAccess</a></li>
+  <li><a href="arrayaccess.offsetexists.html">ArrayAccess::offsetExists</a></li>
+  <li class="active"><a href="arrayaccess.offsetget.html">ArrayAccess::offsetGet</a></li>
+  <li><a href="arrayaccess.offsetset.html">ArrayAccess::offsetSet</a></li>
+  <li><a href="arrayaccess.offsetunset.html">ArrayAccess::offsetUnset</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="arrayaccess.offsetexists.html">ArrayAccess::offsetExists</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="arrayaccess.offsetset.html">ArrayAccess::offsetSet</a></div>
+                <div class="up"><a href="class.arrayaccess.html">ArrayAccess</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="arrayaccess.offsetget" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">ArrayAccess::offsetGet</h1>
+  <p class="refpurpose">Gibt den Wert eines Offset-Punkts zurück</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-arrayaccess.offsetget-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">abstract</span> <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname">ArrayAccess::offsetGet</span>
+    ( <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$offset</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Gibt den Wert des angegebenen Offset-Punkts zurück.
+  </p>
+  <p class="para">
+   Diese Methode wird ausgeführt, wenn geprüft wird, ob ein Offset-Punkt
+   <span class="function">empty</span> ist.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-arrayaccess.offsetget-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">offset</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der zu untersuchende Offset-Punkt.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+
+ </div>
+
+ 
+ <div class="refsect1 notes" id="refsect1-arrayaccess.offsetget-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Beginnend mit PHP 5.3.4 kann <span class="function">ArrayAccess::offsetGet</span>
+    per Referenz zurückgeben. Somit ist es möglich Array Offsets von
+    Objekten welche mit <span class="classname">ArrayAccess</span> überladen
+    wurden indirekt zu modifizieren.
+   </p>
+   <p class="para">
+    Bei einer direkten Änderung wird der Wert eines Array Offsets
+    komplett ersetzt (beispielsweise <em>$obj[6] = 7</em>).
+    Bei einer indirekten Änderung wird nur ein Teil des Array
+    Offsets geändert (<em>$obj[6][7] = 7</em>) oder das
+    Array Offset einer Variablen per Referenz zugewiesen
+    (<em>$var =&amp; $obj[6]</em>). Auch Inkrementierung
+    mit <em>++</em> und Dekrementierung mit <em>--</em>
+    sind derartig implementiert, dass sie indirekte Änderung erfordern.
+   </p>
+   <p class="para">
+    Direkte Änderungen führen zu einem Aufruf von
+    <span class="function">ArrayAccess::offsetSet</span>, wohingegen indirekte
+    Änderungen in einem Aufruf von <span class="function">ArrayAccess::offsetGet</span>
+    resultieren. In diesem Fall muss die Implementierung von
+    <span class="function">ArrayAccess::offsetGet</span> in der Lage sein per Referenz
+    zurückzugeben, ansonsten wird ein <strong><code>E_NOTICE</code></strong> Fehler
+    generiert.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-arrayaccess.offsetget-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Kann Werte aller Typen zurückgeben.
+  </p>
+ </div>
+
+
+
+
+ <div class="refsect1 seealso" id="refsect1-arrayaccess.offsetget-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"> <span class="methodname">ArrayAccess::offsetExists</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

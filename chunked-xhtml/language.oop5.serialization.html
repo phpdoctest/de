@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Serialisierung von Objekten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.oop5.html">Klassen und Objekte</a></li>
+  <li><a href="oop5.intro.html">Einf&uuml;hrung</a></li>
+  <li><a href="language.oop5.basic.html">Die Grundlagen</a></li>
+  <li><a href="language.oop5.properties.html">Eigenschaften</a></li>
+  <li><a href="language.oop5.constants.html">Klassenkonstanten</a></li>
+  <li><a href="language.oop5.autoload.html">Autoloading</a></li>
+  <li><a href="language.oop5.decon.html">Konstruktoren und Destruktoren</a></li>
+  <li><a href="language.oop5.visibility.html">Sichtbarkeit</a></li>
+  <li><a href="language.oop5.inheritance.html">Objekt-Vererbung</a></li>
+  <li><a href="language.oop5.paamayim-nekudotayim.html">G&uuml;ltigkeitsbereichsoperator (::)</a></li>
+  <li><a href="language.oop5.static.html">Static-Schl&uuml;sselwort</a></li>
+  <li><a href="language.oop5.abstract.html">Klassenabstraktion</a></li>
+  <li><a href="language.oop5.interfaces.html">Interfaces</a></li>
+  <li><a href="language.oop5.traits.html">Traits</a></li>
+  <li><a href="language.oop5.anonymous.html">Anonyme Klassen</a></li>
+  <li><a href="language.oop5.overloading.html">&Uuml;berladung</a></li>
+  <li><a href="language.oop5.iterations.html">Objektiteration</a></li>
+  <li><a href="language.oop5.magic.html">Magische Methoden</a></li>
+  <li><a href="language.oop5.final.html">Final-Schl&uuml;sselwort</a></li>
+  <li><a href="language.oop5.cloning.html">Objekte klonen</a></li>
+  <li><a href="language.oop5.object-comparison.html">Objekte vergleichen</a></li>
+  <li><a href="language.oop5.typehinting.html">Type-Hints</a></li>
+  <li><a href="language.oop5.late-static-bindings.html">Sp&auml;te statische Bindung</a></li>
+  <li><a href="language.oop5.references.html">Objekte und Referenzen</a></li>
+  <li class="active"><a href="language.oop5.serialization.html">Serialisierung von Objekten</a></li>
+  <li><a href="language.oop5.changelog.html">OOP-Changelog</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.oop5.references.html">Objekte und Referenzen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.oop5.changelog.html">OOP-Changelog</a></div>
+                <div class="up"><a href="language.oop5.html">Klassen und Objekte</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.oop5.serialization" class="sect1">
+  <h2 class="title">Serialisierung von Objekten</h2>
+  <h2 class="title">Serialisierung von Objekten - Objekte in Sessions</h2>
+
+  <p class="para">
+   <span class="function">serialize</span> erzeugt einen String, welcher
+   die Byte-Stream-Repräsentation eines jeden Wertes besitzt,
+   der in PHP gespeichert werden kann. 
+   <span class="function">unserialize</span> kann diesen String verwenden,
+   um die ursprünglichen Variablenwerte wiederherzustellen. Verwendet
+   man <span class="function">serialize</span>, um ein Objekt zu speichern,
+   so werden alle Variablen dieses Objektes gespeichert. Die 
+   Methoden des Objektes werden nicht gespeichert, nur der Name
+   der Klasse.
+  </p>
+
+  <p class="para">
+   Damit man imstande ist, ein Objekt mit <span class="function">unserialize</span>
+   wiederherzustellen, muss die Klasse des Objektes definiert sein.
+   Das heißt, wenn man ein Objekt der Klasse A serialisiert, erhält man
+   einen String, der sich auf die Klasse A bezieht und die Werte
+   aller darin enthaltenen Variablen beinhaltet. Wenn man in einer
+   anderen Datei diesen String wieder zu einem Objekt der Klasse A
+   deserialisieren will, so muss die Klasse A in dieser Datei
+   vorher bekannt sein. Dies kann man erreichen, indem man die
+   Definition der Klasse A in eine mittels include
+   ladbare Datei auslagert und diese Datei einbindet oder die Funktion
+   <span class="function">spl_autoload_register</span> verwendet.
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;classa.inc:<br /><br />&nbsp;&nbsp;</span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">A&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$one&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">show_one</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">one</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;}<br /><br /></span><span style="color: #FF8000">//&nbsp;page1.php:<br /><br />&nbsp;&nbsp;</span><span style="color: #007700">include(</span><span style="color: #DD0000">"classa.inc"</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">A</span><span style="color: #007700">;<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$s&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">serialize</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;$s&nbsp;irgendwo&nbsp;ablegen,&nbsp;wo&nbsp;page2.php&nbsp;dies&nbsp;finden&nbsp;kann.<br />&nbsp;&nbsp;</span><span style="color: #0000BB">file_put_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'store'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$s</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;page2.php:<br /><br />&nbsp;&nbsp;//&nbsp;Dies&nbsp;ist&nbsp;nötig,&nbsp;damit&nbsp;unserialize&nbsp;korrekt&nbsp;funktioniert.&nbsp;<br />&nbsp;&nbsp;</span><span style="color: #007700">include(</span><span style="color: #DD0000">"classa.inc"</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;</span><span style="color: #0000BB">$s&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'store'</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">unserialize</span><span style="color: #007700">(</span><span style="color: #0000BB">$s</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Nun&nbsp;kann&nbsp;man&nbsp;die&nbsp;Funktion&nbsp;show_one()&nbsp;des&nbsp;Objektes&nbsp;$a<br />&nbsp;&nbsp;//&nbsp;verwenden.<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">show_one</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+  <p class="para">
+   Wenn eine Anwendung Sessions verwendet und die Funktion
+   <span class="function">session_register</span> benutzt, um Objekte zu
+   registrieren, so werden diese Objekte automatisch am Schluss jeder
+   PHP-Seite serialisiert und in jeder nachfolgenden PHP-Seite
+   deserialisiert. Das heißt, dass diese Objekte in jeder Seite
+   der Anwendung auftauchen können, sobald diese Teil der Session
+   werden. <span class="function">session_register</span> wurde in
+   PHP 5.4.0 jedoch entfernt.
+  </p>
+
+  <p class="para">
+   Es ist dringend empfohlen, dass wenn eine Anwendung Objekte zur späteren
+   Verwendung in der Anwendung serialisiert, die Klassendefinitionen in
+   der gesamten Anwendung eingebunden werden. Wird dies nicht beachtet, so
+   wird das Objekt ohne eine Klassendefinition deserialisiert, was dazu
+   führen wird, dass PHP dem Objekt eine Klasse
+   <span class="classname">__PHP_Incomplete_Class_Name</span> zuweisen wird, welche
+   keine Methoden besitzt. Dies wird das Objekt nutzlos machen. 
+  </p>
+
+  <p class="para">
+   Wenn also im obigen Beispiel <var class="varname">$a</var> Teil einer Session würde,
+   indem man <em>session_register(&quot;a&quot;)</em> benutzt, so sollte die
+   Datei <em>classa.inc</em> in jeder Seite eingebunden werden, nicht 
+   nur in <var class="filename">page1.php</var> und <var class="filename">page2.php</var>.
+  </p>
+  
+  <p class="para">
+   Beachten Sie neben den obigen Hinweisen dass man sich in die Serialisierungs- und
+   Deserialisierungs-Ereignisse einklinken kann, indem man die Methoden
+   <a href="language.oop5.magic.html#object.sleep" class="link">__sleep()</a> und 
+   <a href="language.oop5.magic.html#object.wakeup" class="link">__wakeup()</a> eines Objektes verwendet.
+   Die Verwendung von <a href="language.oop5.magic.html#object.sleep" class="link">__sleep()</a> erlaubt es
+   nur eine Teilmenge der Eigenschaften eines Objektes zu serialisieren.
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

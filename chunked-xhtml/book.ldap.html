@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Lightweight Directory Access Protocol</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li><a href="book.chdb.html">chdb</a></li>
+  <li><a href="book.curl.html">cURL</a></li>
+  <li><a href="book.event.html">Event</a></li>
+  <li><a href="book.fam.html">FAM</a></li>
+  <li><a href="book.ftp.html">FTP</a></li>
+  <li><a href="book.gearman.html">Gearman</a></li>
+  <li><a href="book.net-gopher.html">Gopher</a></li>
+  <li><a href="book.gupnp.html">Gupnp</a></li>
+  <li><a href="book.hwapi.html">Hyperwave API</a></li>
+  <li class="active"><a href="book.ldap.html">LDAP</a></li>
+  <li><a href="book.memcache.html">Memcache</a></li>
+  <li><a href="book.memcached.html">Memcached</a></li>
+  <li><a href="book.mqseries.html">mqseries</a></li>
+  <li><a href="book.network.html">Network</a></li>
+  <li><a href="book.rrd.html">RRD</a></li>
+  <li><a href="book.sam.html">SAM</a></li>
+  <li><a href="book.snmp.html">SNMP</a></li>
+  <li><a href="book.sockets.html">Sockets</a></li>
+  <li><a href="book.ssh2.html">SSH2</a></li>
+  <li><a href="book.stomp.html">Stomp</a></li>
+  <li><a href="book.svm.html">SVM</a></li>
+  <li><a href="book.svn.html">SVN</a></li>
+  <li><a href="book.tcpwrap.html">TCP</a></li>
+  <li><a href="book.varnish.html">Varnish</a></li>
+  <li><a href="book.yaz.html">YAZ</a></li>
+  <li><a href="book.nis.html">YP/NIS</a></li>
+  <li><a href="book.zmq.html">0MQ messaging</a></li>
+  <li><a href="book.zookeeper.html">ZooKeeper</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.hwapi-object-new.html">hwapi_object_new</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.ldap.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.remote.other.html">Sonstige Dienste</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.ldap" class="book">
+ 
+ <h1>Lightweight Directory Access Protocol</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.ldap.html">Einf&uuml;hrung</a></li>
+<li><a href="ldap.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="ldap.requirements.html">Anforderungen</a></li>
+<li><a href="ldap.installation.html">Installation</a></li>
+<li><a href="ldap.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="ldap.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="ldap.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ldap.using.html">Using the PHP LDAP calls</a></li>
+<li><a href="ldap.examples.html">Beispiele</a><ul class="chunklist chunklist_title">
+<li><a href="ldap.examples-basic.html">Grundlegende Nutzung</a></li>
+</ul>
+</li>
+<li><a href="ref.ldap.html">LDAP Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.ldap-8859-to-t61.html">ldap_8859_to_t61</a> — &Uuml;bersetzt 8859 Zeichen nach t61 Zeichen</li>
+<li><a href="function.ldap-add.html">ldap_add</a> — Eintr&auml;ge einem LDAP Verzeichnis hinzuf&uuml;gen</li>
+<li><a href="function.ldap-bind.html">ldap_bind</a> — Bindung zu einem LDAP Verzeichnis</li>
+<li><a href="function.ldap-close.html">ldap_close</a> — Verbindung zum LDAP-Server schlie&szlig;en</li>
+<li><a href="function.ldap-compare.html">ldap_compare</a> — Vergleicht gefundenen Wert eines Merkmal in einem Eintrag, der
+     durch Angabe von dn bestimmt wird.</li>
+<li><a href="function.ldap-connect.html">ldap_connect</a> — Verbindet zu einem LDAP Server</li>
+<li><a href="function.ldap-control-paged-result-response.html">ldap_control_paged_result_response</a> — Retrieve the LDAP pagination cookie</li>
+<li><a href="function.ldap-control-paged-result.html">ldap_control_paged_result</a> — Send LDAP pagination control</li>
+<li><a href="function.ldap-count-entries.html">ldap_count_entries</a> — Z&auml;hlt die Anzahl der Eintr&auml;ge bei einer Suche</li>
+<li><a href="function.ldap-delete.html">ldap_delete</a> — L&ouml;scht einen Eintrag aus einem Verzeichnis</li>
+<li><a href="function.ldap-dn2ufn.html">ldap_dn2ufn</a> — Konvertiert DN in ein benutzerfreundliches Namensformat</li>
+<li><a href="function.ldap-err2str.html">ldap_err2str</a> — Konvertiert eine LDAP Fehlernummer in einen Fehlertext</li>
+<li><a href="function.ldap-errno.html">ldap_errno</a> — Liefert die LDAP Fehlernummer des letzten LDAP Kommandos</li>
+<li><a href="function.ldap-error.html">ldap_error</a> — Liefert die LDAP Fehlermeldung des letzten LDAP Kommandos</li>
+<li><a href="function.ldap-escape.html">ldap_escape</a> — Escape a string for use in an LDAP filter or DN</li>
+<li><a href="function.ldap-explode-dn.html">ldap_explode_dn</a> — Aufteilung eines DN in seine Bestandteile</li>
+<li><a href="function.ldap-first-attribute.html">ldap_first_attribute</a> — Liefert das erste Merkmal</li>
+<li><a href="function.ldap-first-entry.html">ldap_first_entry</a> — Liefert die Kennung des ersten Ergebnisses</li>
+<li><a href="function.ldap-first-reference.html">ldap_first_reference</a> — Liefert die erste Referenz</li>
+<li><a href="function.ldap-free-result.html">ldap_free_result</a> — Gibt den belegten Speicher wieder frei</li>
+<li><a href="function.ldap-get-attributes.html">ldap_get_attributes</a> — Liefert Merkmale eines Suchergebnis-Eintrags</li>
+<li><a href="function.ldap-get-dn.html">ldap_get_dn</a> — Liefert den DN eines Ergebnis-Eintrags</li>
+<li><a href="function.ldap-get-entries.html">ldap_get_entries</a> — Liefert alle Ergebnis-Eintr&auml;ge</li>
+<li><a href="function.ldap-get-option.html">ldap_get_option</a> — Liefert den aktuellen Wert f&uuml;r eine gegebene Option</li>
+<li><a href="function.ldap-get-values-len.html">ldap_get_values_len</a> — Liefert alle bin&auml;ren Werte eines Ergebnis-Eintrags</li>
+<li><a href="function.ldap-get-values.html">ldap_get_values</a> — Liefert alle Werte eines Ergebnis-Eintrags</li>
+<li><a href="function.ldap-list.html">ldap_list</a> — Einstufige Suche</li>
+<li><a href="function.ldap-mod-add.html">ldap_mod_add</a> — Hinzuf&uuml;gen von Merkmalswerten zu aktuellen Merkmalen</li>
+<li><a href="function.ldap-mod-del.html">ldap_mod_del</a> — L&ouml;schen von Merkmalswerten aktueller Merkmale</li>
+<li><a href="function.ldap-mod-replace.html">ldap_mod_replace</a> — Ersetzen von Merkmalswerten mit neuen Merkmalswerten</li>
+<li><a href="function.ldap-modify-batch.html">ldap_modify_batch</a> — Batch and execute modifications on an LDAP entry</li>
+<li><a href="function.ldap-modify.html">ldap_modify</a> — Ver&auml;ndern eines LDAP-Eintrags</li>
+<li><a href="function.ldap-next-attribute.html">ldap_next_attribute</a> — Liefert das n&auml;chste Merkmal im Ergebnis</li>
+<li><a href="function.ldap-next-entry.html">ldap_next_entry</a> — Liefert den n&auml;chsten Eintrag des Ergebnisses</li>
+<li><a href="function.ldap-next-reference.html">ldap_next_reference</a> — Holt die n&auml;chste Referenz</li>
+<li><a href="function.ldap-parse-reference.html">ldap_parse_reference</a> — Gewinnt Informationen aus einem Referenz-Eintrag</li>
+<li><a href="function.ldap-parse-result.html">ldap_parse_result</a> — Gewinnt Informationen aus einem Ergebnis</li>
+<li><a href="function.ldap-read.html">ldap_read</a> — Lesen eines Eintrags</li>
+<li><a href="function.ldap-rename.html">ldap_rename</a> — Ver&auml;ndert den Namen eines Eintrags</li>
+<li><a href="function.ldap-sasl-bind.html">ldap_sasl_bind</a> — Bind to LDAP directory using SASL</li>
+<li><a href="function.ldap-search.html">ldap_search</a> — Suche im LDAP Baum</li>
+<li><a href="function.ldap-set-option.html">ldap_set_option</a> — Setzt den Wert der gegebenen Option</li>
+<li><a href="function.ldap-set-rebind-proc.html">ldap_set_rebind_proc</a> — Set a callback function to do re-binds on referral chasing.</li>
+<li><a href="function.ldap-sort.html">ldap_sort</a> — Sortiert LDAP Ergebniseintr&auml;ge</li>
+<li><a href="function.ldap-start-tls.html">ldap_start_tls</a> — Startet TLS</li>
+<li><a href="function.ldap-t61-to-8859.html">ldap_t61_to_8859</a> — &Uuml;bersetzt t61 Zeichen nach 8859 Zeichen</li>
+<li><a href="function.ldap-unbind.html">ldap_unbind</a> — Unbind von einem LDAP Verzeichnis</li>
+</ul>
+</li>
+</ul>
+
+  
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

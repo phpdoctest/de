@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Konstanten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li class="header up"><a href="book.pcre.html">PCRE</a></li>
+  <li><a href="intro.pcre.html">Einf&uuml;hrung</a></li>
+  <li><a href="pcre.setup.html">Installation/Konfiguration</a></li>
+  <li class="active"><a href="pcre.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="pcre.examples.html">Beispiele</a></li>
+  <li><a href="pcre.pattern.html">PCRE-Suchmuster</a></li>
+  <li><a href="ref.pcre.html">PCRE-Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="pcre.resources.html">Ressource-Typen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="pcre.examples.html">Beispiele</a></div>
+                <div class="up"><a href="book.pcre.html">PCRE</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="pcre.constants" class="appendix">
+ <h1>Vordefinierte Konstanten</h1>
+ <p class="simpara">Folgende Konstanten werden von dieser
+Erweiterung definiert und stehen nur zur Verfügung, wenn die Erweiterung entweder
+statisch in PHP kompiliert oder dynamisch zur Laufzeit geladen
+wurde.</p>
+ <table class="doctable table">
+  <caption><strong>PREG-Konstanten</strong></caption>
+  
+   <thead>
+    <tr>
+     <th>Konstante</th>
+     <th>Beschreibung</th>
+     <th>Seit</th>
+    </tr>
+
+   </thead>
+
+   <tbody class="tbody">
+    <tr id="constant.preg-pattern-order">
+     <td><strong><code>PREG_PATTERN_ORDER</code></strong></td>
+     <td>
+      Sortiert die Ergebnisse so, dass <var class="varname">$matches[0]</var>
+      ein Array von Übereinstimmungen mit dem ganzen Suchmuster ist,
+      <var class="varname">$matches[1]</var> ein Array von Zeichenketten, die mit dem
+      ersten geklammerten Teilsuchmuster übereinstimmen und so weiter. Dieses
+      Flag wird nur bei <span class="function">preg_match_all</span> verwendet.
+     </td>
+     <td class="empty">&nbsp;</td>
+    </tr>
+
+    <tr id="constant.preg-set-order">
+     <td><strong><code>PREG_SET_ORDER</code></strong></td>
+     <td>
+      Sortiert die Ergebnisse so, dass <var class="varname">$matches[0]</var> ein
+      Array des ersten Satzes von Übereinstimmungen ist,
+      <var class="varname">$matches[1]</var> ein Array des zweiten Satzes von
+      Übereinstimmungen und so weiter. Dieses Flag wird nur bei
+      <span class="function">preg_match_all</span> verwendet.
+     </td>
+     <td class="empty">&nbsp;</td>
+    </tr>
+
+    <tr id="constant.preg-offset-capture">
+     <td><strong><code>PREG_OFFSET_CAPTURE</code></strong></td>
+     <td>
+      Siehe Beschreibung von <strong><code>PREG_SPLIT_OFFSET_CAPTURE</code></strong>.
+     </td>
+     <td>4.3.0</td>
+    </tr>
+
+    <tr id="constant.preg-split-no-empty">
+     <td><strong><code>PREG_SPLIT_NO_EMPTY</code></strong></td>
+     <td>
+      Dieses Flag teilt der Funktion <span class="function">preg_split</span> mit, dass
+      sie nur nicht-leere Teile zurückgeben soll.
+     </td>
+     <td class="empty">&nbsp;</td>
+    </tr>
+
+    <tr id="constant.preg-split-delim-capture">
+     <td><strong><code>PREG_SPLIT_DELIM_CAPTURE</code></strong></td>
+     <td>
+      Dieses Flag teilt der Funktion <span class="function">preg_split</span> mit, dass
+      sie auch die eingeklammerten Ausdrücke des Trennsymbol-Musters
+      zurückgeben soll.
+     </td>
+     <td>4.0.5</td>
+    </tr>
+
+    <tr id="constant.preg-split-offset-capture">
+     <td><strong><code>PREG_SPLIT_OFFSET_CAPTURE</code></strong></td>
+     <td>
+      Wenn dieses Flag gesetzt ist, wird für jede gefundene Übereinstimmung
+      auch der dazugehörige Versatz zurückgegeben. Beachten Sie, dass dies die
+      Rückgabewerte in einem Array dahingehend ändert, dass jedes Element ein
+      Array ist, das aus der übereinstimmenden Zeichenkette als erstem und
+      deren Stelle im durchsuchten Text als zweitem Element besteht. Dieses
+      Flag wird nur für <span class="function">preg_split</span> verwendet.
+     </td>
+     <td>4.3.0</td>
+    </tr>
+
+    <tr id="constant.preg-no-error">
+     <td><strong><code>PREG_NO_ERROR</code></strong></td>
+     <td>
+      Dieses Flag wird von <span class="function">preg_last_error</span> zurückgegeben,
+      falls kein Fehler aufgetreten ist.
+     </td>
+     <td>5.2.0</td>
+    </tr>
+
+    <tr id="constant.preg-internal-error">
+     <td><strong><code>PREG_INTERNAL_ERROR</code></strong></td>
+     <td>
+      Dieses Flag wird von <span class="function">preg_last_error</span> zurückgegeben,
+      falls ein interner PCRE-Fehler aufgetreten ist.
+     </td>
+     <td>5.2.0</td>
+    </tr>
+
+    <tr id="constant.preg-backtrack-limit-error">
+     <td><strong><code>PREG_BACKTRACK_LIMIT_ERROR</code></strong></td>
+     <td>
+      Dieses Flag wird von <span class="function">preg_last_error</span> zurückgegeben,
+      falls das <a href="pcre.configuration.html#ini.pcre.backtrack-limit" class="link">Limit der
+      Zurückverfolgung (Backtracking)</a> überschritten wurde.
+     </td>
+     <td>5.2.0</td>
+    </tr>
+
+    <tr id="constant.preg-recursion-limit-error">
+     <td><strong><code>PREG_RECURSION_LIMIT_ERROR</code></strong></td>
+     <td>
+      Dieses Flag wird von <span class="function">preg_last_error</span> zurückgegeben,
+      falls das <a href="pcre.configuration.html#ini.pcre.recursion-limit" class="link">Rekursionslimit</a> überschritten
+      wurde.
+     </td>
+     <td>5.2.0</td>
+    </tr>
+
+    <tr id="constant.preg-bad-utf8-error">
+     <td><strong><code>PREG_BAD_UTF8_ERROR</code></strong></td>
+     <td>
+      Dieses Flag wird von <span class="function">preg_last_error</span> zurückgegeben,
+      falls der letzte Fehler durch fehlerhafte UTF-8-Daten verursacht wurde
+      (nur bei RegEx, die im <a href="reference.pcre.pattern.modifiers.html" class="link">UTF-8-Modus</a> laufen).
+     </td>
+     <td>5.2.0</td>
+    </tr>
+
+    <tr id="constant.preg-bad-utf8-offset-error">
+     <td><strong><code>PREG_BAD_UTF8_OFFSET_ERROR</code></strong></td>
+     <td>
+      Dieses Flag wird von <span class="function">preg_last_error</span> zurückgegeben,
+      falls sich der Versatz nicht mit dem Anfang eines gültigen
+      UTF-8-Codepoints deckt (nur wenn die RegEx im <a href="reference.pcre.pattern.modifiers.html" class="link">UTF-8-Modus</a> ausgeführt
+      wird).
+     </td>
+     <td>5.3.0</td>
+    </tr>
+
+    <tr id="constant.preg-jit-stacklimit-error">
+     <td><strong><code>PREG_JIT_STACKLIMIT_ERROR</code></strong></td>
+     <td>
+      Dieses Flag wird von <span class="function">preg_last_error</span> zurückgegeben,
+      falls die letzte PCRE-Funktion wegen begrenzten Speichers im JIT-Stack
+      fehlschlug.
+     </td>
+     <td>7.0.0</td>
+    </tr>
+
+    <tr id="constant.pcre-version">
+     <td><strong><code>PCRE_VERSION</code></strong></td>
+     <td>
+      Die PCRE-Version und das Freigabedatum (z.B.
+      &quot;<em>7.0 18-Dec-2006</em>&quot;).
+     </td>
+     <td>5.2.4</td>
+    </tr>
+
+   </tbody>
+  
+ </table>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

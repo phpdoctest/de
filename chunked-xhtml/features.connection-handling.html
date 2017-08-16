@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Verbindungssteuerung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="features.html">Features</a></li>
+  <li><a href="features.http-auth.html">HTTP-Authentifizierung mit PHP</a></li>
+  <li><a href="features.cookies.html">Cookies</a></li>
+  <li><a href="features.sessions.html">Sessions</a></li>
+  <li><a href="features.xforms.html">Mit XForms umgehen</a></li>
+  <li><a href="features.file-upload.html">Steuerung von Dateiuploads</a></li>
+  <li><a href="features.remote-files.html">Zugriff auf entfernte Dateien</a></li>
+  <li class="active"><a href="features.connection-handling.html">Verbindungssteuerung</a></li>
+  <li><a href="features.persistent-connections.html">Persistente Datenbankverbindungen</a></li>
+  <li><a href="features.safe-mode.html">Safe Mode</a></li>
+  <li><a href="features.commandline.html">Nutzung auf der Kommandzeile</a></li>
+  <li><a href="features.gc.html">Garbage Collection</a></li>
+  <li><a href="features.dtrace.html">DTrace Dynamic Tracing</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="features.remote-files.html">Zugriff auf entfernte Dateien</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="features.persistent-connections.html">Persistente Datenbankverbindungen</a></div>
+                <div class="up"><a href="features.html">Features</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="features.connection-handling" class="chapter">
+  <h1>Verbindungssteuerung</h1>
+
+  <p class="para">
+   PHP erhält intern einen Verbindungsstatus. Dieser kann vier
+   Zustände annehmen:
+   <ul class="itemizedlist">
+    <li class="listitem"><span class="simpara">0 - NORMAL</span></li>
+    <li class="listitem"><span class="simpara">1 - ABORTED</span></li>
+    <li class="listitem"><span class="simpara">2 - TIMEOUT</span></li>
+    <li class="listitem"><span class="simpara">3 - ABORTED und TIMEOUT</span></li>
+   </ul>
+  </p>
+
+  <p class="simpara">
+   Wenn ein PHP-Skript aktiv ist, ist der Status üblicherweise
+   NORMAL. Sollte der Client-Rechner die Verbindung beenden, wird
+   der Status auf ABORTED gesetzt. Ein clientseitiges Beenden der
+   Verbindung wird für gewöhnlich veranlasst, wenn der Benutzer den
+   STOP-Button seines Browsers drückt. Wenn das eingestellte Zeitlimit
+   (siehe <span class="function">set_time_limit</span>) überschritten wird,
+   wird der Status TIMEOUT gesetzt.</p>
+
+  <p class="simpara">
+   Sie können entscheiden, ob der Verbindungsabbruch seitens des Clients
+   den Abbruch des Skriptes zur Folge haben soll.
+   Manchmal ist es sinnvoll, Skripte sauber zu beenden, auch wenn
+   kein Browser mehr zur Verfügung steht, der die Ausgabe empfängt.
+   Die Abarbeitung eines Skriptes wird standardmäßig abgebrochen, wenn
+   der Client die Verbindung beendet.
+   Dieses Verhalten kann sowohl durch die Option
+   <strong class="option unknown">ignore_user_abort</strong>
+ in
+   der Konfigurationsdatei <var class="filename">php.ini</var>, durch die entsprechende
+   Option <em>php_value ignore_user_abort</em> in der Apache-Konfigurationsdatei
+   <var class="filename">httpd.conf</var> als auch durch <span class="function">ignore_user_abort</span> beeinflußt
+   werden.
+   Wenn PHP nicht angewiesen wird, einen Verbindungsabbruch durch den
+   Benutzer zu ignorieren und die Verbindung dann durch den Benutzer
+   beendet wird, wird die Abarbeitung des Scriptes abgebrochen. Die einzige
+   Ausnahme ist, wenn durch die Funktion
+   <span class="function">register_shutdown_function</span> eine Shutdown-Funktion
+   angegeben wird, die bei clientseitigem Abbruch ausgeführt wird.
+   Wenn dann der Benutzer den STOP-Button seines Browsers drückt, wird
+   PHP bei der nächsten Ausgabe des Skriptes feststellen, dass die
+   Verbindung abgebrochen wurde und die Shutdown-Funktion aufrufen.
+   Diese Shutdown-Funktion wird auch aufgerufen, wenn das Skript auf
+   normalem Wege beendet wird, daher sollte man, wenn man für den
+   Fall eines Benutzerabbruchs etwas anderes vorgesehen hat,
+   die Funktion <span class="function">connection_aborted</span> verwenden.
+   Sie gibt <strong><code>TRUE</code></strong> zurück, wenn die Verbindung abgebrochen wurde.</p>
+
+  <p class="simpara">
+   Ein Skript kann ebenfalls durch den eingebauten Script-Timer
+   beendet werden. Der Standard-Timeout beträgt 30 Sekunden. Er kann
+   durch die Option <strong class="option unknown">max_execution_time</strong>
+ in der <var class="filename">php.ini</var>,
+   durch den entsprechenden Eintrag
+   <em>php_value max_execution_time</em> in der
+   Apache-Konfigurationsdatei <var class="filename">httpd.conf</var> oder durch die Funktion
+   <span class="function">set_time_limit</span> beeinflußt werden. Bei
+   Zeitüberschreitung wird das Skript beendet und, genau wie im obigen
+   Fall des Verbindungsabbruchs, eine registrierte Shutdown-Funktion
+   ausgeführt. Um zu überprüfen, ob es sich um einen Abbruch aufgrund
+   von Zeitüberschreitung handelt, kann die Funktion
+   <span class="function">connection_status</span> benutzt werden. Sie gibt
+   <em>2</em> zurück, wenn es sich um eine Zeitüberschreitung
+   handelt.</p>
+
+  <p class="simpara">
+   Zu bemerken ist, dass der ABORTED- und der TIMEOUT-Status gleichzeitig
+   auftreten können. Dies ist möglich, wenn PHP angewiesen wird,
+   Benutzerabbrüche zu ignorieren. PHP wird feststellen, dass der
+   Benutzer die Verbindung abgebrochen hat, das Skript allerdings
+   läuft weiter. Sollte es dann das Zeitlimit erreichen, wird es
+   abgebrochen und eine Shutdown-Funktion, wenn definiert, wird
+   aufgerufen. Zu diesem Zeitpunkt kann man feststellen, dass
+   <span class="function">connection_timeout</span>
+   und <span class="function">connection_aborted</span> <strong><code>TRUE</code></strong> zurückgeben.
+   Diese beiden Statusmöglichkeiten können auch durch einen Aufruf
+   der Funktion <span class="function">connection_status</span> abgefragt
+   werden. Sie liefert ein Bitfeld des aktiven Status. Wenn
+   beispielsweise TIMEOUT und ABORTED aktiv sind, wird 3 zurückgegeben.
+   </p>
+
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

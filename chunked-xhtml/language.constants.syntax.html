@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Syntax</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.constants.html">Konstanten</a></li>
+  <li class="active"><a href="language.constants.syntax.html">Syntax</a></li>
+  <li><a href="language.constants.predefined.html">Magische Konstanten</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.constants.html">Konstanten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.constants.predefined.html">Magische Konstanten</a></div>
+                <div class="up"><a href="language.constants.html">Konstanten</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.constants.syntax" class="sect1">
+   <h2 class="title">Syntax</h2>
+   <p class="simpara">
+    Sie können eine Konstante definieren, indem Sie entweder die
+    <span class="function">define</span>-Funktion oder ab PHP 5.3.0 das Schlüsselwort
+    <em>const</em> außerhalb einer Klassendefinition verwenden.
+    Während <span class="function">define</span> es ermöglicht eine Konstante auf einen
+    beliebigen Wert zu definieren, hat das <em>const</em>
+    Schlüsselwort Einschränkungen, die im nächsten Absatz beschrieben werden.
+    Einmal
+    definiert, kann eine Konstane weder verändert noch gelöscht werden.
+   </p>
+   <p class="simpara">
+    Wenn das <em>const</em> Schlüsselwort verwendet wird,
+    können Konstanten vor PHP 5.6 nur skalare Daten (<span class="type">boolean</span>,
+    <span class="type">integer</span>, <span class="type">float</span> und <span class="type">string</span>) enthalten.
+    Von PHP 5.6 an ist es möglich eine Konstante als skalaren Ausdruck zu
+    definieren, und es ist ebenfalls möglich eine <span class="type">Array</span> Konstante zu definieren.
+    Es ist möglich, Konstanten vom Typ <span class="type">resource</span> zu definieren,
+    dies sollte allerdings vermieden werden, da es zu unerwarteten Ergebnissen
+    führen kann.
+   </p>
+   <p class="simpara">
+    Den Wert einer Konstanten erhalten Sie durch die einfache Angabe ihres
+    Namens. Im Gegensatz zu Variablen sollten Sie einer Konstanten
+    <em class="emphasis">kein</em> <em>$</em> voranstellen.
+    Ebenso können Sie die Funktion <span class="function">constant</span> benutzen, um
+    den Wert einer Konstanten auszulesen, wenn Sie den Namen der Konstanten
+    dynamisch erhalten wollen.
+    Benutzen Sie <span class="function">get_defined_constants</span>, um eine Liste
+    aller definierten Konstanten zu erhalten.
+   </p>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <span class="simpara">
+     Konstanten und (globale) Variablen befinden sich in unterschiedlichen
+     Namensräumen. Das hat zum Beispiel zur Folge, dass <strong><code>TRUE</code></strong> und
+     <var class="varname">$TRUE</var> etwas völlig Verschiedenes sind.
+    </span>
+   </p></blockquote>
+   <p class="simpara">
+    Falls Sie eine undefinierte Konstante verwenden, nimmt PHP an, dass
+    Sie den Namen der Konstanten selbst meinen, so als ob Sie sie als einen
+    <span class="type">string</span> (CONSTANT vs &quot;CONSTANT&quot;) aufgerufen hätten. Falls das
+    passiert, wird Ihnen ein Fehler vom Typ <a href="ref.errorfunc.html" class="link">E_NOTICE</a> ausgegeben. Lesen Sie ebenfalls
+    den entsprechenden Manualabschnitt, der erklärt, warum <a href="language.types.array.html#language.types.array.foo-bar" class="link">$foo[bar]</a> falsch ist
+    (zumindest solange Sie nicht zuvor <em>bar</em> mittels
+    <span class="function">define</span> als Konstante definiert haben).
+    Dies gilt nicht für <a href="language.namespaces.rules.html" class="link">(vollständig)
+    qualifizierte Konstanten</a>, die einen fatalen Fehler erzeugen, wenn sie
+    undefiniert sind.
+    Möchten Sie
+    einfach nur nachprüfen, ob eine Konstante definiert ist, benutzen Sie die
+    Funktion <span class="function">defined</span>.
+   </p>
+   <p class="para">
+    Das hier sind die Unterschiede zwischen Konstanten und Variablen:
+    <ul class="itemizedlist">
+     <li class="listitem">
+      <span class="simpara">
+       Konstanten haben kein Dollarzeichen (<em>$</em>) vorangestellt;
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       Vor PHP 5.3 können Konstanten nur über die Funktion <span class="function">define</span>
+       definiert werden, nicht durch einfache Zuweisung;
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       Konstanten können überall definiert werden, und auf Ihren Wert können Sie
+       ohne Rücksicht auf Namensraumregeln von Variablen zugreifen;
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       Sobald Konstanten definiert sind, können sie nicht neu definiert
+       oder gelöscht werden; und
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       Konstanten können nur skalare Werte haben. Ab PHP 5.6.0 ist es möglich,
+       Array-Konstanten mit dem <em>const</em> Schlüsselwort zu
+       definieren; ab PHP 7 können Array-Konstanten ebenfalls mit
+       <span class="function">define</span> definiert werden.
+       In konstanten skalaren Ausdrücken können Arrays
+       verwendet werden (z.B. <em>const FOO = array(1, 2, 3)[0];</em>),
+       aber das Endergebnis muss ein Wert eines erlaubten Typs sein.
+      </span>
+     </li>
+    </ul>
+   </p>
+
+   <p class="para">
+    <div class="example" id="example-122">
+     <p><strong>Beispiel #1 Definiton von Konstanten</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />define</span><span style="color: #007700">(</span><span style="color: #DD0000">"KONSTANTE"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Hallo&nbsp;Welt."</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">KONSTANTE</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Ausgabe:&nbsp;"Hallo&nbsp;Welt."<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">Konstante</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Ausgabe:&nbsp;"Konstante"&nbsp;und&nbsp;eine&nbsp;Notice.<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+
+   <p class="para">
+    <div class="example" id="example-123">
+     <p><strong>Beispiel #2 Definition von Konstanten unter Verwendung des
+      <em>const</em>-Keywords</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Funktioniert&nbsp;seit&nbsp;PHP&nbsp;5.3.0<br /></span><span style="color: #007700">const&nbsp;</span><span style="color: #0000BB">KONSTANTE&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Hallo&nbsp;Welt'</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #0000BB">KONSTANTE</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Funktioniert&nbsp;seit&nbsp;PHP&nbsp;5.6.0<br /></span><span style="color: #007700">const&nbsp;</span><span style="color: #0000BB">ANDERE_KONSTANTE&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">KONSTANTE&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">';&nbsp;Ade&nbsp;Welt'</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #0000BB">ANDERE_KONSTANTE</span><span style="color: #007700">;<br /><br />const&nbsp;</span><span style="color: #0000BB">ANIMALS&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'Hund'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Katze'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Maus'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">ANIMALS</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;"Katze"&nbsp;aus<br /><br />//&nbsp;Funktioniert&nbsp;seit&nbsp;PHP&nbsp;7<br /></span><span style="color: #0000BB">define</span><span style="color: #007700">(</span><span style="color: #DD0000">'ANIMALS'</span><span style="color: #007700">,&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'Hund'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'Katze'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'Maus'<br /></span><span style="color: #007700">));<br />echo&nbsp;</span><span style="color: #0000BB">ANIMALS</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;gibt&nbsp;"Katze"&nbsp;aus<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Im Gegensatz zu Konstanten, welche mit <span class="function">define</span>
+     ersellt werden, müssen über <em>const</em> definierte Konstanten
+     im Top-Level Scope erstellt werden, weil sie zur Compile Zeit definiert
+     werden. Das heißt, dass sie nicht innerhalb von Funktionen, Schleifen,
+     <em>if</em> Statements oder <em>try</em>/<em>catch</em>
+     Blöcken definiert werden können.
+    </p>
+   </p></blockquote>
+
+   <p class="simpara">
+    Lesen Sie ebenfalls den Abschnitt über <a href="language.oop5.constants.html" class="link">Klassenkonstanten</a>.
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

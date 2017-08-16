@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Maskiert eine Zeichenkette (String), um sie als Shell-Argument benutzen zu k&ouml;nnen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li class="header up"><a href="book.exec.html">Programmausf&uuml;hrung</a></li>
+  <li class="header up"><a href="ref.exec.html">Funktionen zur Programmausf&uuml;hrung</a></li>
+  <li class="active"><a href="function.escapeshellarg.html">escapeshellarg</a></li>
+  <li><a href="function.escapeshellcmd.html">escapeshellcmd</a></li>
+  <li><a href="function.exec.html">exec</a></li>
+  <li><a href="function.passthru.html">passthru</a></li>
+  <li><a href="function.proc-close.html">proc_close</a></li>
+  <li><a href="function.proc-get-status.html">proc_get_status</a></li>
+  <li><a href="function.proc-nice.html">proc_nice</a></li>
+  <li><a href="function.proc-open.html">proc_open</a></li>
+  <li><a href="function.proc-terminate.html">proc_terminate</a></li>
+  <li><a href="function.shell-exec.html">shell_exec</a></li>
+  <li><a href="function.system.html">system</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="ref.exec.html">Funktionen zur Programmausf&uuml;hrung</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.escapeshellcmd.html">escapeshellcmd</a></div>
+                <div class="up"><a href="ref.exec.html">Funktionen zur Programmausf&uuml;hrung</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.escapeshellarg" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">escapeshellarg</h1>
+  <p class="refpurpose">Maskiert eine Zeichenkette (String), um sie als Shell-Argument benutzen zu können</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.escapeshellarg-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname">escapeshellarg</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$arg</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">escapeshellarg</span> fügt einfache Anführungszeichen 
+   um eine Zeichenkette herum ein und maskiert alle existierenden einfachen 
+   Anführungszeichen innerhalb der Zeichenkette und ermöglicht es so die
+   Zeichenkette direkt als Argument einer Shell-Funktion zu verwenden
+   so das es als ein einziges Argument interpretiert wird. Die Funktion
+   sollte benutzt werden um aus Benutzereingaben stammende Argumente
+   an Shell-Funktionen weiterzugeben. Zu den Shell-Funktionen zählen
+   unter anderem <span class="function">exec</span>, <span class="function">system</span> 
+   und der 
+   <a href="language.operators.execution.html" class="link">Backtick Operator</a>. 
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.escapeshellarg-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">arg</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die zu maskierende Zeichenkette
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.escapeshellarg-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Die maskierte Zeichenkette
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.escapeshellarg-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-4122">
+    <p><strong>Beispiel #1 <span class="function">escapeshellarg</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />system</span><span style="color: #007700">(</span><span style="color: #DD0000">'ls&nbsp;'</span><span style="color: #007700">.</span><span style="color: #0000BB">escapeshellarg</span><span style="color: #007700">(</span><span style="color: #0000BB">$dir</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.escapeshellarg-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">escapeshellcmd</span></li>
+    <li class="member"><span class="function">exec</span></li>
+    <li class="member"><span class="function">popen</span></li>
+    <li class="member"><span class="function">system</span></li>
+    <li class="member"><a href="language.operators.execution.html" class="link">backtick operator</a></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: FTP</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li><a href="book.chdb.html">chdb</a></li>
+  <li><a href="book.curl.html">cURL</a></li>
+  <li><a href="book.event.html">Event</a></li>
+  <li><a href="book.fam.html">FAM</a></li>
+  <li class="active"><a href="book.ftp.html">FTP</a></li>
+  <li><a href="book.gearman.html">Gearman</a></li>
+  <li><a href="book.net-gopher.html">Gopher</a></li>
+  <li><a href="book.gupnp.html">Gupnp</a></li>
+  <li><a href="book.hwapi.html">Hyperwave API</a></li>
+  <li><a href="book.ldap.html">LDAP</a></li>
+  <li><a href="book.memcache.html">Memcache</a></li>
+  <li><a href="book.memcached.html">Memcached</a></li>
+  <li><a href="book.mqseries.html">mqseries</a></li>
+  <li><a href="book.network.html">Network</a></li>
+  <li><a href="book.rrd.html">RRD</a></li>
+  <li><a href="book.sam.html">SAM</a></li>
+  <li><a href="book.snmp.html">SNMP</a></li>
+  <li><a href="book.sockets.html">Sockets</a></li>
+  <li><a href="book.ssh2.html">SSH2</a></li>
+  <li><a href="book.stomp.html">Stomp</a></li>
+  <li><a href="book.svm.html">SVM</a></li>
+  <li><a href="book.svn.html">SVN</a></li>
+  <li><a href="book.tcpwrap.html">TCP</a></li>
+  <li><a href="book.varnish.html">Varnish</a></li>
+  <li><a href="book.yaz.html">YAZ</a></li>
+  <li><a href="book.nis.html">YP/NIS</a></li>
+  <li><a href="book.zmq.html">0MQ messaging</a></li>
+  <li><a href="book.zookeeper.html">ZooKeeper</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.fam-suspend-monitor.html">fam_suspend_monitor</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.ftp.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.remote.other.html">Sonstige Dienste</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.ftp" class="book">
+ 
+ <h1>FTP</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.ftp.html">Einf&uuml;hrung</a></li>
+<li><a href="ftp.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="ftp.requirements.html">Anforderungen</a></li>
+<li><a href="ftp.installation.html">Installation</a></li>
+<li><a href="ftp.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="ftp.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="ftp.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ftp.examples.html">Beispiele</a><ul class="chunklist chunklist_title">
+<li><a href="ftp.examples-basic.html">Allgemeine Verwendung</a></li>
+</ul>
+</li>
+<li><a href="ref.ftp.html">FTP-Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.ftp-alloc.html">ftp_alloc</a> — Reserviert Platz f&uuml;r eine hochzuladende Datei</li>
+<li><a href="function.ftp-cdup.html">ftp_cdup</a> — Wechselt in das dar&uuml;berliegende Verzeichnis</li>
+<li><a href="function.ftp-chdir.html">ftp_chdir</a> — Verzeichnis-Wechsel auf einem FTP-Server</li>
+<li><a href="function.ftp-chmod.html">ftp_chmod</a> — &Auml;ndert die Zugriffsrechte einer Datei &uuml;ber FTP</li>
+<li><a href="function.ftp-close.html">ftp_close</a> — Schlie&szlig;t eine FTP-Verbindung</li>
+<li><a href="function.ftp-connect.html">ftp_connect</a> — Stellt eine FTP-Verbindung her</li>
+<li><a href="function.ftp-delete.html">ftp_delete</a> — L&ouml;scht eine Datei auf dem FTP-Server</li>
+<li><a href="function.ftp-exec.html">ftp_exec</a> — Fordert die Ausf&uuml;hrung eines Programmes auf dem FTP-Server an</li>
+<li><a href="function.ftp-fget.html">ftp_fget</a> — L&auml;dt eine Datei vom FTP-Server und speichert sie in eine
+   ge&ouml;ffnete Datei</li>
+<li><a href="function.ftp-fput.html">ftp_fput</a> — &Uuml;bertr&auml;gt eine ge&ouml;ffnete Datei auf einen FTP-Server</li>
+<li><a href="function.ftp-get-option.html">ftp_get_option</a> — Ruft diverse Laufzeitoptionen des angegebenen FTP-Streams ab</li>
+<li><a href="function.ftp-get.html">ftp_get</a> — L&auml;dt eine Datei von einem FTP-Server herunter</li>
+<li><a href="function.ftp-login.html">ftp_login</a> — Anmelden einer FTP-Verbindung (Login)</li>
+<li><a href="function.ftp-mdtm.html">ftp_mdtm</a> — Gibt den Zeitpunkt der letzten &Auml;nderung der angegebenen
+   Datei zur&uuml;ck</li>
+<li><a href="function.ftp-mkdir.html">ftp_mkdir</a> — Erzeugt ein Verzeichnis</li>
+<li><a href="function.ftp-nb-continue.html">ftp_nb_continue</a> — Nimmt die &Uuml;bertragung einer Datei wieder auf (nicht-blockierend)</li>
+<li><a href="function.ftp-nb-fget.html">ftp_nb_fget</a> — L&auml;dt eine Datei vom FTP-Server und schreibt sie in eine lokale Datei
+   (nicht-blockierend)</li>
+<li><a href="function.ftp-nb-fput.html">ftp_nb_fput</a> — Speichert eine ge&ouml;ffnete Datei auf den FTP-Server (nicht blockierend)</li>
+<li><a href="function.ftp-nb-get.html">ftp_nb_get</a> — &Uuml;bertr&auml;gt eine Datei von dem FTP-Server und speichert sie lokal (nicht blockierend)</li>
+<li><a href="function.ftp-nb-put.html">ftp_nb_put</a> — Speichert eine Datei auf dem FTP-Server (nicht-blockierend)</li>
+<li><a href="function.ftp-nlist.html">ftp_nlist</a> — Gibt eine Liste der im angegebenen Verzeichnis enthaltenen
+   Dateien zur&uuml;ck</li>
+<li><a href="function.ftp-pasv.html">ftp_pasv</a> — Schaltet den passiven Modus ein oder aus</li>
+<li><a href="function.ftp-put.html">ftp_put</a> — L&auml;dt eine Datei auf einen FTP-Server</li>
+<li><a href="function.ftp-pwd.html">ftp_pwd</a> — Gibt den aktuellen Verzeichnisnamen zur&uuml;ck</li>
+<li><a href="function.ftp-quit.html">ftp_quit</a> — Alias von ftp_close</li>
+<li><a href="function.ftp-raw.html">ftp_raw</a> — Sendet ein beliebiges Kommando an den FTP-Server</li>
+<li><a href="function.ftp-rawlist.html">ftp_rawlist</a> — Gibt eine detaillierte Liste der Dateien in einem angegebenen
+   Verzeichnis zur&uuml;ck</li>
+<li><a href="function.ftp-rename.html">ftp_rename</a> — Benennt eine Datei auf dem FTP-Server um</li>
+<li><a href="function.ftp-rmdir.html">ftp_rmdir</a> — L&ouml;scht ein Verzeichnis</li>
+<li><a href="function.ftp-set-option.html">ftp_set_option</a> — Setzt diverse FTP-Laufzeitoptionen</li>
+<li><a href="function.ftp-site.html">ftp_site</a> — Sendet ein SITE-Kommando zum Server</li>
+<li><a href="function.ftp-size.html">ftp_size</a> — Gibt die Gr&ouml;&szlig;e der angegebenen Datei zur&uuml;ck</li>
+<li><a href="function.ftp-ssl-connect.html">ftp_ssl_connect</a> — &Ouml;ffnet eine sichere SSL-FTP-Verbindung</li>
+<li><a href="function.ftp-systype.html">ftp_systype</a> — Gibt den Systemtyp des entfernten FTP-Servers zur&uuml;ck</li>
+</ul>
+</li>
+</ul>
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

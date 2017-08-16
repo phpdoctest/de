@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Interne (eingebaute) Funktionen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.functions.html">Funktionen</a></li>
+  <li><a href="functions.user-defined.html">Benutzerdefinierte Funktionen</a></li>
+  <li><a href="functions.arguments.html">Funktionsparameter</a></li>
+  <li><a href="functions.returning-values.html">R&uuml;ckgabewerte</a></li>
+  <li><a href="functions.variable-functions.html">Variablenfunktionen</a></li>
+  <li class="active"><a href="functions.internal.html">Interne (eingebaute) Funktionen</a></li>
+  <li><a href="functions.anonymous.html">Anonyme Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="functions.variable-functions.html">Variablenfunktionen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="functions.anonymous.html">Anonyme Funktionen</a></div>
+                <div class="up"><a href="language.functions.html">Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="functions.internal" class="sect1">
+   <h2 class="title">Interne (eingebaute) Funktionen</h2>
+
+   <p class="para">
+    PHP enthält standmäßig viele Funktionen und Konstrukte, weiterhin
+    gibt es viele Funktionen die vorausssetzen, dass bestimmte PHP-Extensions
+    einkompiliert wurden, anderenfalls erhalten Sie beim
+    Aufruf &quot;undefined function&quot;-Fehlermeldungen.
+    Um z.B. <a href="ref.image.html" class="link">Grafik-Funktionen</a> wie
+    <span class="function">imagecreatetruecolor</span> zu nutzen, müssen Sie PHP mit
+    <span class="productname">GD</span>-Unterstützung kompilieren, oder um
+    <span class="function">mysql_connect</span> zu nutzen, muss Ihr PHP mit <a href="ref.mysql.html" class="link">MySQL</a>-Unterstützung kompiliert sein.
+    Viele Kernfunktionen wie z.B. die <a href="ref.strings.html" class="link">String</a>- und <a href="ref.var.html" class="link">Variablen</a>-Funktionen sind bereits in
+    jeder PHP-Version enthalten. Ein Aufruf von <span class="function">phpinfo</span>
+    oder <span class="function">get_loaded_extensions</span> zeigt Ihnen, welche
+    Extensions in Ihrer PHP-Installation verfügbar sind.
+    Beachten Sie weiterhin, dass viele Extensions bereits standardmäßig
+    aktiviert sind und das PHP-Manual nach Extensions unterteilt ist.
+    Weitere Informationen zur Einrichtung von PHP finden Sie in den
+    Kapiteln <a href="configuration.html" class="link">Konfiguration</a>,
+    <a href="install.html" class="link">Installation</a> und den Kapiteln
+    zu den einzelnen Extensions.
+   </p>
+   <p class="para">
+    Wie Funktionsprototypen zu lesen und zu verstehen sind, ist im
+    Kapitel &#039;<a href="about.prototypes.html" class="link">Wie man eine Funktionsdefinition
+    (Prototyp) liest&#039;</a> erklärt.
+    Es ist wichtig zu erkennen, was eine Funktion zurückgibt und ob
+    die übergebenen Parameter verändert werden. So gibt z.B.
+    <span class="function">str_replace</span> den bearbeiteten String zurück,
+    während <span class="function">usort</span> direkt auf der übergebenen
+    Variablen arbeitet.
+    Jede Handbuchseite enthält spezifische Informationen für jede
+    Funktion wie ihre Parameter, die Rückgabewerte sowohl bei Erfolg
+    als auch im Fehlerfall, Änderungen des Verhaltens und die Verfügbarkeit.
+    Die Kenntnis dieser wichtigen (aber oft subtilen) Unterschiede ist
+    von entscheidender Bedeutung für das Schreiben korrekten PHP-Codes.
+   </p>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <span class="simpara">
+     Wenn Funktionen andere Parameter erhalten als erwartet, d.h. wenn z.B.
+     ein <span class="type">Array</span> übergeben wird obwohl ein <span class="type">String</span>
+     erwartet wird, so ist der Rückgabewert undefiniert. In solchen Fällen
+     ist es üblich, dass <strong><code>NULL</code></strong> zurückgegeben wird. Dies ist aber nur eine
+     Konvention, auf die Sie sich nicht unbedingt verlassen können.
+    </span>
+   </p></blockquote>
+   <p class="para">
+    Siehe auch <span class="function">function_exists</span>,
+    <a href="funcref.html" class="link">die Funktionsreferenz</a>,
+    <span class="function">get_extension_funcs</span> und
+    <span class="function">dl</span>.
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

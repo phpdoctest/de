@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: OOP-Changelog</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.oop5.html">Klassen und Objekte</a></li>
+  <li><a href="oop5.intro.html">Einf&uuml;hrung</a></li>
+  <li><a href="language.oop5.basic.html">Die Grundlagen</a></li>
+  <li><a href="language.oop5.properties.html">Eigenschaften</a></li>
+  <li><a href="language.oop5.constants.html">Klassenkonstanten</a></li>
+  <li><a href="language.oop5.autoload.html">Autoloading</a></li>
+  <li><a href="language.oop5.decon.html">Konstruktoren und Destruktoren</a></li>
+  <li><a href="language.oop5.visibility.html">Sichtbarkeit</a></li>
+  <li><a href="language.oop5.inheritance.html">Objekt-Vererbung</a></li>
+  <li><a href="language.oop5.paamayim-nekudotayim.html">G&uuml;ltigkeitsbereichsoperator (::)</a></li>
+  <li><a href="language.oop5.static.html">Static-Schl&uuml;sselwort</a></li>
+  <li><a href="language.oop5.abstract.html">Klassenabstraktion</a></li>
+  <li><a href="language.oop5.interfaces.html">Interfaces</a></li>
+  <li><a href="language.oop5.traits.html">Traits</a></li>
+  <li><a href="language.oop5.anonymous.html">Anonyme Klassen</a></li>
+  <li><a href="language.oop5.overloading.html">&Uuml;berladung</a></li>
+  <li><a href="language.oop5.iterations.html">Objektiteration</a></li>
+  <li><a href="language.oop5.magic.html">Magische Methoden</a></li>
+  <li><a href="language.oop5.final.html">Final-Schl&uuml;sselwort</a></li>
+  <li><a href="language.oop5.cloning.html">Objekte klonen</a></li>
+  <li><a href="language.oop5.object-comparison.html">Objekte vergleichen</a></li>
+  <li><a href="language.oop5.typehinting.html">Type-Hints</a></li>
+  <li><a href="language.oop5.late-static-bindings.html">Sp&auml;te statische Bindung</a></li>
+  <li><a href="language.oop5.references.html">Objekte und Referenzen</a></li>
+  <li><a href="language.oop5.serialization.html">Serialisierung von Objekten</a></li>
+  <li class="active"><a href="language.oop5.changelog.html">OOP-Changelog</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.oop5.serialization.html">Serialisierung von Objekten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.namespaces.html">Namespaces</a></div>
+                <div class="up"><a href="language.oop5.html">Klassen und Objekte</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.oop5.changelog" class="sect1">
+ <h2 class="title">OOP-Changelog</h2>
+ <p class="para">
+  Hier werden Änderungen am OOP-Modell von PHP 5 protokolliert. Beschreibungen und
+  andere Hinweise zu diesen Features werden innerhalb der OOP-5-Dokumentation 
+  dargelegt.
+ </p>
+ <p class="para">
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>Version</th>
+      <th>Beschreibung</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>5.5.0</td>
+      <td>
+       <a href="language.exceptions.html" class="link">finally</a> zur Behandlung von
+       Exceptions hinzugefügt.
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.4.0</td>
+      <td>
+       <a href="language.oop5.traits.html" class="link">Traits</a> hinzugefügt.
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.4.0</td>
+      <td>
+       Geändert: 
+       Wenn eine <a href="language.oop5.abstract.html" class="link">abstrakte</a> Klasse
+       eine Signatur für den Konstruktor definiert, so wird diese nun erzwungen.
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.3.3</td>
+      <td>
+       Geändert: Methoden, die den Namen des letzten Elementes eines
+       Klassennamens in einem
+       <a href="language.namespaces.html" class="link">Namespace</a> tragen, 
+       werden nicht länger als <a href="language.oop5.decon.html" class="link">Konstruktor</a> behandelt. Diese 
+       Änderung beeinflusst Klassen außerhalb von Namespaces nicht.
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.3.0</td>
+      <td>
+       Geändert: Klassen, die Interfaces implementieren, welche Methoden mit Vorgabewerten
+       in ihrem Prototypen enthalten müssen nicht mehr dem Vorgabewert des Interfaces 
+       entsprechen.
+      </td>
+     </tr>
+
+     <tr>   
+      <td>5.3.0</td>
+      <td>
+       Geändert: Es ist nun möglich eine Klasse mittels einer Variablen
+       zu referenzieren (z.B. <em>echo $classname::constant;</em>).
+       Der Wert der Variable darf kein Schlüsselwort sein (z.B.
+       <em>self</em>, <em>parent</em> oder 
+       <em>static</em>).
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.3.0</td>
+      <td>
+       Geändert: Ein Fehler der Stufe <strong><code>E_WARNING</code></strong> wird
+       ausgelöst, wenn die magischen Methoden für
+       <a href="language.oop5.overloading.html" class="link">Überladung</a>
+       als <a href="language.oop5.static.html" class="link">static</a> deklariert
+       werden. Dies erzwingt auch die Anforderung nach öffentlicher
+       Sichtbarkeit.
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.3.0</td>
+      <td>
+       Geändert: Vor PHP 5.3.0 konnten Exceptions, die in einer
+       <span class="function">__autoload</span>-Funktion geworfen
+       wurden, nicht mit einem <a href="language.exceptions.html" class="link">catch</a>-Block
+       gefangen werden und resultierten in einem &quot;fatal error&quot;. Nun können Exceptions,
+       die in einer __autoload-Funktion geworfen wurden, im 
+       <a href="language.exceptions.html" class="link">catch</a>-Block unter einer Bedingung
+       gefangen werden. Wenn eine selbst definierte Exception geworfen wird, so muss
+       diese Exception verfügbar sein. Die __autoload-Funktion kann jedoch rekursiv
+       aufgerufen werden, um die Exceptionklasse automatisch zu laden.
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.3.0</td>
+      <td>
+       Hinzugefügt: Die Methode <a href="language.oop5.overloading.html" class="link">__callStatic</a>.
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.3.0</td>
+      <td>
+       Hinzugefügt: Unterstützung für die 
+       <a href="language.types.string.html#language.types.string.syntax.heredoc" class="link">heredoc</a>-
+       und <a href="language.types.string.html#language.types.string.syntax.heredoc" class="link">nowdoc</a>-Syntax
+       für <em class="emphasis">const</em> und Definition von Eigenschaften in einer 
+       Klasse. Beachten Sie: die heredoc-Werte müssen den gleichen Regeln
+       wie Strings in doppelten Anführungszeichen folgen (d.h. keine Variablen
+       beinhalten).
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.3.0</td>
+      <td>
+       Hinzugefügt: 
+       <a href="language.oop5.late-static-bindings.html" class="link">Späte statische Bindung</a>.
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.3.0</td>
+      <td>
+       Hinzugefügt: Die Methode <a href="language.oop5.magic.html#object.invoke" class="link">__invoke</a>.
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.2.0</td>
+      <td>
+       Geändert: Die Methode 
+       <a href="language.oop5.magic.html#object.tostring" class="link">__toString</a> wurde nur
+       in direkter Verbindung mit <span class="function">echo</span> oder 
+       <span class="function">print</span> aufgerufen. Nun wird sie in jedem
+       String-Kontext aufgerufen (z.B. in <span class="function">printf</span> mit dem 
+       <em>%s</em>-Modifizierer), aber nicht in anderen Kontexten
+       (z.B. mit dem <em>%d</em>-Modifizierer). Seit PHP 5.2.0 löst die
+       Konvertierung von Objekten ohne <em>__toString</em>-Methode zu
+       Strings einen Fehler der Stufe <strong><code>E_RECOVERABLE_ERROR</code></strong>
+       aus.
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.1.3</td>
+      <td>
+       Geändert: In vorhergehenden Versionen von PHP 5 wurde die Verwendung
+       von <em>var</em> als veraltet betrachtet und löste einen
+       Fehler der Stufe <strong><code>E_STRICT</code></strong> aus. Dies ist nicht
+       länger veraltet und daher wird kein Fehler mehr ausgelöst.
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.1.0</td>
+      <td>
+       Geändert: Die statische Methode 
+       <a href="language.oop5.magic.html#object.set-state" class="link">__set_state</a>
+       wird nun für Klassen aufgerufen, wenn sie durch 
+       <span class="function">var_export</span> exportiert werden.
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.1.0</td>
+      <td>
+       Hinzugefügt: Die Methoden 
+       <a href="language.oop5.overloading.html#object.isset" class="link">__isset</a> und 
+       <a href="language.oop5.overloading.html#object.unset" class="link">__unset</a>.
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

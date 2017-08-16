@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Laufzeit-Konfiguration</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.compression.html">Erweiterungen zur Datenkompression und Archivierung</a></li>
+  <li class="header up"><a href="book.zlib.html">Zlib</a></li>
+  <li class="header up"><a href="zlib.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="zlib.requirements.html">Anforderungen</a></li>
+  <li><a href="zlib.installation.html">Installation</a></li>
+  <li class="active"><a href="zlib.configuration.html">Laufzeit-Konfiguration</a></li>
+  <li><a href="zlib.resources.html">Ressource-Typen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="zlib.installation.html">Installation</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="zlib.resources.html">Ressource-Typen</a></div>
+                <div class="up"><a href="zlib.setup.html">Installation/Konfiguration</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="zlib.configuration" class="section">
+ <h2 class="title">Laufzeit-Konfiguration</h2>
+ <p class="simpara">Das Verhalten dieser Funktionen wird
+durch Einstellungen in der <var class="filename">php.ini</var> beeinflusst.</p>
+ <p class="para">
+  Die zlib-Erweiterung gibt Ihnen die Möglichkeit, Ihre Seiten on-the-fly
+  transparent zu komprimieren, wenn der Browser dies unterstützt. Dafür gibt es
+  drei Optionen in der <a href="configuration.file.html" class="link">Konfigurationsdatei</a>
+  <var class="filename">php.ini</var>.
+   <table class="doctable table">
+   <caption><strong>Zlib-Konfigurationsoptionen</strong></caption>
+   
+    <thead>
+     <tr>
+      <th>Name</th>
+      <th>Standard</th>
+      <th>Veränderbar</th>
+      <th>Changelog</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td><a href="zlib.configuration.html#ini.zlib.output-compression" class="link">zlib.output_compression</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 4.0.5.</td>
+     </tr>
+
+     <tr>
+      <td><a href="zlib.configuration.html#ini.zlib.output-compression-level" class="link">zlib.output_compression_level</a></td>
+      <td>&quot;-1&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 4.3.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="zlib.configuration.html#ini.zlib.output-handler" class="link">zlib.output_handler</a></td>
+      <td>&quot;&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>Verfügbar seit PHP 4.3.0.</td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+   Weitere Details und die Definitionen der
+PHP_INI_*-Konstanten finden Sie im <a href="configuration.changes.modes.html" class="xref">Wo Konfigurationseinstellungen gesetzt werden k&ouml;nnen</a>.
+</p>
+
+ <p class="para">Hier eine kurze Erklärung der
+Konfigurationsoptionen:</p>
+
+ <p class="para">
+ <dl>
+
+  
+   <dt id="ini.zlib.output-compression">
+    <code class="parameter">zlib.output_compression</code>
+    <span class="type">boolean</span>/<span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Wenn diese Option in der <var class="filename">php.ini</var> oder der Apachekonfiguration auf &quot;On&quot;
+     gesetzt ist, werden die Seiten komprimiert, wenn der Browser einen
+     &quot;Accept-Encoding: gzip&quot;- oder einen &quot;deflate&quot;-Header sendet. Zu den
+     normalerweise vom Server gesendeten Headern werden nun &quot;Content-Encoding: gzip&quot;
+     (respektive &quot;deflate&quot;) und &quot;Vary: Accept-Encoding&quot; hinzugefügt.
+     Zur Laufzeit kann die Option nur gesetzt werden, bevor irgendeine Ausgabe
+     gesendet wurde.
+    </p>
+    <p class="para">
+     Diese Option akzeptiert auch Integerwerte anstelle des boolschen On/Off,
+     wenn Sie diese verwenden, können Sie die Ausgabepuffergröße festlegen
+     (der Standardwert ist 4KB).
+    </p>
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <p class="para">
+      <a href="outcontrol.configuration.html#ini.output-handler" class="link">output_handler</a> muss leer sein,
+      wenn diese Option den Wert &quot;On&quot; hat! Verwenden Sie statt dessen
+      <em>zlib.output_handler</em>.
+     </p>
+    </p></blockquote>
+   </dd>
+
+  
+
+  
+   <dt id="ini.zlib.output-compression-level">
+    <code class="parameter">zlib.output_compression_level</code>
+    <span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Der Kompressionsgrad für die transparente Ausgabekomprimierung. Geben Sie
+     einen Wert zwischen 0 (keine Kompression) und 9 (stärkste Kompressionsrate)
+     an. Der Vorgabewert -1 lässt den Server darüber entscheiden, welchen
+     Kompressionsgrad zu verwenden ist.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.zlib.output-handler">
+    <code class="parameter">zlib.output_handler</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Sie können keine zusätzlichen Outputhandler angeben, wenn Sie
+     zlib.output_compression aktiviert haben. Diese Einstellung tut das
+     Gleiche wie <a href="outcontrol.configuration.html#ini.output-handler" class="link">output_handler</a>,
+     allerdings in einer anderen Reihenfolge.
+    </p>
+   </dd>
+
+  
+
+ </dl>
+
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vom Nutzer &uuml;bermittelte Daten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="security.html">Sicherheit</a></li>
+  <li><a href="security.intro.html">Einf&uuml;hrung</a></li>
+  <li><a href="security.general.html">Allgemeine &Uuml;berlegungen</a></li>
+  <li><a href="security.cgi-bin.html">Installiert als CGI-Version</a></li>
+  <li><a href="security.apache.html">Verwendung als Apache-Modul</a></li>
+  <li><a href="security.sessions.html">Session Security</a></li>
+  <li><a href="security.filesystem.html">Dateisystem - Sicherheit</a></li>
+  <li><a href="security.database.html">Datenbank - Sicherheit</a></li>
+  <li><a href="security.errors.html">Fehlerbehandlung</a></li>
+  <li><a href="security.globals.html">Using Register Globals</a></li>
+  <li class="active"><a href="security.variables.html">Vom Nutzer &uuml;bermittelte Daten</a></li>
+  <li><a href="security.magicquotes.html">Magic Quotes</a></li>
+  <li><a href="security.hiding.html">PHP verstecken</a></li>
+  <li><a href="security.current.html">Aktuell bleiben</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="security.globals.html">Using Register Globals</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="security.magicquotes.html">Magic Quotes</a></div>
+                <div class="up"><a href="security.html">Sicherheit</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="security.variables" class="chapter">
+   <h1>Vom Nutzer übermittelte Daten</h1>
+   <p class="para">
+    In vielen <acronym class="acronym">PHP</acronym> Programmen liegt die größte Schwäche nicht an der Sprache
+    selbst, sondern bloß an Code, der nicht mit dem nötigen Augenmerk auf
+    die Sicherheit geschrieben wurde. Deshalb sollten Sie sich immer Zeit
+    nehmen, die Implikationen eines gegebenen Codestücks zu bedenken, um
+    einen möglichen Schaden durch eine eventuell unerwartete übergebene
+    Variable festzustellen.
+    <div class="example" id="example-364">
+     <p><strong>Beispiel #1 Gefährliche Verwendung von Variablen</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;lösche&nbsp;eine&nbsp;Datei&nbsp;aus&nbsp;dem&nbsp;Benutzer-Verzeichnis...<br />//&nbsp;oder&nbsp;vielleicht&nbsp;dem&nbsp;eines&nbsp;anderen&nbsp;Benutzers?<br /></span><span style="color: #0000BB">unlink&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$evil_var</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Schreibe&nbsp;die&nbsp;Log-Information&nbsp;von&nbsp;deren&nbsp;Zugriff...<br />//&nbsp;oder&nbsp;vielleicht&nbsp;einen&nbsp;/etc/passwd&nbsp;Eintrag?<br /></span><span style="color: #0000BB">fputs&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$evil_var</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Führe&nbsp;etwas&nbsp;triviales&nbsp;aus...&nbsp;oder&nbsp;rm&nbsp;-rf&nbsp;*?<br /></span><span style="color: #0000BB">system&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$evil_var</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">exec&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$evil_var</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+    </p>
+    <p class="para">
+    Sie sollten Ihren Code immer sorgfältig kontrollieren, um eine
+    sorgfältige Prüfung irgendwelcher von einem Web-Browser übertragenen
+    Variablen sicherzustellen, und sich selbst folgende Fragen stellen:
+    <ul class="itemizedlist">
+     <li class="listitem">
+      <span class="simpara">
+       Wird sich dieses Skript nur auf die vorgesehenen Dateien auswirken?
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       Kann auf ungewöhnliche oder unerwünschte Daten reagiert werden?
+      </span>
+     </li>
+     <li class="listitem">
+     <span class="simpara">
+       Kann dieses Skript auf nicht vorgesehene Art genutzt werden?
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       Kann dies in Verbindung mit anderen Skripten in einer negativen
+       Art benutzt werden?
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       Werden alle Transaktionen ausreichend geloggt?
+      </span>
+     </li>
+    </ul>
+    </p>
+    <p class="para">
+    Wenn Sie sich diese Fragen anstatt danach schon während dem Schreiben
+    des Skriptes stellen, ersparen Sie sich das unangenehme Umschreiben,
+    wenn eine Erhöhung der Sicherheit erforderlich wird. Mit dieser Art
+    zu denken werden Sie die Sicherheit des Systems zwar nicht garantieren,
+    aber sie können helfen, sie zu erhöhen.
+   </p>
+   <p class="para">
+    Sie könnten auch Überlegungen anstellen, ob Sie nicht register_globals,
+    magic_quotes, oder andere bequeme Einstellungen abschalten, welche Sie
+    in Punkto Gültigkeit, Herkunft, oder Inhalt einer gegebenen Variable
+    durcheinanderbringen könnten. Mit <acronym class="acronym">PHP</acronym> im error_reporting(E_ALL) Modus
+    zu arbeiten kann auch helfen, Sie vor Variablen zu warnen, welche
+    benutzt werden, bevor sie geprüft oder initialisiert wurden (so können
+    Sie verhindern, dass mit ungewöhnlichen Daten gearbeitet wird).
+   </p>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

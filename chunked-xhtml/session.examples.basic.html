@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Grundlegende Anwendung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.session.html">Session-Erweiterungen</a></li>
+  <li class="header up"><a href="book.session.html">Sessions</a></li>
+  <li class="header up"><a href="session.examples.html">Beispiele</a></li>
+  <li class="active"><a href="session.examples.basic.html">Grundlegende Anwendung</a></li>
+  <li><a href="session.idpassing.html">&Uuml;bermittlung der Session-ID</a></li>
+  <li><a href="session.customhandler.html">Individuelle Session-Routinen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="session.examples.html">Beispiele</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="session.idpassing.html">&Uuml;bermittlung der Session-ID</a></div>
+                <div class="up"><a href="session.examples.html">Beispiele</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="session.examples.basic" class="section">
+  <h2 class="title">Grundlegende Anwendung</h2>
+  <p class="para">
+   Sessions bieten eine einfache Möglichkeit, Daten für individuelle Benutzer
+   unter einer eindeutigen Session-ID zu speichern. Sie können verwendet
+   werden, damit Daten zwischen Seitenanforderungen bestehen bleiben.
+   Session-IDs werden in der Regel über Session-Cookies an den Browser
+   gesendet und die ID wird verwendet, um vorhandene Sessiondaten abzurufen.
+   Das Fehlen einer ID oder eines Session-Cookies veranlasst PHP, eine neue
+   Session zu erstellen und eine neue Session-ID zu erzeugen.
+  </p>
+  <p class="para">
+   Sessions folgen einem einfachen Ablauf. Wenn eine Session gestartet wird,
+   ruft PHP entweder eine vorhandene Session unter Verwendung einer
+   (normalerweise von einem Session-Cookie) übergebenen ID ab oder erzeugt
+   eine neue Session, falls keine Session-ID übergeben wurde. Nachdem
+   die Session gestartet wurde, füllt PHP die
+   <var class="varname">$_SESSION</var>-Superglobale mit allen Sessiondaten. Am Ende
+   des Skripts nimmt PHP automatisch den Inhalt der
+   <var class="varname">$_SESSION</var>-Superglobalen, serialisiert ihn und verwendet
+   Session-Speicherfunktion um ihn zu speichern.
+  </p>
+  <p class="para">
+   Standardmäßig verwendet PHP die interne
+   <code class="parameter">files</code>-Speicherroutine, die mittels <a href="session.configuration.html#ini.session.save-handler" class="link">session.save_handler</a> festgelegt
+   ist. Diese speichert die Sessiondaten auf dem Server an der mit der
+   Konfigurationsanweisung <a href="session.configuration.html#ini.session.save-path" class="link">session.save_path</a> angegebenen
+   Stelle.
+  </p>
+  <p class="para">
+   Sessions können über die Funktion <span class="function">session_start</span>
+   gestartet werden. Falls die Konfigurationsanweisung <a href="session.configuration.html#ini.session.auto-start" class="link">session.auto_start</a> auf
+   <code class="parameter">1</code> gesetzt ist, wird eine Session automatisch zu
+   Beginn einer Anfrage gestartet.
+  </p>
+  <p class="para">
+   Sessions werden normalerweise automatisch geschlossen, wenn PHP am Ende
+   eines Skripts ist, können aber über
+   <span class="function">session_write_close</span> auch manuell geschlossen werden.
+  </p>
+  <p class="para">
+   <div class="example" id="example-5254">
+    <p><strong>Beispiel #1 
+     Registrierung einer Variablen mit <var class="varname">$_SESSION</var>.
+    </strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />session_start</span><span style="color: #007700">();<br />if&nbsp;(!isset(</span><span style="color: #0000BB">$_SESSION</span><span style="color: #007700">[</span><span style="color: #DD0000">'zaehler'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$_SESSION</span><span style="color: #007700">[</span><span style="color: #DD0000">'zaehler'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$_SESSION</span><span style="color: #007700">[</span><span style="color: #DD0000">'zaehler'</span><span style="color: #007700">]++;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <div class="example" id="example-5255">
+    <p><strong>Beispiel #2 
+     Aufheben der Registrierung einer Variablen mit
+     <var class="varname">$_SESSION</var>.
+    </strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />session_start</span><span style="color: #007700">();<br />unset(</span><span style="color: #0000BB">$_SESSION</span><span style="color: #007700">[</span><span style="color: #DD0000">'zaehler'</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="caution"><strong class="caution">Achtung</strong>
+    <p class="para">
+     Heben Sie NICHT die Registrierung der gesamten
+     <var class="varname">$_SESSION</var> mit <em>unset($_SESSION)</em> auf,
+     weil dies die Registrierung von Variablen durch die Superglobale
+     <var class="varname">$_SESSION</var> deaktivieren würde.
+    </p>
+   </div>
+  </p>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="para">
+    Sie können in Session-Variablen keine Referenzen verwenden, weil es keine
+    praktikable Möglichkeit gibt, eine Referenz in eine andere Variable
+    zurückzuführen.
+   </p>
+  </div>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="para">
+    register_globals überschreibt im globalen Namensraum Variablen, deren
+    Namen mit denen von Sessionvariablen übereinstimmen. Für Details siehe
+    <a href="security.globals.html" class="link">Verwendung von Register Globals</a>.
+   </p>
+  </div>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Bei dateibasierten Sessions (der Standard in PHP) wird die Sessiondatei
+    gesperrt, wenn eine Session über <span class="function">session_start</span> oder
+    implizit über <a href="session.configuration.html#ini.session.auto-start" class="link">session.auto_start</a> geöffnet wurde.
+    Einmal gesperrt, kann solange kein anderes Skript auf die selbe
+    Sessiondatei zugreifen, bis die Session durch Beenden des ersten Skripts
+    oder durch den Aufruf von <span class="function">session_write_close</span>
+    geschlossen wurde.
+   </p>
+   <p class="para">
+    Dies ist wahrscheinlich ein Problem auf Websites, die verstärkt AJAX
+    verwenden und mehrere gleichzeitige Zugriffe haben. Der einfachste Weg,
+    damit umzugehen ist, <span class="function">session_write_close</span> möglichst
+    früh im Skript aufzurufen, sobald alle nötigen Änderungen an der Session
+    vorgenommen wurden. Alternativ könnte ein Session-Backend verwendet
+    werden, das gleichzeitige Zugriffe unterstützt.
+   </p>
+  </p></blockquote>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

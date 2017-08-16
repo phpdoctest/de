@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Einf&uuml;hrung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="security.html">Sicherheit</a></li>
+  <li class="active"><a href="security.intro.html">Einf&uuml;hrung</a></li>
+  <li><a href="security.general.html">Allgemeine &Uuml;berlegungen</a></li>
+  <li><a href="security.cgi-bin.html">Installiert als CGI-Version</a></li>
+  <li><a href="security.apache.html">Verwendung als Apache-Modul</a></li>
+  <li><a href="security.sessions.html">Session Security</a></li>
+  <li><a href="security.filesystem.html">Dateisystem - Sicherheit</a></li>
+  <li><a href="security.database.html">Datenbank - Sicherheit</a></li>
+  <li><a href="security.errors.html">Fehlerbehandlung</a></li>
+  <li><a href="security.globals.html">Using Register Globals</a></li>
+  <li><a href="security.variables.html">Vom Nutzer &uuml;bermittelte Daten</a></li>
+  <li><a href="security.magicquotes.html">Magic Quotes</a></li>
+  <li><a href="security.hiding.html">PHP verstecken</a></li>
+  <li><a href="security.current.html">Aktuell bleiben</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="security.html">Sicherheit</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="security.general.html">Allgemeine &Uuml;berlegungen</a></div>
+                <div class="up"><a href="security.html">Sicherheit</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="security.intro" class="chapter">
+  <h1>Einführung</h1>
+  <p class="simpara">
+   PHP ist eine mächtige Sprache, und der Interpreter, der in einen
+   Webserver als Modul oder als separate <acronym class="acronym">CGI</acronym>-Version
+   eingebunden werden kann, kann auf Dateien zugreifen, Befehle
+   ausführen und Netzwerkverbindungen zu einem Server herstellen.
+   Diese Eigenschaften können einen Webserver unsicher machen, wenn man
+   es bei den Voreinstellungen belässt. PHP wurde besonders dafür entwickelt,
+   um eine sicherere Sprache als Perl oder C für die Erstellung von
+   <acronym class="acronym">CGI</acronym>-Programmen bereitzustellen. Mit der richtigen
+   Wahl der Einstellungen beim Kompilieren und zur Laufzeit bietet PHP
+   genau die Kombination aus Freiheit und Sicherheit, die gerade benötigt wird.
+  </p>
+  <p class="simpara">
+   Da es sehr viele verschiedene Möglichkeiten gibt, PHP zu nutzen,
+   gibt es viele Konfigurationseinstellungen, die das Verhalten von
+   PHP beeinflussen. Eine große Auswahl an Einstellungen garantiert,
+   dass man PHP für viele Zwecke einsetzen kann. Allerdings
+   bedeutet das auch, dass es Kombinationen gibt, die eine Installation
+   mit nur ungenügender Sicherheit zur Folge haben.
+  </p>
+  <p class="simpara">
+   Die Flexibilität der Konfiguration konkurriert mit der Flexibilität
+   in der Programmierung. Mit PHP können komplette Server-Applikationen
+   mit allen Möglichkeiten eines Shell Benutzers erstellt werden, oder
+   auch nur einfache Server-Side-Includes mit einem minimalen Risiko in
+   einer streng kontrollierten Umgebung. Wie die Umgebung erstellt wird,
+   und wie sicher diese ist, ist zu einem großen Teil die Sache des
+   PHP-Entwicklers.
+  </p>
+  <p class="simpara">
+   Dieses Kapitel beginnt mit einigen generellen Ratschlägen zur Sicherheit,
+   erklärt die verschiedenen Kombinationen der Konfigurationseinstellungen
+   und unter welchen Gegebenheiten sie sicher genutzt werden können, und
+   beschreibt verschiedene Überlegungen zur Programmierung für verschiedene
+   Sicherheitsstufen.
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

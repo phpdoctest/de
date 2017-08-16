@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Einf&uuml;hrung</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li class="header up"><a href="book.regex.html">POSIX Regex</a></li>
+  <li class="active"><a href="intro.regex.html">Einf&uuml;hrung</a></li>
+  <li><a href="regex.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="regex.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="regex.examples.html">Beispiele</a></li>
+  <li><a href="ref.regex.html">POSIX Regex-Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="book.regex.html">POSIX Regex</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="regex.setup.html">Installation/Konfiguration</a></div>
+                <div class="up"><a href="book.regex.html">POSIX Regex</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="intro.regex" class="preface">
+  <h1 class="title">Einführung</h1>
+  <div class="tip"><strong class="tip">Tipp</strong>
+   <p class="para">
+    Bei Verwendung der <a href="book.pcre.html" class="link">PCRE Funktionen</a>
+    unterstützt PHP auch Reguläre Ausdrücke mit einer zu Perl kompatiblen
+    Syntax. Diese Funktionen unterstützen nicht-gieriges (non-greedy)
+    Matching, Assertions, bedingte Teilsuchmuster und viele andere Merkmale,
+    die von der POSIX-erweiterten Syntax regulärer Ausdrücke nicht unterstützt
+    werden.
+   </p>
+  </div>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="para">
+    Diese Funktionen regulärer Ausdrücke sind im Gegensatz zu den <a href="book.pcre.html" class="link">PCRE Funktionen</a> nicht binärsicher.
+   </p>
+  </div>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Ab PHP 5.3.0 ist diese Erweiterung veraltet und jeder Aufruf einer
+    Funktion dieser Erweiterung gibt eine
+    <strong><code>E_DEPRECATED</code></strong>-Meldung aus.
+   </p>
+  </p></blockquote>
+  <p class="para">
+   Reguläre Ausdrücke werden für komplexe Manipulationen an Zeichenketten
+   verwendet. PHP verwendet durch POSIX 1003.2 definierte POSIX erweiterte
+   reguläre Ausdrücke. Eine vollständige Beschreibung der POSIX regulären
+   Ausdrücke finden Sie im Regex-Verzeichnis der PHP-Distribution in den <a href="http://www.tin.org/bin/man.cgi?section=7&topic=regex" class="link external">&raquo;&nbsp;Regex man pages</a>.  Da sie im
+   manpage-Fomat vorliegt, sollten Sie einen Befehl der Art <strong class="command">man
+   /usr/local/src/regex/regex.7</strong> verwenden, um sie zu lesen.
+  </p>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

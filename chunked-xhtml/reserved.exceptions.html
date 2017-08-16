@@ -1,0 +1,575 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Exceptions</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li><a href="language.basic-syntax.html">Grundlagen der Syntax</a></li>
+  <li><a href="language.types.html">Typen</a></li>
+  <li><a href="language.variables.html">Variablen</a></li>
+  <li><a href="language.constants.html">Konstanten</a></li>
+  <li><a href="language.expressions.html">Ausdr&uuml;cke</a></li>
+  <li><a href="language.operators.html">Operatoren</a></li>
+  <li><a href="language.control-structures.html">Kontrollstrukturen</a></li>
+  <li><a href="language.functions.html">Funktionen</a></li>
+  <li><a href="language.oop5.html">Klassen und Objekte</a></li>
+  <li><a href="language.namespaces.html">Namespaces</a></li>
+  <li><a href="language.errors.html">Fehler</a></li>
+  <li><a href="language.exceptions.html">Ausnahmebehandlung (Exception-Handling)</a></li>
+  <li><a href="language.generators.html">Generatoren</a></li>
+  <li><a href="language.references.html">Referenzen in PHP</a></li>
+  <li><a href="reserved.variables.html">Vordefinierte Variablen</a></li>
+  <li class="active"><a href="reserved.exceptions.html">Vordefinierte Exceptions</a></li>
+  <li><a href="reserved.interfaces.html">Vordefinierte Interfaces und Klassen</a></li>
+  <li><a href="context.html">Kontextoptionen und -parameter</a></li>
+  <li><a href="wrappers.html">Unterst&uuml;tzte Protokolle und Wrapper</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="reserved.variables.argv.html">$argv</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="class.exception.html">Exception</a></div>
+                <div class="up"><a href="langref.html">Sprachreferenz</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="reserved.exceptions" class="part">
+ <h1>Vordefinierte Exceptions</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="class.exception.html">Exception</a> — Exception<ul class="chunklist chunklist_title">
+<li><a href="exception.construct.html">Exception::__construct</a> — Erstellt die Exception</li>
+<li><a href="exception.getmessage.html">Exception::getMessage</a> — Gibt die Exceptionbeschreibung zur&uuml;ck</li>
+<li><a href="exception.getprevious.html">Exception::getPrevious</a> — Gibt die vorhergehende Exception zur&uuml;ck</li>
+<li><a href="exception.getcode.html">Exception::getCode</a> — Gibt die Fehlernummer der Exception zur&uuml;ck</li>
+<li><a href="exception.getfile.html">Exception::getFile</a> — Gibt den Namen der Datei zur&uuml;ck, in der die Exception aufgetreten ist</li>
+<li><a href="exception.getline.html">Exception::getLine</a> — Gibt die Zeile zur&uuml;ck, in der die Exception auftrat</li>
+<li><a href="exception.gettrace.html">Exception::getTrace</a> — Gibt den Stacktrace zur&uuml;ck</li>
+<li><a href="exception.gettraceasstring.html">Exception::getTraceAsString</a> — Gibt den Stacktrace als String zur&uuml;ck</li>
+<li><a href="exception.tostring.html">Exception::__toString</a> — Stringrepr&auml;sentation der Exception</li>
+<li><a href="exception.clone.html">Exception::__clone</a> — Klont die Exception</li>
+</ul>
+</li>
+<li><a href="class.errorexception.html">ErrorException</a> — ErrorException<ul class="chunklist chunklist_title">
+<li><a href="errorexception.construct.html">ErrorException::__construct</a> — Erstellt die Exception</li>
+<li><a href="errorexception.getseverity.html">ErrorException::getSeverity</a> — Liefert die Schwere der Exception</li>
+</ul>
+</li>
+</ul>
+
+
+ <div class="partintro">
+  <p class="para">
+   Siehe auch das Kapitel <a href="spl.exceptions.html" class="link">SPL-Exceptions</a>.
+  </p>
+ </div>
+
+ 
+
+
+
+
+ <h1 class="title">Exception</h1>
+ 
+
+ <div class="partintro">
+
+
+  <div class="section" id="exception.intro">
+   <h2 class="title">Einführung</h2>
+   <p class="para">
+    <span class="ooclass"><strong class="classname">Exception</strong></span> ist die Basisklasse für
+    alle Exceptions.
+   </p>
+  </div>
+
+
+  <div class="section" id="exception.synopsis">
+   <h2 class="title">Klassenbeschreibung</h2>
+
+
+   <div class="classsynopsis">
+    <div class="ooclass"><strong class="classname">Exception</strong></div>
+
+
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+       class <strong class="classname">Exception</strong>
+     </span>
+     {</div>
+
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Eigenschaften */</div>
+    <div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">string</span>
+     <var class="varname">$message</var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">int</span>
+     <var class="varname">$code</var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">string</span>
+     <var class="varname">$file</var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">int</span>
+     <var class="varname">$line</var>
+    ;</div>
+
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methoden */</div>
+    <div class="constructorsynopsis dc-description">
+   <span class="modifier">public</span>  <span class="methodname">__construct</span>
+    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$message</code><span class="initializer"> = &quot;&quot;</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$code</code><span class="initializer"> = 0</span></span>
+   [, <span class="methodparam"><span class="type">Exception</span> <code class="parameter">$previous</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+  ]]] )</div>
+
+    <div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname">getMessage</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">Exception</span> <span class="methodname">getPrevious</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname">getCode</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname">getFile</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">int</span> <span class="methodname">getLine</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">array</span> <span class="methodname">getTrace</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname">getTraceAsString</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span>  <span class="methodname">__toString</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">private</span> <span class="type">void</span> <span class="methodname">__clone</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+   }</div>
+
+
+
+  </div>
+
+
+  <div class="section" id="exception.props">
+   <h2 class="title">Eigenschaften</h2>
+   <dl>
+
+    
+     <dt id="exception.props.message"><var class="varname">message</var></dt>
+
+     <dd>
+
+      <p class="para">Die Exceptionmeldung.</p>
+     </dd>
+
+    
+    
+     <dt id="exception.props.code"><var class="varname">code</var></dt>
+
+     <dd>
+
+      <p class="para">Die Fehlernummer der Exception.</p>
+     </dd>
+
+    
+    
+     <dt id="exception.props.file"><var class="varname">file</var></dt>
+
+     <dd>
+
+      <p class="para">Der Name der Datei, in der die Exception erzeugt wurde.</p>
+     </dd>
+
+    
+    
+     <dt id="exception.props.line"><var class="varname">line</var></dt>
+
+     <dd>
+
+      <p class="para">Die Zeilennummer, in der die Exception erzeugt wurde.</p>
+     </dd>
+
+    
+   </dl>
+
+  </div>
+
+
+ </div>
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <h1 class="title">ErrorException</h1>
+ 
+
+ <div class="partintro">
+
+
+  <div class="section" id="errorexception.intro">
+   <h2 class="title">Einführung</h2>
+   <p class="para">
+    Eine Error Exception.
+   </p>
+  </div>
+
+
+  <div class="section" id="errorexception.synopsis">
+   <h2 class="title">Klassenbeschreibung</h2>
+
+
+   <div class="classsynopsis">
+    <div class="ooclass"><strong class="classname">ErrorException</strong></div>
+
+
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+       class <strong class="classname">ErrorException</strong>
+     </span>
+
+     <span class="ooclass">
+      <span class="modifier">extends</span>
+      <strong class="classname"> Exception</strong>
+     </span>
+     {</div>
+
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Eigenschaften */</div>
+    <div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">int</span>
+     <var class="varname">$severity</var>
+    ;</div>
+
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Geerbte Eigenschaften */</div>
+    <div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">string</span>
+     <var class="varname">$message</var>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">int</span>
+     <var class="varname">$code</var>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">string</span>
+     <var class="varname">$file</var>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">int</span>
+     <var class="varname">$line</var>
+    ;</div>
+
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methoden */</div>
+    <div class="constructorsynopsis dc-description">
+   <span class="modifier">public</span>  <span class="methodname">__construct</span>
+    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$message</code><span class="initializer"> = &quot;&quot;</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$code</code><span class="initializer"> = 0</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$severity</code><span class="initializer"> = 1</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code><span class="initializer"> = __FILE__</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$lineno</code><span class="initializer"> = __LINE__</span></span>
+   [, <span class="methodparam"><span class="type">Exception</span> <code class="parameter">$previous</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+  ]]]]]] )</div>
+
+    <div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">int</span> <span class="methodname">getSeverity</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Geerbte Methoden */</div>
+    <div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname">Exception::getMessage</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">Exception</span> <span class="methodname">Exception::getPrevious</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname">Exception::getCode</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname">Exception::getFile</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">int</span> <span class="methodname">Exception::getLine</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">array</span> <span class="methodname">Exception::getTrace</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname">Exception::getTraceAsString</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span>  <span class="methodname">Exception::__toString</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">private</span> <span class="type">void</span> <span class="methodname">Exception::__clone</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+   }</div>
+
+
+  </div>
+
+
+  <div class="section" id="errorexception.props">
+   <h2 class="title">Eigenschaften</h2>
+   <dl>
+
+    
+     <dt id="errorexception.props.severity"><var class="varname">severity</var></dt>
+
+     <dd>
+
+      <p class="para">Die Schwere einer Exception</p>
+     </dd>
+
+    
+   </dl>
+
+  </div>
+
+
+  <div class="section" id="errorexception.examples">
+   <h2 class="title">Beispiele</h2>
+   <p class="para">
+    <div class="example" id="errorexception.example.error-handler">
+     <p><strong>Beispiel #1 Verwenden von <span class="function">set_error_handler</span> zum
+      Verändern von Fehlermeldungen innerhalb ErrorException.</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">exception_error_handler</span><span style="color: #007700">(</span><span style="color: #0000BB">$severity</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$message</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$file</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$line</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!(</span><span style="color: #0000BB">error_reporting</span><span style="color: #007700">()&nbsp;&amp;&nbsp;</span><span style="color: #0000BB">$severity</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Dieser&nbsp;Fehlercode&nbsp;ist&nbsp;nicht&nbsp;in&nbsp;error_reporting&nbsp;enthalten<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">return;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;</span><span style="color: #0000BB">ErrorException</span><span style="color: #007700">(</span><span style="color: #0000BB">$message</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$severity</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$file</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$line</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">set_error_handler</span><span style="color: #007700">(</span><span style="color: #DD0000">"exception_error_handler"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Exception&nbsp;ausloesen&nbsp;*/<br /></span><span style="color: #0000BB">strpos</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+     <div class="example-contents"><p>Das oben gezeigte Beispiel erzeugt
+eine ähnliche Ausgabe wie:</p></div>
+     <div class="example-contents screen">
+<div class="cdata"><pre>
+Fatal error: Uncaught exception &#039;ErrorException&#039; with message &#039;strpos() expects at least 2 parameters, 0 given&#039; in /home/bjori/tmp/ex.php:12
+Stack trace:
+#0 [internal function]: exception_error_handler(2, &#039;strpos() expect...&#039;, &#039;/home/bjori/php...&#039;, 12, Array)
+#1 /home/bjori/php/cleandocs/test.php(12): strpos()
+#2 {main}
+  thrown in /home/bjori/tmp/ex.php on line 12
+</pre></div>
+     </div>
+    </div>
+   </p>
+  </div>
+
+ </div>
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

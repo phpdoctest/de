@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: &Ouml;ffnet eine Datei (falls n&ouml;tig, wird diese erzeugt) auf einem niedrigeren
+   Level als es die C-Bibliotheks Ein-/Ausgabe-Stream-Funktionen erlauben.</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.file.html">Dateisystemrelevante Erweiterungen</a></li>
+  <li class="header up"><a href="book.dio.html">Direct-IO</a></li>
+  <li class="header up"><a href="ref.dio.html">Direct-IO-Funktionen</a></li>
+  <li><a href="function.dio-close.html">dio_close</a></li>
+  <li><a href="function.dio-fcntl.html">dio_fcntl</a></li>
+  <li class="active"><a href="function.dio-open.html">dio_open</a></li>
+  <li><a href="function.dio-read.html">dio_read</a></li>
+  <li><a href="function.dio-seek.html">dio_seek</a></li>
+  <li><a href="function.dio-stat.html">dio_stat</a></li>
+  <li><a href="function.dio-tcsetattr.html">dio_tcsetattr</a></li>
+  <li><a href="function.dio-truncate.html">dio_truncate</a></li>
+  <li><a href="function.dio-write.html">dio_write</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.dio-fcntl.html">dio_fcntl</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.dio-read.html">dio_read</a></div>
+                <div class="up"><a href="ref.dio.html">Direct-IO-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.dio-open" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">dio_open</h1>
+  <p class="refpurpose">
+   Öffnet eine Datei (falls nötig, wird diese erzeugt) auf einem niedrigeren
+   Level als es die C-Bibliotheks Ein-/Ausgabe-Stream-Funktionen erlauben.
+  </p>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.dio-open-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">resource</span> <span class="methodname">dio_open</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$mode</code><span class="initializer"> = 0</span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">dio_open</span> öffnet eine Datei und liefert einen
+   Dateideskriptor zurück.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.dio-open-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">filename</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Pfadname der zu öffnenden Datei.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">flags</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Parameter <code class="parameter">flags</code> ist ein bitweise ODER
+       verknüpfter Wert bestehend aus Flags der folgende Liste. Dieser Wert
+       <em class="emphasis">muss</em> entweder <strong><code>O_RDONLY</code></strong>,
+       <strong><code>O_WRONLY</code></strong>, oder <strong><code>O_RDWR</code></strong>
+       enthalten. Zusätzlich kann er eine beliebige Kombination der anderen
+       Flags dieser Liste enthalten.
+       <ul class="itemizedlist">
+        <li class="listitem">
+         <p class="para">
+          <strong><code>O_RDONLY</code></strong> - öffnet die Datei zum Lesezugriff.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <strong><code>O_WRONLY</code></strong> - öffnet die Datei zum Schreibzugriff.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <strong><code>O_RDWR</code></strong> - öffnet die Datei zum Lesen und Schreiben.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <strong><code>O_CREAT</code></strong> - erzeugt die Datei, falls diese nicht existiert
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <strong><code>O_EXCL</code></strong> - wird sowohl <strong><code>O_CREAT</code></strong>
+          als auch <strong><code>O_EXCL</code></strong> angegeben und die Datei existiert
+          bereits, schlägt <span class="function">dio_open</span> fehl.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <strong><code>O_TRUNC</code></strong> - falls die Datei bereits existiert, und sie für
+          Schreibzugriff geöffnet wird, wird diese auf die Grösse 0
+          zurückgesetzt
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <strong><code>O_APPEND</code></strong> - setzt den Zeiger für Schreiboperationen an das Ende
+          der Datei
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <strong><code>O_NONBLOCK</code></strong> - Setzt den Modus auf &quot;nonblocking&quot;
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <strong><code>O_NOCTTY</code></strong> - hält das Betriebssystem davon ab,
+          die geöffnete Datei als Prozess steuerndes Terminal zuzuweisen,
+          wenn eine TTY Gerätedatei geöffnet wird.
+         </p>
+        </li>
+       </ul>
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">mode</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Wenn <code class="parameter">flags</code> das Flag <strong><code>O_CREAT</code></strong>
+       enthält, setzt <code class="parameter">mode</code> die Dateizugriffsrechte.
+       <code class="parameter">mode</code> wird für die korrekte Ausführung benötigt,
+       wenn <strong><code>O_CREAT</code></strong> in <code class="parameter">flags</code>
+       angegeben wird, und wird ansonsten ignoriert.
+      </p>
+      <p class="para">
+       Die tatsächlichen Dateizugriffsrechte, die der erzeugten Datei zugewiesen
+       werden, werden von der <em class="emphasis">umask</em> Einstellung des
+       Prozesses wie üblich beeinflusst.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.dio-open-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Ein Dateideskriptor oder <strong><code>FALSE</code></strong> bei Fehlern.
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.dio-open-examples">
+  <h3 class="title">Beispiele</h3>
+  <div class="example" id="example-2532">
+   <p><strong>Beispiel #1 Öffnen eines Dateideskriptors</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$fd&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dio_open</span><span style="color: #007700">(</span><span style="color: #DD0000">'/dev/ttyS0'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">O_RDWR&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">O_NOCTTY&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">O_NONBLOCK</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">dio_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$fd</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.dio-open-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">dio_close</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

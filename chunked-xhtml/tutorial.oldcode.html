@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Alten Code mit neuen PHP-Versionen benutzen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="getting-started.html">Einf&uuml;hrung</a></li>
+  <li class="header up"><a href="tutorial.html">Ein kleines Tutorial</a></li>
+  <li><a href="tutorial.requirements.html">Was brauche ich?</a></li>
+  <li><a href="tutorial.firstpage.html">Ihre erste PHP-erweiterte Seite</a></li>
+  <li><a href="tutorial.useful.html">Etwas n&uuml;tzliches</a></li>
+  <li><a href="tutorial.forms.html">Formulare verarbeiten</a></li>
+  <li class="active"><a href="tutorial.oldcode.html">Alten Code mit neuen PHP-Versionen benutzen</a></li>
+  <li><a href="tutorial.whatsnext.html">Und weiter?</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="tutorial.forms.html">Formulare verarbeiten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="tutorial.whatsnext.html">Und weiter?</a></div>
+                <div class="up"><a href="tutorial.html">Ein kleines Tutorial</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="tutorial.oldcode" class="section">
+   <h2 class="title">Alten Code mit neuen PHP-Versionen benutzen</h2>
+   <p class="para">
+    Dadurch, dass PHP eine immer beliebtere Skriptsprache ist, gibt es
+    immer mehr öffentliche Quellen und Bibliotheken mit Code, den Sie
+    wieder verwenden können. Die PHP-Entwickler haben versucht, den
+    größten Teil der Sprache abwärtskompatibel zu halten. Das bedeutet,
+    dass ein Skript, das für eine ältere PHP-Version geschrieben wurde,
+    (im Idealfall) ohne Änderungen auch unter einer neueren PHP-Version
+    läuft. In der Praxis sind aber meist einige Änderungen nötig.
+   </p>
+   <p class="para">
+    Zwei der wichtigsten aktuellen Änderungen, die alten Code betreffen, sind:
+    <ul class="itemizedlist">
+     <li class="listitem">
+      <span class="simpara">
+       Die alten <var class="varname">$HTTP_*_VARS</var>-Arrays sind
+       ab PHP 5.4.0 nicht mehr verfügbar.
+       Die folgenden <a href="language.variables.superglobals.html" class="link">Superglobalen Arrays</a>
+       wurden in PHP <a href="http://www.php.net/releases/4_1_0.php" class="link external">&raquo;&nbsp;4.1.0</a>
+       eingeführt: <var class="varname">$_GET</var>, <var class="varname">$_POST</var>,
+       <var class="varname">$_COOKIE</var>, <var class="varname">$_SERVER</var>,
+       <var class="varname">$_FILES</var>, <var class="varname">$_ENV</var>,
+       <var class="varname">$_REQUEST</var> und <var class="varname">$_SESSION</var>.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       Externe Variablen werden standardmäßig nicht mehr im globalen Namensraum
+       registriert. Mit anderen Worten, seit PHP
+       <a href="http://www.php.net/releases/4_2_0.php" class="link external">&raquo;&nbsp;4.2.0</a> ist <em class="emphasis">off</em>
+       die Standard-Einstellung für die PHP-Direktive
+       <a href="ini.core.html#ini.register-globals" class="link">register_globals</a>.
+       Die empfohlene Methode, auf diese Werte zuzugreifen, ist, die oben genannten
+       superglobalen Arrays zu verwenden. Ältere Skripte, Bücher und Tutorials gehen
+       eventuell davon aus, dass diese Einstellung auf <em class="emphasis">on</em> steht.
+       Wäre die Einstellung z.B. on, dann wäre die Variable <var class="varname">$id</var> aus
+       dem URL <em>http://www.example.com/foo.php?id=42</em> verfügbar.
+       Unabhängig davon, ob on oder off, ist <var class="varname">$_GET[&#039;id&#039;]</var> immer
+       verfügbar.
+      </span>
+     </li>
+    </ul>
+    Für weitere Details über diese Änderungen siehe die Seite über
+    <a href="language.variables.predefined.html" class="link">vordefinierte Variablen</a>
+    und die Links dort.
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

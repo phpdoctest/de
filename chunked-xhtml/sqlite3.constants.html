@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Konstanten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.sqlite3.html">SQLite3</a></li>
+  <li><a href="intro.sqlite3.html">Einf&uuml;hrung</a></li>
+  <li><a href="sqlite3.setup.html">Installation/Konfiguration</a></li>
+  <li class="active"><a href="sqlite3.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="class.sqlite3.html">SQLite3</a></li>
+  <li><a href="class.sqlite3stmt.html">SQLite3Stmt</a></li>
+  <li><a href="class.sqlite3result.html">SQLite3Result</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="sqlite3.resources.html">Ressource-Typen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="class.sqlite3.html">SQLite3</a></div>
+                <div class="up"><a href="book.sqlite3.html">SQLite3</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="sqlite3.constants" class="appendix">
+ <h1>Vordefinierte Konstanten</h1>
+ <p class="simpara">Folgende Konstanten werden von dieser
+Erweiterung definiert und stehen nur zur Verfügung, wenn die Erweiterung entweder
+statisch in PHP kompiliert oder dynamisch zur Laufzeit geladen
+wurde.</p>
+ <p class="para">
+  <dl>
+
+   
+    <dt id="constant.sqlite3-assoc">
+     <strong><code>SQLITE3_ASSOC</code></strong>
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Legt fest, dass die  <span class="methodname">Sqlite3Result::fetchArray</span>-Methode 
+      eine assoziative Liste zurückgeben soll. Die Liste wird durch den Spaltennamen 
+      indiziert, wie er in dem Anfrageergebnis zurückgegeben wurde.
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.sqlite3-num">
+     <strong><code>SQLITE3_NUM</code></strong>
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Legt fest, dass die  <span class="methodname">Sqlite3Result::fetchArray</span>-Methode 
+      eine Liste zurückgeben soll, die durch die Spaltennummer indiziert wird, 
+      wie sie in dem Anfrageergebnis zurückgegeben wurde, beginnend mit Spalte 0.
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.sqlite3-both">
+     <strong><code>SQLITE3_BOTH</code></strong>
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Legt fest, dass die  <span class="methodname">Sqlite3Result::fetchArray</span>-Methode 
+      eine Liste zurückgeben soll, die sowohl durch den Spaltennamen, als auch durch 
+      die Spaltennummer indiziert wird. Die geschieht analog dazu, wie es im 
+      Anfrageergebnis zurückgegeben wurde, beginnend mit Spalte 0.
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.sqlite3-integer">
+     <strong><code>SQLITE3_INTEGER</code></strong>
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Repräsentiert die SQLite3 &#039;INTEGER&#039;-Speicherklasse.
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.sqlite3-float">
+     <strong><code>SQLITE3_FLOAT</code></strong>
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Repräsentiert die SQLite3 &#039;REAL (FLOAT)&#039;-Speicherklasse.
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.sqlite3-text">
+     <strong><code>SQLITE3_TEXT</code></strong>
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Repräsentiert die SQLite3 &#039;TEXT&#039;-Speicherklasse.
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.sqlite3-blob">
+     <strong><code>SQLITE3_BLOB</code></strong>
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Repräsentiert die SQLite3 &#039;BLOB&#039;-Speicherklasse.
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.sqlite3-null">
+     <strong><code>SQLITE3_NULL</code></strong>
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Repräsentiert die SQLite3 &#039;NULL&#039;-Speicherklasse.
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.sqlite3-open-readonly">
+     <strong><code>SQLITE3_OPEN_READONLY</code></strong>
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Legt fest, dass die SQLite3-Datenbank nur für den lesenden Zugriff geöffnet wird.
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.sqlite3-open-readwrite">
+     <strong><code>SQLITE3_OPEN_READWRITE</code></strong>
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Legt fest, dass die SQLite3 Datenbank für den Lese- und Schreibzugriff 
+      geöffnet wird.
+     </span>
+    </dd>
+
+   
+   
+    <dt id="constant.sqlite3-open-create">
+     <strong><code>SQLITE3_OPEN_CREATE</code></strong>
+     (<span class="type">integer</span>)
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      Legt fest, dass die SQLite3 Datenbank vor dem Öffnen angelegt wird, wenn diese noch 
+      nicht existiert.
+     </span>
+    </dd>
+
+   
+  </dl>
+
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

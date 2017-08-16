@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Bildet ein DateInterval aus relativen Teilen des Strings</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.calendar.html">Datums- und zeitrelevante Erweiterungen</a></li>
+  <li class="header up"><a href="book.datetime.html">Datum/Uhrzeit</a></li>
+  <li class="header up"><a href="class.dateinterval.html">DateInterval</a></li>
+  <li><a href="dateinterval.construct.html">DateInterval::__construct</a></li>
+  <li class="active"><a href="dateinterval.createfromdatestring.html">DateInterval::createFromDateString</a></li>
+  <li><a href="dateinterval.format.html">DateInterval::format</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="dateinterval.construct.html">DateInterval::__construct</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="dateinterval.format.html">DateInterval::format</a></div>
+                <div class="up"><a href="class.dateinterval.html">DateInterval</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="dateinterval.createfromdatestring" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">DateInterval::createFromDateString</h1>
+  <p class="refpurpose">Bildet ein DateInterval aus relativen Teilen des Strings</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-dateinterval.createfromdatestring-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">DateInterval</span> <span class="methodname">DateInterval::createFromDateString</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$time</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Verwendet die normalen Datenparser und bildet ein DateInterval aus den
+   relativen Teilen des geparsten Strings.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-dateinterval.createfromdatestring-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">time</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ein Datum mit relativen Teilen. Insbesondere werden die
+       <a href="datetime.formats.relative.html" class="link">relativen Formate</a>, die
+       vom Parser, der für <span class="function">strtotime</span> und
+       <span class="classname">DateTime</span> verwendet wird, unterstützt werden,
+       verwendet, um das DateInterval zu konstruieren.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-dateinterval.createfromdatestring-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-2484">
+    <p><strong>Beispiel #1 Parsen von gültigen Datum-Intervallen</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Jede&nbsp;Gruppe&nbsp;von&nbsp;Intervallen&nbsp;ist&nbsp;gleich.<br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'P1D'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromDateString</span><span style="color: #007700">(</span><span style="color: #DD0000">'1&nbsp;day'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'P2W'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromDateString</span><span style="color: #007700">(</span><span style="color: #DD0000">'2&nbsp;weeks'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'P3M'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromDateString</span><span style="color: #007700">(</span><span style="color: #DD0000">'3&nbsp;months'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'P4Y'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromDateString</span><span style="color: #007700">(</span><span style="color: #DD0000">'4&nbsp;years'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'P1Y1D'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromDateString</span><span style="color: #007700">(</span><span style="color: #DD0000">'1&nbsp;year&nbsp;+&nbsp;1&nbsp;day'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'P1DT12H'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromDateString</span><span style="color: #007700">(</span><span style="color: #DD0000">'1&nbsp;day&nbsp;+&nbsp;12&nbsp;hours'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'PT3600S'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromDateString</span><span style="color: #007700">(</span><span style="color: #DD0000">'3600&nbsp;seconds'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-dateinterval.createfromdatestring-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt ein neues <span class="classname">DateInterval</span> Exemplar zurück.
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Was Referenzen leisten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.references.html">Referenzen in PHP</a></li>
+  <li><a href="language.references.whatare.html">Was Referenzen sind</a></li>
+  <li class="active"><a href="language.references.whatdo.html">Was Referenzen leisten</a></li>
+  <li><a href="language.references.arent.html">Was Referenzen nicht sind</a></li>
+  <li><a href="language.references.pass.html">Parameter&uuml;bergabe per Referenz</a></li>
+  <li><a href="language.references.return.html">Referenzen zur&uuml;ckgeben</a></li>
+  <li><a href="language.references.unset.html">Referenzen aufheben</a></li>
+  <li><a href="language.references.spot.html">Referenzen entdecken</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.references.whatare.html">Was Referenzen sind</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.references.arent.html">Was Referenzen nicht sind</a></div>
+                <div class="up"><a href="language.references.html">Referenzen in PHP</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.references.whatdo" class="sect1">
+   <h2 class="title">Was Referenzen leisten</h2>
+   <p class="para">
+    PHP Referenzen erlauben es, zwei Variablennamen, sich auf den
+    gleichen Variableninhalt beziehen zu lassen. Das heißt im
+    folgenden Beispiel, dass sich <var class="varname">$a</var> und
+    <var class="varname">$b</var> auf dieselbe Variable beziehen:
+
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&amp;&nbsp;</span><span style="color: #0000BB">$b<br />?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <p class="para">
+      <var class="varname">$a</var> und <var class="varname">$b</var> sind hier
+      gleichwertig, und <var class="varname">$a</var> ist nicht nur ein
+      Zeiger auf <var class="varname">$b</var> oder umgekehrt, sondern
+      <var class="varname">$a</var> und <var class="varname">$b</var> zeigen auf
+      den selben Inhalt.
+     </p>
+    </p></blockquote>
+   </p>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Wenn ein Array mit Referenzen kopiert wird, werden seine Werte nicht
+     dereferenziert. Dies gilt auch für Array, die per Wert an Funktionen
+     übergeben werden
+    </p>
+   </p></blockquote>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+    Wenn man eine undefinierte Variable per Referenz zuweist, übergibt oder
+    zurückgibt, wird sie erstellt.
+     <div class="example" id="example-295">
+      <p><strong>Beispiel #1 Referenzen mit undefinierten Variablen benutzen</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$var</span><span style="color: #007700">)&nbsp;{&nbsp;}<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;$a&nbsp;wird&nbsp;"erstellt"&nbsp;mit&nbsp;dem&nbsp;Wert&nbsp;null<br /><br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">$b</span><span style="color: #007700">[</span><span style="color: #DD0000">'b'</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">array_key_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">'b'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(true)<br /><br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">StdClass</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">d</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">property_exists</span><span style="color: #007700">(</span><span style="color: #0000BB">$c</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'d'</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(true)<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+   </p></blockquote>
+   <p class="para">
+   Diese Syntax kann auch mit Funktionen, die Referenzen zurückgeben, benutzt
+   werden und seit PHP 4.0.4 auch in Verbindung mit dem
+   <em>new</em>-Operator.
+   <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$bar&nbsp;</span><span style="color: #007700">=&amp;&nbsp;new&nbsp;</span><span style="color: #0000BB">fooclass</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&amp;&nbsp;</span><span style="color: #0000BB">find_var&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$bar</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+    Seit PHP 5 referenziert return
+    <a href="language.oop5.basic.html#language.oop5.basic.new" class="link">new</a> automatisch, also erzeugt
+    die Verwendung der veralteten Syntax <em>=&amp;</em> eine
+    E_STRICT-Warnung.
+    </p>
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <p class="para">
+     Wenn der <em>&amp;</em>-Operator nicht verwendet wird, erzeugt
+     PHP eine Kopie des Objekts. Wenn nun <em>$this</em> innerhalb
+     der Klasse verwendet wird, bezieht es sich auf die aktuelle Instanz der
+     Klasse. Die Zuordnung ohne <em>&amp;</em> erzeugt eine Kopie der
+     Instanz (d.h. des Objekts) und <em>$this</em> wird sich auf
+     die Kopie beziehen. In der Regel will man aus Performance- und
+     Speicherverbrausgründen nur eine einzige Instanz einer Klasse
+     erzeugen.
+     </p>
+     <p class="para">
+      Während man den <em>@</em>-Operator benutzen kann, um Fehler
+      im Konstruktor zu <em class="emphasis">unterdrücken</em>, wenn man ihn als
+      <em>@new</em> benutzt, funktioniert dies nicht bei der Benutzung
+      von <em>&amp;new</em>. Dies ist eine Einschränkung der Zend
+      Engine und resultiert daher in einem Parserfehler.
+     </p>
+   </p></blockquote>
+   <div class="warning"><strong class="warning">Warnung</strong>
+    <p class="para">
+     Wenn man einer als <em>global</em> deklarierten Variable eine
+     Referenz innerhalb einer Funktion zuweist, wird die Referenz nur innerhalb
+     der Funktion sichtbar sein. Dies kann durch die Verwendung des
+     <var class="varname">$GLOBALS</var>-Arrays vermieden werden.
+     <div class="example" id="example-296">
+      <p><strong>Beispiel #2 Globale Variablen innerhalb einer Funktion referenzieren</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$var1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Beispielvariable"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$var2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;<br /><br />function&nbsp;</span><span style="color: #0000BB">global_references</span><span style="color: #007700">(</span><span style="color: #0000BB">$use_globals</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$var1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$var2</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">$use_globals</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$var2&nbsp;</span><span style="color: #007700">=&amp;&nbsp;</span><span style="color: #0000BB">$var1</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;nur&nbsp;innerhalb&nbsp;der&nbsp;Funktion&nbsp;sichtbar<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$GLOBALS</span><span style="color: #007700">[</span><span style="color: #DD0000">"var2"</span><span style="color: #007700">]&nbsp;=&amp;&nbsp;</span><span style="color: #0000BB">$var1</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;auch&nbsp;im&nbsp;globalen&nbsp;Kontext&nbsp;sichtbar<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br />}<br /><br /></span><span style="color: #0000BB">global_references</span><span style="color: #007700">(</span><span style="color: #0000BB">false</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"var2&nbsp;wurde&nbsp;auf&nbsp;'</span><span style="color: #0000BB">$var2</span><span style="color: #DD0000">'&nbsp;gesetzt\n"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;var2&nbsp;ist&nbsp;''<br /></span><span style="color: #0000BB">global_references</span><span style="color: #007700">(</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"var2&nbsp;wurde&nbsp;auf&nbsp;'</span><span style="color: #0000BB">$var2</span><span style="color: #DD0000">'&nbsp;gesetzt\n"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;var2&nbsp;ist&nbsp;'Beispielvariable'<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+     Man sollte <em>global $var;</em> als Abkürzung für
+     <em>$var =&amp; $GLOBALS[&#039;var&#039;];</em> sehen. Deswegen ändert die
+     Zuweisung per Referenz an <em>$var</em> nur die Referenz
+     der lokalen Variable.
+    </p>
+   </div>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Wenn man einer Variable einen Wert per Referenz in einer <a href="control-structures.foreach.html" class="link">foreach</a>-Anweisung zuweist,
+     werden die Referenzen auch geändert.
+     <div class="example" id="example-297">
+      <p><strong>Beispiel #3 Referenzen und die foreach-Anweisung</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$ref&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$row&nbsp;</span><span style="color: #007700">=&amp;&nbsp;</span><span style="color: #0000BB">$ref</span><span style="color: #007700">;<br />foreach&nbsp;(array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;do&nbsp;something<br /></span><span style="color: #007700">}<br />echo&nbsp;</span><span style="color: #0000BB">$ref</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;3&nbsp;-&nbsp;letztes&nbsp;Element&nbsp;des&nbsp;durchlaufenen&nbsp;Arrays<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+   </p></blockquote>
+
+   <p class="para">
+    Eine weitere Einsatzmöglichkeit von Referenzen ist die Übergabe
+    von Parametern an eine Funktion mit pass-by-reference. Hierbei
+    beziehen sich der lokale Variablenname als auch der Variablenname
+    der aufrufenden Instanz auf denselben Variableninhalt:
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$var</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$var</span><span style="color: #007700">++;<br />}<br /><br /></span><span style="color: #0000BB">$a</span><span style="color: #007700">=</span><span style="color: #0000BB">5</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+    Nach der Ausführung hat <var class="varname">$a</var> den Wert 6, da sich
+    in der Funktion <var class="varname">foo</var> der Variablenname
+    <var class="varname">$var</var> auf denselben Variableninhalt bezieht wie
+    <var class="varname">$a</var> in der aufrufenden Instanz (hier das Hauptprogramm).
+    Es gibt auch eine detailliertere Erläuterung der Parameterübergabe <a href="language.references.pass.html" class="link">by-reference</a>
+   </p>
+   <p class="simpara">
+    Daneben besteht die Möglichkeit aus Funktionen heraus Werte mit
+    <a href="language.references.return.html" class="link">return by-reference</a>
+    zurückzugeben.
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: XML-Manipulation</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li><a href="refs.utilspec.audio.html">Manipulation von Audioformaten</a></li>
+  <li><a href="refs.remote.auth.html">Authentifizierungsdienste</a></li>
+  <li><a href="refs.utilspec.cmdline.html">Eingabezeilenspezifische Erweiterungen</a></li>
+  <li><a href="refs.compression.html">Erweiterungen zur Datenkompression und Archivierung</a></li>
+  <li><a href="refs.creditcard.html">Kreditkartendaten-Verarbeitung</a></li>
+  <li><a href="refs.crypto.html">Kryptografische Erweiterungen</a></li>
+  <li><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li><a href="refs.calendar.html">Datums- und zeitrelevante Erweiterungen</a></li>
+  <li><a href="refs.fileprocess.file.html">Dateisystemrelevante Erweiterungen</a></li>
+  <li><a href="refs.international.html">Unterst&uuml;tzung menschlicher Sprache und Zeichenkodierung</a></li>
+  <li><a href="refs.utilspec.image.html">Bildverarbeitung und -generierung</a></li>
+  <li><a href="refs.remote.mail.html">E-Mail-relevante Erweiterungen</a></li>
+  <li><a href="refs.math.html">Mathematische Erweiterungen</a></li>
+  <li><a href="refs.utilspec.nontext.html">Non-Text MIME-Ausgaben</a></li>
+  <li><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li><a href="refs.basic.other.html">Sonstige Grunderweiterungen</a></li>
+  <li><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li><a href="refs.search.html">Suchmaschinenerweiterungen</a></li>
+  <li><a href="refs.utilspec.server.html">Serverspezifische Erweiterungen</a></li>
+  <li><a href="refs.basic.session.html">Session-Erweiterungen</a></li>
+  <li><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li><a href="refs.webservice.html">Web Services</a></li>
+  <li><a href="refs.utilspec.windows.html">Windowsbasierte Erweiterungen</a></li>
+  <li class="active"><a href="refs.xml.html">XML-Manipulation</a></li>
+  <li><a href="refs.ui.html">GUI Erweiterungen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.win32-stop-service.html">win32_stop_service</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="book.dom.html">DOM</a></div>
+                <div class="up"><a href="funcref.html">Funktionsreferenz</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="refs.xml" class="set">
+   <h1>XML-Manipulation</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="book.dom.html">DOM</a> — Document Object Model<ul class="chunklist chunklist_title">
+<li><a href="intro.dom.html">Einf&uuml;hrung</a></li>
+<li><a href="dom.setup.html">Installation/Konfiguration</a></li>
+<li><a href="dom.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="dom.examples.html">Beispiele</a></li>
+<li><a href="class.domattr.html">DOMAttr</a> — The DOMAttr class</li>
+<li><a href="class.domcdatasection.html">DOMCdataSection</a> — The DOMCdataSection class</li>
+<li><a href="class.domcharacterdata.html">DOMCharacterData</a> — The DOMCharacterData class</li>
+<li><a href="class.domcomment.html">DOMComment</a> — The DOMComment class</li>
+<li><a href="class.domdocument.html">DOMDocument</a> — The DOMDocument class</li>
+<li><a href="class.domdocumentfragment.html">DOMDocumentFragment</a> — The DOMDocumentFragment class</li>
+<li><a href="class.domdocumenttype.html">DOMDocumentType</a> — The DOMDocumentType class</li>
+<li><a href="class.domelement.html">DOMElement</a> — The DOMElement class</li>
+<li><a href="class.domentity.html">DOMEntity</a> — The DOMEntity class</li>
+<li><a href="class.domentityreference.html">DOMEntityReference</a> — The DOMEntityReference class</li>
+<li><a href="class.domexception.html">DOMException</a> — The DOMException class</li>
+<li><a href="class.domimplementation.html">DOMImplementation</a> — The DOMImplementation class</li>
+<li><a href="class.domnamednodemap.html">DOMNamedNodeMap</a> — The DOMNamedNodeMap class</li>
+<li><a href="class.domnode.html">DOMNode</a> — The DOMNode class</li>
+<li><a href="class.domnodelist.html">DOMNodeList</a> — The DOMNodeList class</li>
+<li><a href="class.domnotation.html">DOMNotation</a> — The DOMNotation class</li>
+<li><a href="class.domprocessinginstruction.html">DOMProcessingInstruction</a> — The DOMProcessingInstruction class</li>
+<li><a href="class.domtext.html">DOMText</a> — The DOMText class</li>
+<li><a href="class.domxpath.html">DOMXPath</a> — The DOMXPath class</li>
+<li><a href="ref.dom.html">DOM Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.libxml.html">libxml</a><ul class="chunklist chunklist_title">
+<li><a href="intro.libxml.html">Einf&uuml;hrung</a></li>
+<li><a href="libxml.setup.html">Installation/Konfiguration</a></li>
+<li><a href="libxml.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="class.libxmlerror.html">libXMLError</a> — The libXMLError class</li>
+<li><a href="ref.libxml.html">libxml Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.sdo.html">SDO</a> — Service Data Objects<ul class="chunklist chunklist_title">
+<li><a href="intro.sdo.html">Einf&uuml;hrung</a></li>
+<li><a href="sdo.setup.html">Installation/Konfiguration</a></li>
+<li><a href="sdo.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="sdo.limitations.html">Limitations</a></li>
+<li><a href="sdo.examples.html">Beispiele</a></li>
+<li><a href="ref.sdo.html">SDO Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.sdodasrel.html">SDO-DAS-Relational</a> — SDO Relational Data Access Service<ul class="chunklist chunklist_title">
+<li><a href="intro.sdodasrel.html">Einf&uuml;hrung</a></li>
+<li><a href="sdodasrel.setup.html">Installation/Konfiguration</a></li>
+<li><a href="sdodasrel.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="sdodasrel.examples.html">Beispiele</a></li>
+<li><a href="sdodasrel.limitations.html">Limitations</a></li>
+<li><a href="ref.sdodasrel.html">SDO-DAS-Relational Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.sdo-das-xml.html">SDO DAS XML</a> — SDO XML Data Access Service<ul class="chunklist chunklist_title">
+<li><a href="intro.sdo-das-xml.html">Einf&uuml;hrung</a></li>
+<li><a href="sdo-das-xml.setup.html">Installation/Konfiguration</a></li>
+<li><a href="sdo-das-xml.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="sdo-das-xml.examples.html">Beispiele</a></li>
+<li><a href="ref.sdo-das-xml.html">SDO DAS XML Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.simplexml.html">SimpleXML</a><ul class="chunklist chunklist_title">
+<li><a href="intro.simplexml.html">Einf&uuml;hrung</a></li>
+<li><a href="simplexml.setup.html">Installation/Konfiguration</a></li>
+<li><a href="simplexml.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="simplexml.examples.html">Beispiele</a></li>
+<li><a href="class.simplexmlelement.html">SimpleXMLElement</a> — Die SimpleXMLElement-Klasse</li>
+<li><a href="class.simplexmliterator.html">SimpleXMLIterator</a> — Die SimpleXMLIterator-Klasse</li>
+<li><a href="ref.simplexml.html">SimpleXML-Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.wddx.html">WDDX</a><ul class="chunklist chunklist_title">
+<li><a href="intro.wddx.html">Einf&uuml;hrung</a></li>
+<li><a href="wddx.setup.html">Installation/Konfiguration</a></li>
+<li><a href="wddx.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="wddx.examples.html">Beispiele</a></li>
+<li><a href="ref.wddx.html">WDDX Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.xmldiff.html">XMLDiff</a> — XML diff and merge<ul class="chunklist chunklist_title">
+<li><a href="intro.xmldiff.html">Einf&uuml;hrung</a></li>
+<li><a href="xmldiff.setup.html">Installation/Konfiguration</a></li>
+<li><a href="class.xmldiff-base.html">XMLDiff\Base</a> — The XMLDiff\Base class</li>
+<li><a href="class.xmldiff-dom.html">XMLDiff\DOM</a> — The XMLDiff\DOM class</li>
+<li><a href="class.xmldiff-memory.html">XMLDiff\Memory</a> — The XMLDiff\Memory class</li>
+<li><a href="class.xmldiff-file.html">XMLDiff\File</a> — The XMLDiff\File class</li>
+</ul>
+</li>
+<li><a href="book.xml.html">XML Parser</a><ul class="chunklist chunklist_title">
+<li><a href="intro.xml.html">Einf&uuml;hrung</a></li>
+<li><a href="xml.setup.html">Installation/Konfiguration</a></li>
+<li><a href="xml.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="xml.eventhandlers.html">Event Handlers</a></li>
+<li><a href="xml.case-folding.html">Case Folding</a></li>
+<li><a href="xml.error-codes.html">Error Codes</a></li>
+<li><a href="xml.encoding.html">Character Encoding</a></li>
+<li><a href="xml.examples.html">Beispiele</a></li>
+<li><a href="ref.xml.html">XML Parser Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.xmlreader.html">XMLReader</a><ul class="chunklist chunklist_title">
+<li><a href="intro.xmlreader.html">Einf&uuml;hrung</a></li>
+<li><a href="xmlreader.setup.html">Installation/Konfiguration</a></li>
+<li><a href="class.xmlreader.html">XMLReader</a> — Die XMLReader Klasse</li>
+</ul>
+</li>
+<li><a href="book.xmlwriter.html">XMLWriter</a><ul class="chunklist chunklist_title">
+<li><a href="intro.xmlwriter.html">Einf&uuml;hrung</a></li>
+<li><a href="xmlwriter.setup.html">Installation/Konfiguration</a></li>
+<li><a href="xmlwriter.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.xmlwriter.html">XMLWriter Funktionen</a></li>
+</ul>
+</li>
+<li><a href="book.xsl.html">XSL</a><ul class="chunklist chunklist_title">
+<li><a href="intro.xsl.html">Einf&uuml;hrung</a></li>
+<li><a href="xsl.setup.html">Installation/Konfiguration</a></li>
+<li><a href="xsl.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="xsl.examples.html">Beispiele</a></li>
+<li><a href="class.xsltprocessor.html">XSLTProcessor</a> — Die XSLTProcessor-Klasse</li>
+</ul>
+</li>
+</ul>
+
+   
+
+
+
+
+
+
+
+   
+
+ 
+
+
+
+
+
+   
+
+ 
+
+
+
+
+
+   
+
+
+ 
+
+
+
+
+
+   
+
+ 
+
+
+
+
+
+   
+
+
+
+
+
+
+
+   
+
+ 
+
+
+
+
+
+   
+
+
+
+
+
+
+   
+
+ 
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+   
+
+ 
+
+
+
+
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

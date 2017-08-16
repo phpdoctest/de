@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Kommentare</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.basic-syntax.html">Grundlagen der Syntax</a></li>
+  <li><a href="language.basic-syntax.phptags.html">PHP Tags</a></li>
+  <li><a href="language.basic-syntax.phpmode.html">Den HTML-Bereich der Datei verlassen</a></li>
+  <li><a href="language.basic-syntax.instruction-separation.html">Abgrenzung von Anweisungen</a></li>
+  <li class="active"><a href="language.basic-syntax.comments.html">Kommentare</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.basic-syntax.instruction-separation.html">Abgrenzung von Anweisungen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.types.html">Typen</a></div>
+                <div class="up"><a href="language.basic-syntax.html">Grundlagen der Syntax</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.basic-syntax.comments" class="sect1">
+   <h2 class="title">Kommentare</h2>
+   <p class="para">
+    PHP unterstützt &#039;C&#039;, &#039;C++&#039; und Unix-Shell-artige (Perl-artige) Kommentare.
+    Zum Beispiel:
+
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'Dies&nbsp;ist&nbsp;ein&nbsp;Test'</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Dies&nbsp;ist&nbsp;ein&nbsp;einzeiliger&nbsp;Kommentar&nbsp;im&nbsp;C++-Stil<br />&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;Dies&nbsp;ist&nbsp;ein&nbsp;mehrzeiliger&nbsp;Kommentar<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noch&nbsp;eine&nbsp;weitere&nbsp;Kommentar-Zeile&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'Dies&nbsp;ist&nbsp;noch&nbsp;ein&nbsp;Test'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'...&nbsp;und&nbsp;ein&nbsp;letzter&nbsp;Test'</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">#&nbsp;Dies&nbsp;ist&nbsp;ein&nbsp;einzeiliger&nbsp;Shell-Kommentar<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="simpara">
+    Die &quot;einzeiligen&quot; Kommentar-Arten kommentieren sämtlichen Text bis
+    zum Zeilenende oder bis zum Ende des aktuellen PHP-Blocks aus, je
+    nachdem, was zuerst eintritt. Das bedeutet, das HTML-Code nach
+    <em>// ..?&gt;</em> oder <em># ... ?&gt;</em>
+    ausgegeben WIRD: ?&gt; beendet den PHP-Modus und kehrt in den HTML-Modus
+    zurück, so dass sich <em>//</em> oder <em>#</em>
+    nicht darauf auswirkt. Wenn die <a href="ini.core.html#ini.asp-tags" class="link">asp_tags</a>
+    Konfigurations-Direktive eingeschaltet ist, verhält es sich genauso bei
+    <em>// %&gt;</em> und <em># %&gt;</em>. Jedoch beendet
+    der <em>&lt;/script&gt;</em>-Tag den PHP-Modus innerhalb eines
+    einzeiligen Kommentars nicht.
+   </p>
+   <p class="para">
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+&lt;h1&gt;Dies&nbsp;ist&nbsp;ein&nbsp;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #FF8000">#&nbsp;echo&nbsp;'einfaches';</span><span style="color: #0000BB">?&gt;</span>&nbsp;Beispiel.&lt;/h1&gt;<br />&lt;p&gt;Obige&nbsp;Überschrift&nbsp;wird&nbsp;lauten:&nbsp;'Dies&nbsp;ist&nbsp;ein&nbsp;&nbsp;Beispiel.'.</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="simpara">
+    &#039;C&#039;-artige Kommentare enden am ersten Vorkommen von <em>*/</em>.
+    Achten Sie daher darauf, &#039;C&#039;-artige Kommentare nicht zu verschachteln.
+    Dieser Fehler entsteht leicht, wenn Sie längere Code-Blöcke auskommentieren.
+   </p>
+   <p class="para">
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*<br />&nbsp;&nbsp;&nbsp;echo&nbsp;'Dies&nbsp;ist&nbsp;ein&nbsp;Test';&nbsp;/*&nbsp;Dieser&nbsp;Kommentar&nbsp;wird&nbsp;ein&nbsp;Problem&nbsp;verursachen.&nbsp;*/<br /></span><span style="color: #007700">*/<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

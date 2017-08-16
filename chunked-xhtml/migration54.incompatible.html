@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Nicht r&uuml;ckw&auml;rtskompatible &Auml;nderungen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="appendices.html">Appendices</a></li>
+  <li class="header up"><a href="migration54.html">Migration von PHP 5.3.x auf PHP 5.4.x</a></li>
+  <li><a href="migration54.changes.html">Was hat sich in PHP 5.4.x ge&auml;ndert?</a></li>
+  <li class="active"><a href="migration54.incompatible.html">Nicht r&uuml;ckw&auml;rtskompatible &Auml;nderungen</a></li>
+  <li><a href="migration54.new-features.html">Neue Features</a></li>
+  <li><a href="migration54.sapi.html">&Auml;nderungen in SAPI Modulen</a></li>
+  <li><a href="migration54.deprecated.html">Deprecated features in PHP 5.4.x</a></li>
+  <li><a href="migration54.parameters.html">New Parameters</a></li>
+  <li><a href="migration54.functions.html">New Functions</a></li>
+  <li><a href="migration54.class-constants.html">New Class Constants</a></li>
+  <li><a href="migration54.methods.html">New Methods</a></li>
+  <li><a href="migration54.new-extensions.html">New Extensions</a></li>
+  <li><a href="migration54.removed-extensions.html">Removed Extensions</a></li>
+  <li><a href="migration54.extensions-other.html">Other changes to extensions</a></li>
+  <li><a href="migration54.classes.html">New Classes</a></li>
+  <li><a href="migration54.global-constants.html">New Global Constants</a></li>
+  <li><a href="migration54.ini.html">&Auml;nderungen an der INI-Dateibehandlung</a></li>
+  <li><a href="migration54.other.html">Weitere &Auml;nderungen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="migration54.changes.html">Was hat sich in PHP 5.4.x ge&auml;ndert?</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="migration54.new-features.html">Neue Features</a></div>
+                <div class="up"><a href="migration54.html">Migration von PHP 5.3.x auf PHP 5.4.x</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="migration54.incompatible" class="section">
+  <h2 class="title">Nicht rückwärtskompatible Änderungen</h2>
+  <p class="simpara">
+   Obwohl der meiste PHP 5 basierende Code ohne Änderungen funktionieren sollte,
+   gibt einige nicht rückwärtskompatible Änderungen:
+  </p>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <a href="features.safe-mode.html" class="link"><em>Safe mode</em></a> wird
+     nicht länger unterstützt. Alle Anwendungen, die sich auf safe mode verlassen,
+     benötigen unter Umständen Anpassungen bezüglich der Sicherheit.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <a href="security.magicquotes.html" class="link">Magic quotes</a> wurde entfernt.
+     Anwendungen, die sich auf dieses Feature verlassen, müssen aktualisiert
+     werden, um Sicherheitsprobleme zu vermeiden.
+    </span>
+    <span class="simpara">
+     <span class="function">get_magic_quotes_gpc</span> und
+     <span class="function">get_magic_quotes_runtime</span> geben nun immer <strong><code>FALSE</code></strong>
+     zurück. <span class="function">set_magic_quotes_runtime</span> erzeugt eine Fehler der Stufe
+     <strong><code>E_CORE_ERROR</code></strong>, wenn versucht wird
+     <a href="security.magicquotes.html" class="link">Magic quotes</a> zu aktivieren.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Die <a href="ini.core.html#ini.register-globals" class="link">register_globals</a> und
+     <a href="ini.core.html#ini.register-long-arrays" class="link">register_long_arrays</a> <var class="filename">php.ini</var> Direktiven
+     wurden entfernt.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Die mbstring.script_encoding Direktive wurde entfernt.
+     Statt dessen ist <a href="ini.core.html#ini.zend.script-encoding" class="link">zend.script_encoding</a> zu verwenden.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <a href="language.references.pass.html" class="link">Referenzübergabe zur Laufzeit</a>
+     wurde entfernt.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Die <a href="control-structures.break.html" class="link"><em>break</em></a>
+     und <a href="control-structures.continue.html" class="link"><em>continue</em></a>
+     Anweisungen akzeptieren keine variablen Argumente mehr, d.h. es ist nicht
+     möglich <em>break 1 + foo() * $bar;</em> zu schreiben.
+     Statische Argumente wie <em>break 2;</em> funktionieren weiterhin.
+     Als Nebeneffekt dieser Änderung sind <em>break 0;</em> und
+     <em>continue 0;</em> nicht länger erlaubt.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Das Setzen der Zeitzone mit der TZ Umgebungsvariablen wird nicht länger von
+     der <a href="book.datetime.html" class="link">Datum und Uhrzeit Extension</a> unterstützt.
+     Statt dessen muss eine Zeitzone unter Verwendung der
+     <a href="datetime.configuration.html#ini.date.timezone" class="link">date.timezone</a> <var class="filename">php.ini</var> Option
+     oder der <span class="function">date_default_timezone_set</span> Funktion angegeben werden.
+     PHP wird nicht länger versuchen die Zeitzone zu erraten, sondern wird statt dessen
+     auf &quot;UTC&quot; zurückfallen und eine <strong><code>E_WARNING</code></strong> erzeugen.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Nichtnumerische Zeichenkettenoffsets, z.B. <em>$a[&#039;foo&#039;]</em>, wobei $a eine
+     Zeichenkette ist, geben nun false für <span class="function">isset</span> und true
+     für <span class="function">empty</span> zurück, und erzeugen ein <strong><code>E_WARNING</code></strong>, wenn
+     versucht wird, sie zu verwenden. Offsets der Typen double, bool und null
+     erzeugen ein <strong><code>E_NOTICE</code></strong>. Numerische Zeichenketten (z.B. <em>$a[&#039;2&#039;]</em>) funktionieren wie
+     bisher. Es ist zu beachten, dass Offsets wie <em>&#039;12.3&#039;</em> und <em>&#039;5 irgendwas&#039;</em> als
+     nichtnumerisch angesehen werden, und ein <strong><code>E_WARNING</code></strong> erzeugen, aber aus
+     Gründen der Abwärtskompatibilität zu 12 bzw. 5 konvertiert werden.
+    </span>
+    <span class="simpara">
+     Hinweis: der folgende Code gibt unterschiedliche Ergebnisse zurück.
+    </span>
+    <span class="simpara">
+     $str=&#039;abc&#039;;var_dump(isset($str[&#039;x&#039;])); // false unter PHP 5.4 oder später, aber true unter 5.3 oder weniger
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Konvertieren von Arrays zu String wird nun eine
+     <strong><code>E_NOTICE</code></strong> verursachen, aber das Ergebnis der Umwandlung ist
+     weiterhin <em>&quot;Array&quot;</em>.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <strong><code>NULL</code></strong>, <strong><code>FALSE</code></strong> oder leere Zeichenketten durch Hinzufügen einer Eigenschaft in
+     ein Objekt zu konvertieren wird nun einen Fehler der Stufe <strong><code>E_WARNING</code></strong> statt
+     <strong><code>E_STRICT</code></strong> ausgeben.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Parameternamen, die Superglobale schattieren, verursachen nun
+     einen fatalen Fehler. Das verbietet Code wie <em>function foo($_GET,
+     $_POST) {}</em>.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Die Salsa10 und Salsa20 <a href="book.hash.html" class="link">Hash-Algorithmen</a> wurden entfernt.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function">array_combine</span> gibt nun <em>array()</em>
+     anstatt <strong><code>FALSE</code></strong> zurück, wenn zwei leere Arrays als
+     Parameter übergeben wurden.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Wird <span class="function">htmlentities</span> mit asiatischen Zeichensätzen verwendet,
+     funktioniert es wie <span class="function">htmlspecialchars</span> - das war auch in
+     früheren PHP Versionen so, aber nun wird ein Fehler der Stufe <strong><code>E_STRICT</code></strong>
+     ausgegeben.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Der dritte Parameter von <span class="function">ob_start</span> wurde von
+     <span class="type">boolean</span> <code class="parameter">erase</code> in <span class="type">integer</span>
+     <code class="parameter">flags</code> geändert. Es ist zu beachten, dass Code der
+     <code class="parameter">erase</code> ausdrücklich auf <strong><code>FALSE</code></strong> setzt, sich unter PHP 5.4 nicht länger
+     wie erwartet verhält; <a href="function.ob-start.html#function.ob-start.flags-bc" class="link">dieses Beispiel</a>
+     zeigt wie Code geschrieben wird, der kompatibel zu PHP 5.3 und PHP 5.4 ist.
+    </span>
+   </li>
+  </ul>
+  <p class="simpara">
+   Die folgenden Schlüsselwörter sind nun <a href="reserved.html" class="link">reserviert</a> und dürfen nicht als Namen
+   von Funktionen, Klassen usw. genutzt werden.
+  </p>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <a href="language.oop5.traits.html" class="link">trait</a>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <a href="language.types.callable.html" class="link">callable</a>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <a href="language.oop5.traits.html" class="link">insteadof</a>
+    </span>
+   </li>
+  </ul>
+  <p class="simpara">
+   Folgende Funktionen wurden von PHP entfernt:
+  </p>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function">define_syslog_variables</span>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function">import_request_variables</span>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function">session_is_registered</span>, <span class="function">session_register</span>
+     und <span class="function">session_unregister</span>.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Die Aliase
+     <span class="function">mysqli_bind_param</span>, <span class="function">mysqli_bind_result</span>,
+     <span class="function">mysqli_client_encoding</span>, <span class="function">mysqli_fetch</span>,
+     <span class="function">mysqli_param_count</span>, <span class="function">mysqli_get_metadata</span>,
+     <span class="function">mysqli_send_long_data</span>, mysqli::client_encoding() und mysqli_stmt::stmt().
+    </span>
+   </li>
+  </ul>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: &Ouml;ffnet eine Verbindung zu einem Ingres-II-Datenbankserver</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.ingres.html">Ingres</a></li>
+  <li class="header up"><a href="ref.ingres.html">Ingres-Funktionen</a></li>
+  <li><a href="function.ingres-autocommit-state.html">ingres_autocommit_state</a></li>
+  <li><a href="function.ingres-autocommit.html">ingres_autocommit</a></li>
+  <li><a href="function.ingres-charset.html">ingres_charset</a></li>
+  <li><a href="function.ingres-close.html">ingres_close</a></li>
+  <li><a href="function.ingres-commit.html">ingres_commit</a></li>
+  <li class="active"><a href="function.ingres-connect.html">ingres_connect</a></li>
+  <li><a href="function.ingres-cursor.html">ingres_cursor</a></li>
+  <li><a href="function.ingres-errno.html">ingres_errno</a></li>
+  <li><a href="function.ingres-error.html">ingres_error</a></li>
+  <li><a href="function.ingres-errsqlstate.html">ingres_errsqlstate</a></li>
+  <li><a href="function.ingres-escape-string.html">ingres_escape_string</a></li>
+  <li><a href="function.ingres-execute.html">ingres_execute</a></li>
+  <li><a href="function.ingres-fetch-array.html">ingres_fetch_array</a></li>
+  <li><a href="function.ingres-fetch-assoc.html">ingres_fetch_assoc</a></li>
+  <li><a href="function.ingres-fetch-object.html">ingres_fetch_object</a></li>
+  <li><a href="function.ingres-fetch-proc-return.html">ingres_fetch_proc_return</a></li>
+  <li><a href="function.ingres-fetch-row.html">ingres_fetch_row</a></li>
+  <li><a href="function.ingres-field-length.html">ingres_field_length</a></li>
+  <li><a href="function.ingres-field-name.html">ingres_field_name</a></li>
+  <li><a href="function.ingres-field-nullable.html">ingres_field_nullable</a></li>
+  <li><a href="function.ingres-field-precision.html">ingres_field_precision</a></li>
+  <li><a href="function.ingres-field-scale.html">ingres_field_scale</a></li>
+  <li><a href="function.ingres-field-type.html">ingres_field_type</a></li>
+  <li><a href="function.ingres-free-result.html">ingres_free_result</a></li>
+  <li><a href="function.ingres-next-error.html">ingres_next_error</a></li>
+  <li><a href="function.ingres-num-fields.html">ingres_num_fields</a></li>
+  <li><a href="function.ingres-num-rows.html">ingres_num_rows</a></li>
+  <li><a href="function.ingres-pconnect.html">ingres_pconnect</a></li>
+  <li><a href="function.ingres-prepare.html">ingres_prepare</a></li>
+  <li><a href="function.ingres-query.html">ingres_query</a></li>
+  <li><a href="function.ingres-result-seek.html">ingres_result_seek</a></li>
+  <li><a href="function.ingres-rollback.html">ingres_rollback</a></li>
+  <li><a href="function.ingres-set-environment.html">ingres_set_environment</a></li>
+  <li><a href="function.ingres-unbuffered-query.html">ingres_unbuffered_query</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.ingres-commit.html">ingres_commit</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.ingres-cursor.html">ingres_cursor</a></div>
+                <div class="up"><a href="ref.ingres.html">Ingres-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.ingres-connect" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">ingres_connect</h1>
+  <p class="refpurpose">Öffnet eine Verbindung zu einem Ingres-II-Datenbankserver</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.ingres-connect-description">
+  <h3 class="title">Beschreibung</h3>
+   <div class="methodsynopsis dc-description">
+    <span class="type">resource</span> <span class="methodname">ingres_connect</span>
+     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$database</code></span>
+    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$username</code></span>
+    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$password</code></span>
+    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code></span>
+   ]]]] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">ingres_connect</span> öffnet eine Verbindung zu der
+   Ingres-Datenbank <code class="parameter">database</code>.
+  </p>
+  <p class="para">
+   Die Verbindung wird geschlossen, wenn das Skript zuende ist oder
+   wenn die Funktion <span class="function">ingres_close</span> mit der
+   aktuellen Verbindungskennung aufgerufen wird.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.ingres-connect-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   Wenn einige Parameter fehlen, benutzt
+   <span class="function">ingres_connect</span> die Werte, die in der
+   <var class="filename">php.ini</var> für
+   <code class="parameter">ingres.default_database</code>,
+   <code class="parameter">ingres.default_user</code> und
+   <code class="parameter">ingres.default_password</code> eingetragen sind.
+  </p>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">database</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Name der Datenbank. Dieser muss der Syntax
+      </p>
+      <p class="para">
+       <var class="varname">[vnode::]dbname[/svr_class]</var> folgen.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">username</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Ingres-Benutzername.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">password</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Das Passwort zu <code class="parameter">username</code>.
+      </p>
+     </dd>
+
+    
+    
+     <dt id="function.ingres-connect.options"><code class="parameter">options</code></dt>
+
+     <dd>
+
+      <p class="para">
+       <span class="function">ingres_connect</span>-Optionen
+       <table class="doctable informaltable">
+        
+         <thead>
+          <tr style="vertical-align: top;">
+           <th>Name der Option</th>
+           <th>Typ</th>
+           <th>Beschreibung</th>
+           <th>Beispiel</th>
+          </tr>
+
+         </thead>
+
+         <tbody class="tbody">
+          <tr style="vertical-align: top;">
+           <td>date_century_boundary</td>
+           <td><span class="type">integer</span></td>
+           <td>Der Schwellwert, anhand dessen geprüft wird, ob eine zweistellige
+           Jahreszahl im aktuellen oder im kommenden Jahrhundert liegt. Äquivalent zu
+           II_DATE_CENTURY_BOUNDARY.</td>
+           <td>50</td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+           <td>group</td>
+           <td><span class="type">string</span></td>
+           <td>Die Nummer der Benutzergruppe des Benutzers. Äquivalent zum &#039;-G&#039;
+           Flag.</td>
+           <td>payroll</td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+           <td>role</td>
+           <td><span class="type">string</span></td>
+           <td>Die Role-Nummer der Applikation. Falls auch ein Role-Passwort
+           verlangt wird, sollte der Wert als &quot;role/password&quot; angegeben werden.</td>
+          </tr>
+
+          <tr>
+           <td>effective_user</td>
+           <td><span class="type">string</span></td>
+           <td>Das Ingres-Benutzerkonto, das der Benutzer verkörpert.
+           Äquivalent zu dem Flag &#039;-u&#039;.</td>
+           <td>another_user</td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+           <td>dbms_password</td>
+           <td><span class="type">string</span></td>
+           <td>Das interne Datenbank-Passwort für den Benutzer, der sich
+           mit Ingres verbindet.</td>
+           <td>s3cr3t</td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+           <td>table_structure</td>
+           <td><span class="type">string</span></td>
+           <td><p class="para">
+             Die Vorgabewerte für die Struktur neuer Tabellen.
+             Gültige Werte für Tabellenstrukturen sind:
+            <ul class="itemizedlist">
+             <li class="listitem"><span class="simpara">INGRES_STRUCTURE_BTREE</span></li>
+             <li class="listitem"><span class="simpara">INGRES_STRUCTURE_HASH</span></li>
+             <li class="listitem"><span class="simpara">INGRES_STRUCTURE_HEAP</span></li>
+             <li class="listitem"><span class="simpara">INGRES_STRUCTURE_ISAM</span></li>
+             <li class="listitem"><span class="simpara">INGRES_STRUCTURE_CBTREE</span></li>
+             <li class="listitem"><span class="simpara">INGRES_STRUCTURE_CISAM</span></li>
+             <li class="listitem"><span class="simpara">INGRES_STRUCTURE_CHASH</span></li>
+             <li class="listitem"><span class="simpara">INGRES_STRUCTURE_CHEAP</span></li>
+            </ul>
+            </p>
+           </td>
+           <td>INGRES_STRUCTURE_BTREE</td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+           <td>index_structure</td>
+           <td><span class="type">string</span></td>
+           <td><p class="para">
+             Die Vorgabewerte für die Struktur neuer sekundärer Indexe.
+             Gültige Werte für Indexstrukturen sind:
+            <ul class="itemizedlist">
+             <li class="listitem"><span class="simpara">INGRES_STRUCTURE_CBTREE</span></li>
+             <li class="listitem"><span class="simpara">INGRES_STRUCTURE_CISAM</span></li>
+             <li class="listitem"><span class="simpara">INGRES_STRUCTURE_CHASH</span></li>
+             <li class="listitem"><span class="simpara">INGRES_STRUCTURE_BTREE</span></li>
+             <li class="listitem"><span class="simpara">INGRES_STRUCTURE_HASH</span></li>
+             <li class="listitem"><span class="simpara">INGRES_STRUCTURE_ISAM</span></li>
+            </ul>
+            </p>
+           </td>
+           <td>INGRES_STRUCTURE_HASH</td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+           <td>login_local</td>
+           <td><span class="type">boolean</span></td>
+           <td>Bestimmt, wie mit Verbindungs-Benutzer-ID und -Passwort verfahren
+           wird, wenn im Verbindungsstring für die Zieldatenbank ein VNODE enthalten
+           ist. Falls diese Option auf TRUE gesetzt wird, werden Benutzer-ID und Passwort
+           für den lokalen Zugriff auf VNODE verwendet und die Zugangsdaten zu VNODE
+           werden zum Verbindungsaufbau zur Datenbank benutzt. Falls die Option auf
+           den Wert FALSE gesetzt wurde, wird mit der Prozess-Benutzer-ID des Benutzers
+           auf VNODE zugegriffen und mit seinen Logindaten für die Verbindung wird,
+           anstelle der VNODE-Login-Daten, eine Verbindung zur Datenbank aufgebaut.
+           Falls der Verbindungsstring keinen VNODE enthält, wird die Option ignoriert.
+           Der Standardwert ist FALSE.</td>
+           <td>TRUE</td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+           <td>timezone</td>
+           <td><span class="type">string</span></td>
+           <td>Bestimmt die Zeitzone der Datenbanksitzung. Falls die Option nicht
+           angegeben wurde, wird der Wert von II_TIMEZONE_NAME benutzt. Falls dort auch
+           nichts definiert ist, wird NA-PACIFIC (GMT-8 mit Sommerzeit) benutzt.</td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+           <td>date_format</td>
+           <td><span class="type">integer</span></td>
+           <td><p class="para">Bestimmt die erlaubten Ein- und Ausgabeformate für das Datum in
+           Ingres. Falls nichts angegeben ist, werden die Formate von II_DATE_FORMAT
+           benutzt. Falls dort auch nichts definiert wurde, ist US (mm/dd/yy) das
+           Standardformat. Gültige Werte für date_format sind:
+            <ul class="itemizedlist">
+             <li class="listitem"><span class="simpara">INGRES_DATE_DMY</span></li>
+             <li class="listitem"><span class="simpara">INGRES_DATE_FINISH</span></li>
+             <li class="listitem"><span class="simpara">INGRES_DATE_GERMAN</span></li>
+             <li class="listitem"><span class="simpara">INGRES_DATE_ISO</span></li>
+             <li class="listitem"><span class="simpara">INGRES_DATE_ISO4</span></li>
+             <li class="listitem"><span class="simpara">INGRES_DATE_MDY</span></li>
+             <li class="listitem"><span class="simpara">INGRES_DATE_MULTINATIONAL</span></li>
+             <li class="listitem"><span class="simpara">INGRES_DATE_MULTINATIONAL4</span></li>
+             <li class="listitem"><span class="simpara">INGRES_DATE_YMD</span></li>
+             <li class="listitem"><span class="simpara">INGRES_DATE_US</span></li>
+            </ul>
+            </p>
+           </td>
+           <td>INGRES_DATE_MULTINATIONAL4</td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+           <td>decimal_separator</td>
+           <td><span class="type">string</span></td>
+           <td>Das Dezimaltrennzeichen</td>
+           <td>&quot;,&quot;</td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+           <td>money_lort</td>
+           <td><span class="type">integer</span></td>
+           <td><p class="para">Führendes oder angehängtes Währungssymbol. Gültige Werte für
+            money_lort sind:
+            <ul class="itemizedlist">
+             <li class="listitem"><span class="simpara">INGRES_MONEY_LEADING</span></li>
+             <li class="listitem"><span class="simpara">INGRES_MONEY_TRAILING</span></li>
+            </ul>
+            </p>
+           </td>
+           <td>INGRES_MONEY_TRAILING</td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+           <td>money_sign</td>
+           <td><span class="type">string</span></td>
+           <td>Das Währungssymbol, das mit dem Datentyp MONEY benutzt wird.</td>
+           <td>€</td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+           <td><span class="type">integer</span></td>
+           <td>money_precision</td>
+           <td>Die Genauigkeit des Datentyps MONEY.</td>
+           <td>3</td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+           <td>float4_precision</td>
+           <td><span class="type">integer</span></td>
+           <td>Die Genauigkeit des Datentyps FLOAT4.</td>
+           <td>10</td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+           <td>float8_precision</td>
+           <td><span class="type">integer</span></td>
+           <td>Die Genauigkeit des Datentyps FLOAT8.</td>
+           <td>10</td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+           <td>blob_segment_length</td>
+           <td><span class="type">integer</span></td>
+           <td>Die Datenmenge in Bytes, die in einem Zugriff aus einem BLOB/CLOB
+           gelesen werden kann. Falls nichts anderes angegeben wurde, ist der
+           Vorgabewert 4096 Bytes.</td>
+           <td>8192</td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.ingres-connect-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg eine Ingres-Verbindungskennung zurück oder <strong><code>FALSE</code></strong> bei einem Fehler.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.ingres-connect-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-1273">
+    <p><strong>Beispiel #1 <span class="function">ingres_connect</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ingres_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"mydb"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"user"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"pass"</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Konnte&nbsp;nicht&nbsp;verbinden"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Verbindungsaufbau&nbsp;erfolgreich"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">ingres_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.ingres-connect-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">ingres_pconnect</span></li>
+    <li class="member"><span class="function">ingres_close</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

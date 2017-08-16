@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Gibt an, welche PHP-Fehlermeldungen gemeldet werden</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li class="header up"><a href="book.errorfunc.html">Fehlerbehandlung</a></li>
+  <li class="header up"><a href="ref.errorfunc.html">Fehlerbehandlungsfunktionen</a></li>
+  <li><a href="function.debug-backtrace.html">debug_backtrace</a></li>
+  <li><a href="function.debug-print-backtrace.html">debug_print_backtrace</a></li>
+  <li><a href="function.error-clear-last.html">error_clear_last</a></li>
+  <li><a href="function.error-get-last.html">error_get_last</a></li>
+  <li><a href="function.error-log.html">error_log</a></li>
+  <li class="active"><a href="function.error-reporting.html">error_reporting</a></li>
+  <li><a href="function.restore-error-handler.html">restore_error_handler</a></li>
+  <li><a href="function.restore-exception-handler.html">restore_exception_handler</a></li>
+  <li><a href="function.set-error-handler.html">set_error_handler</a></li>
+  <li><a href="function.set-exception-handler.html">set_exception_handler</a></li>
+  <li><a href="function.trigger-error.html">trigger_error</a></li>
+  <li><a href="function.user-error.html">user_error</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.error-log.html">error_log</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.restore-error-handler.html">restore_error_handler</a></div>
+                <div class="up"><a href="ref.errorfunc.html">Fehlerbehandlungsfunktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.error-reporting" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">error_reporting</h1>
+  <p class="refpurpose">Gibt an, welche PHP-Fehlermeldungen gemeldet werden</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.error-reporting-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname">error_reporting</span>
+    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$level</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Mit <span class="function">error_reporting</span> wird die <a href="errorfunc.configuration.html#ini.error-reporting" class="link">error_reporting</a>
+   Direktive zur Laufzeit des Programms gesetzt. In PHP gibt es viele
+   Stufen für die Anzeige von Fehlermeldungen, die mit dieser
+   Funktion für die Dauer der Programmausführung eingestellt werden kann. 
+   Wenn das optionale <code class="parameter">level</code> Argument nicht übergeben wird,
+   gibt <span class="function">error_reporting</span> das aktuelle Error Level zurück.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.error-reporting-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">level</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Das neue <a href="errorfunc.configuration.html#ini.error-reporting" class="link">error_reporting</a>
+       Level. Es können sowohl eine numerische Bitmaske als auch benannte Konstanten
+       übergeben werden. Der Einsatz benannter Konstanten wird empfohlen
+       um die Kompatibilität mit zukünftigen Versionen sicherzustellen.
+       Wann immer Error Level Konstanten hinzugefügt werden erweitert
+       sich der genutzte Integerbereich so das ältere Integerkonstanten
+       nicht unbedingt weiter das erwartete Verhalten zeigen.
+      </p>
+      <p class="para">
+       Die verfügbaren Konstanten und die Bedeutungen der jeweiligen Error Level
+       sind im Abschnitt <a href="errorfunc.constants.html" class="link">Vordefinierte Konstanten</a> beschrieben.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.error-reporting-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt den bisherigen <a href="errorfunc.configuration.html#ini.error-reporting" class="link">error_reporting</a> Wert zurück
+   oder das aktuelle Level, wenn <code class="parameter">level</code> nicht übergeben wurde.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.error-reporting-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.4.0</td>
+       <td><strong><code>E_STRICT</code></strong> ist nun in <strong><code>E_ALL</code></strong> enthalten.</td>
+      </tr>
+
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        <strong><code>E_DEPRECATED</code></strong> und <strong><code>E_USER_DEPRECATED</code></strong> 
+        wurden hinzugefügt.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.2.0</td>
+       <td><strong><code>E_RECOVERABLE_ERROR</code></strong> wurde hinzugefügt.</td>
+      </tr>
+
+      <tr>
+       <td>5.0.0</td>
+       <td><strong><code>E_STRICT</code></strong> wurde hinzugefügt (ist aber nicht Teil von <strong><code>E_ALL</code></strong>).</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.error-reporting-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-486">
+    <p><strong>Beispiel #1 <span class="function">error_reporting</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;Error&nbsp;Reporting&nbsp;komplett&nbsp;abschalten<br /></span><span style="color: #0000BB">error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Nur&nbsp;einfache&nbsp;Fehler&nbsp;melden<br /></span><span style="color: #0000BB">error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">E_ERROR&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">E_WARNING&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">E_PARSE</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;E_NOTICE&nbsp;ist&nbsp;sinnvoll&nbsp;um&nbsp;uninitialisierte&nbsp;oder<br />//&nbsp;falsch&nbsp;geschriebene&nbsp;Variablen&nbsp;zu&nbsp;entdecken<br /></span><span style="color: #0000BB">error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">E_ERROR&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">E_WARNING&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">E_PARSE&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">E_NOTICE</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Melde&nbsp;alle&nbsp;Fehler&nbsp;außer&nbsp;E_NOTICE<br /></span><span style="color: #0000BB">error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">E_ALL&nbsp;</span><span style="color: #007700">&amp;&nbsp;~</span><span style="color: #0000BB">E_NOTICE</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Melde&nbsp;alle&nbsp;PHP&nbsp;Fehler&nbsp;(siehe&nbsp;Changelog)<br /></span><span style="color: #0000BB">error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">E_ALL</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Melde&nbsp;alle&nbsp;PHP&nbsp;Fehler<br /></span><span style="color: #0000BB">error_reporting</span><span style="color: #007700">(-</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Dies&nbsp;entspricht&nbsp;error_reporting(E_ALL);<br /></span><span style="color: #0000BB">ini_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'error_reporting'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">E_ALL</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.error-reporting-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="simpara">
+    Der Großteil der <strong><code>E_STRICT</code></strong> Fehler werden zur Compile-Zeit
+    generiert und werden somit nicht angezeigt, wenn <strong><code>E_STRICT</code></strong> zur
+    Laufzeit zu <a href="errorfunc.configuration.html#ini.error-reporting" class="link">error_reporting</a>
+    hinzugefügt wird (und auch andersrum).
+   </p>
+  </div>
+  <div class="tip"><strong class="tip">Tipp</strong>
+   <p class="simpara">
+    Durch Übergeben des Wertes <em>-1</em> werden alle möglichen Fehler angezeigt,
+    auch wenn neue Level in zukünftigen PHP-Versionen hinzugefügt werden. Die
+    <strong><code>E_ALL</code></strong> Konstante verhält sich seit PHP 5.4 ebenfalls so.
+   </p>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.error-reporting-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member">Die <a href="errorfunc.configuration.html#ini.display-errors" class="link">display_errors</a> Direktive</li>
+    <li class="member">Die <a href="errorfunc.configuration.html#ini.html-errors" class="link">html_errors</a> Direktive</li>
+    <li class="member">Die <a href="errorfunc.configuration.html#ini.xmlrpc-errors" class="link">xmlrpc_errors</a> Direktive</li>
+    <li class="member"><span class="function">ini_set</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

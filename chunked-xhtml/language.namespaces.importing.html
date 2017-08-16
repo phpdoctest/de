@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Namespaces verwenden: Aliase/Importieren</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="langref.html">Sprachreferenz</a></li>
+  <li class="header up"><a href="language.namespaces.html">Namespaces</a></li>
+  <li><a href="language.namespaces.rationale.html">&Uuml;bersicht &uuml;ber Namespaces</a></li>
+  <li><a href="language.namespaces.definition.html">Namespaces definieren</a></li>
+  <li><a href="language.namespaces.nested.html">Unter-Namespaces deklarieren</a></li>
+  <li><a href="language.namespaces.definitionmultiple.html">Mehrere Namespaces in der selben Datei definieren</a></li>
+  <li><a href="language.namespaces.basics.html">Namespaces verwenden: Grundlagen</a></li>
+  <li><a href="language.namespaces.dynamic.html">Namespaces und dynamische Sprachfeatures</a></li>
+  <li><a href="language.namespaces.nsconstants.html">Namespace-Schl&uuml;sselwort und __NAMESPACE__-Konstante</a></li>
+  <li class="active"><a href="language.namespaces.importing.html">Namespaces verwenden: Aliase/Importieren</a></li>
+  <li><a href="language.namespaces.global.html">Globaler Namensraum</a></li>
+  <li><a href="language.namespaces.fallback.html">Namespaces verwenden: R&uuml;ckgriff auf globale Funktion/Konstante</a></li>
+  <li><a href="language.namespaces.rules.html">Regeln f&uuml;r Namensaufl&ouml;sung</a></li>
+  <li><a href="language.namespaces.faq.html">FAQ: Dinge, die Sie &uuml;ber Namespaces wissen sollten</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="language.namespaces.nsconstants.html">Namespace-Schl&uuml;sselwort und __NAMESPACE__-Konstante</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="language.namespaces.global.html">Globaler Namensraum</a></div>
+                <div class="up"><a href="language.namespaces.html">Namespaces</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="language.namespaces.importing" class="sect1">
+  <h2 class="title">Namespaces verwenden: Aliase/Importieren</h2>
+  
+  <p class="para">
+   Die Möglichkeit, auf vollständig qualifizierte Namen mit einem Alias (Importieren)
+   zuzugreifen, ist ein wichtiges Feature von Namespaces. Dies ist ähnlich wie
+   die Möglichkeit von Unix-basierten Dateisystemen einen symbolischen Link auf eine
+   Datei oder ein Verzeichnis anzulegen.
+  </p>
+  <p class="para">
+   Alle PHP-Versionen die Namespaces unterstützen drei Arten von Aliasen oder Importen: 
+   Einen Alias für einen Klassennamen, einen Alias für einen Interfacenamen und einen Alias 
+   für einen Namespace. PHP 5.6+ erlauben ebenfalls den Import bzw. die Vergabe eines Alias
+   für Funktionen und Konstanten.
+  </p>
+  <p class="para">
+   Ein Alias wird in PHP mittels des <em>use</em>-Operators angelegt. Hier ein
+   Beispiel, welches alle fünf Arten von Importen zeigt:
+   <div class="example" id="example-262">
+    <p><strong>Beispiel #1 Aliase/Importieren mit dem use-Operator</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">;<br />use&nbsp;</span><span style="color: #0000BB">My</span><span style="color: #007700">\</span><span style="color: #0000BB">Full</span><span style="color: #007700">\</span><span style="color: #0000BB">Classname&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">Another</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;dies&nbsp;ist&nbsp;das&nbsp;gleiche&nbsp;wie&nbsp;use&nbsp;My\Full\NSname&nbsp;as&nbsp;NSname<br /></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">My</span><span style="color: #007700">\</span><span style="color: #0000BB">Full</span><span style="color: #007700">\</span><span style="color: #0000BB">NSname</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;importiert&nbsp;eine&nbsp;globale&nbsp;Klasse<br /></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">ArrayObject</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Eine&nbsp;Funktion&nbsp;importieren&nbsp;(PHP&nbsp;5.6+)<br /></span><span style="color: #007700">use&nbsp;function&nbsp;</span><span style="color: #0000BB">My</span><span style="color: #007700">\</span><span style="color: #0000BB">Full</span><span style="color: #007700">\</span><span style="color: #0000BB">functionName</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Alias&nbsp;für&nbsp;eine&nbsp;Funktion&nbsp;(PHP&nbsp;5.6+)<br /></span><span style="color: #007700">use&nbsp;function&nbsp;</span><span style="color: #0000BB">My</span><span style="color: #007700">\</span><span style="color: #0000BB">Full</span><span style="color: #007700">\</span><span style="color: #0000BB">functionName&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">func</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Eine&nbsp;Konstante&nbsp;importieren&nbsp;(PHP&nbsp;5.6+)<br /></span><span style="color: #007700">use&nbsp;const&nbsp;</span><span style="color: #0000BB">My</span><span style="color: #007700">\</span><span style="color: #0000BB">Full</span><span style="color: #007700">\</span><span style="color: #0000BB">CONSTANT</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;namespace\</span><span style="color: #0000BB">Another</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;foo\Another<br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Another</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;My\Full\Classname<br /></span><span style="color: #0000BB">NSname</span><span style="color: #007700">\</span><span style="color: #0000BB">subns</span><span style="color: #007700">\</span><span style="color: #0000BB">func</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Funktion&nbsp;My\Full\NSname\subns\func&nbsp;auf<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">ArrayObject</span><span style="color: #007700">(array(</span><span style="color: #0000BB">1</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;ArrayObject<br />//&nbsp;ohne&nbsp;das&nbsp;"use&nbsp;ArrayObject"&nbsp;wäre&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;foo\ArrayObject&nbsp;erzeugt&nbsp;worden<br /></span><span style="color: #0000BB">func</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Funktion&nbsp;My\Full\functionName&nbsp;auf<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">CONSTANT</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Gibt&nbsp;den&nbsp;Wert&nbsp;von&nbsp;My\Full\CONSTANT&nbsp;aus<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   Beachten Sie, dass für Namen von Namespaces (vollständig qualifizierte Namespacenamen
+   mit einem Namensraumseparator, wie <em>Foo\Bar</em>, im Gegensatz zu
+   globalen Namen ohne Separator, wie <em>FooBar</em>) der führende
+   Backslash nicht notwendig und nicht empfohlen ist, weil importierte Namen vollständig
+   qualifiziert sein müssen und nicht relativ zum aktuellen Namespace verarbeitet
+   werden.
+  </p>
+  <p class="para">
+   PHP unterstützt zusätzlich auch eine komfortable Kurzsyntax, mit der mehrere
+   use-Ausdrücke in der gleichen Zeile erscheinen können.
+   <div class="example" id="example-263">
+    <p><strong>Beispiel #2 Aliase/Importieren mit dem use-Operator, mehrere use-Ausdrücke kombiniert</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">My</span><span style="color: #007700">\</span><span style="color: #0000BB">Full</span><span style="color: #007700">\</span><span style="color: #0000BB">Classname&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">Another</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">My</span><span style="color: #007700">\</span><span style="color: #0000BB">Full</span><span style="color: #007700">\</span><span style="color: #0000BB">NSname</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Another</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;My\Full\Classname<br /></span><span style="color: #0000BB">NSname</span><span style="color: #007700">\</span><span style="color: #0000BB">subns</span><span style="color: #007700">\</span><span style="color: #0000BB">func</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;ruft&nbsp;die&nbsp;Funktion&nbsp;My\Full\NSname\subns\func&nbsp;auf<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   Importieren wird zur Kompilierungszeit ausgeführt und hat daher keinen Einfluss
+   auf dynamische Klassen-, Funktions- oder Konstantennamen.
+   <div class="example" id="example-264">
+    <p><strong>Beispiel #3 Importieren und dynamische Namen</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">My</span><span style="color: #007700">\</span><span style="color: #0000BB">Full</span><span style="color: #007700">\</span><span style="color: #0000BB">Classname&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">Another</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">My</span><span style="color: #007700">\</span><span style="color: #0000BB">Full</span><span style="color: #007700">\</span><span style="color: #0000BB">NSname</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Another</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;My\Full\Classname<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Another'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;Another<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   Zusätzlich beeinflusst das Importieren nur unqualifizierte und qualifizierte
+   Namen. Vollständig qualifizierte Namen sind absolut und werden von Importen
+   nicht beeinflusst.
+   <div class="example" id="example-265">
+    <p><strong>Beispiel #4 Importieren und vollständig qualifizierte Namen</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">My</span><span style="color: #007700">\</span><span style="color: #0000BB">Full</span><span style="color: #007700">\</span><span style="color: #0000BB">Classname&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">Another</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">My</span><span style="color: #007700">\</span><span style="color: #0000BB">Full</span><span style="color: #007700">\</span><span style="color: #0000BB">NSname</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Another</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;My\Full\Classname<br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;\</span><span style="color: #0000BB">Another</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;Another<br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Another</span><span style="color: #007700">\</span><span style="color: #0000BB">thing</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;My\Full\Classname\thing<br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;\</span><span style="color: #0000BB">Another</span><span style="color: #007700">\</span><span style="color: #0000BB">thing</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;erzeugt&nbsp;ein&nbsp;Objekt&nbsp;der&nbsp;Klasse&nbsp;Another\thing<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <div class="sect2" id="language.namespaces.importing.scope">
+   <h3 class="title">Gültigkeitsbereiche für Importe</h3>
+   <p class="para">
+    Das Schlüsselwort <em>use</em> muss im äußersten Gültigkeitsbereich
+    (dem globalen Gültigkeitsbereich) oder innerhalb einer Namespace-Deklaration
+    angegeben werden. Das ist darin begründet, dass Importe zur Kompilierungszeit
+    und nicht zur Laufzeit durchgeführt werden und daher nicht in einem anderen
+    Gültigkeitsbereich liegen dürfen. Das folgende Beispiel zeigt eine ungültige
+    Verwendung des <em>use</em>-Schlüsselwortes:
+   </p>
+   <p class="para">
+    <div class="example" id="example-266">
+     <p><strong>Beispiel #5 Ungültige Importregel</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">Languages</span><span style="color: #007700">;<br /><br />function&nbsp;</span><span style="color: #0000BB">toGreenlandic</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;use&nbsp;</span><span style="color: #0000BB">Languages</span><span style="color: #007700">\</span><span style="color: #0000BB">Danish</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;...<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <p class="para">
+     Importregeln sind auf Dateibasis gültig, das heißt eine eingebundene Datei
+     wird <em class="emphasis">NICHT</em> die Importregeln der einbindenden Datei erben.
+    </p>
+   </p></blockquote>
+  </div>
+  <div class="sect2" id="language.namespaces.importing.group">
+   <h3 class="title">Gruppierte <em>use</em> Deklarationen</h3>
+   <p class="para">
+    Von PHP 7.0 an können Klassen, Funktionen und Konstanten, die aus dem
+    gleichen Namespace importiert werden, in einer einzigen <a href="language.namespaces.importing.html" class="link"><em>use</em></a>
+    Anweisung gruppiert werden.
+   </p>
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;Pre&nbsp;PHP&nbsp;7&nbsp;Code<br /></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ClassA</span><span style="color: #007700">;<br />use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ClassB</span><span style="color: #007700">;<br />use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ClassC&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">;<br /><br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">fn_a</span><span style="color: #007700">;<br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">fn_b</span><span style="color: #007700">;<br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">fn_c</span><span style="color: #007700">;<br /><br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ConstA</span><span style="color: #007700">;<br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ConstB</span><span style="color: #007700">;<br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ConstC</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;7+&nbsp;Code<br /></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\{</span><span style="color: #0000BB">ClassA</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ClassB</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ClassC&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">};<br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\{</span><span style="color: #0000BB">fn_a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">fn_b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">fn_c</span><span style="color: #007700">};<br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\{</span><span style="color: #0000BB">ConstA</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ConstB</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ConstC</span><span style="color: #007700">};</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </div>
+ </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

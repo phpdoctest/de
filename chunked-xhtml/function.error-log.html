@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Sendet eine Fehlermeldung an die definierten Fehlerbehandlungsroutinen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.php.html">Das Verhalten von PHP beeinflussen</a></li>
+  <li class="header up"><a href="book.errorfunc.html">Fehlerbehandlung</a></li>
+  <li class="header up"><a href="ref.errorfunc.html">Fehlerbehandlungsfunktionen</a></li>
+  <li><a href="function.debug-backtrace.html">debug_backtrace</a></li>
+  <li><a href="function.debug-print-backtrace.html">debug_print_backtrace</a></li>
+  <li><a href="function.error-clear-last.html">error_clear_last</a></li>
+  <li><a href="function.error-get-last.html">error_get_last</a></li>
+  <li class="active"><a href="function.error-log.html">error_log</a></li>
+  <li><a href="function.error-reporting.html">error_reporting</a></li>
+  <li><a href="function.restore-error-handler.html">restore_error_handler</a></li>
+  <li><a href="function.restore-exception-handler.html">restore_exception_handler</a></li>
+  <li><a href="function.set-error-handler.html">set_error_handler</a></li>
+  <li><a href="function.set-exception-handler.html">set_exception_handler</a></li>
+  <li><a href="function.trigger-error.html">trigger_error</a></li>
+  <li><a href="function.user-error.html">user_error</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.error-get-last.html">error_get_last</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.error-reporting.html">error_reporting</a></div>
+                <div class="up"><a href="ref.errorfunc.html">Fehlerbehandlungsfunktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.error-log" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">error_log</h1>
+  <p class="refpurpose">Sendet eine Fehlermeldung an die definierten Fehlerbehandlungsroutinen</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.error-log-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">error_log</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$message</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$message_type</code><span class="initializer"> = 0</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$destination</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$extra_headers</code></span>
+  ]]] )</div>
+
+  <p class="para rdfs-comment">
+   Sendet eine Fehlermeldung an das Fehlerprotokoll (Errorlog) des Webservers,
+   oder an eine Datei.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.error-log-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">message</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Fehlermeldung, die protokolliert werden soll.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">message_type</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Sagt, wohin der Fehler gehen soll. Folgende Meldungstypen sind möglich:
+      </p>
+      <p class="para">
+       <table class="doctable table">
+        <caption><strong><span class="function">error_log</span>-Protokolltypen</strong></caption>
+        
+         <tbody class="tbody">
+          <tr>
+           <td>0</td>
+           <td>
+            <code class="parameter">message</code> wird an das Log-Subsystem von PHP
+            gesendet, das abhängig von der Einstellung in der
+            Konfigurationsdirektive <a href="errorfunc.configuration.html#ini.error-log" class="link">error_log</a> das Errorlogging des
+            Betriebssystems verwendet oder in eine Datei schreibt. Dies ist die
+            Standardeinstellung.
+           </td>
+          </tr>
+
+          <tr>
+           <td>1</td>
+           <td>
+            <code class="parameter">message</code> wird via E-Mail an die Adresse
+            gesendet, die im Parameter <code class="parameter">destination</code>
+            angegeben wurde. Dies ist der einzige Meldungstyp, bei dem der
+            vierte Parameter <code class="parameter">extra_headers</code>
+            verwendet wird.
+           </td>
+          </tr>
+
+          <tr>
+           <td>2</td>
+           <td>
+            Diese Option ist nicht mehr verfügbar.
+           </td>
+          </tr>
+
+          <tr>
+           <td>3</td>
+           <td>
+            <code class="parameter">message</code> wird an die Datei
+            <code class="parameter">destination</code> angefügt. Ein Zeilenumbruch wird
+            nicht automatisch an das Ende des <code class="parameter">message</code>-Strings
+            angehängt.
+           </td>
+          </tr>
+
+          <tr>
+           <td>4</td>
+           <td>
+           <code class="parameter">message</code> wird direkt zum SAPI-Logging-Handler
+           gesendet.
+           </td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">destination</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Das Ziel. Die jeweilige Bedeutung hängt wie oben beschrieben vom Parameter
+       <code class="parameter">message_type</code> ab.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">extra_headers</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die zusätzlichen Kopfzeilen. Dieser Parameter wird verwendet, wenn der
+       Parameter <code class="parameter">message_type</code> auf <em>1</em>
+       gesetzt ist. Dieser Meldungstyp verwendet dieselbe interne Funktion wie
+       <span class="function">mail</span>.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.error-log-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.error-log-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="simpara">
+    <span class="function">error_log</span> ist nicht binär-sicher.
+    <code class="parameter">message</code> wird durch Null-Zeichen abgeschnitten.
+   </p>
+  </div>
+  <div class="tip"><strong class="tip">Tipp</strong>
+   <p class="simpara">
+    <code class="parameter">message</code> sollte keine Null-Zeichen enthalten. Es ist
+    zu beachten, dass <code class="parameter">message</code> an eine Datei, das Syslog,
+    per Mail usw. gesendet werden kann. Geeignete Konvertierungs/Maskierungs-Funktionen,
+    <span class="function">base64_encode</span>, <span class="function">rawurlencode</span> oder
+    <span class="function">addslashes</span>, sind anzuwenden bevor
+    <span class="function">error_log</span> aufgerufen wird.
+   </p>
+  </div>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.error-log-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-485">
+    <p><strong>Beispiel #1 <span class="function">error_log</span>-Beispiele</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Sende&nbsp;eine&nbsp;Nachricht&nbsp;an&nbsp;das&nbsp;Serverlog,&nbsp;falls<br />//&nbsp;keine&nbsp;Verbindung&nbsp;zur&nbsp;Datenbank&nbsp;herstellbar&nbsp;ist.<br /></span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">Ora_Logon</span><span style="color: #007700">(</span><span style="color: #0000BB">$benutzername</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$passwort</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">error_log</span><span style="color: #007700">(</span><span style="color: #DD0000">"Die&nbsp;Oracle-Datenbank&nbsp;ist&nbsp;nicht&nbsp;erreichbar!"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Benachrichtige&nbsp;den&nbsp;Administrator&nbsp;per&nbsp;E-Mail,&nbsp;falls&nbsp;kein&nbsp;FOO&nbsp;mehr&nbsp;verfügbar&nbsp;ist.<br /></span><span style="color: #007700">if&nbsp;(!(</span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">allocate_new_foo</span><span style="color: #007700">()))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">error_log</span><span style="color: #007700">(</span><span style="color: #DD0000">"Wir&nbsp;haben&nbsp;ein&nbsp;Problem:&nbsp;FOO&nbsp;ist&nbsp;alle!"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"operator@example.com"</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Eine&nbsp;weitere&nbsp;Möglichkeit,&nbsp;error_log()&nbsp;aufzurufen:<br /></span><span style="color: #0000BB">error_log</span><span style="color: #007700">(</span><span style="color: #DD0000">"Du&nbsp;hast&nbsp;Mist&nbsp;gebaut!"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"/var/tmp/meine-fehler.log"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.error-log-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+     <tr>
+       <td>5.2.7</td>
+       <td>
+        Der mögliche Wert 4 wurde zu <code class="parameter">message_type</code>
+        hinzugefügt.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

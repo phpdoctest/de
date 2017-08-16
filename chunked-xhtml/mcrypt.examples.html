@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Beispiele</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.crypto.html">Kryptografische Erweiterungen</a></li>
+  <li class="header up"><a href="book.mcrypt.html">Mcrypt</a></li>
+  <li><a href="intro.mcrypt.html">Einf&uuml;hrung</a></li>
+  <li><a href="mcrypt.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="mcrypt.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="mcrypt.ciphers.html">Mcrypt Chiffren</a></li>
+  <li class="active"><a href="mcrypt.examples.html">Beispiele</a></li>
+  <li><a href="ref.mcrypt.html">Mcrypt Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="mcrypt.ciphers.html">Mcrypt Chiffren</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ref.mcrypt.html">Mcrypt Funktionen</a></div>
+                <div class="up"><a href="book.mcrypt.html">Mcrypt</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="mcrypt.examples" class="appendix">
+ <h1>Beispiele</h1>
+ <p class="para">
+  Mcrypt kann zur Ver- und Entschlüsselung unter Verwendung der
+  oben erwähnten Chiffren benutzt werden. Wenn Sie mit <em>libmcrypt-2.2.x</em> verknüpft sind,
+  können die vier wichtigen mcrypt-Befehle (<span class="function">mcrypt_cfb</span>,
+  <span class="function">mcrypt_cbc</span>, <span class="function">mcrypt_ecb</span>,
+  and <span class="function">mcrypt_ofb</span>) in beiden Modi, die <strong><code>MCRYPT_ENCRYPT</code></strong> und 
+  <strong><code>MCRYPT_DECRYPT</code></strong> genannt werden, operieren.
+  
+ </p>
+ <p class="para">
+  Wenn Sie mit libmcrypt 2.4.x oder 2.5.x verknüpft sind, sind diese Funktionen immer noch verfügbar,
+  jedoch wird es empfohlen, die erweiterten Funktionen zu verwenden.
+  <div class="example" id="example-901">
+   <p><strong>Beispiel #1 Verschlüsselt einen übergebenen Wert mit <em>AES</em> mit einem 256-bit Schlüssel unter 2.4.x und höher im Modus <em>CBC</em></strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;$key&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">hash</span><span style="color: #007700">(</span><span style="color: #DD0000">'sha256'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Geheimer&nbsp;Schlüssel'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$input&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Treffpunkt:&nbsp;9&nbsp;Uhr&nbsp;am&nbsp;geheimen&nbsp;Platz."</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$td&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_module_open</span><span style="color: #007700">(</span><span style="color: #DD0000">'rijndael-128'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'cbc'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$iv&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_create_iv</span><span style="color: #007700">(</span><span style="color: #0000BB">mcrypt_enc_get_iv_size</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">MCRYPT_DEV_URANDOM</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mcrypt_generic_init</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$key</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$iv</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$encrypted_data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_generic</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$input</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mcrypt_generic_deinit</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mcrypt_module_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+  Dieses Beispiel gibt Ihnen die verschlüsselten Daten als String in
+  <em>$encrypted_data</em>. Für ein vollständiges Beispiel siehe
+  <span class="function">mcrypt_module_open</span>.
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

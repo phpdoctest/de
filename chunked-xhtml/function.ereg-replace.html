@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Ersetzt einen regul&auml;ren Ausdruck</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.text.html">Textverarbeitung</a></li>
+  <li class="header up"><a href="book.regex.html">POSIX Regex</a></li>
+  <li class="header up"><a href="ref.regex.html">POSIX Regex-Funktionen</a></li>
+  <li class="active"><a href="function.ereg-replace.html">ereg_replace</a></li>
+  <li><a href="function.ereg.html">ereg</a></li>
+  <li><a href="function.eregi-replace.html">eregi_replace</a></li>
+  <li><a href="function.eregi.html">eregi</a></li>
+  <li><a href="function.split.html">split</a></li>
+  <li><a href="function.spliti.html">spliti</a></li>
+  <li><a href="function.sql-regcase.html">sql_regcase</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="ref.regex.html">POSIX Regex-Funktionen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.ereg.html">ereg</a></div>
+                <div class="up"><a href="ref.regex.html">POSIX Regex-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.ereg-replace" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">ereg_replace</h1>
+  <p class="refpurpose">Ersetzt einen regulären Ausdruck</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.ereg-replace-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname">ereg_replace</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$replacement</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$string</code></span>
+   )</div>
+
+  <p class="simpara">
+   Diese Funktion durchsucht <code class="parameter">string</code> nach
+   Übereinstimmungen mit <code class="parameter">pattern</code> und ersetzt dann
+   den übereinstimmenden Text durch <code class="parameter">replacement</code>.
+  </p>
+  <div class="warning"><strong class="warning">Warnung</strong><p class="simpara">Diese Funktion ist
+seit PHP 5.3.0 <em class="emphasis">DEPRECATED</em> (veraltet). Sich auf diese
+Funktion zu verlassen ist in keiner Weise empfehlenswert.</p></div>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.ereg-replace-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">pattern</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ein POSIX-erweiterter regulärer Ausdruck
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">replacement</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Wenn <code class="parameter">pattern</code> eingeklammerte Teilzeichenketten
+       enthält, darf <code class="parameter">replacement</code> Teilzeichenketten der
+       Form <em>\<span class="replaceable">Ziffer</span></em> enthalten,
+       die dann durch die Ziffer&#039;ste Teilzeichenkette ersetzt werden.
+       <em>\0</em> erzeugt den gesamten Inhalt der durchsuchten
+       Zeichenkette. Bis zu neun Teilzeichenketten dürfen verwendet werden.
+       Klammern dürfen geschachtelt werden und werden in diesem Fall anhand
+       der öffnenden Klammern gezählt.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">string</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die zu durchsuchende Zeichenkette
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.ereg-replace-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Zurückgegeben wird die geänderte Zeichenkette. Wenn in
+   <code class="parameter">string</code> keine Übereinstimmungen gefunden werden, wird
+   sie unverändert zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.ereg-replace-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   Der folgende Code-Schnipsel gibt zum Beispiel dreimal &quot;Das war ein Test&quot;
+   aus:
+  </p>
+  <p class="para">
+   <div class="example" id="example-5303">
+    <p><strong>Beispiel #1 <span class="function">ereg_replace</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$string&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Das&nbsp;ist&nbsp;ein&nbsp;Test"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">ereg_replace</span><span style="color: #007700">(</span><span style="color: #DD0000">"&nbsp;ist"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"&nbsp;war"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$string</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">ereg_replace</span><span style="color: #007700">(</span><span style="color: #DD0000">"(&nbsp;)ist"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\\1war"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$string</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">ereg_replace</span><span style="color: #007700">(</span><span style="color: #DD0000">"((&nbsp;)ist)"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\\2war"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$string</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   Folgendes ist zu beachten: Wenn Sie als <code class="parameter">replacement</code>
+   einen ganzzahligen Wert verwenden, bekommen sie vielleicht nicht das
+   erwartete Ergebnis. Das liegt daran, dass <span class="function">ereg_replace</span>
+   die Zahl als Ordinalwert eines Zeichens betrachtet und dieses verwendet.
+   Zum Beispiel:
+  </p>
+  <p class="para">
+   <div class="example" id="example-5304">
+    <p><strong>Beispiel #2 <span class="function">ereg_replace</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Dieses&nbsp;funktioniert&nbsp;nicht&nbsp;wie&nbsp;erwartet.&nbsp;*/<br /></span><span style="color: #0000BB">$zahl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$zeichenkette&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Diese&nbsp;Zeichenkette&nbsp;hat&nbsp;vier&nbsp;Wörter."</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$zeichenkette&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ereg_replace</span><span style="color: #007700">(</span><span style="color: #DD0000">'vier'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$zahl</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$zeichenkette</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$zeichenkette</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Ausgabe:&nbsp;'Diese&nbsp;Zeichenkette&nbsp;hat&nbsp;&nbsp;&nbsp;Wörter.'&nbsp;*/<br /><br />/*&nbsp;Dieses&nbsp;funktioniert.&nbsp;*/<br /></span><span style="color: #0000BB">$zahl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'4'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$zeichenkette&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Diese&nbsp;Zeichenkette&nbsp;hat&nbsp;vier&nbsp;Wörter."</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$zeichenkette&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ereg_replace</span><span style="color: #007700">(</span><span style="color: #DD0000">'vier'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$zahl</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$zeichenkette</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$zeichenkette</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Output:&nbsp;'Diese&nbsp;Zeichenkette&nbsp;hat&nbsp;4&nbsp;Wörter.'&nbsp;*/<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-5305">
+    <p><strong>Beispiel #3 Ersetzen von URLs durch Links</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$text&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ereg_replace</span><span style="color: #007700">(</span><span style="color: #DD0000">"[[:alpha:]]+://[^&lt;&gt;[:space:]]+[[:alnum:]/]"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'&lt;a&nbsp;href="\\0"&gt;\\0&lt;/a&gt;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.ereg-replace-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Seit PHP 5.3.0 ist
+die regex-Erweiterung zugunsten der <a href="book.pcre.html" class="link">PCRE-Erweiterung</a>
+als veraltete markiert. Ein Aufruf dieser Funktion wird eine
+<strong><code>E_DEPRECATED</code></strong>-Notice ausgeben. Sie können sich
+<a href="reference.pcre.pattern.posix.html" class="link">die Liste der Unterschiede</a>
+ansehen, wenn Sie Hilfe beim Umstieg auf PCRE benötigen.</p></p></blockquote>
+  <div class="tip"><strong class="tip">Tipp</strong>
+   <p class="para">
+    <span class="function">ereg_replace</span> ist ab PHP 5.3.0 veraltet. Verwenden Sie
+    stattdessen <span class="function">preg_replace</span>.
+   </p>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.ereg-replace-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">ereg</span></li>
+    <li class="member"><span class="function">eregi</span></li>
+    <li class="member"><span class="function">eregi_replace</span></li>
+    <li class="member"><span class="function">str_replace</span></li>
+    <li class="member"><span class="function">preg_replace</span></li>
+    <li class="member"><span class="function">quotemeta</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

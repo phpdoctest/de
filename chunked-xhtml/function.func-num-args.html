@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Liefert die Anzahl der an eine Funktion &uuml;bergebenen Argumente</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li class="header up"><a href="book.funchand.html">Function Handling</a></li>
+  <li class="header up"><a href="ref.funchand.html">Function handling Funktionen</a></li>
+  <li><a href="function.call-user-func-array.html">call_user_func_array</a></li>
+  <li><a href="function.call-user-func.html">call_user_func</a></li>
+  <li><a href="function.create-function.html">create_function</a></li>
+  <li><a href="function.forward-static-call-array.html">forward_static_call_array</a></li>
+  <li><a href="function.forward-static-call.html">forward_static_call</a></li>
+  <li><a href="function.func-get-arg.html">func_get_arg</a></li>
+  <li><a href="function.func-get-args.html">func_get_args</a></li>
+  <li class="active"><a href="function.func-num-args.html">func_num_args</a></li>
+  <li><a href="function.function-exists.html">function_exists</a></li>
+  <li><a href="function.get-defined-functions.html">get_defined_functions</a></li>
+  <li><a href="function.register-shutdown-function.html">register_shutdown_function</a></li>
+  <li><a href="function.register-tick-function.html">register_tick_function</a></li>
+  <li><a href="function.unregister-tick-function.html">unregister_tick_function</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.func-get-args.html">func_get_args</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.function-exists.html">function_exists</a></div>
+                <div class="up"><a href="ref.funchand.html">Function handling Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.func-num-args" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">func_num_args</h1>
+  <p class="refpurpose">Liefert die Anzahl der an eine Funktion übergebenen Argumente</p>
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.func-num-args-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname">func_num_args</span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Liefert die Anzahl der Argumente die an die aufrufende Funktion
+   übergeben wurden.
+  </p>
+  <p class="para">
+   Diese Funktion kann zusammen mit <span class="function">func_get_arg</span>
+   und <span class="function">func_get_args</span> genutzt werden um Funktionen
+   mit einer variablen Anzahl von Argumenten zu implementieren.
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.func-num-args-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Liefert die Anzahl der Argumente die beim Aufruf an die aufrufenden
+   Funktion übergeben wurden.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.func-num-args-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        Diese Funktion kann nun auch in Parameterlisten genutzt werden. 
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-function.func-num-args-errors">
+  <h3 class="title">Fehler/Exceptions</h3>
+  <p class="para">
+   Die Funktion generiert eine Warnung wenn sie von außerhalb einer
+   benutzerdefinierten Funktion aufgerufen wird.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.func-num-args-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-5852">
+    <p><strong>Beispiel #1 <span class="function">func_num_args</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$numargs&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">func_num_args</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Anzahl&nbsp;der&nbsp;Argumente:&nbsp;</span><span style="color: #0000BB">$numargs</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Ergebnis:&nbsp;'Anzahl&nbsp;der&nbsp;Argumente:&nbsp;3'<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.func-num-args-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: <p class="para">Da diese Funktion bei der Ermittlung
+der Parameterdetails von dem aktuellen Ausführungskontext abhängt, kann sie in PHP-Versionen vor 5.3.0
+selbst nicht als Funktionsparameter genutzt werden. Wenn Sie ihre Ergebnisse
+tatsächlich weitergeben müssen, so müssen Sie diese zunächst einer Variablen
+zuweisen und dann diese Variable übergeben</p></p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.func-num-args-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">func_get_arg</span></li>
+    <li class="member"><span class="function">func_get_args</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

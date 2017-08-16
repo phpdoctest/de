@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Empf&auml;ngt Daten von einem Socket, egal, ob verbindungsorientiert oder nicht</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li class="header up"><a href="book.sockets.html">Sockets</a></li>
+  <li class="header up"><a href="ref.sockets.html">Socket-Funktionen</a></li>
+  <li><a href="function.socket-accept.html">socket_accept</a></li>
+  <li><a href="function.socket-bind.html">socket_bind</a></li>
+  <li><a href="function.socket-clear-error.html">socket_clear_error</a></li>
+  <li><a href="function.socket-close.html">socket_close</a></li>
+  <li><a href="function.socket-cmsg-space.html">socket_cmsg_space</a></li>
+  <li><a href="function.socket-connect.html">socket_connect</a></li>
+  <li><a href="function.socket-create-listen.html">socket_create_listen</a></li>
+  <li><a href="function.socket-create-pair.html">socket_create_pair</a></li>
+  <li><a href="function.socket-create.html">socket_create</a></li>
+  <li><a href="function.socket-get-option.html">socket_get_option</a></li>
+  <li><a href="function.socket-getopt.html">socket_getopt</a></li>
+  <li><a href="function.socket-getpeername.html">socket_getpeername</a></li>
+  <li><a href="function.socket-getsockname.html">socket_getsockname</a></li>
+  <li><a href="function.socket-import-stream.html">socket_import_stream</a></li>
+  <li><a href="function.socket-last-error.html">socket_last_error</a></li>
+  <li><a href="function.socket-listen.html">socket_listen</a></li>
+  <li><a href="function.socket-read.html">socket_read</a></li>
+  <li><a href="function.socket-recv.html">socket_recv</a></li>
+  <li class="active"><a href="function.socket-recvfrom.html">socket_recvfrom</a></li>
+  <li><a href="function.socket-recvmsg.html">socket_recvmsg</a></li>
+  <li><a href="function.socket-select.html">socket_select</a></li>
+  <li><a href="function.socket-send.html">socket_send</a></li>
+  <li><a href="function.socket-sendmsg.html">socket_sendmsg</a></li>
+  <li><a href="function.socket-sendto.html">socket_sendto</a></li>
+  <li><a href="function.socket-set-block.html">socket_set_block</a></li>
+  <li><a href="function.socket-set-nonblock.html">socket_set_nonblock</a></li>
+  <li><a href="function.socket-set-option.html">socket_set_option</a></li>
+  <li><a href="function.socket-setopt.html">socket_setopt</a></li>
+  <li><a href="function.socket-shutdown.html">socket_shutdown</a></li>
+  <li><a href="function.socket-strerror.html">socket_strerror</a></li>
+  <li><a href="function.socket-write.html">socket_write</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.socket-recv.html">socket_recv</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.socket-recvmsg.html">socket_recvmsg</a></div>
+                <div class="up"><a href="ref.sockets.html">Socket-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.socket-recvfrom" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">socket_recvfrom</h1>
+  <p class="refpurpose">Empfängt Daten von einem Socket, egal, ob verbindungsorientiert oder nicht</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.socket-recvfrom-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname">socket_recvfrom</span>
+    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$socket</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$buf</code></span>
+   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$len</code></span>
+   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$name</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter reference">&$port</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Die Funktion <span class="function">socket_recvfrom</span> empfängt über den Socket 
+   <code class="parameter">socket</code> <code class="parameter">len</code> Bytes von
+   <code class="parameter">name</code> über den Port <code class="parameter">port</code> (falls
+   der Socket nicht vom Typ <strong><code>AF_UNIX</code></strong> ist) und liest sie in
+   den Puffer <code class="parameter">buf</code> ein. 
+   <span class="function">socket_recvfrom</span> kann dazu verwendet werden, um Daten
+   sowohl von verbundenen als auch unverbundenen Sockets zu lesen. Außerdem
+   können ein oder mehrere Flags gesetzt werden, um das Verhalten dieser 
+   Funktion zu beeinflussen.
+  </p>
+  <p class="para">
+   Die Parameter <code class="parameter">name</code> und <code class="parameter">port</code> 
+   müsssen als Referenz übergeben werden. Wenn der Socket verbindungslos ist, 
+   wird <code class="parameter">name</code> auf die Internet-Protokolladresse des
+   entfernten Host oder auf den Pfad zum UNIX-Socket gesetzt. Ist der Socket 
+   verbindungsorientiert, ist <code class="parameter">name</code> <strong><code>NULL</code></strong>. Zusätzlich 
+   enthält der Parameter <code class="parameter">port</code> den Port des entfernten
+   Host, falls es sich um einen nicht verbundenen <strong><code>AF_INET</code></strong>
+   oder <strong><code>AF_INET6</code></strong> Socket handelt.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.socket-recvfrom-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">socket</code></dt>
+
+     <dd>
+
+      <p class="para">
+       <code class="parameter">socket</code> muss ein Socket-Deskriptor sein, der zuvor
+       von <span class="function">socket_create</span> erzeugt wurde.
+      </p>
+     </dd>
+
+    
+
+    
+     <dt>
+<code class="parameter">buf</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die empfangenen Daten werden in die Variable <code class="parameter">buf</code>
+       eingelesen.
+      </p>
+     </dd>
+
+    
+
+    
+     <dt>
+<code class="parameter">len</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Bis zu <code class="parameter">len</code> Bytes werden vom entfernten Host gelesen. 
+      </p>
+     </dd>
+
+    
+
+    
+     <dt>
+<code class="parameter">flags</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Wert von <code class="parameter">flags</code> kann eine beliebige Kombination
+       der folgenden Flags sein, die mit dem binären OR (<em>|</em>) 
+       verknüpft werden.
+      </p>
+      
+      <table class="doctable table">
+       <caption><strong>Mögliche Werte für <code class="parameter">flags</code></strong></caption>
+       
+        <thead>
+         <tr>
+          <th>Flag</th>
+          <th>Beschreibung</th>
+         </tr>
+
+        </thead>
+
+        <tbody class="tbody">
+         <tr>
+          <td><strong><code>MSG_OOB</code></strong></td>
+          <td>
+           Verarbeite bandexterne Daten.
+          </td>
+         </tr>
+
+         <tr>
+          <td><strong><code>MSG_PEEK</code></strong></td>
+          <td>
+           Lies Daten ab Anfang der Empfangs-Warteschlange, ohne die Daten
+           aus der Warteschlange zu löschen.
+          </td>
+         </tr>
+
+         <tr>
+          <td><strong><code>MSG_WAITALL</code></strong></td>
+          <td>
+           Blockiere so lange, bis mindestens <code class="parameter">len</code> Daten
+           gelesen wurden. Wenn jedoch ein Signal empfangen wurde oder der 
+           entfernte Host die Verbindung beendet, kann die Funktion auch weniger
+           Daten zurückgeben.
+          </td>
+         </tr>
+
+         <tr>
+          <td><strong><code>MSG_DONTWAIT</code></strong></td>
+          <td>
+           Wenn dieses Flag gesetzt ist, kehrt die Funktion zurück, auch wenn
+           sie normalerweise blockieren würde.
+          </td>
+         </tr>
+
+        </tbody>
+       
+      </table>
+
+     </dd>
+
+    
+
+    
+     <dt>
+<code class="parameter">name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Wenn der Socket vom Typ <strong><code>AF_UNIX</code></strong> ist, enthält
+       <code class="parameter">name</code> den Pfad zu einer Datei. Anderenfalls, bei
+       nicht verbundenen Sockets, enthält <code class="parameter">name</code> die
+       IP-Adresse des entfernten Hosts oder <strong><code>NULL</code></strong>, falls der Socket
+       verbindungsorientiert ist.
+      </p>
+     </dd>
+
+    
+
+    
+     <dt>
+<code class="parameter">port</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Dieses Argument gilt nur für Sockets vom Typ <strong><code>AF_INET</code></strong> und <strong><code>AF_INET6</code></strong> und gibt den entfernten Port an, über den Daten empfangen werden. Falls der Socket verbindungsorientiert ist, ist <code class="parameter">port</code> <strong><code>NULL</code></strong>.
+      </p>
+     </dd>
+
+    
+    
+   </dl>
+
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 returnvalues" id="refsect1-function.socket-recvfrom-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   <span class="function">socket_recvfrom</span> gibt die Anzahl der empfangenen Bytes
+   zurück oder <strong><code>FALSE</code></strong>, falls ein Fehler auftrat. Der aktuelle Fehlercode kann mit 
+   <span class="function">socket_last_error</span> abgefragt werden. Dieser Fehlercode
+   kann an die Funktion <span class="function">socket_strerror</span> übergeben werden,
+   um eine textuelle Beschreibung des Fehlers zu erhalten.
+  </p>
+ </div>
+
+                     
+ <div class="refsect1 examples" id="refsect1-function.socket-recvfrom-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-5040">
+    <p><strong>Beispiel #1 <span class="function">socket_recvfrom</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">E_ALL&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">E_STRICT</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$socket&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">socket_create</span><span style="color: #007700">(</span><span style="color: #0000BB">AF_INET</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SOCK_DGRAM</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SOL_UDP</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">socket_bind</span><span style="color: #007700">(</span><span style="color: #0000BB">$socket</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'127.0.0.1'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1223</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$from&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$port&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">socket_recvfrom</span><span style="color: #007700">(</span><span style="color: #0000BB">$socket</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$buf</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">12</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$from</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$port</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$buf</span><span style="color: #DD0000">&nbsp;von&nbsp;entfernter&nbsp;Adresse&nbsp;</span><span style="color: #0000BB">$from</span><span style="color: #DD0000">&nbsp;über&nbsp;den&nbsp;entfernten&nbsp;Port&nbsp;</span><span style="color: #0000BB">$port</span><span style="color: #DD0000">&nbsp;empfangen."&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Dieses Beispiel erzeugt einen UDP-Socket über Port 1223 des Hosts 127.0.0.1
+     und gibt höchstens 12 Zeichen aus, die von einem entfernten Host empfangen
+     wurden. 
+    </p></div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.socket-recvfrom-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Beschreibung</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>4.3.0</td>
+       <td>
+        <span class="function">socket_recvfrom</span> ist ab jetzt binary-safe.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.socket-recvfrom-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">socket_recv</span></li>
+    <li class="member"><span class="function">socket_send</span></li>
+    <li class="member"><span class="function">socket_sendto</span></li>
+    <li class="member"><span class="function">socket_create</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

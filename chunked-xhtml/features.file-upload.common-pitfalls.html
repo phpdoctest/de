@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: H&auml;ufige Probleme</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="features.html">Features</a></li>
+  <li class="header up"><a href="features.file-upload.html">Steuerung von Dateiuploads</a></li>
+  <li><a href="features.file-upload.post-method.html">Dateiuploads mit POST</a></li>
+  <li><a href="features.file-upload.errors.html">Fehlermeldungen erkl&auml;rt</a></li>
+  <li class="active"><a href="features.file-upload.common-pitfalls.html">H&auml;ufige Probleme</a></li>
+  <li><a href="features.file-upload.multiple.html">Upload mehrerer Dateien</a></li>
+  <li><a href="features.file-upload.put-method.html">PUT-Unterst&uuml;tzung</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="features.file-upload.errors.html">Fehlermeldungen erkl&auml;rt</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="features.file-upload.multiple.html">Upload mehrerer Dateien</a></div>
+                <div class="up"><a href="features.file-upload.html">Steuerung von Dateiuploads</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="features.file-upload.common-pitfalls" class="sect1">
+   <h2 class="title">Häufige Probleme</h2>
+   <p class="simpara">
+    Der mit <em>MAX_FILE_SIZE</em> eingestellte Wert
+    kann nicht größer sein als der des ini-Parameters <a href="ini.core.html#ini.upload-max-filesize" class="link">upload_max_filesize</a>.
+    Der Standardwert ist 2 Megabyte.
+   </p>
+   <p class="simpara">
+    Ist das Memory Limit aktiviert, könnte eine Erhöhung von
+    <a href="ini.core.html#ini.memory-limit" class="link">memory_limit</a> nötig sein.
+    Stellen Sie sicher, dass der Wert von <a href="ini.core.html#ini.memory-limit" class="link">memory_limit</a> groß genug ist.
+   </p>
+   <p class="simpara">
+    Wenn <a href="info.configuration.html#ini.max-execution-time" class="link">max_execution_time</a>
+    zu kurz konfiguriert ist, könnte das Skript den Wert überschritten
+    haben. Stellen Sie sicher, dass der Wert von
+    <em>max_execution_time</em> groß genug ist.
+   </p>
+   <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+    <span class="simpara">
+     <a href="info.configuration.html#ini.max-execution-time" class="link">max_execution_time</a> 
+     beschränkt nur die Ausführungszeit des Skripts selbst. Jegliche
+     Zeit die auf Dinge entfällt die außerhalb des Skripts selbst
+     stattfinden, wie z.B. Systemaufrufe über die <span class="function">system</span>
+     Funktion, <span class="function">sleep</span>, Datenbankabfragen und die
+     für das Hochladen von Dateien benötigte Zeit werden
+     bei der Bestimmung der Ausführungszeit nicht mit einbezogen.
+    </span>
+   </p></blockquote>
+   <div class="warning"><strong class="warning">Warnung</strong>
+    <p class="simpara">
+     <a href="info.configuration.html#ini.max-input-time" class="link">max_input_time</a> 
+     legt die maximale Zeit in Sekunden fest während der es
+     einem Skript gestattet ist Eingaben zu empfangen. Diese
+     beinhaltet auch die für das Hochladen von Dateien benötigte
+     Zeit. Werden viele oder große Dateien übertragen oder ist
+     die Verbindung zum Benutzer langsam so kann die Standardeinstellung
+     von <em>60 Sekunden</em> überschritten werden.
+    </p>
+   </div>
+   <p class="simpara">
+    Ist <a href="ini.core.html#ini.post-max-size" class="link">post_max_size</a> zu klein
+    konfiguriert, können große Dateien nicht hochgeladen werden. Stellen
+    Sie sicher, dass der Wert von <em>post_max_size</em> groß
+    genug ist.
+   </p>
+   <p class="simpara">
+    Seit PHP 5.2.12 kontrolliert die <a href="ini.core.html#ini.max-file-uploads" class="link">max_file_uploads</a> Option die maximale Anzahl Dateien, die während
+    eines Requests hochgeladen werden können. Wenn mehr Dateien hochgeladen
+    werden als das Limit, werden diese nicht in das <var class="varname">$_FILES</var>
+    Array aufgenommen. Wenn  <a href="ini.core.html#ini.max-file-uploads" class="link">max_file_uploads</a> beispielsweise auf <em>10</em> gesetzt ist,
+    so wird <var class="varname">$_FILES</var> nie mehr als 10 Einträge enthalten.
+   </p>
+   <p class="simpara">
+    Nicht zu prüfen an welcher Datei Sie arbeiten kann bedeuten, dass
+    Benutzer auf sensible Informationen in anderen Verzeichnissen Zugriff
+    erhalten.
+   </p>
+   <p class="simpara">
+    Beachten Sie, dass <span class="productname">CERN httpd</span> in dem vom Client 
+    erhaltenen Content-Type Mime Header alles nach dem ersten Whitespace
+    wegzuschneiden scheint. Solange dies der Fall ist, unterstützt
+    <span class="productname">CERN httpd</span> keine Dateiuploads.
+   </p>
+   <p class="simpara">
+    Aufgrund der vielen möglichen Arten der Darstellung von Verzeichnissen
+    können wir nicht garantieren, dass Dateien mit exotischen Namen (wie z.B.
+    mit enthaltenen Leerzeichen) auch wirklich richtig verarbeitet werden.
+   </p>
+   <p class="simpara">
+    Es ist nicht möglich für normale Formularfelder und Dateifelder die
+    gleiche Formularvariable (wie z.B. <em>foo[]</em>) zu nutzen.
+   </p>
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Network</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.remote.other.html">Sonstige Dienste</a></li>
+  <li><a href="book.chdb.html">chdb</a></li>
+  <li><a href="book.curl.html">cURL</a></li>
+  <li><a href="book.event.html">Event</a></li>
+  <li><a href="book.fam.html">FAM</a></li>
+  <li><a href="book.ftp.html">FTP</a></li>
+  <li><a href="book.gearman.html">Gearman</a></li>
+  <li><a href="book.net-gopher.html">Gopher</a></li>
+  <li><a href="book.gupnp.html">Gupnp</a></li>
+  <li><a href="book.hwapi.html">Hyperwave API</a></li>
+  <li><a href="book.ldap.html">LDAP</a></li>
+  <li><a href="book.memcache.html">Memcache</a></li>
+  <li><a href="book.memcached.html">Memcached</a></li>
+  <li><a href="book.mqseries.html">mqseries</a></li>
+  <li class="active"><a href="book.network.html">Network</a></li>
+  <li><a href="book.rrd.html">RRD</a></li>
+  <li><a href="book.sam.html">SAM</a></li>
+  <li><a href="book.snmp.html">SNMP</a></li>
+  <li><a href="book.sockets.html">Sockets</a></li>
+  <li><a href="book.ssh2.html">SSH2</a></li>
+  <li><a href="book.stomp.html">Stomp</a></li>
+  <li><a href="book.svm.html">SVM</a></li>
+  <li><a href="book.svn.html">SVN</a></li>
+  <li><a href="book.tcpwrap.html">TCP</a></li>
+  <li><a href="book.varnish.html">Varnish</a></li>
+  <li><a href="book.yaz.html">YAZ</a></li>
+  <li><a href="book.nis.html">YP/NIS</a></li>
+  <li><a href="book.zmq.html">0MQ messaging</a></li>
+  <li><a href="book.zookeeper.html">ZooKeeper</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.mqseries-strerror.html">mqseries_strerror</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.network.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.remote.other.html">Sonstige Dienste</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.network" class="book">
+ 
+ <h1>Network</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.network.html">Einf&uuml;hrung</a></li>
+<li><a href="network.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="network.requirements.html">Anforderungen</a></li>
+<li><a href="network.installation.html">Installation</a></li>
+<li><a href="network.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="network.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="network.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.network.html">Netzwerk-Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.checkdnsrr.html">checkdnsrr</a> — Pr&uuml;ft DNS-Eintr&auml;ge auf &Uuml;bereinstimmung mit einem gegebenen
+   Internet-Host-Namen oder einer IP-Adresse</li>
+<li><a href="function.closelog.html">closelog</a> — Schlie&szlig;t die Verbindung zum System-Logger</li>
+<li><a href="function.define-syslog-variables.html">define_syslog_variables</a> — Initialisiert alle SysLog-bezogenen Variablen</li>
+<li><a href="function.dns-check-record.html">dns_check_record</a> — Alias von checkdnsrr</li>
+<li><a href="function.dns-get-mx.html">dns_get_mx</a> — Alias von getmxrr</li>
+<li><a href="function.dns-get-record.html">dns_get_record</a> — Den DNS Resource Record f&uuml;r einen gegebenen Hostname finden.</li>
+<li><a href="function.fsockopen.html">fsockopen</a> — Stellt eine Internet- oder Unix-Domain-Socket-Verbindung her</li>
+<li><a href="function.gethostbyaddr.html">gethostbyaddr</a> — Ermittelt den zur angegebenen IP-Adresse passenden Internet-Hostnamen</li>
+<li><a href="function.gethostbyname.html">gethostbyname</a> — Ermittelt die zum angegebenen Internet-Hostnamen passende IPv4-Adresse</li>
+<li><a href="function.gethostbynamel.html">gethostbynamel</a> — Ermittelt eine Liste von IPv4-Adressen passend zum angegebenen Internet-Hostnamen</li>
+<li><a href="function.gethostname.html">gethostname</a> — Gets the host name</li>
+<li><a href="function.getmxrr.html">getmxrr</a> — Ermittelt die zu einem Internet-Hostnamen passenden MX-Records</li>
+<li><a href="function.getprotobyname.html">getprotobyname</a> — Ermittelt die Protokollnummer anhand des Protokollnamens</li>
+<li><a href="function.getprotobynumber.html">getprotobynumber</a> — Ermittelt den Protokollnamen anhand der Protokollnummer</li>
+<li><a href="function.getservbyname.html">getservbyname</a> — Ermittelt die Portnummer passend zu einem Internet-Dienst und Protokoll</li>
+<li><a href="function.getservbyport.html">getservbyport</a> — Ermittelt einen Internet-Dienst passend zu einem Port und Protokoll</li>
+<li><a href="function.header-register-callback.html">header_register_callback</a> — Call a header function</li>
+<li><a href="function.header-remove.html">header_remove</a> — Remove previously set headers</li>
+<li><a href="function.header.html">header</a> — Sendet einen HTTP-Header in Rohform</li>
+<li><a href="function.headers-list.html">headers_list</a> — Gibt eine Liste der gesendeten (oder zum Senden vorbereiteten)
+     Response Header zur&uuml;ck</li>
+<li><a href="function.headers-sent.html">headers_sent</a> — Pr&uuml;ft, ob oder wo die Header bereits gesendet wurden</li>
+<li><a href="function.http-response-code.html">http_response_code</a> — Get or Set the HTTP response code</li>
+<li><a href="function.inet-ntop.html">inet_ntop</a> — Konvertiert eine komprimierte Internetadresse in ein
+   menschenlesbares Format</li>
+<li><a href="function.inet-pton.html">inet_pton</a> — Konvertiert eine IP-Adresse im menschenlesbaren Format in eine
+   komprimierte in_addr-Repr&auml;sentation</li>
+<li><a href="function.ip2long.html">ip2long</a> — Verwandelt eine gem&auml;&szlig; IPv4-Protokoll angegebene Internet-Adresse
+     vom Punkt-Format in die ausgeschriebene Adress-Angabe</li>
+<li><a href="function.long2ip.html">long2ip</a> — Konvertiert eine (IPv4) Netzwerkadresse in einen String,
+     der das Punkt-Format enth&auml;lt (&quot;Dotted-Format&quot;)</li>
+<li><a href="function.openlog.html">openlog</a> — Stellt eine Verbindung zum Log-Dienst des Systems her</li>
+<li><a href="function.pfsockopen.html">pfsockopen</a> — &Ouml;ffnet eine persistente Verbindung zum Internet oder zu einem
+     Unix-Domainsocket</li>
+<li><a href="function.setcookie.html">setcookie</a> — Sendet ein Cookie</li>
+<li><a href="function.setrawcookie.html">setrawcookie</a> — Sendet ein Cookie, ohne seinen Wert zu URL-kodieren</li>
+<li><a href="function.socket-get-status.html">socket_get_status</a> — Alias von stream_get_meta_data</li>
+<li><a href="function.socket-set-blocking.html">socket_set_blocking</a> — Alias von stream_set_blocking</li>
+<li><a href="function.socket-set-timeout.html">socket_set_timeout</a> — Alias von stream_set_timeout</li>
+<li><a href="function.syslog.html">syslog</a> — Erzeugt eine Meldung im System-Logging</li>
+</ul>
+</li>
+</ul>
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+ 
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: F&uuml;gt einer Stored Procedure oder einer Remote Stored Procedure einen Parameter hinzu</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.mssql.html">Mssql</a></li>
+  <li class="header up"><a href="ref.mssql.html">Mssql-Funktionen</a></li>
+  <li class="active"><a href="function.mssql-bind.html">mssql_bind</a></li>
+  <li><a href="function.mssql-close.html">mssql_close</a></li>
+  <li><a href="function.mssql-connect.html">mssql_connect</a></li>
+  <li><a href="function.mssql-data-seek.html">mssql_data_seek</a></li>
+  <li><a href="function.mssql-execute.html">mssql_execute</a></li>
+  <li><a href="function.mssql-fetch-array.html">mssql_fetch_array</a></li>
+  <li><a href="function.mssql-fetch-assoc.html">mssql_fetch_assoc</a></li>
+  <li><a href="function.mssql-fetch-batch.html">mssql_fetch_batch</a></li>
+  <li><a href="function.mssql-fetch-field.html">mssql_fetch_field</a></li>
+  <li><a href="function.mssql-fetch-object.html">mssql_fetch_object</a></li>
+  <li><a href="function.mssql-fetch-row.html">mssql_fetch_row</a></li>
+  <li><a href="function.mssql-field-length.html">mssql_field_length</a></li>
+  <li><a href="function.mssql-field-name.html">mssql_field_name</a></li>
+  <li><a href="function.mssql-field-seek.html">mssql_field_seek</a></li>
+  <li><a href="function.mssql-field-type.html">mssql_field_type</a></li>
+  <li><a href="function.mssql-free-result.html">mssql_free_result</a></li>
+  <li><a href="function.mssql-free-statement.html">mssql_free_statement</a></li>
+  <li><a href="function.mssql-get-last-message.html">mssql_get_last_message</a></li>
+  <li><a href="function.mssql-guid-string.html">mssql_guid_string</a></li>
+  <li><a href="function.mssql-init.html">mssql_init</a></li>
+  <li><a href="function.mssql-min-error-severity.html">mssql_min_error_severity</a></li>
+  <li><a href="function.mssql-min-message-severity.html">mssql_min_message_severity</a></li>
+  <li><a href="function.mssql-next-result.html">mssql_next_result</a></li>
+  <li><a href="function.mssql-num-fields.html">mssql_num_fields</a></li>
+  <li><a href="function.mssql-num-rows.html">mssql_num_rows</a></li>
+  <li><a href="function.mssql-pconnect.html">mssql_pconnect</a></li>
+  <li><a href="function.mssql-query.html">mssql_query</a></li>
+  <li><a href="function.mssql-result.html">mssql_result</a></li>
+  <li><a href="function.mssql-rows-affected.html">mssql_rows_affected</a></li>
+  <li><a href="function.mssql-select-db.html">mssql_select_db</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="ref.mssql.html">Mssql-Funktionen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.mssql-close.html">mssql_close</a></div>
+                <div class="up"><a href="ref.mssql.html">Mssql-Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.mssql-bind" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">mssql_bind</h1>
+  <p class="refpurpose">Fügt einer Stored Procedure oder einer Remote Stored Procedure einen Parameter hinzu</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.mssql-bind-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">mssql_bind</span>
+    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$stmt</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$param_name</code></span>
+   , <span class="methodparam"><span class="type">mixed</span> <code class="parameter reference">&$var</code></span>
+   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$type</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_output</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_null</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$maxlen</code><span class="initializer"> = -1</span></span>
+  ]]] )</div>
+
+  <p class="para rdfs-comment">
+   Fügt einer Stored Procedure oder einer Remote Stored Procedure einen
+   Parameter hinzu.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.mssql-bind-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">stmt</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der mittels <span class="function">mssql_init</span> erhaltene Bezeichner der
+       Anweisung.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">param_name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Name des Parameters als Zeichenkette
+      </p>
+      <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+       <p class="para">
+        Sie müssen das Zeichen <em>@</em> der Syntax von T-SQL
+        entsprechend einfügen. Eine Erklärung finden Sie bei
+        <span class="function">mssql_execute</span>.
+       </p>
+      </p></blockquote>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">var</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die PHP-Variable, an die Sie den MS SQL-Parameter binden. Sie wird als
+       Referenz übergeben, um die OUTPUT- und RETVAL-Werte nach der Ausführung
+       der Prozedur abzurufen.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">type</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Mögliche Werte: <strong><code>SQLTEXT</code></strong>,
+       <strong><code>SQLVARCHAR</code></strong>, <strong><code>SQLCHAR</code></strong>,
+       <strong><code>SQLINT1</code></strong>, <strong><code>SQLINT2</code></strong>,
+       <strong><code>SQLINT4</code></strong>, <strong><code>SQLBIT</code></strong>,
+       <strong><code>SQLFLT4</code></strong>, <strong><code>SQLFLT8</code></strong>,
+       <strong><code>SQLFLTN</code></strong>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">is_output</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ob der Parameter ein OUTPUT-Parameter ist oder nicht. Falls er ein
+       OUTPUT-Parameter ist uns Sie das nicht angeben, wird er wie ein
+       normaler Eingabeparameter behandelt und es wird keine Fehlermeldung
+       ausgegeben.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">is_null</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Ob der Parameter <strong><code>NULL</code></strong> ist oder nicht. Es genügt nicht, den Wert
+       <strong><code>NULL</code></strong> als <code class="parameter">var</code> zu übergeben.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">maxlen</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Wird bei char/varchar-Werten verwendet. Sie müssen die Länge der Daten
+       angeben. Falls der Parameter vom Typ varchar(50) ist, muss also der
+       <code class="parameter">type</code> <strong><code>SQLVARCHAR</code></strong> und dieser
+       Wert <em>50</em> sein.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.mssql-bind-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.mssql-bind-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-1726">
+    <p><strong>Beispiel #1 <span class="function">mssql_bind</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Mit&nbsp;MSSQL&nbsp;verbinden&nbsp;und&nbsp;Datenbank&nbsp;auswählen<br /></span><span style="color: #0000BB">mssql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'KALLESPC\SQLEXPRESS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'sa'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'phpfi'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">mssql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">'php'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Eine&nbsp;neue&nbsp;Stored&nbsp;Prodecure&nbsp;erzeugen<br /></span><span style="color: #0000BB">$anweisung&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_init</span><span style="color: #007700">(</span><span style="color: #DD0000">'NeuerBenutzer'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Die&nbsp;Feldnamen&nbsp;anbinden<br /></span><span style="color: #0000BB">mssql_bind</span><span style="color: #007700">(</span><span style="color: #0000BB">$anweisung</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'@username'</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #DD0000">'Kalle'</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">SQLVARCHAR</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">60</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">mssql_bind</span><span style="color: #007700">(</span><span style="color: #0000BB">$anweisung</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'@name'</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'Kalle'</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">SQLVARCHAR</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">60</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">mssql_bind</span><span style="color: #007700">(</span><span style="color: #0000BB">$anweisung</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'@age'</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">19</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">SQLINT1</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Anweisung&nbsp;ausführen<br /></span><span style="color: #0000BB">mssql_execute</span><span style="color: #007700">(</span><span style="color: #0000BB">$anweisung</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Den&nbsp;Anweisungsspeicher&nbsp;freigeben<br /></span><span style="color: #0000BB">mssql_free_statement</span><span style="color: #007700">(</span><span style="color: #0000BB">$anweisung</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.mssql-bind-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">mssql_execute</span></li>
+    <li class="member"><span class="function">mssql_free_statement</span></li>
+    <li class="member"><span class="function">mssql_init</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

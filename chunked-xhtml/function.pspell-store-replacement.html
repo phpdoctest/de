@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Speichert das Ersetzen-Paar f&uuml;r ein Wort</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.international.html">Unterst&uuml;tzung menschlicher Sprache und Zeichenkodierung</a></li>
+  <li class="header up"><a href="book.pspell.html">Pspell</a></li>
+  <li class="header up"><a href="ref.pspell.html">Pspell Funktionen</a></li>
+  <li><a href="function.pspell-add-to-personal.html">pspell_add_to_personal</a></li>
+  <li><a href="function.pspell-add-to-session.html">pspell_add_to_session</a></li>
+  <li><a href="function.pspell-check.html">pspell_check</a></li>
+  <li><a href="function.pspell-clear-session.html">pspell_clear_session</a></li>
+  <li><a href="function.pspell-config-create.html">pspell_config_create</a></li>
+  <li><a href="function.pspell-config-data-dir.html">pspell_config_data_dir</a></li>
+  <li><a href="function.pspell-config-dict-dir.html">pspell_config_dict_dir</a></li>
+  <li><a href="function.pspell-config-ignore.html">pspell_config_ignore</a></li>
+  <li><a href="function.pspell-config-mode.html">pspell_config_mode</a></li>
+  <li><a href="function.pspell-config-personal.html">pspell_config_personal</a></li>
+  <li><a href="function.pspell-config-repl.html">pspell_config_repl</a></li>
+  <li><a href="function.pspell-config-runtogether.html">pspell_config_runtogether</a></li>
+  <li><a href="function.pspell-config-save-repl.html">pspell_config_save_repl</a></li>
+  <li><a href="function.pspell-new-config.html">pspell_new_config</a></li>
+  <li><a href="function.pspell-new-personal.html">pspell_new_personal</a></li>
+  <li><a href="function.pspell-new.html">pspell_new</a></li>
+  <li><a href="function.pspell-save-wordlist.html">pspell_save_wordlist</a></li>
+  <li class="active"><a href="function.pspell-store-replacement.html">pspell_store_replacement</a></li>
+  <li><a href="function.pspell-suggest.html">pspell_suggest</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.pspell-save-wordlist.html">pspell_save_wordlist</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.pspell-suggest.html">pspell_suggest</a></div>
+                <div class="up"><a href="ref.pspell.html">Pspell Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.pspell-store-replacement" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">pspell_store_replacement</h1>
+  <p class="refpurpose">Speichert das Ersetzen-Paar für ein Wort</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.pspell-store-replacement-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname">pspell_store_replacement</span>
+    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$dictionary_link</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$misspelled</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$correct</code></span>
+   )</div>
+
+  <p class="simpara">
+   <span class="function">pspell_store_replacement</span> speichert das Ersetzen-Paar
+   für ein Wort, damit dieses Ersetzen-Paar später von
+   <span class="function">pspell_suggest</span> zurückgegeben werden kann. Um von
+   dieser Funktion profitieren zu können, müssen Sie
+   <span class="function">pspell_new_personal</span> zum Öffnen des Wörterbuchs
+   verwenden. Um das Ersetzen-Paar dauerhaft zu speichern, müssen Sie
+   <span class="function">pspell_config_personal</span> und
+   <span class="function">pspell_config_repl</span> verwenden, um den Pfad zu setzen,
+   unter dem Ihre selbst erstellten Wortlisten gespeichert werden sollen und
+   dann <span class="function">pspell_save_wordlist</span>, damit die Änderungen auf
+   die Festplatte geschrieben werden.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.pspell-store-replacement-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">dictionary_link</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Kennung eines Wörterbuch-Links, die mit
+       <span class="function">pspell_new_personal</span> geöffnet wurde.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">misspelled</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Das falsch geschriebene Wort
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">correct</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die richtige Schreibweise für das <code class="parameter">misspelled</code>
+       geschriebene Wort.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.pspell-store-replacement-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.pspell-store-replacement-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-3002">
+    <p><strong>Beispiel #1 <span class="function">pspell_store_replacement</span>-Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$pspell_config&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pspell_config_create</span><span style="color: #007700">(</span><span style="color: #DD0000">"de"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">pspell_config_personal</span><span style="color: #007700">(</span><span style="color: #0000BB">$pspell_config</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"/var/dictionaries/custom.pws"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">pspell_config_repl</span><span style="color: #007700">(</span><span style="color: #0000BB">$pspell_config</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"/var/dictionaries/custom.repl"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$pspell_link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pspell_new_config</span><span style="color: #007700">(</span><span style="color: #0000BB">$pspell_config</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">pspell_store_replacement</span><span style="color: #007700">(</span><span style="color: #0000BB">$pspell_link</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$falsch</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$richtig</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">pspell_save_wordlist</span><span style="color: #007700">(</span><span style="color: #0000BB">$pspell_link</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.pspell-store-replacement-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Diese Funktion funktioniert nur, wenn Sie pspell .11.2 und aspell .32.5
+    oder höher haben.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

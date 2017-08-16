@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Registriert eine Funktion zur Ausf&uuml;hrung beim Skript-Abschluss</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.basic.vartype.html">Variablen- und typbezogene Erweiterungen</a></li>
+  <li class="header up"><a href="book.funchand.html">Function Handling</a></li>
+  <li class="header up"><a href="ref.funchand.html">Function handling Funktionen</a></li>
+  <li><a href="function.call-user-func-array.html">call_user_func_array</a></li>
+  <li><a href="function.call-user-func.html">call_user_func</a></li>
+  <li><a href="function.create-function.html">create_function</a></li>
+  <li><a href="function.forward-static-call-array.html">forward_static_call_array</a></li>
+  <li><a href="function.forward-static-call.html">forward_static_call</a></li>
+  <li><a href="function.func-get-arg.html">func_get_arg</a></li>
+  <li><a href="function.func-get-args.html">func_get_args</a></li>
+  <li><a href="function.func-num-args.html">func_num_args</a></li>
+  <li><a href="function.function-exists.html">function_exists</a></li>
+  <li><a href="function.get-defined-functions.html">get_defined_functions</a></li>
+  <li class="active"><a href="function.register-shutdown-function.html">register_shutdown_function</a></li>
+  <li><a href="function.register-tick-function.html">register_tick_function</a></li>
+  <li><a href="function.unregister-tick-function.html">unregister_tick_function</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.get-defined-functions.html">get_defined_functions</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.register-tick-function.html">register_tick_function</a></div>
+                <div class="up"><a href="ref.funchand.html">Function handling Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.register-shutdown-function" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">register_shutdown_function</h1>
+  <p class="refpurpose">
+   Registriert eine Funktion zur Ausführung beim Skript-Abschluss
+  </p>
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.register-shutdown-function-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname">register_shutdown_function</span>
+    ( <span class="methodparam"><span class="type">callable</span> <code class="parameter">$callback</code></span>
+   [, <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$parameter</code></span>
+   [, <span class="methodparam"><span class="type">mixed</span> <code class="parameter">$...</code></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   Registriert ein <code class="parameter">callback</code>, welches ausgeführt werden soll, sobald
+   die Ausführung des Scripts beendet ist oder <span class="function">exit</span> aufgerufen wurde.
+  </p>
+  <p class="para">
+   <span class="function">register_shutdown_function</span> kann mehrmals hintereinander aufgerufen
+   werden, in welchem Fall die Callbacks später in der selben Reihenfolge aufgerufen werden,
+   wie sie registriert wurden. Wenn <span class="function">exit</span> innerhalb eines Shutdown
+   Callbacks aufgerufen wird, bricht die Ausführung vollständig ab und keine weiteren
+   Callbacks werden ausgeführt.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.register-shutdown-function-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">callback</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Das Shutdown Callback, welches registriert werden soll.
+      </p>
+      <p class="para">
+       Die Callbacks werden als Teil der Anfrage ausgeführt, d.h.
+       es ist möglich Ausgaben zu machen und auf Output Buffer
+       zuzugreifen.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">parameter</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Alle weiteren Argumente, die dieser Funktion übergeben werden, werden
+       auch den Callbacks beim Aufruf übergeben.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">...</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.register-shutdown-function-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Es wird kein Wert zurückgegeben.
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 errors" id="refsect1-function.register-shutdown-function-errors">
+  <h3 class="title">Fehler/Exceptions</h3>
+  <p class="para">
+   Wenn das übergebene Callback nicht aufrufbar ist, wird ein
+   <strong><code>E_WARNING</code></strong> geworfen.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.register-shutdown-function-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-5855">
+    <p><strong>Beispiel #1 <span class="function">register_shutdown_function</span> Beispiel</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">shutdown</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Das&nbsp;ist&nbsp;unsere&nbsp;Shutdown&nbsp;Funktion,&nbsp;in&nbsp;welcher<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;wir&nbsp;noch&nbsp;letzte&nbsp;Anweisungen&nbsp;ausführen&nbsp;können<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;bevor&nbsp;die&nbsp;Ausführung&nbsp;beendet&nbsp;wird.<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'Script&nbsp;executed&nbsp;with&nbsp;success'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">register_shutdown_function</span><span style="color: #007700">(</span><span style="color: #DD0000">'shutdown'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.register-shutdown-function-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Das Arbeitsverzeichnis des Scripts kann sich bei manchen
+    Webservern wie Apache innerhalb des Shutdown Callbacks ändern.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+   <p class="para">
+    Shutdown-Funktionen werden nicht ausgeführt, wenn der Prozess mit einem SIGTERM
+    oder SIGKILL Signal terminiert wurde. Während es nicht möglich ist ein SIGKILL
+    Signal abzufangen, kann die <span class="function">pcntl_signal</span> genutzt werden,
+    um einen Handler für SIGTERM zu registrieren.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.register-shutdown-function-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><a href="ini.core.html#ini.auto-append-file" class="link">auto_append_file</a></li>
+    <li class="member"><span class="function">exit</span></li>
+    <li class="member">Die Sektion über <a href="features.connection-handling.html" class="link">Verbindungssteuerung</a></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

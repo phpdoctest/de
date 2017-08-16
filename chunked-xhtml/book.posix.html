@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: POSIX</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li><a href="book.eio.html">Eio</a></li>
+  <li><a href="book.ev.html">Ev</a></li>
+  <li><a href="book.expect.html">Expect</a></li>
+  <li><a href="book.libevent.html">Libevent</a></li>
+  <li><a href="book.pcntl.html">PCNTL</a></li>
+  <li class="active"><a href="book.posix.html">POSIX</a></li>
+  <li><a href="book.exec.html">Programmausf&uuml;hrung</a></li>
+  <li><a href="book.pthreads.html">pthreads</a></li>
+  <li><a href="book.sem.html">Semaphore</a></li>
+  <li><a href="book.shmop.html">Shared Memory</a></li>
+  <li><a href="book.sync.html">Sync</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.pcntl-wtermsig.html">pcntl_wtermsig</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.posix.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.posix" class="book">
+ 
+ <h1>POSIX</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.posix.html">Einf&uuml;hrung</a></li>
+<li><a href="posix.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="posix.requirements.html">Anforderungen</a></li>
+<li><a href="posix.installation.html">Installation</a></li>
+<li><a href="posix.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="posix.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="posix.constants.html">Vordefinierte Konstanten</a><ul class="chunklist chunklist_title">
+<li><a href="posix.constants.access.html">posix_access-Konstanten</a></li>
+<li><a href="posix.constants.mknod.html">posix_mknod-Konstanten</a></li>
+<li><a href="posix.constants.setrlimit.html">posix_setrlimit-Konstanten</a></li>
+</ul>
+</li>
+<li><a href="ref.posix.html">POSIX Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.posix-access.html">posix_access</a> — Ermittelt die Zugriffsberechtigungen einer Datei</li>
+<li><a href="function.posix-ctermid.html">posix_ctermid</a> — Liefert den Pfad des kontrollierenden Terminals</li>
+<li><a href="function.posix-errno.html">posix_errno</a> — Alias von posix_get_last_error</li>
+<li><a href="function.posix-get-last-error.html">posix_get_last_error</a> — Liefert die von der letzten fehlgeschlagenen Posix-Funktion gesetzte Fehlernummer</li>
+<li><a href="function.posix-getcwd.html">posix_getcwd</a> — Pfadname des aktuellen Verzeichnisses</li>
+<li><a href="function.posix-getegid.html">posix_getegid</a> — Liefert die effektive Gruppen-ID des aktuellen Prozesses</li>
+<li><a href="function.posix-geteuid.html">posix_geteuid</a> — Liefert die effektive Benutzer-ID des aktuellen Prozesses</li>
+<li><a href="function.posix-getgid.html">posix_getgid</a> — Liefert die reale Gruppen-ID des aktuellen Prozesses</li>
+<li><a href="function.posix-getgrgid.html">posix_getgrgid</a> — Liefert zu einer Gruppen-ID Informationen &uuml;ber diese Gruppe</li>
+<li><a href="function.posix-getgrnam.html">posix_getgrnam</a> — Liefert zu einem Gruppennamen Informationen &uuml;ber diese Gruppe</li>
+<li><a href="function.posix-getgroups.html">posix_getgroups</a> — Liefert die Gruppenliste des aktuellen Prozesses</li>
+<li><a href="function.posix-getlogin.html">posix_getlogin</a> — Liefert den Loginnamen</li>
+<li><a href="function.posix-getpgid.html">posix_getpgid</a> — Liefert die Prozessgruppenkennung (Process Group ID) f&uuml;r die Job-Kontrolle</li>
+<li><a href="function.posix-getpgrp.html">posix_getpgrp</a> — Liefert die Prozessgruppenkennung des aktuellen Prozesses</li>
+<li><a href="function.posix-getpid.html">posix_getpid</a> — Liefert die aktuelle Prozesskennung</li>
+<li><a href="function.posix-getppid.html">posix_getppid</a> — Liefert die Prozesskennung des Elternprozesses</li>
+<li><a href="function.posix-getpwnam.html">posix_getpwnam</a> — Liefert zu einem Benutzernamen Informationen &uuml;ber diesen Benutzer</li>
+<li><a href="function.posix-getpwuid.html">posix_getpwuid</a> — Liefert zu einer Benutzer-ID Informationen &uuml;ber diesen Benutzer</li>
+<li><a href="function.posix-getrlimit.html">posix_getrlimit</a> — Liefert Informationen &uuml;ber Systemressourcen-Limits</li>
+<li><a href="function.posix-getsid.html">posix_getsid</a> — Liefert die aktuelle Session-ID (sid) des Prozesses</li>
+<li><a href="function.posix-getuid.html">posix_getuid</a> — Liefert die reale Benutzer-ID des aktuellen Prozesses</li>
+<li><a href="function.posix-initgroups.html">posix_initgroups</a> — Ermittelt die Gruppenzugriffsliste</li>
+<li><a href="function.posix-isatty.html">posix_isatty</a> — Ermittelt, ob ein Dateideskriptor ein interaktives Terminal ist</li>
+<li><a href="function.posix-kill.html">posix_kill</a> — Sendet einem Prozess ein Signal</li>
+<li><a href="function.posix-mkfifo.html">posix_mkfifo</a> — Erzeugt eine &quot;FIFO special&quot;-Datei (named pipe)</li>
+<li><a href="function.posix-mknod.html">posix_mknod</a> — Erzeugt eine spezielle oder eine gew&ouml;hnliche Datei (POSIX.1)</li>
+<li><a href="function.posix-setegid.html">posix_setegid</a> — Setzt die effektive Gruppen-ID des aktuellen Prozesses</li>
+<li><a href="function.posix-seteuid.html">posix_seteuid</a> — Setzt die effektive Benutzer-ID des aktuellen Prozesses</li>
+<li><a href="function.posix-setgid.html">posix_setgid</a> — Setzt die Gruppen-ID des aktuellen Prozesses</li>
+<li><a href="function.posix-setpgid.html">posix_setpgid</a> — Setzt die Prozessgruppenkennung (Process Group ID) f&uuml;r die Job-Kontrolle</li>
+<li><a href="function.posix-setrlimit.html">posix_setrlimit</a> — Set system resource limits</li>
+<li><a href="function.posix-setsid.html">posix_setsid</a> — Macht den aktuellen Prozess zum Prozessgruppen-F&uuml;hrer</li>
+<li><a href="function.posix-setuid.html">posix_setuid</a> — Setzt die Benutzer-ID des aktuellen Prozesses</li>
+<li><a href="function.posix-strerror.html">posix_strerror</a> — Liefert die System-Fehlermeldung, die zur angegebenen Fehlernummer geh&ouml;rt</li>
+<li><a href="function.posix-times.html">posix_times</a> — Liefert Rechenzeiten</li>
+<li><a href="function.posix-ttyname.html">posix_ttyname</a> — Ermittelt den Namen des Terminal-Devices</li>
+<li><a href="function.posix-uname.html">posix_uname</a> — Liefert Auskunft &uuml;ber das System</li>
+</ul>
+</li>
+</ul>
+
+
+ 
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

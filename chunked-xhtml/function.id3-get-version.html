@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Version eines ID3-Tags feststellen</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.utilspec.audio.html">Manipulation von Audioformaten</a></li>
+  <li class="header up"><a href="book.id3.html">ID3</a></li>
+  <li class="header up"><a href="ref.id3.html">ID3 Funktionen</a></li>
+  <li><a href="function.id3-get-frame-long-name.html">id3_get_frame_long_name</a></li>
+  <li><a href="function.id3-get-frame-short-name.html">id3_get_frame_short_name</a></li>
+  <li><a href="function.id3-get-genre-id.html">id3_get_genre_id</a></li>
+  <li><a href="function.id3-get-genre-list.html">id3_get_genre_list</a></li>
+  <li><a href="function.id3-get-genre-name.html">id3_get_genre_name</a></li>
+  <li><a href="function.id3-get-tag.html">id3_get_tag</a></li>
+  <li class="active"><a href="function.id3-get-version.html">id3_get_version</a></li>
+  <li><a href="function.id3-remove-tag.html">id3_remove_tag</a></li>
+  <li><a href="function.id3-set-tag.html">id3_set_tag</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.id3-get-tag.html">id3_get_tag</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.id3-remove-tag.html">id3_remove_tag</a></div>
+                <div class="up"><a href="ref.id3.html">ID3 Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.id3-get-version" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">id3_get_version</h1>
+    <p class="refpurpose">Version eines ID3-Tags feststellen</p>
+   </div>
+   <div class="refsect1 unknown-unknown-unknown-unknown-unknown-unknown-unknown-seealsv" id="refsect1-function.id3-get-version-unknown-unknown-unknown-unknown-unknown-unknown-unknown-seealsv">
+    <h3 class="title">Beschreibung</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="type">int</span> <span class="methodname">id3_get_version</span>
+       ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+      )</div>
+
+    <p class="para rdfs-comment">
+     <span class="function">id3_get_version</span> ermittelt die Version(en) des/der
+     ID3-Tags in einer MP3-Datei. Da MP3-Dateien mehrere ID3-Tags enthalten 
+     können, sollten Sie den Rückgabewert dieser Funktion bitweise mit den 
+     vordefinierten Konstanten <strong><code>ID3_V1_0</code></strong>,
+     <strong><code>ID3_V1_1</code></strong> und  <strong><code>ID3_V2</code></strong> vergleichen.
+    </p>
+    <blockquote class="note"><p><strong class="note">Hinweis</strong>: 
+     <span class="simpara">Anstelle eines Dateinamens können Sie auch eine stream-Ressource übergeben.</span>
+    </p></blockquote>
+    <p class="para">
+     <div class="example" id="example-648">
+      <p><strong>Beispiel #1 <span class="function">id3_get_version</span> Beispiel</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$version&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">id3_get_version</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">"path/to/example.mp3"&nbsp;</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$version&nbsp;</span><span style="color: #007700">&amp;&nbsp;</span><span style="color: #0000BB">ID3_V1_0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Contains&nbsp;a&nbsp;1.x&nbsp;tag\n"</span><span style="color: #007700">;<br />}<br />if&nbsp;(</span><span style="color: #0000BB">$version&nbsp;</span><span style="color: #007700">&amp;&nbsp;</span><span style="color: #0000BB">ID3_V1_1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Contains&nbsp;a&nbsp;1.1&nbsp;tag\n"</span><span style="color: #007700">;<br />}<br />if&nbsp;(</span><span style="color: #0000BB">$version&nbsp;</span><span style="color: #007700">&amp;&nbsp;</span><span style="color: #0000BB">ID3_V2</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Contains&nbsp;a&nbsp;2.x&nbsp;tag\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      <div class="example-contents"><p>
+       Die Ausgabe wird in etwa so aussehen:
+      </p></div>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+Contains a 1.x tag
+Contains a 1.1 tag
+</pre></div>
+      </div>
+     </div>
+    </p>
+    <p class="para">
+      Wenn eine Datei ein ID3v1.1-Tag enthält, ist auch immer ein 
+      v1.0-Tag enthalten, da v1.1 eine Erweiterung von v1.0 ist.
+    </p>
+    <p class="para">
+     Siehe auch <span class="function">id3_get_tag</span>, <span class="function">id3_set_tag</span> und
+     <span class="function">id3_remove_tag</span>.
+    </p>
+   </div>
+
+  </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

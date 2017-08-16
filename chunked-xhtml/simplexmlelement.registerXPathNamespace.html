@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Erzeugt einen Prefix/Namespace-Kontext f&uuml;r den n&auml;chsten XPath-Query</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.xml.html">XML-Manipulation</a></li>
+  <li class="header up"><a href="book.simplexml.html">SimpleXML</a></li>
+  <li class="header up"><a href="class.simplexmlelement.html">SimpleXMLElement</a></li>
+  <li><a href="simplexmlelement.addAttribute.html">SimpleXMLElement::addAttribute</a></li>
+  <li><a href="simplexmlelement.addChild.html">SimpleXMLElement::addChild</a></li>
+  <li><a href="simplexmlelement.asXML.html">SimpleXMLElement::asXML</a></li>
+  <li><a href="simplexmlelement.attributes.html">SimpleXMLElement::attributes</a></li>
+  <li><a href="simplexmlelement.children.html">SimpleXMLElement::children</a></li>
+  <li><a href="simplexmlelement.construct.html">SimpleXMLElement::__construct</a></li>
+  <li><a href="simplexmlelement.count.html">SimpleXMLElement::count</a></li>
+  <li><a href="simplexmlelement.getDocNamespaces.html">SimpleXMLElement::getDocNamespaces</a></li>
+  <li><a href="simplexmlelement.getName.html">SimpleXMLElement::getName</a></li>
+  <li><a href="simplexmlelement.getNamespaces.html">SimpleXMLElement::getNamespaces</a></li>
+  <li class="active"><a href="simplexmlelement.registerXPathNamespace.html">SimpleXMLElement::registerXPathNamespace</a></li>
+  <li><a href="simplexmlelement.savexml.html">SimpleXMLElement::saveXML</a></li>
+  <li><a href="simplexmlelement.tostring.html">SimpleXMLElement::__toString</a></li>
+  <li><a href="simplexmlelement.xpath.html">SimpleXMLElement::xpath</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="simplexmlelement.getNamespaces.html">SimpleXMLElement::getNamespaces</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="simplexmlelement.savexml.html">SimpleXMLElement::saveXML</a></div>
+                <div class="up"><a href="class.simplexmlelement.html">SimpleXMLElement</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="simplexmlelement.registerXPathNamespace" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">SimpleXMLElement::registerXPathNamespace</h1>
+  <p class="refpurpose">Erzeugt einen Prefix/Namespace-Kontext für den nächsten XPath-Query</p>
+ </div>
+
+ <div class="refsect1 description" id="refsect1-simplexmlelement.registerXPathNamespace-description">
+  <h3 class="title">Beschreibung</h3>
+  <div class="classsynopsis">
+   <div class="ooclass"><strong class="classname">SimpleXMLElement</strong></div>
+   <div class="methodsynopsis dc-description">
+    <span class="type">bool</span> <span class="methodname">registerXPathNamespace</span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$prefix</code></span>
+    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$ns</code></span>
+    )</div>
+
+  </div>
+  <p class="para">
+   Erzeugt einen Prefix/Namespace-Kontext für den nächsten XPath-Query. Dies ist
+   besonders hilfreich, wenn der Anbieter des übergebenen XML-Dokuments die
+   Namespace-Prefixe verändert hat. <em>registerXPathNamespace</em>
+   erzeugt einen Prefix für die dazugehörigen Namespaces, die das Abfragen der
+   Knoten in diesem Namespace erlauben, ohne dass der Code verändert werden muss,
+   um die vom Anbieter diktierten neuen Prefixes zu erlauben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-simplexmlelement.registerXPathNamespace-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">prefix</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Namespace-Prefix der im XPath-Query für den angegebenen Namespace
+       verwendet werden soll.
+       <code class="parameter">ns</code>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">ns</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Der Namespace, der für den XPath-Query verwendet wird. Dies muss einem
+       Namespace entsprechen, der im XML-Dokument oder im XPath-Query verwendet
+       wird.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-simplexmlelement.registerXPathNamespace-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt bei Erfolg <strong><code>TRUE</code></strong> zurück. Im Fehlerfall wird <strong><code>FALSE</code></strong> zurückgegeben.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-simplexmlelement.registerXPathNamespace-examples">
+  <h3 class="title">Beispiele</h3>
+  <p class="para">
+   <div class="example" id="example-6242">
+    <p><strong>Beispiel #1 Einen Namespace-Prefix zur Verwendung in einem XPath-Query setzen</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$xml&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;EOD<br /></span><span style="color: #DD0000">&lt;book&nbsp;xmlns:chap="http://example.org/chapter-title"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My&nbsp;Book&lt;/title&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;chapter&nbsp;id="1"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;chap:title&gt;Chapter&nbsp;1&lt;/chap:title&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;para&gt;Donec&nbsp;velit.&nbsp;Nullam&nbsp;eget&nbsp;tellus&nbsp;vitae&nbsp;tortor&nbsp;gravida&nbsp;scelerisque.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In&nbsp;orci&nbsp;lorem,&nbsp;cursus&nbsp;imperdiet,&nbsp;ultricies&nbsp;non,&nbsp;hendrerit&nbsp;et,&nbsp;orci.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nulla&nbsp;facilisi.&nbsp;Nullam&nbsp;velit&nbsp;nisl,&nbsp;laoreet&nbsp;id,&nbsp;condimentum&nbsp;ut,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ultricies&nbsp;id,&nbsp;mauris.&lt;/para&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/chapter&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;chapter&nbsp;id="2"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;chap:title&gt;Chapter&nbsp;2&lt;/chap:title&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;para&gt;Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetuer&nbsp;adipiscing&nbsp;elit.&nbsp;Proin<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gravida.&nbsp;Phasellus&nbsp;tincidunt&nbsp;massa&nbsp;vel&nbsp;urna.&nbsp;Proin&nbsp;adipiscing&nbsp;quam<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vitae&nbsp;odio.&nbsp;Sed&nbsp;dictum.&nbsp;Ut&nbsp;tincidunt&nbsp;lorem&nbsp;ac&nbsp;lorem.&nbsp;Duis&nbsp;eros<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tellus,&nbsp;pharetra&nbsp;id,&nbsp;faucibus&nbsp;eu,&nbsp;dapibus&nbsp;dictum,&nbsp;odio.&lt;/para&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/chapter&gt;<br />&lt;/book&gt;<br /></span><span style="color: #007700">EOD;<br /><br /></span><span style="color: #0000BB">$sxe&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SimpleXMLElement</span><span style="color: #007700">(</span><span style="color: #0000BB">$xml</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$sxe</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">registerXPathNamespace</span><span style="color: #007700">(</span><span style="color: #DD0000">'c'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'http://example.org/chapter-title'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$sxe</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">xpath</span><span style="color: #007700">(</span><span style="color: #DD0000">'//c:title'</span><span style="color: #007700">);<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$title</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$title&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     Beachten Sie wie das im Beispiel vorgestellte XML-Dokument die Namespaces
+     mit dem Prefix <em>chap</em> verwendet. Stellen Sie sich vor, dass
+     dieses Dokument (oder ein anderes dieser Art) in der Vergangenheit den
+     Prefix <em>c</em> für den selben Namespace verwendete. Seit dieser
+     Änderung gibt der XPath-Query keine gültigen Resultate mehr zurück und
+     der Query benötigt eine Überarbeitung. Die Verwendung von
+     <em>registerXPathNamespace</em> bewahrt Sie vor zukünftigen
+     Modifikationen des Querys, auch wenn der Anbieter die Namespace-Prefixes
+     verändert.
+    </p></div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-simplexmlelement.registerXPathNamespace-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"> <span class="methodname">SimpleXMLElement::getDocNamespaces</span></li>
+    <li class="member"> <span class="methodname">SimpleXMLElement::getNamespaces</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

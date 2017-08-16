@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Zugriff auf ein Semaphor anfordern</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.fileprocess.process.html">Erweiterungen zur Prozesskontrolle</a></li>
+  <li class="header up"><a href="book.sem.html">Semaphore</a></li>
+  <li class="header up"><a href="ref.sem.html">Semaphore Funktionen</a></li>
+  <li><a href="function.ftok.html">ftok</a></li>
+  <li><a href="function.msg-get-queue.html">msg_get_queue</a></li>
+  <li><a href="function.msg-queue-exists.html">msg_queue_exists</a></li>
+  <li><a href="function.msg-receive.html">msg_receive</a></li>
+  <li><a href="function.msg-remove-queue.html">msg_remove_queue</a></li>
+  <li><a href="function.msg-send.html">msg_send</a></li>
+  <li><a href="function.msg-set-queue.html">msg_set_queue</a></li>
+  <li><a href="function.msg-stat-queue.html">msg_stat_queue</a></li>
+  <li><a href="function.sem-acquire.html">sem_acquire</a></li>
+  <li class="active"><a href="function.sem-get.html">sem_get</a></li>
+  <li><a href="function.sem-release.html">sem_release</a></li>
+  <li><a href="function.sem-remove.html">sem_remove</a></li>
+  <li><a href="function.shm-attach.html">shm_attach</a></li>
+  <li><a href="function.shm-detach.html">shm_detach</a></li>
+  <li><a href="function.shm-get-var.html">shm_get_var</a></li>
+  <li><a href="function.shm-has-var.html">shm_has_var</a></li>
+  <li><a href="function.shm-put-var.html">shm_put_var</a></li>
+  <li><a href="function.shm-remove-var.html">shm_remove_var</a></li>
+  <li><a href="function.shm-remove.html">shm_remove</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="function.sem-acquire.html">sem_acquire</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="function.sem-release.html">sem_release</a></div>
+                <div class="up"><a href="ref.sem.html">Semaphore Funktionen</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="function.sem-get" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">sem_get</h1>
+  <p class="refpurpose">Zugriff auf ein Semaphor anfordern</p>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.sem-get-description">
+  <h3 class="title">Beschreibung</h3>
+   <div class="methodsynopsis dc-description">
+    <span class="type">resource</span> <span class="methodname">sem_get</span>
+     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$key</code></span>
+    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$max_acquire</code><span class="initializer"> = 1</span></span>
+    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$perm</code><span class="initializer"> = 0666</span></span>
+    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$auto_release</code><span class="initializer"> = 1</span></span>
+   ]]] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function">sem_get</span> liefert eine ID die für den Zugriff
+   auf das System V Semaphor mit dem gegebenen <code class="parameter">key</code>
+   benutzt werden kann. 
+  </p>
+  <p class="para">
+   Weitere Aufrufe von <span class="function">sem_get</span> für den
+   gleichen Key liefern unterschiedliche Semaphor IDs, diese
+   greifen aber auf den gleichen darunterliegenden Semaphor
+   zu.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.sem-get-parameters">
+  <h3 class="title">Parameter-Liste</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">key</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">max_acquire</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Anzahl der Prozesse die gleichzeitig Zugriff auf den
+       Semaphor erhalten können wird durch den Parameter
+       <code class="parameter">max_acquire</code> festgelegt
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">perm</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Die Zugriffsrechte für den Semaphore.
+       Der Wert wird nur gesetzt wenn der aktuelle Prozess der einzige
+       ist der in diesem Augenblick mit dem Semaphor verknüpft ist.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">auto_release</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Legt fest ob der Semaphor am Skriptende automatisch freigegeben 
+       werden soll.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.sem-get-returnvalues">
+  <h3 class="title">Rückgabewerte</h3>
+  <p class="para">
+   Gibt einen positiven Semaphor Identifier zrück oder <strong><code>FALSE</code></strong>
+   bei Fehlern.
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.sem-get-notes">
+  <h3 class="title">Anmerkungen</h3>
+  <div class="warning"><strong class="warning">Warnung</strong>
+   <p class="simpara">
+    Wird <span class="function">sem_get</span> verwendet, um auf einen Semaphor
+    zuzugreifen, der außerhalb von PHP erzeugt wurde, ist zu beachten, dass der
+    Semaphor als ein Satz von 3 Semaphoren erzeugt wurde (zum Beispiel durch
+    Angabe von 3 für den <em>nsems</em> Parameter beim Aufruf der C
+    Funktion <em>semget()</em>); andernfalls wird PHP nicht in der
+    Lage sein, auf den Semaphor zuzugreifen.
+   </p>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.sem-get-seealso">
+  <h3 class="title">Siehe auch</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function">sem_acquire</span></li>
+    <li class="member"><span class="function">sem_release</span></li>
+    <li class="member"><span class="function">ftok</span></li>
+   </ul>
+  </p>
+ </div>
+  
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

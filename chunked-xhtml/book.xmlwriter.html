@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: XMLWriter</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.xml.html">XML-Manipulation</a></li>
+  <li><a href="book.dom.html">DOM</a></li>
+  <li><a href="book.libxml.html">libxml</a></li>
+  <li><a href="book.sdo.html">SDO</a></li>
+  <li><a href="book.sdodasrel.html">SDO-DAS-Relational</a></li>
+  <li><a href="book.sdo-das-xml.html">SDO DAS XML</a></li>
+  <li><a href="book.simplexml.html">SimpleXML</a></li>
+  <li><a href="book.wddx.html">WDDX</a></li>
+  <li><a href="book.xmldiff.html">XMLDiff</a></li>
+  <li><a href="book.xml.html">XML Parser</a></li>
+  <li><a href="book.xmlreader.html">XMLReader</a></li>
+  <li class="active"><a href="book.xmlwriter.html">XMLWriter</a></li>
+  <li><a href="book.xsl.html">XSL</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="xmlreader.xml.html">XMLReader::XML</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="intro.xmlwriter.html">Einf&uuml;hrung</a></div>
+                <div class="up"><a href="refs.xml.html">XML-Manipulation</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="book.xmlwriter" class="book">
+ 
+ <h1>XMLWriter</h1><strong>Inhaltsverzeichnis</strong><ul class="chunklist chunklist_title">
+<li><a href="intro.xmlwriter.html">Einf&uuml;hrung</a></li>
+<li><a href="xmlwriter.setup.html">Installation/Konfiguration</a><ul class="chunklist chunklist_title">
+<li><a href="xmlwriter.requirements.html">Anforderungen</a></li>
+<li><a href="xmlwriter.installation.html">Installation</a></li>
+<li><a href="xmlwriter.configuration.html">Laufzeit-Konfiguration</a></li>
+<li><a href="xmlwriter.resources.html">Ressource-Typen</a></li>
+</ul>
+</li>
+<li><a href="xmlwriter.constants.html">Vordefinierte Konstanten</a></li>
+<li><a href="ref.xmlwriter.html">XMLWriter Funktionen</a><ul class="chunklist chunklist_title">
+<li><a href="function.xmlwriter-end-attribute.html">XMLWriter::endAttribute</a> — Attribute beenden</li>
+<li><a href="function.xmlwriter-end-cdata.html">XMLWriter::endCData</a> — Beendet CDATA-Block</li>
+<li><a href="function.xmlwriter-end-comment.html">XMLWriter::endComment</a> — Beendet Kommentar</li>
+<li><a href="function.xmlwriter-end-document.html">XMLWriter::endDocument</a> — Beendet Dokument</li>
+<li><a href="function.xmlwriter-end-dtd-attlist.html">XMLWriter::endDTDAttlist</a> — Beendet DTD-Attributliste</li>
+<li><a href="function.xmlwriter-end-dtd-element.html">XMLWriter::endDTDElement</a> — Beendet DTD-Element</li>
+<li><a href="function.xmlwriter-end-dtd-entity.html">XMLWriter::endDTDEntity</a> — Beendet DTD-Entit&auml;t</li>
+<li><a href="function.xmlwriter-end-dtd.html">XMLWriter-&gt;endDTD</a> — Beendet DTD</li>
+<li><a href="function.xmlwriter-end-element.html">XMLWriter-&gt;endElement</a> — Beendet Element</li>
+<li><a href="function.xmlwriter-end-pi.html">XMLWriter-&gt;endPI</a> — Beendet Verarbeitungsvorschrift</li>
+<li><a href="function.xmlwriter-flush.html">XMLWriter-&gt;flush</a> — Puffer schreiben</li>
+<li><a href="function.xmlwriter-full-end-element.html">XMLWriter-&gt;fullEndElement</a> — Beendet Element</li>
+<li><a href="function.xmlwriter-open-memory.html">XMLWriter::openMemory</a> — Erzeugt einen neuen XMLWriter, der Stringausgaben in den Speicher schreibt</li>
+<li><a href="function.xmlwriter-open-uri.html">XMLWriter-&gt;openURI</a> — Erzeugt neuen XMLWriter, der URI f&uuml;r Ausgabe verwendet</li>
+<li><a href="function.xmlwriter-output-memory.html">XMLWriter-&gt;outputMemory</a> — Gibt Puffer zur&uuml;ck</li>
+<li><a href="function.xmlwriter-set-indent-string.html">XMLWriter-&gt;setIndentString</a> — Setzt Zeichenkette, die zur Einr&uuml;ckung verwendet wird</li>
+<li><a href="function.xmlwriter-set-indent.html">XMLWriter-&gt;setIndent</a> — Einr&uuml;ckung ein-/ausschalten</li>
+<li><a href="function.xmlwriter-start-attribute-ns.html">XMLWriter-&gt;startAttributeNS</a> — Namensraum-Attribut beginnen</li>
+<li><a href="function.xmlwriter-start-attribute.html">XMLWriter-&gt;startAttribute</a> — Attribut beginnen</li>
+<li><a href="function.xmlwriter-start-cdata.html">XMLWriter-&gt;startCData</a> — CDATA-Block beginnen</li>
+<li><a href="function.xmlwriter-start-comment.html">XMLWriter-&gt;startComment</a> — Kommentar beginnen</li>
+<li><a href="function.xmlwriter-start-document.html">XMLWriter-&gt;startDocument</a> — Dokument beginnen</li>
+<li><a href="function.xmlwriter-start-dtd-attlist.html">XMLWriter-&gt;startDTDAttlist</a> — DTD-Attributliste beginnen</li>
+<li><a href="function.xmlwriter-start-dtd-element.html">XMLWriter-&gt;startDTDElement</a> — DTD-Element beginnen</li>
+<li><a href="function.xmlwriter-start-dtd-entity.html">XMLWriter-&gt;startDTDEntity</a> — DTD-Entit&auml;t beginnen</li>
+<li><a href="function.xmlwriter-start-dtd.html">XMLWriter-&gt;startDTD</a> — DTD beginnen</li>
+<li><a href="function.xmlwriter-start-element-ns.html">XMLWriter-&gt;startElementNS</a> — Element mit Namensraum beginnen</li>
+<li><a href="function.xmlwriter-start-element.html">XMLWriter-&gt;startElement</a> — Element beginnen</li>
+<li><a href="function.xmlwriter-start-pi.html">XMLWriter-&gt;startPI</a> — Verarbeitungsvorschrift beginnen</li>
+<li><a href="function.xmlwriter-text.html">XMLWriter-&gt;text</a> — Text schreiben</li>
+<li><a href="function.xmlwriter-write-attribute-ns.html">XMLWriter-&gt;writeAttributeNS</a> — Komplettes Attribute mit Namensraum schreiben</li>
+<li><a href="function.xmlwriter-write-attribute.html">XMLWriter-&gt;writeAttribute</a> — Komplettes Attribut schreiben</li>
+<li><a href="function.xmlwriter-write-cdata.html">XMLWriter-&gt;writeCData</a> — Kompletten CDATA-Block schreiben</li>
+<li><a href="function.xmlwriter-write-comment.html">XMLWriter-&gt;writeComment</a> — Kompletten Kommentar schreiben</li>
+<li><a href="function.xmlwriter-write-dtd-attlist.html">XMLWriter-&gt;writeDTDAttlist</a> — Komplette DTD-Attributliste schreiben</li>
+<li><a href="function.xmlwriter-write-dtd-element.html">XMLWriter-&gt;writeDTDElement</a> — Komplettes DTD-Element schreiben</li>
+<li><a href="function.xmlwriter-write-dtd-entity.html">XMLWriter-&gt;writeDTDEntity</a> — Komplette DTD-Entit&auml;t schreiben</li>
+<li><a href="function.xmlwriter-write-dtd.html">XMLWriter-&gt;writeDTD</a> — Komplettes DTD-Tag schreiben</li>
+<li><a href="function.xmlwriter-write-element-ns.html">XMLWriter-&gt;writeElementNS</a> — Komplettes Element mit Namensraum schreiben</li>
+<li><a href="function.xmlwriter-write-element.html">XMLWriter-&gt;writeElement</a> — Komplettes Element schreiben</li>
+<li><a href="function.xmlwriter-write-pi.html">XMLWriter-&gt;writePI</a> — Komplette Verarbeitungsvorschrift-Tag schreiben</li>
+<li><a href="function.xmlwriter-write-raw.html">XMLWriter-&gt;writeRaw</a> — Reines XML schreiben</li>
+</ul>
+</li>
+</ul>
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

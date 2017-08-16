@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Beispiele</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.utilspec.nontext.html">Non-Text MIME-Ausgaben</a></li>
+  <li class="header up"><a href="book.fdf.html">FDF</a></li>
+  <li><a href="intro.fdf.html">Einf&uuml;hrung</a></li>
+  <li><a href="fdf.setup.html">Installation/Konfiguration</a></li>
+  <li><a href="fdf.constants.html">Vordefinierte Konstanten</a></li>
+  <li class="active"><a href="fdf.examples.html">Beispiele</a></li>
+  <li><a href="ref.fdf.html">FDF</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="fdf.constants.html">Vordefinierte Konstanten</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ref.fdf.html">FDF</a></div>
+                <div class="up"><a href="book.fdf.html">FDF</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="fdf.examples" class="chapter">
+ <h1>Beispiele</h1>
+ <p class="para">
+  Das folgende Beispiel zeigt die Auswertung der Formular Daten.
+  <div class="example" id="example-3932">
+   <p><strong>Beispiel #1 Auswertung eines FDF_Dokuments</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Speichern&nbsp;der&nbsp;FDF&nbsp;Daten&nbsp;in&nbsp;eine&nbsp;temporÃ¤re&nbsp;Datei<br /></span><span style="color: #0000BB">$fdffp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"test.fdf"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"w"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$fdffp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$HTTP_FDF_DATA</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$HTTP_FDF_DATA</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fdffp</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Ãffnen&nbsp;der&nbsp;temporÃ¤ren&nbsp;Datei&nbsp;und&nbsp;Auswertung&nbsp;der&nbsp;Daten<br />//&nbsp;Das&nbsp;PDF&nbsp;Formular&nbsp;enthÃ¤lt&nbsp;verschiedene&nbsp;Eingabefelder&nbsp;mit&nbsp;den&nbsp;zugehÃ¶rigen&nbsp;Namen<br />//&nbsp;band,&nbsp;datum,&nbsp;kommentar,&nbsp;verleger,&nbsp;bearbeiter,&nbsp;sowie&nbsp;zwei&nbsp;Checkboxen<br />//&nbsp;zeige_verleger&nbsp;und&nbsp;zeige_bearbeiter.<br /><br /></span><span style="color: #0000BB">$fdf&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fdf_open</span><span style="color: #007700">(</span><span style="color: #DD0000">"test.fdf"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$band&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fdf_get_value</span><span style="color: #007700">(</span><span style="color: #0000BB">$fdf</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"band"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Das&nbsp;Feld&nbsp;Band&nbsp;hat&nbsp;den&nbsp;Wert&nbsp;'&lt;b&gt;</span><span style="color: #0000BB">$band</span><span style="color: #DD0000">&lt;/b&gt;'&lt;br&nbsp;/&gt;"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$datum&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fdf_get_value</span><span style="color: #007700">(</span><span style="color: #0000BB">$fdf</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"datum"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Das&nbsp;Feld&nbsp;Datum&nbsp;hat&nbsp;den&nbsp;Wert&nbsp;'&lt;b&gt;</span><span style="color: #0000BB">$datum</span><span style="color: #DD0000">&lt;/b&gt;'&lt;br&nbsp;/&gt;"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$kommentar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fdf_get_value</span><span style="color: #007700">(</span><span style="color: #0000BB">$fdf</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"kommentar"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Das&nbsp;Feld&nbsp;Kommentar&nbsp;hat&nbsp;den&nbsp;Wert&nbsp;'&lt;b&gt;</span><span style="color: #0000BB">$kommentar</span><span style="color: #DD0000">&lt;/b&gt;'&lt;br&nbsp;/&gt;"</span><span style="color: #007700">;<br /><br />if&nbsp;(</span><span style="color: #0000BB">fdf_get_value</span><span style="color: #007700">(</span><span style="color: #0000BB">$fdf</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"zeige_verleger"</span><span style="color: #007700">)&nbsp;==&nbsp;</span><span style="color: #DD0000">"On"</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$verleger&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fdf_get_value</span><span style="color: #007700">(</span><span style="color: #0000BB">$fdf</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"verleger"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Das&nbsp;Feld&nbsp;Verleger&nbsp;hat&nbsp;den&nbsp;Wert&nbsp;'&lt;b&gt;</span><span style="color: #0000BB">$verleger</span><span style="color: #DD0000">&lt;/b&gt;'&lt;br&nbsp;/&gt;"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Verleger&nbsp;soll&nbsp;nicht&nbsp;angezeigt&nbsp;werden.&lt;br&nbsp;/&gt;"</span><span style="color: #007700">;<br />}<br /><br />if&nbsp;(</span><span style="color: #0000BB">fdf_get_value</span><span style="color: #007700">(</span><span style="color: #0000BB">$fdf</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"zeige_bearbeiter"</span><span style="color: #007700">)&nbsp;==&nbsp;</span><span style="color: #DD0000">"On"</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$bearbeiter&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fdf_get_value</span><span style="color: #007700">(</span><span style="color: #0000BB">$fdf</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"bearbeiter"</span><span style="color: #007700">);<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Das&nbsp;Feld&nbsp;Bearbeiter&nbsp;hat&nbsp;den&nbsp;Wert&nbsp;'&amp;&lt;b&gt;</span><span style="color: #0000BB">$bearbeiter</span><span style="color: #DD0000">&lt;/b&gt;'&lt;br&nbsp;/&gt;"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Bearbeiter&nbsp;soll&nbsp;nicht&nbsp;angezeigt&nbsp;werden.&lt;br&nbsp;/&gt;"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">fdf_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$fdf</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

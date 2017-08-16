@@ -1,0 +1,537 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP-Handbuch: Vordefinierte Konstanten</title>
+
+</head>
+<body>
+<table width="100%">
+    <tr valign="top">
+        <td style="font-size: smaller;" width="15%">
+<style type="text/css">
+#leftbar {
+	float: left;
+	width: 186px;
+	padding: 5px;
+	font-size: smaller;
+}
+ul.toc {
+	margin: 0px 5px 5px 5px;
+	padding: 0px;
+}
+ul.toc li {
+	font-size: 85%;
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 11px;
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+ul.toc li.header {
+	font-size: 115%;
+	padding: 5px 0px 5px 11px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 5px;
+}
+ul.toc li.active {
+	font-weight: bold;
+}
+ul.toc li a {
+	text-decoration: none;
+}
+ul.toc li a:hover {
+	text-decoration: underline;
+}
+</style>
+ <ul class="toc">
+  <li class="header home"><a href="index.html">PHP-Handbuch</a></li>
+  <li class="header up"><a href="funcref.html">Funktionsreferenz</a></li>
+  <li class="header up"><a href="refs.database.html">Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="refs.database.vendors.html">Anbieterspezifische Datenbankerweiterungen</a></li>
+  <li class="header up"><a href="book.sqlite.html">SQLite</a></li>
+  <li><a href="intro.sqlite.html">Einf&uuml;hrung</a></li>
+  <li><a href="sqlite.setup.html">Installation/Konfiguration</a></li>
+  <li class="active"><a href="sqlite.constants.html">Vordefinierte Konstanten</a></li>
+  <li><a href="ref.sqlite.html">SQLite Funktionen</a></li>
+ </ul>
+
+        </td>
+        <td width="85%">
+            <div style="text-align: center;">
+                <div class="prev" style="text-align: left; float: left;"><a href="sqlite.resources.html">Ressource-Typen</a></div>
+                <div class="next" style="text-align: right; float: right;"><a href="ref.sqlite.html">SQLite Funktionen</a></div>
+                <div class="up"><a href="book.sqlite.html">SQLite</a></div>
+                <div class="home"><a href="index.html">PHP-Handbuch</a></div>
+            </div><hr/>
+<div id="sqlite.constants" class="appendix">
+ <h1>Vordefinierte Konstanten</h1>
+ <p class="simpara">Folgende Konstanten werden von dieser
+Erweiterung definiert und stehen nur zur Verfügung, wenn die Erweiterung entweder
+statisch in PHP kompiliert oder dynamisch zur Laufzeit geladen
+wurde.</p>
+ <p class="para">
+  Die Funktionen <span class="function">sqlite_fetch_array</span> und 
+  <span class="function">sqlite_current</span> nutzen eine Konstante für die
+  unterschiedlichen Varianten von Ergebnis-Arrays. Die folgenden Konstanten sind 
+  definiert:
+ </p>
+ <dl>
+
+  <strong class="title">SQLite Ergebnistyp Konstanten</strong>
+  
+   <dt id="constant.sqlite-assoc">
+    <strong><code>SQLITE_ASSOC</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Spaltenwerte werden als Array zurückgegeben mit den Spaltennamen
+     als Schlüssel.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-both">
+    <strong><code>SQLITE_BOTH</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Spalten werden als Array zurückgegeben in dem sowohl die
+     Spaltennummer als auch der Spaltenname als Schlüssel
+     genutzt wird.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-num">
+    <strong><code>SQLITE_NUM</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Spalten werden in einem Array mit numerischen Schlüsseln,
+     beginnend mit 0, zurückgegeben
+    </span>
+   </dd>
+
+  
+ </dl>
+
+ <p class="para">
+  Einige Funktionen geben einen der folgenden Statuscodes zurück:
+ </p>
+ <dl>
+
+  <strong class="title">SQLite Statuscode-Konstanten</strong>
+  
+   <dt id="constant.sqlite-ok">
+    <strong><code>SQLITE_OK</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Erfolgreiche Ausführung.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-error">
+    <strong><code>SQLITE_ERROR</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     SQL Fehler oder fehlende Datenbank.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-internal">
+    <strong><code>SQLITE_INTERNAL</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Interner Fehler in SQLite.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-perm">
+    <strong><code>SQLITE_PERM</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Fehlende Zugriffsberechtigung.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-abort">
+    <strong><code>SQLITE_ABORT</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Abbruchanforderung aus einer Callback-Routine.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-busy">
+    <strong><code>SQLITE_BUSY</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Die Datenbankdatei ist gesperrt.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-locked">
+    <strong><code>SQLITE_LOCKED</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Eine Tabelle in der Datenbank ist gesperrt.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-nomem">
+    <strong><code>SQLITE_NOMEM</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Speicheranforderung fehlgeschlagen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-readonly">
+    <strong><code>SQLITE_READONLY</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Schreibversuch auf eine nur-lesen Datenbank.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-interrupt">
+    <strong><code>SQLITE_INTERRUPT</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Interner Abbruch einer Operation.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-ioerr">
+    <strong><code>SQLITE_IOERR</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Datei Ein-/Ausgabefehler.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-notadb">
+    <strong><code>SQLITE_NOTADB</code></strong>
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Die zu öffnende Datei ist keine Datenbank.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-corrupt">
+    <strong><code>SQLITE_CORRUPT</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Die Datenbankdatei ist beschädigt.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-format">
+    <strong><code>SQLITE_FORMAT</code></strong>
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Datenbankformatfehler.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-notfound">
+    <strong><code>SQLITE_NOTFOUND</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Tabelle oder Eintrag nicht gefunden.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-full">
+    <strong><code>SQLITE_FULL</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Einfügen mangels Speicherplatz fehlgeschlagen (intern).
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-cantopen">
+    <strong><code>SQLITE_CANTOPEN</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Datenbankdatei kann nicht geöffnet werden.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-protocol">
+    <strong><code>SQLITE_PROTOCOL</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Protokollfehler beim Sperren einer Datenbank.
+     Database lock protocol error.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-empty">
+    <strong><code>SQLITE_EMPTY</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Datenbank ist leer (internal). 
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-schema">
+    <strong><code>SQLITE_SCHEMA</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Das Datenbankschema hat sich geändert.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-toobig">
+    <strong><code>SQLITE_TOOBIG</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Zu viele Daten für eine Tabellenzeile.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-constraint">
+    <strong><code>SQLITE_CONSTRAINT</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Abbruch wegen einer fehlgeschlagenen Prüfbedingung.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-mismatch">
+    <strong><code>SQLITE_MISMATCH</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Unverträgliche Datentypen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-misuse">
+    <strong><code>SQLITE_MISUSE</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Fehlerhafte Nutzung der Bibliothek. 
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-nolfs">
+    <strong><code>SQLITE_NOLFS</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Nutzung eines auf diesem System nicht vorhandenen Betriebsystemfeatures.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-auth">
+    <strong><code>SQLITE_AUTH</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Autorisierung fehlgeschlagen.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-row">
+    <strong><code>SQLITE_ROW</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Interner Prozess hat eine andere Zeile bereitgestellt.
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.sqlite-done">
+    <strong><code>SQLITE_DONE</code></strong> 
+    (<span class="type">int</span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Interner Prozess hat die Ausführung abgeschlossen.
+    </span>
+   </dd>
+
+  
+ </dl>
+
+</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
