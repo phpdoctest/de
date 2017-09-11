@@ -240,7 +240,7 @@ reference/array/functions/array-keys.xml: fa55cc7ba6
 reference/array/functions/array-map.xml: ee3a9efbc6
 reference/array/functions/array-merge-recursive.xml: 7b5f562fc1
 reference/array/functions/array-merge.xml: cf6ce7b4e1
-reference/array/functions/array-multisort.xml: 8f87defe71
+reference/array/functions/array-multisort.xml: 37099fcea5
 reference/array/functions/array-pad.xml: 65735b6b36
 reference/array/functions/array-pop.xml: d02e9c4340
 reference/array/functions/array-product.xml: cfd4938f68
@@ -249,10 +249,10 @@ reference/array/functions/array-rand.xml: d7feb17771
 reference/array/functions/array-reduce.xml: 0f1a264dd4
 reference/array/functions/array-replace.xml: b0db98d861
 reference/array/functions/array-reverse.xml: 7237f64379
-reference/array/functions/array-search.xml: ba17582882
+reference/array/functions/array-search.xml: 6f7d7d72c5
 reference/array/functions/array-shift.xml: efdbd50709
 reference/array/functions/array-slice.xml: 6f7d7d72c5
-reference/array/functions/array-splice.xml: 20ae618254
+reference/array/functions/array-splice.xml: 4f12336971
 reference/array/functions/array-sum.xml: 3114e5c923
 reference/array/functions/array-udiff-assoc.xml: 65735b6b36
 reference/array/functions/array-udiff-uassoc.xml: 65735b6b36
