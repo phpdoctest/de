@@ -296,6 +296,7 @@ reference/array/functions/uksort.xml: 8b0a9a0b34
 reference/array/functions/usort.xml: 8b0a9a0b34
 reference/array/reference.xml: efdbd50709
 reference/array/setup.xml: efdbd50709
+reference/array/sorting.xml: b4ec7eeaee
 reference/bbcode/book.xml: 890455fa05
 reference/bbcode/configure.xml: efdbd50709
 reference/bbcode/constants.xml: 30497110b3
