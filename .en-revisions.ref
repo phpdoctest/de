@@ -270,13 +270,13 @@ reference/array/functions/arsort.xml: 8b0a9a0b34
 reference/array/functions/asort.xml: 8b0a9a0b34
 reference/array/functions/compact.xml: 65735b6b36
 reference/array/functions/count.xml: 2fba0054cd
-reference/array/functions/current.xml: e7813809b7
+reference/array/functions/current.xml: 372861dced
 reference/array/functions/each.xml: d7cfec0bf8
 reference/array/functions/end.xml: efdbd50709
 reference/array/functions/extract.xml: d3044abb88
 reference/array/functions/in-array.xml: 8868566c3a
 reference/array/functions/key-exists.xml: 10ed310202
-reference/array/functions/key.xml: 27b38016d0
+reference/array/functions/key.xml: 6449ba1a73
 reference/array/functions/krsort.xml: efdbd50709
 reference/array/functions/ksort.xml: efdbd50709
 reference/array/functions/list.xml: cc3f7e3497
