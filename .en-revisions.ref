@@ -372,7 +372,7 @@ reference/classobj/functions/get-class-vars.xml: 8d4ae76367
 reference/classobj/functions/get-class.xml: cf6ce7b4e1
 reference/classobj/functions/get-declared-classes.xml: efdbd50709
 reference/classobj/functions/get-declared-interfaces.xml: 30497110b3
-reference/classobj/functions/get-object-vars.xml: 8868566c3a
+reference/classobj/functions/get-object-vars.xml: 0d6a01bc7a
 reference/classobj/functions/get-parent-class.xml: 7237f64379
 reference/classobj/functions/interface-exists.xml: 37b07fe2ae
 reference/classobj/functions/is-subclass-of.xml: dd63d2f73c
