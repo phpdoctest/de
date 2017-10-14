@@ -1159,6 +1159,7 @@ reference/math/functions/fmod.xml: 58cbd11ad5
 reference/math/functions/getrandmax.xml: efdbd50709
 reference/math/functions/hexdec.xml: b658965b6f
 reference/math/functions/hypot.xml: efdbd50709
+reference/math/functions/intdiv.xml: 5acb576cea
 reference/math/functions/is-finite.xml: efdbd50709
 reference/math/functions/is-infinite.xml: efdbd50709
 reference/math/functions/is-nan.xml: efdbd50709
