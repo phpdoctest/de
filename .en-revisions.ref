@@ -115,8 +115,8 @@ language/oop5/anonymous.xml: e39bb029e1
 language/oop5/autoload.xml: 3a93ed7cec
 language/oop5/basic.xml: 27997cced8
 language/oop5/changelog.xml: 7f5c229aac
-language/oop5/cloning.xml: 5af43ef4d0
-language/oop5/constants.xml: 1bd093c67e
+language/oop5/cloning.xml: 23c9d16f20
+language/oop5/constants.xml: 7b387ca529
 language/oop5/decon.xml: 4b29caff2c
 language/oop5/final.xml: f03553a9bb
 language/oop5/inheritance.xml: 7101d7984a
@@ -132,7 +132,7 @@ language/oop5/properties.xml: 9ad6ead5a2
 language/oop5/references.xml: 15a78e638d
 language/oop5/serialization.xml: 5b4d184efb
 language/oop5/static.xml: 77c3efb7c2
-language/oop5/traits.xml: 4c9f539e4b
+language/oop5/traits.xml: 63735b4dff
 language/oop5/typehinting.xml: 476e58b54c
 language/oop5/visibility.xml: 8e2d295e8f
 language/predefined/arrayaccess.xml: 54fc72fb20
