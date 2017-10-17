@@ -1076,6 +1076,7 @@ reference/info/functions/php-ini-scanned-files.xml: e5984e6f8d
 reference/info/functions/php-logo-guid.xml: 23e853f430
 reference/info/functions/php-sapi-name.xml: 8f4b1a6108
 reference/info/functions/phpinfo.xml: acc93e6115
+reference/info/functions/set-include-path.xml: 7f3bd947da
 reference/info/functions/set-time-limit.xml: 90ae4d912a
 reference/info/functions/version-compare.xml: 8a1d56a571
 reference/info/functions/zend-logo-guid.xml: 23e853f430
@@ -1864,6 +1865,7 @@ reference/pdo/pdo.xml: 807c846e04
 reference/pdo/pdo/exec.xml: 3b4167177a
 reference/pdo/pdoexception.xml: 31dffa4ce7
 reference/pdo/pdostatement.xml: a4d2b468a0
+reference/pdo/pdostatement/execute.xml: ccc43c8e29
 reference/pdo/prepared-statements.xml: 0588d4cdc1
 reference/pdo/setup.xml: 807c846e04
 reference/pdo/transactions.xml: 0588d4cdc1
