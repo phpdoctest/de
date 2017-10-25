@@ -24,7 +24,7 @@ appendices/migration70/constants.xml: 916abc8611
 appendices/migration70/incompatible.xml: 5b9a029379
 appendices/migration70/removed-exts-sapis.xml: 2ded59b783
 appendices/migration71.xml: 6eb60e4c67
-appendices/reserved.constants.core.xml: 1e2eb84d93
+appendices/reserved.constants.core.xml: 587b824833
 appendices/reserved.constants.standard.xml: 0d8699fe99
 appendices/reserved.xml: d839cb6fae
 appendices/resources.xml: 26a369252f
@@ -2566,7 +2566,7 @@ reference/xsl/xsltprocessor/transformtouri.xml: 87c4553d96
 reference/xsl/xsltprocessor/transformtoxml.xml: f9be5ec5bd
 reference/zip/book.xml: 890455fa05
 reference/zip/configure.xml: 10d7dd3c96
-reference/zip/constants.xml: 44500960e9
+reference/zip/constants.xml: 06eb8ce531
 reference/zip/examples.xml: e29d0e2c44
 reference/zip/functions/zip-close.xml: efdbd50709
 reference/zip/functions/zip-entry-close.xml: efdbd50709
