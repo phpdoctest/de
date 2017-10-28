@@ -996,6 +996,7 @@ reference/image/functions/imagegif.xml: 7f3bd947da
 reference/image/functions/imagejpeg.xml: 45453a42f7
 reference/image/functions/imagepng.xml: 2551cc3e2c
 reference/image/functions/jpeg2wbmp.xml: efdbd50709
+reference/image/ini.xml: ef8feacee0
 reference/image/reference.xml: efdbd50709
 reference/image/setup.xml: d3f18b445b
 reference/imagick/imagick/pingimage.xml: f7f145c8f6
