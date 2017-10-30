@@ -67,6 +67,7 @@ install/macos/bundled.xml: bbe41779f4
 install/macos/compile.xml: 6039e8a267
 install/macos/index.xml: 6039e8a267
 install/macos/packages.xml: 8e4cf39fd1
+install/problems.xml: efdbd50709
 install/unix/apache1.xml: ff5b22acc2
 install/unix/apache2.xml: 08ad342b66
 install/unix/commandline.xml: 17a124fce7
