@@ -88,10 +88,10 @@ language/control-structures.xml: 807c846e04
 language/control-structures/alternative-syntax.xml: 4d986b284b
 language/control-structures/break.xml: a27164b6b1
 language/control-structures/continue.xml: 1ba888a673
-language/control-structures/declare.xml: cf78389a0b
+language/control-structures/declare.xml: e28e713a85
 language/control-structures/do-while.xml: f40cab318e
 language/control-structures/else.xml: f40cab318e
-language/control-structures/elseif.xml: f40cab318e
+language/control-structures/elseif.xml: ab22600027
 language/control-structures/for.xml: a9629cd38f
 language/control-structures/foreach.xml: 22e88dd1b5
 language/control-structures/goto.xml: e7e490bf08
