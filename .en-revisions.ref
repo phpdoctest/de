@@ -2641,4 +2641,5 @@ security/filesystem.xml: 9a060a5958
 security/general.xml: efdbd50709
 security/hiding.xml: 9a060a5958
 security/intro.xml: efdbd50709
+security/sessions.xml: 63d8089a4a
 security/variables.xml: 9a060a5958
