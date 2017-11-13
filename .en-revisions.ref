@@ -1211,7 +1211,7 @@ reference/misc/functions/get-browser.xml: 8868566c3a
 reference/misc/functions/halt-compiler.xml: efdbd50709
 reference/misc/functions/highlight-file.xml: 8868566c3a
 reference/misc/functions/highlight-string.xml: 8868566c3a
-reference/misc/functions/ignore-user-abort.xml: efdbd50709
+reference/misc/functions/ignore-user-abort.xml: 30ae797a66
 reference/misc/functions/pack.xml: 74cdabca8c
 reference/misc/functions/php-check-syntax.xml: 30497110b3
 reference/misc/functions/show-source.xml: 807c846e04
