@@ -974,10 +974,10 @@ reference/ifx/book.xml: 890455fa05
 reference/ifx/configure.xml: efdbd50709
 reference/ifx/reference.xml: efdbd50709
 reference/ifx/setup.xml: 0e302b252e
-reference/image/book.xml: 3df7bdad06
+reference/image/book.xml: 0a12c77891
 reference/image/examples.xml: 99b1e62273
 reference/image/functions/gd-info.xml: a1f8424cc9
-reference/image/functions/getimagesize.xml: 2dccf152ae
+reference/image/functions/getimagesize.xml: 4eef63c55e
 reference/image/functions/getimagesizefromstring.xml: c7cc08a35f
 reference/image/functions/imagearc.xml: 20e2ed00ec
 reference/image/functions/imagechar.xml: efdbd50709
@@ -986,7 +986,7 @@ reference/image/functions/imagecreatefromgif.xml: cfc26695eb
 reference/image/functions/imagedestroy.xml: efdbd50709
 reference/image/functions/imagegif.xml: 7f3bd947da
 reference/image/functions/imagejpeg.xml: 45453a42f7
-reference/image/functions/imagepng.xml: 2551cc3e2c
+reference/image/functions/imagepng.xml: 84761a5b49
 reference/image/functions/jpeg2wbmp.xml: efdbd50709
 reference/image/ini.xml: f06e321d22
 reference/image/reference.xml: efdbd50709
