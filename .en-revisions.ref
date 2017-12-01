@@ -711,7 +711,7 @@ reference/fdf/reference.xml: efdbd50709
 reference/fdf/setup.xml: 807c846e04
 reference/fileinfo/book.xml: 079bf0cd64
 reference/fileinfo/configure.xml: 97e9a1f895
-reference/fileinfo/constants.xml: 30497110b3
+reference/fileinfo/constants.xml: 614e212f13
 reference/fileinfo/functions/finfo-close.xml: 1c63cc33e6
 reference/fileinfo/functions/finfo-file.xml: 3484ac0728
 reference/fileinfo/functions/finfo-open.xml: 3b4167177a
@@ -1116,7 +1116,7 @@ reference/json/reference.xml: efdbd50709
 reference/json/setup.xml: 9703fd5e43
 reference/ldap/book.xml: 890455fa05
 reference/ldap/configure.xml: efdbd50709
-reference/ldap/constants.xml: 5a28e2becc
+reference/ldap/constants.xml: 135820439c
 reference/ldap/examples.xml: 97cb6e67ba
 reference/ldap/functions/ldap-connect.xml: 7237f64379
 reference/ldap/functions/ldap-modify.xml: efdbd50709
@@ -1850,7 +1850,7 @@ reference/pdf/setup.xml: 807c846e04
 reference/pdo/book.xml: 890455fa05
 reference/pdo/configure.xml: 8fba00c841
 reference/pdo/connections.xml: 0588d4cdc1
-reference/pdo/constants.xml: 5a28e2becc
+reference/pdo/constants.xml: f42551ce12
 reference/pdo/drivers.xml: a368f086fb
 reference/pdo/error-handling.xml: 655bf4d812
 reference/pdo/lobs.xml: 0588d4cdc1
