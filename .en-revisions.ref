@@ -873,7 +873,7 @@ reference/ftp/setup.xml: 807c846e04
 reference/funchand/book.xml: 890455fa05
 reference/funchand/constants.xml: 807c846e04
 reference/funchand/functions/call-user-func.xml: 9c93165980
-reference/funchand/functions/create-function.xml: 45482fefbe
+reference/funchand/functions/create-function.xml: 892a4001bb
 reference/funchand/functions/func-get-arg.xml: a2b58d6ecc
 reference/funchand/functions/function-exists.xml: 087999d634
 reference/funchand/functions/get-defined-functions.xml: 841b4dcd0f
