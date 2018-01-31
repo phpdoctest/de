@@ -3,8 +3,8 @@ appendices/aliases.xml: 53076d9726
 appendices/comparisons.xml: f0b5fe9b78
 appendices/configure/php.xml: 60908ca2bd
 appendices/debugger.xml: 0f7e7dec4f
-appendices/ini.core.xml: c7c51ad050
-appendices/ini.list.xml: aeb2d52d26
+appendices/ini.core.xml: 0307bce96e
+appendices/ini.list.xml: 558476c22d
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
 appendices/migration54.xml: 0ee98820df
@@ -988,7 +988,7 @@ reference/image/functions/imagegif.xml: 7f3bd947da
 reference/image/functions/imagejpeg.xml: 45453a42f7
 reference/image/functions/imagepng.xml: 84761a5b49
 reference/image/functions/jpeg2wbmp.xml: efdbd50709
-reference/image/ini.xml: 55e73f039c
+reference/image/ini.xml: 0307bce96e
 reference/image/reference.xml: efdbd50709
 reference/image/setup.xml: d3f18b445b
 reference/imagick/imagick/pingimage.xml: f7f145c8f6
@@ -2460,7 +2460,7 @@ reference/var/functions/unserialize.xml: 5e106b710a
 reference/var/functions/unset.xml: 7237f64379
 reference/var/functions/var-dump.xml: 9c261b1c69
 reference/var/functions/var-export.xml: d1b63c1aa6
-reference/var/ini.xml: d2c80d6672
+reference/var/ini.xml: 10cb8a289a
 reference/var/reference.xml: efdbd50709
 reference/var/setup.xml: efdbd50709
 reference/xml/functions/utf8-decode.xml: a1a379134e
