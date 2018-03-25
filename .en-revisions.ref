@@ -2405,7 +2405,7 @@ reference/url/book.xml: 890455fa05
 reference/url/constants.xml: b0da668bfc
 reference/url/functions/base64-decode.xml: efdbd50709
 reference/url/functions/base64-encode.xml: d067c00636
-reference/url/functions/get-headers.xml: 9fdb9f375d
+reference/url/functions/get-headers.xml: 5d971db975
 reference/url/functions/get-meta-tags.xml: 7237f64379
 reference/url/functions/http-build-query.xml: fecbade729
 reference/url/functions/parse-url.xml: b17b4c2278
