@@ -1454,7 +1454,7 @@ reference/network/functions/closelog.xml: efdbd50709
 reference/network/functions/define-syslog-variables.xml: a6d7cc3e2b
 reference/network/functions/dns-check-record.xml: efdbd50709
 reference/network/functions/dns-get-mx.xml: efdbd50709
-reference/network/functions/dns-get-record.xml: 725f142544
+reference/network/functions/dns-get-record.xml: 60597d13ae
 reference/network/functions/fsockopen.xml: 8868566c3a
 reference/network/functions/gethostbyaddr.xml: 463f0872c3
 reference/network/functions/gethostbyname.xml: efdbd50709
