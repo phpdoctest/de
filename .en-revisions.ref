@@ -979,6 +979,16 @@ reference/image/functions/getimagesize.xml: 117c2d9c01
 reference/image/functions/getimagesizefromstring.xml: c7cc08a35f
 reference/image/functions/imagearc.xml: 20e2ed00ec
 reference/image/functions/imagechar.xml: efdbd50709
+reference/image/functions/imagecharup.xml: efdbd50709
+reference/image/functions/imagecolorallocate.xml: 81eb7563d8
+reference/image/functions/imagecolorat.xml: 8fc048f466
+reference/image/functions/imagecolorclosest.xml: 66cf11bb10
+reference/image/functions/imagecolordeallocate.xml: efdbd50709
+reference/image/functions/imagecolorexact.xml: 66cf11bb10
+reference/image/functions/imagecolorresolve.xml: 66cf11bb10
+reference/image/functions/imagecolorset.xml: fecbade729
+reference/image/functions/imagecolorsforindex.xml: efdbd50709
+reference/image/functions/imagecolorstotal.xml: ea6a3bfbfa
 reference/image/functions/imagecopyresized.xml: dd9a29a077
 reference/image/functions/imagecreatefromgif.xml: 8ea621e53b
 reference/image/functions/imagedestroy.xml: efdbd50709
