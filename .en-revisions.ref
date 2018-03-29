@@ -128,7 +128,6 @@ language/oop5/magic.xml: e771b950de
 language/oop5/object-comparison.xml: b455602761
 language/oop5/overloading.xml: 41e7b91a5c
 language/oop5/paamayim-nekudotayim.xml: d65d1fefc9
-language/oop5/patterns.xml: 43590ae296
 language/oop5/properties.xml: f1e16c6c99
 language/oop5/references.xml: 15a78e638d
 language/oop5/serialization.xml: 5b4d184efb
@@ -392,7 +391,6 @@ reference/crack/functions/crack-check.xml: 9d23a768da
 reference/crack/functions/crack-closedict.xml: efdbd50709
 reference/crack/functions/crack-getlastmessage.xml: efdbd50709
 reference/crack/functions/crack-opendict.xml: efdbd50709
-reference/crack/ini.xml: d2c80d6672
 reference/crack/reference.xml: efdbd50709
 reference/crack/setup.xml: 7f3bd947da
 reference/ctype/book.xml: 890455fa05
@@ -1227,14 +1225,11 @@ reference/misc/setup.xml: efdbd50709
 reference/mnogosearch/book.xml: 890455fa05
 reference/mnogosearch/constants.xml: 5a28e2becc
 reference/mnogosearch/functions/udm-check-charset.xml: efdbd50709
-reference/mnogosearch/functions/udm-check-stored.xml: efdbd50709
-reference/mnogosearch/functions/udm-close-stored.xml: efdbd50709
 reference/mnogosearch/functions/udm-crc32.xml: efdbd50709
 reference/mnogosearch/functions/udm-free-agent.xml: efdbd50709
 reference/mnogosearch/functions/udm-free-ispell-data.xml: efdbd50709
 reference/mnogosearch/functions/udm-free-res.xml: efdbd50709
 reference/mnogosearch/functions/udm-get-doc-count.xml: efdbd50709
-reference/mnogosearch/functions/udm-open-stored.xml: efdbd50709
 reference/mnogosearch/reference.xml: efdbd50709
 reference/mnogosearch/setup.xml: 807c846e04
 reference/mongo/mongogridfs/get.xml: e4db6c4d61
@@ -1351,7 +1346,6 @@ reference/mysql/configure.xml: 7f3bd947da
 reference/mysql/constants.xml: 7f3bd947da
 reference/mysql/examples.xml: ee00fe1a3d
 reference/mysql/functions/mysql-affected-rows.xml: 8fb0bc6cab
-reference/mysql/functions/mysql-change-user.xml: 807c846e04
 reference/mysql/functions/mysql-client-encoding.xml: 8fb0bc6cab
 reference/mysql/functions/mysql-close.xml: b47bcf9beb
 reference/mysql/functions/mysql-connect.xml: 88c55efbdb
