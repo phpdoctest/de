@@ -989,8 +989,13 @@ reference/image/functions/imagecolorresolve.xml: 66cf11bb10
 reference/image/functions/imagecolorset.xml: fecbade729
 reference/image/functions/imagecolorsforindex.xml: efdbd50709
 reference/image/functions/imagecolorstotal.xml: ea6a3bfbfa
+reference/image/functions/imagecolortransparent.xml: 494118da43
+reference/image/functions/imagecopy.xml: 66cf11bb10
 reference/image/functions/imagecopyresized.xml: dd9a29a077
+reference/image/functions/imagecreate.xml: e1cd130923
 reference/image/functions/imagecreatefromgif.xml: 8ea621e53b
+reference/image/functions/imagecreatefromjpeg.xml: 6153a64bc3
+reference/image/functions/imagecreatefrompng.xml: cfc26695eb
 reference/image/functions/imagedestroy.xml: efdbd50709
 reference/image/functions/imagegif.xml: 7f3bd947da
 reference/image/functions/imagejpeg.xml: 45453a42f7
