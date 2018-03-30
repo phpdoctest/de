@@ -996,7 +996,14 @@ reference/image/functions/imagecreate.xml: e1cd130923
 reference/image/functions/imagecreatefromgif.xml: 8ea621e53b
 reference/image/functions/imagecreatefromjpeg.xml: 6153a64bc3
 reference/image/functions/imagecreatefrompng.xml: cfc26695eb
+reference/image/functions/imagedashedline.xml: 17289d3c13
 reference/image/functions/imagedestroy.xml: efdbd50709
+reference/image/functions/imagefill.xml: efdbd50709
+reference/image/functions/imagefilledpolygon.xml: 9717591a2b
+reference/image/functions/imagefilledrectangle.xml: efdbd50709
+reference/image/functions/imagefilltoborder.xml: efdbd50709
+reference/image/functions/imagefontheight.xml: 6b490dbc34
+reference/image/functions/imagefontwidth.xml: 6b490dbc34
 reference/image/functions/imagegif.xml: 7f3bd947da
 reference/image/functions/imagejpeg.xml: 45453a42f7
 reference/image/functions/imagepng.xml: 84761a5b49
