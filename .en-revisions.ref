@@ -2499,8 +2499,11 @@ reference/var/functions/var-export.xml: d1b63c1aa6
 reference/var/ini.xml: 10cb8a289a
 reference/var/reference.xml: efdbd50709
 reference/var/setup.xml: efdbd50709
+reference/xml/constants.xml: 5a28e2becc
+reference/xml/error-codes.xml: 807c846e04
 reference/xml/functions/utf8-decode.xml: a1a379134e
 reference/xml/functions/utf8-encode.xml: be6e33d050
+reference/xml/reference.xml: efdbd50709
 reference/xmlreader/book.xml: 890455fa05
 reference/xmlreader/constants.xml: 7a17087302
 reference/xmlreader/setup.xml: 6dfbe89af1
