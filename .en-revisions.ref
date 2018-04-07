@@ -497,6 +497,7 @@ reference/datetime/functions/gmstrftime.xml: efdbd50709
 reference/datetime/functions/localtime.xml: 88c55efbdb
 reference/datetime/functions/microtime.xml: 88c55efbdb
 reference/datetime/functions/mktime.xml: c23965ebb5
+reference/datetime/functions/strftime.xml: 29ca2dbc42
 reference/datetime/functions/strtotime.xml: d33e14074b
 reference/datetime/functions/time.xml: dbc23c8d6a
 reference/datetime/functions/timezone-abbreviations-list.xml: efdbd50709
