@@ -76,7 +76,7 @@ install/unix/hpux.xml: efdbd50709
 install/unix/index.xml: b8c67c5c74
 install/unix/lighttpd-14.xml: efdbd50709
 install/unix/nginx.xml: 12c6fac392
-install/windows/legacy/index.xml: d9fcd65d07
+install/windows/legacy/index.xml: f65f8bc379
 language/basic-syntax.xml: 0b795fa0ed
 language/constants.xml: 286d0736e6
 language/context.xml: 3839ad321f
