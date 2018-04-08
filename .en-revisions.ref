@@ -558,6 +558,7 @@ reference/dbx/functions/dbx-connect.xml: bcf09450f7
 reference/dbx/functions/dbx-error.xml: efdbd50709
 reference/dbx/functions/dbx-escape-string.xml: efdbd50709
 reference/dbx/functions/dbx-fetch-row.xml: efdbd50709
+reference/dbx/functions/dbx-query.xml: efdbd50709
 reference/dbx/functions/dbx-sort.xml: efdbd50709
 reference/dbx/ini.xml: d2c80d6672
 reference/dbx/reference.xml: efdbd50709
@@ -569,6 +570,7 @@ reference/dio/functions/dio-close.xml: efdbd50709
 reference/dio/functions/dio-fcntl.xml: 9303983e20
 reference/dio/functions/dio-open.xml: 27997cced8
 reference/dio/functions/dio-read.xml: efdbd50709
+reference/dio/functions/dio-seek.xml: efdbd50709
 reference/dio/functions/dio-stat.xml: efdbd50709
 reference/dio/functions/dio-truncate.xml: efdbd50709
 reference/dio/functions/dio-write.xml: efdbd50709
@@ -613,6 +615,7 @@ reference/event/eventbuffer/write.xml: 20cb9b4088
 reference/event/eventbufferevent/write.xml: 20cb9b4088
 reference/exec/book.xml: 890455fa05
 reference/exec/constants.xml: 16f109a20c
+reference/exec/functions/escapeshellarg.xml: 9cca2d0b62
 reference/exec/functions/escapeshellcmd.xml: 04f3fd6d39
 reference/exec/functions/exec.xml: efdbd50709
 reference/exec/functions/passthru.xml: efdbd50709
@@ -629,11 +632,14 @@ reference/exif/book.xml: 369f8c7a53
 reference/exif/configure.xml: efdbd50709
 reference/exif/constants.xml: 369f8c7a53
 reference/exif/functions/exif-imagetype.xml: 9ab7da3556
+reference/exif/functions/exif-read-data.xml: 88c55efbdb
+reference/exif/functions/exif-tagname.xml: 585f1827c0
 reference/exif/functions/exif-thumbnail.xml: 999ca6af80
 reference/exif/functions/read-exif-data.xml: 4016d10fa6
 reference/exif/ini.xml: d2c80d6672
 reference/exif/reference.xml: efdbd50709
 reference/exif/setup.xml: 369f8c7a53
+reference/expect/setup.xml: 807c846e04
 reference/fbsql/book.xml: 890455fa05
 reference/fbsql/configure.xml: efdbd50709
 reference/fbsql/constants.xml: 5a28e2becc
@@ -820,6 +826,7 @@ reference/filter/functions/filter-id.xml: 9539b92f7a
 reference/filter/functions/filter-input-array.xml: 95a9dd0a33
 reference/filter/functions/filter-input.xml: f51eac52a3
 reference/filter/functions/filter-list.xml: efdbd50709
+reference/filter/functions/filter-var-array.xml: 88c55efbdb
 reference/filter/functions/filter-var.xml: b77ccde4ea
 reference/filter/ini.xml: d2c80d6672
 reference/filter/reference.xml: efdbd50709
@@ -875,6 +882,8 @@ reference/funchand/constants.xml: 807c846e04
 reference/funchand/functions/call-user-func.xml: 9c93165980
 reference/funchand/functions/create-function.xml: 892a4001bb
 reference/funchand/functions/func-get-arg.xml: a2b58d6ecc
+reference/funchand/functions/func-get-args.xml: 461a0f4808
+reference/funchand/functions/func-num-args.xml: 60eabe2135
 reference/funchand/functions/function-exists.xml: 087999d634
 reference/funchand/functions/get-defined-functions.xml: 841b4dcd0f
 reference/funchand/functions/register-shutdown-function.xml: 8868566c3a
@@ -955,6 +964,7 @@ reference/htscanner/setup.xml: 807c846e04
 reference/ibase/functions/ibase-close.xml: edd2392da9
 reference/ibase/functions/ibase-connect.xml: 2a77481f1a
 reference/ibase/functions/ibase-execute.xml: 55b24d1b2b
+reference/ibase/functions/ibase-fetch-object.xml: efdbd50709
 reference/ibase/functions/ibase-fetch-row.xml: efdbd50709
 reference/ibase/functions/ibase-free-query.xml: efdbd50709
 reference/ibase/functions/ibase-free-result.xml: efdbd50709
