@@ -1755,6 +1755,7 @@ reference/openssl/reference.xml: efdbd50709
 reference/openssl/setup.xml: cae9501f91
 reference/outcontrol/book.xml: 7f3bd947da
 reference/outcontrol/constants.xml: 8ed18e72f5
+reference/outcontrol/functions/flush.xml: 595ba33111
 reference/outcontrol/functions/ob-clean.xml: d40d88ee1b
 reference/outcontrol/functions/ob-end-clean.xml: 8868566c3a
 reference/outcontrol/functions/ob-end-flush.xml: 8868566c3a
@@ -1763,6 +1764,7 @@ reference/outcontrol/functions/ob-get-contents.xml: efdbd50709
 reference/outcontrol/functions/ob-get-level.xml: efdbd50709
 reference/outcontrol/functions/ob-implicit-flush.xml: e244b000a2
 reference/outcontrol/functions/ob-start.xml: 7f3bd947da
+reference/outcontrol/functions/output-add-rewrite-var.xml: 0472d71352
 reference/outcontrol/ini.xml: 7f3bd947da
 reference/outcontrol/reference.xml: efdbd50709
 reference/outcontrol/setup.xml: efdbd50709
@@ -1775,6 +1777,18 @@ reference/pcntl/book.xml: 890455fa05
 reference/pcntl/configure.xml: efdbd50709
 reference/pcntl/constants.xml: 5a28e2becc
 reference/pcntl/examples.xml: 83fc699d58
+reference/pcntl/functions/pcntl-alarm.xml: efdbd50709
+reference/pcntl/functions/pcntl-exec.xml: 8c569483bb
+reference/pcntl/functions/pcntl-fork.xml: a69faff2cb
+reference/pcntl/functions/pcntl-getpriority.xml: efdbd50709
+reference/pcntl/functions/pcntl-setpriority.xml: efdbd50709
+reference/pcntl/functions/pcntl-signal.xml: 88c55efbdb
+reference/pcntl/functions/pcntl-wait.xml: 13c120545d
+reference/pcntl/functions/pcntl-waitpid.xml: 13c120545d
+reference/pcntl/functions/pcntl-wexitstatus.xml: efdbd50709
+reference/pcntl/functions/pcntl-wifexited.xml: efdbd50709
+reference/pcntl/functions/pcntl-wifsignaled.xml: efdbd50709
+reference/pcntl/functions/pcntl-wifstopped.xml: efdbd50709
 reference/pcntl/functions/pcntl-wstopsig.xml: efdbd50709
 reference/pcntl/functions/pcntl-wtermsig.xml: efdbd50709
 reference/pcntl/reference.xml: efdbd50709
