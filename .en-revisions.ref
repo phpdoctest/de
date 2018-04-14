@@ -1795,7 +1795,7 @@ reference/pcntl/reference.xml: efdbd50709
 reference/pcntl/setup.xml: 807c846e04
 reference/pcre/book.xml: 890455fa05
 reference/pcre/configure.xml: 639c50dcca
-reference/pcre/constants.xml: a58fc58aa0
+reference/pcre/constants.xml: 0c39de7390
 reference/pcre/examples.xml: efdbd50709
 reference/pcre/functions/preg-filter.xml: 7c1a70df96
 reference/pcre/functions/preg-grep.xml: 7c1a70df96
