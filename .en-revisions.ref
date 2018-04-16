@@ -3,6 +3,7 @@ appendices/aliases.xml: 53076d9726
 appendices/comparisons.xml: 06f2dbb709
 appendices/configure/php.xml: 60908ca2bd
 appendices/debugger.xml: 0f7e7dec4f
+appendices/history.xml: 30497110b3
 appendices/ini.core.xml: 0307bce96e
 appendices/ini.list.xml: 558476c22d
 appendices/ini.sections.xml: d2c80d6672
@@ -28,6 +29,7 @@ appendices/reserved.constants.core.xml: 587b824833
 appendices/reserved.constants.standard.xml: 0d8699fe99
 appendices/reserved.xml: a7baf83807
 appendices/resources.xml: 2c421eacc5
+appendices/tokens.xml: 2b57fe138c
 appendices/transports.xml: fda43b87c7
 appendices/userlandnaming.xml: ec0d086932
 bookinfo.xml: ffb234e0e2
