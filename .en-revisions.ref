@@ -2289,7 +2289,6 @@ reference/session/functions/session-unset.xml: 13c120545d
 reference/session/functions/session-write-close.xml: 13c120545d
 reference/session/ini.xml: 600506da0c
 reference/session/reference.xml: efdbd50709
-reference/session/security.xml: efdbd50709
 reference/session/setup.xml: efdbd50709
 reference/session/upload-progress.xml: d71cf827ad
 reference/shmop/book.xml: 703d2465dd
