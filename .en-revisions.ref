@@ -194,6 +194,7 @@ language/types/null.xml: 892a4001bb
 language/types/object.xml: 03a4417914
 language/types/resource.xml: 7f3bd947da
 language/types/string.xml: 00ec4eab64
+language/variables.xml: 530938f954
 language/wrappers.xml: 07f040bc3f
 preface.xml: 09818bff14
 reference/apache/book.xml: 890455fa05
