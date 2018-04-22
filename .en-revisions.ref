@@ -103,7 +103,7 @@ language/control-structures/include-once.xml: fd76143f10
 language/control-structures/include.xml: d8ea1454c1
 language/control-structures/require-once.xml: 087999d634
 language/control-structures/require.xml: 087999d634
-language/control-structures/return.xml: cdc0b201fa
+language/control-structures/return.xml: bf7f803165
 language/control-structures/switch.xml: 5412a63c8f
 language/control-structures/while.xml: f40cab318e
 language/errors.xml: e05d88bfe0
@@ -137,6 +137,7 @@ language/oop5/static.xml: 77c3efb7c2
 language/oop5/traits.xml: 63735b4dff
 language/oop5/typehinting.xml: 476e58b54c
 language/oop5/visibility.xml: ef0d1df025
+language/operators.xml: 18abda8ff4
 language/predefined/arrayaccess.xml: 54fc72fb20
 language/predefined/arrayaccess/offsetexists.xml: d54283cfbc
 language/predefined/arrayaccess/offsetget.xml: c320e5d8c0
@@ -187,6 +188,7 @@ language/predefined/variables/request.xml: 991103bc31
 language/predefined/variables/server.xml: ccb80fcf6b
 language/predefined/variables/session.xml: 991103bc31
 language/predefined/variables/superglobals.xml: 807c846e04
+language/references.xml: c32af11dd9
 language/types.xml: c6429b8faf
 language/types/array.xml: e02e0593ba
 language/types/boolean.xml: 06f2dbb709
@@ -2561,7 +2563,7 @@ reference/strings/functions/strpbrk.xml: 30497110b3
 reference/strings/functions/strpos.xml: 13c120545d
 reference/strings/functions/strrchr.xml: e521f551f1
 reference/strings/functions/strrev.xml: efdbd50709
-reference/strings/functions/strripos.xml: 7605b65168
+reference/strings/functions/strripos.xml: e521f551f1
 reference/strings/functions/strrpos.xml: caa9c651a8
 reference/strings/functions/strspn.xml: a923ea6764
 reference/strings/functions/strstr.xml: 88c55efbdb
