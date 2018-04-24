@@ -1548,7 +1548,7 @@ reference/mysql/ini.xml: 893c32681b
 reference/mysql/reference.xml: efdbd50709
 reference/mysql/setup.xml: 4bfcdd0ff3
 reference/mysqli/book.xml: 9c835e0ad8
-reference/mysqli/configure.xml: efdbd50709
+reference/mysqli/configure.xml: 45b4328c6a
 reference/mysqli/constants.xml: 7a72aa81cd
 reference/mysqli/functions/mysqli-bind-param.xml: 03b10d1950
 reference/mysqli/functions/mysqli-bind-result.xml: 03b10d1950
@@ -1592,7 +1592,7 @@ reference/mysqli/mysqli_stmt/sqlstate.xml: 4b6613bed9
 reference/mysqli/mysqli_stmt/store-result.xml: d12ce708ee
 reference/mysqli/mysqli_warning.xml: 832c5c52ab
 reference/mysqli/reference.xml: 807c846e04
-reference/mysqli/setup.xml: 807c846e04
+reference/mysqli/setup.xml: caade4148b
 reference/network/book.xml: 890455fa05
 reference/network/constants.xml: 53dfa0f73e
 reference/network/functions/checkdnsrr.xml: cf6ce7b4e1
