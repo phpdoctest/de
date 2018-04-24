@@ -2042,7 +2042,6 @@ reference/pdo/pdostatement/execute.xml: ccc43c8e29
 reference/pdo/prepared-statements.xml: 2a14c1258e
 reference/pdo/setup.xml: 807c846e04
 reference/pdo/transactions.xml: 0588d4cdc1
-reference/pdo_mysql/reference.xml: 30497110b3
 reference/pdo_sqlite/PDO/sqliteCreateAggregate.xml: 5a380e298d
 reference/pdo_sqlite/PDO/sqliteCreateFunction.xml: d1020d2b3a
 reference/pdo_sqlite/reference.xml: 30497110b3
