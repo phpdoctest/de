@@ -1,7 +1,7 @@
 appendices/about.xml: 6094d9be1a
 appendices/aliases.xml: 53076d9726
 appendices/comparisons.xml: 06f2dbb709
-appendices/configure/php.xml: 60908ca2bd
+appendices/configure/php.xml: e599425755
 appendices/debugger.xml: 0f7e7dec4f
 appendices/history.xml: 30497110b3
 appendices/ini.core.xml: 0307bce96e
@@ -27,7 +27,7 @@ appendices/migration70/removed-exts-sapis.xml: 2ded59b783
 appendices/migration71.xml: 6eb60e4c67
 appendices/reserved.constants.core.xml: 587b824833
 appendices/reserved.constants.standard.xml: 0d8699fe99
-appendices/reserved.xml: a7baf83807
+appendices/reserved.xml: db8c91f52b
 appendices/resources.xml: 2c421eacc5
 appendices/tokens.xml: 655ff7111a
 appendices/transports.xml: fda43b87c7
@@ -447,7 +447,7 @@ reference/curl/functions/curl-multi-select.xml: 01fea2a76a
 reference/curl/functions/curl-multi-setopt.xml: 917db9099a
 reference/curl/functions/curl-multi-strerror.xml: fe14cec8a2
 reference/curl/functions/curl-pause.xml: fe6975c008
-reference/curl/functions/curl-setopt-array.xml: 0699279cd3
+reference/curl/functions/curl-setopt-array.xml: 9cc834698a
 reference/curl/functions/curl-setopt.xml: 91fe9835b3
 reference/curl/functions/curl-version.xml: f0e133d57d
 reference/curl/ini.xml: d2c80d6672
@@ -537,7 +537,7 @@ reference/dba/functions/dba-replace.xml: efdbd50709
 reference/dba/functions/dba-sync.xml: efdbd50709
 reference/dba/reference.xml: efdbd50709
 reference/dba/setup.xml: 8560a8fb69
-reference/dbase/book.xml: cdba051dbf
+reference/dbase/book.xml: c98e62db1d
 reference/dbase/configure.xml: 1d5f722ba9
 reference/dbase/constants.xml: f98d0a67d9
 reference/dbase/functions/dbase-add-record.xml: 92ca9cb37f
@@ -822,7 +822,7 @@ reference/filesystem/functions/unlink.xml: 3e8aa8d5cf
 reference/filesystem/ini.xml: 0307bce96e
 reference/filesystem/reference.xml: efdbd50709
 reference/filesystem/setup.xml: 1eb825980a
-reference/filter/book.xml: 890455fa05
+reference/filter/book.xml: 8c9107820c
 reference/filter/configure.xml: efdbd50709
 reference/filter/constants.xml: f609f942bb
 reference/filter/filters.xml: d9372b89dc
@@ -890,7 +890,7 @@ reference/funchand/functions/func-get-arg.xml: 461a0f4808
 reference/funchand/functions/func-get-args.xml: 461a0f4808
 reference/funchand/functions/func-num-args.xml: 60eabe2135
 reference/funchand/functions/function-exists.xml: 087999d634
-reference/funchand/functions/get-defined-functions.xml: 99263cffdd
+reference/funchand/functions/get-defined-functions.xml: 10c12ff24c
 reference/funchand/functions/register-shutdown-function.xml: 8868566c3a
 reference/funchand/reference.xml: efdbd50709
 reference/funchand/setup.xml: efdbd50709
@@ -2043,7 +2043,7 @@ reference/pdo/prepared-statements.xml: 2a14c1258e
 reference/pdo/setup.xml: 807c846e04
 reference/pdo/transactions.xml: 0588d4cdc1
 reference/pdo_sqlite/PDO/sqliteCreateAggregate.xml: 5a380e298d
-reference/pdo_sqlite/PDO/sqliteCreateFunction.xml: d1020d2b3a
+reference/pdo_sqlite/PDO/sqliteCreateFunction.xml: 10c12ff24c
 reference/pdo_sqlite/reference.xml: 30497110b3
 reference/pgsql/book.xml: 137ca00925
 reference/pgsql/configure.xml: efdbd50709
@@ -2229,8 +2229,8 @@ reference/recode/functions/recode-string.xml: 6ab8b51d8e
 reference/recode/functions/recode.xml: efdbd50709
 reference/recode/reference.xml: efdbd50709
 reference/recode/setup.xml: 807c846e04
-reference/regex/book.xml: ada4a1722b
-reference/regex/configure.xml: efdbd50709
+reference/regex/book.xml: 8c9107820c
+reference/regex/configure.xml: 8c9107820c
 reference/regex/constants.xml: efdbd50709
 reference/regex/examples.xml: efdbd50709
 reference/regex/functions/ereg-replace.xml: ada4a1722b
@@ -2263,7 +2263,7 @@ reference/sem/functions/shm-remove.xml: efdbd50709
 reference/sem/ini.xml: d2c80d6672
 reference/sem/reference.xml: efdbd50709
 reference/sem/setup.xml: 807c846e04
-reference/session/book.xml: cca8cca6a8
+reference/session/book.xml: 8c9107820c
 reference/session/configure.xml: efdbd50709
 reference/session/constants.xml: 651f4db9ee
 reference/session/examples.xml: 7f3bd947da
@@ -2586,7 +2586,7 @@ reference/strings/setup.xml: efdbd50709
 reference/sybase/book.xml: 6e300ba587
 reference/sybase/reference.xml: efdbd50709
 reference/sybase/setup.xml: 807c846e04
-reference/tokenizer/book.xml: 890455fa05
+reference/tokenizer/book.xml: 8c9107820c
 reference/tokenizer/configure.xml: fcf41f3fbf
 reference/tokenizer/constants.xml: efdbd50709
 reference/tokenizer/examples.xml: 569acdb25e
@@ -2629,7 +2629,7 @@ reference/uodbc/reference.xml: efdbd50709
 reference/uodbc/setup.xml: 807c846e04
 reference/url/book.xml: 890455fa05
 reference/url/constants.xml: b0da668bfc
-reference/url/functions/base64-decode.xml: 88c55efbdb
+reference/url/functions/base64-decode.xml: 0df61427e5
 reference/url/functions/base64-encode.xml: d067c00636
 reference/url/functions/get-headers.xml: 5d971db975
 reference/url/functions/get-meta-tags.xml: 88c55efbdb
@@ -2659,7 +2659,7 @@ reference/var/functions/doubleval.xml: 8868566c3a
 reference/var/functions/empty.xml: c896dc470a
 reference/var/functions/floatval.xml: e3601d952c
 reference/var/functions/get-defined-vars.xml: cf6ce7b4e1
-reference/var/functions/get-resource-type.xml: 62631c4841
+reference/var/functions/get-resource-type.xml: 10c12ff24c
 reference/var/functions/gettype.xml: 21bba948f5
 reference/var/functions/intval.xml: e30cc14b19
 reference/var/functions/is-array.xml: eb5bae1c6f
