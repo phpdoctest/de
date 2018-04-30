@@ -13,7 +13,7 @@ appendices/migration56.xml: fbf9594048
 appendices/migration56/changed-functions.xml: 39b2fbf686
 appendices/migration56/constants.xml: bcd064772f
 appendices/migration56/deprecated.xml: 968a7d1396
-appendices/migration56/extensions.xml: 1226a7bb21
+appendices/migration56/extensions.xml: f3d3778ae1
 appendices/migration56/incompatible.xml: eabc0cddbb
 appendices/migration56/new-features.xml: 5756b8be7e
 appendices/migration56/new-functions.xml: 221f840480
@@ -823,7 +823,7 @@ reference/filesystem/ini.xml: 0307bce96e
 reference/filesystem/reference.xml: efdbd50709
 reference/filesystem/setup.xml: 1eb825980a
 reference/filter/book.xml: 8c9107820c
-reference/filter/configure.xml: efdbd50709
+reference/filter/configure.xml: 8c9107820c
 reference/filter/constants.xml: f609f942bb
 reference/filter/filters.xml: d9372b89dc
 reference/filter/functions/filter-has-var.xml: cc0e6f9c47
@@ -1564,7 +1564,7 @@ reference/mysqli/functions/mysqli-report.xml: cf27e23f35
 reference/mysqli/functions/mysqli-send-long-data.xml: 03b10d1950
 reference/mysqli/functions/mysqli-set-opt.xml: c1eadc54cc
 reference/mysqli/functions/mysqli-slave-query.xml: efdbd50709
-reference/mysqli/ini.xml: 03e7ffee1b
+reference/mysqli/ini.xml: f3d3778ae1
 reference/mysqli/mysqli.xml: f861061e99
 reference/mysqli/mysqli/affected-rows.xml: 0eac70f097
 reference/mysqli/mysqli/autocommit.xml: 693ac6fde1
@@ -2448,7 +2448,7 @@ reference/sqlite3/sqlite3/changes.xml: 807c846e04
 reference/sqlite3/sqlite3/close.xml: 807c846e04
 reference/sqlite3/sqlite3/construct.xml: 88c55efbdb
 reference/sqlite3/sqlite3/createaggregate.xml: 807c846e04
-reference/sqlite3/sqlite3/createfunction.xml: d1020d2b3a
+reference/sqlite3/sqlite3/createfunction.xml: 9fe54f2291
 reference/sqlite3/sqlite3/escapestring.xml: d7048dc31b
 reference/sqlite3/sqlite3/exec.xml: 807c846e04
 reference/sqlite3/sqlite3/lasterrorcode.xml: 807c846e04
