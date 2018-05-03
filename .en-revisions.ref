@@ -109,7 +109,7 @@ language/control-structures/while.xml: f40cab318e
 language/errors.xml: e05d88bfe0
 language/exceptions.xml: 5c4200c65d
 language/expressions.xml: 577b60e69c
-language/functions.xml: 55ee79f2f0
+language/functions.xml: 40b9ba06cc
 language/generators.xml: 08743408bd
 language/namespaces.xml: 4ddde86d58
 language/oop5.xml: f405eecb99
@@ -193,7 +193,7 @@ language/types.xml: c6429b8faf
 language/types/array.xml: e02e0593ba
 language/types/boolean.xml: 06f2dbb709
 language/types/null.xml: 892a4001bb
-language/types/object.xml: 03a4417914
+language/types/object.xml: 7177d26299
 language/types/resource.xml: 7f3bd947da
 language/types/string.xml: 00ec4eab64
 language/variables.xml: 530938f954
@@ -1817,7 +1817,7 @@ reference/pcre/functions/preg-match.xml: 05ec5ad62e
 reference/pcre/functions/preg-quote.xml: a523fc4fb7
 reference/pcre/functions/preg-replace-callback.xml: 366f584db7
 reference/pcre/functions/preg-replace.xml: 7f3bd947da
-reference/pcre/functions/preg-split.xml: d280accc4c
+reference/pcre/functions/preg-split.xml: 0f3043fcb5
 reference/pcre/ini.xml: 56502915c8
 reference/pcre/pattern.modifiers.xml: 6dbfde2c0f
 reference/pcre/pattern.xml: 2a59242e81
