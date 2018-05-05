@@ -50,7 +50,7 @@ faq/passwords.xml: 3e661618e0
 faq/using.xml: 750b1e0978
 features/commandline.xml: 85fa7eac51
 features/connection-handling.xml: b4dffc797a
-features/cookies.xml: e4887fb635
+features/cookies.xml: da3f8bf46c
 features/file-upload.xml: 549d2964a5
 features/http-auth.xml: 5ed893b609
 features/persistent-connections.xml: efdbd50709
