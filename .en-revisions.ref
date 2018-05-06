@@ -828,7 +828,7 @@ reference/filter/constants.xml: f609f942bb
 reference/filter/filters.xml: d9372b89dc
 reference/filter/functions/filter-has-var.xml: cc0e6f9c47
 reference/filter/functions/filter-id.xml: 9539b92f7a
-reference/filter/functions/filter-input-array.xml: 88c55efbdb
+reference/filter/functions/filter-input-array.xml: 8c07506db8
 reference/filter/functions/filter-input.xml: f51eac52a3
 reference/filter/functions/filter-list.xml: efdbd50709
 reference/filter/functions/filter-var-array.xml: 88c55efbdb
@@ -1052,7 +1052,7 @@ reference/image/setup.xml: d3f18b445b
 reference/imagick/imagick/pingimage.xml: f7f145c8f6
 reference/imap/book.xml: 890455fa05
 reference/imap/configure.xml: efdbd50709
-reference/imap/constants.xml: c591e1363b
+reference/imap/constants.xml: 6310c073fe
 reference/imap/functions/imap-8bit.xml: efdbd50709
 reference/imap/functions/imap-alerts.xml: efdbd50709
 reference/imap/functions/imap-append.xml: edd2392da9
@@ -1078,8 +1078,8 @@ reference/imap/functions/imap-gc.xml: 907b5b05e0
 reference/imap/functions/imap-get-quota.xml: efdbd50709
 reference/imap/functions/imap-get-quotaroot.xml: 70e45bdbf2
 reference/imap/functions/imap-getacl.xml: 30497110b3
-reference/imap/functions/imap-getmailboxes.xml: 93710f089c
-reference/imap/functions/imap-getsubscribed.xml: efdbd50709
+reference/imap/functions/imap-getmailboxes.xml: 6310c073fe
+reference/imap/functions/imap-getsubscribed.xml: 6310c073fe
 reference/imap/functions/imap-header.xml: efdbd50709
 reference/imap/functions/imap-headerinfo.xml: 85fb29327a
 reference/imap/functions/imap-headers.xml: efdbd50709
@@ -2470,9 +2470,9 @@ reference/strings/functions/bin2hex.xml: b0726827c5
 reference/strings/functions/chop.xml: efdbd50709
 reference/strings/functions/chr.xml: 0034f9b99e
 reference/strings/functions/chunk-split.xml: efdbd50709
-reference/strings/functions/convert-cyr-string.xml: efdbd50709
-reference/strings/functions/convert-uudecode.xml: 30497110b3
-reference/strings/functions/convert-uuencode.xml: f4f31d6a32
+reference/strings/functions/convert-cyr-string.xml: 1dd94fd2a2
+reference/strings/functions/convert-uudecode.xml: 89615dea46
+reference/strings/functions/convert-uuencode.xml: 89615dea46
 reference/strings/functions/count-chars.xml: efdbd50709
 reference/strings/functions/crc32.xml: 25f9678d48
 reference/strings/functions/crypt.xml: 2217cbe884
