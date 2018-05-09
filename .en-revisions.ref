@@ -250,8 +250,8 @@ reference/array/functions/array-multisort.xml: 37099fcea5
 reference/array/functions/array-pad.xml: 65735b6b36
 reference/array/functions/array-pop.xml: d02e9c4340
 reference/array/functions/array-product.xml: cfd4938f68
-reference/array/functions/array-push.xml: d97b76a81e
-reference/array/functions/array-rand.xml: 1540c69765
+reference/array/functions/array-push.xml: 1ca9d94d3d
+reference/array/functions/array-rand.xml: 88c0904024
 reference/array/functions/array-reduce.xml: 0f1a264dd4
 reference/array/functions/array-replace.xml: b0db98d861
 reference/array/functions/array-reverse.xml: 88c55efbdb
@@ -352,7 +352,7 @@ reference/calendar/functions/cal-days-in-month.xml: 15376eb11e
 reference/calendar/functions/cal-from-jd.xml: ab14d4608a
 reference/calendar/functions/cal-info.xml: cf6ce7b4e1
 reference/calendar/functions/cal-to-jd.xml: efdbd50709
-reference/calendar/functions/easter-date.xml: 8868566c3a
+reference/calendar/functions/easter-date.xml: 276f0a5135
 reference/calendar/functions/easter-days.xml: 8868566c3a
 reference/calendar/functions/frenchtojd.xml: 3cc2829ebc
 reference/calendar/functions/gregoriantojd.xml: 3f33bfbdff
@@ -416,7 +416,7 @@ reference/ctype/functions/ctype-xdigit.xml: a44de5b418
 reference/ctype/reference.xml: efdbd50709
 reference/ctype/setup.xml: efdbd50709
 reference/curl/book.xml: 7f3bd947da
-reference/curl/configure.xml: 0e302b252e
+reference/curl/configure.xml: 4aa5ab703c
 reference/curl/constants.xml: 917db9099a
 reference/curl/curlfile.xml: d907f6d794
 reference/curl/curlfile/construct.xml: d907f6d794
@@ -448,7 +448,7 @@ reference/curl/functions/curl-multi-setopt.xml: 917db9099a
 reference/curl/functions/curl-multi-strerror.xml: fe14cec8a2
 reference/curl/functions/curl-pause.xml: fe6975c008
 reference/curl/functions/curl-setopt-array.xml: 9cc834698a
-reference/curl/functions/curl-setopt.xml: 91fe9835b3
+reference/curl/functions/curl-setopt.xml: 00c10764ed
 reference/curl/functions/curl-version.xml: f0e133d57d
 reference/curl/ini.xml: d2c80d6672
 reference/curl/reference.xml: efdbd50709
@@ -759,7 +759,7 @@ reference/filesystem/functions/fclose.xml: efdbd50709
 reference/filesystem/functions/feof.xml: 711809a439
 reference/filesystem/functions/fflush.xml: efdbd50709
 reference/filesystem/functions/fgetc.xml: efdbd50709
-reference/filesystem/functions/fgetcsv.xml: 5a9cdc6ab6
+reference/filesystem/functions/fgetcsv.xml: 6222b92691
 reference/filesystem/functions/fgets.xml: 8868566c3a
 reference/filesystem/functions/fgetss.xml: 98dafb1213
 reference/filesystem/functions/file-exists.xml: 16bd608fc2
@@ -1215,7 +1215,7 @@ reference/json/jsonserializable/jsonserialize.xml: c66f7bcc78
 reference/json/reference.xml: efdbd50709
 reference/json/setup.xml: 9703fd5e43
 reference/ldap/book.xml: 6f50e6a98d
-reference/ldap/configure.xml: 7f3bd947da
+reference/ldap/configure.xml: 4aa5ab703c
 reference/ldap/constants.xml: bd3687f8bb
 reference/ldap/examples.xml: 97cb6e67ba
 reference/ldap/functions/ldap-8859-to-t61.xml: efdbd50709
@@ -1720,7 +1720,7 @@ reference/opcache/setup.xml: 4dc775485a
 reference/openssl/book.xml: 6c2a495762
 reference/openssl/cert-verification.xml: efdbd50709
 reference/openssl/certparams.xml: c190ce359f
-reference/openssl/configure.xml: 7f3bd947da
+reference/openssl/configure.xml: 4aa5ab703c
 reference/openssl/constants.xml: f62128422e
 reference/openssl/functions/openssl-csr-export-to-file.xml: 88c55efbdb
 reference/openssl/functions/openssl-csr-export.xml: 88c55efbdb
@@ -2775,7 +2775,7 @@ reference/xsl/xsltprocessor/transformtouri.xml: 87c4553d96
 reference/xsl/xsltprocessor/transformtoxml.xml: 01172167f1
 reference/zip/book.xml: 890455fa05
 reference/zip/configure.xml: 10d7dd3c96
-reference/zip/constants.xml: 06eb8ce531
+reference/zip/constants.xml: 76977b762c
 reference/zip/examples.xml: e29d0e2c44
 reference/zip/functions/zip-close.xml: efdbd50709
 reference/zip/functions/zip-entry-close.xml: efdbd50709
