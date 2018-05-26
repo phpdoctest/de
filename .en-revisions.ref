@@ -96,7 +96,7 @@ language/control-structures/do-while.xml: f40cab318e
 language/control-structures/else.xml: f40cab318e
 language/control-structures/elseif.xml: ab22600027
 language/control-structures/for.xml: a9629cd38f
-language/control-structures/foreach.xml: 22e88dd1b5
+language/control-structures/foreach.xml: d4dfe39490
 language/control-structures/goto.xml: e7e490bf08
 language/control-structures/if.xml: f40cab318e
 language/control-structures/include-once.xml: fd76143f10
@@ -123,7 +123,7 @@ language/oop5/constants.xml: 7b387ca529
 language/oop5/decon.xml: e850091eef
 language/oop5/final.xml: f03553a9bb
 language/oop5/inheritance.xml: 7101d7984a
-language/oop5/interfaces.xml: 5f15d3f8fc
+language/oop5/interfaces.xml: 717bf24378
 language/oop5/iterations.xml: 046bb07d17
 language/oop5/late-static-bindings.xml: c319fbc19d
 language/oop5/magic.xml: e771b950de
@@ -274,7 +274,7 @@ reference/array/functions/array-walk.xml: 696c8c56ce
 reference/array/functions/array.xml: efdbd50709
 reference/array/functions/arsort.xml: 8b0a9a0b34
 reference/array/functions/asort.xml: 8b0a9a0b34
-reference/array/functions/compact.xml: 65735b6b36
+reference/array/functions/compact.xml: 386c173c05
 reference/array/functions/count.xml: cd84782678
 reference/array/functions/current.xml: 372861dced
 reference/array/functions/each.xml: 892a4001bb
@@ -463,7 +463,7 @@ reference/datetime/dateperiod.xml: 9c1af0c54a
 reference/datetime/dateperiod/construct.xml: 349635fc72
 reference/datetime/datetime.xml: 1d7a489977
 reference/datetime/datetime/add.xml: 87be1e4aab
-reference/datetime/datetime/construct.xml: d668391da8
+reference/datetime/datetime/construct.xml: c7c2b77e04
 reference/datetime/datetime/getlasterrors.xml: 1d02f956d5
 reference/datetime/datetime/modify.xml: 87be1e4aab
 reference/datetime/datetime/set-state.xml: 3fea5c8be6
@@ -851,7 +851,7 @@ reference/ftp/functions/ftp-cdup.xml: efdbd50709
 reference/ftp/functions/ftp-chdir.xml: efdbd50709
 reference/ftp/functions/ftp-chmod.xml: efdbd50709
 reference/ftp/functions/ftp-close.xml: efdbd50709
-reference/ftp/functions/ftp-connect.xml: 8868566c3a
+reference/ftp/functions/ftp-connect.xml: fe69d5eb0a
 reference/ftp/functions/ftp-delete.xml: efdbd50709
 reference/ftp/functions/ftp-exec.xml: efdbd50709
 reference/ftp/functions/ftp-fget.xml: 13c120545d
@@ -1038,8 +1038,8 @@ reference/image/functions/imagepsslantfont.xml: 0ce76c3e2f
 reference/image/functions/imagepstext.xml: 0ce76c3e2f
 reference/image/functions/imagerectangle.xml: d5b36b0b3f
 reference/image/functions/imagesetpixel.xml: d5b36b0b3f
-reference/image/functions/imagestring.xml: d5b36b0b3f
-reference/image/functions/imagestringup.xml: d5b36b0b3f
+reference/image/functions/imagestring.xml: 03f5c55ab1
+reference/image/functions/imagestringup.xml: 03f5c55ab1
 reference/image/functions/imagesx.xml: efdbd50709
 reference/image/functions/imagesy.xml: efdbd50709
 reference/image/functions/imagettfbbox.xml: 0e38f6e783
