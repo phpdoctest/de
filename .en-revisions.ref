@@ -765,7 +765,7 @@ reference/filesystem/functions/fgetss.xml: 98dafb1213
 reference/filesystem/functions/file-exists.xml: 16bd608fc2
 reference/filesystem/functions/file-get-contents.xml: 47aad9b262
 reference/filesystem/functions/file-put-contents.xml: 0d670caf02
-reference/filesystem/functions/file.xml: 68ca628e80
+reference/filesystem/functions/file.xml: 1ceac56daa
 reference/filesystem/functions/fileatime.xml: 2a9076bd3e
 reference/filesystem/functions/filectime.xml: 2a9076bd3e
 reference/filesystem/functions/filegroup.xml: 1d7f04f23d
@@ -2258,7 +2258,7 @@ reference/session/functions/session-get-cookie-params.xml: 7237f64379
 reference/session/functions/session-id.xml: cf6ce7b4e1
 reference/session/functions/session-is-registered.xml: 7f3bd947da
 reference/session/functions/session-module-name.xml: efdbd50709
-reference/session/functions/session-name.xml: c163a03b1d
+reference/session/functions/session-name.xml: 6dc151d659
 reference/session/functions/session-regenerate-id.xml: 88c55efbdb
 reference/session/functions/session-register-shutdown.xml: 09cf5e4bab
 reference/session/functions/session-register.xml: fcf41f3fbf
