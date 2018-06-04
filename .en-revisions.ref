@@ -2258,7 +2258,7 @@ reference/session/functions/session-get-cookie-params.xml: 7237f64379
 reference/session/functions/session-id.xml: cf6ce7b4e1
 reference/session/functions/session-is-registered.xml: 7f3bd947da
 reference/session/functions/session-module-name.xml: efdbd50709
-reference/session/functions/session-name.xml: 6dc151d659
+reference/session/functions/session-name.xml: f9c9bd77d1
 reference/session/functions/session-regenerate-id.xml: 88c55efbdb
 reference/session/functions/session-register-shutdown.xml: 09cf5e4bab
 reference/session/functions/session-register.xml: fcf41f3fbf
@@ -2326,7 +2326,7 @@ reference/soap/functions/use-soap-error-handler.xml: 88c55efbdb
 reference/soap/ini.xml: d2c80d6672
 reference/soap/reference.xml: 807c846e04
 reference/soap/setup.xml: dbd2dd039b
-reference/soap/soapclient/call.xml: f2ba7e386f
+reference/soap/soapclient/call.xml: 36fa9861f7
 reference/soap/soapclient/construct.xml: 13c120545d
 reference/soap/soapclient/dorequest.xml: f09425514e
 reference/soap/soapclient/getfunctions.xml: ca5570ff98
