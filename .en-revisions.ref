@@ -60,7 +60,7 @@ features/xforms.xml: efdbd50709
 install/cloud/ec2.xml: dc53bd9bb4
 install/cloud/index.xml: dc53bd9bb4
 install/cloud/rackspace.xml: 06691bae1c
-install/fpm/configuration.xml: 402b8bd7f7
+install/fpm/configuration.xml: df424ec752
 install/fpm/index.xml: e4db6c4d61
 install/fpm/install.xml: ee59c25eb4
 install/ini.xml: 0307bce96e
@@ -234,7 +234,7 @@ reference/array/functions/array-diff-ukey.xml: 65735b6b36
 reference/array/functions/array-diff.xml: 1ab2230d69
 reference/array/functions/array-fill-keys.xml: efdbd50709
 reference/array/functions/array-fill.xml: 42df480719
-reference/array/functions/array-filter.xml: 5233158e3e
+reference/array/functions/array-filter.xml: 5f074e5daf
 reference/array/functions/array-flip.xml: 0721714547
 reference/array/functions/array-intersect-assoc.xml: 73180d0145
 reference/array/functions/array-intersect-key.xml: 65735b6b36
@@ -459,7 +459,7 @@ reference/datetime/constants.xml: 30497110b3
 reference/datetime/dateinterval.xml: 84fa9cfbb7
 reference/datetime/dateinterval/construct.xml: f4cdcc7a0e
 reference/datetime/dateinterval/createfromdatestring.xml: 6f8f911bc8
-reference/datetime/dateperiod.xml: 9c1af0c54a
+reference/datetime/dateperiod.xml: 83903a59f9
 reference/datetime/dateperiod/construct.xml: 349635fc72
 reference/datetime/datetime.xml: 1d7a489977
 reference/datetime/datetime/add.xml: 87be1e4aab
@@ -1267,7 +1267,7 @@ reference/ldap/using.xml: 807c846e04
 reference/mail/book.xml: 890455fa05
 reference/mail/constants.xml: 807c846e04
 reference/mail/functions/ezmlm-hash.xml: efdbd50709
-reference/mail/functions/mail.xml: 56fd48549b
+reference/mail/functions/mail.xml: 44768654ca
 reference/mail/ini.xml: 7f3bd947da
 reference/mail/reference.xml: efdbd50709
 reference/mail/setup.xml: 0e302b252e
@@ -1776,7 +1776,7 @@ reference/outcontrol/functions/ob-get-contents.xml: efdbd50709
 reference/outcontrol/functions/ob-get-level.xml: efdbd50709
 reference/outcontrol/functions/ob-implicit-flush.xml: e244b000a2
 reference/outcontrol/functions/ob-start.xml: 7f3bd947da
-reference/outcontrol/functions/output-add-rewrite-var.xml: 0472d71352
+reference/outcontrol/functions/output-add-rewrite-var.xml: 6d8fee719d
 reference/outcontrol/ini.xml: 7f3bd947da
 reference/outcontrol/reference.xml: efdbd50709
 reference/outcontrol/setup.xml: efdbd50709
