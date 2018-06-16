@@ -33,7 +33,7 @@ appendices/tokens.xml: 655ff7111a
 appendices/transports.xml: fda43b87c7
 appendices/userlandnaming.xml: ec0d086932
 bookinfo.xml: ffb234e0e2
-chapters/intro.xml: e4887fb635
+chapters/intro.xml: f0f8333862
 chapters/tutorial.xml: 182459e2c8
 chmonly/aboutchm.xml: efdbd50709
 chmonly/credits.xml: efdbd50709
@@ -64,11 +64,11 @@ install/fpm/configuration.xml: a1dd245932
 install/fpm/index.xml: e4db6c4d61
 install/fpm/install.xml: ee59c25eb4
 install/ini.xml: 0307bce96e
-install/intro.xml: efdbd50709
-install/macos/bundled.xml: bbe41779f4
-install/macos/compile.xml: ab9acb15a7
-install/macos/index.xml: 6039e8a267
-install/macos/packages.xml: 8e4cf39fd1
+install/intro.xml: f0f8333862
+install/macos/bundled.xml: f0f8333862
+install/macos/compile.xml: f0f8333862
+install/macos/index.xml: f0f8333862
+install/macos/packages.xml: f0f8333862
 install/problems.xml: efdbd50709
 install/unix/apache1.xml: 31c7ebf03a
 install/unix/apache2.xml: 0b795fa0ed
@@ -90,7 +90,7 @@ language/context/ssl.xml: 25f94fe5d3
 language/control-structures.xml: 807c846e04
 language/control-structures/alternative-syntax.xml: 4d986b284b
 language/control-structures/break.xml: 0cae287ca1
-language/control-structures/continue.xml: 1ba888a673
+language/control-structures/continue.xml: 83931429dc
 language/control-structures/declare.xml: e28e713a85
 language/control-structures/do-while.xml: f40cab318e
 language/control-structures/else.xml: f40cab318e
@@ -109,7 +109,7 @@ language/control-structures/while.xml: f40cab318e
 language/errors.xml: e05d88bfe0
 language/exceptions.xml: 5c4200c65d
 language/expressions.xml: 577b60e69c
-language/functions.xml: 40b9ba06cc
+language/functions.xml: c54ca7e435
 language/generators.xml: 08743408bd
 language/namespaces.xml: 77d8bc1006
 language/oop5.xml: f405eecb99
@@ -195,7 +195,7 @@ language/types/boolean.xml: 06f2dbb709
 language/types/null.xml: 892a4001bb
 language/types/object.xml: 7177d26299
 language/types/resource.xml: 7f3bd947da
-language/types/string.xml: 00ec4eab64
+language/types/string.xml: f0f8333862
 language/variables.xml: 530938f954
 language/wrappers.xml: 07f040bc3f
 preface.xml: 09818bff14
@@ -502,7 +502,7 @@ reference/datetime/functions/gmstrftime.xml: efdbd50709
 reference/datetime/functions/localtime.xml: 88c55efbdb
 reference/datetime/functions/microtime.xml: 88c55efbdb
 reference/datetime/functions/mktime.xml: c23965ebb5
-reference/datetime/functions/strftime.xml: 29ca2dbc42
+reference/datetime/functions/strftime.xml: f0f8333862
 reference/datetime/functions/strtotime.xml: d33e14074b
 reference/datetime/functions/time.xml: dbc23c8d6a
 reference/datetime/functions/timezone-abbreviations-list.xml: efdbd50709
@@ -772,7 +772,7 @@ reference/filesystem/functions/filegroup.xml: 1d7f04f23d
 reference/filesystem/functions/fileinode.xml: 2a9076bd3e
 reference/filesystem/functions/filemtime.xml: 2a9076bd3e
 reference/filesystem/functions/fileowner.xml: 2a9076bd3e
-reference/filesystem/functions/fileperms.xml: 41bb28ea4e
+reference/filesystem/functions/fileperms.xml: f0f8333862
 reference/filesystem/functions/filesize.xml: 16bd608fc2
 reference/filesystem/functions/filetype.xml: 4a8d2d83ea
 reference/filesystem/functions/flock.xml: f2895c3b7e
@@ -2357,7 +2357,7 @@ reference/soap/soapvar/construct.xml: 2dad65bce1
 reference/soap/soapvar/soapvar.xml: 31b19f634d
 reference/sockets/book.xml: 890455fa05
 reference/sockets/configure.xml: efdbd50709
-reference/sockets/constants.xml: e34e935f28
+reference/sockets/constants.xml: f0f8333862
 reference/sockets/errors.xml: 66117ac77f
 reference/sockets/examples.xml: 807c846e04
 reference/sockets/functions/socket-accept.xml: efdbd50709
