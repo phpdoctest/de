@@ -146,7 +146,7 @@ language/predefined/arrayaccess/offsetunset.xml: 21a4e2f50f
 language/predefined/errorexception.xml: 790ceaa8fa
 language/predefined/errorexception/construct.xml: 293af5690a
 language/predefined/errorexception/getseverity.xml: 293af5690a
-language/predefined/exception.xml: c881baeca8
+language/predefined/exception.xml: 1a5084ab8a
 language/predefined/exception/clone.xml: 807c846e04
 language/predefined/exception/construct.xml: 65e8b1b475
 language/predefined/exception/getcode.xml: cdb48178c6
@@ -2263,7 +2263,7 @@ reference/session/functions/session-regenerate-id.xml: 88c55efbdb
 reference/session/functions/session-register-shutdown.xml: 09cf5e4bab
 reference/session/functions/session-register.xml: fcf41f3fbf
 reference/session/functions/session-save-path.xml: efdbd50709
-reference/session/functions/session-set-cookie-params.xml: 88c55efbdb
+reference/session/functions/session-set-cookie-params.xml: 6488141345
 reference/session/functions/session-set-save-handler.xml: c99381d6e3
 reference/session/functions/session-start.xml: d94cfe953a
 reference/session/functions/session-status.xml: 826c6a08ef
@@ -2372,7 +2372,7 @@ reference/sockets/functions/socket-get-option.xml: a104d3ccaf
 reference/sockets/functions/socket-getpeername.xml: efdbd50709
 reference/sockets/functions/socket-getsockname.xml: efdbd50709
 reference/sockets/functions/socket-last-error.xml: 366955ad9a
-reference/sockets/functions/socket-listen.xml: efdbd50709
+reference/sockets/functions/socket-listen.xml: 056817b6b2
 reference/sockets/functions/socket-read.xml: 8868566c3a
 reference/sockets/functions/socket-recv.xml: 6efd4c47ee
 reference/sockets/functions/socket-recvfrom.xml: efdbd50709
@@ -2664,7 +2664,7 @@ reference/var/functions/serialize.xml: 3963a9acda
 reference/var/functions/settype.xml: 7f3bd947da
 reference/var/functions/strval.xml: 3e45e528b0
 reference/var/functions/unserialize.xml: 10cb8a289a
-reference/var/functions/unset.xml: b94107f145
+reference/var/functions/unset.xml: fc7c63d568
 reference/var/functions/var-dump.xml: 9c261b1c69
 reference/var/functions/var-export.xml: 88c55efbdb
 reference/var/ini.xml: 10cb8a289a
