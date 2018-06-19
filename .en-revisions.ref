@@ -584,9 +584,9 @@ reference/dio/setup.xml: 807c846e04
 reference/dir/book.xml: 890455fa05
 reference/dir/constants.xml: 52614ee27b
 reference/dir/directory.xml: c3ae9105d7
-reference/dir/directory/close.xml: c3ae9105d7
-reference/dir/directory/read.xml: c3ae9105d7
-reference/dir/directory/rewind.xml: c3ae9105d7
+reference/dir/directory/close.xml: e8003891f9
+reference/dir/directory/read.xml: e8003891f9
+reference/dir/directory/rewind.xml: e8003891f9
 reference/dir/functions/chdir.xml: 0426a7ae38
 reference/dir/functions/chroot.xml: 0bdf556d60
 reference/dir/functions/closedir.xml: efdbd50709
