@@ -274,7 +274,7 @@ reference/array/functions/array-walk.xml: 696c8c56ce
 reference/array/functions/array.xml: efdbd50709
 reference/array/functions/arsort.xml: 8b0a9a0b34
 reference/array/functions/asort.xml: 8b0a9a0b34
-reference/array/functions/compact.xml: 386c173c05
+reference/array/functions/compact.xml: f70d08449b
 reference/array/functions/count.xml: 283a8ff650
 reference/array/functions/current.xml: 372861dced
 reference/array/functions/each.xml: 892a4001bb
@@ -294,7 +294,7 @@ reference/array/functions/prev.xml: 399d97ebe7
 reference/array/functions/range.xml: b658965b6f
 reference/array/functions/reset.xml: e3db2ec2af
 reference/array/functions/rsort.xml: 8b0a9a0b34
-reference/array/functions/shuffle.xml: 1540c69765
+reference/array/functions/shuffle.xml: 9d71be19e1
 reference/array/functions/sizeof.xml: efdbd50709
 reference/array/functions/sort.xml: 24655a5873
 reference/array/functions/uasort.xml: 8b0a9a0b34
@@ -884,7 +884,7 @@ reference/ftp/reference.xml: efdbd50709
 reference/ftp/setup.xml: 807c846e04
 reference/funchand/book.xml: 890455fa05
 reference/funchand/constants.xml: 807c846e04
-reference/funchand/functions/call-user-func.xml: bd921f37e7
+reference/funchand/functions/call-user-func.xml: 17fcdd35a8
 reference/funchand/functions/create-function.xml: 892a4001bb
 reference/funchand/functions/func-get-arg.xml: 461a0f4808
 reference/funchand/functions/func-get-args.xml: 461a0f4808
@@ -2258,7 +2258,7 @@ reference/session/functions/session-get-cookie-params.xml: 7237f64379
 reference/session/functions/session-id.xml: cf6ce7b4e1
 reference/session/functions/session-is-registered.xml: 7f3bd947da
 reference/session/functions/session-module-name.xml: efdbd50709
-reference/session/functions/session-name.xml: f9c9bd77d1
+reference/session/functions/session-name.xml: 5c441cf1e1
 reference/session/functions/session-regenerate-id.xml: 88c55efbdb
 reference/session/functions/session-register-shutdown.xml: 09cf5e4bab
 reference/session/functions/session-register.xml: fcf41f3fbf
