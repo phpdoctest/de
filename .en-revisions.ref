@@ -48,7 +48,7 @@ faq/misc.xml: efdbd50709
 faq/obtaining.xml: 85fa7eac51
 faq/passwords.xml: 3e661618e0
 faq/using.xml: 750b1e0978
-features/commandline.xml: 85fa7eac51
+features/commandline.xml: b9206892f5
 features/connection-handling.xml: b4dffc797a
 features/cookies.xml: da3f8bf46c
 features/file-upload.xml: 549d2964a5
@@ -110,7 +110,7 @@ language/errors.xml: e05d88bfe0
 language/exceptions.xml: 5c4200c65d
 language/expressions.xml: 577b60e69c
 language/functions.xml: c54ca7e435
-language/generators.xml: 08743408bd
+language/generators.xml: 1177e8ff45
 language/namespaces.xml: 77d8bc1006
 language/oop5.xml: f405eecb99
 language/oop5/abstract.xml: 822b0a4ce9
@@ -285,7 +285,7 @@ reference/array/functions/key-exists.xml: 10ed310202
 reference/array/functions/key.xml: 6449ba1a73
 reference/array/functions/krsort.xml: efdbd50709
 reference/array/functions/ksort.xml: efdbd50709
-reference/array/functions/list.xml: cc3f7e3497
+reference/array/functions/list.xml: 81b5deb7ef
 reference/array/functions/natcasesort.xml: 8b0a9a0b34
 reference/array/functions/natsort.xml: 8b0a9a0b34
 reference/array/functions/next.xml: 399d97ebe7
@@ -503,7 +503,7 @@ reference/datetime/functions/localtime.xml: 88c55efbdb
 reference/datetime/functions/microtime.xml: 88c55efbdb
 reference/datetime/functions/mktime.xml: c23965ebb5
 reference/datetime/functions/strftime.xml: f0f8333862
-reference/datetime/functions/strtotime.xml: d33e14074b
+reference/datetime/functions/strtotime.xml: f3ba8e1246
 reference/datetime/functions/time.xml: dbc23c8d6a
 reference/datetime/functions/timezone-abbreviations-list.xml: efdbd50709
 reference/datetime/functions/timezone-identifiers-list.xml: efdbd50709
@@ -2468,7 +2468,7 @@ reference/strings/functions/addcslashes.xml: 4354e84de4
 reference/strings/functions/addslashes.xml: 1c17d2ab2b
 reference/strings/functions/bin2hex.xml: b0726827c5
 reference/strings/functions/chop.xml: efdbd50709
-reference/strings/functions/chr.xml: 0034f9b99e
+reference/strings/functions/chr.xml: 0ad0791b92
 reference/strings/functions/chunk-split.xml: efdbd50709
 reference/strings/functions/convert-cyr-string.xml: 1dd94fd2a2
 reference/strings/functions/convert-uudecode.xml: 89615dea46
@@ -2500,7 +2500,7 @@ reference/strings/functions/money-format.xml: efdbd50709
 reference/strings/functions/nl-langinfo.xml: efdbd50709
 reference/strings/functions/nl2br.xml: 88c55efbdb
 reference/strings/functions/number-format.xml: 1be2962355
-reference/strings/functions/ord.xml: efdbd50709
+reference/strings/functions/ord.xml: 0ad0791b92
 reference/strings/functions/parse-str.xml: 41a459467a
 reference/strings/functions/print.xml: ae24695c39
 reference/strings/functions/printf.xml: 087999d634
@@ -2657,7 +2657,7 @@ reference/var/functions/is-object.xml: d949eb324c
 reference/var/functions/is-real.xml: efdbd50709
 reference/var/functions/is-resource.xml: 024fbe11f2
 reference/var/functions/is-scalar.xml: 7433f6f72a
-reference/var/functions/is-string.xml: 4c2576fead
+reference/var/functions/is-string.xml: 7462e2e475
 reference/var/functions/isset.xml: 1f0a0738c0
 reference/var/functions/print-r.xml: 88c55efbdb
 reference/var/functions/serialize.xml: 3963a9acda
