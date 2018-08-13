@@ -137,7 +137,7 @@ language/oop5/static.xml: 77c3efb7c2
 language/oop5/traits.xml: 63735b4dff
 language/oop5/typehinting.xml: 476e58b54c
 language/oop5/visibility.xml: ef0d1df025
-language/operators.xml: 18abda8ff4
+language/operators.xml: 29d5a6e2cc
 language/predefined/arrayaccess.xml: 54fc72fb20
 language/predefined/arrayaccess/offsetexists.xml: d54283cfbc
 language/predefined/arrayaccess/offsetget.xml: c320e5d8c0
@@ -727,7 +727,7 @@ reference/fileinfo/functions/finfo-close.xml: 1c63cc33e6
 reference/fileinfo/functions/finfo-file.xml: 3484ac0728
 reference/fileinfo/functions/finfo-open.xml: 3b4167177a
 reference/fileinfo/functions/finfo-set-flags.xml: 3b4167177a
-reference/fileinfo/functions/mime-content-type.xml: 863695b930
+reference/fileinfo/functions/mime-content-type.xml: ae897260ec
 reference/fileinfo/reference.xml: efdbd50709
 reference/fileinfo/setup.xml: 807c846e04
 reference/filepro/book.xml: 890455fa05
@@ -764,7 +764,7 @@ reference/filesystem/functions/fgets.xml: 8868566c3a
 reference/filesystem/functions/fgetss.xml: 98dafb1213
 reference/filesystem/functions/file-exists.xml: 16bd608fc2
 reference/filesystem/functions/file-get-contents.xml: 47aad9b262
-reference/filesystem/functions/file-put-contents.xml: 0d670caf02
+reference/filesystem/functions/file-put-contents.xml: 47c2ee27ed
 reference/filesystem/functions/file.xml: 1ceac56daa
 reference/filesystem/functions/fileatime.xml: 2a9076bd3e
 reference/filesystem/functions/filectime.xml: 2a9076bd3e
@@ -825,7 +825,7 @@ reference/filesystem/setup.xml: 1eb825980a
 reference/filter/book.xml: 8c9107820c
 reference/filter/configure.xml: 8c9107820c
 reference/filter/constants.xml: f609f942bb
-reference/filter/filters.xml: d9372b89dc
+reference/filter/filters.xml: e8e524ffba
 reference/filter/functions/filter-has-var.xml: cc0e6f9c47
 reference/filter/functions/filter-id.xml: 9539b92f7a
 reference/filter/functions/filter-input-array.xml: 8c07506db8
@@ -1151,7 +1151,7 @@ reference/info/functions/getrusage.xml: 3459382996
 reference/info/functions/php-ini-scanned-files.xml: e5984e6f8d
 reference/info/functions/php-logo-guid.xml: 23e853f430
 reference/info/functions/php-sapi-name.xml: 8f4b1a6108
-reference/info/functions/phpinfo.xml: acc93e6115
+reference/info/functions/phpinfo.xml: e6af5ab977
 reference/info/functions/phpversion.xml: b419529323
 reference/info/functions/putenv.xml: f61362dec9
 reference/info/functions/set-include-path.xml: 7f3bd947da
@@ -1780,7 +1780,7 @@ reference/outcontrol/functions/output-add-rewrite-var.xml: 6d8fee719d
 reference/outcontrol/ini.xml: 7f3bd947da
 reference/outcontrol/reference.xml: efdbd50709
 reference/outcontrol/setup.xml: efdbd50709
-reference/password/book.xml: 890455fa05
+reference/password/book.xml: 7fe0e8fc1a
 reference/password/functions/password-get-info.xml: 950bbe8fd9
 reference/password/functions/password-hash.xml: e054cc45ab
 reference/password/functions/password-needs-rehash.xml: 4e164d1ecf
@@ -2270,7 +2270,7 @@ reference/session/functions/session-status.xml: 826c6a08ef
 reference/session/functions/session-unregister.xml: 7f3bd947da
 reference/session/functions/session-unset.xml: 13c120545d
 reference/session/functions/session-write-close.xml: 13c120545d
-reference/session/ini.xml: 600506da0c
+reference/session/ini.xml: 1b5ad40552
 reference/session/reference.xml: efdbd50709
 reference/session/setup.xml: efdbd50709
 reference/session/upload-progress.xml: d71cf827ad
@@ -2456,7 +2456,7 @@ reference/sqlite3/sqlite3/lasterrormsg.xml: 807c846e04
 reference/sqlite3/sqlite3/lastinsertrowid.xml: 807c846e04
 reference/sqlite3/sqlite3/loadextension.xml: 807c846e04
 reference/sqlite3/sqlite3/open.xml: 88c55efbdb
-reference/sqlite3/sqlite3/prepare.xml: 5567574cf4
+reference/sqlite3/sqlite3/prepare.xml: 4140b037e5
 reference/sqlite3/sqlite3/query.xml: 4ab1c90027
 reference/sqlite3/sqlite3result.xml: 961c2937af
 reference/sqlite3/sqlite3stmt.xml: 961c2937af
@@ -2483,7 +2483,7 @@ reference/strings/functions/get-html-translation-table.xml: 30497110b3
 reference/strings/functions/hebrev.xml: efdbd50709
 reference/strings/functions/hebrevc.xml: efdbd50709
 reference/strings/functions/hex2bin.xml: 01af1cefb0
-reference/strings/functions/html-entity-decode.xml: 4c04c00a07
+reference/strings/functions/html-entity-decode.xml: e40adee7a2
 reference/strings/functions/htmlentities.xml: 88c55efbdb
 reference/strings/functions/htmlspecialchars-decode.xml: d2d01f91f1
 reference/strings/functions/htmlspecialchars.xml: 88c55efbdb
@@ -2846,7 +2846,7 @@ reference/zlib/functions/zlib-encode.xml: 13c120545d
 reference/zlib/functions/zlib-get-coding-type.xml: efdbd50709
 reference/zlib/ini.xml: d2c80d6672
 reference/zlib/reference.xml: efdbd50709
-reference/zlib/setup.xml: 807c846e04
+reference/zlib/setup.xml: a3972cf38e
 security/apache.xml: 9a060a5958
 security/cgi-bin.xml: efdbd50709
 security/current.xml: efdbd50709
