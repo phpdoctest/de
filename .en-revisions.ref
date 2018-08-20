@@ -64,7 +64,7 @@ install/fpm/configuration.xml: a1dd245932
 install/fpm/index.xml: e4db6c4d61
 install/fpm/install.xml: ee59c25eb4
 install/ini.xml: 0307bce96e
-install/intro.xml: f0f8333862
+install/intro.xml: faeebe2155
 install/macos/bundled.xml: f0f8333862
 install/macos/compile.xml: f0f8333862
 install/macos/index.xml: f0f8333862
@@ -825,7 +825,7 @@ reference/filesystem/setup.xml: 1eb825980a
 reference/filter/book.xml: 8c9107820c
 reference/filter/configure.xml: 8c9107820c
 reference/filter/constants.xml: f609f942bb
-reference/filter/filters.xml: e8e524ffba
+reference/filter/filters.xml: 051cbdb89a
 reference/filter/functions/filter-has-var.xml: cc0e6f9c47
 reference/filter/functions/filter-id.xml: 9539b92f7a
 reference/filter/functions/filter-input-array.xml: 8c07506db8
@@ -1327,7 +1327,7 @@ reference/math/setup.xml: 807c846e04
 reference/mcrypt/book.xml: 24b2ec6736
 reference/mcrypt/ciphers.xml: 807c846e04
 reference/mcrypt/configure.xml: 24b2ec6736
-reference/mcrypt/constants.xml: 0f84c9f07a
+reference/mcrypt/constants.xml: 919a3fff88
 reference/mcrypt/examples.xml: 52229ed22a
 reference/mcrypt/functions/mcrypt-cbc.xml: ec53f75111
 reference/mcrypt/ini.xml: d2c80d6672
@@ -1720,7 +1720,7 @@ reference/opcache/setup.xml: 4dc775485a
 reference/openssl/book.xml: 6c2a495762
 reference/openssl/cert-verification.xml: efdbd50709
 reference/openssl/certparams.xml: c190ce359f
-reference/openssl/configure.xml: 4aa5ab703c
+reference/openssl/configure.xml: bca75efa48
 reference/openssl/constants.xml: f62128422e
 reference/openssl/functions/openssl-csr-export-to-file.xml: 88c55efbdb
 reference/openssl/functions/openssl-csr-export.xml: 88c55efbdb
@@ -2531,7 +2531,7 @@ reference/strings/functions/strcoll.xml: efdbd50709
 reference/strings/functions/strcspn.xml: 431445fd5d
 reference/strings/functions/strip-tags.xml: ab9acb15a7
 reference/strings/functions/stripcslashes.xml: efdbd50709
-reference/strings/functions/stripos.xml: 13c120545d
+reference/strings/functions/stripos.xml: 484e8f4369
 reference/strings/functions/stripslashes.xml: ed4f4505ed
 reference/strings/functions/stristr.xml: 88c55efbdb
 reference/strings/functions/strlen.xml: 564d937eb1
@@ -2543,8 +2543,8 @@ reference/strings/functions/strpbrk.xml: 30497110b3
 reference/strings/functions/strpos.xml: 13c120545d
 reference/strings/functions/strrchr.xml: e521f551f1
 reference/strings/functions/strrev.xml: efdbd50709
-reference/strings/functions/strripos.xml: e521f551f1
-reference/strings/functions/strrpos.xml: caa9c651a8
+reference/strings/functions/strripos.xml: 484e8f4369
+reference/strings/functions/strrpos.xml: 484e8f4369
 reference/strings/functions/strspn.xml: a923ea6764
 reference/strings/functions/strstr.xml: 88c55efbdb
 reference/strings/functions/strtok.xml: 7f3bd947da
@@ -2612,7 +2612,7 @@ reference/url/book.xml: 890455fa05
 reference/url/constants.xml: b0da668bfc
 reference/url/functions/base64-decode.xml: 0df61427e5
 reference/url/functions/base64-encode.xml: d067c00636
-reference/url/functions/get-headers.xml: 5d971db975
+reference/url/functions/get-headers.xml: 629df8ecc9
 reference/url/functions/get-meta-tags.xml: 88c55efbdb
 reference/url/functions/http-build-query.xml: e55d49b464
 reference/url/functions/parse-url.xml: e15177912a
