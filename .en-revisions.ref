@@ -110,7 +110,7 @@ language/errors.xml: e05d88bfe0
 language/exceptions.xml: 5c4200c65d
 language/expressions.xml: 577b60e69c
 language/functions.xml: c54ca7e435
-language/generators.xml: 1177e8ff45
+language/generators.xml: add1539a00
 language/namespaces.xml: 77d8bc1006
 language/oop5.xml: f405eecb99
 language/oop5/abstract.xml: 822b0a4ce9
@@ -2127,7 +2127,7 @@ reference/posix/functions/posix-getegid.xml: efdbd50709
 reference/posix/functions/posix-geteuid.xml: efdbd50709
 reference/posix/functions/posix-getgid.xml: efdbd50709
 reference/posix/functions/posix-getgrgid.xml: cf6ce7b4e1
-reference/posix/functions/posix-getgrnam.xml: cf6ce7b4e1
+reference/posix/functions/posix-getgrnam.xml: 382b512769
 reference/posix/functions/posix-getgroups.xml: efdbd50709
 reference/posix/functions/posix-getlogin.xml: efdbd50709
 reference/posix/functions/posix-getpgid.xml: efdbd50709
@@ -2268,8 +2268,8 @@ reference/session/functions/session-set-save-handler.xml: c99381d6e3
 reference/session/functions/session-start.xml: d94cfe953a
 reference/session/functions/session-status.xml: 826c6a08ef
 reference/session/functions/session-unregister.xml: 7f3bd947da
-reference/session/functions/session-unset.xml: 13c120545d
-reference/session/functions/session-write-close.xml: 13c120545d
+reference/session/functions/session-unset.xml: bca972befb
+reference/session/functions/session-write-close.xml: bca972befb
 reference/session/ini.xml: 1b5ad40552
 reference/session/reference.xml: efdbd50709
 reference/session/setup.xml: efdbd50709
@@ -2562,7 +2562,7 @@ reference/strings/functions/vfprintf.xml: efdbd50709
 reference/strings/functions/vprintf.xml: efdbd50709
 reference/strings/functions/vsprintf.xml: efdbd50709
 reference/strings/functions/wordwrap.xml: 88c55efbdb
-reference/strings/reference.xml: efdbd50709
+reference/strings/reference.xml: 4c553803f2
 reference/strings/setup.xml: efdbd50709
 reference/sybase/book.xml: 6e300ba587
 reference/sybase/reference.xml: efdbd50709
