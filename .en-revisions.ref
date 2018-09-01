@@ -416,7 +416,7 @@ reference/ctype/functions/ctype-xdigit.xml: a44de5b418
 reference/ctype/reference.xml: efdbd50709
 reference/ctype/setup.xml: efdbd50709
 reference/curl/book.xml: 7f3bd947da
-reference/curl/configure.xml: 4aa5ab703c
+reference/curl/configure.xml: e84ac37f32
 reference/curl/constants.xml: 23a6276a45
 reference/curl/curlfile.xml: d907f6d794
 reference/curl/curlfile/construct.xml: d907f6d794
@@ -819,7 +819,7 @@ reference/filesystem/functions/tmpfile.xml: ad25c4019f
 reference/filesystem/functions/touch.xml: 59ff3a624b
 reference/filesystem/functions/umask.xml: 1d02f956d5
 reference/filesystem/functions/unlink.xml: 3e8aa8d5cf
-reference/filesystem/ini.xml: 0307bce96e
+reference/filesystem/ini.xml: 6cbcfd41da
 reference/filesystem/reference.xml: efdbd50709
 reference/filesystem/setup.xml: 1eb825980a
 reference/filter/book.xml: 8c9107820c
@@ -2273,7 +2273,7 @@ reference/session/functions/session-write-close.xml: bca972befb
 reference/session/ini.xml: 1b5ad40552
 reference/session/reference.xml: efdbd50709
 reference/session/setup.xml: efdbd50709
-reference/session/upload-progress.xml: d71cf827ad
+reference/session/upload-progress.xml: aa3f51d2c6
 reference/shmop/book.xml: 703d2465dd
 reference/shmop/configure.xml: efdbd50709
 reference/shmop/constants.xml: 807c846e04
