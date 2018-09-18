@@ -19,7 +19,7 @@ appendices/migration56/new-features.xml: 5756b8be7e
 appendices/migration56/new-functions.xml: 221f840480
 appendices/migration56/openssl.xml: cbdd521e64
 appendices/migration70.xml: 3df402bafb
-appendices/migration70/changed-functions.xml: 376aee2df1
+appendices/migration70/changed-functions.xml: 867af67840
 appendices/migration70/classes.xml: 2ded59b783
 appendices/migration70/constants.xml: 916abc8611
 appendices/migration70/incompatible.xml: 5b9a029379
@@ -119,8 +119,8 @@ language/oop5/autoload.xml: 10cb8a289a
 language/oop5/basic.xml: 24655a5873
 language/oop5/changelog.xml: b22f2cb0c6
 language/oop5/cloning.xml: 23c9d16f20
-language/oop5/constants.xml: 7b387ca529
-language/oop5/decon.xml: e850091eef
+language/oop5/constants.xml: 713bbc9c60
+language/oop5/decon.xml: a593c64847
 language/oop5/final.xml: f03553a9bb
 language/oop5/inheritance.xml: 7101d7984a
 language/oop5/interfaces.xml: 717bf24378
@@ -178,14 +178,14 @@ language/predefined/variables/argv.xml: 7c3900be51
 language/predefined/variables/cookie.xml: 991103bc31
 language/predefined/variables/env.xml: 991103bc31
 language/predefined/variables/files.xml: ece456de18
-language/predefined/variables/get.xml: 991103bc31
+language/predefined/variables/get.xml: 9ae41a96f6
 language/predefined/variables/globals.xml: 991103bc31
 language/predefined/variables/httprawpostdata.xml: 583ef8e67f
 language/predefined/variables/httpresponseheader.xml: 991103bc31
 language/predefined/variables/phperrormsg.xml: 892a4001bb
 language/predefined/variables/post.xml: 09b2ace7bd
 language/predefined/variables/request.xml: 991103bc31
-language/predefined/variables/server.xml: ccb80fcf6b
+language/predefined/variables/server.xml: 0717ce8ee4
 language/predefined/variables/session.xml: 991103bc31
 language/predefined/variables/superglobals.xml: 807c846e04
 language/references.xml: c32af11dd9
@@ -2281,7 +2281,7 @@ reference/shmop/examples.xml: 83fc699d58
 reference/shmop/functions/shmop-close.xml: a82058217f
 reference/shmop/functions/shmop-delete.xml: a82058217f
 reference/shmop/functions/shmop-open.xml: a82058217f
-reference/shmop/functions/shmop-read.xml: a82058217f
+reference/shmop/functions/shmop-read.xml: 7de0ab4215
 reference/shmop/functions/shmop-size.xml: a82058217f
 reference/shmop/functions/shmop-write.xml: a82058217f
 reference/shmop/reference.xml: efdbd50709
@@ -2552,7 +2552,7 @@ reference/strings/functions/strtolower.xml: ee70cf1c8a
 reference/strings/functions/strtoupper.xml: 30497110b3
 reference/strings/functions/strtr.xml: 30497110b3
 reference/strings/functions/substr-compare.xml: 88c55efbdb
-reference/strings/functions/substr-count.xml: 7a682152d7
+reference/strings/functions/substr-count.xml: 624b482197
 reference/strings/functions/substr-replace.xml: 5625b689c8
 reference/strings/functions/substr.xml: 66a03d35fd
 reference/strings/functions/trim.xml: 8868566c3a
