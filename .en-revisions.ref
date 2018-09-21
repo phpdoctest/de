@@ -461,7 +461,7 @@ reference/datetime/dateinterval/construct.xml: f4cdcc7a0e
 reference/datetime/dateinterval/createfromdatestring.xml: 6f8f911bc8
 reference/datetime/dateperiod.xml: 83903a59f9
 reference/datetime/dateperiod/construct.xml: 349635fc72
-reference/datetime/datetime.xml: 1d7a489977
+reference/datetime/datetime.xml: ee06972947
 reference/datetime/datetime/add.xml: 87be1e4aab
 reference/datetime/datetime/construct.xml: c7c2b77e04
 reference/datetime/datetime/getlasterrors.xml: 1d02f956d5
@@ -470,8 +470,8 @@ reference/datetime/datetime/set-state.xml: 3fea5c8be6
 reference/datetime/datetime/settimestamp.xml: 87be1e4aab
 reference/datetime/datetime/settimezone.xml: 99f27d61cf
 reference/datetime/datetime/sub.xml: 87be1e4aab
-reference/datetime/datetimeimmutable.xml: 4e757fdf6f
-reference/datetime/datetimeinterface.xml: f7fee46521
+reference/datetime/datetimeimmutable.xml: ee06972947
+reference/datetime/datetimeinterface.xml: ee06972947
 reference/datetime/datetimezone.xml: 70432ad899
 reference/datetime/datetimezone/construct.xml: e7ceb86204
 reference/datetime/functions/checkdate.xml: efdbd50709
@@ -1619,8 +1619,8 @@ reference/network/functions/ip2long.xml: d4ca94feda
 reference/network/functions/long2ip.xml: 951f4f600e
 reference/network/functions/openlog.xml: efdbd50709
 reference/network/functions/pfsockopen.xml: efdbd50709
-reference/network/functions/setcookie.xml: 88c55efbdb
-reference/network/functions/setrawcookie.xml: 88c55efbdb
+reference/network/functions/setcookie.xml: 5c6aa61fa5
+reference/network/functions/setrawcookie.xml: 5c6aa61fa5
 reference/network/functions/socket-get-status.xml: efdbd50709
 reference/network/functions/socket-set-blocking.xml: efdbd50709
 reference/network/functions/socket-set-timeout.xml: efdbd50709
@@ -2115,7 +2115,7 @@ reference/pgsql/functions/pg-version.xml: 30497110b3
 reference/pgsql/ini.xml: d2c80d6672
 reference/pgsql/reference.xml: 9e7c298085
 reference/pgsql/setup.xml: 807c846e04
-reference/phar/Phar.xml: ad7b30181c
+reference/phar/Phar.xml: 751d02a05a
 reference/posix/book.xml: 890455fa05
 reference/posix/configure.xml: efdbd50709
 reference/posix/constants.xml: 877e6cc4e0
@@ -2254,7 +2254,7 @@ reference/session/functions/session-commit.xml: efdbd50709
 reference/session/functions/session-decode.xml: 5051b07780
 reference/session/functions/session-destroy.xml: e50c5aaeaa
 reference/session/functions/session-encode.xml: 5051b07780
-reference/session/functions/session-get-cookie-params.xml: 7237f64379
+reference/session/functions/session-get-cookie-params.xml: 5c6aa61fa5
 reference/session/functions/session-id.xml: cf6ce7b4e1
 reference/session/functions/session-is-registered.xml: 7f3bd947da
 reference/session/functions/session-module-name.xml: efdbd50709
@@ -2263,14 +2263,14 @@ reference/session/functions/session-regenerate-id.xml: 88c55efbdb
 reference/session/functions/session-register-shutdown.xml: 09cf5e4bab
 reference/session/functions/session-register.xml: fcf41f3fbf
 reference/session/functions/session-save-path.xml: efdbd50709
-reference/session/functions/session-set-cookie-params.xml: 6488141345
+reference/session/functions/session-set-cookie-params.xml: 5c6aa61fa5
 reference/session/functions/session-set-save-handler.xml: c99381d6e3
 reference/session/functions/session-start.xml: d94cfe953a
 reference/session/functions/session-status.xml: 826c6a08ef
 reference/session/functions/session-unregister.xml: 7f3bd947da
 reference/session/functions/session-unset.xml: bca972befb
 reference/session/functions/session-write-close.xml: bca972befb
-reference/session/ini.xml: 1b5ad40552
+reference/session/ini.xml: 5c6aa61fa5
 reference/session/reference.xml: efdbd50709
 reference/session/setup.xml: efdbd50709
 reference/session/upload-progress.xml: aa3f51d2c6
