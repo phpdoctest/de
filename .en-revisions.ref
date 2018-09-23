@@ -5,7 +5,7 @@ appendices/configure/php.xml: e599425755
 appendices/debugger.xml: 0f7e7dec4f
 appendices/history.xml: 30497110b3
 appendices/ini.core.xml: 0307bce96e
-appendices/ini.list.xml: 558476c22d
+appendices/ini.list.xml: 94c7dae42d
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
 appendices/migration54.xml: e587df400d
