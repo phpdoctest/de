@@ -417,7 +417,7 @@ reference/ctype/reference.xml: efdbd50709
 reference/ctype/setup.xml: efdbd50709
 reference/curl/book.xml: 7f3bd947da
 reference/curl/configure.xml: e84ac37f32
-reference/curl/constants.xml: 23a6276a45
+reference/curl/constants.xml: b06c1b5fe2
 reference/curl/curlfile.xml: d907f6d794
 reference/curl/curlfile/construct.xml: d907f6d794
 reference/curl/curlfile/getfilename.xml: 2b7cef5f28
@@ -844,7 +844,7 @@ reference/fribidi/reference.xml: efdbd50709
 reference/fribidi/setup.xml: 807c846e04
 reference/ftp/book.xml: 890455fa05
 reference/ftp/configure.xml: 0034f9b99e
-reference/ftp/constants.xml: 7f3bd947da
+reference/ftp/constants.xml: d174f88001
 reference/ftp/examples.xml: 83fc699d58
 reference/ftp/functions/ftp-alloc.xml: ff84b4a812
 reference/ftp/functions/ftp-cdup.xml: efdbd50709
@@ -1204,7 +1204,7 @@ reference/ingres-ii/functions/ingres-unbuffered-query.xml: e257bc69c5
 reference/ingres-ii/ini.xml: f4d787b822
 reference/ingres-ii/reference.xml: efdbd50709
 reference/ingres-ii/setup.xml: 807c846e04
-reference/json/book.xml: 588ae278e0
+reference/json/book.xml: bf6b8d0214
 reference/json/constants.xml: f0512f21b8
 reference/json/functions/json-decode.xml: 88c55efbdb
 reference/json/functions/json-encode.xml: 1434faf471
