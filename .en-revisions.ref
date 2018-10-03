@@ -70,7 +70,7 @@ install/macos/compile.xml: f0f8333862
 install/macos/index.xml: f0f8333862
 install/macos/packages.xml: f0f8333862
 install/problems.xml: efdbd50709
-install/unix/apache1.xml: 31c7ebf03a
+install/unix/apache1.xml: c1f415ad96
 install/unix/apache2.xml: 0b795fa0ed
 install/unix/commandline.xml: 17a124fce7
 install/unix/debian.xml: 608eeed3cf
@@ -157,7 +157,7 @@ language/predefined/exception/getprevious.xml: e15a59359e
 language/predefined/exception/gettrace.xml: cdb48178c6
 language/predefined/exception/gettraceasstring.xml: cdb48178c6
 language/predefined/exception/tostring.xml: cdb48178c6
-language/predefined/exceptions.xml: e131f37cae
+language/predefined/exceptions.xml: e7a612c3c4
 language/predefined/generator.xml: 302f15026e
 language/predefined/interfaces.xml: 21424033f0
 language/predefined/iterator.xml: 823eab4826
@@ -1205,9 +1205,9 @@ reference/ingres-ii/ini.xml: f4d787b822
 reference/ingres-ii/reference.xml: efdbd50709
 reference/ingres-ii/setup.xml: 807c846e04
 reference/json/book.xml: bf6b8d0214
-reference/json/constants.xml: f0512f21b8
-reference/json/functions/json-decode.xml: 88c55efbdb
-reference/json/functions/json-encode.xml: 1434faf471
+reference/json/constants.xml: 053158665e
+reference/json/functions/json-decode.xml: 325d1ab09e
+reference/json/functions/json-encode.xml: 8e94768ac4
 reference/json/functions/json-last-error-msg.xml: 15b53be526
 reference/json/functions/json-last-error.xml: 916abc8611
 reference/json/jsonserializable.xml: b88ab30866
@@ -1350,7 +1350,7 @@ reference/misc/constants.xml: 30497110b3
 reference/misc/functions/connection-aborted.xml: efdbd50709
 reference/misc/functions/connection-status.xml: efdbd50709
 reference/misc/functions/constant.xml: f5607232d1
-reference/misc/functions/define.xml: 88c55efbdb
+reference/misc/functions/define.xml: adf0a01064
 reference/misc/functions/defined.xml: efdbd50709
 reference/misc/functions/die.xml: 087999d634
 reference/misc/functions/eval.xml: 747d553123
@@ -1782,9 +1782,9 @@ reference/outcontrol/reference.xml: efdbd50709
 reference/outcontrol/setup.xml: efdbd50709
 reference/password/book.xml: 7fe0e8fc1a
 reference/password/functions/password-get-info.xml: 950bbe8fd9
-reference/password/functions/password-hash.xml: e054cc45ab
+reference/password/functions/password-hash.xml: 47d157883c
 reference/password/functions/password-needs-rehash.xml: 4e164d1ecf
-reference/password/functions/password-verify.xml: d54283cfbc
+reference/password/functions/password-verify.xml: 9455951318
 reference/pcntl/book.xml: 890455fa05
 reference/pcntl/configure.xml: efdbd50709
 reference/pcntl/constants.xml: 5a28e2becc
@@ -1814,7 +1814,7 @@ reference/pcre/functions/preg-grep.xml: 7c1a70df96
 reference/pcre/functions/preg-last-error.xml: a58fc58aa0
 reference/pcre/functions/preg-match-all.xml: 05ec5ad62e
 reference/pcre/functions/preg-match.xml: 05ec5ad62e
-reference/pcre/functions/preg-quote.xml: a523fc4fb7
+reference/pcre/functions/preg-quote.xml: 0eb1b64f1b
 reference/pcre/functions/preg-replace-callback.xml: 366f584db7
 reference/pcre/functions/preg-replace.xml: 7f3bd947da
 reference/pcre/functions/preg-split.xml: 0f3043fcb5
@@ -2515,7 +2515,7 @@ reference/strings/functions/similar-text.xml: b2b29ed998
 reference/strings/functions/soundex.xml: efdbd50709
 reference/strings/functions/sprintf.xml: ccec5000cc
 reference/strings/functions/sscanf.xml: c155acec4b
-reference/strings/functions/str-getcsv.xml: 54178620ff
+reference/strings/functions/str-getcsv.xml: daa6ea8187
 reference/strings/functions/str-ireplace.xml: a923ea6764
 reference/strings/functions/str-pad.xml: 86f08dac78
 reference/strings/functions/str-repeat.xml: efdbd50709
@@ -2611,7 +2611,7 @@ reference/uodbc/setup.xml: 807c846e04
 reference/url/book.xml: 890455fa05
 reference/url/constants.xml: b0da668bfc
 reference/url/functions/base64-decode.xml: 0df61427e5
-reference/url/functions/base64-encode.xml: d067c00636
+reference/url/functions/base64-encode.xml: f5682193ee
 reference/url/functions/get-headers.xml: 629df8ecc9
 reference/url/functions/get-meta-tags.xml: 88c55efbdb
 reference/url/functions/http-build-query.xml: e55d49b464
