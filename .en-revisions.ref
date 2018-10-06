@@ -417,7 +417,7 @@ reference/ctype/reference.xml: efdbd50709
 reference/ctype/setup.xml: efdbd50709
 reference/curl/book.xml: 7f3bd947da
 reference/curl/configure.xml: e84ac37f32
-reference/curl/constants.xml: b06c1b5fe2
+reference/curl/constants.xml: 8ecdfc36c0
 reference/curl/curlfile.xml: d907f6d794
 reference/curl/curlfile/construct.xml: d907f6d794
 reference/curl/curlfile/getfilename.xml: 2b7cef5f28
@@ -517,7 +517,7 @@ reference/datetime/ini.xml: d2c80d6672
 reference/datetime/reference.xml: efdbd50709
 reference/datetime/setup.xml: 807c846e04
 reference/dba/book.xml: 890455fa05
-reference/dba/configure.xml: 537a2af553
+reference/dba/configure.xml: ef75c43574
 reference/dba/constants.xml: 807c846e04
 reference/dba/examples.xml: 9252f88b11
 reference/dba/functions/dba-close.xml: efdbd50709
@@ -1782,7 +1782,7 @@ reference/outcontrol/reference.xml: efdbd50709
 reference/outcontrol/setup.xml: efdbd50709
 reference/password/book.xml: 7fe0e8fc1a
 reference/password/functions/password-get-info.xml: 950bbe8fd9
-reference/password/functions/password-hash.xml: 47d157883c
+reference/password/functions/password-hash.xml: 7e0cceedde
 reference/password/functions/password-needs-rehash.xml: 4e164d1ecf
 reference/password/functions/password-verify.xml: 9455951318
 reference/pcntl/book.xml: 890455fa05
