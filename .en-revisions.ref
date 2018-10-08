@@ -266,7 +266,7 @@ reference/array/functions/array-udiff.xml: 27997cced8
 reference/array/functions/array-uintersect-assoc.xml: 65735b6b36
 reference/array/functions/array-uintersect-uassoc.xml: 85e0ef7df1
 reference/array/functions/array-uintersect.xml: 65735b6b36
-reference/array/functions/array-unique.xml: a19b424ce1
+reference/array/functions/array-unique.xml: 0b6b469556
 reference/array/functions/array-unshift.xml: d97b76a81e
 reference/array/functions/array-values.xml: fa55cc7ba6
 reference/array/functions/array-walk-recursive.xml: 65735b6b36
@@ -536,7 +536,7 @@ reference/dba/functions/dba-popen.xml: efdbd50709
 reference/dba/functions/dba-replace.xml: efdbd50709
 reference/dba/functions/dba-sync.xml: efdbd50709
 reference/dba/reference.xml: efdbd50709
-reference/dba/setup.xml: 8560a8fb69
+reference/dba/setup.xml: 9c140fb974
 reference/dbase/book.xml: c98e62db1d
 reference/dbase/configure.xml: 1d5f722ba9
 reference/dbase/constants.xml: f98d0a67d9
@@ -807,7 +807,7 @@ reference/filesystem/functions/pclose.xml: f39c430aeb
 reference/filesystem/functions/popen.xml: 8538bdabbc
 reference/filesystem/functions/readfile.xml: 88c55efbdb
 reference/filesystem/functions/readlink.xml: efdbd50709
-reference/filesystem/functions/realpath.xml: 8c84509c6c
+reference/filesystem/functions/realpath.xml: 7b3aee39b8
 reference/filesystem/functions/rename.xml: 75525907fb
 reference/filesystem/functions/rewind.xml: b6a57ea290
 reference/filesystem/functions/rmdir.xml: baa3688115
@@ -1713,7 +1713,7 @@ reference/oci8/oldaliases/ocistatementtype.xml: 91d3ba27f7
 reference/oci8/oldaliases/ociwritelobtofile.xml: 91d3ba27f7
 reference/oci8/oldaliases/ociwritetemporarylob.xml: 91d3ba27f7
 reference/opcache/book.xml: d3de1e860d
-reference/opcache/functions/opcache-get-status.xml: ae3c2c4249
+reference/opcache/functions/opcache-get-status.xml: d76f2a1c5e
 reference/opcache/functions/opcache-reset.xml: d54283cfbc
 reference/opcache/reference.xml: 4dc775485a
 reference/opcache/setup.xml: 4dc775485a
@@ -2023,8 +2023,8 @@ reference/pdo/pdostatement/execute.xml: ccc43c8e29
 reference/pdo/prepared-statements.xml: 2a14c1258e
 reference/pdo/setup.xml: 807c846e04
 reference/pdo/transactions.xml: 0588d4cdc1
-reference/pdo_sqlite/PDO/sqliteCreateAggregate.xml: 5a380e298d
-reference/pdo_sqlite/PDO/sqliteCreateFunction.xml: 10c12ff24c
+reference/pdo_sqlite/PDO/sqliteCreateAggregate.xml: e65b87e384
+reference/pdo_sqlite/PDO/sqliteCreateFunction.xml: e65b87e384
 reference/pdo_sqlite/reference.xml: 30497110b3
 reference/pgsql/book.xml: 137ca00925
 reference/pgsql/configure.xml: efdbd50709
@@ -2318,7 +2318,7 @@ reference/snmp/functions/snmpset.xml: 1d7f04f23d
 reference/snmp/functions/snmpwalk.xml: 1d7f04f23d
 reference/snmp/functions/snmpwalkoid.xml: 1d7f04f23d
 reference/snmp/reference.xml: efdbd50709
-reference/snmp/setup.xml: 27997cced8
+reference/snmp/setup.xml: f53bc1b4db
 reference/soap/book.xml: 890455fa05
 reference/soap/constants.xml: 59411c3629
 reference/soap/functions/is-soap-fault.xml: 807c846e04
