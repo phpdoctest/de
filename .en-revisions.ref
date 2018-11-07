@@ -80,7 +80,7 @@ install/unix/lighttpd-14.xml: efdbd50709
 install/unix/nginx.xml: 478c384328
 install/windows/legacy/index.xml: f65f8bc379
 language/basic-syntax.xml: 0b795fa0ed
-language/constants.xml: 286d0736e6
+language/constants.xml: 3acf98d89e
 language/context.xml: 3839ad321f
 language/context/curl.xml: b2d3012691
 language/context/ftp.xml: 25f94fe5d3
@@ -89,8 +89,8 @@ language/context/phar.xml: 39a2637d68
 language/context/ssl.xml: 25f94fe5d3
 language/control-structures.xml: 807c846e04
 language/control-structures/alternative-syntax.xml: 4d986b284b
-language/control-structures/break.xml: 3d2029da7c
-language/control-structures/continue.xml: 83931429dc
+language/control-structures/break.xml: 7643352367
+language/control-structures/continue.xml: 7643352367
 language/control-structures/declare.xml: e28e713a85
 language/control-structures/do-while.xml: f40cab318e
 language/control-structures/else.xml: f40cab318e
@@ -109,7 +109,7 @@ language/control-structures/while.xml: f40cab318e
 language/errors.xml: e05d88bfe0
 language/exceptions.xml: 5c4200c65d
 language/expressions.xml: 577b60e69c
-language/functions.xml: c54ca7e435
+language/functions.xml: 152eaff725
 language/generators.xml: add1539a00
 language/namespaces.xml: 77d8bc1006
 language/oop5.xml: f405eecb99
@@ -190,13 +190,13 @@ language/predefined/variables/session.xml: 991103bc31
 language/predefined/variables/superglobals.xml: 807c846e04
 language/references.xml: c32af11dd9
 language/types.xml: c6429b8faf
-language/types/array.xml: e02e0593ba
+language/types/array.xml: 3baa19b6a6
 language/types/boolean.xml: 06f2dbb709
 language/types/null.xml: 892a4001bb
 language/types/object.xml: 7177d26299
 language/types/resource.xml: 7f3bd947da
 language/types/string.xml: f0f8333862
-language/variables.xml: 530938f954
+language/variables.xml: 152eaff725
 language/wrappers.xml: 07f040bc3f
 preface.xml: 09818bff14
 reference/apache/book.xml: 890455fa05
@@ -1350,7 +1350,7 @@ reference/misc/constants.xml: 30497110b3
 reference/misc/functions/connection-aborted.xml: efdbd50709
 reference/misc/functions/connection-status.xml: efdbd50709
 reference/misc/functions/constant.xml: f5607232d1
-reference/misc/functions/define.xml: adf0a01064
+reference/misc/functions/define.xml: 3acf98d89e
 reference/misc/functions/defined.xml: efdbd50709
 reference/misc/functions/die.xml: 087999d634
 reference/misc/functions/eval.xml: 747d553123
@@ -2023,7 +2023,7 @@ reference/pdo/pdostatement/execute.xml: ccc43c8e29
 reference/pdo/prepared-statements.xml: 2a14c1258e
 reference/pdo/setup.xml: 807c846e04
 reference/pdo/transactions.xml: 0588d4cdc1
-reference/pdo_sqlite/PDO/sqliteCreateAggregate.xml: e65b87e384
+reference/pdo_sqlite/PDO/sqliteCreateAggregate.xml: 3b09b89419
 reference/pdo_sqlite/PDO/sqliteCreateFunction.xml: e65b87e384
 reference/pdo_sqlite/reference.xml: 30497110b3
 reference/pgsql/book.xml: 137ca00925
