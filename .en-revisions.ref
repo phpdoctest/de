@@ -190,7 +190,7 @@ language/predefined/variables/session.xml: 991103bc31
 language/predefined/variables/superglobals.xml: 807c846e04
 language/references.xml: c32af11dd9
 language/types.xml: c6429b8faf
-language/types/array.xml: 3baa19b6a6
+language/types/array.xml: d26d5ec6cf
 language/types/boolean.xml: 06f2dbb709
 language/types/null.xml: 892a4001bb
 language/types/object.xml: 7177d26299
