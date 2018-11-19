@@ -80,7 +80,7 @@ install/unix/lighttpd-14.xml: efdbd50709
 install/unix/nginx.xml: 478c384328
 install/windows/legacy/index.xml: f65f8bc379
 language/basic-syntax.xml: 0b795fa0ed
-language/constants.xml: 3acf98d89e
+language/constants.xml: 0399231045
 language/context.xml: 3839ad321f
 language/context/curl.xml: b2d3012691
 language/context/ftp.xml: 25f94fe5d3
@@ -137,7 +137,7 @@ language/oop5/static.xml: 77c3efb7c2
 language/oop5/traits.xml: 63735b4dff
 language/oop5/typehinting.xml: 476e58b54c
 language/oop5/visibility.xml: ef0d1df025
-language/operators.xml: 29d5a6e2cc
+language/operators.xml: 6bc394de5a
 language/predefined/arrayaccess.xml: 54fc72fb20
 language/predefined/arrayaccess/offsetexists.xml: d54283cfbc
 language/predefined/arrayaccess/offsetget.xml: c320e5d8c0
@@ -207,11 +207,11 @@ reference/apache/functions/apache-get-version.xml: cf6ce7b4e1
 reference/apache/functions/apache-getenv.xml: 88c55efbdb
 reference/apache/functions/apache-lookup-uri.xml: efdbd50709
 reference/apache/functions/apache-note.xml: 2d9a88968f
-reference/apache/functions/apache-request-headers.xml: 7f2c643075
+reference/apache/functions/apache-request-headers.xml: 28cbf506d3
 reference/apache/functions/apache-reset-timeout.xml: efdbd50709
 reference/apache/functions/apache-response-headers.xml: 7f2c643075
 reference/apache/functions/apache-setenv.xml: 88c55efbdb
-reference/apache/functions/getallheaders.xml: 7f2c643075
+reference/apache/functions/getallheaders.xml: 28cbf506d3
 reference/apache/functions/virtual.xml: ce72982085
 reference/apache/ini.xml: d2c80d6672
 reference/apache/reference.xml: efdbd50709
@@ -245,7 +245,7 @@ reference/array/functions/array-key-exists.xml: 68c911b509
 reference/array/functions/array-keys.xml: c15e0d2362
 reference/array/functions/array-map.xml: ee3a9efbc6
 reference/array/functions/array-merge-recursive.xml: 26e97ec7fb
-reference/array/functions/array-merge.xml: cf6ce7b4e1
+reference/array/functions/array-merge.xml: e401a258d2
 reference/array/functions/array-multisort.xml: 6537a11257
 reference/array/functions/array-pad.xml: 65735b6b36
 reference/array/functions/array-pop.xml: 47c2ee27ed
@@ -1206,7 +1206,7 @@ reference/ingres-ii/reference.xml: efdbd50709
 reference/ingres-ii/setup.xml: 807c846e04
 reference/json/book.xml: bf6b8d0214
 reference/json/constants.xml: 053158665e
-reference/json/functions/json-decode.xml: 325d1ab09e
+reference/json/functions/json-decode.xml: 7be1e3ca17
 reference/json/functions/json-encode.xml: 8e94768ac4
 reference/json/functions/json-last-error-msg.xml: 15b53be526
 reference/json/functions/json-last-error.xml: 916abc8611
@@ -1616,8 +1616,8 @@ reference/network/functions/headers-sent.xml: 7f3bd947da
 reference/network/functions/inet-ntop.xml: efdbd50709
 reference/network/functions/inet-pton.xml: 22273e8eb9
 reference/network/functions/ip2long.xml: d4ca94feda
-reference/network/functions/long2ip.xml: 951f4f600e
-reference/network/functions/openlog.xml: efdbd50709
+reference/network/functions/long2ip.xml: 230f75dcaa
+reference/network/functions/openlog.xml: 8ec63019bf
 reference/network/functions/pfsockopen.xml: efdbd50709
 reference/network/functions/setcookie.xml: 5c6aa61fa5
 reference/network/functions/setrawcookie.xml: 5c6aa61fa5
@@ -1721,7 +1721,7 @@ reference/openssl/book.xml: 6c2a495762
 reference/openssl/cert-verification.xml: efdbd50709
 reference/openssl/certparams.xml: c190ce359f
 reference/openssl/configure.xml: bca75efa48
-reference/openssl/constants.xml: f62128422e
+reference/openssl/constants.xml: 6c196ab53a
 reference/openssl/functions/openssl-csr-export-to-file.xml: 88c55efbdb
 reference/openssl/functions/openssl-csr-export.xml: 88c55efbdb
 reference/openssl/functions/openssl-csr-get-public-key.xml: 88c55efbdb
@@ -2028,7 +2028,7 @@ reference/pdo_sqlite/PDO/sqliteCreateFunction.xml: e65b87e384
 reference/pdo_sqlite/reference.xml: 30497110b3
 reference/pgsql/book.xml: 137ca00925
 reference/pgsql/configure.xml: efdbd50709
-reference/pgsql/constants.xml: 63233fb3ff
+reference/pgsql/constants.xml: cda1b3be34
 reference/pgsql/examples.xml: 83fc699d58
 reference/pgsql/functions/pg-affected-rows.xml: b5e28ab6c1
 reference/pgsql/functions/pg-cancel-query.xml: efdbd50709
