@@ -196,7 +196,7 @@ language/types/null.xml: 892a4001bb
 language/types/object.xml: 7177d26299
 language/types/resource.xml: 7f3bd947da
 language/types/string.xml: f0f8333862
-language/variables.xml: 152eaff725
+language/variables.xml: 1b0418723e
 language/wrappers.xml: 07f040bc3f
 preface.xml: 09818bff14
 reference/apache/book.xml: 890455fa05
@@ -637,7 +637,7 @@ reference/exif/book.xml: 369f8c7a53
 reference/exif/configure.xml: efdbd50709
 reference/exif/constants.xml: 369f8c7a53
 reference/exif/functions/exif-imagetype.xml: 9ab7da3556
-reference/exif/functions/exif-read-data.xml: 88c55efbdb
+reference/exif/functions/exif-read-data.xml: 8c42f63d1a
 reference/exif/functions/exif-tagname.xml: 585f1827c0
 reference/exif/functions/exif-thumbnail.xml: 999ca6af80
 reference/exif/functions/read-exif-data.xml: 4016d10fa6
@@ -1726,9 +1726,9 @@ reference/openssl/functions/openssl-csr-export-to-file.xml: 88c55efbdb
 reference/openssl/functions/openssl-csr-export.xml: 88c55efbdb
 reference/openssl/functions/openssl-csr-get-public-key.xml: 88c55efbdb
 reference/openssl/functions/openssl-csr-get-subject.xml: 88c55efbdb
-reference/openssl/functions/openssl-csr-new.xml: ff04011016
+reference/openssl/functions/openssl-csr-new.xml: 8c42f63d1a
 reference/openssl/functions/openssl-csr-sign.xml: ff04011016
-reference/openssl/functions/openssl-encrypt.xml: 9b48b1330c
+reference/openssl/functions/openssl-encrypt.xml: 8c42f63d1a
 reference/openssl/functions/openssl-error-string.xml: 888dad4a31
 reference/openssl/functions/openssl-free-key.xml: efdbd50709
 reference/openssl/functions/openssl-get-privatekey.xml: efdbd50709
@@ -2447,7 +2447,7 @@ reference/sqlite3/sqlite3.xml: 961c2937af
 reference/sqlite3/sqlite3/changes.xml: 807c846e04
 reference/sqlite3/sqlite3/close.xml: 807c846e04
 reference/sqlite3/sqlite3/construct.xml: 88c55efbdb
-reference/sqlite3/sqlite3/createaggregate.xml: 807c846e04
+reference/sqlite3/sqlite3/createaggregate.xml: 3b09b89419
 reference/sqlite3/sqlite3/createfunction.xml: 9fe54f2291
 reference/sqlite3/sqlite3/escapestring.xml: d7048dc31b
 reference/sqlite3/sqlite3/exec.xml: 807c846e04
