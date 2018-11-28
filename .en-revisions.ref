@@ -109,7 +109,7 @@ language/control-structures/while.xml: f40cab318e
 language/errors.xml: e05d88bfe0
 language/exceptions.xml: 5c4200c65d
 language/expressions.xml: 577b60e69c
-language/functions.xml: 152eaff725
+language/functions.xml: e8eb758327
 language/generators.xml: add1539a00
 language/namespaces.xml: 77d8bc1006
 language/oop5.xml: f405eecb99
@@ -242,7 +242,7 @@ reference/array/functions/array-intersect-uassoc.xml: 65735b6b36
 reference/array/functions/array-intersect-ukey.xml: 65735b6b36
 reference/array/functions/array-intersect.xml: 65735b6b36
 reference/array/functions/array-key-exists.xml: 68c911b509
-reference/array/functions/array-keys.xml: c15e0d2362
+reference/array/functions/array-keys.xml: 0f3fffac75
 reference/array/functions/array-map.xml: ee3a9efbc6
 reference/array/functions/array-merge-recursive.xml: 26e97ec7fb
 reference/array/functions/array-merge.xml: e401a258d2
@@ -319,7 +319,7 @@ reference/bc/constants.xml: 807c846e04
 reference/bc/functions/bcadd.xml: 78135dcdc5
 reference/bc/functions/bccomp.xml: 78135dcdc5
 reference/bc/functions/bcdiv.xml: 47073582e2
-reference/bc/functions/bcmod.xml: aa203e8075
+reference/bc/functions/bcmod.xml: e419d41b77
 reference/bc/functions/bcmul.xml: d33f583409
 reference/bc/functions/bcpow.xml: 54ba489454
 reference/bc/functions/bcpowmod.xml: c96fe70ebc
@@ -371,7 +371,7 @@ reference/calendar/setup.xml: 807c846e04
 reference/classobj/book.xml: 890455fa05
 reference/classobj/constants.xml: 807c846e04
 reference/classobj/examples.xml: 0330fb4a6c
-reference/classobj/functions/call-user-method.xml: a54fded8f2
+reference/classobj/functions/call-user-method.xml: aa8d23cebf
 reference/classobj/functions/class-exists.xml: 88c55efbdb
 reference/classobj/functions/get-class-methods.xml: 8868566c3a
 reference/classobj/functions/get-class-vars.xml: 8d4ae76367
@@ -884,14 +884,14 @@ reference/ftp/reference.xml: efdbd50709
 reference/ftp/setup.xml: 807c846e04
 reference/funchand/book.xml: 890455fa05
 reference/funchand/constants.xml: 807c846e04
-reference/funchand/functions/call-user-func.xml: 17fcdd35a8
+reference/funchand/functions/call-user-func.xml: aa8d23cebf
 reference/funchand/functions/create-function.xml: 892a4001bb
 reference/funchand/functions/func-get-arg.xml: 461a0f4808
 reference/funchand/functions/func-get-args.xml: 461a0f4808
 reference/funchand/functions/func-num-args.xml: 60eabe2135
 reference/funchand/functions/function-exists.xml: 087999d634
 reference/funchand/functions/get-defined-functions.xml: 10c12ff24c
-reference/funchand/functions/register-shutdown-function.xml: 8868566c3a
+reference/funchand/functions/register-shutdown-function.xml: aa8d23cebf
 reference/funchand/reference.xml: efdbd50709
 reference/funchand/setup.xml: efdbd50709
 reference/gender/book.xml: d3de000806
@@ -968,7 +968,7 @@ reference/htscanner/ini.xml: f954cc9acb
 reference/htscanner/setup.xml: 807c846e04
 reference/ibase/functions/ibase-close.xml: edd2392da9
 reference/ibase/functions/ibase-connect.xml: 2a77481f1a
-reference/ibase/functions/ibase-execute.xml: 55b24d1b2b
+reference/ibase/functions/ibase-execute.xml: aa8d23cebf
 reference/ibase/functions/ibase-fetch-object.xml: efdbd50709
 reference/ibase/functions/ibase-fetch-row.xml: efdbd50709
 reference/ibase/functions/ibase-free-query.xml: efdbd50709
@@ -1006,7 +1006,7 @@ reference/image/functions/imagecolorresolve.xml: 66cf11bb10
 reference/image/functions/imagecolorset.xml: fecbade729
 reference/image/functions/imagecolorsforindex.xml: efdbd50709
 reference/image/functions/imagecolorstotal.xml: ea6a3bfbfa
-reference/image/functions/imagecolortransparent.xml: d5b36b0b3f
+reference/image/functions/imagecolortransparent.xml: a6c42e8fef
 reference/image/functions/imagecopy.xml: 66cf11bb10
 reference/image/functions/imagecopyresized.xml: dd9a29a077
 reference/image/functions/imagecreate.xml: e1cd130923
@@ -1022,12 +1022,12 @@ reference/image/functions/imagefilltoborder.xml: d5b36b0b3f
 reference/image/functions/imagefontheight.xml: 6b490dbc34
 reference/image/functions/imagefontwidth.xml: 6b490dbc34
 reference/image/functions/imagegammacorrect.xml: efdbd50709
-reference/image/functions/imagegif.xml: 4232878086
+reference/image/functions/imagegif.xml: a6c42e8fef
 reference/image/functions/imageinterlace.xml: efdbd50709
-reference/image/functions/imagejpeg.xml: 4232878086
+reference/image/functions/imagejpeg.xml: a6c42e8fef
 reference/image/functions/imageline.xml: d5b36b0b3f
 reference/image/functions/imageloadfont.xml: efdbd50709
-reference/image/functions/imagepng.xml: 4232878086
+reference/image/functions/imagepng.xml: a6c42e8fef
 reference/image/functions/imagepolygon.xml: d5b36b0b3f
 reference/image/functions/imagepsbbox.xml: 0ce76c3e2f
 reference/image/functions/imagepsencodefont.xml: 0ce76c3e2f
@@ -1305,8 +1305,8 @@ reference/math/functions/lcg-value.xml: 0e817d75e2
 reference/math/functions/log.xml: 8868566c3a
 reference/math/functions/log1p.xml: efdbd50709
 reference/math/functions/log10.xml: efdbd50709
-reference/math/functions/max.xml: affe4ec5d3
-reference/math/functions/min.xml: 721f24b79d
+reference/math/functions/max.xml: aa8d23cebf
+reference/math/functions/min.xml: aa8d23cebf
 reference/math/functions/mt-getrandmax.xml: 5070f84ba0
 reference/math/functions/mt-rand.xml: ff8d3e2dfe
 reference/math/functions/mt-srand.xml: ff8d3e2dfe
@@ -1360,7 +1360,7 @@ reference/misc/functions/halt-compiler.xml: efdbd50709
 reference/misc/functions/highlight-file.xml: 88c55efbdb
 reference/misc/functions/highlight-string.xml: 88c55efbdb
 reference/misc/functions/ignore-user-abort.xml: 30ae797a66
-reference/misc/functions/pack.xml: be86257884
+reference/misc/functions/pack.xml: aa8d23cebf
 reference/misc/functions/php-check-syntax.xml: 30497110b3
 reference/misc/functions/show-source.xml: 807c846e04
 reference/misc/functions/sleep.xml: eefc28553c
@@ -2350,7 +2350,7 @@ reference/soap/soapserver/construct.xml: eee6ff402f
 reference/soap/soapserver/fault.xml: 807c846e04
 reference/soap/soapserver/getfunctions.xml: 807c846e04
 reference/soap/soapserver/handle.xml: 807c846e04
-reference/soap/soapserver/setclass.xml: 76a6fabade
+reference/soap/soapserver/setclass.xml: aa8d23cebf
 reference/soap/soapserver/setpersistence.xml: 981467bc3e
 reference/soap/soapserver/soapserver.xml: 859e486d7a
 reference/soap/soapvar/construct.xml: 2dad65bce1
@@ -2478,7 +2478,7 @@ reference/strings/functions/crc32.xml: 25f9678d48
 reference/strings/functions/crypt.xml: 2217cbe884
 reference/strings/functions/echo.xml: ae24695c39
 reference/strings/functions/explode.xml: 24655a5873
-reference/strings/functions/fprintf.xml: efdbd50709
+reference/strings/functions/fprintf.xml: aa8d23cebf
 reference/strings/functions/get-html-translation-table.xml: 30497110b3
 reference/strings/functions/hebrev.xml: efdbd50709
 reference/strings/functions/hebrevc.xml: efdbd50709
@@ -2513,7 +2513,7 @@ reference/strings/functions/sha1-file.xml: 88c55efbdb
 reference/strings/functions/sha1.xml: 88c55efbdb
 reference/strings/functions/similar-text.xml: b2b29ed998
 reference/strings/functions/soundex.xml: efdbd50709
-reference/strings/functions/sprintf.xml: ccec5000cc
+reference/strings/functions/sprintf.xml: aa8d23cebf
 reference/strings/functions/sscanf.xml: c155acec4b
 reference/strings/functions/str-getcsv.xml: daa6ea8187
 reference/strings/functions/str-ireplace.xml: a923ea6764
@@ -2660,7 +2660,7 @@ reference/var/functions/is-scalar.xml: 7433f6f72a
 reference/var/functions/is-string.xml: 7462e2e475
 reference/var/functions/isset.xml: 1f0a0738c0
 reference/var/functions/print-r.xml: 88c55efbdb
-reference/var/functions/serialize.xml: 3963a9acda
+reference/var/functions/serialize.xml: 0dd53534d5
 reference/var/functions/settype.xml: 7f3bd947da
 reference/var/functions/strval.xml: 3e45e528b0
 reference/var/functions/unserialize.xml: 10cb8a289a
