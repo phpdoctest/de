@@ -134,7 +134,7 @@ language/oop5/properties.xml: f1e16c6c99
 language/oop5/references.xml: 15a78e638d
 language/oop5/serialization.xml: 5b4d184efb
 language/oop5/static.xml: 77c3efb7c2
-language/oop5/traits.xml: 63735b4dff
+language/oop5/traits.xml: bad600cf21
 language/oop5/typehinting.xml: 476e58b54c
 language/oop5/visibility.xml: ef0d1df025
 language/operators.xml: 6bc394de5a
