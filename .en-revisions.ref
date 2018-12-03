@@ -76,7 +76,7 @@ install/unix/commandline.xml: 17a124fce7
 install/unix/debian.xml: 608eeed3cf
 install/unix/hpux.xml: efdbd50709
 install/unix/index.xml: a930c2cc94
-install/unix/lighttpd-14.xml: efdbd50709
+install/unix/lighttpd-14.xml: a6c3488094
 install/unix/nginx.xml: 478c384328
 install/windows/legacy/index.xml: f65f8bc379
 language/basic-syntax.xml: 0b795fa0ed
@@ -1782,7 +1782,7 @@ reference/outcontrol/reference.xml: efdbd50709
 reference/outcontrol/setup.xml: efdbd50709
 reference/password/book.xml: 7fe0e8fc1a
 reference/password/functions/password-get-info.xml: 950bbe8fd9
-reference/password/functions/password-hash.xml: 7e0cceedde
+reference/password/functions/password-hash.xml: c1103c2e07
 reference/password/functions/password-needs-rehash.xml: 4e164d1ecf
 reference/password/functions/password-verify.xml: 9455951318
 reference/pcntl/book.xml: 890455fa05
@@ -2442,13 +2442,13 @@ reference/sqlite3/book.xml: 890455fa05
 reference/sqlite3/configure.xml: 807c846e04
 reference/sqlite3/constants.xml: 61fe394ecf
 reference/sqlite3/ini.xml: d2c80d6672
-reference/sqlite3/setup.xml: 9fa00be898
+reference/sqlite3/setup.xml: 4c29435615
 reference/sqlite3/sqlite3.xml: 961c2937af
 reference/sqlite3/sqlite3/changes.xml: 807c846e04
 reference/sqlite3/sqlite3/close.xml: 807c846e04
 reference/sqlite3/sqlite3/construct.xml: 88c55efbdb
 reference/sqlite3/sqlite3/createaggregate.xml: 3b09b89419
-reference/sqlite3/sqlite3/createfunction.xml: 9fe54f2291
+reference/sqlite3/sqlite3/createfunction.xml: e65b87e384
 reference/sqlite3/sqlite3/escapestring.xml: d7048dc31b
 reference/sqlite3/sqlite3/exec.xml: 807c846e04
 reference/sqlite3/sqlite3/lasterrorcode.xml: 807c846e04
