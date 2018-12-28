@@ -5,7 +5,7 @@ appendices/configure/php.xml: e599425755
 appendices/debugger.xml: 0f7e7dec4f
 appendices/history.xml: 30497110b3
 appendices/ini.core.xml: 0307bce96e
-appendices/ini.list.xml: 94c7dae42d
+appendices/ini.list.xml: 388209edca
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
 appendices/migration54.xml: e587df400d
@@ -275,7 +275,7 @@ reference/array/functions/array.xml: efdbd50709
 reference/array/functions/arsort.xml: 8b0a9a0b34
 reference/array/functions/asort.xml: 8b0a9a0b34
 reference/array/functions/compact.xml: f70d08449b
-reference/array/functions/count.xml: 283a8ff650
+reference/array/functions/count.xml: 871eccace9
 reference/array/functions/current.xml: 372861dced
 reference/array/functions/each.xml: 892a4001bb
 reference/array/functions/end.xml: 71d6d5f743
@@ -1048,7 +1048,7 @@ reference/image/functions/imagetypes.xml: ea6833b4d8
 reference/image/functions/jpeg2wbmp.xml: 4232878086
 reference/image/ini.xml: 0307bce96e
 reference/image/reference.xml: efdbd50709
-reference/image/setup.xml: d3f18b445b
+reference/image/setup.xml: 38ad9844aa
 reference/imagick/imagick/pingimage.xml: f7f145c8f6
 reference/imap/book.xml: 890455fa05
 reference/imap/configure.xml: efdbd50709
@@ -1817,7 +1817,7 @@ reference/pcre/functions/preg-grep.xml: 7c1a70df96
 reference/pcre/functions/preg-last-error.xml: a58fc58aa0
 reference/pcre/functions/preg-match-all.xml: 05ec5ad62e
 reference/pcre/functions/preg-match.xml: 3b0eb06fe6
-reference/pcre/functions/preg-quote.xml: 0eb1b64f1b
+reference/pcre/functions/preg-quote.xml: 1949827910
 reference/pcre/functions/preg-replace-callback.xml: 366f584db7
 reference/pcre/functions/preg-replace.xml: 7f3bd947da
 reference/pcre/functions/preg-split.xml: 0f3043fcb5
@@ -2257,7 +2257,7 @@ reference/session/functions/session-commit.xml: efdbd50709
 reference/session/functions/session-decode.xml: 5051b07780
 reference/session/functions/session-destroy.xml: e50c5aaeaa
 reference/session/functions/session-encode.xml: 5051b07780
-reference/session/functions/session-get-cookie-params.xml: 5c6aa61fa5
+reference/session/functions/session-get-cookie-params.xml: 4d60d1c6c0
 reference/session/functions/session-id.xml: cf6ce7b4e1
 reference/session/functions/session-is-registered.xml: 7f3bd947da
 reference/session/functions/session-module-name.xml: efdbd50709
