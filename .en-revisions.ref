@@ -15,7 +15,7 @@ appendices/migration56/constants.xml: bcd064772f
 appendices/migration56/deprecated.xml: 968a7d1396
 appendices/migration56/extensions.xml: f3d3778ae1
 appendices/migration56/incompatible.xml: eabc0cddbb
-appendices/migration56/new-features.xml: 5756b8be7e
+appendices/migration56/new-features.xml: 37b459fced
 appendices/migration56/new-functions.xml: 221f840480
 appendices/migration56/openssl.xml: cbdd521e64
 appendices/migration70.xml: 3df402bafb
@@ -47,7 +47,7 @@ faq/mailinglist.xml: 0c3adf514a
 faq/misc.xml: efdbd50709
 faq/obtaining.xml: 85fa7eac51
 faq/passwords.xml: 3e661618e0
-faq/using.xml: 750b1e0978
+faq/using.xml: 8e9139b620
 features/commandline.xml: 3257a077f4
 features/connection-handling.xml: b4dffc797a
 features/cookies.xml: da3f8bf46c
@@ -126,7 +126,7 @@ language/oop5/inheritance.xml: 7101d7984a
 language/oop5/interfaces.xml: 717bf24378
 language/oop5/iterations.xml: 046bb07d17
 language/oop5/late-static-bindings.xml: c319fbc19d
-language/oop5/magic.xml: e771b950de
+language/oop5/magic.xml: b78d56cbcf
 language/oop5/object-comparison.xml: b455602761
 language/oop5/overloading.xml: 41e7b91a5c
 language/oop5/paamayim-nekudotayim.xml: d65d1fefc9
@@ -815,7 +815,7 @@ reference/filesystem/functions/set-file-buffer.xml: efdbd50709
 reference/filesystem/functions/stat.xml: 8868566c3a
 reference/filesystem/functions/symlink.xml: 3963a9acda
 reference/filesystem/functions/tempnam.xml: d497f461ae
-reference/filesystem/functions/tmpfile.xml: ad25c4019f
+reference/filesystem/functions/tmpfile.xml: 9da0b30827
 reference/filesystem/functions/touch.xml: 59ff3a624b
 reference/filesystem/functions/umask.xml: 1d02f956d5
 reference/filesystem/functions/unlink.xml: 3e8aa8d5cf
@@ -1809,7 +1809,7 @@ reference/pcntl/functions/pcntl-wtermsig.xml: efdbd50709
 reference/pcntl/reference.xml: efdbd50709
 reference/pcntl/setup.xml: 807c846e04
 reference/pcre/book.xml: 890455fa05
-reference/pcre/configure.xml: 3b4faf7fdb
+reference/pcre/configure.xml: cfd548dd08
 reference/pcre/constants.xml: 0c39de7390
 reference/pcre/examples.xml: efdbd50709
 reference/pcre/functions/preg-filter.xml: 7c1a70df96
@@ -2471,7 +2471,7 @@ reference/strings/functions/addcslashes.xml: 4354e84de4
 reference/strings/functions/addslashes.xml: 1c17d2ab2b
 reference/strings/functions/bin2hex.xml: b0726827c5
 reference/strings/functions/chop.xml: efdbd50709
-reference/strings/functions/chr.xml: 0ad0791b92
+reference/strings/functions/chr.xml: 4db5530271
 reference/strings/functions/chunk-split.xml: efdbd50709
 reference/strings/functions/convert-cyr-string.xml: 1dd94fd2a2
 reference/strings/functions/convert-uudecode.xml: 89615dea46
@@ -2503,7 +2503,7 @@ reference/strings/functions/money-format.xml: efdbd50709
 reference/strings/functions/nl-langinfo.xml: efdbd50709
 reference/strings/functions/nl2br.xml: 88c55efbdb
 reference/strings/functions/number-format.xml: 1be2962355
-reference/strings/functions/ord.xml: 0ad0791b92
+reference/strings/functions/ord.xml: 4db5530271
 reference/strings/functions/parse-str.xml: 41a459467a
 reference/strings/functions/print.xml: ae24695c39
 reference/strings/functions/printf.xml: 087999d634
