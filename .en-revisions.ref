@@ -4,7 +4,7 @@ appendices/comparisons.xml: 06f2dbb709
 appendices/configure/php.xml: e599425755
 appendices/debugger.xml: 0f7e7dec4f
 appendices/history.xml: 30497110b3
-appendices/ini.core.xml: 0307bce96e
+appendices/ini.core.xml: e5033db344
 appendices/ini.list.xml: 388209edca
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
@@ -2260,7 +2260,7 @@ reference/session/functions/session-encode.xml: 5051b07780
 reference/session/functions/session-get-cookie-params.xml: 4d60d1c6c0
 reference/session/functions/session-id.xml: cf6ce7b4e1
 reference/session/functions/session-is-registered.xml: 7f3bd947da
-reference/session/functions/session-module-name.xml: efdbd50709
+reference/session/functions/session-module-name.xml: 4c815e66ef
 reference/session/functions/session-name.xml: 5c441cf1e1
 reference/session/functions/session-regenerate-id.xml: 88c55efbdb
 reference/session/functions/session-register-shutdown.xml: 09cf5e4bab
@@ -2478,7 +2478,7 @@ reference/strings/functions/convert-uudecode.xml: 89615dea46
 reference/strings/functions/convert-uuencode.xml: 89615dea46
 reference/strings/functions/count-chars.xml: efdbd50709
 reference/strings/functions/crc32.xml: 25f9678d48
-reference/strings/functions/crypt.xml: 2217cbe884
+reference/strings/functions/crypt.xml: 83b527fada
 reference/strings/functions/echo.xml: ae24695c39
 reference/strings/functions/explode.xml: 24655a5873
 reference/strings/functions/fprintf.xml: aa8d23cebf
