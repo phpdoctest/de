@@ -1037,6 +1037,7 @@ reference/image/functions/imagepsloadfont.xml: 0ce76c3e2f
 reference/image/functions/imagepsslantfont.xml: 0ce76c3e2f
 reference/image/functions/imagepstext.xml: 0ce76c3e2f
 reference/image/functions/imagerectangle.xml: d5b36b0b3f
+reference/image/functions/imagesavealpha.xml: 6153a64bc3
 reference/image/functions/imagesetpixel.xml: d5b36b0b3f
 reference/image/functions/imagestring.xml: 03f5c55ab1
 reference/image/functions/imagestringup.xml: 03f5c55ab1
