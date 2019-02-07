@@ -4,8 +4,8 @@ appendices/comparisons.xml: 06f2dbb709
 appendices/configure/php.xml: e599425755
 appendices/debugger.xml: 0f7e7dec4f
 appendices/history.xml: 30497110b3
-appendices/ini.core.xml: e5033db344
-appendices/ini.list.xml: 388209edca
+appendices/ini.core.xml: bd1d5c97b2
+appendices/ini.list.xml: 127674ffa7
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
 appendices/migration54.xml: e587df400d
@@ -110,12 +110,12 @@ language/errors.xml: e05d88bfe0
 language/exceptions.xml: a42f72dcc8
 language/expressions.xml: 577b60e69c
 language/functions.xml: 976171d2c8
-language/generators.xml: add1539a00
+language/generators.xml: 1c51de9a8a
 language/namespaces.xml: 77d8bc1006
 language/oop5.xml: f405eecb99
 language/oop5/abstract.xml: 822b0a4ce9
 language/oop5/anonymous.xml: e39bb029e1
-language/oop5/autoload.xml: 10cb8a289a
+language/oop5/autoload.xml: 9858cfd07e
 language/oop5/basic.xml: 24655a5873
 language/oop5/changelog.xml: b22f2cb0c6
 language/oop5/cloning.xml: 4c170fc8fc
@@ -195,7 +195,7 @@ language/types/boolean.xml: 06f2dbb709
 language/types/null.xml: 892a4001bb
 language/types/object.xml: 7177d26299
 language/types/resource.xml: 7f3bd947da
-language/types/string.xml: 62948d44c8
+language/types/string.xml: abf47cd545
 language/variables.xml: 1b0418723e
 language/wrappers.xml: 07f040bc3f
 preface.xml: 09818bff14
@@ -1037,7 +1037,7 @@ reference/image/functions/imagepsloadfont.xml: 0ce76c3e2f
 reference/image/functions/imagepsslantfont.xml: 0ce76c3e2f
 reference/image/functions/imagepstext.xml: 0ce76c3e2f
 reference/image/functions/imagerectangle.xml: d5b36b0b3f
-reference/image/functions/imagesavealpha.xml: 6153a64bc3
+reference/image/functions/imagesavealpha.xml: e137d0141b
 reference/image/functions/imagesetpixel.xml: d5b36b0b3f
 reference/image/functions/imagestring.xml: 03f5c55ab1
 reference/image/functions/imagestringup.xml: 03f5c55ab1
@@ -1047,7 +1047,7 @@ reference/image/functions/imagettfbbox.xml: 0e38f6e783
 reference/image/functions/imagettftext.xml: 0e38f6e783
 reference/image/functions/imagetypes.xml: ea6833b4d8
 reference/image/functions/jpeg2wbmp.xml: 4232878086
-reference/image/ini.xml: 0307bce96e
+reference/image/ini.xml: 864db1b9df
 reference/image/reference.xml: efdbd50709
 reference/image/setup.xml: 38ad9844aa
 reference/imagick/imagick/pingimage.xml: f7f145c8f6
@@ -2176,7 +2176,7 @@ reference/pspell/functions/pspell-config-personal.xml: efdbd50709
 reference/pspell/functions/pspell-config-repl.xml: efdbd50709
 reference/pspell/functions/pspell-config-runtogether.xml: efdbd50709
 reference/pspell/functions/pspell-config-save-repl.xml: efdbd50709
-reference/pspell/functions/pspell-new-config.xml: efdbd50709
+reference/pspell/functions/pspell-new-config.xml: f813082297
 reference/pspell/functions/pspell-new-personal.xml: efdbd50709
 reference/pspell/functions/pspell-new.xml: efdbd50709
 reference/pspell/functions/pspell-save-wordlist.xml: efdbd50709
@@ -2454,7 +2454,7 @@ reference/sqlite3/sqlite3/construct.xml: 88c55efbdb
 reference/sqlite3/sqlite3/createaggregate.xml: 3b09b89419
 reference/sqlite3/sqlite3/createfunction.xml: e65b87e384
 reference/sqlite3/sqlite3/escapestring.xml: d7048dc31b
-reference/sqlite3/sqlite3/exec.xml: 807c846e04
+reference/sqlite3/sqlite3/exec.xml: 00549ce953
 reference/sqlite3/sqlite3/lasterrorcode.xml: 807c846e04
 reference/sqlite3/sqlite3/lasterrormsg.xml: 807c846e04
 reference/sqlite3/sqlite3/lastinsertrowid.xml: 807c846e04
