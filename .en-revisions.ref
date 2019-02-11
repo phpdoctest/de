@@ -116,7 +116,7 @@ language/oop5.xml: f405eecb99
 language/oop5/abstract.xml: 822b0a4ce9
 language/oop5/anonymous.xml: e39bb029e1
 language/oop5/autoload.xml: 9858cfd07e
-language/oop5/basic.xml: 24655a5873
+language/oop5/basic.xml: 435e92092b
 language/oop5/changelog.xml: b22f2cb0c6
 language/oop5/cloning.xml: 4c170fc8fc
 language/oop5/constants.xml: 713bbc9c60
@@ -1729,7 +1729,7 @@ reference/openssl/functions/openssl-csr-get-public-key.xml: 88c55efbdb
 reference/openssl/functions/openssl-csr-get-subject.xml: 88c55efbdb
 reference/openssl/functions/openssl-csr-new.xml: deaba654f2
 reference/openssl/functions/openssl-csr-sign.xml: ff04011016
-reference/openssl/functions/openssl-encrypt.xml: 8c42f63d1a
+reference/openssl/functions/openssl-encrypt.xml: 95ff79dcbc
 reference/openssl/functions/openssl-error-string.xml: 888dad4a31
 reference/openssl/functions/openssl-free-key.xml: efdbd50709
 reference/openssl/functions/openssl-get-privatekey.xml: efdbd50709
@@ -2272,7 +2272,7 @@ reference/session/functions/session-set-save-handler.xml: c99381d6e3
 reference/session/functions/session-start.xml: d94cfe953a
 reference/session/functions/session-status.xml: 826c6a08ef
 reference/session/functions/session-unregister.xml: 7f3bd947da
-reference/session/functions/session-unset.xml: bca972befb
+reference/session/functions/session-unset.xml: ed44dd4a46
 reference/session/functions/session-write-close.xml: bca972befb
 reference/session/ini.xml: 5c6aa61fa5
 reference/session/reference.xml: efdbd50709
