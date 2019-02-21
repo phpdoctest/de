@@ -195,7 +195,7 @@ language/types/boolean.xml: 06f2dbb709
 language/types/null.xml: 892a4001bb
 language/types/object.xml: 7177d26299
 language/types/resource.xml: 7f3bd947da
-language/types/string.xml: abf47cd545
+language/types/string.xml: fdb407e1ea
 language/variables.xml: 1b0418723e
 language/wrappers.xml: 07f040bc3f
 preface.xml: 09818bff14
@@ -743,7 +743,7 @@ reference/filepro/functions/filepro.xml: efdbd50709
 reference/filepro/reference.xml: efdbd50709
 reference/filepro/setup.xml: 807c846e04
 reference/filesystem/book.xml: 890455fa05
-reference/filesystem/constants.xml: 0241c08b65
+reference/filesystem/constants.xml: 2fec22e0cf
 reference/filesystem/functions/basename.xml: f3061bf910
 reference/filesystem/functions/chgrp.xml: fd2c899705
 reference/filesystem/functions/chmod.xml: aab2dca312
@@ -1309,8 +1309,8 @@ reference/math/functions/log10.xml: efdbd50709
 reference/math/functions/max.xml: aa8d23cebf
 reference/math/functions/min.xml: aa8d23cebf
 reference/math/functions/mt-getrandmax.xml: 5070f84ba0
-reference/math/functions/mt-rand.xml: ff8d3e2dfe
-reference/math/functions/mt-srand.xml: ff8d3e2dfe
+reference/math/functions/mt-rand.xml: f917b7a738
+reference/math/functions/mt-srand.xml: f917b7a738
 reference/math/functions/octdec.xml: b658965b6f
 reference/math/functions/pi.xml: efdbd50709
 reference/math/functions/pow.xml: 7e2c900222
@@ -2480,7 +2480,7 @@ reference/strings/functions/convert-uuencode.xml: 89615dea46
 reference/strings/functions/count-chars.xml: efdbd50709
 reference/strings/functions/crc32.xml: 25f9678d48
 reference/strings/functions/crypt.xml: 83b527fada
-reference/strings/functions/echo.xml: ae24695c39
+reference/strings/functions/echo.xml: d28364e725
 reference/strings/functions/explode.xml: 24655a5873
 reference/strings/functions/fprintf.xml: aa8d23cebf
 reference/strings/functions/get-html-translation-table.xml: 30497110b3
@@ -2500,7 +2500,7 @@ reference/strings/functions/ltrim.xml: 8868566c3a
 reference/strings/functions/md5-file.xml: 88c55efbdb
 reference/strings/functions/md5.xml: 88c55efbdb
 reference/strings/functions/metaphone.xml: e2a9be3d7b
-reference/strings/functions/money-format.xml: efdbd50709
+reference/strings/functions/money-format.xml: f917b7a738
 reference/strings/functions/nl-langinfo.xml: efdbd50709
 reference/strings/functions/nl2br.xml: 88c55efbdb
 reference/strings/functions/number-format.xml: 1be2962355
