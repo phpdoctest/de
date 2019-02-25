@@ -27,7 +27,7 @@ appendices/migration70/removed-exts-sapis.xml: 2ded59b783
 appendices/migration71.xml: 6eb60e4c67
 appendices/reserved.constants.core.xml: ec42acafa1
 appendices/reserved.constants.standard.xml: 0d8699fe99
-appendices/reserved.xml: db8c91f52b
+appendices/reserved.xml: 161d42187c
 appendices/resources.xml: 4371066e7f
 appendices/tokens.xml: 655ff7111a
 appendices/transports.xml: fda43b87c7
@@ -110,7 +110,7 @@ language/errors.xml: e05d88bfe0
 language/exceptions.xml: a42f72dcc8
 language/expressions.xml: 577b60e69c
 language/functions.xml: 976171d2c8
-language/generators.xml: 1c51de9a8a
+language/generators.xml: 582fa7c000
 language/namespaces.xml: 77d8bc1006
 language/oop5.xml: f405eecb99
 language/oop5/abstract.xml: 822b0a4ce9
@@ -137,7 +137,7 @@ language/oop5/static.xml: 77c3efb7c2
 language/oop5/traits.xml: af4569da3e
 language/oop5/typehinting.xml: 476e58b54c
 language/oop5/visibility.xml: ef0d1df025
-language/operators.xml: 6bc394de5a
+language/operators.xml: e0e3faea35
 language/predefined/arrayaccess.xml: 54fc72fb20
 language/predefined/arrayaccess/offsetexists.xml: d54283cfbc
 language/predefined/arrayaccess/offsetget.xml: c320e5d8c0
@@ -188,7 +188,7 @@ language/predefined/variables/request.xml: 991103bc31
 language/predefined/variables/server.xml: 0717ce8ee4
 language/predefined/variables/session.xml: 991103bc31
 language/predefined/variables/superglobals.xml: 807c846e04
-language/references.xml: c32af11dd9
+language/references.xml: a7eb491fb8
 language/types.xml: c6429b8faf
 language/types/array.xml: d26d5ec6cf
 language/types/boolean.xml: 06f2dbb709
@@ -196,7 +196,7 @@ language/types/null.xml: 892a4001bb
 language/types/object.xml: 7177d26299
 language/types/resource.xml: 7f3bd947da
 language/types/string.xml: fdb407e1ea
-language/variables.xml: 1b0418723e
+language/variables.xml: a7eb491fb8
 language/wrappers.xml: 07f040bc3f
 preface.xml: 09818bff14
 reference/apache/book.xml: 890455fa05
@@ -323,7 +323,7 @@ reference/bc/functions/bcmod.xml: e419d41b77
 reference/bc/functions/bcmul.xml: d33f583409
 reference/bc/functions/bcpow.xml: 54ba489454
 reference/bc/functions/bcpowmod.xml: c96fe70ebc
-reference/bc/functions/bcscale.xml: 7d1b460255
+reference/bc/functions/bcscale.xml: 81ed041c72
 reference/bc/functions/bcsqrt.xml: 78135dcdc5
 reference/bc/functions/bcsub.xml: 78135dcdc5
 reference/bc/ini.xml: d2c80d6672
@@ -387,7 +387,7 @@ reference/classobj/functions/property-exists.xml: 96d65ff359
 reference/classobj/reference.xml: efdbd50709
 reference/classobj/setup.xml: efdbd50709
 reference/com/com.xml: 7d77c62175
-reference/com/functions/com-load-typelib.xml: 88c55efbdb
+reference/com/functions/com-load-typelib.xml: bf16e0ed93
 reference/com/variant.xml: 61eb976bf9
 reference/crack/book.xml: 890455fa05
 reference/crack/configure.xml: cfc26695eb
@@ -1823,7 +1823,7 @@ reference/pcre/functions/preg-replace-callback.xml: 366f584db7
 reference/pcre/functions/preg-replace.xml: 7f3bd947da
 reference/pcre/functions/preg-split.xml: 0f3043fcb5
 reference/pcre/ini.xml: 56502915c8
-reference/pcre/pattern.modifiers.xml: 6dbfde2c0f
+reference/pcre/pattern.modifiers.xml: f917b7a738
 reference/pcre/pattern.xml: 2a59242e81
 reference/pcre/reference.xml: efdbd50709
 reference/pcre/setup.xml: efdbd50709
@@ -2674,12 +2674,12 @@ reference/var/functions/var-export.xml: 88c55efbdb
 reference/var/ini.xml: 10cb8a289a
 reference/var/reference.xml: efdbd50709
 reference/var/setup.xml: efdbd50709
-reference/wddx/functions/wddx-add-vars.xml: efdbd50709
-reference/wddx/functions/wddx-deserialize.xml: 7ca5f9d6e5
-reference/wddx/functions/wddx-packet-end.xml: efdbd50709
-reference/wddx/functions/wddx-packet-start.xml: efdbd50709
-reference/wddx/functions/wddx-serialize-value.xml: efdbd50709
-reference/wddx/functions/wddx-serialize-vars.xml: efdbd50709
+reference/wddx/functions/wddx-add-vars.xml: c5f50ca117
+reference/wddx/functions/wddx-deserialize.xml: c5f50ca117
+reference/wddx/functions/wddx-packet-end.xml: c5f50ca117
+reference/wddx/functions/wddx-packet-start.xml: c5f50ca117
+reference/wddx/functions/wddx-serialize-value.xml: c5f50ca117
+reference/wddx/functions/wddx-serialize-vars.xml: c5f50ca117
 reference/xml/constants.xml: 5a28e2becc
 reference/xml/error-codes.xml: 807c846e04
 reference/xml/functions/utf8-decode.xml: f6ddd08f39
