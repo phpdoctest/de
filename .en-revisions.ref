@@ -169,7 +169,7 @@ language/predefined/iterator/valid.xml: d54283cfbc
 language/predefined/iteratoraggregate.xml: 961c2937af
 language/predefined/iteratoraggregate/getiterator.xml: 807c846e04
 language/predefined/serializable.xml: b90e3f16e2
-language/predefined/serializable/serialize.xml: b456ffc52d
+language/predefined/serializable/serialize.xml: 9c0c34a563
 language/predefined/serializable/unserialize.xml: 5c09bdd460
 language/predefined/traversable.xml: cf78389a0b
 language/predefined/variables.xml: 807c846e04
@@ -2490,7 +2490,7 @@ reference/strings/functions/hex2bin.xml: 01af1cefb0
 reference/strings/functions/html-entity-decode.xml: e40adee7a2
 reference/strings/functions/htmlentities.xml: 88c55efbdb
 reference/strings/functions/htmlspecialchars-decode.xml: d2d01f91f1
-reference/strings/functions/htmlspecialchars.xml: 88c55efbdb
+reference/strings/functions/htmlspecialchars.xml: e0069fa5df
 reference/strings/functions/implode.xml: 8868566c3a
 reference/strings/functions/join.xml: efdbd50709
 reference/strings/functions/lcfirst.xml: 6c4c118316
