@@ -2517,7 +2517,7 @@ reference/strings/functions/sha1-file.xml: 88c55efbdb
 reference/strings/functions/sha1.xml: 88c55efbdb
 reference/strings/functions/similar-text.xml: b2b29ed998
 reference/strings/functions/soundex.xml: efdbd50709
-reference/strings/functions/sprintf.xml: aa8d23cebf
+reference/strings/functions/sprintf.xml: 4f74878349
 reference/strings/functions/sscanf.xml: c155acec4b
 reference/strings/functions/str-getcsv.xml: 96fc4aebe7
 reference/strings/functions/str-ireplace.xml: a923ea6764
