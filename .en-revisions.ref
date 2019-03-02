@@ -171,6 +171,15 @@ language/predefined/iteratoraggregate/getiterator.xml: 807c846e04
 language/predefined/serializable.xml: b90e3f16e2
 language/predefined/serializable/serialize.xml: 9c0c34a563
 language/predefined/serializable/unserialize.xml: 5c09bdd460
+language/predefined/throwable.xml: c881baeca8
+language/predefined/throwable/getcode.xml: 5f3f4b3a01
+language/predefined/throwable/getfile.xml: e15a59359e
+language/predefined/throwable/getline.xml: 5f3f4b3a01
+language/predefined/throwable/getmessage.xml: 5f3f4b3a01
+language/predefined/throwable/getprevious.xml: 5f3f4b3a01
+language/predefined/throwable/gettrace.xml: 5f3f4b3a01
+language/predefined/throwable/gettraceasstring.xml: 5f3f4b3a01
+language/predefined/throwable/tostring.xml: 5f3f4b3a01
 language/predefined/traversable.xml: cf78389a0b
 language/predefined/variables.xml: 807c846e04
 language/predefined/variables/argc.xml: 7c3900be51
