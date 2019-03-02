@@ -77,7 +77,7 @@ install/unix/debian.xml: 608eeed3cf
 install/unix/hpux.xml: efdbd50709
 install/unix/index.xml: a930c2cc94
 install/unix/lighttpd-14.xml: a6c3488094
-install/unix/nginx.xml: 478c384328
+install/unix/nginx.xml: 0d73f523bb
 install/windows/legacy/index.xml: f65f8bc379
 language/basic-syntax.xml: 0abbc153bc
 language/constants.xml: 0399231045
@@ -123,7 +123,7 @@ language/oop5/constants.xml: 713bbc9c60
 language/oop5/decon.xml: a593c64847
 language/oop5/final.xml: f03553a9bb
 language/oop5/inheritance.xml: 7101d7984a
-language/oop5/interfaces.xml: 717bf24378
+language/oop5/interfaces.xml: f969144de3
 language/oop5/iterations.xml: 046bb07d17
 language/oop5/late-static-bindings.xml: c319fbc19d
 language/oop5/magic.xml: b78d56cbcf
@@ -137,7 +137,7 @@ language/oop5/static.xml: 77c3efb7c2
 language/oop5/traits.xml: af4569da3e
 language/oop5/typehinting.xml: 476e58b54c
 language/oop5/visibility.xml: ef0d1df025
-language/operators.xml: e0e3faea35
+language/operators.xml: fea84bd0db
 language/predefined/arrayaccess.xml: 54fc72fb20
 language/predefined/arrayaccess/offsetexists.xml: d54283cfbc
 language/predefined/arrayaccess/offsetget.xml: c320e5d8c0
@@ -825,7 +825,7 @@ reference/filesystem/setup.xml: 1eb825980a
 reference/filter/book.xml: 8c9107820c
 reference/filter/configure.xml: 8c9107820c
 reference/filter/constants.xml: f609f942bb
-reference/filter/filters.xml: 051cbdb89a
+reference/filter/filters.xml: b2b980ee9a
 reference/filter/functions/filter-has-var.xml: cc0e6f9c47
 reference/filter/functions/filter-id.xml: 9539b92f7a
 reference/filter/functions/filter-input-array.xml: 8c07506db8
@@ -1151,7 +1151,7 @@ reference/info/functions/getmyuid.xml: efdbd50709
 reference/info/functions/getrusage.xml: 3459382996
 reference/info/functions/php-ini-scanned-files.xml: e5984e6f8d
 reference/info/functions/php-logo-guid.xml: 23e853f430
-reference/info/functions/php-sapi-name.xml: 8f4b1a6108
+reference/info/functions/php-sapi-name.xml: cacb2c5a71
 reference/info/functions/phpinfo.xml: e6af5ab977
 reference/info/functions/phpversion.xml: b419529323
 reference/info/functions/putenv.xml: f61362dec9
@@ -1244,7 +1244,7 @@ reference/ldap/functions/ldap-get-values-len.xml: efdbd50709
 reference/ldap/functions/ldap-get-values.xml: efdbd50709
 reference/ldap/functions/ldap-list.xml: 90a1859230
 reference/ldap/functions/ldap-mod-add.xml: 90a1859230
-reference/ldap/functions/ldap-mod-del.xml: 90a1859230
+reference/ldap/functions/ldap-mod-del.xml: cb01be9171
 reference/ldap/functions/ldap-mod-replace.xml: 90a1859230
 reference/ldap/functions/ldap-modify.xml: faee473adf
 reference/ldap/functions/ldap-next-attribute.xml: efdbd50709
