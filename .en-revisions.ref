@@ -107,6 +107,8 @@ language/control-structures/return.xml: bf7f803165
 language/control-structures/switch.xml: 27833bd439
 language/control-structures/while.xml: f40cab318e
 language/errors.xml: e05d88bfe0
+language/errors/basics.xml: e05d88bfe0
+language/errors/php7.xml: e7a612c3c4
 language/exceptions.xml: a42f72dcc8
 language/expressions.xml: 577b60e69c
 language/functions.xml: 976171d2c8
@@ -143,6 +145,16 @@ language/predefined/arrayaccess/offsetexists.xml: d54283cfbc
 language/predefined/arrayaccess/offsetget.xml: c320e5d8c0
 language/predefined/arrayaccess/offsetset.xml: 21a4e2f50f
 language/predefined/arrayaccess/offsetunset.xml: 21a4e2f50f
+language/predefined/error/clone.xml: d3de000806
+language/predefined/error/construct.xml: d3de000806
+language/predefined/error/getcode.xml: d3de000806
+language/predefined/error/getfile.xml: d3de000806
+language/predefined/error/getline.xml: d3de000806
+language/predefined/error/getmessage.xml: d3de000806
+language/predefined/error/getprevious.xml: d3de000806
+language/predefined/error/gettrace.xml: d3de000806
+language/predefined/error/gettraceasstring.xml: d3de000806
+language/predefined/error/tostring.xml: d3de000806
 language/predefined/errorexception.xml: 790ceaa8fa
 language/predefined/errorexception/construct.xml: 293af5690a
 language/predefined/errorexception/getseverity.xml: 293af5690a
