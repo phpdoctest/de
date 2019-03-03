@@ -145,7 +145,7 @@ language/predefined/arrayaccess/offsetexists.xml: d54283cfbc
 language/predefined/arrayaccess/offsetget.xml: c320e5d8c0
 language/predefined/arrayaccess/offsetset.xml: 21a4e2f50f
 language/predefined/arrayaccess/offsetunset.xml: 21a4e2f50f
-language/predefined/error/clone.xml: d3de000806
+language/predefined/error/clone.xml: 457863453d
 language/predefined/error/construct.xml: d3de000806
 language/predefined/error/getcode.xml: d3de000806
 language/predefined/error/getfile.xml: d3de000806
