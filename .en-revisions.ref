@@ -185,7 +185,7 @@ language/predefined/serializable/serialize.xml: 9c0c34a563
 language/predefined/serializable/unserialize.xml: 5c09bdd460
 language/predefined/throwable.xml: c881baeca8
 language/predefined/throwable/getcode.xml: 5f3f4b3a01
-language/predefined/throwable/getfile.xml: e15a59359e
+language/predefined/throwable/getfile.xml: 457863453d
 language/predefined/throwable/getline.xml: 5f3f4b3a01
 language/predefined/throwable/getmessage.xml: 5f3f4b3a01
 language/predefined/throwable/getprevious.xml: 5f3f4b3a01
@@ -213,6 +213,8 @@ language/references.xml: a7eb491fb8
 language/types.xml: c6429b8faf
 language/types/array.xml: d26d5ec6cf
 language/types/boolean.xml: 06f2dbb709
+language/types/callable.xml: 7f3bd947da
+language/types/float.xml: c5d64771b3
 language/types/null.xml: 892a4001bb
 language/types/object.xml: 7177d26299
 language/types/resource.xml: 7f3bd947da
