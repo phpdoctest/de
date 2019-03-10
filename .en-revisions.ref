@@ -123,7 +123,7 @@ language/oop5/changelog.xml: b22f2cb0c6
 language/oop5/cloning.xml: 4c170fc8fc
 language/oop5/constants.xml: 713bbc9c60
 language/oop5/decon.xml: a593c64847
-language/oop5/final.xml: f03553a9bb
+language/oop5/final.xml: 913c3357e1
 language/oop5/inheritance.xml: 7101d7984a
 language/oop5/interfaces.xml: f969144de3
 language/oop5/iterations.xml: 046bb07d17
@@ -2297,7 +2297,7 @@ reference/session/functions/session-status.xml: 826c6a08ef
 reference/session/functions/session-unregister.xml: 7f3bd947da
 reference/session/functions/session-unset.xml: ed44dd4a46
 reference/session/functions/session-write-close.xml: bca972befb
-reference/session/ini.xml: 5c6aa61fa5
+reference/session/ini.xml: a01eb1eff7
 reference/session/reference.xml: efdbd50709
 reference/session/setup.xml: efdbd50709
 reference/session/upload-progress.xml: aa3f51d2c6
