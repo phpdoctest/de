@@ -25,6 +25,8 @@ appendices/migration70/constants.xml: 916abc8611
 appendices/migration70/incompatible.xml: 5b9a029379
 appendices/migration70/removed-exts-sapis.xml: 2ded59b783
 appendices/migration71.xml: 6eb60e4c67
+appendices/migration73/constants.xml: eceec5edee
+appendices/migration73/deprecated.xml: 520ff508e1
 appendices/reserved.constants.core.xml: ec42acafa1
 appendices/reserved.constants.standard.xml: 0d8699fe99
 appendices/reserved.xml: 161d42187c
