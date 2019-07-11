@@ -132,7 +132,7 @@ language/oop5/iterations.xml: 046bb07d17
 language/oop5/late-static-bindings.xml: c319fbc19d
 language/oop5/magic.xml: b78d56cbcf
 language/oop5/object-comparison.xml: b455602761
-language/oop5/overloading.xml: 41e7b91a5c
+language/oop5/overloading.xml: d138c287cb
 language/oop5/paamayim-nekudotayim.xml: d65d1fefc9
 language/oop5/properties.xml: f1e16c6c99
 language/oop5/references.xml: 15a78e638d
@@ -259,7 +259,7 @@ reference/array/functions/array-diff-ukey.xml: 65735b6b36
 reference/array/functions/array-diff.xml: 1ab2230d69
 reference/array/functions/array-fill-keys.xml: efdbd50709
 reference/array/functions/array-fill.xml: 42df480719
-reference/array/functions/array-filter.xml: 0ec6fd50fb
+reference/array/functions/array-filter.xml: 1cd09a5582
 reference/array/functions/array-flip.xml: 0721714547
 reference/array/functions/array-intersect-assoc.xml: 73180d0145
 reference/array/functions/array-intersect-key.xml: 65735b6b36
@@ -1017,7 +1017,7 @@ reference/ifx/setup.xml: 0e302b252e
 reference/image/book.xml: 55e73f039c
 reference/image/examples.xml: 99b1e62273
 reference/image/functions/gd-info.xml: 70f1d0f3c7
-reference/image/functions/getimagesize.xml: f1be4bc170
+reference/image/functions/getimagesize.xml: 1c06b5d509
 reference/image/functions/getimagesizefromstring.xml: c7cc08a35f
 reference/image/functions/imagearc.xml: d5b36b0b3f
 reference/image/functions/imagechar.xml: d5b36b0b3f
@@ -1233,7 +1233,7 @@ reference/ingres-ii/setup.xml: 807c846e04
 reference/json/book.xml: bf6b8d0214
 reference/json/constants.xml: 053158665e
 reference/json/functions/json-decode.xml: 7be1e3ca17
-reference/json/functions/json-encode.xml: e79fee5875
+reference/json/functions/json-encode.xml: ce15d24919
 reference/json/functions/json-last-error-msg.xml: 15b53be526
 reference/json/functions/json-last-error.xml: 916abc8611
 reference/json/jsonserializable.xml: b88ab30866
@@ -1249,7 +1249,7 @@ reference/ldap/functions/ldap-add.xml: 90a1859230
 reference/ldap/functions/ldap-bind.xml: 5fdf613105
 reference/ldap/functions/ldap-close.xml: efdbd50709
 reference/ldap/functions/ldap-compare.xml: 90a1859230
-reference/ldap/functions/ldap-connect.xml: 581b42636b
+reference/ldap/functions/ldap-connect.xml: f8ec628c9a
 reference/ldap/functions/ldap-count-entries.xml: e6ea9bcaaf
 reference/ldap/functions/ldap-delete.xml: 90a1859230
 reference/ldap/functions/ldap-dn2ufn.xml: efdbd50709
@@ -1570,7 +1570,7 @@ reference/mysql/functions/mysql-stat.xml: 8fb0bc6cab
 reference/mysql/functions/mysql-tablename.xml: 8fb0bc6cab
 reference/mysql/functions/mysql-thread-id.xml: 8fb0bc6cab
 reference/mysql/functions/mysql-unbuffered-query.xml: a923ea6764
-reference/mysql/ini.xml: 893c32681b
+reference/mysql/ini.xml: 7a49cbd5f4
 reference/mysql/reference.xml: efdbd50709
 reference/mysql/setup.xml: 4bfcdd0ff3
 reference/mysqli/book.xml: 9c835e0ad8
