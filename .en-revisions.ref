@@ -991,6 +991,7 @@ reference/htscanner/book.xml: 949d5fbbc6
 reference/htscanner/configure.xml: 807c846e04
 reference/htscanner/ini.xml: f954cc9acb
 reference/htscanner/setup.xml: 807c846e04
+reference/ibase/functions/ibase-backup.xml: 9242ca08a2
 reference/ibase/functions/ibase-close.xml: edd2392da9
 reference/ibase/functions/ibase-connect.xml: 2a77481f1a
 reference/ibase/functions/ibase-execute.xml: aa8d23cebf
@@ -1002,6 +1003,8 @@ reference/ibase/functions/ibase-num-fields.xml: efdbd50709
 reference/ibase/functions/ibase-pconnect.xml: efdbd50709
 reference/ibase/functions/ibase-prepare.xml: fd7601e56c
 reference/ibase/functions/ibase-query.xml: efdbd50709
+reference/ibase/functions/ibase-restore.xml: 9242ca08a2
+reference/ibase/functions/ibase-server-info.xml: 9242ca08a2
 reference/iconv/functions/iconv-get-encoding.xml: efdbd50709
 reference/iconv/functions/iconv-set-encoding.xml: e808304b71
 reference/iconv/functions/iconv.xml: 7374694394
