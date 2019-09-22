@@ -338,7 +338,7 @@ reference/bbcode/functions/bbcode-destroy.xml: efdbd50709
 reference/bbcode/functions/bbcode-parse.xml: a5115ebcb2
 reference/bbcode/reference.xml: efdbd50709
 reference/bbcode/setup.xml: efdbd50709
-reference/bc/book.xml: ae59b4fa8c
+reference/bc/book.xml: 44a0921082
 reference/bc/configure.xml: efdbd50709
 reference/bc/constants.xml: 807c846e04
 reference/bc/functions/bcadd.xml: 78135dcdc5
@@ -593,7 +593,7 @@ reference/dbx/functions/dbx-sort.xml: efdbd50709
 reference/dbx/ini.xml: 7a49cbd5f4
 reference/dbx/reference.xml: efdbd50709
 reference/dbx/setup.xml: 7a49cbd5f4
-reference/dio/book.xml: 890455fa05
+reference/dio/book.xml: 7a49cbd5f4
 reference/dio/configure.xml: efdbd50709
 reference/dio/constants.xml: 30497110b3
 reference/dio/functions/dio-close.xml: efdbd50709
@@ -617,7 +617,7 @@ reference/dir/functions/chroot.xml: 0bdf556d60
 reference/dir/functions/closedir.xml: efdbd50709
 reference/dir/functions/dir.xml: c3ae9105d7
 reference/dir/functions/getcwd.xml: efdbd50709
-reference/dir/functions/opendir.xml: c3ae9105d7
+reference/dir/functions/opendir.xml: 1e552f26a0
 reference/dir/functions/readdir.xml: 4270736a59
 reference/dir/functions/rewinddir.xml: 212ed75bab
 reference/dir/functions/scandir.xml: 030f6192cf
@@ -626,13 +626,13 @@ reference/dir/setup.xml: 807c846e04
 reference/dom/book.xml: 7f3bd947da
 reference/dom/functions/dom-import-simplexml.xml: efdbd50709
 reference/errorfunc/book.xml: 890455fa05
-reference/errorfunc/constants.xml: 1d02f956d5
+reference/errorfunc/constants.xml: 7a49cbd5f4
 reference/errorfunc/examples.xml: 1d7f04f23d
 reference/errorfunc/functions/debug-backtrace.xml: 0a3b8a6568
 reference/errorfunc/functions/debug-print-backtrace.xml: 0a3b8a6568
 reference/errorfunc/functions/error-get-last.xml: a5d6fe506a
 reference/errorfunc/functions/error-log.xml: 30c81b993b
-reference/errorfunc/functions/error-reporting.xml: e089f863cf
+reference/errorfunc/functions/error-reporting.xml: 7a49cbd5f4
 reference/errorfunc/functions/restore-error-handler.xml: fc21ef4038
 reference/errorfunc/functions/restore-exception-handler.xml: efdbd50709
 reference/errorfunc/functions/set-error-handler.xml: 892a4001bb
@@ -652,7 +652,7 @@ reference/exec/functions/passthru.xml: efdbd50709
 reference/exec/functions/proc-close.xml: f39c430aeb
 reference/exec/functions/proc-get-status.xml: efdbd50709
 reference/exec/functions/proc-nice.xml: 9e31d4bea8
-reference/exec/functions/proc-open.xml: cf6ce7b4e1
+reference/exec/functions/proc-open.xml: 21d44a5a94
 reference/exec/functions/proc-terminate.xml: efdbd50709
 reference/exec/functions/shell-exec.xml: 1cacf5ac7f
 reference/exec/functions/system.xml: efdbd50709
@@ -749,8 +749,8 @@ reference/fileinfo/book.xml: 079bf0cd64
 reference/fileinfo/configure.xml: 97e9a1f895
 reference/fileinfo/constants.xml: 614e212f13
 reference/fileinfo/functions/finfo-close.xml: 1c63cc33e6
-reference/fileinfo/functions/finfo-file.xml: 3484ac0728
-reference/fileinfo/functions/finfo-open.xml: 3b4167177a
+reference/fileinfo/functions/finfo-file.xml: bbc86ec383
+reference/fileinfo/functions/finfo-open.xml: bbc86ec383
 reference/fileinfo/functions/finfo-set-flags.xml: 3b4167177a
 reference/fileinfo/functions/mime-content-type.xml: ae897260ec
 reference/fileinfo/reference.xml: efdbd50709
@@ -811,7 +811,7 @@ reference/filesystem/functions/fstat.xml: efdbd50709
 reference/filesystem/functions/ftell.xml: 76aef7ce7b
 reference/filesystem/functions/ftruncate.xml: cf6ce7b4e1
 reference/filesystem/functions/fwrite.xml: 88e49b6fae
-reference/filesystem/functions/glob.xml: cf6ce7b4e1
+reference/filesystem/functions/glob.xml: ca1b190bee
 reference/filesystem/functions/is-dir.xml: c3ae9105d7
 reference/filesystem/functions/is-executable.xml: cf6ce7b4e1
 reference/filesystem/functions/is-file.xml: 16bd608fc2
@@ -1030,7 +1030,7 @@ reference/ibase/functions/ibase-param-info.xml: efdbd50709
 reference/ibase/functions/ibase-pconnect.xml: efdbd50709
 reference/ibase/functions/ibase-prepare.xml: fd7601e56c
 reference/ibase/functions/ibase-query.xml: efdbd50709
-reference/ibase/functions/ibase-restore.xml: 9242ca08a2
+reference/ibase/functions/ibase-restore.xml: 3c5eb8e359
 reference/ibase/functions/ibase-rollback-ret.xml: edd2392da9
 reference/ibase/functions/ibase-rollback.xml: edd2392da9
 reference/ibase/functions/ibase-server-info.xml: 9242ca08a2
@@ -1051,7 +1051,7 @@ reference/ifx/book.xml: 890455fa05
 reference/ifx/configure.xml: efdbd50709
 reference/ifx/reference.xml: efdbd50709
 reference/ifx/setup.xml: 0e302b252e
-reference/image/book.xml: 55e73f039c
+reference/image/book.xml: 820bb538e3
 reference/image/examples.xml: 99b1e62273
 reference/image/functions/gd-info.xml: 70f1d0f3c7
 reference/image/functions/getimagesize.xml: 1c06b5d509
@@ -1111,7 +1111,7 @@ reference/image/functions/imagetypes.xml: ea6833b4d8
 reference/image/functions/jpeg2wbmp.xml: 4232878086
 reference/image/ini.xml: 864db1b9df
 reference/image/reference.xml: efdbd50709
-reference/image/setup.xml: 38ad9844aa
+reference/image/setup.xml: 1c06b5d509
 reference/imagick/imagick/pingimage.xml: f7f145c8f6
 reference/imap/book.xml: 890455fa05
 reference/imap/configure.xml: efdbd50709
@@ -1161,7 +1161,7 @@ reference/imap/functions/imap-mime-header-decode.xml: 30497110b3
 reference/imap/functions/imap-msgno.xml: efdbd50709
 reference/imap/functions/imap-num-msg.xml: 2343fafac9
 reference/imap/functions/imap-num-recent.xml: efdbd50709
-reference/imap/functions/imap-open.xml: 7c01ff17dd
+reference/imap/functions/imap-open.xml: ede230c9c9
 reference/imap/functions/imap-ping.xml: efdbd50709
 reference/imap/functions/imap-qprint.xml: efdbd50709
 reference/imap/functions/imap-rename.xml: b0f052731e
@@ -1220,11 +1220,11 @@ reference/info/functions/putenv.xml: f61362dec9
 reference/info/functions/set-include-path.xml: 7f3bd947da
 reference/info/functions/set-magic-quotes-runtime.xml: d736ddfe2d
 reference/info/functions/set-time-limit.xml: 90ae4d912a
-reference/info/functions/version-compare.xml: afd7b6a586
+reference/info/functions/version-compare.xml: 413a4493c2
 reference/info/functions/zend-logo-guid.xml: 23e853f430
 reference/info/functions/zend-thread-id.xml: efdbd50709
 reference/info/functions/zend-version.xml: efdbd50709
-reference/info/ini.xml: d68446850a
+reference/info/ini.xml: 1c06b5d509
 reference/info/reference.xml: efdbd50709
 reference/info/setup.xml: efdbd50709
 reference/ingres-ii/book.xml: 890455fa05
@@ -1330,7 +1330,7 @@ reference/ldap/using.xml: 807c846e04
 reference/mail/book.xml: 890455fa05
 reference/mail/constants.xml: 807c846e04
 reference/mail/functions/ezmlm-hash.xml: efdbd50709
-reference/mail/functions/mail.xml: 44768654ca
+reference/mail/functions/mail.xml: 2b915edd11
 reference/mail/ini.xml: 7f3bd947da
 reference/mail/reference.xml: efdbd50709
 reference/mail/setup.xml: 0e302b252e
@@ -1348,7 +1348,7 @@ reference/math/functions/base-convert.xml: 31f9f4d802
 reference/math/functions/bindec.xml: b658965b6f
 reference/math/functions/ceil.xml: efdbd50709
 reference/math/functions/cos.xml: efdbd50709
-reference/math/functions/cosh.xml: efdbd50709
+reference/math/functions/cosh.xml: e94dbb96d0
 reference/math/functions/decbin.xml: 137faf8e08
 reference/math/functions/dechex.xml: 768d5bffb9
 reference/math/functions/decoct.xml: 2c58adc4c3
@@ -1420,7 +1420,7 @@ reference/misc/functions/eval.xml: 747d553123
 reference/misc/functions/exit.xml: ef0e81d4e8
 reference/misc/functions/get-browser.xml: 88c55efbdb
 reference/misc/functions/halt-compiler.xml: efdbd50709
-reference/misc/functions/highlight-file.xml: 88c55efbdb
+reference/misc/functions/highlight-file.xml: 7a49cbd5f4
 reference/misc/functions/highlight-string.xml: 88c55efbdb
 reference/misc/functions/ignore-user-abort.xml: 30ae797a66
 reference/misc/functions/pack.xml: aa8d23cebf
@@ -1519,7 +1519,7 @@ reference/msql/functions/msql.xml: 1f89d5415a
 reference/msql/ini.xml: d2c80d6672
 reference/msql/reference.xml: efdbd50709
 reference/msql/setup.xml: 807c846e04
-reference/mssql/book.xml: b49e8ffd85
+reference/mssql/book.xml: bf0d736d64
 reference/mssql/configure.xml: efdbd50709
 reference/mssql/constants.xml: 5a28e2becc
 reference/mssql/functions/mssql-bind.xml: 88c55efbdb
@@ -1552,7 +1552,7 @@ reference/mssql/functions/mssql-query.xml: b49e8ffd85
 reference/mssql/functions/mssql-result.xml: b49e8ffd85
 reference/mssql/functions/mssql-rows-affected.xml: b49e8ffd85
 reference/mssql/functions/mssql-select-db.xml: b49e8ffd85
-reference/mssql/ini.xml: d2c80d6672
+reference/mssql/ini.xml: 44a0921082
 reference/mssql/reference.xml: efdbd50709
 reference/mssql/setup.xml: 196ff78803
 reference/mysql/book.xml: d16ba5b851
@@ -1562,7 +1562,7 @@ reference/mysql/examples.xml: ee00fe1a3d
 reference/mysql/functions/mysql-affected-rows.xml: 8fb0bc6cab
 reference/mysql/functions/mysql-client-encoding.xml: 8fb0bc6cab
 reference/mysql/functions/mysql-close.xml: b47bcf9beb
-reference/mysql/functions/mysql-connect.xml: 88c55efbdb
+reference/mysql/functions/mysql-connect.xml: 1e552f26a0
 reference/mysql/functions/mysql-create-db.xml: aa4cad3a87
 reference/mysql/functions/mysql-data-seek.xml: 8fb0bc6cab
 reference/mysql/functions/mysql-db-name.xml: 8fb0bc6cab
@@ -1596,7 +1596,7 @@ reference/mysql/functions/mysql-list-processes.xml: 8fb0bc6cab
 reference/mysql/functions/mysql-list-tables.xml: a527be4a34
 reference/mysql/functions/mysql-num-fields.xml: dcf1b07eb6
 reference/mysql/functions/mysql-num-rows.xml: 16e147a36e
-reference/mysql/functions/mysql-pconnect.xml: 8868566c3a
+reference/mysql/functions/mysql-pconnect.xml: 1e552f26a0
 reference/mysql/functions/mysql-ping.xml: ce26531f8a
 reference/mysql/functions/mysql-query.xml: fec7bbb1f5
 reference/mysql/functions/mysql-real-escape-string.xml: 5e38a0b111
@@ -1627,7 +1627,7 @@ reference/mysqli/functions/mysqli-report.xml: cf27e23f35
 reference/mysqli/functions/mysqli-send-long-data.xml: 1f89d5415a
 reference/mysqli/functions/mysqli-set-opt.xml: 1f89d5415a
 reference/mysqli/functions/mysqli-slave-query.xml: efdbd50709
-reference/mysqli/ini.xml: f3d3778ae1
+reference/mysqli/ini.xml: 7a49cbd5f4
 reference/mysqli/mysqli.xml: f861061e99
 reference/mysqli/mysqli/affected-rows.xml: 0eac70f097
 reference/mysqli/mysqli/autocommit.xml: 693ac6fde1
