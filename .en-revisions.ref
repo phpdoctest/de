@@ -1078,7 +1078,7 @@ reference/image/functions/imagecreatefrompng.xml: cfc26695eb
 reference/image/functions/imagedashedline.xml: d5b36b0b3f
 reference/image/functions/imagedestroy.xml: efdbd50709
 reference/image/functions/imagefill.xml: d5b36b0b3f
-reference/image/functions/imagefilledpolygon.xml: d5b36b0b3f
+reference/image/functions/imagefilledpolygon.xml: 0affd2aa3a
 reference/image/functions/imagefilledrectangle.xml: d5b36b0b3f
 reference/image/functions/imagefilltoborder.xml: d5b36b0b3f
 reference/image/functions/imagefontheight.xml: 6b490dbc34
@@ -1090,7 +1090,7 @@ reference/image/functions/imagejpeg.xml: a6c42e8fef
 reference/image/functions/imageline.xml: d5b36b0b3f
 reference/image/functions/imageloadfont.xml: efdbd50709
 reference/image/functions/imagepng.xml: a6c42e8fef
-reference/image/functions/imagepolygon.xml: d5b36b0b3f
+reference/image/functions/imagepolygon.xml: 0affd2aa3a
 reference/image/functions/imagepsbbox.xml: 0ce76c3e2f
 reference/image/functions/imagepsencodefont.xml: 0ce76c3e2f
 reference/image/functions/imagepsextendfont.xml: 0ce76c3e2f
@@ -1193,7 +1193,7 @@ reference/imap/setup.xml: 1713138dd1
 reference/inclued/functions/inclued-get-data.xml: 087999d634
 reference/info/book.xml: 890455fa05
 reference/info/constants.xml: d7cfec0bf8
-reference/info/functions/assert-options.xml: efdbd50709
+reference/info/functions/assert-options.xml: 100c7246c6
 reference/info/functions/assert.xml: 892a4001bb
 reference/info/functions/dl.xml: 7f3bd947da
 reference/info/functions/extension-loaded.xml: cf6ce7b4e1
@@ -1279,7 +1279,7 @@ reference/json/reference.xml: efdbd50709
 reference/json/setup.xml: 9703fd5e43
 reference/ldap/book.xml: 4b8345784c
 reference/ldap/configure.xml: 4aa5ab703c
-reference/ldap/constants.xml: bd3687f8bb
+reference/ldap/constants.xml: 455b7c0ad0
 reference/ldap/examples.xml: 489a906a2d
 reference/ldap/functions/ldap-8859-to-t61.xml: efdbd50709
 reference/ldap/functions/ldap-add.xml: 90a1859230
@@ -1378,7 +1378,7 @@ reference/math/functions/pi.xml: efdbd50709
 reference/math/functions/pow.xml: 7e2c900222
 reference/math/functions/rad2deg.xml: efdbd50709
 reference/math/functions/rand.xml: ff8d3e2dfe
-reference/math/functions/round.xml: e21888848d
+reference/math/functions/round.xml: c06a5e55d9
 reference/math/functions/sin.xml: efdbd50709
 reference/math/functions/sinh.xml: efdbd50709
 reference/math/functions/sqrt.xml: efdbd50709
@@ -1807,7 +1807,7 @@ reference/openssl/functions/openssl-pkcs12-read.xml: 717bd2afed
 reference/openssl/functions/openssl-pkey-export-to-file.xml: efdbd50709
 reference/openssl/functions/openssl-pkey-export.xml: efdbd50709
 reference/openssl/functions/openssl-pkey-free.xml: efdbd50709
-reference/openssl/functions/openssl-pkey-get-details.xml: fc084fb413
+reference/openssl/functions/openssl-pkey-get-details.xml: fd3cc51d8c
 reference/openssl/functions/openssl-pkey-get-private.xml: efdbd50709
 reference/openssl/functions/openssl-pkey-get-public.xml: ff95345f70
 reference/openssl/functions/openssl-pkey-new.xml: fc084fb413
@@ -2095,7 +2095,7 @@ reference/pdo_sqlite/reference.xml: 30497110b3
 reference/pgsql/book.xml: 137ca00925
 reference/pgsql/configure.xml: efdbd50709
 reference/pgsql/constants.xml: cda1b3be34
-reference/pgsql/examples.xml: 83fc699d58
+reference/pgsql/examples.xml: c17142528e
 reference/pgsql/functions/pg-affected-rows.xml: b5e28ab6c1
 reference/pgsql/functions/pg-cancel-query.xml: efdbd50709
 reference/pgsql/functions/pg-client-encoding.xml: efdbd50709
