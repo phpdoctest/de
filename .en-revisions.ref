@@ -1,14 +1,14 @@
-appendices/about.xml: 6094d9be1a
+appendices/about.xml: fb41213aa5
 appendices/aliases.xml: 53076d9726
 appendices/comparisons.xml: 06f2dbb709
 appendices/configure/php.xml: e599425755
 appendices/debugger.xml: 0f7e7dec4f
 appendices/history.xml: 30497110b3
 appendices/ini.core.xml: bd1d5c97b2
-appendices/ini.list.xml: 127674ffa7
+appendices/ini.list.xml: 948725f9e6
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
-appendices/migration54.xml: e587df400d
+appendices/migration54.xml: 820bb538e3
 appendices/migration56.xml: fbf9594048
 appendices/migration56/changed-functions.xml: 39b2fbf686
 appendices/migration56/constants.xml: bcd064772f
@@ -27,7 +27,7 @@ appendices/migration70/removed-exts-sapis.xml: 2ded59b783
 appendices/migration71.xml: 6eb60e4c67
 appendices/migration73/constants.xml: d5979c9fab
 appendices/migration73/deprecated.xml: 520ff508e1
-appendices/reserved.constants.core.xml: ec42acafa1
+appendices/reserved.constants.core.xml: 13008781fe
 appendices/reserved.constants.standard.xml: 0d8699fe99
 appendices/reserved.xml: 161d42187c
 appendices/resources.xml: 4371066e7f
@@ -51,7 +51,7 @@ faq/obtaining.xml: 85fa7eac51
 faq/passwords.xml: 3e661618e0
 faq/using.xml: 8e9139b620
 features/commandline.xml: 3257a077f4
-features/connection-handling.xml: b4dffc797a
+features/connection-handling.xml: fcfc1c8667
 features/cookies.xml: da3f8bf46c
 features/file-upload.xml: c6fc7b00c6
 features/http-auth.xml: 5ed893b609
@@ -268,7 +268,7 @@ reference/array/functions/array-intersect-ukey.xml: 65735b6b36
 reference/array/functions/array-intersect.xml: 65735b6b36
 reference/array/functions/array-key-exists.xml: 68c911b509
 reference/array/functions/array-keys.xml: 0f3fffac75
-reference/array/functions/array-map.xml: ee3a9efbc6
+reference/array/functions/array-map.xml: 3af0d9dae6
 reference/array/functions/array-merge-recursive.xml: 6c62b05bb0
 reference/array/functions/array-merge.xml: 6c62b05bb0
 reference/array/functions/array-multisort.xml: 6537a11257
@@ -282,8 +282,8 @@ reference/array/functions/array-replace.xml: 26e97ec7fb
 reference/array/functions/array-reverse.xml: 88c55efbdb
 reference/array/functions/array-search.xml: 2999862370
 reference/array/functions/array-shift.xml: 553942feea
-reference/array/functions/array-slice.xml: 584311fe33
-reference/array/functions/array-splice.xml: d8c84c4dd6
+reference/array/functions/array-slice.xml: f0072ee013
+reference/array/functions/array-splice.xml: 0ec0537b1b
 reference/array/functions/array-sum.xml: 3114e5c923
 reference/array/functions/array-udiff-assoc.xml: 65735b6b36
 reference/array/functions/array-udiff-uassoc.xml: 65735b6b36
