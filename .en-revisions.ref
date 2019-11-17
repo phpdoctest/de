@@ -27,7 +27,6 @@ appendices/migration70/removed-exts-sapis.xml: 2ded59b783
 appendices/migration71.xml: 6eb60e4c67
 appendices/migration73/constants.xml: d5979c9fab
 appendices/migration73/deprecated.xml: 520ff508e1
-appendices/reserved.constants.core.xml: 13008781fe
 appendices/reserved.constants.standard.xml: 0d8699fe99
 appendices/reserved.xml: 161d42187c
 appendices/resources.xml: 4371066e7f
@@ -411,9 +410,11 @@ reference/classobj/functions/method-exists.xml: 4d5e6a608d
 reference/classobj/functions/property-exists.xml: 96d65ff359
 reference/classobj/reference.xml: efdbd50709
 reference/classobj/setup.xml: efdbd50709
-reference/com/com.xml: 7d77c62175
+reference/com/com.xml: 6d92fb603e
+reference/com/com/construct.xml: 864915492d
 reference/com/functions/com-load-typelib.xml: bf16e0ed93
-reference/com/variant.xml: 71984fb5bc
+reference/com/variant.xml: 864915492d
+reference/com/variant/construct.xml: 864915492d
 reference/crack/book.xml: 890455fa05
 reference/crack/configure.xml: cfc26695eb
 reference/crack/constants.xml: 807c846e04
