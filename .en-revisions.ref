@@ -5,7 +5,6 @@ appendices/configure/php.xml: e599425755
 appendices/debugger.xml: 0f7e7dec4f
 appendices/history.xml: 30497110b3
 appendices/ini.core.xml: bd1d5c97b2
-appendices/ini.list.xml: 948725f9e6
 appendices/ini.sections.xml: d2c80d6672
 appendices/ini.xml: b46b638142
 appendices/migration54.xml: 820bb538e3
@@ -555,7 +554,6 @@ reference/dba/functions/dba-insert.xml: efdbd50709
 reference/dba/functions/dba-key-split.xml: efdbd50709
 reference/dba/functions/dba-list.xml: efdbd50709
 reference/dba/functions/dba-nextkey.xml: efdbd50709
-reference/dba/functions/dba-open.xml: 7a49cbd5f4
 reference/dba/functions/dba-optimize.xml: efdbd50709
 reference/dba/functions/dba-popen.xml: efdbd50709
 reference/dba/functions/dba-replace.xml: efdbd50709
@@ -810,7 +808,6 @@ reference/filesystem/functions/fstat.xml: efdbd50709
 reference/filesystem/functions/ftell.xml: 76aef7ce7b
 reference/filesystem/functions/ftruncate.xml: cf6ce7b4e1
 reference/filesystem/functions/fwrite.xml: 88e49b6fae
-reference/filesystem/functions/glob.xml: ca1b190bee
 reference/filesystem/functions/is-dir.xml: c3ae9105d7
 reference/filesystem/functions/is-executable.xml: cf6ce7b4e1
 reference/filesystem/functions/is-file.xml: 16bd608fc2
@@ -836,14 +833,12 @@ reference/filesystem/functions/rename.xml: 900803b8dc
 reference/filesystem/functions/rewind.xml: b6a57ea290
 reference/filesystem/functions/rmdir.xml: 900803b8dc
 reference/filesystem/functions/set-file-buffer.xml: efdbd50709
-reference/filesystem/functions/stat.xml: 8868566c3a
 reference/filesystem/functions/symlink.xml: 3963a9acda
 reference/filesystem/functions/tempnam.xml: 900803b8dc
 reference/filesystem/functions/tmpfile.xml: 9da0b30827
 reference/filesystem/functions/touch.xml: 59ff3a624b
 reference/filesystem/functions/umask.xml: 1d02f956d5
 reference/filesystem/functions/unlink.xml: 900803b8dc
-reference/filesystem/ini.xml: 6cbcfd41da
 reference/filesystem/reference.xml: efdbd50709
 reference/filesystem/setup.xml: 1eb825980a
 reference/filter/book.xml: 8c9107820c
@@ -1127,7 +1122,6 @@ reference/imap/functions/imap-clearflag-full.xml: efdbd50709
 reference/imap/functions/imap-close.xml: efdbd50709
 reference/imap/functions/imap-create.xml: b0f052731e
 reference/imap/functions/imap-createmailbox.xml: 7c01ff17dd
-reference/imap/functions/imap-delete.xml: a88abd151e
 reference/imap/functions/imap-deletemailbox.xml: 7c01ff17dd
 reference/imap/functions/imap-errors.xml: 1d02f956d5
 reference/imap/functions/imap-expunge.xml: efdbd50709
@@ -1201,8 +1195,6 @@ reference/info/functions/get-current-user.xml: efdbd50709
 reference/info/functions/get-extension-funcs.xml: ad404ff58e
 reference/info/functions/get-included-files.xml: bddafc2202
 reference/info/functions/get-loaded-extensions.xml: 88c55efbdb
-reference/info/functions/get-magic-quotes-gpc.xml: 07baa1dcbc
-reference/info/functions/get-magic-quotes-runtime.xml: 07baa1dcbc
 reference/info/functions/get-required-files.xml: efdbd50709
 reference/info/functions/getenv.xml: 201589ed68
 reference/info/functions/getlastmod.xml: 7fab98fb9b
@@ -2561,7 +2553,6 @@ reference/strings/functions/ltrim.xml: 8868566c3a
 reference/strings/functions/md5-file.xml: 88c55efbdb
 reference/strings/functions/md5.xml: 88c55efbdb
 reference/strings/functions/metaphone.xml: e2a9be3d7b
-reference/strings/functions/money-format.xml: f917b7a738
 reference/strings/functions/nl-langinfo.xml: efdbd50709
 reference/strings/functions/nl2br.xml: 88c55efbdb
 reference/strings/functions/number-format.xml: 1be2962355
@@ -2606,8 +2597,8 @@ reference/strings/functions/strpbrk.xml: 30497110b3
 reference/strings/functions/strpos.xml: 578b2fcdd9
 reference/strings/functions/strrchr.xml: 358213793c
 reference/strings/functions/strrev.xml: efdbd50709
-reference/strings/functions/strripos.xml: 578b2fcdd9
-reference/strings/functions/strrpos.xml: 578b2fcdd9
+reference/strings/functions/strripos.xml: c18fd88c8e
+reference/strings/functions/strrpos.xml: 358213793c
 reference/strings/functions/strspn.xml: a923ea6764
 reference/strings/functions/strstr.xml: 358213793c
 reference/strings/functions/strtok.xml: 7f3bd947da
@@ -2715,7 +2706,6 @@ reference/var/functions/is-int.xml: 07f451ea83
 reference/var/functions/is-integer.xml: 07f451ea83
 reference/var/functions/is-long.xml: 07f451ea83
 reference/var/functions/is-null.xml: efdbd50709
-reference/var/functions/is-numeric.xml: 2c8965a953
 reference/var/functions/is-object.xml: d949eb324c
 reference/var/functions/is-real.xml: efdbd50709
 reference/var/functions/is-resource.xml: 495addc762
