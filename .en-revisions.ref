@@ -2267,6 +2267,9 @@ reference/recode/functions/recode-string.xml: 6ab8b51d8e
 reference/recode/functions/recode.xml: efdbd50709
 reference/recode/reference.xml: efdbd50709
 reference/recode/setup.xml: 807c846e04
+reference/reflection/book.xml: 96cc5ce891
+reference/reflection/examples.xml: d39a4e4c3b
+reference/reflection/reflection.xml: 961c2937af
 reference/regex/book.xml: 8c9107820c
 reference/regex/configure.xml: 8c9107820c
 reference/regex/constants.xml: efdbd50709
